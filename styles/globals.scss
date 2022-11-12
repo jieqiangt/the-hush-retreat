@@ -1,0 +1,58 @@
+// CSS RESET
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  background-color: none;
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #777;
+  box-sizing: border-box;
+}
+
+a:any-link {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  background-color: none;
+  text-decoration: none;
+}
+
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// flexbox defaults 
+
+// flexbox container
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; // cross axis (default y axis)
+  justify-content: flex-start; //main axis (default x axis)
+  align-content: normal;
+  gap: 0px 0px; // row-gap column-gap
+}
+
+//flexbox items
+.flexitems {
+  flex: 0 1 auto; // flex-grow: integer proportion flex-shrink: integer proportion flex-basis: width or auto
+  align-self: auto;
+}
