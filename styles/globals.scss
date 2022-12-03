@@ -47,8 +47,6 @@ ul {
   flex-direction: row;
   align-items: stretch; // cross axis (default y axis)
   justify-content: flex-start; //main axis (default x axis)
-  align-content: normal;
-  gap: 0px 0px; // row-gap column-gap
 }
 
 //flexbox items

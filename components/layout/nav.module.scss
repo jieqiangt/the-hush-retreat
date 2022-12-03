@@ -1,0 +1,16 @@
+.nav {
+  width: 100vw;
+  display: block;
+}
+
+.nav-list {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2.4rem;
+}
+
+.nav-link {
+  background-color: red;
+  display: inline-block;
+}
