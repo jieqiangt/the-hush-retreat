@@ -1,13 +1,18 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+
 .nav {
   width: 100vw;
   display: block;
 }
 
 .nav-list {
+  @include flex-container;
   justify-content: center;
   align-items: center;
   width: 100%;
   gap: 2.4rem;
+  
 }
 
 .nav-link {

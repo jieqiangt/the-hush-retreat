@@ -5,7 +5,7 @@ import classes from "./sass/nav.module.scss";
 export default function NavBar() {
   return (
     <nav >
-      <ul className={`${classes["nav-list"]} container`}>
+      <ul className={classes["nav-list"]}>
         <NavLink href="/discover">Our Story</NavLink>
         <NavLink href="/new">Upcoming Retreats</NavLink>
         <NavLink href="/">
