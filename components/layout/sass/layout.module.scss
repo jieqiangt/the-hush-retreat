@@ -1,0 +1,54 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+
+.nav {
+  width: 100vw;
+  display: block;
+  padding: 0.5rem 0;
+  background-color: $bg-accent-primary-col;
+
+  &--list {
+    @include flex-container;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2.4rem;
+  }
+
+  &--link {
+    display: inline-block;
+    position: relative;
+    font-weight: 500;
+    color: $text-header-primary-col;
+    transition: color 0.2s ease-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 0.05rem;
+      bottom: 0;
+      left: 0;
+      background-color: $text-accent-primary-col;
+      transition: all 0.2s ease-out;
+    }
+
+    &:hover {
+      color: $text-header-shade-1-col;
+      transform-origin: bottom left;
+      font-weight: 700;
+    }
+
+    &:active {
+      transform: scaleY(1.02);
+      color: $text-header-shade-1-col;
+      font-weight: 700;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}

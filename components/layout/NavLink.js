@@ -1,5 +1,5 @@
 import Link from "next/link";
-import classes from "./sass/nav.module.scss";
+import classes from "./sass/layout.module.scss";
 
 export default function NavLink(props) {
   return (
