@@ -1,0 +1,10 @@
+@import "../abstracts/variables";
+
+%link-hover {
+  color: $text-header-shade-1-col;
+  font-weight: 700;
+}
+
+%link-active {
+    transform: scaleY(1.02);
+  }

@@ -1,6 +1,9 @@
 @import "../../../sass/abstracts/variables";
 @import "../../../sass/abstracts/mixins";
 
+@import "../../../sass/base/animations";
+@import "../../../sass/base/utilities";
+
 .nav {
   width: 100vw;
   display: block;
@@ -23,32 +26,20 @@
     transition: color 0.2s ease-out;
 
     &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      transform: scaleX(0);
-      height: 0.05rem;
-      bottom: 0;
-      left: 0;
-      background-color: $text-accent-primary-col;
-      transition: all 0.2s ease-out;
-    }
-
-    &:hover {
-      color: $text-header-shade-1-col;
-      transform-origin: bottom left;
-      font-weight: 700;
-    }
-
-    &:active {
-      transform: scaleY(1.02);
-      color: $text-header-shade-1-col;
-      font-weight: 700;
+      @extend %ani-link-after;
     }
 
     &:hover::after {
-      transform: scaleX(1);
+      @extend %ani-link-hover-after;
+    }
+
+    &:hover {
+      @extend %link-hover;
       transform-origin: bottom left;
+    }
+
+    &:active {
+      @extend %link-active;
     }
   }
 }
