@@ -1,6 +1,6 @@
 import NavLink from "./NavLink";
 import Logo from "../ui/Logo";
-import classes from "./nav.module.scss";
+import classes from "./sass/nav.module.scss";
 
 export default function NavBar() {
   return (
