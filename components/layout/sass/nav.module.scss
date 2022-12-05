@@ -4,18 +4,31 @@
 .nav {
   width: 100vw;
   display: block;
-}
+  background-color: $bg-accent-primary-col;
 
-.nav-list {
-  @include flex-container;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 2.4rem;
-  
-}
+  &--list {
+    @include flex-container;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2.4rem;
+  }
 
-.nav-link {
-  background-color: red;
-  display: inline-block;
+  &--link {
+    display: inline-block;
+    color: $text-header-primary-col;
+  }
+
+  &--link {
+
+    display: inline-block;
+    color: $text-header-primary-col;
+
+    &:hover {
+      text-decoration: underline solid;
+      text-decoration-color: red;
+    }
+
+  }
+
 }
