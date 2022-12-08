@@ -2,9 +2,16 @@
 
 %link-hover {
   color: $text-header-shade-1-col;
-  font-weight: 700;
+  font-weight: $font-weight-lg;
 }
 
 %link-active {
     transform: scaleY(1.02);
   }
+
+%btn-link {
+    padding: 0.4rem 2rem ;
+    border: solid 0.2rem $bg-main-primary-col;
+    border-radius: 14%;
+    color: $text-accent-tint-1-col;
+}

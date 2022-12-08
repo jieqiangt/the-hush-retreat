@@ -15,6 +15,7 @@ export default function NavBar() {
         <NavLink href="/explore">Past Retreats</NavLink>
         <NavLink href="/help">Contact Us</NavLink>
       </ul>
+      <NavLink className={classes['nav--cta']} href="#">Join Now</NavLink>
     </nav>
   );
 }

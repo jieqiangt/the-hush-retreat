@@ -6,24 +6,27 @@
 
 .nav {
   width: 100vw;
-  display: block;
-  padding: 0.5rem 0;
+  display: flex;
   background-color: $bg-accent-primary-col;
+  flex-wrap: nowrap;
+  align-content: center;
 
   &--list {
     @include flex-container;
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 2.4rem;
+    padding: $y-padding-sm 0rem;
+    gap: 3.6rem;
   }
 
   &--link {
     display: inline-block;
     position: relative;
-    font-weight: 500;
+    font-weight: $font-weight-sm;
     color: $text-header-primary-col;
-    transition: color 0.2s ease-out;
+    transition: color $link-underline-time ease-out;
+    font-size: $text-header-size;
 
     &::after {
       @extend %ani-link-after;
@@ -42,4 +45,22 @@
       @extend %link-active;
     }
   }
+
+  &--cta{
+    display: inline-block;
+    margin: 1.2rem;
+    margin-left: auto;
+    align-self: center;
+    flex: 1 0 auto;
+  }
+
+  &--cta a {
+    @extend %btn-link;
+    font-size: $text-header-size;
+    font-weight: $font-weight-lg;
+  }
+
+  
+
+
 }
