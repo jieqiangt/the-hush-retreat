@@ -1,28 +1,24 @@
-// Background Color
-$bg-main-tint-2-col: #427d50;
-$bg-main-tint-1-col: #2b6d3a;
-$bg-main-primary-col: #135d24;
-$bg-main-shade-1-col: #115420;
-$bg-main-shade-2-col: #0f4a1d;
+// Colors
+$col-main-tint-2: #427d50;
+$col-main-tint-1: #2b6d3a;
+$col-main-primary: #135d24;
+$col-main-shade-1: #115420;
+$col-main-shade-2: #0f4a1d;
 
-$bg-accent-primary-col: #f8f9fa;
+$col-accent-tint-1: #dac596;
+$col-accent-primary: #d6bf8a;
+$col-accent-shade-1: #c1ac7c;
 
-// Text Color
-$text-gray-tint-1-col: #ffeef9;
-// $text-gray-primary-col: #FFECF8;
-$text-gray-primary-col: black;
-$text-gray-shade-1-col: #e6d4df;
-$text-gray-shade-2-col: #ccbdc6;
+$col-gray-tint-1: #ebdce5;
+$col-gray-primary: #e9d8e2;
+$col-gray-shade-1: #e6d4df;
+$col-gray-shade-2: #ccbdc6;
 
-$text-header-primary-col: #0f4a1d;
-$text-header-shade-1-col: #0f4a1d;
-
-$text-accent-tint-1-col: #dac596;
-$text-accent-primary-col: #d6bf8a;
-$text-accent-shade-1-col: #c1ac7c;
+$col-white-primary: #f8f9fa;
 
 //Font Sizes
-$text-header-size: 1.8rem;
+$font-size-header: 1.8rem;
+$font-size-btn-lg: 1.8rem;
 
 //Font weights
 $font-weight-lg: 700;
@@ -31,11 +27,14 @@ $font-weight-sm: 500;
 $font-weight-xs: 400;
 
 //Padding sizes
-$y-padding-sm: 1.2rem;
+$padding-layout-lg: 1.2rem;
+$padding-btn-lg: 0.6rem;  
+
 //Margin sizes
 
 // Other sizes
-$link-underline-size: 0.05rem;
+$size-underline-link: 0.05rem;
+$border-radius-btn-lg: 6px;
 
 //Animation variables
-$link-underline-time: 0.2s;
+$ani-time-link: 0.2s;

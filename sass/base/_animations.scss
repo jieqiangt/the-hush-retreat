@@ -5,11 +5,11 @@
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: $link-underline-size;
+  height: $size-underline-link;
   bottom: 0;
   left: 0;
-  background-color: $text-accent-primary-col;
-  transition: all $link-underline-time ease-out;
+  background-color: $col-accent-primary;
+  transition: all $ani-time-link ease-out;
   cursor: pointer;
 }
 

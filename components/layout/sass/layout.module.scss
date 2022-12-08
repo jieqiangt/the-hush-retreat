@@ -7,16 +7,16 @@
 .nav {
   width: 100vw;
   display: flex;
-  background-color: $bg-accent-primary-col;
-  flex-wrap: nowrap;
+  background-color: $col-white-primary;
   align-content: center;
+  position: relative;
 
   &--list {
     @include flex-container;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: $y-padding-sm 0rem;
+    padding: $padding-layout-lg 0rem;
     gap: 3.6rem;
   }
 
@@ -24,9 +24,9 @@
     display: inline-block;
     position: relative;
     font-weight: $font-weight-sm;
-    color: $text-header-primary-col;
-    transition: color $link-underline-time ease-out;
-    font-size: $text-header-size;
+    color: $col-main-shade-2;
+    transition: color $ani-time-link ease-out;
+    font-size: $font-size-header;
 
     &::after {
       @extend %ani-link-after;
@@ -47,20 +47,17 @@
   }
 
   &--cta{
+    @extend %btn-link-lg;
+    background-color: #ebdfc5;
+    position: relative;
+    color: $col-main-tint-2;
     display: inline-block;
-    margin: 1.2rem;
-    margin-left: auto;
+    position: absolute; 
     align-self: center;
     flex: 1 0 auto;
-  }
-
-  &--cta a {
-    @extend %btn-link;
-    font-size: $text-header-size;
-    font-weight: $font-weight-lg;
+    right: $padding-layout-lg * 2;
+    bottom: $padding-layout-lg * 1.2 / 2 ;
   }
 
   
-
-
 }

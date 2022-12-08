@@ -1,7 +1,6 @@
 import NavLink from "./NavLink";
 import Logo from "../ui/Logo";
 import classes from "./sass/layout.module.scss";
-import { Fragment } from "react";
 
 export default function NavBar() {
   return (
@@ -15,7 +14,7 @@ export default function NavBar() {
         <NavLink href="/explore">Past Retreats</NavLink>
         <NavLink href="/help">Contact Us</NavLink>
       </ul>
-      <NavLink className={classes['nav--cta']} href="#">Join Now</NavLink>
+      <NavLink className={classes['nav--cta']} href="#">Start Healing</NavLink>
     </nav>
   );
 }
