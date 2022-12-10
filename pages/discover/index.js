@@ -1,5 +1,7 @@
 import Head from "next/head";
+import GuidingPrinciple from "../../components/discover/GuidingPrinciple";
 import OurFounder from "../../components/discover/OurFounder";
+import TheWayOfLotus from "../../components/discover/TheWayOfLotus";
 
 export default function DiscoverPage() {
   return (
@@ -8,7 +10,9 @@ export default function DiscoverPage() {
         <title>Discover</title>
         <meta name="description" content="Discover" />
       </Head>
+      <GuidingPrinciple />
       <OurFounder />
+      <TheWayOfLotus />
     </div>
   );
 }

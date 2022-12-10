@@ -6,10 +6,7 @@
 
 .nav {
   width: 100vw;
-  display: flex;
-  background-color: $col-white-primary;
-  align-content: center;
-  position: relative;
+  background-color: transparent;
 
   &--list {
     @include flex-container;
@@ -17,7 +14,14 @@
     align-items: center;
     width: 100%;
     padding: $padding-layout-lg 0rem;
-    gap: 3.6rem;
+    gap: 22.8rem;
+
+    &--sides {
+      @include flex-container;
+      justify-content: center;
+      width: 20%;
+      gap: 1rem;
+    }
   }
 
   &--link {
@@ -44,18 +48,5 @@
     &:active {
       @extend %link-active;
     }
-  }
-
-  &--cta {
-    @extend %link-btn-lg;
-    background-color: #ebdfc5;
-    position: relative;
-    color: $col-main-tint-2;
-    display: inline-block;
-    position: absolute;
-    align-self: center;
-    flex: 1 0 auto;
-    right: $padding-layout-lg * 2;
-    bottom: $padding-layout-lg * 1.2 / 2;
   }
 }

@@ -4,19 +4,55 @@
 @import "../../../sass/base/animations";
 @import "../../../sass/base/utilities";
 
+.principle {
+  width: 100vw;
+  height: 85vh;
+  background-image: linear-gradient(rgba(white, 0.3), rgba(white, 0.2)),
+    url("../../../public/meditation-1-lg.jpg");
+  background-size: cover;
+  background-position: left top 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+
+  &--page-header {
+    display: block;
+    font-size: 2.8rem;
+    margin-top: 7.2rem;
+    color: $col-accent-tint-1;
+  }
+
+  &--text {
+    display: block;
+    font-size: 2.2rem;
+    margin-left: 24rem;
+    margin-top: 2.4rem;
+    line-height: 1.8;
+  }
+
+  &--title {
+    display: block;
+    font-size: 3.8rem;
+    color: $col-accent-tint-1;
+    margin-top: 2.8rem;
+    border-bottom: solid 0.05rem $col-accent-tint-1;
+  }
+}
+
 .founder {
   display: flex;
   width: 100vw;
   height: 85vh;
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
     ),
     url("../../../public/sand-bg-2.jpg");
   background-size: cover;
   background-position: top;
 
-  &-desc {
+  &--desc {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -25,7 +61,7 @@
     padding: 0rem 2.4rem;
     background-color: rgba($col-main-primary, 0.75);
 
-    &-title {
+    &--title {
       display: inline;
       color: $col-accent-primary;
       font-size: $font-size-header-lg;
@@ -33,7 +69,7 @@
       line-height: 1.5;
     }
 
-    &-text {
+    &--text {
       display: flex;
       flex-direction: column;
       color: $col-gray-primary;
@@ -45,7 +81,7 @@
     }
   }
 
-  &-img {
+  &--img {
     width: 50%;
     margin-left: 2.4rem;
   }
