@@ -15,10 +15,13 @@ $col-gray-shade-1: #e6d4df;
 $col-gray-shade-2: #ccbdc6;
 
 $col-white-primary: #f8f9fa;
+$col-black-primary: #212529;
 
 //Font Sizes
-$font-size-header: 1.8rem;
-$font-size-btn-lg: 1.8rem;
+$font-size-nav-lg: 2.4rem;
+
+$font-size-header-lg: 3.8rem;
+$font-size-text-lg: 2.2rem;
 
 //Font weights
 $font-weight-lg: 700;
@@ -28,9 +31,11 @@ $font-weight-xs: 400;
 
 //Padding sizes
 $padding-layout-lg: 1.2rem;
-$padding-btn-lg: 0.6rem;  
+$padding-btn-lg: 0.6rem;
 
 //Margin sizes
+$margin-layout-x-lg: 7.2rem;
+$margin-layout-y-lg: 10.8rem;
 
 // Other sizes
 $size-underline-link: 0.05rem;
@@ -38,3 +43,5 @@ $border-radius-btn-lg: 6px;
 
 //Animation variables
 $ani-time-link: 0.2s;
+
+$z-index-top: 100;

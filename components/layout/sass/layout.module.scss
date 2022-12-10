@@ -26,7 +26,7 @@
     font-weight: $font-weight-sm;
     color: $col-main-shade-2;
     transition: color $ani-time-link ease-out;
-    font-size: $font-size-header;
+    font-size: $font-size-nav-lg;
 
     &::after {
       @extend %ani-link-after;
@@ -46,17 +46,16 @@
     }
   }
 
-  &--cta{
+  &--cta {
     @extend %link-btn-lg;
     background-color: #ebdfc5;
     position: relative;
     color: $col-main-tint-2;
     display: inline-block;
-    position: absolute; 
+    position: absolute;
     align-self: center;
     flex: 1 0 auto;
     right: $padding-layout-lg * 2;
-    bottom: $padding-layout-lg * 1.2 / 2 ;
+    bottom: $padding-layout-lg * 1.2 / 2;
   }
-   
 }

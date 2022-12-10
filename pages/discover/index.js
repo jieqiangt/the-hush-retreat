@@ -1,4 +1,5 @@
 import Head from "next/head";
+import OurFounder from "../../components/discover/OurFounder";
 
 export default function DiscoverPage() {
   return (
@@ -7,7 +8,7 @@ export default function DiscoverPage() {
         <title>Discover</title>
         <meta name="description" content="Discover" />
       </Head>
-      <div>Discover</div>
+      <OurFounder />
     </div>
   );
 }
