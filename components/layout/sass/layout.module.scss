@@ -47,7 +47,7 @@
   }
 
   &--cta{
-    @extend %btn-link-lg;
+    @extend %link-btn-lg;
     background-color: #ebdfc5;
     position: relative;
     color: $col-main-tint-2;
@@ -58,6 +58,5 @@
     right: $padding-layout-lg * 2;
     bottom: $padding-layout-lg * 1.2 / 2 ;
   }
-
-  
+   
 }
