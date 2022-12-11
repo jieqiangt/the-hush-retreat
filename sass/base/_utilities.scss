@@ -20,6 +20,22 @@
     background-image: linear-gradient(180deg, rgba(white, 0.3), rgba(white, 0.1)),
       url("../../public/meditation-1-lg.jpg");
     background-size: cover;
+    text-align: center;
+}
+
+.header--title {
+  display: block;
+  font-size: $font-size-header-lg * 0.8;
+  margin-top: 7.2rem;
+  margin-bottom: 2.8rem;
+  color: $col-accent-primary;
+}
+
+.section--title {
+  display: block;
+  font-size: $font-size-header-lg;
+  color: $col-accent-primary;
+  border-bottom: solid 0.05rem $col-accent-primary;
 }
 
 .composition {

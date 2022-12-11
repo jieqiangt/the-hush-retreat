@@ -5,7 +5,6 @@ import OurFounder from "../../components/discover/OurFounder";
 import TheWayOfLotus from "../../components/discover/TheWayOfLotus";
 import Layout from "../../components/layout/Layout";
 
-
 export default function DiscoverPage() {
   return (
     <Fragment>
@@ -14,8 +13,8 @@ export default function DiscoverPage() {
         <meta name="description" content="Discover" />
       </Head>
       <Layout firstSection={GuidingPrinciple}>
-        <OurFounder />
         <TheWayOfLotus />
+        <OurFounder />
       </Layout>
     </Fragment>
   );

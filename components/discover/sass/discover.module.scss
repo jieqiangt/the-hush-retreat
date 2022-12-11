@@ -5,22 +5,14 @@
 @import "../../../sass/base/utilities";
 
 .principle {
-  width: 100vw;
+  width: 100%;
   height: 85vh;
-  background-position: left top 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden;
 
-  &--page-header {
-    display: block;
-    font-size: $font-size-header-lg * 0.8;
-    margin-top: 7.2rem;
-    color: $col-accent-tint-1;
-  }
-
-  &--text {
+  &--article {
+    text-align: left;
     display: block;
     font-size: $font-size-text-lg;
     margin-left: 24rem;
@@ -28,18 +20,52 @@
     line-height: 1.8;
   }
 
-  &--title {
+  &--lotus--em {
+    color: $col-main-shade-2;
+    font-style: italic;
+    text-transform: capitalize;
+  }
+}
+
+.lotus {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $col-main-primary;
+
+  &--logo-top {
+    margin-top: 2.4rem;
+  }
+
+  &--article {
+    margin: 4.8rem 42rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    font-size: $font-size-text-md;
+    line-height: 1.8;
+  }
+
+  &--logo-bottom {
+    margin-bottom: 0rem;
+  }
+
+  &--logo-bottom::after {
+    content: "";
     display: block;
-    font-size: $font-size-header-lg;
-    color: $col-accent-tint-1;
-    margin-top: 2.8rem;
-    border-bottom: solid 0.05rem $col-accent-tint-1;
+    width: 95vw;
+    background-color: transparent;
+    border-bottom: solid 0.05rem $col-accent-primary;
+    margin: 2.4rem 0rem;
   }
 }
 
 .founder {
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 85vh;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.4),
@@ -66,7 +92,7 @@
       line-height: 1.5;
     }
 
-    &--text {
+    &--article {
       display: flex;
       flex-direction: column;
       color: $col-gray-primary;

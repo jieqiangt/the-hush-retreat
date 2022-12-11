@@ -1,15 +1,21 @@
+import { Fragment } from "react";
 import classes from "./sass/discover.module.scss";
 
 export default function GuidingPrinciple() {
   return (
-    <section className={classes["principle"]}>
-      <span className={classes["principle--page-header"]}>Our Story</span>
-      <span className={classes["principle--title"]}>Our Guiding Principle</span>
-      <span className={classes["principle--text"]}>
-        Living life with unwavering faith and joy, <br />
-        as the lotus does, <br />
-        to ensure the most beautiful revival
-      </span>
-    </section>
+    <Fragment>
+      <h1 className={classes["header--title"]}>Our Story</h1>
+      <section className={classes["principle"]}>
+        <h2 className={classes["section--title"]}>Our Guiding Principle</h2>
+        <article className={classes["principle--article"]}>
+          Living life with unwavering faith and joy, <br />
+          as the <span className={classes["principle--lotus--em"]}>
+            lotus
+          </span>{" "}
+          does, <br />
+          to ensure the most beautiful revival
+        </article>
+      </section>
+    </Fragment>
   );
 }
