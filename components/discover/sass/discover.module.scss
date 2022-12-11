@@ -7,9 +7,6 @@
 .principle {
   width: 100vw;
   height: 85vh;
-  background-image: linear-gradient(rgba(white, 0.3), rgba(white, 0.2)),
-    url("../../../public/meditation-1-lg.jpg");
-  background-size: cover;
   background-position: left top 20%;
   display: flex;
   flex-direction: column;
@@ -18,14 +15,14 @@
 
   &--page-header {
     display: block;
-    font-size: 2.8rem;
+    font-size: $font-size-header-lg * 0.8;
     margin-top: 7.2rem;
     color: $col-accent-tint-1;
   }
 
   &--text {
     display: block;
-    font-size: 2.2rem;
+    font-size: $font-size-text-lg;
     margin-left: 24rem;
     margin-top: 2.4rem;
     line-height: 1.8;
@@ -33,7 +30,7 @@
 
   &--title {
     display: block;
-    font-size: 3.8rem;
+    font-size: $font-size-header-lg;
     color: $col-accent-tint-1;
     margin-top: 2.8rem;
     border-bottom: solid 0.05rem $col-accent-tint-1;
@@ -83,6 +80,9 @@
 
   &--img {
     width: 50%;
-    margin-left: 2.4rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

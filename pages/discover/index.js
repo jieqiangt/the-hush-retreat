@@ -1,19 +1,23 @@
 import Head from "next/head";
+import { Fragment } from "react";
 import GuidingPrinciple from "../../components/discover/GuidingPrinciple";
 import OurFounder from "../../components/discover/OurFounder";
 import TheWayOfLotus from "../../components/discover/TheWayOfLotus";
+import Layout from "../../components/layout/Layout";
+
 
 export default function DiscoverPage() {
   return (
-    <div>
+    <Fragment>
       <Head>
         <title>Discover</title>
         <meta name="description" content="Discover" />
       </Head>
-      <GuidingPrinciple />
-      <OurFounder />
-      <TheWayOfLotus />
-    </div>
+      <Layout firstSection={GuidingPrinciple}>
+        <OurFounder />
+        <TheWayOfLotus />
+      </Layout>
+    </Fragment>
   );
 }
 

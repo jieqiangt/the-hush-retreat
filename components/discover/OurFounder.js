@@ -25,9 +25,9 @@ export default function OurFounder() {
           </span>
         </div>
       </div>
-      <aside className={`composition ${classes["founder--img"]}`}>
+      <div className={`${classes["founder--img"]}`}>
         <ImgComposition />
-      </aside>
+      </div>
     </section>
   );
 }
