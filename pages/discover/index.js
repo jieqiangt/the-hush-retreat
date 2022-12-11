@@ -15,8 +15,8 @@ export default function DiscoverPage() {
       </Head>
       <Layout firstSection={GuidingPrinciple}>
         <TheWayOfLotus />
-        <OurFounder />
         <OurApproach />
+        <OurFounder />
       </Layout>
     </Fragment>
   );

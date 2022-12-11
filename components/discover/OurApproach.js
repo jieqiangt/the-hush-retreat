@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FeatureList from "../ui/FeatureList";
 import classes from "./sass/discover.module.scss";
 
@@ -22,8 +23,24 @@ export default function OurApproach() {
 
   return (
     <section className={classes["approach"]}>
-      <h2 className={`${classes["section--title"]} ${classes["approach--title"]}`}>Our Approach</h2>
+      <h2
+        className={`${classes["section--title"]} ${classes["approach--title"]}`}
+      >
+        Our Approach
+      </h2>
       <FeatureList features={features} />
+      <div className={classes["approach--cta"]}>
+        <div className={classes["approach--cta--outer"]}>
+          <span className={classes["approach--cta--btn"]}>
+            <Link href="/new">Start Embracing Mindfulness</Link>
+          </span>
+        </div>
+        <div className={classes["approach--cta--outer"]}>
+          <span className={classes["approach--cta--btn"]}>
+            <Link href="/explore">Explore More</Link>
+          </span>
+        </div>
+      </div>
     </section>
   );
 }

@@ -21,13 +21,15 @@
     url("../../public/meditation-1-lg.jpg");
   background-size: cover;
   text-align: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .header--title {
   display: block;
   font-size: $font-size-header-lg * 0.8;
   margin-top: 7.2rem;
-  margin-bottom: 2.8rem;
+  margin-bottom: $margin-flex-lg;
   color: $col-accent-primary;
 }
 
@@ -73,7 +75,7 @@
       z-index: $z-index-top + 100;
       transform: scale(1.05);
       box-shadow: 0 2.5rem 4rem rgba($col-black-primary, 0.5);
-      outline: 0.5rem solid $col-accent-tint-1;
+      outline: 0.5rem solid $col-main-tint-2;
     }
   }
 
@@ -87,13 +89,13 @@
   &--list {
     display: flex;
     justify-content: center;
-    margin: 0rem 40rem 3.8rem 40rem;
-    gap: 2.4rem;
+    margin: 0rem 40rem $margin-flex-lg*2 40rem;
+    gap: $margin-flex-lg;
   }
 
   &--item {
     width: 100%;
-    padding: 2.4rem 0rem;
+    padding: $margin-flex-lg 0rem;
 
     &--title {
       color: $col-accent-primary;
@@ -106,11 +108,9 @@
       text-align: left;
     }
 
-    &--outer + .feature--item--outer {
-      padding-left: 2.4rem;
+    &--outer + &--outer {
+      padding-left: $margin-flex-lg;
       border-left: solid $size-underline-link $col-accent-primary;
     }
-
-
   }
 }
