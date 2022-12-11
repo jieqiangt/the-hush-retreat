@@ -16,6 +16,22 @@
   font-weight: $font-weight-lg;
 }
 
+.footer {
+  text-align: center;
+  font-size: $font-size-text-xs;
+  position: absolute;
+  width: 100%;
+  bottom: 1.2rem;
+
+  &--bg-col-main {
+    background-color: transparent;
+  }
+
+  &--bg-img {
+    background-color: rgba($col-main-primary, 0.7);
+  }
+}
+
 .header {
   background-image: linear-gradient(180deg, rgba(white, 0.3), rgba(white, 0.1)),
     url("../../public/meditation-1-lg.jpg");
@@ -23,19 +39,19 @@
   text-align: center;
   width: 100%;
   height: 100vh;
-}
 
-.header--title {
-  display: block;
-  font-size: $font-size-header-lg * 0.8;
-  margin-top: 7.2rem;
-  margin-bottom: $margin-flex-lg;
-  color: $col-accent-primary;
+  &--title {
+    display: block;
+    font-size: $font-size-header-lg * 0.8;
+    margin-top: 7.2rem;
+    margin-bottom: $margin-flex-lg;
+    color: $col-accent-primary;
+  }
 }
 
 .section--title {
   display: block;
-  font-size: $font-size-header-lg;
+  font-size: $font-size-header-md;
   color: $col-accent-primary;
   border-bottom: solid $size-underline-link $col-accent-primary;
 }
@@ -50,7 +66,7 @@
     position: absolute;
     width: 45%;
     height: auto;
-    transition: all 0.1s ease-in;
+    transition: all 0.2s ease-in;
     outline-offset: 0.3rem;
 
     &-1 {
@@ -85,11 +101,10 @@
 }
 
 .feature {
-
   &--list {
     display: flex;
     justify-content: center;
-    margin: 0rem 40rem $margin-flex-lg*2 40rem;
+    margin: 0rem 40rem $margin-flex-lg * 2 40rem;
     gap: $margin-flex-lg;
   }
 
@@ -99,12 +114,12 @@
 
     &--title {
       color: $col-accent-primary;
-      font-size: $font-size-header-md;
+      font-size: $font-size-header-sm;
       font-weight: $font-weight-lg;
     }
 
     &--desc {
-      font-size: $font-size-text-lg;
+      font-size: $font-size-text-md;
       text-align: left;
     }
 

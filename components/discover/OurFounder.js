@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+import Footer from "../layout/Footer";
 import ImgComposition from "../ui/ImgComposition";
 import classes from "./sass/discover.module.scss";
 
@@ -8,26 +10,35 @@ export default function OurFounder() {
         <h2 className={classes["section--title"]}>Our Founder</h2>
         <article className={classes["founder--desc--article"]}>
           <p>
-            Mandi is the founder of The Hush Retreats. Established in 2021,
-            Mandi curates bespoke wellness retreats and events for individuals
-            and corporates.
+            As a yoga teacher, Mandi believes in the importance of wellness and
+            mindfulness in our daily lives. Aspiring to create a wellness
+            community in Singapore and provide an avenue for people who seek
+            mindful experiences, she started curating bespoke wellness retreats
+            and events for individuals and corporates, which eventually led to
+            the founding of The Hush Retreats in 2021.
           </p>
           <p>
-            Aside from being a yoga teacher, Mandi believes in the importance of
-            wellness and mindfulness in our daily lives. She aspires to build a
-            wellness community in Singapore and provide an avenue for people who
-            seek mindful experiences.
+            Established with the vision to curate restful spaces for all &
+            empowering everyone to step away from the hustle of everyday life
+            and practice to be Here, The Hush Retreats has the far-reaching
+            mission of ultimately being a platform that connects people by
+            building a supportive wellness community.
           </p>
           <p>
-            With her experience as a flight attendant, rest assured you will be
-            well taken care of by Mandi and her team. She aims to bring The Hush
-            Retreats across the borders of Singapore one day.
+            Armed with 8 years of experience in the service industry, she strives
+            to deliver the best service and hospitality in all her retreats so
+            that you can truly rest, reset and reconnect with yourself as you go
+            on your personal journey. Rest assured you will be well taken care
+            of by the team at The Hush Retreats.
           </p>
         </article>
       </div>
       <div className={`${classes["founder--img"]}`}>
         <ImgComposition />
       </div>
+      <Footer className="footer--bg-img" />
     </section>
   );
 }
+
+
