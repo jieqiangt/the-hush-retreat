@@ -12,15 +12,15 @@
 %link-btn-lg {
   padding: $padding-btn-lg $padding-btn-lg * 2;
   border-radius: $border-radius-btn-lg;
-  font-size: $font-size-nav-lg;
+  font-size: $font-size-header-md;
   font-weight: $font-weight-lg;
 }
 
 .header {
-    background-image: linear-gradient(180deg, rgba(white, 0.3), rgba(white, 0.1)),
-      url("../../public/meditation-1-lg.jpg");
-    background-size: cover;
-    text-align: center;
+  background-image: linear-gradient(180deg, rgba(white, 0.3), rgba(white, 0.1)),
+    url("../../public/meditation-1-lg.jpg");
+  background-size: cover;
+  text-align: center;
 }
 
 .header--title {
@@ -35,7 +35,7 @@
   display: block;
   font-size: $font-size-header-lg;
   color: $col-accent-primary;
-  border-bottom: solid 0.05rem $col-accent-primary;
+  border-bottom: solid $size-underline-link $col-accent-primary;
 }
 
 .composition {
@@ -82,21 +82,35 @@
   }
 }
 
-.feature-list {
-  display: flex;
-  margin: 1.8rem 40rem;
-  gap: 2.4rem;
-}
+.feature {
 
-.feature-item {
-  width: 40%;
-
-  &--title {
-    color: $col-accent-primary;
-    font-size: $font-size-text-lg;
+  &--list {
+    display: flex;
+    justify-content: center;
+    margin: 0rem 40rem 3.8rem 40rem;
+    gap: 2.4rem;
   }
 
-  &--desc {
-    font-size: $font-size-text-md;
+  &--item {
+    width: 100%;
+    padding: 2.4rem 0rem;
+
+    &--title {
+      color: $col-accent-primary;
+      font-size: $font-size-header-md;
+      font-weight: $font-weight-lg;
+    }
+
+    &--desc {
+      font-size: $font-size-text-lg;
+      text-align: left;
+    }
+
+    &--outer + .feature--item--outer {
+      padding-left: 2.4rem;
+      border-left: solid $size-underline-link $col-accent-primary;
+    }
+
+
   }
 }

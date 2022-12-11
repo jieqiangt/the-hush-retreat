@@ -71,7 +71,7 @@
       rgba(255, 255, 255, 0.4),
       rgba(255, 255, 255, 0.4)
     ),
-    url("../../../public/sand-bg-2.jpg");
+    url("../../../public/sand-1-lg.jpg");
   background-size: cover;
   background-position: top;
 
@@ -114,9 +114,14 @@
 }
 
 .approach {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: $col-main-primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $col-main-primary;
+
+  &--title {
+    display: inline-block;
+    margin: 2.4rem 0rem 3.6rem 0rem;
+  }
 }

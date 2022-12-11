@@ -9,7 +9,7 @@
   background-color: transparent;
 
   &--list {
-    @include flex-container;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -17,9 +17,9 @@
     gap: 24rem;
 
     &--sides {
-      @include flex-container;
+      display: flex;
       justify-content: center;
-      width: 20%;
+      width: 25%;
       gap: 2.4rem;
     }
   }
@@ -30,7 +30,7 @@
     font-weight: $font-weight-sm;
     color: $col-main-shade-1;
     transition: color $ani-time-link ease-out;
-    font-size: $font-size-nav-lg;
+    font-size: $font-size-header-sm;
 
     &::after {
       @extend %ani-link-after;

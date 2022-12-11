@@ -4,17 +4,17 @@ import classes from "./sass/discover.module.scss";
 export default function OurApproach() {
   const features = [
     {
-      imgSrc: "#",
+      imgSrc: "/trees-2-lg.jpg",
       title: "Eco Conscious",
-      desc: "We believe in the concept of biophilia -where humans and life of nature are closely related. We work with our partners to minimise single-use disposables and waste.",
+      desc: "We believe in the concept of biophilia - where humans and life of nature are closely related. We work with our partners to minimise single-use disposables and waste.",
     },
     {
-      imgSrc: "#",
+      imgSrc: "/alone-1-lg.jpg",
       title: "Exclusive",
       desc: "Our retreats are kept to small numbers to create moments for you to connect and immerse.",
     },
     {
-      imgSrc: "#",
+      imgSrc: "/community-1-lg.jpg",
       title: "Community",
       desc: "We partner with like-minded vendors and brands to curate bespoke experiences for you. If you share our vision, connect with us!",
     },
@@ -22,8 +22,8 @@ export default function OurApproach() {
 
   return (
     <section className={classes["approach"]}>
-      <h2 className={classes["section--title"]}>Our Approach</h2>
-      <FeatureList features={features}/>
+      <h2 className={`${classes["section--title"]} ${classes["approach--title"]}`}>Our Approach</h2>
+      <FeatureList features={features} />
     </section>
   );
 }
