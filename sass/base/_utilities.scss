@@ -5,7 +5,7 @@
 
   background-size: cover;
   @include header-params((linear-gradient(180deg, rgba(white, 0.3), rgba(white, 0.1)),
-  url("../../public/meditation-1-lg.jpg")), (bottom right));
+      url("../../public/meditation-1-lg.jpg")), (bottom right));
   text-align: center;
   width: 100%;
   height: 100vh;
@@ -33,8 +33,7 @@
 .section--title {
   display: block;
   font-size: $font-size-header-md;
-  color: $col-accent-primary;
-  border-bottom: solid $size-underline-link $col-accent-primary;
+  @include section-header-params($col-accent-primary);
 }
 
 .composition {
@@ -84,31 +83,28 @@
 }
 
 .feature {
+  @include feature-params($margin-flex-lg);
+
   &--list {
     display: flex;
     justify-content: center;
-    margin: 0rem 40rem $margin-flex-lg * 2 40rem;
-    gap: $margin-flex-lg;
   }
 
   &--item {
     width: 100%;
-    padding: $margin-flex-lg 0rem;
 
     &--title {
-      color: $col-accent-primary;
-      font-size: $font-size-header-sm;
+      @include feature--item--title-params($col-accent-primary, $font-size-header-sm);
       font-weight: $font-weight-lg;
     }
 
     &--desc {
-      font-size: $font-size-text-md;
+      @include feature--item--desc-params($font-size-text-md);
       text-align: left;
     }
 
     &--outer+&--outer {
-      padding-left: $margin-flex-lg;
-      border-left: solid $size-underline-link $col-accent-primary;
+      border-left: $thin-underline-border;
     }
   }
 }

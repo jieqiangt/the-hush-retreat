@@ -1,5 +1,7 @@
 @import "../abstracts/variables";
 
+// for underlining link when hovered
+
 @mixin ani-link-after {
   content: "";
   position: absolute;

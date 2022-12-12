@@ -1,4 +1,6 @@
-@mixin header-params($bg-image,$bg-position) {
+@import "./variables";
+
+@mixin header-params($bg-image, $bg-position) {
     background-image: $bg-image;
     background-position: $bg-position;
 }
@@ -12,5 +14,34 @@
         background-color: $border-color;
         color: $text-color;
     }
+}
 
+@mixin section-header-params($header-color) {
+    color: $header-color;
+    border-bottom: solid $size-underline-link $header-color;
+}
+
+@mixin feature-params($margin-gap) {
+
+    &--list {
+        margin: 0rem 40rem $margin-gap * 2 40rem;
+        gap: $margin-gap;
+    }
+
+    &--item {
+        padding: $margin-gap 0rem;
+
+        &--outer+&--outer {
+            padding-left: $margin-gap;
+        }
+    }
+}
+
+@mixin feature--item--title-params($text-color, $font-size) {
+    color: $text-color;
+    font-size: $font-size;
+}
+
+@mixin feature--item--desc-params($font-size) {
+    font-size: $font-size
 }
