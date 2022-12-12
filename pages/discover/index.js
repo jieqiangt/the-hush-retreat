@@ -22,4 +22,3 @@ export default function DiscoverPage() {
   );
 }
 
-// Discover (Our Origin/Philosophy),  Experiences (Upcoming Retreats), *Logo*, Past Retreats (List of Past Retreats), Help (FAQ, Contact Us) --------------- Book a Retreat

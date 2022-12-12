@@ -87,19 +87,19 @@
       border-left: solid $size-underline-link $col-accent-primary;
     }
 
-    &--btn {
-      flex: 0 1 fit-content;
-      border-top: solid $size-underline-link rgba($col-accent-primary, 0.6);
-      border-bottom: solid $size-underline-link rgba($col-accent-primary, 0.6);
-      padding: 0.6rem 1.8rem;
-      transition: all 0.2s ease-in;
+    // &--btn {
+    //   flex: 0 1 fit-content;
+    //   border-top: solid $size-underline-link rgba($col-accent-primary, 0.6);
+    //   border-bottom: solid $size-underline-link rgba($col-accent-primary, 0.6);
+    //   padding: 0.6rem 1.8rem;
+    //   transition: all 0.2s ease-in;
 
-      &:hover {
-        background-color: rgba($col-accent-primary, 0.6);
-        color: $col-main-shade-2;
-        font-weight: $font-weight-md;
-      }
-    }
+    //   &:hover {
+    //     background-color: rgba($col-accent-primary, 0.6);
+    //     color: $col-main-shade-2;
+    //     font-weight: $font-weight-md;
+    //   }
+    // }
   }
 }
 

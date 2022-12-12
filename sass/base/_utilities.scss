@@ -1,4 +1,5 @@
 @import "../abstracts/variables";
+@import "../abstracts/mixins";
 
 %link-hover {
   color: $col-main-shade-2;
@@ -19,7 +20,7 @@
 .header {
   background-image: linear-gradient(180deg, rgba(white, 0.3), rgba(white, 0.1)),
     url("../../public/meditation-1-lg.jpg");
-    background-position: bottom right;
+  background-position: bottom right;
   background-size: cover;
   text-align: center;
   width: 100%;
@@ -31,6 +32,17 @@
     margin-top: 7.2rem;
     margin-bottom: $margin-flex-lg;
     color: $col-accent-primary;
+  }
+}
+
+.link-btn {
+  flex: 0 1 fit-content;
+  padding: 0.6rem 1.8rem;
+  transition: all 0.2s ease-in;
+  @include link-btn-params(rgba($col-accent-primary, 0.6), $col-main-shade-2);
+
+  &:hover {
+    font-weight: $font-weight-md;
   }
 }
 
@@ -55,6 +67,7 @@
 
     $top-offset: -2rem;
     $left-offset: 10rem;
+
     &-1 {
       top: 0rem + $top-offset;
       left: -4rem + $left-offset;

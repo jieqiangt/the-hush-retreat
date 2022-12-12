@@ -1,6 +1,7 @@
-import Link from "next/link";
 import FeatureList from "../ui/FeatureList";
+import LinkButton from "../ui/LinkButton";
 import classes from "./sass/discover.module.scss";
+
 
 export default function OurApproach() {
   const features = [
@@ -32,12 +33,12 @@ export default function OurApproach() {
       <div className={classes["approach--cta"]}>
         <div className={classes["approach--cta--outer"]}>
           <span className={classes["approach--cta--btn"]}>
-            <Link href="/new">Start Embracing Mindfulness</Link>
+            <LinkButton href="/new">Start Embracing Mindfulness</LinkButton>
           </span>
         </div>
         <div className={classes["approach--cta--outer"]}>
           <span className={classes["approach--cta--btn"]}>
-            <Link href="/explore">Explore More</Link>
+            <LinkButton href="/explore">Explore More</LinkButton>
           </span>
         </div>
       </div>

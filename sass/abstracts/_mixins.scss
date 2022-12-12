@@ -1,0 +1,11 @@
+@mixin link-btn-params($border-color, $text-color) {
+
+    border-top: solid $size-underline-link $border-color;
+    border-bottom: solid $size-underline-link $border-color;
+
+    &:hover {
+        background-color: $border-color;
+        color: $text-color;
+    }
+
+}
