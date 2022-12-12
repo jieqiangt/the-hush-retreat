@@ -1,3 +1,8 @@
+@mixin header-params($bg-image,$bg-position) {
+    background-image: $bg-image;
+    background-position: $bg-position;
+}
+
 @mixin link-btn-params($border-color, $text-color) {
 
     border-top: solid $size-underline-link $border-color;

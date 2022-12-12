@@ -1,14 +1,10 @@
 import { Fragment } from "react";
-import Footer from "./Footer";
-import NavBar from "./NavBar";
+import Header from "./Header";
 
 export default function Layout(props) {
   return (
     <Fragment>
-      <header className="header">
-        <NavBar />
-        <props.firstSection />
-      </header>
+      <Header firstSection={props.firstSection}></Header>
       <main>{props.children}</main>
     </Fragment>
   );
