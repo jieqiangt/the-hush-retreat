@@ -84,7 +84,7 @@
 
     &--outer+&--outer {
       padding-left: $margin-flex-lg;
-      border-left: solid $size-underline-link $col-accent-primary;
+      border-left: $thin-accent-border;
     }
   }
 }
