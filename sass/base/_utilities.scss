@@ -1,7 +1,5 @@
 @import "../abstracts/variables";
 
-
-
 @mixin header-params($bg-image, $bg-position) {
   background-image: $bg-image;
   background-position: $bg-position;
