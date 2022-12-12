@@ -21,11 +21,20 @@
     border-bottom: solid $size-underline-link $header-color;
 }
 
-@mixin feature-params($margin-gap) {
+@mixin feature-params($margin-gap, $title-color, $title-font-size, $desc-font-size) {
 
     &--list {
         margin: 0rem 40rem $margin-gap * 2 40rem;
         gap: $margin-gap;
+    }
+
+    &--title {
+        color: $title-color;
+        font-size: $title-font-size;
+    }
+
+    &--desc {
+        font-size: $desc-font-size
     }
 
     &--item {
@@ -35,13 +44,4 @@
             padding-left: $margin-gap;
         }
     }
-}
-
-@mixin feature--item--title-params($text-color, $font-size) {
-    color: $text-color;
-    font-size: $font-size;
-}
-
-@mixin feature--item--desc-params($font-size) {
-    font-size: $font-size
 }

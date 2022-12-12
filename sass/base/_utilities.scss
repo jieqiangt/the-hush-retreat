@@ -83,7 +83,7 @@
 }
 
 .feature {
-  @include feature-params($margin-flex-lg);
+  @include feature-params($margin-flex-lg, $col-accent-primary, $font-size-header-sm, $font-size-text-md);
 
   &--list {
     display: flex;
@@ -94,12 +94,10 @@
     width: 100%;
 
     &--title {
-      @include feature--item--title-params($col-accent-primary, $font-size-header-sm);
       font-weight: $font-weight-lg;
     }
 
     &--desc {
-      @include feature--item--desc-params($font-size-text-md);
       text-align: left;
     }
 
