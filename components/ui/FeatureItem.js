@@ -4,11 +4,12 @@ export default function FeatureItem(props) {
   const scaleFactor = 12.5;
 
   return (
-    <li className="feature--item--outer">
+    <li key={props.title} className="feature--item--outer">
       <div className="feature--item">
         <Image
           className="feature--item--img"
           src={props.imgSrc}
+          alt={props.title}
           width={6000 / scaleFactor}
           height={4000 / scaleFactor}
         />
@@ -18,3 +19,5 @@ export default function FeatureItem(props) {
     </li>
   );
 }
+
+;

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Fragment } from "react";
 
 export default function ImgComposition(props) {
   const scaleFactor = 3.5;

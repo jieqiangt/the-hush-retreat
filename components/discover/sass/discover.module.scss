@@ -15,8 +15,7 @@
     text-align: left;
     display: block;
     font-size: $font-size-text-md;
-    margin-left: 24rem;
-    margin-top: $margin-flex-lg;
+    margin: $margin-flex-lg 0 0 2.4rem;
     line-height: 1.8;
   }
 
@@ -83,7 +82,7 @@
     align-items: center;
     gap: $margin-flex-lg;
 
-    &--outer + &--outer {
+    &--outer+&--outer {
       padding-left: $margin-flex-lg;
       border-left: solid $size-underline-link $col-accent-primary;
     }
@@ -95,7 +94,7 @@
       padding: 0.6rem 1.8rem;
       transition: all 0.2s ease-in;
 
-      &:hover{
+      &:hover {
         background-color: rgba($col-accent-primary, 0.6);
         color: $col-main-shade-2;
         font-weight: $font-weight-md;
@@ -108,21 +107,23 @@
   display: flex;
   width: 100%;
   height: 85vh;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.4)
-    ),
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)),
     url("../../../public/sand-1-lg.jpg");
   background-size: cover;
   background-position: top;
   position: relative;
+
+  &--box {
+    display: flex;
+    margin: 26rem 10rem;
+  }
 
   &--desc {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 15rem 10rem;
     padding: 0rem $margin-flex-lg;
     background-color: rgba($col-main-primary, 0.75);
 
@@ -141,10 +142,6 @@
   &--img {
     width: 50%;
     height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
   }
 }
-
-
