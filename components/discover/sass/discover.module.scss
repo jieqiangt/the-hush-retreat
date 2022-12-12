@@ -57,7 +57,7 @@
     display: block;
     width: 95vw;
     background-color: transparent;
-    border-bottom: solid 0.05rem $col-accent-primary;
+    border-bottom: $thin-accent-border;
     margin: $margin-flex-lg;
   }
 }
