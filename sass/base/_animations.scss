@@ -1,6 +1,6 @@
 @import "../abstracts/variables";
 
-%ani-link-after {
+@mixin ani-link-after {
   content: "";
   position: absolute;
   width: 100%;
@@ -13,7 +13,7 @@
   cursor: pointer;
 }
 
-%ani-link-hover-after {
+@mixin ani-link-hover-after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }

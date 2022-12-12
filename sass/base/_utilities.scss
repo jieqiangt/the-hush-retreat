@@ -1,22 +1,6 @@
 @import "../abstracts/variables";
 @import "../abstracts/mixins";
 
-%link-hover {
-  color: $col-main-shade-2;
-  font-weight: $font-weight-lg;
-}
-
-%link-active {
-  transform: scaleY(1.02);
-}
-
-%link-btn-lg {
-  padding: $padding-btn-lg $padding-btn-lg * 2;
-  border-radius: $border-radius-btn-lg;
-  font-size: $font-size-header-md;
-  font-weight: $font-weight-lg;
-}
-
 .header {
 
   background-size: cover;

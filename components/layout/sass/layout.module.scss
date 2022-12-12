@@ -33,20 +33,21 @@
     font-size: $font-size-header-sm;
 
     &::after {
-      @extend %ani-link-after;
+      @include ani-link-after;
     }
 
     &:hover::after {
-      @extend %ani-link-hover-after;
+      @include ani-link-hover-after;
     }
 
     &:hover {
-      @extend %link-hover;
+      color: $col-main-shade-2;
+      font-weight: $font-weight-lg;
       transform-origin: bottom left;
     }
 
     &:active {
-      @extend %link-active;
+      transform: scaleY(1.02);
     }
   }
 }
