@@ -45,3 +45,6 @@
     }
 }
 
+@mixin footer-params($bg-color) {
+    background-color: $bg-color;
+}

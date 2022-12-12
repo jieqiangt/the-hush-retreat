@@ -34,11 +34,11 @@ export default function OurFounder() {
             </p>
           </article>
         </div>
-        <div className={`${classes["founder--img"]}`}>
+        <div className={classes["founder--img"]}>
           <ImgComposition />
         </div>
       </div>
-      <Footer className="footer--bg-img" />
+      <Footer className={classes["founder--footer"]} />
     </section>
   );
 }

@@ -130,4 +130,9 @@
     height: auto;
     position: relative;
   }
+
+  &--footer {
+    @include footer-params(rgba($col-main-primary, 0.7));
+  }
+
 }
