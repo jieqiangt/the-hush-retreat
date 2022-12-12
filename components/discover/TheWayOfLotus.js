@@ -1,4 +1,4 @@
-import classes from "./sass/discover.module.scss";
+import classes from "../../sass/pages/discover.module.scss";
 
 export default function TheWayOfLotus() {
   return (

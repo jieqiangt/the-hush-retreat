@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Footer from "../layout/Footer";
 import ImgComposition from "../ui/ImgComposition";
-import classes from "./sass/discover.module.scss";
+import classes from "../../sass/pages/discover.module.scss";
 
 export default function OurFounder() {
   return (

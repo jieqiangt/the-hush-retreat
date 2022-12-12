@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import classes from "./sass/discover.module.scss";
+import classes from "../../sass/pages/discover.module.scss";
 
 export default function GuidingPrinciple() {
   return (
@@ -11,7 +11,7 @@ export default function GuidingPrinciple() {
           Living life with unwavering faith and joy, <br />
           as the <span className={classes["principle--lotus--em"]}>
             lotus
-          </span>{" "}
+          </span>
           does, <br />
           to ensure the most beautiful revival
         </article>

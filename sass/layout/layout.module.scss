@@ -1,8 +1,6 @@
-@import "../../../sass/abstracts/variables";
-@import "../../../sass/abstracts/mixins";
-
-@import "../../../sass/base/animations";
-@import "../../../sass/base/utilities";
+@import "../abstracts/variables";
+@import "../base/animations";
+@import "../base/utilities";
 
 .nav {
   width: 100vw;
