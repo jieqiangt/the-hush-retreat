@@ -6,7 +6,6 @@
 }
 
 .header {
-
   background-size: cover;
   @include header-params((linear-gradient(180deg, rgba(white, 0.3), rgba(white, 0.1)),
       url("../../public/meditation-1-lg.jpg")), (bottom right));
