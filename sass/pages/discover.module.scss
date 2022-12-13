@@ -5,7 +5,7 @@
 
 .header--discover {
   @include header-params((linear-gradient(180deg, rgba(white, 0.3), rgba(white, 0.1)),
-      url("../../public/meditation-1-lg.jpg")), (bottom right));
+      url("../../public/meditation-1-lg.jpg")), (top left 10%));
 }
 
 .principle {
@@ -20,6 +20,7 @@
     display: block;
     font-size: $font-size-text-md;
     margin: $margin-flex-lg 0 0 $margin-flex-lg;
+    padding-left: $margin-flex-lg * 2;
     line-height: $font-line-height-lg;
   }
 

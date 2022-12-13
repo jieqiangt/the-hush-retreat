@@ -33,4 +33,3 @@ export default function TheWayOfLotus() {
   );
 }
 
-// Born to curate restful spaces for the Seeker,
