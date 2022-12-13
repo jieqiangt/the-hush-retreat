@@ -1,8 +1,14 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import classes from "../../sass/pages/home.module.scss";
 import Carousel from "../ui/Carousel";
 import TestimonialItem from "../ui/TestimonialItem";
 
 export default function Testimonials() {
+
+  const [activeItem, setActiveItem] = useState(0)
+  const [testimonialItems, setTestimonialItems] = useState([])
+
   const testimonials = [
     {
       quote:
@@ -29,16 +35,36 @@ export default function Testimonials() {
     },
   ];
 
-  const testimonialItems = testimonials.map((item) => (
-    <TestimonialItem
-      key={item.quote}
-      quote={item.quote}
-      participantName={item.participantName}
-      href={item.href}
-      retreatName={item.retreatName}
-      retreatDate={item.retreatDate}
-    />
-  ));
+  
+  useEffect(() => {
+
+    const createTestimonialItem = (item) => (
+      <TestimonialItem
+        key={item.quote}
+        quote={item.quote}
+        participantName={item.participantName}
+        href={item.href}
+        retreatName={item.retreatName}
+        retreatDate={item.retreatDate}
+      />
+    )
+
+    const firstTestimonial = [testimonials[0]].map((item) => (
+      <TestimonialItem
+        key={item.quote}
+        quote={item.quote}
+        participantName={item.participantName}
+        href={item.href}
+        retreatName={item.retreatName}
+        retreatDate={item.retreatDate}
+        activeItem
+      />))
+
+    const otherTestimonials = testimonials.slice(1).map(createTestimonialItem)
+    const allTestimonials = [...firstTestimonial, ...otherTestimonials]
+    setTestimonialItems(allTestimonials)
+  }, [])
+
 
   return (
     <section className={classes["testimonials"]}>

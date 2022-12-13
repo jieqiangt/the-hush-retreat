@@ -3,7 +3,7 @@ import LinkButton from "./LinkButton";
 
 export default function TestimonialItem(props) {
   return (
-    <div className={classes["testimonials--item"]}>
+    <div className={`carousel--item ${classes["testimonials--item"]}`}>
       <blockquote className={classes["testimonials--item--quote"]}>
         {props.quote}
       </blockquote>
