@@ -7,16 +7,19 @@ export default function Hero() {
     <Fragment>
       <section className={classes["hero"]}>
         <div className={classes["hero--box"]}>
-          <h1 className={classes["hero--title"]}>Modern Wellness Lifestyle</h1>
+          <h2 className={classes["hero--title"]}>Modern Wellness Lifestyle</h2>
           <article className={classes["hero--article"]}>
-            Luxurious tranquil retreats.<br />
-            Embrace mindfulness. <br />
-            Transformative experience.
+            Luxurious tranquil retreats,
+            <br />
+            embrace mindfullness,
+            <br />
+            for your inner soul
           </article>
-          <LinkButton href="/new">Start Healing Now</LinkButton>
+          <LinkButton href="/new" btnClass={classes["hero--btn"]}>
+            Start Healing Now
+          </LinkButton>
         </div>
       </section>
-
     </Fragment>
   );
 }

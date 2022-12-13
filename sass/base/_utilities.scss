@@ -34,7 +34,6 @@
 }
 
 .link-btn {
-  flex: 0 1 fit-content;
   padding: 0.6rem 1.8rem;
   transition: all 0.2s ease-in;
   @include link-btn-params(rgba($col-accent-primary, 0.6), $col-main-shade-2);

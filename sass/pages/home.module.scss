@@ -2,25 +2,85 @@
 @import "../base/animations";
 @import "../base/utilities";
 
+.header--home {
+  @include header-params(
+    (
+      linear-gradient(
+        180deg,
+        rgba($col-black-primary, 0.2),
+        rgba($col-black-primary, 0.4)
+      ),
+      url("../../public/mountain-1-lg.jpg")
+    ),
+    (bottom 30% left 0%)
+  );
+}
+
 .hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
 
-    position: relative;
-    width: 100%;
-    height: 100vh;
+  &--box {
+    display: block;
+    position: absolute;
+    top: 45rem;
+    left: 110rem;
+    text-align: left;
+    color: $col-accent-tint-2;
+    padding: $margin-flex-lg;
+    // background-color: rgba($col-main-primary,0.2);
+  }
 
-    &--box {
+  &--title {
+    display: block;
+    margin-bottom: $margin-flex-lg * 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: $font-size-text-md;
+    font-weight: $font-weight-md;
+  }
+
+  &--article {
+    display: block;
+    font-size: $font-size-header-lg;
+    margin-bottom: $margin-flex-lg * 3;
+  }
+
+  &--btn {
+    font-size: $font-size-text-md;
+  }
+}
+
+.testimonials {
+  width: 100%;
+  height: 50vh;
+  background-color: $col-main-primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $margin-flex-lg 30rem;
+
+  &--item {
+    font-size: $font-size-text-lg;
+    border-left: $thin-accent-border;
+    border-right: $thin-accent-border;
+    margin-top: $margin-flex-lg;
+    padding: $margin-flex-lg $margin-flex-lg * 3;
+
+    &--quote {
         display: block;
-        position: absolute;
-        bottom: 10rem;
-        left: 15rem;
-        background-color: red;
+        margin-bottom: $margin-flex-lg;
     }
 
-    &--title {
-        
+    &--name {
+        display: block;
+        margin-bottom: 0.4rem;
     }
 
-    &--article {
-        // display:block;
+    &--retreat {
+      display: inline-block;
+      padding: 0 1.2rem 0 0;
     }
+  }
 }
