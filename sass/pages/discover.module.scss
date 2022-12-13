@@ -107,15 +107,15 @@
 
   &--box {
     display: flex;
-    margin: 26rem 10rem;
+    margin: 15rem 10rem;
   }
 
   &--desc {
     width: 100%;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     flex-direction: column;
-    padding: 0rem $margin-flex-lg*2;
+    padding: $margin-flex-lg*3 $margin-flex-lg*2;
     background-color: rgba($col-main-primary, 0.75);
 
     &--article {
@@ -124,8 +124,7 @@
       color: $col-gray-primary;
       font-size: $font-size-text-md;
       line-height: $font-line-height-lg;
-      margin-left: $margin-flex-lg;
-      margin-top: $margin-flex-lg;
+      margin: $margin-flex-lg 0rem 0rem $margin-flex-lg;
       gap: $margin-flex-lg;
     }
   }
