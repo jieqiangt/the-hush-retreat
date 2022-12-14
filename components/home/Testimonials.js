@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useState } from "react";
 import classes from "../../sass/pages/home.module.scss";
 import Carousel from "../ui/Carousel";
@@ -8,6 +8,7 @@ export default function Testimonials() {
 
   const [activeItem, setActiveItem] = useState(0)
   const [testimonialItems, setTestimonialItems] = useState([])
+  const [intervalId, setIntervalId] = useState()
 
   let testimonialsArr = [
     {
@@ -38,8 +39,24 @@ export default function Testimonials() {
     },
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveItem((activeItem) => {
+        return (activeItem + 1) % testimonialsArr.length
+      })
+      setIntervalId(() => interval)
+    }, 8000);
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [intervalId]
+  )
+
   const changeActiveItem = (newActiveItem) => {
-    setActiveItem(() => newActiveItem)
+    clearInterval(intervalId)
+    setIntervalId(() => 0)
+    setActiveItem(newActiveItem)
   }
 
   useEffect(() => {
@@ -55,14 +72,14 @@ export default function Testimonials() {
         active={item.active}
       />
     )
-  
+
     const setActiveTestimonial = (testimonials, idx) => {
-  
+
       const testimonialsOutput = testimonials.map((item) => ({ ...item, active: false }))
       const activeTestimonial = testimonials[idx]
       activeTestimonial['active'] = true
       testimonialsOutput.splice(idx, 1, activeTestimonial);
-  
+
       return testimonialsOutput
     }
 
@@ -71,13 +88,11 @@ export default function Testimonials() {
   }, [activeItem])
 
 
-
-
   return (
     <section className={classes["testimonials"]}>
       <div>Small Lotus Logo</div>
       <h2 className={classes["section--title"]}>Retreat Reflections</h2>
-      <Carousel carouselItems={testimonialItems} activeItem={activeItem} changeActiveItem={changeActiveItem}/>
+      <Carousel carouselItems={testimonialItems} activeItem={activeItem} changeActiveItem={changeActiveItem} />
     </section>
   );
 }

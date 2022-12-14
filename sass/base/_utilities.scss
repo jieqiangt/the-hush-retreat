@@ -38,8 +38,6 @@
   }
 }
 
-
-
 @mixin section-title-params($header-color) {
   color: $header-color;
   border-bottom: solid $size-underline-link $header-color;
@@ -176,7 +174,7 @@
 
   width: 100%;
   height: 100%;
-  @include carousel-params((8rem 35rem));
+  @include carousel-params((2.4rem 35rem 12rem 35rem));
 
 
   &--list {
@@ -209,6 +207,9 @@
     @include btn--default;
     border: none;
 
+    &+ svg {
+      pointer-events: none;
+    }
     &--right {
       padding: 0.5rem;
       top: 50%;

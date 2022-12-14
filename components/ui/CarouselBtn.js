@@ -4,5 +4,5 @@ export default function CarouselBtn(props) {
     ? `carousel--btn ${props.carouselBtnClass}`
     : "carousel--btn";
 
-  return <button className={`${carouselBtnClass}`} onClick={props.onClick}>{props.children}</button>;
+  return <button className={`${carouselBtnClass}`} onClick={props.onClick} slide-direction={props['slide-direction']}>{props.children}</button>;
 }
