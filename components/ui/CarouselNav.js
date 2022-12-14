@@ -5,7 +5,7 @@ import CarouselDot from "./CarouselDot";
 
 export default function CarouselNav(props) {
 
-  const { numItems } = props;
+  const { numItems, activeItem } = props;
   const [carouselDots, setCarouselDots] = useState([]);
 
   const carouselNavClass = props.carouselNavClass
@@ -16,24 +16,35 @@ export default function CarouselNav(props) {
     ? `carousel--dot ${props.carouselDotClass}`
     : "carousel--dot";
 
-  const createCarouselDots = (numItems) => {
+  const changeActiveItemHandler = (event) => {
 
-    const collectorArr = [];
-    for (let i = 0; i < numItems; i++) {
-      let tempDot;
-      tempDot = <CarouselDot key={i} carouselBtnClass={carouselDotClass}>&nbsp;</CarouselDot>
-      if (i === props.activeItem) {
-        tempDot = <CarouselDot key={i} carouselBtnClass={carouselDotClass} active={true}>&nbsp;</CarouselDot>
-      }
-      collectorArr.push(tempDot)
-    }
-    return collectorArr;
+    event.preventDefault()
+    const newActiveItem = parseInt(event.target.getAttribute('dot-id'))
+    props.changeActiveItem(newActiveItem)
   }
 
+
   useEffect(() => {
-    const createdDots = createCarouselDots(numItems)
+
+    const createCarouselDots = (numItems) => {
+
+      const collectorArr = [];
+      for (let i = 0; i < numItems; i++) {
+        let tempDot;
+        tempDot = <CarouselDot key={i} dotId={i} carouselBtnClass={carouselDotClass} onClick={changeActiveItemHandler}>&nbsp;</CarouselDot>
+        if (i === activeItem) {
+          tempDot = <CarouselDot key={i} dotId={i} carouselBtnClass={carouselDotClass} onClick={changeActiveItemHandler} active={true}>&nbsp;</CarouselDot>
+        }
+        collectorArr.push(tempDot)
+      }
+      return collectorArr;
+    }
+
+    const createdDots = createCarouselDots(numItems, activeItem)
     setCarouselDots(createdDots)
-  }, [numItems])
+
+  }, [numItems, activeItem])
+
 
   return (
     <div className={carouselNavClass}>

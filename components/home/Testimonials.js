@@ -6,7 +6,7 @@ import TestimonialItem from "../ui/TestimonialItem";
 
 export default function Testimonials() {
 
-  const [activeItem, setActiveItem] = useState(1)
+  const [activeItem, setActiveItem] = useState(0)
   const [testimonialItems, setTestimonialItems] = useState([])
 
   let testimonialsArr = [
@@ -38,6 +38,10 @@ export default function Testimonials() {
     },
   ];
 
+  const changeActiveItem = (newActiveItem) => {
+    setActiveItem(() => newActiveItem)
+  }
+
   useEffect(() => {
 
     const createTestimonialItem = (item) => (
@@ -68,11 +72,12 @@ export default function Testimonials() {
 
 
 
+
   return (
     <section className={classes["testimonials"]}>
       <div>Small Lotus Logo</div>
       <h2 className={classes["section--title"]}>Retreat Reflections</h2>
-      <Carousel carouselItems={testimonialItems} activeItem={activeItem}/>
+      <Carousel carouselItems={testimonialItems} activeItem={activeItem} changeActiveItem={changeActiveItem}/>
     </section>
   );
 }

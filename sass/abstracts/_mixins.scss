@@ -26,10 +26,10 @@
     color: $col-accent-shade-1;
     border: $thin-accent-border;
     cursor: pointer;
-    transition: $ani-default;
+    transition: background-color $ani-time-link ease-out color $ani-time-link ease-out;
 
     &:hover {
         background-color: rgba($col-accent-primary, 0.6);
         color: $col-main-shade-2;
-      }
+    }
 }

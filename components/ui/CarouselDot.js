@@ -6,6 +6,6 @@ export default function CarouselDot(props) {
   
     const activeDotClass = props.active ? "carousel--dot--active" : "";
     
-    return <button className={`${carouselDotClass} ${activeDotClass}`}>{props.children}</button>;
+    return <button dot-id={props.dotId} className={`${carouselDotClass} ${activeDotClass}`} onClick={props.onClick}>{props.children}</button>;
   }
   
