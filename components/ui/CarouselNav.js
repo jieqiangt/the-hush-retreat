@@ -19,19 +19,14 @@ export default function CarouselNav(props) {
   const createCarouselDots = (numItems) => {
 
     const collectorArr = [];
-
     for (let i = 0; i < numItems; i++) {
       let tempDot;
-
       tempDot = <CarouselBtn key={i} carouselBtnClass={carouselDotClass}>&nbsp;</CarouselBtn>
-
       if (i === 0) {
-        tempDot = <CarouselBtn key={i} carouselBtnClass={carouselDotClass} activeItem>&nbsp;</CarouselBtn>
+        tempDot = <CarouselBtn key={i} carouselBtnClass={carouselDotClass} active={true}>&nbsp;</CarouselBtn>
       }
-      
       collectorArr.push(tempDot)
     }
-
     return collectorArr;
   }
 

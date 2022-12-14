@@ -17,6 +17,7 @@ export default function Testimonials() {
       href: "#",
       retreatName: "Sound of Healing",
       retreatDate: "Oct 2021",
+      active: true,
     },
     {
       quote:
@@ -25,6 +26,7 @@ export default function Testimonials() {
       href: "#",
       retreatName: "Sound of Healing",
       retreatDate: "Jan 2022",
+      active: false,
     },
     {
       quote: "It is definitely a 'must-go' at least once in a lifetime",
@@ -32,10 +34,11 @@ export default function Testimonials() {
       href: "#",
       retreatName: "Sound of Healing",
       retreatDate: "Nov 2022",
+      active: false,
     },
   ];
 
-  
+
   useEffect(() => {
 
     const createTestimonialItem = (item) => (
@@ -46,23 +49,12 @@ export default function Testimonials() {
         href={item.href}
         retreatName={item.retreatName}
         retreatDate={item.retreatDate}
+        active={item.active}
       />
     )
+    
+    setTestimonialItems(testimonials.map(createTestimonialItem))
 
-    const firstTestimonial = [testimonials[0]].map((item) => (
-      <TestimonialItem
-        key={item.quote}
-        quote={item.quote}
-        participantName={item.participantName}
-        href={item.href}
-        retreatName={item.retreatName}
-        retreatDate={item.retreatDate}
-        activeItem
-      />))
-
-    const otherTestimonials = testimonials.slice(1).map(createTestimonialItem)
-    const allTestimonials = [...firstTestimonial, ...otherTestimonials]
-    setTestimonialItems(allTestimonials)
   }, [])
 
 
