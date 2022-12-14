@@ -50,9 +50,13 @@ $border-radius-btn-lg: 6px;
 
 //Animation variables
 $ani-time-link: 0.2s;
+$ani-default: all $ani-time-link ease-out;
+
+
 
 $z-index-top: 100;
 
 
 //Borders
 $thin-accent-border: solid $size-underline-link $col-accent-primary;
+

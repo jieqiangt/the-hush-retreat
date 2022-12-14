@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import CarouselBtn from "./CarouselBtn";
+import CarouselDot from "./CarouselDot";
 
 
 export default function CarouselNav(props) {
@@ -21,9 +21,9 @@ export default function CarouselNav(props) {
     const collectorArr = [];
     for (let i = 0; i < numItems; i++) {
       let tempDot;
-      tempDot = <CarouselBtn key={i} carouselBtnClass={carouselDotClass}>&nbsp;</CarouselBtn>
-      if (i === 0) {
-        tempDot = <CarouselBtn key={i} carouselBtnClass={carouselDotClass} active={true}>&nbsp;</CarouselBtn>
+      tempDot = <CarouselDot key={i} carouselBtnClass={carouselDotClass}>&nbsp;</CarouselDot>
+      if (i === props.activeItem) {
+        tempDot = <CarouselDot key={i} carouselBtnClass={carouselDotClass} active={true}>&nbsp;</CarouselDot>
       }
       collectorArr.push(tempDot)
     }

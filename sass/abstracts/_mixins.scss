@@ -1,1 +1,35 @@
 @import "./variables";
+
+
+@mixin make-invisible {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+
+@mixin make-visible {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+
+@mixin btn--circle {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+}
+
+@mixin btn--default {
+    display: inline-block;
+    background-color: transparent;
+    color: $col-accent-shade-1;
+    border: $thin-accent-border;
+    cursor: pointer;
+    transition: $ani-default;
+
+    &:hover {
+        background-color: rgba($col-accent-primary, 0.6);
+        color: $col-main-shade-2;
+      }
+}

@@ -6,15 +6,15 @@ import TestimonialItem from "../ui/TestimonialItem";
 
 export default function Testimonials() {
 
-  const [activeItem, setActiveItem] = useState(0)
+  const [activeItem, setActiveItem] = useState(1)
   const [testimonialItems, setTestimonialItems] = useState([])
 
-  const testimonials = [
+  let testimonialsArr = [
     {
       quote:
         "I very much enjoyed the Sunrise Yoga & Meditation session and learnt valuable techniques on how to look inward, reflect and bring forward positive energy.",
       participantName: "Alex B.",
-      href: "#",
+      href: "/",
       retreatName: "Sound of Healing",
       retreatDate: "Oct 2021",
       active: true,
@@ -23,7 +23,7 @@ export default function Testimonials() {
       quote:
         "It was luxurious, personalised and intimate. I learnt so many ways I can practice mindfulness and meditation. It was an experience that truly grounded me.",
       participantName: "Louisa Y.",
-      href: "#",
+      href: "/",
       retreatName: "Sound of Healing",
       retreatDate: "Jan 2022",
       active: false,
@@ -31,13 +31,12 @@ export default function Testimonials() {
     {
       quote: "It is definitely a 'must-go' at least once in a lifetime",
       participantName: "Eugene Y.",
-      href: "#",
+      href: "/",
       retreatName: "Sound of Healing",
       retreatDate: "Nov 2022",
       active: false,
     },
   ];
-
 
   useEffect(() => {
 
@@ -52,17 +51,28 @@ export default function Testimonials() {
         active={item.active}
       />
     )
-    
-    setTestimonialItems(testimonials.map(createTestimonialItem))
+  
+    const setActiveTestimonial = (testimonials, idx) => {
+  
+      const testimonialsOutput = testimonials.map((item) => ({ ...item, active: false }))
+      const activeTestimonial = testimonials[idx]
+      activeTestimonial['active'] = true
+      testimonialsOutput.splice(idx, 1, activeTestimonial);
+  
+      return testimonialsOutput
+    }
 
-  }, [])
+    const testimonials = setActiveTestimonial(testimonialsArr, activeItem)
+    setTestimonialItems(testimonials.map(createTestimonialItem))
+  }, [activeItem])
+
 
 
   return (
     <section className={classes["testimonials"]}>
       <div>Small Lotus Logo</div>
       <h2 className={classes["section--title"]}>Retreat Reflections</h2>
-      <Carousel carouselItems={testimonialItems} />
+      <Carousel carouselItems={testimonialItems} activeItem={activeItem}/>
     </section>
   );
 }

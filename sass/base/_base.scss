@@ -23,6 +23,7 @@ body {
   overflow-x: hidden;
 }
 
+button,
 a:link,
 a:visited {
   margin: 0;
@@ -30,6 +31,7 @@ a:visited {
   box-sizing: inherit;
   background-color: none;
   text-decoration: none;
+  border: none;
 }
 
 ul {

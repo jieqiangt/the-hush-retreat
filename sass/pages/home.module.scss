@@ -2,6 +2,7 @@
 @import "../base/animations";
 @import "../base/utilities";
 
+
 .header--home {
   @include header-params(
     (
@@ -54,33 +55,32 @@
 
 .testimonials {
   width: 100%;
-  height: 50vh;
+  height: 45vh;
   background-color: $col-main-primary;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: $margin-flex-lg 30rem;
 
   &--item {
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
     font-size: $font-size-text-lg;
-    border-left: $thin-accent-border;
-    border-right: $thin-accent-border;
-    margin-top: $margin-flex-lg;
     padding: $margin-flex-lg $margin-flex-lg * 3;
 
     &--quote {
-        display: block;
         margin-bottom: $margin-flex-lg;
+        color: $col-gray-shade-1;
     }
 
     &--name {
-        display: block;
         margin-bottom: 0.4rem;
+        color: $col-gray-shade-1;
     }
 
     &--retreat {
-      display: inline-block;
-      padding: 0 1.2rem 0 0;
+      color: $col-accent-tint-2;
     }
+
   }
 }
