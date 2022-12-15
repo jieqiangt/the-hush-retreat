@@ -17,24 +17,17 @@
     margin-bottom: $margin-flex-lg;
     color: $col-accent-primary;
   }
-  
 }
 
-@mixin link-btn-params($text-color, $border) {
-  & a {
-    color: $text-color;
-    border-top: $border;
-    border-bottom: $border;
-  }
-}
-
-.link-btn {
+@mixin link-btn($text-color, $border) {
   & a {
     @include btn--default($border-accent-thin);
-    @include link-btn-params(inherit, $border-accent-thin);
     border-left: none;
     border-right: none;
     padding: 0.6rem;
+    color: $text-color;
+    border-top: $border;
+    border-bottom: $border;
 
     &:hover {
       font-weight: $font-weight-md;
@@ -64,7 +57,6 @@
     height: auto;
     transition: $ani-default;
     outline-offset: 0.3rem;
-
 
     &-1 {
       top: 0rem + $pos-top-offset;
@@ -308,7 +300,7 @@
 
     &--btn {
       font-size: $font-size-text-lg;
-      @include link-btn-params($col-accent-primary, $border-accent-thin);
+      @include link-btn($col-accent-primary, $border-accent-thin);
     }
   }
 }

@@ -11,6 +11,8 @@
     ),
     (top left 10%)
   );
+
+
 }
 
 .principle {
@@ -164,7 +166,7 @@
 
     &--btn {
       display: inline-block;
-      @include link-btn-params($col-accent-tint-1, $border-accent-thin);
+      @include link-btn($col-accent-tint-1, $border-accent-thin);
       width: 35rem;
     }
   }

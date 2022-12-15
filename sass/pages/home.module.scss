@@ -31,7 +31,7 @@
   }
 
   &--btn {
-    @include link-btn-params($col-accent-tint-1, $border-accent-thin);
+    @include link-btn($col-accent-tint-1, $border-accent-thin);
   }
 
   &--title {
@@ -104,8 +104,8 @@
       color: $col-accent-shade-1;
     }
 
-    &--retreat {
-      @include link-btn-params($col-accent-primary, $border-accent-thin);
+    &--retreat { 
+      @include link-btn($col-accent-primary, $border-accent-thin);
     }
   }
 }
