@@ -24,7 +24,7 @@ export default function OurApproach() {
   return (
     <section className={classes["approach"]}>
       <h2
-        className={`${classes["section--title"]} ${classes["approach--title"]}`}
+        className={classes["approach--title"]}
       >
         Our Approach
       </h2>

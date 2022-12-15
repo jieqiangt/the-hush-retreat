@@ -22,6 +22,10 @@
   flex-direction: column;
   align-items: center;
 
+  &--title {
+    @include section--title($col-accent-primary);
+  }
+
   &--article {
     text-align: left;
     display: block;
@@ -48,6 +52,10 @@
   justify-content: center;
   text-align: center;
   background-color: $col-main-shade-2;
+
+  &--title {
+    @include section--title($col-accent-primary);
+  }
 
   &--logo-top {
     margin-top: $margin-flex-lg * 3;
@@ -92,6 +100,10 @@
   background-position: top;
   position: relative;
 
+  &--title {
+    @include section--title($col-accent-primary);
+  }
+
   &--box {
     display: flex;
     margin: 6rem 10rem;
@@ -133,6 +145,7 @@
   height: 100vh;
 
   &--title {
+    @include section--title($col-accent-primary);
     display: inline-block;
     margin: $margin-flex-lg * 3 0rem $margin-flex-lg * 2 0rem;
   }

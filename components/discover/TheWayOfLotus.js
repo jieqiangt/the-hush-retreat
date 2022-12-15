@@ -4,7 +4,7 @@ export default function TheWayOfLotus() {
   return (
     <section className={classes["lotus"]}>
       <div className={classes["lotus--logo-top"]}>Small Lotus Logo</div>
-      <h2 className={`${classes["section--title"]}`}>
+      <h2 className={`${classes["lotus--title"]}`}>
         The Way of the <span>Lotus</span>
       </h2>
       <article className={classes["lotus--article"]}>

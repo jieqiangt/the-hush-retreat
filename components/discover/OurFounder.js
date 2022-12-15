@@ -6,7 +6,7 @@ export default function OurFounder() {
     <section className={classes["founder"]}>
       <div className={classes["founder--box"]}>
         <div className={classes["founder--desc"]}>
-          <h2 className={classes["section--title"]}>Our Founder</h2>
+          <h2 className={classes["founder--title"]}>Our Founder</h2>
           <article className={classes["founder--desc--article"]}>
             <p>
               As a yoga teacher, Mandi believes in the importance of wellness and

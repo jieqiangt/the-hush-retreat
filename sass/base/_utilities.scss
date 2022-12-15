@@ -35,15 +35,11 @@
   }
 }
 
-@mixin section-title-params($header-color) {
-  color: $header-color;
-  border-bottom: solid $size-underline-link $header-color;
-}
-
-.section--title {
+@mixin section--title($header-color) {
   display: inline-block;
   font-size: $font-size-header-md;
-  @include section-title-params($col-accent-primary);
+  color: $header-color;
+  border-bottom: solid $size-underline-link $header-color;
 }
 
 .composition {
