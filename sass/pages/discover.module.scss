@@ -3,7 +3,8 @@
 @import "../base/utilities";
 
 .header--discover {
-  @include header-params(
+
+  @include header(
     (
       linear-gradient(180deg, rgba(white, 0.1), rgba(white, 0.1)),
       url("../../public/meditation-1-lg.jpg")

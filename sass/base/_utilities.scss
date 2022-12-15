@@ -1,20 +1,10 @@
 @import "../abstracts/variables";
 @import "../abstracts/mixins";
 
-@mixin header-params($bg-image, $bg-position) {
+@mixin header($bg-image, $bg-position) {
+  background-size: cover;
   background-image: $bg-image;
   background-position: $bg-position;
-}
-
-.header {
-  background-size: cover;
-  @include header-params(
-    (
-      linear-gradient(180deg, rgba(white, 0.3), rgba(white, 0.1)),
-      url("../../public/meditation-1-lg.jpg")
-    ),
-    (bottom right)
-  );
   text-align: center;
   width: 100%;
   height: 100vh;

@@ -3,7 +3,7 @@
 @import "../base/utilities";
 
 .header--home {
-  @include header-params(
+  @include header(
     (
       linear-gradient(
         180deg,
@@ -120,7 +120,7 @@
     position: relative;
 
     &--box {
-      position: absolute; 
+      position: absolute;
       bottom: 15rem;
       right: 15rem;
       display: flex;
@@ -135,7 +135,6 @@
       letter-spacing: 0.05rem;
       font-weight: $font-weight-xs;
       color: $col-accent-primary;
-
     }
 
     &--input {
