@@ -4,7 +4,6 @@ import classes from "../../sass/pages/discover.module.scss";
 export default function GuidingPrinciple() {
   return (
     <Fragment>
-      <h1 className={classes["header--title"]}>Our Story</h1>
       <section className={classes["principle"]}>
         <h2 className={classes["section--title"]}>Our Guiding Principle</h2>
         <article className={classes["principle--article"]}>

@@ -20,7 +20,8 @@ export default function Home() {
       </Head>
       <Layout
         firstSection={Hero}
-        headerClass={classes["header--home"]}
+        headerClass={classes["home--header"]}
+        headerTitleClass={(classes["home--header--title"])}
       ></Layout>
       <CorporateCustomers />
       <Bespoke />

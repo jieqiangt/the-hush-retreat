@@ -17,7 +17,9 @@ export default function DiscoverPage() {
       </Head>
       <Layout
         firstSection={GuidingPrinciple}
-        headerClass={classes["header--discover"]}
+        headerClass={(classes["discover--header"])}
+        headerTitleClass={(classes["discover--header--title"])}
+        headerTitle = "Our Story"
       >
         <TheWayOfLotus />
         <OurFounder />
