@@ -10,12 +10,14 @@ $col-accent-tint-1: #dac596;
 $col-accent-primary: #d6bf8a;
 $col-accent-shade-1: #c1ac7c;
 
-$col-gray-tint-1: #ebdce5;
-$col-gray-primary: #e9d8e2;
-$col-gray-shade-1: #e6d4df;
-$col-gray-shade-2: #ccbdc6;
+$col-gray-tint-1: #e2b797;
+$col-gray-primary: #dfaf8b;
+$col-gray-shade-1: #c99e7d;
+$col-gray-shade-2: #b28c6f;
 
-$col-white-primary: #f8f9fa;
+$col-gray-primary: #d3b7a1;
+
+$col-white-primary: #fcfaf6;
 $col-black-primary: #212529;
 
 //Font Sizes
@@ -44,6 +46,12 @@ $padding-btn-lg: 0.6rem;
 //Margin sizes
 $margin-flex-lg: 2.4rem;
 
+
+// Positioning
+$pos-right-home: 38rem;
+$pos-top-offset: -2rem;
+$pos-left-offset: 10rem;
+
 // Other sizes
 $size-underline-link: 0.05rem;
 $border-radius-btn-lg: 6px;
@@ -58,5 +66,5 @@ $z-index-top: 100;
 
 
 //Borders
-$thin-accent-border: solid $size-underline-link $col-accent-primary;
+$border-accent-thin: solid $size-underline-link $col-accent-primary;
 

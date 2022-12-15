@@ -91,7 +91,6 @@ export default function Testimonials() {
   return (
     <section className={classes["testimonials"]}>
       <div>Small Lotus Logo</div>
-      <h2 className={classes["section--title"]}>Retreat Reflections</h2>
       <Carousel carouselItems={testimonialItems} activeItem={activeItem} changeActiveItem={changeActiveItem} />
     </section>
   );

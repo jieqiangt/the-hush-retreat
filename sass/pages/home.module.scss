@@ -2,14 +2,13 @@
 @import "../base/animations";
 @import "../base/utilities";
 
-
 .header--home {
   @include header-params(
     (
       linear-gradient(
         180deg,
         rgba($col-black-primary, 0.2),
-        rgba($col-black-primary, 0.4)
+        rgba($col-black-primary, 0.5)
       ),
       url("../../public/mountain-1-lg.jpg")
     ),
@@ -25,12 +24,14 @@
   &--box {
     display: block;
     position: absolute;
-    top: 45rem;
-    left: 110rem;
+    top: 28rem;
+    right: $pos-right-home;
     text-align: left;
-    color: $col-accent-tint-2;
-    padding: $margin-flex-lg;
-    // background-color: rgba($col-main-primary,0.2);
+    color: $col-accent-tint-1;
+  }
+
+  &--btn {
+    @include link-btn-params($col-accent-tint-1, $border-accent-thin);
   }
 
   &--title {
@@ -45,6 +46,7 @@
   &--article {
     display: block;
     font-size: $font-size-header-lg;
+    color: $col-gray-tint-1;
     margin-bottom: $margin-flex-lg * 3;
   }
 
@@ -53,10 +55,34 @@
   }
 }
 
+.corporate {
+  width: 100%;
+  height: 30vh;
+  background-color: rgba($col-accent-primary, 0.5);
+}
+
+.immersive {
+  &--img {
+    background-image: url("../../public/alone-2-lg.jpg");
+  }
+}
+
+.bespoke {
+  &--img {
+    background-image: url("../../public/bespoke-1-lg.jpg");
+  }
+}
+
+.mindfulness {
+  &--img {
+    background-image: url("../../public/meditation-2-lg.jpg");
+  }
+}
+
 .testimonials {
   width: 100%;
   height: 45vh;
-  background-color: $col-main-primary;
+  background-color: $col-main-shade-2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,18 +95,58 @@
     padding: $margin-flex-lg $margin-flex-lg * 3;
 
     &--quote {
-        margin-bottom: $margin-flex-lg;
-        color: $col-gray-shade-1;
+      margin-bottom: $margin-flex-lg;
+      color: $col-accent-tint-1;
     }
 
     &--name {
-        margin-bottom: 0.4rem;
-        color: $col-gray-shade-1;
+      margin-bottom: 0.4rem;
+      color: $col-accent-shade-1;
     }
 
     &--retreat {
-      color: $col-accent-tint-2;
+      @include link-btn-params($col-accent-primary, $border-accent-thin);
+    }
+  }
+}
+
+.newsletter {
+  background-color: $col-main-shade-2;
+  display: grid;
+  grid-template-columns: 65fr 55fr;
+  height: 50vh;
+
+  &--signup {
+    position: relative;
+
+    &--box {
+      position: absolute; 
+      bottom: 15rem;
+      right: 15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      width: 40rem;
     }
 
+    &--title {
+      font-size: $font-size-text-md;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+      font-weight: $font-weight-xs;
+      color: $col-accent-primary;
+
+    }
+
+    &--input {
+      background-color: transparent;
+    }
+
+    &--label {
+    }
+  }
+
+  &--img {
+    background-image: url("../../public/meditation-2-lg.jpg");
   }
 }

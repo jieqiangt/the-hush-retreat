@@ -9,9 +9,7 @@ export default function GuidingPrinciple() {
         <h2 className={classes["section--title"]}>Our Guiding Principle</h2>
         <article className={classes["principle--article"]}>
           Living life with unwavering faith and joy, <br />
-          as the <span className={classes["principle--lotus--em"]}>
-            lotus
-          </span>
+          as the <span className={classes["principle--lotus--em"]}>lotus </span>
           does, <br />
           to ensure the most beautiful revival
         </article>

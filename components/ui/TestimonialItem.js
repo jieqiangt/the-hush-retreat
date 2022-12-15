@@ -2,13 +2,14 @@ import classes from "../../sass/pages/home.module.scss";
 import LinkButton from "./LinkButton";
 
 export default function TestimonialItem(props) {
-
   const activeItemClass = props.active ? "carousel--item--active" : "";
 
   return (
-    <div className={`carousel--item ${classes["testimonials--item"]} ${activeItemClass}`}>
+    <div
+      className={`carousel--item ${classes["testimonials--item"]} ${activeItemClass}`}
+    >
       <blockquote className={classes["testimonials--item--quote"]}>
-        {props.quote}
+        &#x275D; {props.quote} &#x275E;
       </blockquote>
       <LinkButton
         btnClass={classes["testimonials--item--retreat"]}

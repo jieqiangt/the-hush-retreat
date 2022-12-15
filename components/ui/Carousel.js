@@ -21,7 +21,6 @@ export default function Carousel(props) {
       direction = -1
     }
 
-    // const tempActiveItem = (props.activeItem + 1 * direction) % numItems
     const newActiveItem = (props.activeItem + 1 * direction) % numItems >= 0 ? (props.activeItem + 1 * direction) % numItems : numItems - 1
 
     props.changeActiveItem(newActiveItem)

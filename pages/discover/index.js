@@ -4,6 +4,7 @@ import GuidingPrinciple from "../../components/discover/GuidingPrinciple";
 import OurApproach from "../../components/discover/OurApproach";
 import OurFounder from "../../components/discover/OurFounder";
 import TheWayOfLotus from "../../components/discover/TheWayOfLotus";
+import Footer from "../../components/layout/Footer";
 import Layout from "../../components/layout/Layout";
 import classes from "../../sass/pages/discover.module.scss";
 
@@ -14,12 +15,15 @@ export default function DiscoverPage() {
         <title>Discover</title>
         <meta name="description" content="Discover" />
       </Head>
-      <Layout firstSection={GuidingPrinciple} headerClass={classes["header--discover"]}>
+      <Layout
+        firstSection={GuidingPrinciple}
+        headerClass={classes["header--discover"]}
+      >
         <TheWayOfLotus />
-        <OurApproach />
         <OurFounder />
+        <OurApproach />
+        <Footer footerClass={classes["footer--discover"]} />
       </Layout>
     </Fragment>
   );
 }
-

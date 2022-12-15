@@ -1,7 +1,7 @@
 import FeatureList from "../ui/FeatureList";
 import LinkButton from "../ui/LinkButton";
 import classes from "../../sass/pages/discover.module.scss";
-
+import Footer from "../layout/Footer";
 
 export default function OurApproach() {
   const features = [
@@ -31,15 +31,20 @@ export default function OurApproach() {
       </h2>
       <FeatureList features={features} />
       <div className={classes["approach--cta"]}>
-        <div className={classes["approach--cta--outer"]}>
-          <span className={classes["approach--cta--btn"]}>
-            <LinkButton href="/new">Start Embracing Mindfulness</LinkButton>
-          </span>
-        </div>
-        <div className={classes["approach--cta--outer"]}>
-          <span className={classes["approach--cta--btn"]}>
-            <LinkButton href="/explore">Explore More</LinkButton>
-          </span>
+        <div className={classes["approach--cta--box"]}>
+          <div className={classes["approach--cta--outer"]}>
+            <LinkButton href="/new" btnClass={classes["approach--cta--btn"]}>
+              Start Embracing Mindfulness
+            </LinkButton>
+          </div>
+          <div className={classes["approach--cta--outer"]}>
+            <LinkButton
+              href="/explore"
+              btnClass={classes["approach--cta--btn"]}
+            >
+              Explore Previous Retreats
+            </LinkButton>
+          </div>
         </div>
       </div>
     </section>

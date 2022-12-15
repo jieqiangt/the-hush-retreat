@@ -20,11 +20,11 @@
     border-radius: 50%;
 }
 
-@mixin btn--default {
+@mixin btn--default($border) {
     display: inline-block;
     background-color: transparent;
     color: $col-accent-shade-1;
-    border: $thin-accent-border;
+    border: $border;
     cursor: pointer;
     transition: background-color $ani-time-link ease-out color $ani-time-link ease-out;
 

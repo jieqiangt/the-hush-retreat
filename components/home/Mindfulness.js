@@ -1,28 +1,26 @@
 import classes from "../../sass/pages/home.module.scss";
 import LinkButton from "../ui/LinkButton";
 
-export default function Bespoke() {
+export default function Mindfulness() {
   return (
     <section className={classes["z-layout"]}>
-      <div className={`${classes["z-layout--img"]} ${classes["bespoke--img"]}`} />
+      <div className={`${classes["z-layout--img"]} ${classes["mindfulness--img"]}`} />
       <div className={classes["z-layout--article"]}>
         <div className={classes["z-layout--article--box"]}>
-          <h2 className={classes["z-layout--article--title"]}>Bespoke</h2>
+          <h2 className={classes["z-layout--article--title"]}>Mindfulness</h2>
           <h3 className={classes["z-layout--article--secondary-title"]}>
-            All of us deserve the best
+            Step away from the chatter & stresses of everyday life
           </h3>
           <p className={classes["z-layout--article--desc"]}>
-            That is why, we curate small-group retreats with end-to-end
-            butler-grade service, to provide you with an transformative wellness
-            experience. Your role is to show up, sit back and unwind &#8212; we
-            take care of the rest.
+            Based on our unique philosophy, we aim to provie you with a
+            sanctuary to rest your mind, nourish your body, and practice
+            mindfulness.
           </p>
           <LinkButton btnClass={classes["z-layout--article--btn"]} href="/new">
-            Book Now
+            Discover More
           </LinkButton>
         </div>
       </div>
     </section>
   );
 }
-

@@ -5,6 +5,7 @@
 .nav {
   width: 100vw;
   background-color: transparent;
+  padding-top: $margin-flex-lg;
 
   &--list {
     display: flex;
@@ -12,7 +13,7 @@
     align-items: center;
     width: 100%;
     padding: $padding-layout-lg 0rem;
-    gap: 24rem;
+    gap: 32rem;
 
     &--sides {
       display: flex;
