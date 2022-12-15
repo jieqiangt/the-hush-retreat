@@ -130,7 +130,7 @@
   }
 }
 
-.feature {
+.feature-box {
   @include feature-params($margin-flex-lg);
 
   &--list {

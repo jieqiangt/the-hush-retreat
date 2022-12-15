@@ -1,7 +1,6 @@
-import FeatureList from "../ui/FeatureList";
+import FeatureBoxList from "../ui/FeatureBoxList";
 import LinkButton from "../ui/LinkButton";
 import classes from "../../sass/pages/discover.module.scss";
-import Footer from "../layout/Footer";
 
 export default function OurApproach() {
   const features = [
@@ -29,7 +28,7 @@ export default function OurApproach() {
       >
         Our Approach
       </h2>
-      <FeatureList features={features} />
+      <FeatureBoxList feature-box-items={features} />
       <div className={classes["approach--cta"]}>
         <div className={classes["approach--cta--box"]}>
           <div className={classes["approach--cta--outer"]}>
