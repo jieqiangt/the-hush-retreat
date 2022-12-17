@@ -1,4 +1,5 @@
 @import "../abstracts/variables";
+@import "../abstracts/mixins";
 @import "../base/animations";
 @import "../base/utilities";
 
@@ -25,7 +26,7 @@
     display: block;
     position: absolute;
     top: 28rem;
-    right: $pos-right-home;
+    right: 38rem;
     text-align: left;
     color: $col-accent-tint-1;
   }
@@ -81,18 +82,49 @@
 
 .testimonials {
   width: 100%;
-  height: 45vh;
-  background-color: $col-main-shade-2;
+  height: 55vh;
+  color: $col-accent-tint-2;
+  background-image: url("../../public/sand-1-lg.jpg");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+
+  &--logo {
+    position: absolute;
+    top: $pos-testimonials-top-offset;
+    z-index: $z-index-top;
+  }
+
+  &--title {
+    position: absolute;
+    top: $pos-testimonials-top-offset + $pos-testimonials-title-add-offset;
+    font-size: $font-size-text-md;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    z-index: $z-index-top;
+
+  }
 
   &--item {
     position: absolute;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     font-size: $font-size-text-lg;
-    padding: $margin-flex-lg $margin-flex-lg * 3;
+    width: 72.5%;
+    height: 60%;
+    padding: 0rem 20rem;
+    border-left: $border-accent-thin;
+    border-right: $border-accent-thin;
+    background-color: transparent;
+
+    & * {
+      @include make-invisible;
+      transform: translateY(-3rem);
+      transition: all 1.2s ease-in-out;
+    }
 
     &--quote {
       margin-bottom: $margin-flex-lg;
@@ -121,15 +153,11 @@
 
     &--box {
       position: absolute;
-      bottom: 15rem;
+      bottom: 5rem;
       right: 15rem;
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
       width: 40rem;
-    }
-
-    &--title {
       font-size: $font-size-text-md;
       text-transform: uppercase;
       letter-spacing: 0.05rem;
@@ -137,12 +165,55 @@
       color: $col-accent-primary;
     }
 
-    &--input {
-      background-color: transparent;
+    &--box > * {
+      margin-bottom: 3.2rem;
     }
 
-    &--label {
+    &--title {
+      margin-bottom: 1.2rem;
     }
+
+    &--form {
+      display: flex;
+      width: 100%;
+      margin-top: -0.4rem;
+    }
+
+    &--input-group {
+      @include input--group(30rem);
+    }
+
+    &--btn {
+      @include btn--default(none);
+      border-bottom: $border-accent-thick;
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
+      font-size: $font-size-text-s;
+      text-decoration: underline 0.1rem $col-accent-primary;
+      text-underline-offset: 0.9rem;
+      flex: 0 1 auto;
+      text-align: left;
+
+      &:hover {
+        text-decoration-color: $col-main-primary;
+      }
+
+    }
+
+    &--questions {
+
+    }
+
+    &--contact {
+
+    }
+
+    &--link-btn {
+      @include link-btn($col-accent-primary, $border-accent-thin);
+      font-size: $font-size-text-s
+
+    }
+
   }
 
   &--img {

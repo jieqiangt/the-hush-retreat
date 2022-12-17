@@ -47,10 +47,15 @@ $padding-btn-lg: 0.6rem;
 $margin-flex-lg: 2.4rem;
 
 
-// Positioning
-$pos-right-home: 38rem;
-$pos-top-offset: -2rem;
-$pos-left-offset: 10rem;
+// Positions
+$pos-img-comp-top-offset: -2rem;
+$pos-img-comp-left-offset: 10rem;
+
+$pos-testimonials-top-offset: 11%;
+$pos-testimonials-title-add-offset: 6%;
+
+$pos-input-x: 0.4rem;
+$pos-input-y: 0.8rem;
 
 // Other sizes
 $size-underline-link: 0.05rem;
@@ -61,10 +66,11 @@ $ani-time-link: 0.2s;
 $ani-default: all $ani-time-link ease-out;
 
 
-
+// Z-index
 $z-index-top: 100;
+$z-index-btm: -100;
 
 
 //Borders
 $border-accent-thin: solid $size-underline-link $col-accent-primary;
-
+$border-accent-thick: solid 0.1rem $col-accent-primary;

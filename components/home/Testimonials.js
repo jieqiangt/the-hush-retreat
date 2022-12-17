@@ -5,10 +5,9 @@ import Carousel from "../ui/Carousel";
 import TestimonialItem from "../ui/TestimonialItem";
 
 export default function Testimonials() {
-
-  const [activeItem, setActiveItem] = useState(0)
-  const [testimonialItems, setTestimonialItems] = useState([])
-  const [intervalId, setIntervalId] = useState()
+  const [activeItem, setActiveItem] = useState(0);
+  const [testimonialItems, setTestimonialItems] = useState([]);
+  const [intervalId, setIntervalId] = useState();
 
   let testimonialsArr = [
     {
@@ -42,25 +41,23 @@ export default function Testimonials() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveItem((activeItem) => {
-        return (activeItem + 1) % testimonialsArr.length
-      })
-      setIntervalId(() => interval)
+        return (activeItem + 1) % testimonialsArr.length;
+      });
+      setIntervalId(() => interval);
     }, 8000);
 
     return () => {
-      clearInterval(interval)
-    }
-  }, [intervalId]
-  )
+      clearInterval(interval);
+    };
+  }, [intervalId]);
 
   const changeActiveItem = (newActiveItem) => {
-    clearInterval(intervalId)
-    setIntervalId(() => 0)
-    setActiveItem(newActiveItem)
-  }
+    clearInterval(intervalId);
+    setIntervalId(() => 0);
+    setActiveItem(newActiveItem);
+  };
 
   useEffect(() => {
-
     const createTestimonialItem = (item) => (
       <TestimonialItem
         key={item.quote}
@@ -71,27 +68,33 @@ export default function Testimonials() {
         retreatDate={item.retreatDate}
         active={item.active}
       />
-    )
+    );
 
     const setActiveTestimonial = (testimonials, idx) => {
-
-      const testimonialsOutput = testimonials.map((item) => ({ ...item, active: false }))
-      const activeTestimonial = testimonials[idx]
-      activeTestimonial['active'] = true
+      const testimonialsOutput = testimonials.map((item) => ({
+        ...item,
+        active: false,
+      }));
+      const activeTestimonial = testimonials[idx];
+      activeTestimonial["active"] = true;
       testimonialsOutput.splice(idx, 1, activeTestimonial);
 
-      return testimonialsOutput
-    }
+      return testimonialsOutput;
+    };
 
-    const testimonials = setActiveTestimonial(testimonialsArr, activeItem)
-    setTestimonialItems(testimonials.map(createTestimonialItem))
-  }, [activeItem])
-
+    const testimonials = setActiveTestimonial(testimonialsArr, activeItem);
+    setTestimonialItems(testimonials.map(createTestimonialItem));
+  }, [activeItem]);
 
   return (
     <section className={classes["testimonials"]}>
-      <div>Small Lotus Logo</div>
-      <Carousel carouselItems={testimonialItems} activeItem={activeItem} changeActiveItem={changeActiveItem} />
+      <div className={classes["testimonials--logo"]}>Small Lotus Logo</div>
+      <h2 className={classes["testimonials--title"]}>Testimonials</h2>
+      <Carousel
+        carouselItems={testimonialItems}
+        activeItem={activeItem}
+        changeActiveItem={changeActiveItem}
+      />
     </section>
   );
 }

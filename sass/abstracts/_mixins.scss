@@ -9,9 +9,9 @@
 
 
 @mixin make-visible {
-    opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
 }
 
 @mixin btn--circle {

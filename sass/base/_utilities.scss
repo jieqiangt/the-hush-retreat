@@ -55,20 +55,20 @@
     outline-offset: 0.3rem;
 
     &-1 {
-      top: 0rem + $pos-top-offset;
-      left: -4rem + $pos-left-offset;
+      top: 0rem + $pos-img-comp-top-offset;
+      left: -4rem + $pos-img-comp-left-offset;
       z-index: $z-index-top;
     }
 
     &-2 {
-      top: 12rem + $pos-top-offset;
-      left: 18rem + $pos-left-offset;
+      top: 12rem + $pos-img-comp-top-offset;
+      left: 18rem + $pos-img-comp-left-offset;
       z-index: $z-index-top - 1;
     }
 
     &-3 {
-      top: 28rem + $pos-top-offset;
-      left: 0rem + $pos-left-offset;
+      top: 28rem + $pos-img-comp-top-offset;
+      left: 0rem + $pos-img-comp-left-offset;
       z-index: $z-index-top - 2;
     }
 
@@ -163,28 +163,25 @@
 .carousel {
   width: 100%;
   height: 100%;
-  @include carousel-params((2.4rem 35rem 8rem 35rem));
+  @include carousel-params((3.6rem 25rem));
 
   &--list {
     width: 100%;
     height: 100%;
     position: relative;
     text-align: left;
-    border-left: $border-accent-thin;
-    border-right: $border-accent-thin;
+    background-color: rgba($col-main-shade-2, 0.7);
   }
 
   &--item {
-    width: 100%;
-    height: 100%;
-    transform: translateY(-3rem);
-    display: flex;
-    @include make-invisible;
-    transition: all 1.2s ease-in-out;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    &--active {
+    &--active * {
       @include make-visible;
-      transform: translateY(0);
+      transform: translateY(0) !important;
     }
   }
 
@@ -193,25 +190,21 @@
     @include btn--circle;
     @include btn--default($border-accent-thin);
     border: none;
+    top: 55%;
+    transform: translateY(-50%);
 
     & + svg {
       pointer-events: none;
     }
     &--right {
       padding: 0.5rem;
-      top: 50%;
-      right: -10%;
-      transform: translateY(-50%);
+      right: 5rem;
     }
 
     &--left {
-      width: $margin-flex-lg * 2;
-      height: $margin-flex-lg * 2;
-      background-color: transparent;
       color: $col-accent-shade-1;
       padding: 0.5rem;
-      top: 50%;
-      left: -10%;
+      left: 5rem;
       transform: translateY(-50%);
     }
 
@@ -223,10 +216,12 @@
 
   &--nav {
     display: flex;
-    width: 100%;
-    height: 2.4rem;
+    position: absolute;
+    bottom: 13%;
+    left: 50%;
     justify-content: center;
     gap: 1.2rem;
+    transform: translateX(-50%);
   }
 
   &--dot {
@@ -270,7 +265,7 @@
       width: 50rem;
       position: absolute;
       bottom: 10rem;
-      right: $pos-right-home;
+      right: 38rem;
     }
 
     &--title {
@@ -298,5 +293,45 @@
       font-size: $font-size-text-lg;
       @include link-btn($col-accent-primary, $border-accent-thin);
     }
+  }
+}
+
+@mixin input--group($width) {
+  position: relative;
+  width: $width;
+
+  & input {
+    display: block;
+    padding: $pos-input-y $pos-input-x;
+    font-size: $font-size-text-md;
+    font-family: inherit;
+    font-weight: $font-weight-sm;
+    border-bottom: $border-accent-thin;
+    width: 100%;
+  }
+
+  & input::placeholder {
+    color: rgba($col-accent-tint-1, 0.7);
+  }
+
+  & input:focus {
+    outline: none
+  }
+
+
+  & label {
+    display: inline-block;
+    position: absolute;
+    bottom: $pos-input-y;
+    left: $pos-input-x;
+    transition: $ani-default;
+    @include make-invisible;
+  }
+
+  & :not(input:placeholder-shown) + label {
+    transform: translateY(3.6rem);
+    font-size: $font-size-text-s;
+    color: $col-accent-tint-1;
+    @include make-visible;
   }
 }
