@@ -2,7 +2,7 @@ import { useCallback, useEffect } from "react";
 import { useState } from "react";
 import classes from "../../sass/pages/home.module.scss";
 import Carousel from "../ui/Carousel";
-import TestimonialItem from "../ui/TestimonialItem";
+import TestimonialItem from "../home/TestimonialItem";
 
 export default function Testimonials() {
   const [activeItem, setActiveItem] = useState(0);

@@ -335,3 +335,8 @@
     @include make-visible;
   }
 }
+
+@mixin accordion() {
+  display: flex;
+
+}

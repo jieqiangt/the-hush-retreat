@@ -15,7 +15,7 @@ export default function NavBar() {
         </NavLink>
         <div className={classes["nav--list--sides"]}>
           <NavLink href="/explore">Past Retreats</NavLink>
-          <NavLink href="/help">Contact Us</NavLink>
+          <NavLink href="/help">Help</NavLink>
         </div>
       </ul>
     </nav>

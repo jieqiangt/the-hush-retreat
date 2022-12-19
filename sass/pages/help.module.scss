@@ -1,0 +1,46 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../base/animations";
+@import "../base/utilities";
+
+.help--header {
+}
+
+.faq {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: black;
+  flex-direction: column;
+  align-items: center;
+
+  
+  &--title {
+    @include section--title($col-accent-primary)
+  }
+
+  &--accordion {
+    @include accordion;
+  }
+
+  &--item {
+
+    grid-template-columns: auto 1fr auto;
+    
+    &--number {
+
+    }
+
+    &--question {
+    }
+
+    &--icon {
+    }
+
+    &--answer {
+    }
+  }
+}
+
+.help--footer {
+}

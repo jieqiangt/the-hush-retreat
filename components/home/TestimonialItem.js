@@ -1,6 +1,5 @@
-import { Fragment } from "react";
 import classes from "../../sass/pages/home.module.scss";
-import LinkButton from "./LinkButton";
+import LinkButton from "../ui/LinkButton";
 
 export default function TestimonialItem(props) {
   const activeItemClass = props.active ? "carousel--item--active" : "";

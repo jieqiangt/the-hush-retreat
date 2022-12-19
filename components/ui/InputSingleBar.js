@@ -12,7 +12,7 @@ export default function InputSingleBar(props) {
           className={props.inputClass}
           placeholder={props.inputPlaceholder}
         />
-        <label for={props.inputName} className={props.labelClass}>
+        <label htmlFor={props.inputName} className={props.labelClass}>
           {props.label}
         </label>
       </div>

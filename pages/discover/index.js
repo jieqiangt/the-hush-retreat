@@ -24,7 +24,7 @@ export default function DiscoverPage() {
         <TheWayOfLotus />
         <OurFounder />
         <OurApproach />
-        <Footer footerClass={classes["footer--discover"]} />
+        <Footer footerClass={classes["discover--footer"]} />
       </Layout>
     </Fragment>
   );

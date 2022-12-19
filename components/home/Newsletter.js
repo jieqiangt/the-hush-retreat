@@ -10,7 +10,7 @@ export default function NewsLetter() {
           <h2 className={classes["newsletter--signup--title"]}>
             Stay in the loop
           </h2>
-          <form action="#" class={classes["newsletter--signup--form"]}>
+          <form action="#" className={classes["newsletter--signup--form"]}>
             <InputSingleBar
               label="Email"
               inputType="email"
