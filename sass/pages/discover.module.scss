@@ -6,7 +6,7 @@
 .discover--footer {
   @include footer(transparent, relative);
   padding-top: 5rem;
-  
+
   &::before {
     content: "";
     position: absolute;
@@ -15,16 +15,14 @@
     width: 97%;
     bottom: 0rem;
     left: 1.5%;
-    background-color: rgba($col-accent-tint-2,0.5);
+    background-color: rgba($col-accent-tint-2, 0.5);
   }
-
 }
 
 .principle {
   width: 100%;
   height: 100vh;
-  background-image: 
-  linear-gradient(
+  background-image: linear-gradient(
       rgba($col-white-primary, 0.4),
       rgba($col-white-primary, 0.6)
     ),
@@ -44,9 +42,8 @@
     width: 102%;
     bottom: -8rem;
     left: -1%;
-    background-color: rgba($col-accent-tint-2,0.5);
+    background-color: rgba($col-accent-tint-2, 0.5);
   }
-
 
   &--box {
     position: absolute;
@@ -58,11 +55,8 @@
   }
 
   &--title {
-    color: $col-main-tint-1;
-    text-transform: uppercase;
-    font-weight: $font-weight-xs;
+    @include section--title($col-main-tint-1, $letter-spacing-xs);
     margin-bottom: 4.8rem;
-
   }
 
   &--desc {
@@ -72,66 +66,7 @@
 
   &--em {
     color: $col-main-tint-1;
-    font-style: italic; 
-  }
-
-}
-
-.approach {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: $col-white-primary;
-  height: 100vh;
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 0.2rem;
-    width: 97%;
-    bottom: 4rem;
-    background-color: rgba($col-accent-tint-2,0.5);
-  }
-
-  &--title {
-    font-size: $font-size-header-sm;
-    text-transform: uppercase;
-    color: $col-main-tint-1;
-    display: inline-block;
-    margin: $margin-flex-lg * 3 0rem $margin-flex-lg * 2 0rem;
-  }
-
-  &--cta {
-    width: 100%;
-    position: relative;
-
-    &--box {
-      display: flex;
-      position: absolute;
-      font-size: $font-size-header-sm;
-      gap: $margin-flex-lg;
-      top: 0rem;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    &--outer {
-      padding: 0.8rem;
-    }
-
-    &--outer + &--outer {
-      padding-left: $margin-flex-lg;
-      border-left: $border-gray-sm;
-    }
-
-    &--btn {
-      display: inline-block;
-      @include btn--link($col-gray-tint-1, $col-main-tint-1);
-      width: 35rem;
-    }
+    font-style: italic;
   }
 }
 
@@ -150,10 +85,8 @@
     width: 97%;
     bottom: 0rem;
     left: 1.5%;
-    background-color: rgba($col-accent-tint-2,0.5);
+    background-color: rgba($col-accent-tint-2, 0.5);
   }
-
-
 
   &--img {
     background-image: url("../../public/lotus-1-lg.jpg");
@@ -170,7 +103,6 @@
     line-height: $font-line-height-lg;
     hyphens: auto;
 
-
     &--box {
       width: 100%;
       text-align: left;
@@ -184,6 +116,7 @@
 
     &--title {
       @include section--title($col-accent-tint-1, $letter-spacing-xs);
+      border-bottom: $border-accent-sm;
       margin-bottom: 2.4rem;
     }
 
@@ -200,6 +133,60 @@
   }
 }
 
+.approach {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $col-white-primary;
+  height: 100vh;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    bottom: 4rem;
+    background-color: rgba($col-accent-tint-2, 0.5);
+  }
+
+  &--title {
+    @include section--title($col-main-tint-1, $letter-spacing-xs);
+    margin: 8rem 0rem 2.4rem 0rem;
+  }
+
+  &--cta {
+    width: 100%;
+    position: relative;
+
+    &--box {
+      display: flex;
+      position: absolute;
+      font-size: $font-size-text-md;
+      top: 0rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--outer {
+      padding: 1.2rem;
+    }
+
+    &--outer + &--outer {
+      border-left: $border-gray-sm;
+      padding-left: 0rem;
+    }
+
+    &--btn {
+      display: inline-block;
+      @include btn--link($col-gray-tint-1, $col-main-tint-1);
+      width: 25rem;
+    }
+  }
+}
+
 .founder {
   display: flex;
   width: 100%;
@@ -210,6 +197,7 @@
 
   &--title {
     @include section--title($col-accent-tint-1, $letter-spacing-xs);
+    border-bottom: $border-accent-sm;
   }
 
   &--desc {

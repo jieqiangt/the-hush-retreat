@@ -15,7 +15,7 @@
     width: 97%;
     bottom: 0rem;
     left: 1.5%;
-    background-color: rgba($col-accent-tint-2,0.5);
+    background-color: rgba($col-accent-tint-2, 0.5);
   }
 }
 
@@ -47,28 +47,22 @@
     padding: 3.6rem 2.4rem;
   }
 
-  &--btn {
-    @include btn--link($col-gray-primary, $col-main-tint-1);
-  }
-
   &--title {
+    @include section--title($col-main-tint-1, none);
+    font-size: $font-size-text-md;
     display: block;
     margin-bottom: $margin-flex-lg * 1.5;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    font-size: $font-size-text-md;
-    font-weight: $font-weight-sm;
-    color: $col-main-tint-1;
   }
 
   &--article {
     display: block;
-    font-size: $font-size-header-lg;
-    color: $col-gray-tint-1;
+    font-size: $font-size-header-md;
+    color: $col-gray-primary;
     margin-bottom: $margin-flex-lg * 2;
   }
 
   &--btn {
+    @include btn--link($col-gray-primary, $col-main-tint-1);
     font-size: $font-size-text-md;
   }
 }
@@ -86,6 +80,7 @@
   &--img {
     background-image: url("../../public/alone-2-lg.jpg");
   }
+
 }
 
 .bespoke {
@@ -94,6 +89,7 @@
   &--img {
     background-image: url("../../public/bespoke-1-lg.jpg");
   }
+
 }
 
 .mindfulness {
@@ -126,11 +122,10 @@
   }
 
   &--title {
+    @include section--title($col-accent-tint-2, $letter-spacing-xs);
+    font-size: $font-size-text-md;
     position: absolute;
     top: $pos-testimonials-top-offset + $pos-testimonials-title-add-offset;
-    font-size: $font-size-text-md;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
     z-index: $z-index-top;
   }
 
@@ -142,7 +137,7 @@
     font-size: $font-size-text-lg;
     width: 60%;
     height: 60%;
-    padding: 0rem 15rem;
+    padding: 0rem 10rem;
     border-left: $border-accent-sm;
     border-right: $border-accent-sm;
     background-color: transparent;
@@ -156,18 +151,18 @@
     &--quote {
       margin-bottom: $margin-flex-lg;
       color: $col-gray-tint-2;
-      font-size: $font-size-text-md;
+      font-size: $font-size-text-lg;
     }
 
     &--name {
       margin-bottom: 0.4rem;
       color: $col-accent-primary;
-      font-size: $font-size-text-s;
+      font-size: $font-size-text-md;
     }
 
     &--retreat {
-      font-size: $font-size-text-s;
-      @include btn--link($col-accent-primary, $col-main-tint-1);
+      font-size: $font-size-text-md;
+      @include btn--link($col-accent-tint-2, $col-main-primary);
     }
   }
 }
@@ -184,6 +179,7 @@
     position: relative;
 
     &--box {
+      
       position: absolute;
       bottom: 5rem;
       right: 15rem;
@@ -191,10 +187,8 @@
       flex-direction: column;
       width: 40rem;
       font-size: $font-size-text-s;
-      text-transform: uppercase;
-      letter-spacing: 0.05rem;
       font-weight: $font-weight-sm;
-      color: $col-main-tint-1;
+      letter-spacing: 0.05rem;
     }
 
     &--box > * {
@@ -202,6 +196,8 @@
     }
 
     &--title {
+      @include section--title($col-main-tint-1, none);
+      font-size: $font-size-text-md;
       margin-bottom: 1.2rem;
     }
 
@@ -212,25 +208,27 @@
     }
 
     &--input-group {
-      @include input--group(30rem, $col-gray-tint-2);
+      @include input--group(30rem, $col-gray-tint-1);
     }
 
     &--btn {
-      @include btn--default($col-gray-tint-2, $col-main-primary);
+      @include btn--default($col-gray-primary, $col-main-primary);
       border-right: none;
       border-left: none;
       border-top: none;
-      border-bottom: $border-gray-tint-sm;
+      border-bottom: $border-gray-sm;
       padding-left: 0.8rem;
       padding-right: 0.8rem;
       font-size: $font-size-text-s;
-      text-decoration: underline 0.1rem $col-gray-tint-2;
+      text-decoration: underline 0.1rem $col-gray-primary;
       text-underline-offset: 0.9rem;
       flex: 0 1 auto;
       text-align: left;
+      transition: $ani-default;
 
       &:hover {
-        text-decoration-color: $col-main-primary;
+        color: $col-main-tint-1;
+        text-decoration-color: $col-main-tint-1;
       }
     }
 
@@ -241,7 +239,7 @@
     }
 
     &--btn--link {
-      @include btn--link($col-gray-tint-2, $col-main-tint-1);
+      @include btn--link($col-gray-primary, $col-main-tint-1);
       font-size: $font-size-text-s;
     }
   }
