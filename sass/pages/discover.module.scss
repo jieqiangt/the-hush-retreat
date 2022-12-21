@@ -3,20 +3,6 @@
 @import "../base/animations";
 @import "../base/utilities";
 
-.discover--header {
-  @include header(
-    (
-      linear-gradient(
-        180deg,
-        rgba($col-black-primary, 0.3) 0%,
-        rgba($col-black-primary, 0.4) 100%
-      ),
-      url("../../public/meditation-1-lg.jpg")
-    ),
-    (top 50% left)
-  );
-}
-
 .discover--footer {
   @include footer(transparent, relative);
   padding-top: 5rem;

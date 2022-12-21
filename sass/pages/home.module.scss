@@ -3,20 +3,6 @@
 @import "../base/animations";
 @import "../base/utilities";
 
-.home--header {
-  @include header(
-    (
-      linear-gradient(
-        180deg,
-        rgba($col-black-primary, 0.2),
-        rgba($col-black-primary, 0.5)
-      ),
-      url("../../public/mountain-1-lg.jpg")
-    ),
-    (bottom 30% left 0%)
-  );
-}
-
 .home--footer {
   @include footer(transparent, relative);
   padding-top: 5rem;
