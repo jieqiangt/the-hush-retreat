@@ -1,24 +1,23 @@
 // Colors
-$col-main-tint-2: #427d50;
-$col-main-tint-1: #2b6d3a;
-$col-main-primary: #135d24;
-$col-main-shade-1: #115420;
-$col-main-shade-2: #0f4a1d;
+$col-main-tint-1: #41764d;
+$col-main-primary: #115420;
 
 $col-accent-tint-2: #decca1;
 $col-accent-tint-1: #dac596;
 $col-accent-primary: #d6bf8a;
 $col-accent-shade-1: #c1ac7c;
 
-$col-gray-tint-1: #e2b797;
-$col-gray-primary: #dfaf8b;
-$col-gray-shade-1: #c99e7d;
-$col-gray-shade-2: #b28c6f;
+$col-gray-tint-2: #dfaf8b;
+$col-gray-tint-1: #9c7a61;
+$col-gray-primary: #7B593F;
 
-$col-gray-primary: #d3b7a1;
-
-$col-white-primary: #fcfaf6;
+$col-white-primary: #ffecde;
 $col-black-primary: #212529;
+
+// Letter Spacing
+$letter-spacing-default: 0rem;
+$letter-spacing-xs: 0.05rem;
+$letter-spacing-s: 0.10rem;
 
 //Font Sizes
 $font-size-header-lg: 4.8rem;
@@ -38,6 +37,8 @@ $font-weight-xs: 400;
 
 //Line Height
 $font-line-height-lg: 1.8;
+$font-line-height-md: 1.6;
+$font-line-height-default: 1.4;
 
 //Padding sizes
 $padding-layout-lg: 1.2rem;
@@ -46,10 +47,9 @@ $padding-btn-lg: 0.6rem;
 //Margin sizes
 $margin-flex-lg: 2.4rem;
 
-
 // Positions
-$pos-img-comp-top-offset: -2rem;
-$pos-img-comp-left-offset: 10rem;
+$pos-img-comp-top-offset: 8rem;
+$pos-img-comp-left-offset: -7.5rem;
 
 $pos-testimonials-top-offset: 11%;
 $pos-testimonials-title-add-offset: 6%;
@@ -58,13 +58,15 @@ $pos-input-x: 0.4rem;
 $pos-input-y: 0.8rem;
 
 // Other sizes
-$size-underline-link: 0.05rem;
+$size-underline-link: 0.1rem;
 $border-radius-btn-lg: 6px;
 
 //Animation variables
 $ani-time-link: 0.2s;
 $ani-default: all $ani-time-link ease-out;
 
+// Grid
+$grid-faq-item-fr: 90fr;
 
 // Z-index
 $z-index-top: 100;
@@ -72,5 +74,10 @@ $z-index-btm: -100;
 
 
 //Borders
-$border-accent-thin: solid $size-underline-link $col-accent-primary;
-$border-accent-thick: solid 0.1rem $col-accent-primary;
+$border-accent-sm: solid $size-underline-link $col-accent-primary;
+$border-accent-md: solid 0.2rem $col-accent-primary;
+$border-accent-lg: solid 0.3rem $col-accent-primary;
+$border-gray-sm: solid $size-underline-link $col-gray-primary;
+$border-gray-tint-sm: solid $size-underline-link $col-gray-tint-2;
+$border-gray-tint-lg: solid 0.3rem $col-gray-tint-2;
+

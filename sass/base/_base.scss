@@ -12,7 +12,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  background-color: none;
+  background-color: transparent;
   text-decoration: none;
   color: inherit;
   font: inherit;
@@ -21,6 +21,7 @@ html {
 body {
   box-sizing: border-box;
   overflow-x: hidden;
+  background-color: $col-white-primary;
 }
 
 button,
@@ -29,7 +30,7 @@ a:visited {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  background-color: none;
+  background-color: transparent;
   text-decoration: none;
   border: none;
 }
@@ -53,4 +54,9 @@ input {
 
 input:focus {
   outline: none;
+}
+
+
+main {
+  position: relative;
 }

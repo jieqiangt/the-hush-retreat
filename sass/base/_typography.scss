@@ -2,7 +2,7 @@
 
 body {
   font-family: "Cormorant Garamond", serif;
-  line-height: 1.5;
+  line-height: $font-line-height-default;
   font-weight: 400;
   color: $col-gray-primary;
 }

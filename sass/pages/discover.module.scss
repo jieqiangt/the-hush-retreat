@@ -3,138 +3,153 @@
 @import "../base/animations";
 @import "../base/utilities";
 
-
 .discover--header {
-
   @include header(
     (
-      linear-gradient(180deg, rgba(white, 0.1), rgba(white, 0.1)),
+      linear-gradient(
+        180deg,
+        rgba($col-black-primary, 0.3) 0%,
+        rgba($col-black-primary, 0.4) 100%
+      ),
       url("../../public/meditation-1-lg.jpg")
     ),
-    (top left 10%)
+    (top 50% left)
   );
+}
 
+.discover--footer {
+  @include footer(transparent, relative);
+  padding-top: 5rem;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    bottom: 0rem;
+    left: 1.5%;
+    background-color: rgba($col-accent-tint-2,0.5);
+  }
+
+}
+
+.test {
+  @include z-layout(45fr);
+
+  &--img {
+    width: 100%;
+    background-image: url("../../public/meditation-1-lg.jpg");
+  }
+
+  &--article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $col-white-primary;
+
+    &--box {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 5rem 25rem 1.5rem 25rem;
+      background-color: $col-main-primary;
+    }
+  }
+}
+
+.test-2 {
+  width: 100%;
+  height: 100vh;
+  background-image: 
+  linear-gradient(
+      rgba($col-white-primary, 0.4),
+      rgba($col-white-primary, 0.6)
+    ),
+    url("../../public/meditation-1-lg.jpg");
+  background-size: cover;
+  background-position: bottom 45% left;
+  border-left: solid 5rem $col-white-primary;
+  border-right: solid 5rem $col-white-primary;
+  position: relative;
+  margin-bottom: 8rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 102%;
+    bottom: -8rem;
+    left: -1%;
+    background-color: rgba($col-accent-tint-2,0.5);
+  }
+
+
+  &--box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 20rem;
+    left: 85rem;
+    font-size: $font-size-text-lg;
+  }
+
+  &--title {
+    color: $col-main-tint-1;
+    text-transform: uppercase;
+    font-weight: $font-weight-xs;
+    margin-bottom: 4.8rem;
+
+  }
+
+  &--desc {
+    color: $col-gray-tint-1;
+    line-height: $font-line-height-md;
+  }
+
+  &--em {
+    color: $col-main-tint-1;
+    font-style: italic; 
+  }
 
 }
 
 .principle {
   width: 100%;
-  height: 85vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+
+  &--box {
+    // background-color: rgba($col-main-primary, 0.7);
+    position: absolute;
+    top: 32rem;
+    right: 58rem;
+    text-align: left;
+  }
 
   &--title {
-    @include section--title($col-accent-primary);
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: $font-size-text-md;
+    font-weight: $font-weight-md;
+    color: $col-accent-tint-2;
+    margin-bottom: 4rem;
   }
 
   &--article {
     text-align: left;
     display: block;
-    font-size: $font-size-text-md;
-    margin: $margin-flex-lg 0 0 $margin-flex-lg;
-    padding-left: $margin-flex-lg * 2;
+    font-size: $font-size-header-md;
+    color: $col-gray-tint-1;
     line-height: $font-line-height-lg;
-    color: $col-accent-primary;
   }
 
   &--lotus--em {
-    color: $col-main-shade-2;
+    // color: $col-main-primary;
     font-style: italic;
     text-transform: capitalize;
-  }
-}
-
-.lotus {
-  width: 100%;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: $col-main-shade-2;
-
-  &--title {
-    @include section--title($col-accent-primary);
-  }
-
-  &--logo-top {
-    margin-top: $margin-flex-lg * 3;
-    margin-bottom: $margin-flex-lg;
-  }
-
-  &--article {
-    margin: 4.8rem 62rem;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: $margin-flex-lg;
-    font-size: $font-size-text-md;
-    line-height: $font-line-height-lg;
-    hyphens: auto;
-  }
-
-  &--logo-bottom {
-    // margin-bottom: $margin-flex-lg;
-  }
-
-  &--logo-bottom::after {
-    content: "";
-    display: block;
-    width: 95vw;
-    background-color: transparent;
-    border-bottom: $border-accent-thin;
-    margin: $margin-flex-lg * 3;
-  }
-}
-
-.founder {
-  display: flex;
-  width: 100%;
-  height: 80vh;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.4)
-    ),
-    url("../../public/sand-1-lg.jpg");
-  background-size: cover;
-  background-position: top;
-  position: relative;
-
-  &--title {
-    @include section--title($col-accent-primary);
-  }
-
-  &--box {
-    display: flex;
-    margin: 6rem 10rem;
-  }
-
-  &--desc {
-    width: 100%;
-    display: flex;
-    // justify-content: center;
-    flex-direction: column;
-    padding: 4.8rem;
-    background-color: rgba($col-main-shade-2, 0.85);
-
-    &--article {
-      display: flex;
-      flex-direction: column;
-      color: $col-gray-primary;
-      font-size: $font-size-text-md;
-      line-height: $font-line-height-lg;
-      margin: $margin-flex-lg 0rem 0rem $margin-flex-lg;
-      gap: $margin-flex-lg;
-      hyphens: auto;
-    }
-  }
-
-  &--img {
-    width: 50%;
-    height: auto;
-    position: relative;
   }
 }
 
@@ -143,27 +158,36 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: $col-main-shade-2;
+  background-color: $col-white-primary;
   height: 100vh;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    bottom: 4rem;
+    background-color: rgba($col-accent-tint-2,0.5);
+  }
 
   &--title {
-    @include section--title($col-accent-primary);
+    font-size: $font-size-header-sm;
+    text-transform: uppercase;
+    color: $col-main-tint-1;
     display: inline-block;
     margin: $margin-flex-lg * 3 0rem $margin-flex-lg * 2 0rem;
   }
 
   &--cta {
-
     width: 100%;
-    height: 10rem;
     position: relative;
-    
+
     &--box {
       display: flex;
       position: absolute;
       font-size: $font-size-header-sm;
-      margin-bottom: $margin-flex-lg * 3;
-      color: $col-accent-primary;
       gap: $margin-flex-lg;
       top: 0rem;
       left: 50%;
@@ -176,13 +200,127 @@
 
     &--outer + &--outer {
       padding-left: $margin-flex-lg;
-      border-left: $border-accent-thin;
+      border-left: $border-gray-sm;
     }
 
     &--btn {
       display: inline-block;
-      @include link-btn($col-accent-tint-1, $border-accent-thin);
+      @include btn-link($col-gray-tint-1, $col-main-tint-1);
       width: 35rem;
     }
+  }
+}
+
+.lotus {
+  @include z-layout(30fr);
+  width: 100%;
+  height: 90vh;
+  background-color: $col-white-primary;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    bottom: 0rem;
+    left: 1.5%;
+    background-color: rgba($col-accent-tint-2,0.5);
+  }
+
+
+
+  &--img {
+    background-image: url("../../public/lotus-1-lg.jpg");
+    background-position: bottom;
+    width: 90%;
+    height: 80%;
+    margin: 8rem -10rem 0rem auto;
+    box-shadow: 2px 0px 15px 0px rgba($col-black-primary, 0.8);
+    z-index: $z-index-top;
+  }
+
+  &--article {
+    font-size: $font-size-text-md;
+    line-height: $font-line-height-lg;
+    hyphens: auto;
+
+
+    &--box {
+      width: 100%;
+      text-align: left;
+      position: static;
+      background-color: $col-main-primary;
+      display: flex;
+      flex-direction: column;
+      padding: 3.6rem 15rem 3.6rem 15rem;
+      margin-top: 15rem;
+    }
+
+    &--title {
+      @include section--title($col-accent-tint-1, $letter-spacing-xs);
+      margin-bottom: 2.4rem;
+    }
+
+    &--desc {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 3.8rem;
+      margin-left: 2.4rem;
+      padding-right: 2.4rem;
+      margin-bottom: 0rem;
+      color: $col-gray-tint-2;
+    }
+  }
+}
+
+.founder {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  // background-image: linear-gradient(
+  //     rgba($col-black-primary, 0.3),
+  //     rgba($col-black-primary, 0.3)
+  //   ),
+  //   url("../../public/forest-1-lg.jpg");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  &--title {
+    @include section--title($col-accent-tint-1, $letter-spacing-xs);
+  }
+
+  &--desc {
+    width: 110%;
+    display: flex;
+    flex-direction: column;
+    padding: 15rem 5rem 5rem 0rem;
+
+    &--article {
+      display: flex;
+      flex-direction: column;
+      color: $col-gray-tint-2;
+      font-size: $font-size-text-md;
+      line-height: $font-line-height-lg;
+      background-color: $col-main-primary;
+      padding: 5rem 8rem 10rem 5rem;
+      gap: $margin-flex-lg;
+      hyphens: auto;
+    }
+
+    &--article p {
+      margin-left: 2.4rem;
+      padding-right: 2.4rem;
+    }
+  }
+
+  &--img {
+    width: 60%;
+    height: auto;
+    position: relative;
+    z-index: $z-index-top;
   }
 }

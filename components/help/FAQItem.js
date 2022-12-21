@@ -1,12 +1,25 @@
-import classes from "../../sass/pages/home.module.scss";
+import classes from "../../sass/pages/help.module.scss";
 
 export default function FAQItem(props) {
+  const activeClass = props.active ? classes["faq--item--active"] : "";
+  const activeArrClass = props.active ? classes["faq--item--icon--active"] : "";
+
   return (
-    <div className={classes["faq--item"]}>
-      <span className={classes["faq--item--number"]}>{props.number}</span>
-      <span className={classes["faq--item--question"]}>{props.question}</span>
-      <div className={classes["faq--item--icon"]}>SVG &rarr; &darr;</div>
-      <span className={classes["faq--item--answer"]}>{props.answer}</span>
+    <div idx={props.idx} className={classes["faq--item"]}>
+      <button
+        idx={props.idx}
+        className={classes["faq--item--box"]}
+        onClick={props.onClick}
+      >
+        <span className={classes["faq--item--number"]}>{props.number}</span>
+        <span className={classes["faq--item--question"]}>{props.question}</span>
+        <span className={`${classes["faq--item--icon"]} ${activeArrClass}`}>
+          &rarr;
+        </span>
+      </button>
+      <span className={`${classes["faq--item--answer"]} ${activeClass}`}>
+        {props.answer}
+      </span>
     </div>
   );
 }

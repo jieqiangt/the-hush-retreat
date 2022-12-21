@@ -4,16 +4,19 @@
 
 .nav {
   width: 100vw;
-  background-color: transparent;
-  padding-top: $margin-flex-lg;
+  background-color: $col-white-primary;
+  position: sticky;
 
   &--list {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: $padding-layout-lg 0rem;
-    gap: 32rem;
+    padding: 0.8rem 0rem 1.6rem 0;
+    gap: 18rem;
+    font-weight: $font-weight-xs;
+    font-size: $font-size-text-md;
+    color: $col-main-tint-1;
 
     &--sides {
       display: flex;
@@ -26,27 +29,36 @@
   &--link {
     display: inline-block;
     position: relative;
-    font-weight: $font-weight-sm;
-    color: $col-main-shade-1;
     transition: color $ani-time-link ease-out;
-    font-size: $font-size-header-sm;
 
     &::after {
-      @include ani-link-after;
-    }
-
-    &:hover::after {
-      @include ani-link-hover-after;
-    }
-
-    &:hover {
-      color: $col-main-shade-2;
-      font-weight: $font-weight-lg;
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: $size-underline-link;
+      bottom: 0;
+      left: 0;
+      background-color: $col-accent-tint-1;
+      transition: $ani-default;
+      cursor: pointer;
       transform-origin: bottom left;
     }
 
+    &:hover {
+      color: $col-main-primary;
+      font-weight: $font-weight-sm;
+      transform: scaleY(1.05);   
+      
+      &::after {
+        transform: scaleX(1);
+
+      }
+
+    }
+
     &:active {
-      transform: scaleY(1.02);
+      transform: scaleY(1.05);
     }
   }
 }

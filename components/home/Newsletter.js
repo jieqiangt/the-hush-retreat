@@ -31,14 +31,14 @@ export default function NewsLetter() {
           </h3>
           <LinkButton
             href="/contact"
-            btnClass={classes["newsletter--signup--link-btn"]}
+            btnClass={classes["newsletter--signup--btn-link"]}
           >
             Contact Us
           </LinkButton>
         </div>
       </div>
       <div
-        className={`${classes["z-layout--img"]} ${classes["newsletter--img"]}`}
+        className={classes["newsletter--img"]}
       />
     </section>
   );

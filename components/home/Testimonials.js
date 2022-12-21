@@ -44,7 +44,7 @@ export default function Testimonials() {
         return (activeItem + 1) % testimonialsArr.length;
       });
       setIntervalId(() => interval);
-    }, 8000);
+    }, 100000000000);
 
     return () => {
       clearInterval(interval);
@@ -58,6 +58,7 @@ export default function Testimonials() {
   };
 
   useEffect(() => {
+
     const createTestimonialItem = (item) => (
       <TestimonialItem
         key={item.quote}
@@ -69,12 +70,12 @@ export default function Testimonials() {
         active={item.active}
       />
     );
-
     const setActiveTestimonial = (testimonials, idx) => {
       const testimonialsOutput = testimonials.map((item) => ({
         ...item,
         active: false,
       }));
+
       const activeTestimonial = testimonials[idx];
       activeTestimonial["active"] = true;
       testimonialsOutput.splice(idx, 1, activeTestimonial);
@@ -84,6 +85,7 @@ export default function Testimonials() {
 
     const testimonials = setActiveTestimonial(testimonialsArr, activeItem);
     setTestimonialItems(testimonials.map(createTestimonialItem));
+
   }, [activeItem]);
 
   return (

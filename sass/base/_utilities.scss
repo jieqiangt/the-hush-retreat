@@ -19,27 +19,22 @@
   }
 }
 
-@mixin link-btn($text-color, $border) {
-  & a {
-    @include btn--default($border-accent-thin);
-    border-left: none;
-    border-right: none;
-    padding: 0.6rem;
-    color: $text-color;
-    border-top: $border;
-    border-bottom: $border;
+// @mixin section--title($text-color, $letter-spacing) {
+//   display: inline-block;
+//   font-size: $font-size-text-lg;
+//   color: $text-color;
+//   text-transform: uppercase;
+//   letter-spacing: $letter-spacing;
+// }
 
-    &:hover {
-      font-weight: $font-weight-md;
-    }
-  }
-}
-
-@mixin section--title($header-color) {
+@mixin section--title($text-color, $letter-spacing) {
   display: inline-block;
-  font-size: $font-size-header-md;
-  color: $header-color;
-  border-bottom: solid $size-underline-link $header-color;
+  font-size: $font-size-text-lg;
+  color: $text-color;
+  text-transform: uppercase;
+  border-bottom: solid $size-underline-link $text-color;
+  font-weight: $font-weight-sm;
+  letter-spacing: $letter-spacing;
 }
 
 .composition {
@@ -76,7 +71,7 @@
       z-index: $z-index-top + 100;
       transform: scale(1.05);
       box-shadow: 0 2.5rem 4rem rgba($col-black-primary, 0.5);
-      outline: 0.5rem solid $col-main-tint-2;
+      outline: 0.5rem solid $col-main-tint-1;
     }
   }
 
@@ -122,38 +117,50 @@
 
     &--title {
       @include feature--item--title-params(
-        $col-accent-primary,
+        $col-main-tint-1,
         $font-size-text-md
       );
       display: inline-block;
-      font-weight: $font-weight-md;
+      font-weight: $font-weight-sm;
       text-transform: uppercase;
-      letter-spacing: 0.1rem;
-      margin: 1.2rem 0rem;
+      letter-spacing: 0.05rem;
+      margin: 2.4rem 0rem 0.8rem 0rem;
     }
 
     &--desc {
       @include feature--item--desc-params($font-size-text-md);
+      color: $col-gray-primary;
+      padding: 0rem 1.8rem;
+      hyphens: auto;
       text-align: left;
     }
 
     &--outer + &--outer {
-      border-left: $border-accent-thin;
+      border-left: $border-gray-sm;
     }
   }
 }
 
-@mixin footer-params($bg-color, $position) {
-  background-color: $bg-color;
-  position: $position;
-}
-
-.footer {
+@mixin footer($bg-color, $position) {
   text-align: center;
   font-size: $font-size-text-s;
-  padding-bottom: 2.4rem;
+  color: $col-main-tint-1;
+  bottom: 0.5%;
   width: 100%;
-  @include footer-params($col-main-shade-2, block);
+  padding-bottom: 2.4rem;
+  background-color: $bg-color;
+  position: $position;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    left: 1.5%;
+    top: 0rem;
+    background-color: rgba($col-accent-tint-2,0.5);
+  }
 }
 
 @mixin carousel-params($carousel-padding) {
@@ -170,7 +177,7 @@
     height: 100%;
     position: relative;
     text-align: left;
-    background-color: rgba($col-main-shade-2, 0.7);
+    background-color: rgba($col-main-primary, 0.8);
   }
 
   &--item {
@@ -179,16 +186,20 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    &--active * {
-      @include make-visible;
-      transform: translateY(0) !important;
+    &--active {
+
+      z-index: $z-index-top;
+      & * {
+        @include make-visible;
+        transform: translateY(0) !important;
+      }
     }
   }
 
   &--btn {
     position: absolute;
     @include btn--circle;
-    @include btn--default($border-accent-thin);
+    @include btn--default($col-accent-tint-1, $col-main-primary);
     border: none;
     top: 55%;
     transform: translateY(-50%);
@@ -198,19 +209,19 @@
     }
     &--right {
       padding: 0.5rem;
-      right: 5rem;
+      right: 15rem;
     }
 
     &--left {
       color: $col-accent-shade-1;
       padding: 0.5rem;
-      left: 5rem;
+      left: 15rem;
       transform: translateY(-50%);
     }
 
     &:hover {
       background-color: rgba($col-accent-primary, 0.6);
-      color: $col-main-shade-2;
+      color: $col-main-primary;
     }
   }
 
@@ -226,7 +237,7 @@
 
   &--dot {
     @include btn--circle;
-    @include btn--default($border-accent-thin);
+    @include btn--default($col-accent-tint-1, $col-accent-tint-1);
     position: relative;
     height: 1.2rem;
     width: 1.2rem;
@@ -242,12 +253,12 @@
   }
 }
 
-.z-layout {
-  background-color: $col-main-shade-2;
+@mixin z-layout($grid-size-two-col-left) {
+  background-color: $col-white-primary;
   width: 100%;
   height: 85vh;
   display: grid;
-  grid-template-columns: 45fr 55fr;
+  grid-template-columns: $grid-size-two-col-left 100-$grid-size-two-col-left;
 
   &--img {
     background-size: cover;
@@ -270,7 +281,7 @@
 
     &--title {
       display: inline-block;
-      color: $col-accent-primary;
+      color: $col-main-tint-1;
       font-size: $font-size-text-md;
       text-transform: uppercase;
       letter-spacing: 0.1rem;
@@ -279,6 +290,7 @@
 
     &--secondary-title {
       display: block;
+      color: $col-gray-tint-1;
       margin-bottom: $margin-flex-lg * 2.5;
       font-size: $font-size-header-md;
     }
@@ -286,38 +298,40 @@
     &--desc {
       display: block;
       margin-bottom: $margin-flex-lg * 1.5;
+      color: $col-main-tint-1;
       font-size: $font-size-text-md;
+      line-height: $font-line-height-md;
     }
 
     &--btn {
       font-size: $font-size-text-lg;
-      @include link-btn($col-accent-primary, $border-accent-thin);
+      @include btn-link($col-gray-tint-1, $col-main-tint-1);
     }
   }
 }
 
-@mixin input--group($width) {
+@mixin input--group($width,$text-color) {
   position: relative;
   width: $width;
 
   & input {
     display: block;
     padding: $pos-input-y $pos-input-x;
-    font-size: $font-size-text-md;
+    font-size: inherit;
     font-family: inherit;
-    font-weight: $font-weight-sm;
-    border-bottom: $border-accent-thin;
+    font-weight: inherit;
+    color: $text-color;
+    border-bottom: solid $size-underline-link $text-color;
     width: 100%;
   }
 
   & input::placeholder {
-    color: rgba($col-accent-tint-1, 0.7);
+    color: rgba($text-color, 0.8);
   }
 
   & input:focus {
-    outline: none
+    outline: none;
   }
-
 
   & label {
     display: inline-block;
@@ -325,18 +339,19 @@
     bottom: $pos-input-y;
     left: $pos-input-x;
     transition: $ani-default;
+    color: $text-color;
     @include make-invisible;
   }
 
   & :not(input:placeholder-shown) + label {
     transform: translateY(3.6rem);
     font-size: $font-size-text-s;
-    color: $col-accent-tint-1;
+    color: $text-color;
     @include make-visible;
   }
 }
 
 @mixin accordion() {
   display: flex;
-
+  flex-direction: column;
 }

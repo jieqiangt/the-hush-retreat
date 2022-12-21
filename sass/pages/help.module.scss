@@ -10,34 +10,82 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: black;
   flex-direction: column;
   align-items: center;
+  font-size: $font-size-text-md;
 
-  
   &--title {
-    @include section--title($col-accent-primary)
+    @include section--title($col-accent-primary,$letter-spacing-xs);
+    margin-bottom: 4.8rem;
   }
 
   &--accordion {
     @include accordion;
+    padding: 0rem 50rem;
+    font-weight: $font-weight-lg;
   }
 
   &--item {
+    display: grid;
+    grid-template-columns: calc((100fr - $grid-faq-item-fr) / 2) $grid-faq-item-fr calc(
+        (100fr - $grid-faq-item-fr) / 2
+      );
 
-    grid-template-columns: auto 1fr auto;
-    
+    &--box {
+      border-bottom: $border-accent-md;
+      display: flex;
+      grid-column: 1 / -1;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding-bottom: -1rem;
+      line-height: 1;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $col-accent-tint-2;
+        color: $col-main-tint-1;
+      }
+    }
+
     &--number {
-
+      font-size: $font-size-text-lg;
+      margin-bottom: 0.8rem;
+      margin-left: 0.4rem;
     }
 
     &--question {
+      margin-left: 1rem;
     }
 
     &--icon {
+      margin-left: auto;
+      margin-right: 1rem;
+      transition: all 0.4s ease-out;
+
+      &--active {
+        transform: rotate(90deg);
+      }
     }
 
     &--answer {
+      grid-column: 2;
+      grid-row: 2;
+      font-weight: $font-weight-md;
+      line-height: $font-line-height-default;
+      @include make-invisible;
+      height: 0rem;
+      margin: 0.8rem 0rem;
+      transform: translateY(-1rem);
+      transition: all 0.4s ease-out;
+    }
+
+    &--active {
+      margin-top: 0.8rem;
+      margin-bottom: 2.4rem;
+      height: auto;
+      transform: translateY(0);
+      @include make-visible;
     }
   }
 }
