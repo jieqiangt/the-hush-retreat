@@ -48,7 +48,7 @@
   }
 
   &--btn {
-    @include btn-link($col-gray-primary, $col-main-tint-1);
+    @include btn--link($col-gray-primary, $col-main-tint-1);
   }
 
   &--title {
@@ -167,7 +167,7 @@
 
     &--retreat {
       font-size: $font-size-text-s;
-      @include btn-link($col-accent-primary, $col-main-tint-1);
+      @include btn--link($col-accent-primary, $col-main-tint-1);
     }
   }
 }
@@ -240,8 +240,8 @@
     &--contact {
     }
 
-    &--btn-link {
-      @include btn-link($col-gray-tint-2, $col-main-tint-1);
+    &--btn--link {
+      @include btn--link($col-gray-tint-2, $col-main-tint-1);
       font-size: $font-size-text-s;
     }
   }

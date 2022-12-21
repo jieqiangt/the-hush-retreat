@@ -31,7 +31,7 @@ export default function NewsLetter() {
           </h3>
           <LinkButton
             href="/contact"
-            btnClass={classes["newsletter--signup--btn-link"]}
+            btnClass={classes["newsletter--signup--btn--link"]}
           >
             Contact Us
           </LinkButton>

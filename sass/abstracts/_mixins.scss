@@ -35,7 +35,7 @@
   }
 }
 
-@mixin btn-link($text-color, $hover-text-color) {
+@mixin btn--link($text-color, $hover-text-color) {
   & a {
     @include btn--default($text-color, $hover-text-color);
     border-left: none;
