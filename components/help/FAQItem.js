@@ -11,9 +11,9 @@ export default function FAQItem(props) {
         className={classes["faq--item--box"]}
         onClick={props.onClick}
       >
-        <span className={classes["faq--item--number"]}>{props.number}</span>
-        <span className={classes["faq--item--question"]}>{props.question}</span>
-        <span className={`${classes["faq--item--icon"]} ${activeArrClass}`}>
+        <span idx={props.idx} className={classes["faq--item--number"]}>{props.number}</span>
+        <span idx={props.idx} className={classes["faq--item--question"]}>{props.question}</span>
+        <span idx={props.idx} className={`${classes["faq--item--icon"]} ${activeArrClass}`}>
           &rarr;
         </span>
       </button>

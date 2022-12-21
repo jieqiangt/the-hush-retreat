@@ -61,13 +61,25 @@ const FAQItemsList = [
 ];
 
 export default function FAQ() {
-  const [activeItem, setActiveItem] = useState(1);
+  const [activeItems, setActiveItems] = useState([]);
   const [FAQItems, setFAQItems] = useState([]);
+  
+  console.log(`active items in componenent: ${activeItems}`)
 
   const setActiveItemHandler = (event) => {
     event.preventDefault();
-    const idx = parseInt(event.target.getAttribute("idx"));
-    setActiveItem(() => idx);
+    const clickedIdx = parseInt(event.target.getAttribute("idx"));
+    console.log({clickedIdx})
+    const idx = activeItems.indexOf(clickedIdx);
+    console.log({idx})
+    const newActiveItems = [...activeItems];
+
+    if (idx !== -1) {
+      newActiveItems.splice(idx, 1);
+    } else {
+      newActiveItems.push(clickedIdx);
+    }
+    setActiveItems(() => newActiveItems);
   };
 
   useEffect(() => {
@@ -88,11 +100,14 @@ export default function FAQ() {
       active: false,
     }));
 
-    const activeFAQItem = FAQItemsList[activeItem];
-    activeFAQItem["active"] = true;
-    FAQItemsOutput.splice(activeItem, 1, activeFAQItem);
+    for (let itemIdx of activeItems) {
+      const activeFAQItem = FAQItemsOutput[itemIdx];
+      const newActiveFAQItem = { ...activeFAQItem, active: true };
+      FAQItemsOutput.splice(itemIdx, 1, newActiveFAQItem);
+    }
+
     setFAQItems(FAQItemsOutput.map(createFAQItem));
-  }, [activeItem]);
+  }, [activeItems]);
 
   return (
     <div className={classes["faq"]}>

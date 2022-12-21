@@ -15,7 +15,7 @@
   font-size: $font-size-text-md;
 
   &--title {
-    @include section--title($col-accent-primary,$letter-spacing-xs);
+    @include section--title($col-accent-primary, $letter-spacing-xs);
     margin-bottom: 4.8rem;
   }
 
@@ -30,13 +30,15 @@
     grid-template-columns: calc((100fr - $grid-faq-item-fr) / 2) $grid-faq-item-fr calc(
         (100fr - $grid-faq-item-fr) / 2
       );
+    color: $col-main-tint-1;
 
     &--box {
-      border-bottom: $border-accent-md;
+      border-bottom: solid 0.2rem $col-accent-tint-1;
       display: flex;
       grid-column: 1 / -1;
       align-items: center;
       justify-content: center;
+      font-weight: $font-weight-sm;
       gap: 1rem;
       padding-bottom: -1rem;
       line-height: 1;
@@ -56,15 +58,17 @@
 
     &--question {
       margin-left: 1rem;
+      margin-right: auto;
     }
 
     &--icon {
-      margin-left: auto;
+      display: block;
       margin-right: 1rem;
       transition: all 0.4s ease-out;
 
       &--active {
         transform: rotate(90deg);
+        margin-right: 1rem;
       }
     }
 
@@ -72,6 +76,7 @@
       grid-column: 2;
       grid-row: 2;
       font-weight: $font-weight-md;
+      color: $col-gray-tint-1;
       line-height: $font-line-height-default;
       @include make-invisible;
       height: 0rem;
