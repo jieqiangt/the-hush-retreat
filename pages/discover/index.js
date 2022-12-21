@@ -15,12 +15,11 @@ export default function DiscoverPage() {
         <title>Discover</title>
         <meta name="description" content="Discover" />
       </Head>
-      <Layout>
+      <Layout footerClass={classes["discover--footer"]}>
         <GuidingPrinciple />
         <TheWayOfLotus />
         <OurApproach />
         <OurFounder />
-        <Footer footerClass={classes["discover--footer"]} />
       </Layout>
     </Fragment>
   );

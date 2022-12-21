@@ -9,7 +9,6 @@ import CorporateCustomers from "../components/home/CorporateCustomers";
 import Layout from "../components/layout/Layout";
 import classes from "../sass/pages/home.module.scss";
 import Newsletter from "../components/home/Newsletter";
-import Footer from "../components/layout/Footer";
 
 export default function Home() {
   return (
@@ -18,7 +17,7 @@ export default function Home() {
         <title>Home</title>
         <meta name="description" content="Home" />
       </Head>
-      <Layout>
+      <Layout footerClass={classes["home--footer"]}>
         <Hero />
         <CorporateCustomers />
         <Bespoke />
@@ -26,7 +25,6 @@ export default function Home() {
         <Mindfulness />
         <Testimonials />
         <Newsletter />
-        <Footer footerClass={classes["home--footer"]} />
       </Layout>
     </Fragment>
   );
