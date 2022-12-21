@@ -18,19 +18,16 @@ export default function Home() {
         <title>Home</title>
         <meta name="description" content="Home" />
       </Head>
-      <Layout
-        // firstSection={Hero}
-        // headerClass={classes["home--header"]}
-        // headerTitleClass={(classes["home--header--title"])}
-      ></Layout>
-      <Hero/>
-      <CorporateCustomers />
-      <Bespoke />
-      <Immersive />
-      <Mindfulness />
-      <Testimonials />
-      <Newsletter />
-      <Footer footerClass={classes["home--footer"]} />
+      <Layout>
+        <Hero />
+        <CorporateCustomers />
+        <Bespoke />
+        <Immersive />
+        <Mindfulness />
+        <Testimonials />
+        <Newsletter />
+        <Footer footerClass={classes["home--footer"]} />
+      </Layout>
     </Fragment>
   );
 }

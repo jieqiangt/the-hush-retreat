@@ -15,10 +15,7 @@ export default function DiscoverPage() {
         <title>Discover</title>
         <meta name="description" content="Discover" />
       </Head>
-      <Layout
-      // firstSection={GuidingPrinciple}
-      // headerClass={classes["discover--header"]}
-      >
+      <Layout>
         <GuidingPrinciple />
         <TheWayOfLotus />
         <OurApproach />
