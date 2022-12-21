@@ -34,32 +34,7 @@
 
 }
 
-.test {
-  @include z-layout(45fr);
-
-  &--img {
-    width: 100%;
-    background-image: url("../../public/meditation-1-lg.jpg");
-  }
-
-  &--article {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $col-white-primary;
-
-    &--box {
-      position: static;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      padding: 5rem 25rem 1.5rem 25rem;
-      background-color: $col-main-primary;
-    }
-  }
-}
-
-.test-2 {
+.principle {
   width: 100%;
   height: 100vh;
   background-image: 
@@ -114,43 +89,6 @@
     font-style: italic; 
   }
 
-}
-
-.principle {
-  width: 100%;
-  position: relative;
-
-  &--box {
-    // background-color: rgba($col-main-primary, 0.7);
-    position: absolute;
-    top: 32rem;
-    right: 58rem;
-    text-align: left;
-  }
-
-  &--title {
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    font-size: $font-size-text-md;
-    font-weight: $font-weight-md;
-    color: $col-accent-tint-2;
-    margin-bottom: 4rem;
-  }
-
-  &--article {
-    text-align: left;
-    display: block;
-    font-size: $font-size-header-md;
-    color: $col-gray-tint-1;
-    line-height: $font-line-height-lg;
-  }
-
-  &--lotus--em {
-    // color: $col-main-primary;
-    font-style: italic;
-    text-transform: capitalize;
-  }
 }
 
 .approach {
@@ -280,11 +218,6 @@
   display: flex;
   width: 100%;
   height: 100vh;
-  // background-image: linear-gradient(
-  //     rgba($col-black-primary, 0.3),
-  //     rgba($col-black-primary, 0.3)
-  //   ),
-  //   url("../../public/forest-1-lg.jpg");
   background-size: cover;
   background-position: top;
   position: relative;
