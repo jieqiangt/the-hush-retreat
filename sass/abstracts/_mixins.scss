@@ -24,22 +24,24 @@
   display: inline-block;
   background-color: transparent;
   color: $text-color;
-  border: solid $size-underline-link $text-color;
   cursor: pointer;
   transition: background-color $ani-time-link ease-out color $ani-time-link
     ease-out;
 
-  &:hover {
-    background-color: rgba($text-color, 0.3);
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    background-color: rgba($text-color, 0.4);
     color: $hover-text-color;
-  }
+  }   
 }
 
 @mixin btn--link($text-color, $hover-text-color) {
   & a {
     @include btn--default($text-color, $hover-text-color);
-    border-left: none;
-    border-right: none;
+    border-top: solid $size-underline-link $text-color;
+    border-bottom: solid $size-underline-link $text-color;
     padding: 0.6rem;
     color: $text-color;
 

@@ -80,7 +80,6 @@
   &--img {
     background-image: url("../../public/alone-2-lg.jpg");
   }
-
 }
 
 .bespoke {
@@ -89,7 +88,6 @@
   &--img {
     background-image: url("../../public/bespoke-1-lg.jpg");
   }
-
 }
 
 .mindfulness {
@@ -102,7 +100,7 @@
 
 .testimonials {
   width: 100%;
-  height: 45vh;
+  height: 50vh;
   color: $col-accent-tint-1;
   background-image: linear-gradient(
       rgba($col-white-primary, 0.4),
@@ -130,7 +128,15 @@
   }
 
   &--carousel {
-    @include carousel((3.6rem 25rem));
+    @include carousel(
+      (3.6rem 20rem),
+      rgba($col-main-primary, 0.65),
+      $col-accent-tint-1,
+      $col-main-primary,
+      $col-accent-tint-1,
+      $col-accent-tint-1,
+      $col-accent-shade-1
+    );
   }
 
   &--item {
@@ -183,7 +189,6 @@
     position: relative;
 
     &--box {
-      
       position: absolute;
       bottom: 5rem;
       right: 15rem;
