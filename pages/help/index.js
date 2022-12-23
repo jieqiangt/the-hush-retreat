@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Fragment } from "react";
-import ContactUs from "../../components/help/contactUs";
+import ContactUs from "../../components/help/ContactUs";
 import FAQ from "../../components/help/FAQ";
 import Layout from "../../components/layout/Layout";
 import classes from "../../sass/pages/help.module.scss";
