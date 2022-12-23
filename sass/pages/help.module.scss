@@ -24,7 +24,6 @@
     background-color: rgba($col-accent-tint-2, 0.5);
   }
 
-
   &--img {
     background-image: url("../../public/lotus-2-lg.jpg");
     background-position: bottom left;
@@ -250,4 +249,17 @@
 }
 
 .help--footer {
+  @include footer(transparent, relative);
+  padding-top: 5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    bottom: 0rem;
+    left: 1.5%;
+    background-color: rgba($col-accent-tint-2, 0.5);
+  }
 }
