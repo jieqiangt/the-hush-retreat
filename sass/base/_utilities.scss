@@ -196,6 +196,7 @@
     &--dot {
       @include btn--circle;
       @include btn--default($dot-color, $dot-color-hover);
+      border: solid $size-underline-link $dot-color-hover;
       position: relative;
       height: 1.2rem;
       width: 1.2rem;
@@ -267,11 +268,19 @@
   }
 }
 
-@mixin input--group($width, $text-color) {
+@mixin input--group(
+  $width,
+  $text-color,
+  $pos-input-x,
+  $pos-input-y,
+  $pos-translate-y,
+  $textarea: false
+) {
   position: relative;
   width: $width;
 
-  & input {
+  & input,
+  & textarea {
     display: block;
     padding: $pos-input-y $pos-input-x;
     font-size: inherit;
@@ -280,13 +289,16 @@
     color: $text-color;
     border-bottom: solid $size-underline-link $text-color;
     width: 100%;
+    max-width: 100%;
   }
 
-  & input::placeholder {
+  & input::placeholder,
+  &textarea::placeholder {
     color: rgba($text-color, 0.8);
   }
 
-  & input:focus {
+  & input:focus,
+  &textarea::placeholder {
     outline: none;
   }
 
@@ -300,11 +312,23 @@
     @include make-invisible;
   }
 
-  & :not(input:placeholder-shown) + label {
-    transform: translateY(3.6rem);
-    font-size: $font-size-text-s;
-    color: $text-color;
-    @include make-visible;
+  @if $textarea {
+    & :not(textarea:placeholder-shown) + label {
+      transform: translate(
+        -0.4rem,
+        $pos-translate-y + $pos-textarea-label-add-translate-up
+      );
+      font-size: $font-size-text-s;
+      color: $text-color;
+      @include make-visible;
+    }
+  } @else {
+    & :not(input:placeholder-shown) + label {
+      transform: translateY($pos-translate-y);
+      font-size: $font-size-text-s;
+      color: $text-color;
+      @include make-visible;
+    }
   }
 }
 

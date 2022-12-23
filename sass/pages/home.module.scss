@@ -27,7 +27,7 @@
     linear-gradient(
       180deg,
       rgba($col-white-primary, 0),
-      rgba($col-white-primary, 0.1)
+      rgba($col-white-primary, 0.2)
     ),
     url("../../public/mountain-1-lg.jpg")
   );
@@ -41,7 +41,7 @@
     display: block;
     position: absolute;
     top: 30rem;
-    left: 105rem;
+    left: 100rem;
     text-align: left;
     background-color: rgba($col-accent-primary, 0.75);
     padding: 3.6rem 2.4rem;
@@ -190,7 +190,7 @@
 
     &--box {
       position: absolute;
-      bottom: 5rem;
+      bottom: 6rem;
       right: 15rem;
       display: flex;
       flex-direction: column;
@@ -217,7 +217,13 @@
     }
 
     &--input-group {
-      @include input--group(30rem, $col-gray-tint-1);
+      @include input--group(
+        30rem,
+        $col-gray-tint-1,
+        $pos-input-label-x,
+        $pos-input-label-y,
+        $pos-input-label-translate-up
+      );
     }
 
     &--btn {
@@ -239,12 +245,6 @@
         color: $col-main-tint-1;
         text-decoration-color: $col-main-tint-1;
       }
-    }
-
-    &--questions {
-    }
-
-    &--contact {
     }
 
     &--btn--link {

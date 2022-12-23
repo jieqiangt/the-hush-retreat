@@ -1,6 +1,6 @@
 import classes from "../../sass/pages/home.module.scss";
 import LinkButton from "../ui/LinkButton";
-import InputSingleBar from "../ui/InputSingleBar";
+import InputBar from "../ui/InputBar";
 
 export default function NewsLetter() {
   return (
@@ -11,7 +11,7 @@ export default function NewsLetter() {
             Stay in the loop
           </h2>
           <form action="#" className={classes["newsletter--signup--form"]}>
-            <InputSingleBar
+            <InputBar
               label="Email"
               inputType="email"
               inputName="newsletter--form--signup--email"

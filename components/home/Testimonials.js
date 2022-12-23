@@ -44,7 +44,7 @@ export default function Testimonials() {
         return (activeItem + 1) % testimonialsArr.length;
       });
       setIntervalId(() => interval);
-    }, 100000000000);
+    }, 8000);
 
     return () => {
       clearInterval(interval);

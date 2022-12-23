@@ -3,7 +3,80 @@
 @import "../base/animations";
 @import "../base/utilities";
 
-.help--header {
+.contact-us {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  &--form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: $font-size-text-s;
+    grid-gap: 2rem;
+
+    &--first-name {
+      display: flex;
+      @include input--group(
+        $size-contact-us-input-width,
+        $col-gray-primary,
+        $pos-input-label-x,
+        $pos-input-label-y,
+        $pos-input-label-translate-up
+      );
+    }
+
+    &--last-name {
+      @include input--group(
+        $size-contact-us-input-width,
+        $col-gray-primary,
+        $pos-input-label-x,
+        $pos-input-label-y,
+        $pos-input-label-translate-up
+      );
+    }
+
+    &--email {
+      @include input--group(
+        $size-contact-us-input-width,
+        $col-gray-primary,
+        $pos-input-label-x,
+        $pos-input-label-y,
+        $pos-input-label-translate-up
+      );
+      grid-column: 1 / -1;
+      grid-row: 2;
+      width: 100%;
+    }
+
+    &--message {
+      @include input--group(
+        $size-contact-us-input-width,
+        $col-gray-primary,
+        0.8rem,
+        0.4rem,
+        $pos-input-label-translate-up,
+        true
+      );
+      grid-column: 1 / -1;
+      grid-row: 3;
+      width: 100%;
+      margin-top: 1.4rem;
+
+      & label {
+        top: 0rem;
+      } 
+    }
+
+    &--btn {
+      @include btn--link($col-gray-primary, $col-main-tint-1);
+      grid-column: 1 / -1;
+      grid-row: 4;
+      justify-self: start;
+      margin-top: -1rem;
+    }
+
+  }
 }
 
 .faq {
@@ -15,7 +88,7 @@
   font-size: $font-size-text-md;
 
   &--title {
-    @include section--title($col-accent-primary, $letter-spacing-xs);
+    @include section--title($col-main-tint-1, $letter-spacing-xs);
     margin-bottom: 4.8rem;
   }
 

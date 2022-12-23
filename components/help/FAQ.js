@@ -64,8 +64,6 @@ export default function FAQ() {
   const [activeItems, setActiveItems] = useState([]);
   const [FAQItems, setFAQItems] = useState([]);
   
-  console.log(`active items in componenent: ${activeItems}`)
-
   const setActiveItemHandler = (event) => {
     event.preventDefault();
     const clickedIdx = parseInt(event.target.getAttribute("idx"));

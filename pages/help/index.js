@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import ContactUs from "../../components/help/contactUs";
 import FAQ from "../../components/help/FAQ";
 import Layout from "../../components/layout/Layout";
-import classes from "../../sass/pages/discover.module.scss";
+import classes from "../../sass/pages/help.module.scss";
 
 export default function HelpPage() {
   return (
