@@ -123,7 +123,7 @@
 @mixin carousel--btn($btn-color, $btn-color-hover) {
   position: absolute;
   @include btn--circle;
-  @include btn--default($btn-color, $btn-color-hover);
+  @include btn--default($btn-color, $btn-color-hover, 0.6);
   border: none;
   top: 55%;
   transform: translateY(-50%);
@@ -195,7 +195,7 @@
 
     &--dot {
       @include btn--circle;
-      @include btn--default($dot-color, $dot-color-hover);
+      @include btn--default($dot-color, $dot-color-hover, 0.6);
       border: solid $size-underline-link $dot-color-hover;
       position: relative;
       height: 1.2rem;
@@ -263,7 +263,7 @@
 
     &--btn {
       font-size: $font-size-text-md;
-      @include btn--link($col-gray-tint-1, $col-main-tint-1);
+      @include btn--link($col-gray-tint-1, $col-main-tint-1, 0.2);
     }
   }
 }
@@ -274,13 +274,12 @@
   $pos-input-x,
   $pos-input-y,
   $pos-translate-y,
-  $textarea: false
+  $inputType: text
 ) {
   position: relative;
   width: $width;
 
-  & input,
-  & textarea {
+  &--input {
     display: block;
     padding: $pos-input-y $pos-input-x;
     font-size: inherit;
@@ -293,27 +292,37 @@
     resize: none;
   }
 
-  & input::placeholder,
-  &textarea::placeholder {
+  & textarea {
+    border: solid $size-underline-link $text-color;
+  }
+
+  &--input::placeholder {
     color: rgba($text-color, 0.8);
   }
 
-  & input:focus,
-  &textarea::placeholder {
-    outline: none;
+  @if $inputType == "select" {
+    &--label {
+      display: inline-block;
+      position: absolute;
+      bottom: $pos-input-y;
+      left: $pos-input-x;
+      color: $text-color;
+      transform: translateY($pos-translate-y);
+      font-size: $font-size-text-s;
+    }
+  } @else {
+    &--label {
+      display: inline-block;
+      position: absolute;
+      bottom: $pos-input-y;
+      left: $pos-input-x;
+      transition: $ani-default;
+      color: $text-color;
+      @include make-invisible;
+    }
   }
 
-  & label {
-    display: inline-block;
-    position: absolute;
-    bottom: $pos-input-y;
-    left: $pos-input-x;
-    transition: $ani-default;
-    color: $text-color;
-    @include make-invisible;
-  }
-
-  @if $textarea {
+  @if $inputType == "textarea" {
     & :not(textarea:placeholder-shown) + label {
       transform: translate(
         -0.4rem,
@@ -323,7 +332,9 @@
       color: $text-color;
       @include make-visible;
     }
-  } @else {
+  }
+
+  @if $inputType == "text" {
     & :not(input:placeholder-shown) + label {
       transform: translateY($pos-translate-y);
       font-size: $font-size-text-s;

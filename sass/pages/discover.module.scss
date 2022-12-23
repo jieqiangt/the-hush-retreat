@@ -200,7 +200,7 @@
 
     &--btn {
       display: inline-block;
-      @include btn--link($col-gray-tint-1, $col-main-tint-1);
+      @include btn--link($col-gray-tint-1, $col-main-tint-1, 0.2);
       width: 25rem;
     }
   }

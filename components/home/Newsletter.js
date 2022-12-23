@@ -17,10 +17,10 @@ export default function NewsLetter() {
               inputName="newsletter--form--signup--email"
               inputPlaceholder="Email"
               inputGroupClass={classes["newsletter--signup--input-group"]}
-              inputClass={classes["newsletter--signup--input"]}
-              labelClass={classes["newsletter--signup--label"]}
+              inputClass={classes["newsletter--signup--input-group--input"]}
+              labelClass={classes["newsletter--signup--input-group--label"]}
             />
-            <button className={classes["newsletter--signup--btn"]}>
+            <button className={classes["newsletter--signup--input-group--btn"]}>
               Sign Up
             </button>
           </form>
@@ -37,9 +37,7 @@ export default function NewsLetter() {
           </LinkButton>
         </div>
       </div>
-      <div
-        className={classes["newsletter--img"]}
-      />
+      <div className={classes["newsletter--img"]} />
     </section>
   );
 }

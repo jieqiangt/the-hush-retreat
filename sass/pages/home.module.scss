@@ -62,7 +62,7 @@
   }
 
   &--btn {
-    @include btn--link($col-gray-primary, $col-main-tint-1);
+    @include btn--link($col-gray-primary, $col-main-tint-1, 0.2);
     font-size: $font-size-text-md;
   }
 }
@@ -172,7 +172,7 @@
 
     &--retreat {
       font-size: $font-size-text-md;
-      @include btn--link($col-accent-tint-2, $col-main-primary);
+      @include btn--link($col-accent-tint-2, $col-main-primary, 0.6);
     }
   }
 }
@@ -224,31 +224,31 @@
         $pos-input-label-y,
         $pos-input-label-translate-up
       );
-    }
+      
+      &--btn {
+        @include btn--default($col-gray-primary, $col-main-primary, 0.2);
+        border-right: none;
+        border-left: none;
+        border-top: none;
+        border-bottom: $border-gray-sm;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+        font-size: $font-size-text-s;
+        text-decoration: underline 0.1rem $col-gray-primary;
+        text-underline-offset: 0.9rem;
+        flex: 0 1 auto;
+        text-align: left;
+        transition: $ani-default;
 
-    &--btn {
-      @include btn--default($col-gray-primary, $col-main-primary);
-      border-right: none;
-      border-left: none;
-      border-top: none;
-      border-bottom: $border-gray-sm;
-      padding-left: 0.8rem;
-      padding-right: 0.8rem;
-      font-size: $font-size-text-s;
-      text-decoration: underline 0.1rem $col-gray-primary;
-      text-underline-offset: 0.9rem;
-      flex: 0 1 auto;
-      text-align: left;
-      transition: $ani-default;
-
-      &:hover {
-        color: $col-main-tint-1;
-        text-decoration-color: $col-main-tint-1;
+        &:hover {
+          color: $col-main-tint-1;
+          text-decoration-color: $col-main-tint-1;
+        }
       }
     }
 
     &--btn--link {
-      @include btn--link($col-gray-primary, $col-main-tint-1);
+      @include btn--link($col-gray-tint-1, $col-main-tint-1, 0.2);
       font-size: $font-size-text-s;
     }
   }

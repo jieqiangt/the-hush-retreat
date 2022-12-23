@@ -20,7 +20,7 @@
   border-radius: 50%;
 }
 
-@mixin btn--default($text-color, $hover-text-color) {
+@mixin btn--default($text-color, $hover-text-color, $hover-opacity) {
   display: inline-block;
   background-color: transparent;
   color: $text-color;
@@ -32,14 +32,14 @@
   &:focus,
   &:active {
     outline: none;
-    background-color: rgba($text-color, 0.4);
+    background-color: rgba($text-color, $hover-opacity);
     color: $hover-text-color;
   }
 }
 
-@mixin btn--link($text-color, $hover-text-color, $button: false) {
+@mixin btn--link($text-color, $hover-text-color, $hover-opacity, $button: false) {
   @if $button {
-    @include btn--default($text-color, $hover-text-color);
+    @include btn--default($text-color, $hover-text-color, $hover-opacity);
     border-top: solid $size-underline-link $text-color;
     border-bottom: solid $size-underline-link $text-color;
     padding: 0.6rem;
@@ -50,7 +50,7 @@
     }
   } @else {
     & a {
-      @include btn--default($text-color, $hover-text-color);
+      @include btn--default($text-color, $hover-text-color, $hover-opacity);
       border-top: solid $size-underline-link $text-color;
       border-bottom: solid $size-underline-link $text-color;
       padding: 0.6rem;

@@ -47,16 +47,30 @@ li {
   padding: 0;
 }
 
-input {
+input,
+select,
+textarea {
   background-color: transparent;
   border: none;
 }
 
-input:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
 }
 
-
 main {
   position: relative;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
 }
