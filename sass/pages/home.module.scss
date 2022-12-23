@@ -129,6 +129,10 @@
     z-index: $z-index-top;
   }
 
+  &--carousel {
+    @include carousel((3.6rem 25rem));
+  }
+
   &--item {
     position: absolute;
     display: flex;

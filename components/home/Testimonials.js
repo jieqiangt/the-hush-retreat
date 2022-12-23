@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import classes from "../../sass/pages/home.module.scss";
 import Carousel from "../ui/Carousel";
@@ -68,6 +68,8 @@ export default function Testimonials() {
         retreatName={item.retreatName}
         retreatDate={item.retreatDate}
         active={item.active}
+        carouselItemClass={classes["testimonials--carousel--item"]}
+        carouselItemActiveClass={classes["testimonials--carousel--item--active"]}
       />
     );
     const setActiveTestimonial = (testimonials, idx) => {
@@ -96,6 +98,13 @@ export default function Testimonials() {
         carouselItems={testimonialItems}
         activeItem={activeItem}
         changeActiveItem={changeActiveItem}
+        carouselClass={classes["testimonials--carousel"]}
+        carouselListClass={classes["testimonials--carousel--list"]}
+        carouselBtnLeftClass={classes["testimonials--carousel--btn--left"]}
+        carouselBtnRightClass={classes["testimonials--carousel--btn--right"]}
+        carouselNavClass={classes["testimonials--carousel--nav"]}
+        carouselNavDotClass={classes["testimonials--carousel--nav--dot"]}
+        carouselNavDotActiveClass={classes["testimonials--carousel--nav--dot--active"]}
       />
     </section>
   );
