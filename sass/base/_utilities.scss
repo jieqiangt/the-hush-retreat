@@ -290,6 +290,7 @@
     border-bottom: solid $size-underline-link $text-color;
     width: 100%;
     max-width: 100%;
+    resize: none;
   }
 
   & input::placeholder,

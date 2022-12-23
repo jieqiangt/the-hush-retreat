@@ -61,7 +61,7 @@
       grid-column: 1 / -1;
       grid-row: 3;
       width: 100%;
-      margin-top: 1.4rem;
+      margin: 1.4rem 0rem;
 
       & label {
         top: 0rem;
@@ -69,7 +69,7 @@
     }
 
     &--btn {
-      @include btn--link($col-gray-primary, $col-main-tint-1);
+      @include btn--link($col-gray-primary, $col-main-tint-1, true);
       grid-column: 1 / -1;
       grid-row: 4;
       justify-self: start;

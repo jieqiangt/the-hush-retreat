@@ -32,7 +32,9 @@ export default function ContactUs() {
           inputClass={classes["contact-us--form--email--input"]}
           labelClass={classes["contact-us--form--email--label"]}
         />
-        <InputBar
+        <div> what? asdasds  ASDHKASDHASKD
+        </div>
+        {/* <InputBar
           label="Message"
           inputType="textarea"
           inputName="contact-us--form--message"
@@ -40,9 +42,9 @@ export default function ContactUs() {
           inputGroupClass={classes["contact-us--form--message"]}
           inputClass={classes["contact-us--form--message--input"]}
           labelClass={classes["contact-us--form--message--label"]}
-          rows="5"
-        />
-        <button className={classes["contact-us--form--btn"]}>Send</button>
+          rows="10"
+        /> */}
+        <button className={classes["contact-us--form--btn"]}>Send Message</button>
       </form>
     </div>
   );
