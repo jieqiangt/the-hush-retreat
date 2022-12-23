@@ -1,7 +1,6 @@
 @import "../abstracts/variables";
 @import "../abstracts/mixins";
 
-
 @mixin section--title($text-color, $letter-spacing) {
   display: inline-block;
   font-size: $font-size-text-lg;
@@ -54,63 +53,49 @@
   }
 }
 
-@mixin feature--item--title-params($text-color, $font-size) {
-  color: $text-color;
-  font-size: $font-size;
-}
-
-@mixin feature--item--desc-params($font-size) {
-  font-size: $font-size;
-}
-
-@mixin feature-params($margin-gap) {
-  &--list {
-    margin: 0rem 40rem $margin-gap * 2 40rem;
-    gap: $margin-gap;
-  }
-
-  &--item {
-    padding: $margin-gap 0rem;
-
-    &--outer + &--outer {
-      padding-left: $margin-gap;
-    }
-  }
-}
-
-.feature-box {
-  @include feature-params($margin-flex-lg);
+@mixin feature-box($margin-item-gap) {
+  width: 100vw;
 
   &--list {
-    display: flex;
-    justify-content: center;
-  }
-
-  &--item {
+    display: grid;
     width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(3, minmax(1rem, 30vw));
+    justify-content: center;
+    column-gap: $margin-item-gap;
+    justify-items: center;
 
-    &--title {
-      @include feature--item--title-params(
-        $col-main-tint-1,
-        $font-size-text-md
-      );
-      display: inline-block;
-      font-weight: $font-weight-sm;
-      text-transform: uppercase;
-      letter-spacing: 0.05rem;
-      margin: 2.4rem 0rem 0.8rem 0rem;
-    }
 
-    &--desc {
-      @include feature--item--desc-params($font-size-text-md);
-      color: $col-gray-primary;
-      padding: 0rem 1.8rem;
-      hyphens: auto;
-      text-align: left;
+  }
+
+  &--item {
+    padding: $margin-item-gap 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--outer {
+      padding-left: $margin-item-gap;
     }
 
     &--outer + &--outer {
       border-left: $border-gray-sm;
+    }
+
+    &--title {
+      display: inline-block;
+      font-weight: $font-weight-sm;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+      font-size: inherit;
+      margin: 2.4rem 0rem 0.8rem 0rem;
+    }
+
+    &--desc {
+      padding: 0rem 1.8rem;
+      hyphens: auto;
+      text-align: left;
+      font-size: inherit;
     }
   }
 }
@@ -133,7 +118,7 @@
     width: 97%;
     left: 1.5%;
     top: 0rem;
-    background-color: rgba($col-accent-tint-2,0.5);
+    background-color: rgba($col-accent-tint-2, 0.5);
   }
 }
 
@@ -161,7 +146,6 @@
     transform: translate(-50%, -50%);
 
     &--active {
-
       z-index: $z-index-top;
       & * {
         @include make-visible;
@@ -262,6 +246,7 @@
     &--secondary-title {
       display: block;
       color: $col-gray-tint-1;
+      font-size: $font-size-text-s;
       margin-bottom: $margin-flex-lg * 2.5;
       font-size: $font-size-header-md;
     }
@@ -281,7 +266,7 @@
   }
 }
 
-@mixin input--group($width,$text-color) {
+@mixin input--group($width, $text-color) {
   position: relative;
   width: $width;
 

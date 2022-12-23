@@ -154,7 +154,26 @@
 
   &--title {
     @include section--title($col-main-tint-1, $letter-spacing-xs);
-    margin: 8rem 0rem 2.4rem 0rem;
+    margin: 8rem 0rem 3.6rem 0rem;
+  }
+
+  &--feature-box{
+    @include feature-box(2.4rem);
+    margin-bottom: 4.8rem;
+
+    &--item {
+
+      font-size: $font-size-text-md;
+
+      &--title {
+        color: $col-main-tint-1;
+      }
+
+      &--desc {
+        line-height: $font-line-height-md;
+      }
+
+    }
   }
 
   &--cta {

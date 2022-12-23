@@ -23,12 +23,18 @@ export default function OurApproach() {
 
   return (
     <section className={classes["approach"]}>
-      <h2
-        className={classes["approach--title"]}
-      >
-        Our Approach
-      </h2>
-      <FeatureBoxList feature-box-items={features} />
+      <h2 className={classes["approach--title"]}>Our Approach</h2>
+      <div className={classes["approach--feature-box"]}>
+        <FeatureBoxList
+          feature-box-items={features}
+          featureBoxListClass={classes["approach--feature-box--list"]}
+          featureBoxItemClass={classes["approach--feature-box--item"]}
+          featureBoxItemOuterClass={classes["approach--feature-box--item--outer"]}
+          featureBoxItemImgClass={classes["approach--feature-box--item--img"]}
+          featureBoxItemTitleClass={classes["approach--feature-box--item--title"]}
+          featureBoxItemDescClass={classes["approach--feature-box--item--desc"]}
+        />
+      </div>
       <div className={classes["approach--cta"]}>
         <div className={classes["approach--cta--box"]}>
           <div className={classes["approach--cta--outer"]}>
