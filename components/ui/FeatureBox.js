@@ -1,6 +1,6 @@
 import FeatureBoxItem from "./FeatureBoxItem";
 
-export default function FeatureBoxList(props) {
+export default function FeatureBox(props) {
   return (
     <ul className={props.featureBoxListClass}>
       {props["feature-box-items"].map((item) => (

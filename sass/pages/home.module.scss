@@ -17,8 +17,8 @@
   );
   background-size: cover;
   background-position: bottom 25% left 90%;
-  border-right: solid 5rem $col-white-primary;
-  border-left: solid 5rem $col-white-primary;
+  // border-right: solid 5rem $col-white-primary;
+  // border-left: solid 5rem $col-white-primary;
 
   &--box {
     width: 50%;
@@ -208,7 +208,7 @@
         $pos-input-label-y,
         $pos-input-label-translate-up
       );
-      
+
       &--btn {
         @include btn--default($col-gray-primary, $col-main-primary, 0.2);
         border-right: none;

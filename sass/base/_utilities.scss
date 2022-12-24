@@ -54,17 +54,12 @@
 }
 
 @mixin feature-box($margin-item-gap) {
-  width: 100vw;
-
-  &--list {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: repeat(3, minmax(1rem, 30vw));
-    justify-content: center;
-    column-gap: $margin-item-gap;
-    justify-items: center;
-  }
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50rem,min-content));
+  justify-content: center;
+  column-gap: $margin-item-gap;
+  justify-items: center;
 
   &--item {
     padding: $margin-item-gap 0rem;

@@ -14,7 +14,7 @@ export default function HelpPage() {
       </Head>
       <Layout footerClass={classes["help--footer"]}>
         <ContactUs />
-        <FAQ />
+        <FAQ id="FAQ"/>
       </Layout>
     </Fragment>
   );
