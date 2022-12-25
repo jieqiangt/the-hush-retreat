@@ -7,15 +7,16 @@
   display: grid;
   grid-template-columns: [full-start] 1fr [center-start] repeat(
       10,
-      [col-start] minmax(18rem, min-content) [col-end]
-    ) 1fr [full-end];
-  grid-template-rows: 5vh 95vh 25vh repeat(3, min-content) 45vh 40vh min-content;
+      [col-start] minmax(16rem, min-content) [col-end]
+    ) [center-end] 1fr [full-end];
+  grid-template-rows: 5vh 100vh 25vh repeat(3, min-content) 45vh 40vh min-content;
 
   &--nav {
     grid-column: full-start / full-end;
     grid-row: 1;
   }
 }
+
 .hero {
   position: relative;
   background-image: (
@@ -30,8 +31,6 @@
   background-position: bottom 25% left 90%;
   grid-column: full-start / full-end;
   grid-row: 2;
-  // border-right: solid 5rem $col-white-primary;
-  // border-left: solid 5rem $col-white-primary;
 
   &--box {
     width: 50%;

@@ -16,6 +16,7 @@ export default function DiscoverPage() {
       </Head>
       <Layout
         pageClass={classes["discover"]}
+        navClass={classes["discover--nav"]}
         footerClass={classes["discover--footer"]}
       >
         <GuidingPrinciple />

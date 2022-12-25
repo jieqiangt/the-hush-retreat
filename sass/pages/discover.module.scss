@@ -5,12 +5,23 @@
 
 .discover {
   display: grid;
+  grid-template-columns:
+    [full-start] 1fr [center-start] repeat(
+      10,
+      [col-start] minmax(16rem, min-content) [col-end]
+    )
+    [center-end] 1fr [full-end];
+  grid-template-rows: 5vh 100vh repeat(4, min-content);
 
+  &--nav {
+    grid-column: full-start / full-end;
+    grid-row: 1;
+  }
 }
 
 .principle {
-  width: 100%;
-  height: 100vh;
+  grid-column: full-start / full-end;
+  grid-row: 2;
   background-image: linear-gradient(
       rgba($col-white-primary, 0.2),
       rgba($col-white-primary, 0.6)
@@ -18,39 +29,38 @@
     url("../../public/meditation-1-lg.jpg");
   background-size: cover;
   background-position: bottom 45% left;
-  // border-left: solid 5rem $col-white-primary;
-  // border-right: solid 5rem $col-white-primary;
   position: relative;
-  margin-bottom: 8rem;
 
   &::after {
     content: "";
     position: absolute;
     display: block;
     height: 0.2rem;
-    width: 102%;
-    bottom: -8rem;
-    left: -1%;
+    width: 97%;
+    bottom: -16rem;
+    left: 1.5%;
     background-color: rgba($col-accent-tint-2, 0.5);
+    z-index: $z-index-top;
   }
 
   &--box {
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 20rem;
+    top: 26rem;
     left: 85rem;
     font-size: $font-size-text-lg;
   }
 
   &--title {
     @include section--title($col-main-tint-1, $letter-spacing-xs);
-    margin-bottom: 4.8rem;
+    margin-bottom: 3.6rem;
   }
 
   &--desc {
     color: $col-gray-tint-1;
     line-height: $font-line-height-md;
+    margin-left: 2.4rem;
   }
 
   &--em {
@@ -61,10 +71,11 @@
 
 .lotus {
   @include z-layout(30fr);
-  width: 100%;
-  height: 90vh;
+  grid-column: full-start / full-end;
+  grid-row: 3;
   background-color: $col-white-primary;
   position: relative;
+  margin-top: 20rem;
 
   &::after {
     content: "";
@@ -72,15 +83,16 @@
     display: block;
     height: 0.2rem;
     width: 97%;
-    bottom: 0rem;
+    bottom: -4rem;
     left: 1.5%;
     background-color: rgba($col-accent-tint-2, 0.5);
+    z-index: $z-index-top;
   }
 
   &--img {
     background-image: url("../../public/lotus-1-lg.jpg");
     background-position: bottom;
-    width: 90%;
+    width: 100%;
     height: 80%;
     margin: 8rem -10rem 0rem auto;
     box-shadow: 2px 0px 15px 0px rgba($col-black-primary, 0.8);
@@ -99,8 +111,8 @@
       background-color: $col-main-primary;
       display: flex;
       flex-direction: column;
-      padding: 3.6rem 15rem 3.6rem 15rem;
-      margin-top: 15rem;
+      padding: 12rem 15rem;
+      margin-top: 14rem;
     }
 
     &--title {
@@ -123,13 +135,15 @@
 }
 
 .approach {
+  grid-column: full-start / full-end;
+  grid-row: 4;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   background-color: $col-white-primary;
-  height: 100vh;
   position: relative;
+  margin-top: 12rem;
 
   &::after {
     content: "";
@@ -146,13 +160,11 @@
     margin: 8rem 0rem 3.6rem 0rem;
   }
 
-  &--feature-box{
+  &--feature-box {
     @include feature-box(2.4rem);
     margin-bottom: 4.8rem;
 
-
     &--item {
-
       font-size: $font-size-text-md;
 
       &--title {
@@ -162,12 +174,12 @@
       &--desc {
         line-height: $font-line-height-md;
       }
-
     }
   }
 
   &--cta {
     width: 100%;
+    height: 20vh;
     position: relative;
 
     &--box {
@@ -197,12 +209,13 @@
 }
 
 .founder {
+  grid-column: full-start / full-end;
+  grid-row: 5;
   display: flex;
-  width: 100%;
-  height: 100vh;
   background-size: cover;
   background-position: top;
   position: relative;
+  margin-bottom: 16rem;
 
   &--title {
     @include section--title($col-accent-tint-1, $letter-spacing-xs);
@@ -243,6 +256,8 @@
 
 .discover--footer {
   @include footer(transparent, relative);
+  grid-column: full-start / full-end;
+  grid-row: 6;
   padding-top: 5rem;
 
   &::before {
