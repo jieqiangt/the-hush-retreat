@@ -108,7 +108,7 @@ export default function FAQ() {
   }, [activeItems]);
 
   return (
-    <div className={classes["faq"]}>
+    <div className={classes["faq"]} id="faq">
       <h2 className={classes["faq--title"]}>Frequently Asked Questions</h2>
       <Accordion
         accordionClass={classes["faq--accordion"]}

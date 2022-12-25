@@ -55,7 +55,8 @@
 
 @mixin feature-box($margin-item-gap) {
   display: grid;
-  grid-template-columns: repeat(3, minmax(50rem, min-content));
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, min-content));
   justify-content: center;
   column-gap: $margin-item-gap;
   justify-items: center;
@@ -94,9 +95,13 @@
 
 @mixin footer($bg-color, $position) {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
   font-size: $font-size-text-s;
   color: $col-main-tint-1;
-  bottom: 0.5%;
   width: 100%;
   padding-bottom: 2.4rem;
   background-color: $bg-color;
@@ -111,6 +116,12 @@
     left: 1.5%;
     top: 0rem;
     background-color: rgba($col-accent-tint-2, 0.5);
+  }
+
+  &--icon {
+    width: $size-icon-square-lg;
+    height: $size-icon-square-lg;
+    fill: $col-main-primary;
   }
 }
 

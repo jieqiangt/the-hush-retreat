@@ -1,12 +1,18 @@
 import classes from "../../sass/pages/home.module.scss";
 import LinkButton from "../ui/LinkButton";
 import InputBar from "../ui/InputBar";
+import Icon from "../ui/Icon";
+import Link from "next/link";
 
 export default function NewsLetter() {
   return (
     <section className={classes["newsletter"]}>
       <div className={classes["newsletter--signup"]}>
         <div className={classes["newsletter--signup--box"]}>
+          <Icon
+            iconClass={classes["newsletter--signup--icon"]}
+            iconName="icon-logo-words-right"
+          />
           <h2 className={classes["newsletter--signup--title"]}>
             Stay in the loop
           </h2>
@@ -25,7 +31,20 @@ export default function NewsLetter() {
             </button>
           </form>
           <h3 className={classes["newsletter--signup--title"]}>Follow Us</h3>
-          <div className={classes["newsletter--signup--socials"]}></div>
+          <div className={classes["newsletter--signup--socials"]}>
+            <Link href="https://www.facebook.com/thehushretreat">
+              <Icon
+                iconClass={classes["newsletter--signup--socials--icon"]}
+                iconName="icon-fb"
+              />
+            </Link>
+            <Link href="https://www.instagram.com/thehushretreats/">
+              <Icon
+                iconClass={classes["newsletter--signup--socials--icon"]}
+                iconName="icon-ig"
+              />
+            </Link>
+          </div>
           <h3 className={classes["newsletter--signup--title"]}>
             Burning questions?
           </h3>

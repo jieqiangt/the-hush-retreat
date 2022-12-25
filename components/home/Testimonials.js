@@ -3,6 +3,7 @@ import { useState } from "react";
 import classes from "../../sass/pages/home.module.scss";
 import Carousel from "../ui/Carousel";
 import TestimonialItem from "../home/TestimonialItem";
+import Icon from "../ui/Icon";
 
 export default function Testimonials() {
   const [activeItem, setActiveItem] = useState(0);
@@ -58,7 +59,6 @@ export default function Testimonials() {
   };
 
   useEffect(() => {
-
     const createTestimonialItem = (item) => (
       <TestimonialItem
         key={item.quote}
@@ -69,7 +69,9 @@ export default function Testimonials() {
         retreatDate={item.retreatDate}
         active={item.active}
         carouselItemClass={classes["testimonials--carousel--item"]}
-        carouselItemActiveClass={classes["testimonials--carousel--item--active"]}
+        carouselItemActiveClass={
+          classes["testimonials--carousel--item--active"]
+        }
       />
     );
     const setActiveTestimonial = (testimonials, idx) => {
@@ -87,12 +89,14 @@ export default function Testimonials() {
 
     const testimonials = setActiveTestimonial(testimonialsArr, activeItem);
     setTestimonialItems(testimonials.map(createTestimonialItem));
-
   }, [activeItem]);
 
   return (
     <section className={classes["testimonials"]}>
-      <div className={classes["testimonials--logo"]}>Small Lotus Logo</div>
+      <Icon
+        iconClass={classes["testimonials--icon"]}
+        iconName="icon-logo-no-words-sm"
+      />
       <h2 className={classes["testimonials--title"]}>Testimonials</h2>
       <Carousel
         carouselItems={testimonialItems}
@@ -104,7 +108,9 @@ export default function Testimonials() {
         carouselBtnRightClass={classes["testimonials--carousel--btn--right"]}
         carouselNavClass={classes["testimonials--carousel--nav"]}
         carouselNavDotClass={classes["testimonials--carousel--nav--dot"]}
-        carouselNavDotActiveClass={classes["testimonials--carousel--nav--dot--active"]}
+        carouselNavDotActiveClass={
+          classes["testimonials--carousel--nav--dot--active"]
+        }
       />
     </section>
   );

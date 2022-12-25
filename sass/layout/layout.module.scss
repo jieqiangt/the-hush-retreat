@@ -26,6 +26,12 @@
     }
   }
 
+  &--icon {
+    height: 4.8rem;
+    width: 9.6rem;
+    fill: $col-main-primary;
+  }
+
   &--link {
     @include btn--default($col-main-tint-1, $col-main-primary, 0);
     display: inline-block;

@@ -5,21 +5,21 @@ export default function ImgComposition(props) {
   return (
     <aside className="composition">
       <Image
-        src="/groot-1-sm.jpg"
+        src="/img/groot-1-sm.jpg"
         alt=""
         width={640 / scaleFactor}
         height={960 / scaleFactor}
         className="composition-img composition-img-1"
       />
       <Image
-        src="/groot-2-sm.jpg"
+        src="/img/groot-2-sm.jpg"
         alt=""
         width={640 / scaleFactor}
         height={960 / scaleFactor}
         className="composition-img composition-img-2"
       />
       <Image
-        src="/groot-3-sm.jpg"
+        src="/img/groot-3-sm.jpg"
         alt=""
         width={640 / scaleFactor}
         height={960 / scaleFactor}

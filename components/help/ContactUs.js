@@ -1,13 +1,8 @@
+import Link from "next/link";
 import classes from "../../sass/pages/help.module.scss";
 import InputBar from "../ui/InputBar";
-import InputSelect from "../ui/InputSelect";
 
 export default function ContactUs() {
-  const retreatsList = [
-    { retreatId: 0, retreatName: "Retreat 1" },
-    { retreatId: 1, retreatName: "Retreat 2" },
-  ];
-
   return (
     <div className={classes["contact-us"]}>
       <div className={classes["contact-us--img"]} />
@@ -19,7 +14,7 @@ export default function ContactUs() {
           Do drop us a message using the form below or through email at
           hello@thehushretreats.com. <br />
           If you have a general question, we may have answered it in our{" "}
-          <a href="#FAQ">FAQ section</a> below. <br />
+          <Link href="#faq">FAQ section</Link> below. <br />
         </article>
         <InputBar
           label="First Name"

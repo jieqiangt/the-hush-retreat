@@ -7,11 +7,11 @@
   display: grid;
   grid-template-columns:
     [full-start] 1fr [center-start] repeat(
-      10,
+      12,
       [col-start] minmax(16rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 5vh 100vh repeat(4, min-content);
+  grid-template-rows: 6.5vh 100vh repeat(4, min-content);
 
   &--nav {
     grid-column: full-start / full-end;
@@ -26,7 +26,7 @@
       rgba($col-white-primary, 0.2),
       rgba($col-white-primary, 0.6)
     ),
-    url("../../public/meditation-1-lg.jpg");
+    url("../../public/img/meditation-1-lg.jpg");
   background-size: cover;
   background-position: bottom 45% left;
   position: relative;
@@ -90,7 +90,7 @@
   }
 
   &--img {
-    background-image: url("../../public/lotus-1-lg.jpg");
+    background-image: url("../../public/img/lotus-1-lg.jpg");
     background-position: bottom;
     width: 100%;
     height: 80%;
@@ -155,9 +155,15 @@
     background-color: rgba($col-accent-tint-2, 0.5);
   }
 
+  &--icon {
+    height: $size-icon-square-lg;
+    width: $size-icon-square-lg;
+    fill: $col-main-tint-1;
+    margin-top: 4rem;
+  }
   &--title {
     @include section--title($col-main-tint-1, $letter-spacing-xs);
-    margin: 8rem 0rem 3.6rem 0rem;
+    margin: 2.4rem 0rem 3.6rem 0rem;
   }
 
   &--feature-box {

@@ -8,7 +8,7 @@ import Layout from "../../components/layout/Layout";
 import classes from "../../sass/pages/discover.module.scss";
 
 export default function DiscoverPage() {
-  return (
+return (
     <Fragment>
       <Head>
         <title>Discover</title>
@@ -18,6 +18,7 @@ export default function DiscoverPage() {
         pageClass={classes["discover"]}
         navClass={classes["discover--nav"]}
         footerClass={classes["discover--footer"]}
+        footerIconClass={classes["discover--footer--icon"]}
       >
         <GuidingPrinciple />
         <TheWayOfLotus />

@@ -1,5 +1,5 @@
 import NavLink from "./NavLink";
-import Logo from "../ui/Logo";
+import Icon from "../ui/Icon";
 import classes from "../../sass/layout/layout.module.scss";
 
 export default function NavBar(props) {
@@ -11,7 +11,7 @@ export default function NavBar(props) {
           <NavLink href="/new">Upcoming Retreats</NavLink>
         </div>
         <NavLink href="/">
-          <Logo></Logo>
+          <Icon iconClass={classes["nav--icon"]} iconName="icon-logo-main" />
         </NavLink>
         <div className={classes["nav--list--sides"]}>
           <NavLink href="/explore">Past Retreats</NavLink>

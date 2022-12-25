@@ -21,6 +21,7 @@ export default function Home() {
         pageClass={classes["home"]}
         navClass={classes["home--nav"]}
         footerClass={classes["home--footer"]}
+        footerIconClass={classes["home--footer--icon"]}
       >
         <Hero />
         <CorporateCustomers />

@@ -6,9 +6,12 @@ export default function Layout(props) {
   return (
     <main>
       <div className={props.pageClass}>
-        <NavBar navClass={props.navClass}/>
+        <NavBar navClass={props.navClass} />
         {props.children}
-        <Footer footerClass={props.footerClass} />
+        <Footer
+          footerClass={props.footerClass}
+          footerIconClass={props.footerIconClass}
+        />
       </div>
     </main>
   );

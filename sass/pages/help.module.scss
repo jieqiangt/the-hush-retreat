@@ -3,15 +3,31 @@
 @import "../base/animations";
 @import "../base/utilities";
 
+
+.help {
+
+  display: grid;
+  grid-template-columns:
+    [full-start] 1fr [center-start] repeat(
+      12,
+      [col-start] minmax(16rem, min-content) [col-end]
+    )
+    [center-end] 1fr [full-end];
+  grid-template-rows: 6.5vh 100vh repeat(2, min-content);
+
+  &--nav {
+    grid-column: full-start / full-end;
+    grid-row: 1;
+  }
+}
 .contact-us {
-  width: 100%;
-  height: 100vh;
+  grid-column: full-start / full-end;
+  grid-row: 2;
   background-color: $col-white-primary;
   position: relative;
   display: grid;
   grid-template-columns: 35fr 65fr;
   grid-template-rows: 1;
-  margin-bottom: 24rem;
 
   &::after {
     content: "";
@@ -19,18 +35,18 @@
     display: block;
     height: 0.2rem;
     width: 97%;
-    bottom: -14rem;
+    bottom: -6rem;
     left: 1.5%;
     background-color: rgba($col-accent-tint-2, 0.5);
   }
 
   &--img {
-    background-image: url("../../public/lotus-2-lg.jpg");
+    background-image: url("../../public/img/lotus-2-lg.jpg");
     background-position: top left 60%;
     background-size: cover;
     width: 100%;
-    height: 100%;
-    margin: 5rem -10rem 0rem auto;
+    height: 85%;
+    margin: 10rem -10rem 0rem auto;
     box-shadow: 2px 0px 15px 0px rgba($col-black-primary, 0.8);
     z-index: $z-index-top;
   }
@@ -44,7 +60,7 @@
     justify-content: center;
     align-content: center;
     padding: 0rem 8rem 0rem 18rem;
-    margin: 12rem 0rem 2rem 0rem;
+    margin: 15rem 0rem;
     grid-gap: 2.4rem;
     background-color: $col-main-primary;
 
@@ -65,6 +81,21 @@
       line-height: $font-line-height-lg;
       margin-bottom: 0.8rem;
       hyphens: auto;
+
+      a {
+        display: inline-block;
+        text-decoration: underline $size-underline-link $col-gray-tint-2;
+        text-underline-offset: 0.6rem;
+        padding: 0rem 0.3rem;
+        transition: $ani-default;
+
+        &:hover {
+          color: $col-main-primary;
+          text-decoration: none;
+          background-color: rgba($col-accent-tint-1, 0.6);
+          border-bottom: underline $size-underline-link $col-accent-tint-1;
+        }
+      }
     }
 
     &--first-name {
@@ -172,12 +203,14 @@
 }
 
 .faq {
-  width: 100%;
-  height: 70vh;
+  grid-column: full-start / full-end;
+  grid-row: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: $font-size-text-md;
+  margin-top: 16rem;
+  margin-bottom: 8rem;
 
   &--title {
     @include section--title($col-main-tint-1, $letter-spacing-xs);
@@ -227,9 +260,12 @@
     }
 
     &--icon {
-      display: block;
+      height: $size-icon-square-xs;
+      width: $size-icon-square-xs;
       margin-right: 1rem;
+      fill: $col-main-primary;
       transition: all 0.4s ease-out;
+
 
       &--active {
         transform: rotate(90deg);
@@ -261,6 +297,8 @@
 }
 
 .help--footer {
+  grid-column: full-start / full-end;
+  grid-row: 4;
   @include footer(transparent, relative);
   padding-top: 5rem;
 

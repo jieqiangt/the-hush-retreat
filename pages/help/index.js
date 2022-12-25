@@ -12,9 +12,14 @@ export default function HelpPage() {
         <title>Help</title>
         <meta name="description" content="Help" />
       </Head>
-      <Layout footerClass={classes["help--footer"]}>
+      <Layout
+        pageClass={classes["help"]}
+        navClass={classes["help--nav"]}
+        footerClass={classes["help--footer"]}
+        footerIconClass={classes["help--footer--icon"]}
+      >
         <ContactUs />
-        <FAQ id="FAQ"/>
+        <FAQ />
       </Layout>
     </Fragment>
   );
