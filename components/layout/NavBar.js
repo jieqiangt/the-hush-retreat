@@ -2,9 +2,9 @@ import NavLink from "./NavLink";
 import Logo from "../ui/Logo";
 import classes from "../../sass/layout/layout.module.scss";
 
-export default function NavBar() {
+export default function NavBar(props) {
   return (
-    <nav className={classes["nav"]}>
+    <nav className={`${classes["nav"]} ${props.navClass}`}>
       <ul className={classes["nav--list"]}>
         <div className={classes["nav--list--sides"]}>
           <NavLink href="/discover">Our Story</NavLink>

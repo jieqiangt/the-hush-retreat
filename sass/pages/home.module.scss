@@ -3,10 +3,21 @@
 @import "../base/animations";
 @import "../base/utilities";
 
+.home {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [center-start] repeat(
+      10,
+      [col-start] minmax(18rem, min-content) [col-end]
+    ) 1fr [full-end];
+  grid-template-rows: 5vh 95vh 25vh repeat(3, min-content) 45vh 40vh min-content;
+
+  &--nav {
+    grid-column: full-start / full-end;
+    grid-row: 1;
+  }
+}
 .hero {
   position: relative;
-  width: 100%;
-  height: 100vh;
   background-image: (
     linear-gradient(
       180deg,
@@ -17,6 +28,8 @@
   );
   background-size: cover;
   background-position: bottom 25% left 90%;
+  grid-column: full-start / full-end;
+  grid-row: 2;
   // border-right: solid 5rem $col-white-primary;
   // border-left: solid 5rem $col-white-primary;
 
@@ -52,21 +65,14 @@
 }
 
 .corporate {
-  width: 100%;
-  height: 25vh;
+  grid-column: full-start / full-end;
+  grid-row: 3;
   position: relative;
   background-color: rgba($col-accent-primary, 0.5);
 }
-
-.immersive {
-  @include z-layout(45fr);
-
-  &--img {
-    background-image: url("../../public/alone-2-lg.jpg");
-  }
-}
-
 .bespoke {
+  grid-column: full-start / full-end;
+  grid-row: 4;
   @include z-layout(45fr);
 
   &--img {
@@ -74,7 +80,20 @@
   }
 }
 
+.immersive {
+  grid-column: full-start / full-end;
+  grid-row: 5;
+  @include z-layout(45fr);
+
+  &--img {
+    background-image: url("../../public/alone-2-lg.jpg");
+  }
+}
+
+
 .mindfulness {
+  grid-column: full-start / full-end;
+  grid-row: 6;
   @include z-layout(45fr);
 
   &--img {
@@ -83,8 +102,8 @@
 }
 
 .testimonials {
-  width: 100%;
-  height: 50vh;
+  grid-column: full-start / full-end;
+  grid-row: 7;
   color: $col-accent-tint-1;
   background-image: linear-gradient(
       rgba($col-white-primary, 0.4),
@@ -163,9 +182,10 @@
 
 .newsletter {
   background-color: $col-white-primary;
+  grid-column: full-start / full-end;
+  grid-row: 8;
   display: grid;
   grid-template-columns: 65fr 55fr;
-  height: 50vh;
   position: relative;
   margin-bottom: 0rem;
 
@@ -244,6 +264,8 @@
 }
 
 .home--footer {
+  grid-column: full-start / full-end;
+  grid-row: 9;
   @include footer(transparent, relative);
   padding-top: 5rem;
 

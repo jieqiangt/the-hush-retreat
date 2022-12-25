@@ -17,7 +17,11 @@ export default function Home() {
         <title>Home</title>
         <meta name="description" content="Home" />
       </Head>
-      <Layout footerClass={classes["home--footer"]}>
+      <Layout
+        pageClass={classes["home"]}
+        navClass={classes["home--nav"]}
+        footerClass={classes["home--footer"]}
+      >
         <Hero />
         <CorporateCustomers />
         <Bespoke />
