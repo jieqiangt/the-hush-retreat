@@ -5,14 +5,14 @@ import Banner from "../ui/Banner";
 export default function Hero(props) {
   const bannerDetails = (
     <Fragment>
-      <article className={classes[`${props.baseClass}--article`]}>
+      <article className={props.classes[`${props.baseClass}--article`]}>
         Luxurious tranquil retreats,
         <br />
         embrace mindfullness,
         <br />
         for your inner soul
       </article>
-      <LinkButton href="/new" btnClass={classes[`${props.baseClass}--btn`]}>
+      <LinkButton href="/new" btnClass={props.classes[`${props.baseClass}--btn`]}>
         Start Healing Now
       </LinkButton>
     </Fragment>

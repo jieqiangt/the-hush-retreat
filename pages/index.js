@@ -18,10 +18,8 @@ export default function Home() {
         <meta name="description" content="Home" />
       </Head>
       <Layout
-        pageClass={classes["home"]}
-        navClass={classes["home--nav"]}
-        footerClass={classes["home--footer"]}
-        footerIconClass={classes["home--footer--icon"]}
+        classes={classes}
+        baseClass="home"
       >
         <Hero
           title="Modern Wellness Lifestyle"

@@ -13,10 +13,8 @@ export default function NewPage() {
         <meta name="description" content="New Retreats" />
       </Head>
       <Layout
-        pageClass={classes["new"]}
-        navClass={classes["new--nav"]}
-        footerClass={classes["new--footer"]}
-        footerIconClass={classes["new--footer--icon"]}
+        classes={classes}
+        baseClass="new"
       >
         <RetreatBanner
           title="Release & Renew"

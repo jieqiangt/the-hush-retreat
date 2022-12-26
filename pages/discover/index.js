@@ -14,12 +14,7 @@ export default function DiscoverPage() {
         <title>Discover</title>
         <meta name="description" content="Discover" />
       </Head>
-      <Layout
-        pageClass={classes["discover"]}
-        navClass={classes["discover--nav"]}
-        footerClass={classes["discover--footer"]}
-        footerIconClass={classes["discover--footer--icon"]}
-      >
+      <Layout classes={classes} baseClass="discover">
         <GuidingPrinciple
           title="Our Guiding Principle"
           classes={classes}
