@@ -8,7 +8,7 @@
   grid-template-columns:
     [full-start] 1fr [center-start] repeat(
       12,
-      [col-start] minmax(16rem, min-content) [col-end]
+      [col-start] minmax(15rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
   grid-template-rows: 6.5vh 100vh repeat(4, min-content);
@@ -19,27 +19,39 @@
   }
 }
 
-.banner {
+.retreat--banner {
+  @include banner(
+    (
+      linear-gradient(
+        180deg,
+        rgba($col-white-primary, 0.2),
+        rgba($col-white-primary, 0.4)
+      ),
+      url("../../public/img/meditation-group-1-lg.jpg")
+    ),
+    (bottom left),
+    true
+  );
+  grid-column: full-start/full-end;
+  grid-row: 2;
 
+  &--box {
+    margin: 42rem 0rem;
+    grid-column: col-start 8 / full-end;
+  }
 }
 
-.details {
-    
-}
+.about { 
+  @include retreat-about();
+  grid-column: full-start/full-end;
+  grid-row: 3;
 
-.teacher {
-
-}
-
-.schedule {
-
-}
-
-.pricing {
 }
 
 .new--footer {
   @include footer(transparent, relative);
+  grid-column: full-start / full-end;
+  grid-row: -1;
 
   &::before {
     content: "";

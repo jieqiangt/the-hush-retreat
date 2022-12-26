@@ -1,36 +1,37 @@
 import { Fragment } from "react";
-import LinkButton from "../ui/LinkButton";
-import classes from "../../sass/pages/home.module.scss";
+import Banner from "../ui/Banner";
+import RetreatBannerDetails from "./RetreatBannerDetails";
 
 export default function RetreatBanner(props) {
+  const bannerDetails = (
+    <RetreatBannerDetails
+      date={props.date}
+      time={props.time}
+      price={props.price}
+      location={props.location}
+      promotion={props.promotion}
+      btnText={props.btnText}
+      baseClass={props.baseClass}
+      classes={props.classes}
+    />
+  );
+
   return (
     <Fragment>
-      <section className={classes["banner"]}>
-        <div className={classes["banner--box"]}>
-          <h2 className={classes["banner--title"]}>{props.title}</h2>
-          <div className={classes["banner--details"]}>
-            <Icon
-              iconClass={classes["banner--icon"]}
-              iconName="icon-calendar"
-            />
-            <time className={classes["banner--date"]}>{props.date}</time>
-          </div>
-          <div className={classes["banner--details"]}>
-            <Icon iconClass={classes["banner--icon"]} iconName="icon-clock" />
-            <time className={classes["banner--time"]}>{props.time}</time>
-          </div>
-          <div className={classes["banner--details"]}>
-            <Icon
-              iconClass={classes["banner--icon"]}
-              iconName="icon-location"
-            />
-            <span className={classes["banner--loc"]}>{props.location}</span>
-          </div>
-          <LinkButton href="/new" btnClass={classes["hero--btn"]}>
-            Start Healing Now
-          </LinkButton>
-        </div>
-      </section>
+      <Banner
+        classes={props.classes}
+        baseClass={props.baseClass}
+        title={props.title}
+        caption={props.caption}
+        bannerDetails={bannerDetails}
+      />
     </Fragment>
   );
+}
+
+{
+  /* <p className={classes["banner--promo"]}>{props.promotion}</p>
+        <LinkButton href="/new" btnClass={classes["banner--btn"]}>
+          {props.btnText}
+        </LinkButton> */
 }
