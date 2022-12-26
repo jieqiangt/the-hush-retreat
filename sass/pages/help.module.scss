@@ -46,20 +46,20 @@
     background-size: cover;
     width: 100%;
     height: 85%;
-    margin: 10rem -10rem 0rem auto;
+    margin: 10rem -16rem 0rem auto;
     box-shadow: 2px 0px 15px 0px rgba($col-black-primary, 0.8);
     z-index: $z-index-top;
   }
 
   &--form {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(6, min-content);
     align-items: start;
     font-size: $font-size-text-s;
     justify-content: center;
     align-content: center;
-    padding: 0rem 8rem 0rem 18rem;
+    padding: 0rem 20rem 0rem 30rem;
     margin: 15rem 0rem;
     grid-gap: 2.4rem;
     background-color: $col-main-primary;
@@ -98,6 +98,18 @@
       }
     }
 
+    &--email {
+      @include input--group(
+        $size-contact-us-input-width,
+        $col-accent-tint-1,
+        $pos-input-label-x,
+        $pos-input-label-y,
+        $pos-input-label-translate-up
+      );
+      grid-column: 1 / span 6;
+      grid-row: 3;
+    }
+
     &--first-name {
       @include input--group(
         $size-contact-us-input-width,
@@ -107,7 +119,7 @@
         $pos-input-label-translate-up
       );
       grid-column: 1 / span 3;
-      grid-row: 3;
+      grid-row: 4;
     }
 
     &--last-name {
@@ -119,7 +131,7 @@
         $pos-input-label-translate-up
       );
       grid-column: 4 / span 3;
-      grid-row: 3;
+      grid-row: 4;
     }
 
     // &--num-retreatees {
@@ -148,18 +160,6 @@
     //   grid-row: 4;
     // }
 
-    &--email {
-      @include input--group(
-        $size-contact-us-input-width,
-        $col-accent-tint-1,
-        $pos-input-label-x,
-        $pos-input-label-y,
-        $pos-input-label-translate-up
-      );
-      grid-column: 1 / span 6;
-      grid-row: 4;
-    }
-
     &--subject {
       @include input--group(
         $size-contact-us-input-width,
@@ -168,7 +168,7 @@
         $pos-input-label-y,
         $pos-input-label-translate-up
       );
-      grid-column: 1 / span 6;
+      grid-column: 1 / span 8;
       grid-row: 5;
     }
 
@@ -182,7 +182,7 @@
         "textarea"
       );
       width: 95%;
-      grid-column: 1 / span 6;
+      grid-column: 1 / span 8;
       grid-row: 6;
       margin: 1.8rem 0rem 0rem 0rem;
 
@@ -196,7 +196,6 @@
       grid-column: 1 / -1;
       grid-row: 7;
       justify-self: start;
-      margin-top: -0.6rem;
       margin-left: 0.4rem;
     }
   }
@@ -211,6 +210,13 @@
   font-size: $font-size-text-md;
   margin-top: 16rem;
   margin-bottom: 8rem;
+
+  &--icon {
+    height: $size-icon-square-lg;
+    width: $size-icon-square-lg;
+    fill: $col-main-primary;
+    margin-bottom: 2.4rem;
+  }
 
   &--title {
     @include section--title($col-main-tint-1, $letter-spacing-xs);

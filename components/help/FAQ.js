@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import classes from "../../sass/pages/help.module.scss";
 import FAQItem from "../help/FAQItem";
 import Accordion from "../ui/Accordion";
+import Icon from "../ui/Icon";
 
 const FAQItemsList = [
   {
@@ -109,6 +110,7 @@ export default function FAQ() {
 
   return (
     <div className={classes["faq"]} id="faq">
+      <Icon iconClass={classes["faq--icon"]} iconName="icon-logo-no-words-sm"/>
       <h2 className={classes["faq--title"]}>Frequently Asked Questions</h2>
       <Accordion
         accordionClass={classes["faq--accordion"]}
