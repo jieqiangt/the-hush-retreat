@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { Fragment } from "react";
 import Layout from "../../components/layout/Layout";
+import NewRetreatBanner from "../../components/new/NewRetreatBanner";
 import RetreatAbout from "../../components/retreat/RetreatAbout";
-import RetreatBanner from "../../components/retreat/RetreatBanner";
 import classes from "../../sass/pages/new.module.scss";
 
 export default function NewPage() {
@@ -16,15 +16,7 @@ export default function NewPage() {
         classes={classes}
         baseClass="new"
       >
-        <RetreatBanner
-          title="Release & Renew"
-          caption="Inner Alchemy: Releasing 2022, Birthing 2023"
-          date="7 January 2023, Saturday"
-          time="9am &#8211; 5pm"
-          price="$399 per pax"
-          location="Villa Samadhi & Labrador Nature Reserve"
-          promotion="Sign up by 26 December for 10% off"
-          btnText="Register Now"
+        <NewRetreatBanner
           classes={classes}
           baseClass="retreat--banner"
         />

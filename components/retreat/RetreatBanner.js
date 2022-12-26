@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Banner from "../ui/Banner";
 import RetreatBannerDetails from "./RetreatBannerDetails";
 
@@ -17,7 +16,6 @@ export default function RetreatBanner(props) {
   );
 
   return (
-    <Fragment>
       <Banner
         classes={props.classes}
         baseClass={props.baseClass}
@@ -25,7 +23,6 @@ export default function RetreatBanner(props) {
         caption={props.caption}
         bannerDetails={bannerDetails}
       />
-    </Fragment>
   );
 }
 

@@ -22,7 +22,6 @@ export default function Home() {
         baseClass="home"
       >
         <Hero
-          title="Modern Wellness Lifestyle"
           baseClass="hero"
           classes={classes}
         />

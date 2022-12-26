@@ -1,6 +1,7 @@
 import Banner from "../ui/Banner";
 
 export default function GuidingPrinciple(props) {
+  const title = "Our Guiding Principle"
   const bannerDetails = (
     <p className={props.classes[`${props.baseClass}--desc`]}>
       Living life with unwavering faith and joy, <br />
@@ -13,7 +14,7 @@ export default function GuidingPrinciple(props) {
 
   return (
     <Banner
-      title={props.title}
+      title={title}
       baseClass={props.baseClass}
       classes={props.classes}
       bannerDetails={bannerDetails}

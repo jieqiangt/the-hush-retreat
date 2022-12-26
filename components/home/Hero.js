@@ -3,6 +3,8 @@ import LinkButton from "../ui/LinkButton";
 import Banner from "../ui/Banner";
 
 export default function Hero(props) {
+
+  const title="Modern Wellness Lifestyle"
   const bannerDetails = (
     <Fragment>
       <article className={props.classes[`${props.baseClass}--article`]}>
@@ -21,7 +23,7 @@ export default function Hero(props) {
   return (
     <Fragment>
       <Banner
-        title={props.title}
+        title={title}
         baseClass={props.baseClass}
         classes={props.classes}
         bannerDetails={bannerDetails}

@@ -16,7 +16,6 @@ export default function DiscoverPage() {
       </Head>
       <Layout classes={classes} baseClass="discover">
         <GuidingPrinciple
-          title="Our Guiding Principle"
           classes={classes}
           baseClass="principle"
         />
