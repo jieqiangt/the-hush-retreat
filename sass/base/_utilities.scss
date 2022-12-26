@@ -216,23 +216,27 @@
   }
 }
 
-@mixin z-layout($grid-size-two-col-left) {
+@mixin z-layout($grid-size-two-col-left, $imgIsRight: false) {
   background-color: $col-white-primary;
   width: 100%;
   height: 85vh;
   display: grid;
   grid-template-columns: $grid-size-two-col-left 100-$grid-size-two-col-left;
+  grid-template-rows: 1fr;
 
   &--img {
     background-size: cover;
+    grid-column: 1;
+
+    @if $imgIsRight {
+      grid-column: 2;
+    }
   }
 
   &--article {
     position: relative;
-
-    &--left &--box {
-      position: absolute;
-      right: 10rem;
+    @if $imgIsRight {
+      grid-column: 1;
     }
 
     &--box {
@@ -240,6 +244,10 @@
       position: absolute;
       bottom: 10rem;
       right: 38rem;
+
+      @if $imgIsRight {
+        right: 10rem;
+      }
     }
 
     &--title {
@@ -248,7 +256,7 @@
       margin-bottom: $margin-flex-lg * 1.5;
     }
 
-    &--secondary-title {
+    &--caption {
       display: block;
       color: $col-gray-tint-1;
       font-size: $font-size-text-s;

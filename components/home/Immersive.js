@@ -1,29 +1,22 @@
-import classes from "../../sass/pages/home.module.scss";
-import LinkButton from "../ui/LinkButton";
+import ZLayout from "../ui/ZLayout";
 
-export default function Immersive() {
+export default function Immersive(props) {
+  const title = "Immersive";
+  const caption = "Imbue unique & novel intricacies into your wellness practice";
+  const desc =
+    "Explore a wide range of multi-dimensional, immersive experiences, from sound to cacao, carefully designed to maximise your practice."
+  const btnText = "Explore More";
+  const btnHref = "/explore";
+
   return (
-    <section className={classes["immersive"]}>
-      <div
-        className={`${classes["immersive--article"]} ${classes["immersive--article--left"]}`}
-      >
-        <div className={classes["immersive--article--box"]}>
-          <h2 className={classes["immersive--article--title"]}>Immersive</h2>
-          <h3 className={classes["immersive--article--secondary-title"]}>
-            Imbue unique & novel intricacies into your wellness practice
-          </h3>
-          <p className={classes["immersive--article--desc"]}>
-            Explore a wide range of multi-dimensional, immersive experiences,
-            from sound to cacao, carefully designed to maximise your practice.
-          </p>
-          <LinkButton btnClass={classes["immersive--article--btn"]} href="/explore">
-            Explore More
-          </LinkButton>
-        </div>
-      </div>
-      <div
-        className={`${classes["immersive--img"]} ${classes["immersive--img"]}`}
-      />
-    </section>
+    <ZLayout
+      classes={props.classes}
+      baseClass={props.baseClass}
+      title={title}
+      caption={caption}
+      desc={desc}
+      btnText={btnText}
+      btnHref={btnHref}
+    />
   );
 }
