@@ -20,15 +20,14 @@
 }
 
 .principle {
+
+  @include banner((linear-gradient(
+    rgba($col-white-primary, 0.2),
+    rgba($col-white-primary, 0.6)
+  ),
+  url("../../public/img/meditation-1-lg.jpg")), (bottom 45% left 0%));
   grid-column: full-start / full-end;
   grid-row: 2;
-  background-image: linear-gradient(
-      rgba($col-white-primary, 0.2),
-      rgba($col-white-primary, 0.6)
-    ),
-    url("../../public/img/meditation-1-lg.jpg");
-  background-size: cover;
-  background-position: bottom 45% left;
   position: relative;
 
   &::after {
@@ -40,15 +39,13 @@
     bottom: -16rem;
     left: 1.5%;
     background-color: rgba($col-accent-tint-2, 0.5);
-    z-index: $z-index-top;
+    z-index: $z-index-top + 100;
   }
 
   &--box {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 26rem;
-    left: 85rem;
+    grid-column: col-start 5 / full-end;
+    margin: 18rem 0rem;
+    background-color: transparent;
     font-size: $font-size-text-lg;
   }
 

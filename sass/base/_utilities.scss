@@ -367,13 +367,13 @@
   }
 
   &--promo {
-  margin-top: 1.4rem;
-  color: $col-gray-tint-1;
-}
+    margin-top: 1.4rem;
+    color: $col-gray-tint-1;
+  }
 
-&--btn {
-  @include btn--link($col-gray-tint-1, $col-main-primary, 0.6);
-}
+  &--btn {
+    @include btn--link($col-gray-tint-1, $col-main-primary, 0.6);
+  }
 }
 
 @mixin banner($img, $background-pos, $isRetreat: false) {
@@ -382,7 +382,7 @@
   background-position: $background-pos;
 
   &--box {
-    background-color: rgba($col-accent-primary, 0.8);
+    background-color: rgba($col-accent-primary, 0.75);
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
@@ -390,6 +390,7 @@
     color: $col-gray-primary;
     padding: 3.6rem 14rem 3.6rem 3.6rem;
     grid-row: 2;
+    z-index: $z-index-top;
   }
 
   &--title {
@@ -426,5 +427,3 @@
     }
   }
 }
-
-

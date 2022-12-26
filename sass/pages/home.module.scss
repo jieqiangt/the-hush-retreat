@@ -20,29 +20,21 @@
 }
 
 .hero {
-  position: relative;
-  background-image: (
+  @include banner((
     linear-gradient(
       180deg,
       rgba($col-white-primary, 0),
       rgba($col-white-primary, 0.2)
     ),
     url("../../public/img/mountain-1-lg.jpg")
-  );
-  background-size: cover;
-  background-position: bottom 25% left 90%;
+  ), (bottom 25% left 90%));
+  position: relative;
   grid-column: full-start / full-end;
   grid-row: 2;
 
   &--box {
-    width: 50%;
-    display: block;
-    position: absolute;
-    top: 30rem;
-    left: 100rem;
-    text-align: left;
-    background-color: rgba($col-accent-primary, 0.75);
-    padding: 3.6rem 2.4rem;
+    grid-column: col-start 6 / full-end;
+    margin: 38rem 0rem;
   }
 
   &--title {

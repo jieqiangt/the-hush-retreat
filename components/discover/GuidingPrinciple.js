@@ -1,17 +1,22 @@
-import classes from "../../sass/pages/discover.module.scss";
+import Banner from "../ui/Banner";
 
-export default function GuidingPrinciple() {
+export default function GuidingPrinciple(props) {
+  const bannerDetails = (
+    <p className={props.classes[`${props.baseClass}--desc`]}>
+      Living life with unwavering faith and joy, <br />
+      as the{" "}
+      <span className={props.classes[`${props.baseClass}--em`]}> lotus </span>
+      does, <br />
+      to ensure the most beautiful revival
+    </p>
+  );
+
   return (
-    <section className={classes["principle"]}>
-      <div className={classes["principle--box"]}>
-        <h2 className={classes["principle--title"]}>Our Guiding Principle</h2>
-        <p className={classes["principle--desc"]}>
-          Living life with unwavering faith and joy, <br />
-          as the
-          <span className={classes["principle--em"]}> lotus</span> does, <br />
-          to ensure the most beautiful revival
-        </p>
-      </div>
-    </section>
+    <Banner
+      title={props.title}
+      baseClass={props.baseClass}
+      classes={props.classes}
+      bannerDetails={bannerDetails}
+    />
   );
 }

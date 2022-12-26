@@ -1,25 +1,31 @@
 import { Fragment } from "react";
 import LinkButton from "../ui/LinkButton";
-import classes from "../../sass/pages/home.module.scss";
+import Banner from "../ui/Banner";
 
-export default function Hero() {
+export default function Hero(props) {
+  const bannerDetails = (
+    <Fragment>
+      <article className={classes[`${props.baseClass}--article`]}>
+        Luxurious tranquil retreats,
+        <br />
+        embrace mindfullness,
+        <br />
+        for your inner soul
+      </article>
+      <LinkButton href="/new" btnClass={classes[`${props.baseClass}--btn`]}>
+        Start Healing Now
+      </LinkButton>
+    </Fragment>
+  );
+
   return (
     <Fragment>
-      <section className={classes["hero"]}>
-        <div className={classes["hero--box"]}>
-          <h2 className={classes["hero--title"]}>Modern Wellness Lifestyle</h2>
-          <article className={classes["hero--article"]}>
-            Luxurious tranquil retreats,
-            <br />
-            embrace mindfullness,
-            <br />
-            for your inner soul
-          </article>
-          <LinkButton href="/new" btnClass={classes["hero--btn"]}>
-            Start Healing Now
-          </LinkButton>
-        </div>
-      </section>
+      <Banner
+        title={props.title}
+        baseClass={props.baseClass}
+        classes={props.classes}
+        bannerDetails={bannerDetails}
+      />
     </Fragment>
   );
 }

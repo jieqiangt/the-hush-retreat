@@ -23,7 +23,11 @@ export default function Home() {
         footerClass={classes["home--footer"]}
         footerIconClass={classes["home--footer--icon"]}
       >
-        <Hero />
+        <Hero
+          title="Modern Wellness Lifestyle"
+          baseClass="hero"
+          classes={classes}
+        />
         <CorporateCustomers />
         <Bespoke />
         <Immersive />

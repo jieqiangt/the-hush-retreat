@@ -29,9 +29,4 @@ export default function RetreatBanner(props) {
   );
 }
 
-{
-  /* <p className={classes["banner--promo"]}>{props.promotion}</p>
-        <LinkButton href="/new" btnClass={classes["banner--btn"]}>
-          {props.btnText}
-        </LinkButton> */
-}
+
