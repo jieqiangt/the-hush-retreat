@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Icon from "../ui/Icon";
+import LinkButton from "../ui/LinkButton";
 
 export default function RetreatBannerDetails(props) {
   return (
@@ -40,6 +41,15 @@ export default function RetreatBannerDetails(props) {
           {props.price}
         </span>
       </div>
+      <p className={props.classes[`${props.baseClass}--promo`]}>
+        {props.promotion}
+      </p>
+      <LinkButton
+        href="/new"
+        btnClass={props.classes[`${props.baseClass}--btn`]}
+      >
+        {props.btnText}
+      </LinkButton>
     </Fragment>
   );
 }

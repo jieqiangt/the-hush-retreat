@@ -365,6 +365,15 @@
       margin-left: 1.2rem;
     }
   }
+
+  &--promo {
+  margin-top: 1.4rem;
+  color: $col-gray-tint-1;
+}
+
+&--btn {
+  @include btn--link($col-gray-tint-1, $col-main-primary, 0.6);
+}
 }
 
 @mixin banner($img, $background-pos, $isRetreat: false) {
@@ -418,11 +427,4 @@
   }
 }
 
-// &--promo {
-//   margin-top: 1.4rem;
-//   color: $col-gray-tint-1;
-// }
 
-// &--btn {
-//   @include btn--link($col-gray-tint-1, $col-main-primary, 0.6);
-// }
