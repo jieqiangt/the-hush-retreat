@@ -164,10 +164,10 @@
   &--title {
     @include section--title($col-main-tint-1, $letter-spacing-xs);
     margin: 2.4rem 0rem 3.6rem 0rem;
-  }
+}
 
   &--feature-box {
-    @include feature-box(2.4rem);
+    @include feature-box(2.4rem, darken(rgba($col-gray-tint-1, 0.7),10%));
     margin-bottom: 4.8rem;
 
     &--item {
@@ -178,6 +178,7 @@
       }
 
       &--desc {
+        color: $col-gray-tint-1;
         line-height: $font-line-height-md;
       }
     }
@@ -202,7 +203,7 @@
     }
 
     &--outer + &--outer {
-      border-left: $border-gray-sm;
+      border-left: solid $size-underline-link $col-gray-tint-1;
       padding-left: 0rem;
     }
 

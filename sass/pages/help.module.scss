@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns:
     [full-start] 1fr [center-start] repeat(
-      12,
+      10,
       [col-start] minmax(16rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];

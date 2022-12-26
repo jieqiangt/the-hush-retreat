@@ -53,7 +53,7 @@
   }
 }
 
-@mixin feature-box($margin-item-gap) {
+@mixin feature-box($margin-item-gap, $border-color) {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(50rem, min-content));
@@ -72,7 +72,7 @@
     }
 
     &--outer + &--outer {
-      border-left: $border-gray-sm;
+      border-left: solid $size-underline-link $border-color;
     }
 
     &--title {
@@ -261,7 +261,7 @@
     &--desc {
       display: block;
       margin-bottom: $margin-flex-lg * 1.5;
-      color: $col-main-tint-1;
+      color: $col-gray-primary;
       font-size: $font-size-text-md;
       line-height: $font-line-height-md;
     }

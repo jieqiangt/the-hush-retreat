@@ -55,12 +55,12 @@
   &--article {
     display: block;
     font-size: $font-size-header-md;
-    color: $col-gray-primary;
+    color: $col-gray-tint-1;
     margin-bottom: $margin-flex-lg * 2;
   }
 
   &--btn {
-    @include btn--link($col-gray-primary, $col-main-tint-1, 0.2);
+    @include btn--link($col-gray-tint-1, $col-main-tint-1, 0.2);
     font-size: $font-size-text-md;
   }
 }
@@ -221,7 +221,7 @@
     }
 
     &--title {
-      @include section--title($col-main-tint-1, none);
+      @include section--title($col-main-primary, none);
       font-size: $font-size-text-md;
       margin-bottom: 1.2rem;
     }
@@ -248,7 +248,7 @@
     &--input-group {
       @include input--group(
         30rem,
-        $col-gray-tint-1,
+        $col-gray-primary,
         $pos-input-label-x,
         $pos-input-label-y,
         $pos-input-label-translate-up
@@ -277,7 +277,7 @@
     }
 
     &--btn--link {
-      @include btn--link($col-gray-tint-1, $col-main-tint-1, 0.2);
+      @include btn--link($col-gray-primary, $col-main-tint-1, 0.2);
       font-size: $font-size-text-s;
     }
   }

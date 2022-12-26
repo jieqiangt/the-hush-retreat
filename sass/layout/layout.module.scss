@@ -4,7 +4,6 @@
 @import "../abstracts/mixins";
 
 .nav {
-  width: 100vw;
   background-color: $col-white-primary;
   position: sticky;
 
@@ -14,7 +13,7 @@
     align-items: center;
     width: 100%;
     padding: 1.2rem 0rem 1.6rem 0;
-    gap: 18rem;
+    gap: 15rem;
     font-weight: $font-weight-xs;
     font-size: $font-size-text-md;
 
@@ -22,7 +21,7 @@
       display: flex;
       justify-content: center;
       width: 25%;
-      gap: $margin-flex-lg;
+      gap: 4.8rem;
     }
   }
 
