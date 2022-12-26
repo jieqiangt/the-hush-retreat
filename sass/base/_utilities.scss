@@ -119,9 +119,7 @@
   }
 
   &--icon {
-    width: $size-icon-square-lg;
-    height: $size-icon-square-lg;
-    fill: $col-main-primary;
+    @include icon-square($size-icon-square-lg, $col-main-primary);
   }
 }
 
@@ -352,4 +350,5 @@
 @mixin accordion() {
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
 }

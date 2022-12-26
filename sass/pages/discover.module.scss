@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns:
     [full-start] 1fr [center-start] repeat(
-      12,
+      10,
       [col-start] minmax(16rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
@@ -156,9 +156,7 @@
   }
 
   &--icon {
-    height: $size-icon-square-lg;
-    width: $size-icon-square-lg;
-    fill: $col-main-tint-1;
+    @include icon-square($size-icon-square-lg, $col-main-primary);
     margin-top: 4rem;
   }
   &--title {

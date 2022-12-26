@@ -16,7 +16,7 @@ export default function Mindfulness() {
             sanctuary to rest your mind, nourish your body, and practice
             mindfulness.
           </p>
-          <LinkButton btnClass={classes["mindfulness--article--btn"]} href="/new">
+          <LinkButton btnClass={classes["mindfulness--article--btn"]} href="/discover">
             Discover More
           </LinkButton>
         </div>

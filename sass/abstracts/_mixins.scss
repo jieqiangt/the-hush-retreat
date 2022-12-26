@@ -37,7 +37,12 @@
   }
 }
 
-@mixin btn--link($text-color, $hover-text-color, $hover-opacity, $button: false) {
+@mixin btn--link(
+  $text-color,
+  $hover-text-color,
+  $hover-opacity,
+  $button: false
+) {
   @if $button {
     @include btn--default($text-color, $hover-text-color, $hover-opacity);
     border-top: solid $size-underline-link $text-color;
@@ -51,8 +56,12 @@
   } @else {
     & a {
       @include btn--default($text-color, $hover-text-color, $hover-opacity);
-      border-top: solid $size-underline-link darken(rgba($text-color,0.7),10%);
-      border-bottom: solid $size-underline-link darken(rgba($text-color,0.7),10%);
+      border-top: solid
+        $size-underline-link
+        darken(rgba($text-color, 0.7), 10%);
+      border-bottom: solid
+        $size-underline-link
+        darken(rgba($text-color, 0.7), 10%);
       padding: 0.6rem;
       color: $text-color;
 
@@ -61,4 +70,10 @@
       }
     }
   }
+}
+
+@mixin icon-square($size, $color) {
+  height: $size;
+  width: $size;
+  fill: $color;
 }

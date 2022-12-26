@@ -1,0 +1,54 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../base/animations";
+@import "../base/utilities";
+
+.new {
+  display: grid;
+  grid-template-columns:
+    [full-start] 1fr [center-start] repeat(
+      12,
+      [col-start] minmax(16rem, min-content) [col-end]
+    )
+    [center-end] 1fr [full-end];
+  grid-template-rows: 6.5vh 100vh repeat(4, min-content);
+
+  &--nav {
+    grid-column: full-start / full-end;
+    grid-row: 1;
+  }
+}
+
+.banner {
+
+}
+
+.details {
+    
+}
+
+.teacher {
+
+}
+
+.schedule {
+
+}
+
+.pricing {
+}
+
+.new--footer {
+  @include footer(transparent, relative);
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    bottom: 0rem;
+    left: 1.5%;
+    background-color: rgba($col-accent-tint-2, 0.5);
+  }
+}

@@ -16,7 +16,7 @@ export default function Immersive() {
             Explore a wide range of multi-dimensional, immersive experiences,
             from sound to cacao, carefully designed to maximise your practice.
           </p>
-          <LinkButton btnClass={classes["immersive--article--btn"]} href="/new">
+          <LinkButton btnClass={classes["immersive--article--btn"]} href="/explore">
             Explore More
           </LinkButton>
         </div>
