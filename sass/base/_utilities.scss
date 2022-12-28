@@ -417,6 +417,7 @@
 
 @mixin description--section() {
   position: relative;
+  z-index: $z-index-btm;
 
   &--img {
     box-shadow: 2px 0px 15px 0px rgba($col-black-primary, 0.8);
@@ -430,11 +431,16 @@
     hyphens: auto;
     z-index: $z-index-top - 1;
 
+    &--title {
+      display: block;
+    }
+
     &--box {
       text-align: left;
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
+      width: 100%;
     }
   }
 
