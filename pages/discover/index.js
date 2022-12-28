@@ -20,7 +20,7 @@ export default function DiscoverPage() {
           baseClass="principle"
         />
         <TheWayOfLotus classes={classes} baseClass="lotus"/>
-        <OurApproach />
+        <OurApproach classes={classes} baseClass="approach"/>
         <OurFounder classes={classes} baseClass="founder"/>
       </Layout>
     </Fragment>

@@ -1,10 +1,8 @@
 import FeatureBox from "../ui/FeatureBox";
 import LinkButton from "../ui/LinkButton";
-import classes from "../../sass/pages/discover.module.scss";
 import Icon from "../ui/Icon";
 
-
-export default function OurApproach() {
+export default function OurApproach(props) {
   const features = [
     {
       imgSrc: "/img/trees-2-lg.jpg",
@@ -24,29 +22,47 @@ export default function OurApproach() {
   ];
 
   return (
-    <section className={classes["approach"]}>
-      <Icon iconClass={classes["approach--icon"]} iconName="icon-logo-no-words-sm"/>
-      <h2 className={classes["approach--title"]}>Our Approach</h2>
+    <section className={props.classes[props.baseClass]}>
+      <Icon
+        iconClass={props.classes[`${props.baseClass}--icon`]}
+        iconName="icon-logo-no-words-sm"
+      />
+      <h2 className={props.classes[`${props.baseClass}--title`]}>
+        Our Approach
+      </h2>
       <FeatureBox
         feature-box-items={features}
-        featureBoxListClass={classes["approach--feature-box"]}
-        featureBoxItemClass={classes["approach--feature-box--item"]}
-        featureBoxItemOuterClass={classes["approach--feature-box--item--outer"]}
-        featureBoxItemImgClass={classes["approach--feature-box--item--img"]}
-        featureBoxItemTitleClass={classes["approach--feature-box--item--title"]}
-        featureBoxItemDescClass={classes["approach--feature-box--item--desc"]}
+        featureBoxListClass={props.classes[`${props.baseClass}--feature-box`]}
+        featureBoxItemClass={
+          props.classes[`${props.baseClass}--feature-box--item`]
+        }
+        featureBoxItemOuterClass={
+          props.classes[`${props.baseClass}--feature-box--item--outer`]
+        }
+        featureBoxItemImgClass={
+          props.classes[`${props.baseClass}--feature-box--item--img`]
+        }
+        featureBoxItemTitleClass={
+          props.classes[`${props.baseClass}--feature-box--item--title`]
+        }
+        featureBoxItemDescClass={
+          props.classes[`${props.baseClass}--feature-box--item--desc`]
+        }
       />
-      <div className={classes["approach--cta"]}>
-        <div className={classes["approach--cta--box"]}>
-          <div className={classes["approach--cta--outer"]}>
-            <LinkButton href="/new" btnClass={classes["approach--cta--btn"]}>
+      <div className={props.classes[`${props.baseClass}--cta`]}>
+        <div className={props.classes[`${props.baseClass}--cta--box`]}>
+          <div className={props.classes[`${props.baseClass}--cta--outer`]}>
+            <LinkButton
+              href="/new"
+              btnClass={props.classes[`${props.baseClass}--cta--btn`]}
+            >
               Start Embracing Mindfulness
             </LinkButton>
           </div>
-          <div className={classes["approach--cta--outer"]}>
+          <div className={props.classes[`${props.baseClass}--cta--outer`]}>
             <LinkButton
               href="/explore"
-              btnClass={classes["approach--cta--btn"]}
+              btnClass={props.classes[`${props.baseClass}--cta--btn`]}
             >
               Explore Previous Retreats
             </LinkButton>
