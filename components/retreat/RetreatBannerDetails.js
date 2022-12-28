@@ -41,15 +41,23 @@ export default function RetreatBannerDetails(props) {
           {props.price}
         </span>
       </div>
-      <p className={props.classes[`${props.baseClass}--promo`]}>
-        {props.promotion}
-      </p>
-      <LinkButton
-        href="/new"
-        btnClass={props.classes[`${props.baseClass}--btn`]}
-      >
-        {props.btnText}
-      </LinkButton>
+      {props.promotion ? (
+        <p className={props.classes[`${props.baseClass}--promo`]}>
+          {props.promotion}
+        </p>
+      ) : (
+        " "
+      )}
+      {props.btnText && props.btnHref ? (
+        <LinkButton
+          href={props.btnHref}
+          btnClass={props.classes[`${props.baseClass}--btn`]}
+        >
+          {props.btnText}
+        </LinkButton>
+      ) : (
+        ""
+      )}
     </Fragment>
   );
 }

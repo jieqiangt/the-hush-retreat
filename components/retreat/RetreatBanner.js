@@ -10,6 +10,7 @@ export default function RetreatBanner(props) {
       location={props.location}
       promotion={props.promotion}
       btnText={props.btnText}
+      btnHref={props.btnHref}
       baseClass={props.baseClass}
       classes={props.classes}
     />

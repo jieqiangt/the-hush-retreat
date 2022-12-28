@@ -3,7 +3,7 @@ import DescriptionSection from "../ui/DescriptionSection";
 
 export default function TheWayOfLotus(props) {
   const content = (
-    <div className={props.classes[`${props.baseClass}--aside--desc`]}>
+    <div className={props.classes[`${props.baseClass}--aside--content`]}>
       <p>
         It started with a lotus. The lotus flower is a symbol of daily
         resurrection. Even with its roots submerged in the dirtiest waters, it
@@ -25,6 +25,7 @@ export default function TheWayOfLotus(props) {
       </p>
     </div>
   );
+  const img = <div className={props.classes[`${props.baseClass}--img`]} />;
 
   return (
     <DescriptionSection
@@ -32,6 +33,7 @@ export default function TheWayOfLotus(props) {
       baseClass={props.baseClass}
       title="The Way of The Lotus"
       content={content}
+      img={img}
     />
   );
 }

@@ -9,6 +9,7 @@ export default function NewRetreatBanner(props) {
   const location = "Villa Samadhi & Labrador Nature Reserve";
   const promotion = "Sign up by 26 December for 10% off";
   const btnText = "Register Now";
+  const btnHref = "/new";
 
   return (
     <RetreatBanner
@@ -22,6 +23,7 @@ export default function NewRetreatBanner(props) {
       location={location}
       promotion={promotion}
       btnText={btnText}
+      btnHref={btnHref}
     />
   );
 }

@@ -115,7 +115,7 @@
       margin-bottom: 2.4rem;
     }
 
-    &--desc {
+    &--content {
       display: flex;
       flex-direction: column;
       gap: 3.8rem;
@@ -208,46 +208,49 @@
 .founder {
   grid-column: full-start / full-end;
   grid-row: 5;
-  display: flex;
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  margin-bottom: 16rem;
+  @include description--section();
 
-  &--title {
-    @include section--title($col-accent-tint-1, $letter-spacing-xs);
-    border-bottom: $border-accent-sm;
-  }
+  &--aside {
+    grid-column: full-start / col-start 8;
+    grid-row: 5;
+    background-color: $col-main-primary;
+    padding: 5rem 14rem 8rem 12rem;
+    margin: 8rem 0rem;
 
-  &--desc {
-    width: 110%;
-    display: flex;
-    flex-direction: column;
-    padding: 15rem 5rem 5rem 0rem;
+    &--title {
+      @include section--title($col-accent-tint-1, $letter-spacing-xs);
+      border-bottom: $border-accent-sm;
+      margin-bottom: 2.4rem;
+    }
 
-    &--article {
+    &--content {
       display: flex;
       flex-direction: column;
       color: $col-gray-tint-2;
       font-size: $font-size-text-md;
       line-height: $font-line-height-lg;
-      background-color: $col-main-primary;
-      padding: 5rem 8rem 10rem 5rem;
       gap: $margin-flex-lg;
       hyphens: auto;
-    }
-
-    &--article p {
-      margin-left: 2.4rem;
-      padding-right: 2.4rem;
+      padding-left: 2.4rem;
+      padding-right: 8rem;
     }
   }
 
   &--img {
-    width: 60%;
-    height: auto;
     position: relative;
     z-index: $z-index-top;
+    grid-column: col-start 8 / full-end;
+    grid-row: 5;
+    box-shadow: none;
+
+    &--composition {
+      @include img-composition(
+        $pos-founder-img-comp-top-offset,
+        $pos-founder-img-comp-left-offset
+      );
+      width: 80%;
+      height: 80%;
+    }
   }
 }
 
