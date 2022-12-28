@@ -24,7 +24,7 @@ export default function Home() {
         <Immersive classes={classes} baseClass="immersive" />
         <Mindfulness classes={classes} baseClass="mindfulness" />
         <Testimonials classes={classes} baseClass="testimonials" />
-        <Newsletter />
+        <Newsletter classes={classes} baseClass="newsletter"/>
       </Layout>
     </Fragment>
   );

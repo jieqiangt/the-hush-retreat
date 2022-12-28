@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import classes from "../../sass/pages/home.module.scss";
+import { useEffect, useState } from "react";
 import Carousel from "../ui/Carousel";
 import TestimonialItem from "../home/TestimonialItem";
 import Icon from "../ui/Icon";
