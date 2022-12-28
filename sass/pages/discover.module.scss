@@ -254,6 +254,20 @@
         $pos-founder-img-top-offset,
         $pos-founder-img-left-offset
       );
+
+      &--img {
+        &--1 {
+          z-index: $z-index-top;
+        }
+
+        &--2 {
+          z-index: $z-index-top - 1;
+        }
+
+        &--3 {
+          z-index: $z-index-top - 2;
+        }
+      }
     }
   }
 }

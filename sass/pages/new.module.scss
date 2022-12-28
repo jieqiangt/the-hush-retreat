@@ -122,18 +122,18 @@
   }
 
   &--img {
-    grid-column: col-end 7 / center-end;
+    grid-column: col-end 6 / center-end;
     grid-row: 4;
     box-shadow: none;
 
     &--composition {
       @include img-composition(
-        -4rem,
+        -10rem,
+        -2rem,
+        27rem,
+        4rem,
         0rem,
-        26rem,
-        5rem,
-        6rem,
-        29rem,
+        34rem,
         $pos-expect-img-top-offset,
         $pos-expect-img-left-offset
       );
@@ -142,14 +142,19 @@
       z-index: $z-index-top;
 
       &--img {
-        width: 90%;
-      }
+        width: 80%;
 
-      &--2 {
-        left: 16rem;
-      }
+        &--1 {
+          z-index: $z-index-top;
+        }
 
-      &--3 {
+        &--2 {
+          z-index: $z-index-top - 2;
+        }
+
+        &--3 {
+          z-index: $z-index-top - 1;
+        }
       }
     }
   }
@@ -157,18 +162,19 @@
   &--aside {
     font-size: $font-size-text-md;
     line-height: $font-line-height-lg;
-    grid-column: full-start / col-end 7;
+    grid-column: full-start / col-end 6;
     grid-row: 4;
 
     &--box {
       background-color: $col-main-primary;
-      padding: 8rem 18rem 8rem 15rem;
+      padding: 6rem 12rem 6rem 6.5rem;
       margin-top: 7rem;
     }
 
     &--title {
       @include section--title($col-accent-tint-1, $letter-spacing-xs);
       border-bottom: $border-accent-sm;
+      margin-right: 6rem;
       margin-bottom: 2.4rem;
     }
 
@@ -182,7 +188,7 @@
 
       & p:first-child {
         font-size: $font-size-header-sm;
-        padding-right: 12rem;
+        padding-right: 8rem;
         margin-bottom: 0.8rem;
         color: $col-accent-tint-2;
       }
