@@ -415,6 +415,39 @@
   }
 }
 
+@mixin description--section() {
+  position: relative;
+
+  &--img {
+    box-shadow: 2px 0px 15px 0px rgba($col-black-primary, 0.8);
+    z-index: $z-index-top;
+    background-size: cover;
+  }
+
+  &--article {
+    display: flex;
+    align-items: center;
+    hyphens: auto;
+    z-index: $z-index-top - 1;
+
+    &--box {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    &--desc {
+      display: flex;
+      flex-direction: column;
+      gap: 3.8rem;
+      margin-left: 2.4rem;
+      padding-right: 2.4rem;
+    }
+  }
+
+}
+
 @mixin retreat-about() {
   display: grid;
   grid-template-colmns: 30fr 70fr;

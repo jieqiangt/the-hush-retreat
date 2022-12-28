@@ -1,12 +1,11 @@
 import ImgComposition from "../ui/ImgComposition";
-import classes from "../../sass/pages/discover.module.scss";
 
-export default function OurFounder() {
+export default function OurFounder(props) {
   return (
-    <section className={classes["founder"]}>
-      <div className={classes["founder--desc"]}>
-        <article className={classes["founder--desc--article"]}>
-          <h2 className={classes["founder--title"]}>Our Founder</h2>
+    <section className={props.classes[props.baseClass]}>
+      <div className={props.classes[`${props.baseClass}--desc`]}>
+        <article className={props.classes[`${props.baseClass}--desc--article`]}>
+          <h2 className={props.classes[`${props.baseClass}--title`]}>Our Founder</h2>
           <p>
             As a yoga teacher, Mandi believes in the importance of wellness and
             mindfulness in our daily lives. Aspiring to create a wellness
@@ -31,9 +30,9 @@ export default function OurFounder() {
           </p>
         </article>
       </div>
-      <div className={classes["founder--img"]}>
+      <div className={props.classes[`${props.baseClass}--img`]}>
         <ImgComposition />
       </div>
     </section>
-  );
+  )
 }

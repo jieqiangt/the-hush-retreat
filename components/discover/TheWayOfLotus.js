@@ -1,41 +1,37 @@
-import classes from "../../sass/pages/discover.module.scss";
+import { Fragment } from "react";
+import DescriptionSection from "../ui/DescriptionSection";
 
-export default function TheWayOfLotus() {
+export default function TheWayOfLotus(props) {
+  const desc = (
+    <Fragment>
+      <p>
+        It started with a lotus. The lotus flower is a symbol of daily
+        resurrection. Even with its roots submerged in the dirtiest waters, it
+        miraculously re-blooms into the most beautiful flower. A lotus seed can
+        withstand thousands of years without water, and is a symbol of the
+        fascinating will to live. The lotus becomes a guiding compass.
+      </p>
+      <p>
+        Living in a fast-paced society, sometimes we get swept away by the daily
+        happenings in life and neglect our physical and mental wellbeing.
+        Mindfulness practices helps us slow down while navigating a journey
+        inwards to a deeper understanding of our self and purpose.
+      </p>
+      <p>
+        Experience the power of mindfulness. Be empowered to step away from the
+        hustle of everyday life and practice to be Here. Whether you are seeking
+        to heal, connect, or to pick up a mindful practice, step into our
+        sanctuary and be guided by the way of the lotus.
+      </p>
+    </Fragment>
+  );
 
   return (
-    <section className={classes["lotus"]}>
-      <div className={classes["lotus--img"]} />
-      <div className={classes["lotus--article"]}>
-        <div className={classes["lotus--article--box"]}>
-          <h2 className={classes["lotus--article--title"]}>
-            The Way Of The Lotus
-          </h2>
-          <article className={classes["lotus--article--desc"]}>
-            <p>
-              It started with a lotus. The lotus flower is a symbol of daily
-              resurrection. Even with its roots submerged in the dirtiest
-              waters, it miraculously re-blooms into the most beautiful flower.
-              A lotus seed can withstand thousands of years without water, and
-              is a symbol of the fascinating will to live. The lotus becomes a
-              guiding compass.
-            </p>
-            <p>
-              Living in a fast-paced society, sometimes we get swept away by the
-              daily happenings in life and neglect our physical and mental
-              wellbeing. Mindfulness practices helps us slow down while
-              navigating a journey inwards to a deeper understanding of our self
-              and purpose.
-            </p>
-            <p>
-              Experience the power of mindfulness. Be empowered to step away
-              from the hustle of everyday life and practice to be Here. Whether
-              you are seeking to heal, connect, or to pick up a mindful
-              practice, step into our sanctuary and be guided by the way of the
-              lotus.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+    <DescriptionSection
+      classes={props.classes}
+      baseClass={props.baseClass}
+      title="The Way of The Lotus"
+      desc={desc}
+    />
   );
 }
