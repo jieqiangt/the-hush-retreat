@@ -1,14 +1,13 @@
 import Link from "next/link";
-import classes from "../../sass/pages/help.module.scss";
 import InputBar from "../ui/InputBar";
 
-export default function ContactUs() {
+export default function ContactUs(props) {
   return (
-    <div className={classes["contact-us"]}>
-      <div className={classes["contact-us--img"]} />
-      <form action="#" className={classes["contact-us--form"]}>
-        <h2 className={classes["contact-us--form--title"]}>Connect with us</h2>
-        <article className={classes["contact-us--form--article"]}>
+    <div className={props.classes[`${props.baseClass}`]}>
+      <div className={props.classes[`${props.baseClass}--img`]} />
+      <form action="#" className={props.classes[`${props.baseClass}--form`]}>
+        <h2 className={props.classes[`${props.baseClass}--form--title`]}>Connect with us</h2>
+        <article className={props.classes[`${props.baseClass}--form--article`]}>
           Having a burning question for a retreat or looking to collaborate with
           us? <br />
           Do drop us a message using the form below or through email at
@@ -21,48 +20,48 @@ export default function ContactUs() {
           inputType="text"
           inputName="contact-us--form--first-name"
           inputPlaceholder="First Name"
-          inputGroupClass={classes["contact-us--form--first-name"]}
-          inputClass={classes["contact-us--form--first-name--input"]}
-          labelClass={classes["contact-us--form--first-name--label"]}
+          inputGroupClass={props.classes[`${props.baseClass}--form--first-name`]}
+          inputClass={props.classes[`${props.baseClass}--form--first-name--input`]}
+          labelClass={props.classes[`${props.baseClass}--form--first-name--label`]}
         />
         <InputBar
           label="Last Name"
           inputType="text"
           inputName="contact-us--form--last-name"
           inputPlaceholder="Last Name"
-          inputGroupClass={classes["contact-us--form--last-name"]}
-          inputClass={classes["contact-us--form--last-name--input"]}
-          labelClass={classes["contact-us--form--last-name--label"]}
+          inputGroupClass={props.classes[`${props.baseClass}--form--last-name`]}
+          inputClass={props.classes[`${props.baseClass}--form--last-name--input`]}
+          labelClass={props.classes[`${props.baseClass}--form--last-name--label`]}
         />
         <InputBar
           label="Email"
           inputType="email"
           inputName="contact-us--form--email"
           inputPlaceholder="Email"
-          inputGroupClass={classes["contact-us--form--email"]}
-          inputClass={classes["contact-us--form--email--input"]}
-          labelClass={classes["contact-us--form--email--label"]}
+          inputGroupClass={props.classes[`${props.baseClass}--form--email`]}
+          inputClass={props.classes[`${props.baseClass}--form--email--input`]}
+          labelClass={props.classes[`${props.baseClass}--form--email--label`]}
         />
         <InputBar
           label="Subject"
           inputType="text"
           inputName="contact-us--form--subject"
           inputPlaceholder="Subject"
-          inputGroupClass={classes["contact-us--form--subject"]}
-          inputClass={classes["contact-us--form--subject--input"]}
-          labelClass={classes["contact-us--form--subject--label"]}
+          inputGroupClass={props.classes[`${props.baseClass}--form--subject`]}
+          inputClass={props.classes[`${props.baseClass}--form--subject--input`]}
+          labelClass={props.classes[`${props.baseClass}--form--subject--label`]}
         />
         <InputBar
           label="Message"
           inputType="textarea"
           inputName="contact-us--form--message"
           inputPlaceholder="Message"
-          inputGroupClass={classes["contact-us--form--message"]}
-          inputClass={classes["contact-us--form--message--input"]}
-          labelClass={classes["contact-us--form--message--label"]}
+          inputGroupClass={props.classes[`${props.baseClass}--form--message`]}
+          inputClass={props.classes[`${props.baseClass}--form--message--input`]}
+          labelClass={props.classes[`${props.baseClass}--form--message--label`]}
           rows="8"
         />
-        <button className={classes["contact-us--form--btn"]}>
+        <button className={props.classes[`${props.baseClass}--form--btn`]}>
           Send Message
         </button>
       </form>

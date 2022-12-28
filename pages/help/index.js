@@ -12,12 +12,9 @@ export default function HelpPage() {
         <title>Help</title>
         <meta name="description" content="Help" />
       </Head>
-      <Layout
-        classes={classes}
-        baseClass="help"
-      >
-        <ContactUs />
-        <FAQ />
+      <Layout classes={classes} baseClass="help">
+        <ContactUs classes={classes} baseClass="contact-us" />
+        <FAQ classes={classes} baseClass="faq" />
       </Layout>
     </Fragment>
   );

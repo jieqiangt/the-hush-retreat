@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import classes from "../../sass/pages/help.module.scss";
 import FAQItem from "../help/FAQItem";
 import Accordion from "../ui/Accordion";
 import Icon from "../ui/Icon";
@@ -61,16 +60,14 @@ const FAQItemsList = [
   },
 ];
 
-export default function FAQ() {
+export default function FAQ(props) {
   const [activeItems, setActiveItems] = useState([]);
   const [FAQItems, setFAQItems] = useState([]);
   
   const setActiveItemHandler = (event) => {
     event.preventDefault();
     const clickedIdx = parseInt(event.target.getAttribute("idx"));
-    console.log({clickedIdx})
     const idx = activeItems.indexOf(clickedIdx);
-    console.log({idx})
     const newActiveItems = [...activeItems];
 
     if (idx !== -1) {
@@ -109,11 +106,11 @@ export default function FAQ() {
   }, [activeItems]);
 
   return (
-    <div className={classes["faq"]} id="faq">
-      <Icon iconClass={classes["faq--icon"]} iconName="icon-logo-no-words-sm"/>
-      <h2 className={classes["faq--title"]}>Frequently Asked Questions</h2>
+    <div className={props.classes[props.baseClass]} id="faq">
+      <Icon iconClass={props.classes[`${props.baseClass}--icon`]} iconName="icon-logo-no-words-sm"/>
+      <h2 className={props.classes[`${props.baseClass}--title`]}>Frequently Asked Questions</h2>
       <Accordion
-        accordionClass={classes["faq--accordion"]}
+        accordionClass={props.classes[`${props.baseClass}--accordion`]}
         accordionItems={FAQItems}
       />
     </div>
