@@ -97,12 +97,11 @@
     grid-row: 3;
   }
 
-  &--article {
+  &--aside {
     font-size: $font-size-text-md;
     line-height: $font-line-height-lg;
     grid-column: col-end 3 / full-end;
     grid-row: 3;
-
 
     &--box {
       background-color: $col-main-primary;
@@ -117,6 +116,11 @@
     }
 
     &--desc {
+      display: flex;
+      flex-direction: column;
+      gap: 3.8rem;
+      margin-left: 2.4rem;
+      padding-right: 2.4rem;
       color: $col-gray-tint-2;
     }
   }

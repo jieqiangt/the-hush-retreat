@@ -2,8 +2,8 @@ import { Fragment } from "react";
 import DescriptionSection from "../ui/DescriptionSection";
 
 export default function TheWayOfLotus(props) {
-  const desc = (
-    <Fragment>
+  const content = (
+    <div className={props.classes[`${props.baseClass}--aside--desc`]}>
       <p>
         It started with a lotus. The lotus flower is a symbol of daily
         resurrection. Even with its roots submerged in the dirtiest waters, it
@@ -23,7 +23,7 @@ export default function TheWayOfLotus(props) {
         to heal, connect, or to pick up a mindful practice, step into our
         sanctuary and be guided by the way of the lotus.
       </p>
-    </Fragment>
+    </div>
   );
 
   return (
@@ -31,7 +31,7 @@ export default function TheWayOfLotus(props) {
       classes={props.classes}
       baseClass={props.baseClass}
       title="The Way of The Lotus"
-      desc={desc}
+      content={content}
     />
   );
 }

@@ -424,7 +424,7 @@
     background-size: cover;
   }
 
-  &--article {
+  &--aside {
     display: flex;
     align-items: center;
     hyphens: auto;
@@ -435,14 +435,6 @@
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
-    }
-
-    &--desc {
-      display: flex;
-      flex-direction: column;
-      gap: 3.8rem;
-      margin-left: 2.4rem;
-      padding-right: 2.4rem;
     }
   }
 
