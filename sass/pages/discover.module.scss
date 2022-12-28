@@ -245,11 +245,15 @@
 
     &--composition {
       @include img-composition(
-        $pos-founder-img-comp-top-offset,
-        $pos-founder-img-comp-left-offset
+        0rem,
+        -4rem,
+        12rem,
+        18rem,
+        32rem,
+        -2rem,
+        $pos-founder-img-top-offset,
+        $pos-founder-img-left-offset
       );
-      width: 80%;
-      height: 80%;
     }
   }
 }

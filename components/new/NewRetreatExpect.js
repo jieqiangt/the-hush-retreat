@@ -23,7 +23,11 @@ export default function NewRetreatExpect(props) {
   ];
   const img = (
     <div className={props.classes[`${props.baseClass}--img`]}>
-      <ImgComposition imgUrlList={imgUrlList} />
+      <ImgComposition
+        classes={props.classes}
+        baseClass={props.baseClass}
+        imgUrlList={imgUrlList}
+      />
     </div>
   );
 
