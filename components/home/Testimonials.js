@@ -5,7 +5,7 @@ import Carousel from "../ui/Carousel";
 import TestimonialItem from "../home/TestimonialItem";
 import Icon from "../ui/Icon";
 
-export default function Testimonials() {
+export default function Testimonials(props) {
   const [activeItem, setActiveItem] = useState(0);
   const [testimonialItems, setTestimonialItems] = useState([]);
   const [intervalId, setIntervalId] = useState();
@@ -68,9 +68,9 @@ export default function Testimonials() {
         retreatName={item.retreatName}
         retreatDate={item.retreatDate}
         active={item.active}
-        carouselItemClass={classes["testimonials--carousel--item"]}
+        carouselItemClass={props.classes[`${props.baseClass}--carousel--item`]}
         carouselItemActiveClass={
-          classes["testimonials--carousel--item--active"]
+          props.classes[`${props.baseClass}--carousel--item--active`]
         }
       />
     );
@@ -92,24 +92,24 @@ export default function Testimonials() {
   }, [activeItem]);
 
   return (
-    <section className={classes["testimonials"]}>
+    <section className={props.classes[props.baseClass]}>
       <Icon
-        iconClass={classes["testimonials--icon"]}
+        iconClass={props.classes[`${props.baseClass}--icon`]}
         iconName="icon-logo-no-words-sm"
       />
-      <h2 className={classes["testimonials--title"]}>Testimonials</h2>
+      <h2 className={props.classes[`${props.baseClass}--title`]}>What Our Guests Say</h2>
       <Carousel
         carouselItems={testimonialItems}
         activeItem={activeItem}
         changeActiveItem={changeActiveItem}
-        carouselClass={classes["testimonials--carousel"]}
-        carouselListClass={classes["testimonials--carousel--list"]}
-        carouselBtnLeftClass={classes["testimonials--carousel--btn--left"]}
-        carouselBtnRightClass={classes["testimonials--carousel--btn--right"]}
-        carouselNavClass={classes["testimonials--carousel--nav"]}
-        carouselNavDotClass={classes["testimonials--carousel--nav--dot"]}
+        carouselClass={props.classes[`${props.baseClass}--carousel`]}
+        carouselListClass={props.classes[`${props.baseClass}--carousel--list`]}
+        carouselBtnLeftClass={props.classes[`${props.baseClass}--carousel--btn--left`]}
+        carouselBtnRightClass={props.classes[`${props.baseClass}--carousel--btn--right`]}
+        carouselNavClass={props.classes[`${props.baseClass}--carousel--nav`]}
+        carouselNavDotClass={props.classes[`${props.baseClass}--carousel--nav--dot`]}
         carouselNavDotActiveClass={
-          classes["testimonials--carousel--nav--dot--active"]
+          props.classes[`${props.baseClass}--carousel--nav--dot--active`]
         }
       />
     </section>

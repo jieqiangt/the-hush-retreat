@@ -18,12 +18,12 @@ export default function Home() {
         <meta name="description" content="Home" />
       </Head>
       <Layout classes={classes} baseClass="home">
-        <Hero baseClass="hero" classes={classes} />
+        <Hero classes={classes} baseClass="hero" />
         <CorporateCustomers />
         <Bespoke classes={classes} baseClass="bespoke" />
         <Immersive classes={classes} baseClass="immersive" />
         <Mindfulness classes={classes} baseClass="mindfulness" />
-        <Testimonials />
+        <Testimonials classes={classes} baseClass="testimonials" />
         <Newsletter />
       </Layout>
     </Fragment>
