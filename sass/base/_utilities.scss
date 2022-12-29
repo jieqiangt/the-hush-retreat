@@ -246,10 +246,11 @@
       width: 50rem;
       position: absolute;
       bottom: 10rem;
-      right: 38rem;
 
       @if $imgIsRight {
         right: 10rem;
+      } @else {
+        left: 14rem;
       }
     }
 
@@ -445,5 +446,42 @@
       gap: 1.2rem;
       width: 100%;
     }
+  }
+}
+
+@mixin schedule($num-rows) {
+  display: grid;
+  grid-template-columns: [time-start] 1fr [time-end logo-start] 5vw [logo-end activity-start] 1fr [activity-end];
+  grid-template-rows: repeat($num-rows, minmax(min-content, 10rem));
+  justify-items: center;
+  align-items: start;
+  justify-content: center;
+  align-content: center;
+
+  &--title {
+    grid-column: time-start / activity-end;
+    grid-row: 1;
+  }
+
+  &--time {
+    grid-column: time-start / time-end;
+    justify-self: end;
+    margin-right: 4rem;
+  }
+
+  &--icon {
+    @include icon-square($size-icon-square-lg, $col-main-primary);
+
+    &--outer {
+      grid-column: logo-start / logo-end;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &--activity {
+    grid-column: activity-start / activity-end;
+    justify-self: start;
+    margin-left: 4rem;
   }
 }

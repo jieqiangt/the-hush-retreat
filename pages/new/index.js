@@ -4,6 +4,7 @@ import Layout from "../../components/layout/Layout";
 import NewRetreatBanner from "../../components/new/NewRetreatBanner";
 import NewRetreatExpect from "../../components/new/NewRetreatExpect";
 import NewRetreatIntentions from "../../components/new/NewRetreatIntentions";
+import NewRetreatSchedule from "../../components/new/NewRetreatSchedule";
 import classes from "../../sass/pages/new.module.scss";
 
 export default function NewPage() {
@@ -15,14 +16,9 @@ export default function NewPage() {
       </Head>
       <Layout classes={classes} baseClass="new">
         <NewRetreatBanner classes={classes} baseClass="retreat--banner" />
-        <NewRetreatIntentions
-          classes={classes}
-          baseClass="intentions"
-        />
-        <NewRetreatExpect
-          classes={classes}
-          baseClass="expect"
-        />
+        <NewRetreatIntentions classes={classes} baseClass="intentions" />
+        <NewRetreatExpect classes={classes} baseClass="expect" />
+        <NewRetreatSchedule classes={classes} baseClass="schedule" />
       </Layout>
     </Fragment>
   );
