@@ -127,12 +127,12 @@
 
     &--composition {
       @include img-composition(
-        -8rem,
+        -10rem,
         -2rem,
-        26rem,
+        24rem,
         4rem,
         0rem,
-        34rem,
+        30rem,
         $pos-expect-img-top-offset,
         $pos-expect-img-left-offset
       );
