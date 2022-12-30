@@ -8,7 +8,7 @@ export default function NavBar(props) {
       <ul className={classes["nav--list"]}>
         <div className={classes["nav--list--sides"]}>
           <NavLink href="/discover">Our Story</NavLink>
-          <NavLink href="/new">Upcoming Retreats</NavLink>
+          <NavLink href="/upcoming">Upcoming Retreats</NavLink>
         </div>
         <NavLink href="/">
           <Icon iconClass={classes["nav--icon"]} iconName="icon-logo-main" />
