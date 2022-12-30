@@ -276,7 +276,6 @@
   @include footer(transparent, relative);
   grid-column: full-start / full-end;
   grid-row: 6;
-  padding-top: 5rem;
 
   &::before {
     content: "";

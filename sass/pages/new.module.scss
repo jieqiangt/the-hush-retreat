@@ -11,7 +11,7 @@
       [col-start] minmax(17.5rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 6.5vh 100vh 75vh 90vh 90vh repeat(2, min-content);
+  grid-template-rows: 6.5vh 100vh 75vh 90vh min-content repeat(2, min-content);
 
   &--nav {
     grid-column: full-start / full-end;
@@ -114,9 +114,8 @@
     position: absolute;
     display: block;
     height: 0.2rem;
-    width: 97%;
-    bottom: -4rem;
-    left: 1.5%;
+    width: 100%;
+    bottom: 0rem;
     background-color: rgba($col-accent-tint-2, 0.5);
     z-index: $z-index-top;
   }
@@ -128,9 +127,9 @@
 
     &--composition {
       @include img-composition(
-        -10rem,
+        -8rem,
         -2rem,
-        27rem,
+        26rem,
         4rem,
         0rem,
         34rem,
@@ -142,7 +141,7 @@
       z-index: $z-index-top;
 
       &--img {
-        width: 80%;
+        width: 75%;
 
         &--1 {
           z-index: $z-index-top;
@@ -197,14 +196,33 @@
 }
 
 .schedule {
-  &--img {
-
-  }
-  
-  grid-column: col-start 5 / full-end;
+  grid-column: full-start / full-end;
   grid-row: 5;
+  @include z-layout(45fr);
   @include schedule(6);
-  margin-right: 24rem;
+
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   display: block;
+  //   height: 0.2rem;
+  //   width: 100%;
+  //   bottom: 0rem;
+  //   left: 1.5%;
+  //   background-color: rgba($col-accent-tint-2, 0.5);
+  //   z-index: $z-index-top;
+  // }
+
+  &--img {
+    background-image: url("../../public/img/journey-1-lg.jpg");
+    background-position: bottom 0% left 0%;
+  }
+
+  &--layout {
+    grid-column: 2;
+    margin-left: -16rem;
+  }
 
   &--title {
     @include section--title($col-main-tint-1, $letter-spacing-s);
@@ -237,7 +255,7 @@
 
     &--desc {
       font-size: $font-size-text-md;
-      padding-right: 8rem;
+      padding-right: 22rem;
     }
   }
 }

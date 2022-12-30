@@ -106,7 +106,8 @@
   font-size: $font-size-text-s;
   color: $col-main-tint-1;
   width: 100%;
-  padding-bottom: 2.4rem;
+  padding-bottom: 1.2rem;
+  padding-top: 4rem;
   background-color: $bg-color;
   position: $position;
 
@@ -452,13 +453,16 @@
 }
 
 @mixin schedule($num-rows) {
-  display: grid;
-  grid-template-columns: [time-start] 1fr [time-end logo-start] 5vw [logo-end activity-start] 1fr [activity-end];
-  grid-template-rows: repeat($num-rows, minmax(min-content, 10rem));
-  justify-items: center;
-  align-items: start;
-  justify-content: center;
-  align-content: center;
+
+  &--layout {
+    display: grid;
+    grid-template-columns: [time-start] 1fr [time-end logo-start] 5vw [logo-end activity-start] 1fr [activity-end];
+    grid-template-rows: repeat($num-rows, minmax(min-content, 10rem));
+    justify-items: center;
+    align-items: start;
+    justify-content: center;
+    align-content: center;
+  }
 
   &--title {
     grid-column: time-start / activity-end;

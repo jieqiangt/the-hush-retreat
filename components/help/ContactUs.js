@@ -69,12 +69,15 @@ export default function ContactUs(props) {
     </form>
   );
 
+  const img = <div className={props.classes[`${props.baseClass}--img`]} />;
+
   return (
     <DescriptionSection
       classes={props.classes}
       baseClass={props.baseClass}
       title="Connect with us"
       content={content}
+      img={img}
     />
   );
 }

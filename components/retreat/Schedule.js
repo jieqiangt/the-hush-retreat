@@ -16,11 +16,11 @@ export default function Schedule(props) {
   ));
 
   return (
-    <section className={props.classes[`${props.baseClass}`]}>
+    <div className={props.classes[`${props.baseClass}--layout`]}>
       <h2 className={props.classes[`${props.baseClass}--title`]}>
-        Your Schedule
+        Your Journey
       </h2>
       {scheduleItems}
-    </section>
+    </div>
   );
 }
