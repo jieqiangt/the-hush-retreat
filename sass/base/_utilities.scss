@@ -47,7 +47,7 @@
       z-index: $z-index-top + 100;
       transform: scale(1.05);
       box-shadow: 0 2.5rem 4rem rgba($col-black-primary, 0.5);
-      outline: 0.5rem solid $col-main-tint-1;
+      outline: 0.5rem solid $col-accent-tint-2;
     }
   }
 
@@ -116,8 +116,7 @@
     position: absolute;
     display: block;
     height: 0.2rem;
-    width: 97%;
-    left: 1.5%;
+    width: 100%;
     top: 0rem;
     background-color: rgba($col-accent-tint-2, 0.5);
   }
@@ -456,7 +455,7 @@
 
   &--layout {
     display: grid;
-    grid-template-columns: [time-start] 1fr [time-end logo-start] 5vw [logo-end activity-start] 1fr [activity-end];
+    grid-template-columns: [time-start full-start] 1fr [time-end logo-start] 5vw [logo-end activity-start] 1fr [activity-end full-end];
     grid-template-rows: repeat($num-rows, minmax(min-content, 10rem));
     justify-items: center;
     align-items: start;

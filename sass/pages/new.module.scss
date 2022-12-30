@@ -11,7 +11,7 @@
       [col-start] minmax(17.5rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 6.5vh 100vh 75vh 90vh 75vh repeat(2, min-content);
+  grid-template-rows: 6.5vh 100vh 75vh 90vh 75vh min-content min-content min-content;
 
   &--nav {
     grid-column: full-start / full-end;
@@ -251,7 +251,7 @@
   grid-column: full-start / full-end;
   grid-row: 6;
   @include z-layout(45fr);
-  @include schedule(6);
+  @include schedule(7);
   position: relative;
   margin-top: 8rem;
 
@@ -259,7 +259,7 @@
     content: "";
     position: absolute;
     display: block;
-    height: 0.22rem;
+    height: 0.2rem;
     width: 100%;
     top: 0rem;
     background-color: rgba($col-accent-tint-2, 0.5);
@@ -310,21 +310,86 @@
       padding-right: 22rem;
     }
   }
+
+  &--btn {
+    @include btn--link($col-gray-tint-1, $col-main-primary, 0.2);
+    grid-column: full-start / full-end;
+    font-size: $font-size-text-md;
+    border-bottom: $border-accent-sm;
+    border-top: $border-accent-sm;
+    margin-top: 2rem;
+  }
+}
+
+.cta {
+  grid-column: full-start / full-end;
+  grid-row: 7;
+  background-image: linear-gradient(
+      180deg,
+      rgba($col-white-primary, 0.4),
+      rgba($col-white-primary, 0.6)
+    ),
+    url("../../public/img/sand-1-lg.jpg");
+  background-size: cover;
+  background-position: bottom 60% left 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  &--card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba($col-main-primary, 0.75);
+    color: $col-gray-tint-2;
+    font-size: $font-size-text-md;
+    padding: 5rem 10rem;
+    gap: 3.2rem;
+    margin: 0rem 70rem;
+  }
+
+  &--title {
+    @include section--title($col-accent-tint-2, $letter-spacing-xs);
+  }
+
+  &--retreat-name {
+    font-size: $font-size-header-sm;
+  }
+
+  &--price {
+    font-size: $font-size-text-lg;
+    margin-top: -3rem;
+  }
+
+  &--content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: -3rem;
+
+    &--title {
+      @include section--title($col-accent-tint-2, $letter-spacing-xs);
+      font-size: $font-size-text-md;
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    & p {
+      text-align: left;
+    }
+  }
+  &--btn {
+    @include btn--link($col-accent-tint-2, $col-main-primary, 0.6);
+    align-self: center;
+    border-bottom: $border-accent-sm;
+    border-top: $border-accent-sm;
+  }
 }
 
 .new--footer {
   @include footer(transparent, relative);
   grid-column: full-start / full-end;
   grid-row: -1;
-
-  &::before {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 0.2rem;
-    width: 100%;
-    bottom: 0rem;
-    left: 1.5%;
-    background-color: rgba($col-accent-tint-2, 0.5);
-  }
 }

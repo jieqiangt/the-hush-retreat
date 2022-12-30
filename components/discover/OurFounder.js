@@ -9,7 +9,7 @@ export default function OurFounder(props) {
     "Armed with 8 years of experience in the service industry, she strives to deliver the best service and hospitality in all her retreats so that you can truly rest, reset and reconnect with yourself as you go on your personal journey. Rest assured you will be well taken care of by the team at The Hush Retreats.",
   ];
 
-  const paragraphs = text.map((item) => <p>{item}</p>);
+  const paragraphs = text.map((item, idx) => <p key={idx}>{item}</p>);
   const content = (
     <article className={props.classes[`${props.baseClass}--aside--content`]}>
       {paragraphs}
@@ -43,7 +43,8 @@ export default function OurFounder(props) {
   );
 }
 
-{/* <section className={props.classes[props.baseClass]}>
+{
+  /* <section className={props.classes[props.baseClass]}>
   <div className={props.classes[`${props.baseClass}--desc`]}>
     <article className={props.classes[`${props.baseClass}--desc--article`]}>
       <h2 className={props.classes[`${props.baseClass}--title`]}>
@@ -73,4 +74,5 @@ export default function OurFounder(props) {
       </p>
     </article>
   </div>
-</section>; */}
+</section>; */
+}

@@ -246,10 +246,10 @@
     &--composition {
       @include img-composition(
         0rem,
-        -4rem,
+        -6rem,
         12rem,
-        18rem,
-        32rem,
+        16rem,
+        34rem,
         -2rem,
         $pos-founder-img-top-offset,
         $pos-founder-img-left-offset
@@ -272,19 +272,11 @@
   }
 }
 
+
+
 .discover--footer {
   @include footer(transparent, relative);
   grid-column: full-start / full-end;
   grid-row: 6;
-
-  &::before {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 0.2rem;
-    width: 97%;
-    bottom: 0rem;
-    left: 1.5%;
-    background-color: rgba($col-accent-tint-2, 0.5);
-  }
+  margin-top: 8rem;
 }

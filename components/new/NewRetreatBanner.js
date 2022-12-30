@@ -8,7 +8,7 @@ export default function NewRetreatBanner(props) {
   const price = "$399 per pax";
   const location = "Villa Samadhi & Labrador Nature Reserve";
   const promotion = "Sign up by 26 December for 10% off";
-  const btnText = "Register Now";
+  const btnText = "Register Here";
   const btnHref = "/new";
 
   return (

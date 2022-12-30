@@ -37,11 +37,14 @@ export default function NewRetreatSchedule(props) {
     },
   ];
 
+  const btnText="Start Your Journey Here"
+
   const content = (
     <Schedule
       scheduleList={scheduleList}
       baseClass={props.baseClass}
       classes={props.classes}
+      btnText={btnText}
     />
   );
 

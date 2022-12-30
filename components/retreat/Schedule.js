@@ -1,3 +1,4 @@
+import LinkButton from "../ui/LinkButton";
 import ScheduleItem from "./ScheduleItem";
 
 export default function Schedule(props) {
@@ -21,6 +22,12 @@ export default function Schedule(props) {
         Your Journey
       </h2>
       {scheduleItems}
+      <LinkButton
+          href="#"
+          btnClass={props.classes[`${props.baseClass}--btn`]}
+        >
+          {props.btnText}
+        </LinkButton>
     </div>
   );
 }
