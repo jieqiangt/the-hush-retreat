@@ -8,7 +8,7 @@ export default function NewRetreatIntentions(props) {
     "Begin the retreat with releasing what doesn't serve you anymore and enter into the second half as we set intentions for the new year. This full-day retreat will truly be a gift yourself & your loved ones. We look forward to holding space for you.",
   ];
 
-  const paragraphs = text.map((item) => <p>{item}</p>);
+  const paragraphs = text.map((item, idx) => <p key={idx}>{item}</p>);
   const content = (
     <article className={props.classes[`${props.baseClass}--aside--content`]}>
       {paragraphs}
