@@ -9,7 +9,7 @@ export default function NewRetreatExpect(props) {
     "Guided by Stephanie Chaunte Leong, through somatic practices, breathwork, embodied dance-movement, expressive art, conscious dreaming, journaling and a fire ceremony as she leads you back home to yourself.",
   ];
 
-  const paragraphs = text.map((item) => <p>{item}</p>);
+  const paragraphs = text.map((item, idx) => <p key={idx}>{item}</p>);
   const content = (
     <article className={props.classes[`${props.baseClass}--aside--content`]}>
       {paragraphs}

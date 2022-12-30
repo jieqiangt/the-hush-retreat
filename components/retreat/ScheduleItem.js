@@ -2,9 +2,13 @@ import { Fragment } from "react";
 import Icon from "../ui/Icon";
 
 export default function ScheduleItem(props) {
-  const divider = Array(props.numDots).fill(
-    <span className={props.classes[`${props.baseClass}--divider`]}>&#x2022;</span>
-  );
+  const dummyArr = Array(props.numDots).fill(" ");
+  const divider = dummyArr.map((item, idx) => (
+    <span key={idx} className={props.classes[`${props.baseClass}--divider`]}>
+      &#x2022;
+    </span>
+  ));
+
   return (
     <Fragment>
       <time
