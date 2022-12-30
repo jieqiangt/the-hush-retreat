@@ -1,4 +1,5 @@
 import ZLayout from "../ui/ZLayout";
+import ZLayoutArticle from "../ui/ZLayoutArticle";
 
 export default function Bespoke(props) {
   const title = "Bespoke";
@@ -8,8 +9,8 @@ export default function Bespoke(props) {
   const btnText = "Book Now";
   const btnHref = "/new";
 
-  return (
-    <ZLayout
+  const content = (
+    <ZLayoutArticle
       classes={props.classes}
       baseClass={props.baseClass}
       title={title}
@@ -17,6 +18,14 @@ export default function Bespoke(props) {
       desc={desc}
       btnText={btnText}
       btnHref={btnHref}
+    />
+  );
+
+  return (
+    <ZLayout
+      classes={props.classes}
+      baseClass={props.baseClass}
+      content={content}
     />
   );
 }

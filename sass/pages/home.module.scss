@@ -68,6 +68,7 @@
   grid-column: full-start / full-end;
   grid-row: 4;
   @include z-layout(45fr);
+  @include z-layout-article();
 
   &--img {
     background-image: url("../../public/img/bespoke-1-lg.jpg");
@@ -78,6 +79,7 @@
   grid-column: full-start / full-end;
   grid-row: 5;
   @include z-layout(45fr, true);
+  @include z-layout-article(true);
 
   &--img {
     background-image: url("../../public/img/alone-2-lg.jpg");
@@ -88,6 +90,7 @@
   grid-column: full-start / full-end;
   grid-row: 6;
   @include z-layout(45fr);
+  @include z-layout-article();
 
   &--img {
     background-image: url("../../public/img/meditation-2-lg.jpg");

@@ -1,15 +1,17 @@
 import ZLayout from "../ui/ZLayout";
+import ZLayoutArticle from "../ui/ZLayoutArticle";
 
 export default function Immersive(props) {
   const title = "Immersive";
-  const caption = "Imbue unique & novel intricacies into your wellness practice";
+  const caption =
+    "Imbue unique & novel intricacies into your wellness practice";
   const desc =
-    "Explore a wide range of multi-dimensional, immersive experiences, from sound to cacao, carefully designed to maximise your practice."
+    "Explore a wide range of multi-dimensional, immersive experiences, from sound to cacao, carefully designed to maximise your practice.";
   const btnText = "Explore More";
   const btnHref = "/explore";
 
-  return (
-    <ZLayout
+  const content = (
+    <ZLayoutArticle
       classes={props.classes}
       baseClass={props.baseClass}
       title={title}
@@ -17,6 +19,14 @@ export default function Immersive(props) {
       desc={desc}
       btnText={btnText}
       btnHref={btnHref}
+    />
+  );
+
+  return (
+    <ZLayout
+      classes={props.classes}
+      baseClass={props.baseClass}
+      content={content}
     />
   );
 }
