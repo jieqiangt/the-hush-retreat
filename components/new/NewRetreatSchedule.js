@@ -1,4 +1,5 @@
 import Schedule from "../retreat/Schedule";
+import ZLayout from "../ui/ZLayout";
 
 export default function NewRetreatSchedule(props) {
   const scheduleList = [
@@ -36,11 +37,19 @@ export default function NewRetreatSchedule(props) {
     },
   ];
 
-  return (
+  const content = (
     <Schedule
       scheduleList={scheduleList}
       baseClass={props.baseClass}
       classes={props.classes}
+    />
+  );
+
+  return (
+    <ZLayout
+      classes={props.classes}
+      baseClass={props.baseClass}
+      content={content}
     />
   );
 }
