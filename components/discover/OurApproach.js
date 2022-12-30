@@ -10,7 +10,7 @@ export default function OurApproach(props) {
       desc: "We believe in the concept of biophilia - where humans and life of nature are closely related. We work with our partners to minimise single-use disposables and waste.",
     },
     {
-      imgSrc: "/img/alone-1-lg.jpg",
+      imgSrc: "/img/exclusive-1-lg.jpg",
       title: "Exclusive",
       desc: "Our retreats are kept to small numbers to create moments for you to connect and immerse.",
     },
