@@ -5,7 +5,7 @@ import Icon from "../ui/Icon";
 export default function OurApproach(props) {
   const features = [
     {
-      imgSrc: "/img/trees-2-lg.jpg",
+      imgSrc: "/img/trees-1-lg.jpg",
       title: "Eco Conscious",
       desc: "We believe in the concept of biophilia - where humans and life of nature are closely related. We work with our partners to minimise single-use disposables and waste.",
     },

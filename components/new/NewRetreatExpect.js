@@ -17,8 +17,8 @@ export default function NewRetreatExpect(props) {
   );
 
   const imgUrlList = [
-    "/img/fire-2-lg.jpg",
-    "/img/dance-2-lg.jpg",
+    "/img/fire-1-lg.jpg",
+    "/img/meditation-group-2-lg.jpg",
     "/img/meditation-bowl-1-lg.jpg",
   ];
   const img = (

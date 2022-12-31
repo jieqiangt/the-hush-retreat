@@ -10,7 +10,9 @@ export default function ExplorePage() {
         <title>Past Retreats</title>
         <meta name="description" content="Past Retreats" />
       </Head>
-      <Layout classes={classes} baseClass="explore"></Layout>
+      <Layout classes={classes} baseClass="explore">
+        
+      </Layout>
     </Fragment>
   );
 }

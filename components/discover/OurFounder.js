@@ -17,9 +17,9 @@ export default function OurFounder(props) {
   );
 
   const imgUrlList = [
-    "/img/groot-1-sm.jpg",
-    "/img/groot-2-sm.jpg",
-    "/img/groot-3-sm.jpg",
+    "/img/mandi-2-lg.jpg",
+    "/img/mandi-1-lg.jpg",
+    "/img/mandi-3-lg.jpg",
   ];
 
   const img = (

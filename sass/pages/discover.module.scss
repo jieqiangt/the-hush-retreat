@@ -215,7 +215,7 @@
     grid-row: 5;
     background-color: $col-main-primary;
     padding: 5rem 14rem 8rem 12rem;
-    margin: 8rem 0rem;
+    margin: 14rem 0rem;
 
     &--title {
       @include section--title($col-accent-tint-1, $letter-spacing-xs);
@@ -246,16 +246,18 @@
     &--composition {
       @include img-composition(
         0rem,
-        -6rem,
+        -8rem,
         12rem,
-        16rem,
-        34rem,
+        20rem,
+        38rem,
         -2rem,
         $pos-founder-img-top-offset,
         $pos-founder-img-left-offset
       );
 
       &--img {
+
+        width: 55%;
         &--1 {
           z-index: $z-index-top;
         }
