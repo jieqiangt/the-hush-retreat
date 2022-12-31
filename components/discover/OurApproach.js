@@ -53,7 +53,7 @@ export default function OurApproach(props) {
         <div className={props.classes[`${props.baseClass}--cta--box`]}>
           <div className={props.classes[`${props.baseClass}--cta--outer`]}>
             <LinkButton
-              href="/new"
+              href="/upcoming"
               btnClass={props.classes[`${props.baseClass}--cta--btn`]}
             >
               Start Embracing Mindfulness

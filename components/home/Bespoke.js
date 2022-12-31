@@ -7,7 +7,7 @@ export default function Bespoke(props) {
   const desc =
     "That is why, we curate small-group retreats with end-to-end butler-grade service, to provide you with an transformative wellnessexperience. Your role is to show up, sit back and unwind - we take care of the rest.";
   const btnText = "Book Now";
-  const btnHref = "/new";
+  const btnHref = "/upcoming";
 
   const content = (
     <ZLayoutArticle

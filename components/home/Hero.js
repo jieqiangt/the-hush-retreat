@@ -14,7 +14,7 @@ export default function Hero(props) {
         <br />
         for your inner soul
       </article>
-      <LinkButton href="/new" btnClass={props.classes[`${props.baseClass}--btn`]}>
+      <LinkButton href="upcoming" btnClass={props.classes[`${props.baseClass}--btn`]}>
         Start Healing Now
       </LinkButton>
     </Fragment>
