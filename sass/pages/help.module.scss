@@ -134,32 +134,6 @@
       grid-row: 3;
     }
 
-    // &--num-retreatees {
-    //   @include input--group(
-    //     $size-contact-us-input-width,
-    //     $col-accent-tint-1,
-    //     $pos-input-label-x,
-    //     $pos-input-label-y,
-    //     $pos-input-label-translate-up
-    //   );
-    //   grid-column: 1 / span 3;
-    //   grid-row: 4;
-    // }
-
-    // &--retreat-name {
-    //   @include input--group(
-    //     $size-contact-us-input-width,
-    //     $col-accent-tint-1,
-    //     $pos-input-label-x,
-    //     $pos-input-label-y,
-    //     $pos-input-label-translate-up,
-    //     "select"
-    //   );
-    //   margin-top: 0.1rem;
-    //   grid-column: 4 / span 3;
-    //   grid-row: 4;
-    // }
-
     &--subject {
       @include input--group(
         $size-contact-us-input-width,

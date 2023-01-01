@@ -490,3 +490,26 @@
     margin-left: 4rem;
   }
 }
+
+@mixin modal() {  
+  
+  background-color: $col-white-primary;
+  display: grid;
+  width: 80%;
+  height: 80%;
+  grid-template-columns: 50fr 50fr;
+
+  &--bg {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    width: 100vw;
+    height:100vh;
+    background-color: rgba($col-black-primary, 0.8);
+    z-index: $z-index-modal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}

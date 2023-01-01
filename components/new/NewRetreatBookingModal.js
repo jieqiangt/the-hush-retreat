@@ -10,17 +10,25 @@ export default function NewRetreatBookingModal(props) {
 
   const paragraphs = text.map((item, idx) => <p key={idx}>{item}</p>);
   const content = (
-    <article className={props.classes[`${props.baseClass}--aside--content`]}>
+    <article
+      className={
+        props.classes[
+          `${props.baseClass}--as
+    
+    ide--content`
+        ]
+      }
+    >
       {paragraphs}
     </article>
   );
 
-  const retreatList = [{ retreatId: "", retreatName: "Release & Renew" }];
+  const retreatList = [{ retreatId: "0", retreatName: "Release & Renew" }];
 
   const aside = (
     <section className={props.classes[`${props.baseClass}--aside`]}>
       <h3 className={props.classes[`${props.baseClass}--aside--title`]}>
-        Book Now
+        The Title
       </h3>
       {content}
       <BookingForm
@@ -31,25 +39,21 @@ export default function NewRetreatBookingModal(props) {
     </section>
   );
 
+  console.log(props.classes[`${props.baseClass}--img-1`]);
+
+  console.log(props.classes);
   const img = (
-    <div className={props.classes[`${props.baseClass}--img--box`]}>
+    <div className={props.classes[`${props.baseClass}--img--outer`]}>
       <div
         className={`${props.classes[`${props.baseClass}--img`]} ${
-          props.classes[`${props.baseClass}--img-1`]
+          props.classes[`${props.baseClass}--img--1`]
         }`}
       >
         &nbsp;
       </div>
       <div
         className={`${props.classes[`${props.baseClass}--img`]} ${
-          props.classes[`${props.baseClass}--img-2`]
-        }`}
-      >
-        &nbsp;
-      </div>
-      <div
-        className={`${props.classes[`${props.baseClass}--img`]} ${
-          props.classes[`${props.baseClass}--img-3`]
+          props.classes[`${props.baseClass}--img--2`]
         }`}
       >
         &nbsp;

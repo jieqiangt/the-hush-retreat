@@ -1,4 +1,7 @@
 import InputBar from "../ui/InputBar";
+import InputSelect from "../ui/InputSelect";
+
+
 
 export default function BookingForm(props) {
   return (
@@ -37,7 +40,7 @@ export default function BookingForm(props) {
       <InputBar
         label="No. of Retreatees"
         inputType="number"
-        inputName="upcoming--form--num-retreatees"
+        inputName="upcoming--form--num"
         inputPlaceholder="No. of Retreatees"
         inputGroupClass={props.classes[`${props.baseClass}--form--num`]}
         inputClass={props.classes[`${props.baseClass}--form--num--input`]}
@@ -57,7 +60,7 @@ export default function BookingForm(props) {
         labelClass={
           props.classes[`${props.baseClass}--form--retreat-name--label`]
         }
-        inputOptions={props.retreatsList.map((item) => (
+        inputOptions={props.retreatList.map((item) => (
           <option value={item.retreatId}>{item.retreatName}</option>
         ))}
       />
