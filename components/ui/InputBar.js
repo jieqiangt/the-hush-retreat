@@ -4,10 +4,10 @@ export default function InputBar(props) {
   return (
     <Fragment>
       <div className={props.inputGroupClass}>
-        {(props.inputType === "text") | (props.inputType === "email") ? (
+        {(props.type === "text") | (props.type === "email") ? (
           <Fragment>
             <input
-              type={props.inputType}
+              type={props.type}
               name={props.inputName}
               id={props.inputName}
               className={props.inputClass}
@@ -20,7 +20,7 @@ export default function InputBar(props) {
         ) : (
           ""
         )}
-        {props.inputType === "textarea" ? (
+        {props.type === "textarea" ? (
           <Fragment>
             <textarea
               name={props.inputName}
@@ -36,11 +36,11 @@ export default function InputBar(props) {
         ) : (
           ""
         )}
-        {props.inputType === "number" ? (
+        {props.type === "number" ? (
           <Fragment>
             <input
               type="text"
-              inputmode="numeric"
+              inputMode="numeric"
               pattern="\d*"
               name={props.inputName}
               id={props.inputName}
@@ -53,7 +53,7 @@ export default function InputBar(props) {
             </label>
             <datalist id={props.datalistId}>
               {props.datalist.map((item) => (
-                <option value={item}>{item}</option>
+                <option key={item} value={item}>{item}</option>
               ))}
             </datalist>
           </Fragment>

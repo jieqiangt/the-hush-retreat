@@ -15,7 +15,7 @@ export default function ContactUs(props) {
       </article>
       <InputBar
         label="First Name"
-        inputType="text"
+        type="text"
         inputName="contact-us--form--first-name"
         inputPlaceholder="First Name"
         inputGroupClass={props.classes[`${props.baseClass}--form--first-name`]}
@@ -28,7 +28,7 @@ export default function ContactUs(props) {
       />
       <InputBar
         label="Last Name"
-        inputType="text"
+        type="text"
         inputName="contact-us--form--last-name"
         inputPlaceholder="Last Name"
         inputGroupClass={props.classes[`${props.baseClass}--form--last-name`]}
@@ -37,7 +37,7 @@ export default function ContactUs(props) {
       />
       <InputBar
         label="Email"
-        inputType="email"
+        type="email"
         inputName="contact-us--form--email"
         inputPlaceholder="Email"
         inputGroupClass={props.classes[`${props.baseClass}--form--email`]}
@@ -46,7 +46,7 @@ export default function ContactUs(props) {
       />
       <InputBar
         label="Subject"
-        inputType="text"
+        type="text"
         inputName="contact-us--form--subject"
         inputPlaceholder="Subject"
         inputGroupClass={props.classes[`${props.baseClass}--form--subject`]}
@@ -55,7 +55,7 @@ export default function ContactUs(props) {
       />
       <InputBar
         label="Message"
-        inputType="textarea"
+        type="textarea"
         inputName="contact-us--form--message"
         inputPlaceholder="Message"
         inputGroupClass={props.classes[`${props.baseClass}--form--message`]}

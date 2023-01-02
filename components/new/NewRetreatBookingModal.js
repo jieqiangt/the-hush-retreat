@@ -39,9 +39,6 @@ export default function NewRetreatBookingModal(props) {
     </section>
   );
 
-  console.log(props.classes[`${props.baseClass}--img-1`]);
-
-  console.log(props.classes);
   const img = (
     <div className={props.classes[`${props.baseClass}--img--outer`]}>
       <div

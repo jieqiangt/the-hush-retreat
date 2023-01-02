@@ -8,7 +8,7 @@ export default function BookingForm(props) {
     <form action="#" className={props.classes[`${props.baseClass}--form`]}>
       <InputBar
         label="First Name"
-        inputType="text"
+        type="text"
         inputName="upcoming--form--first-name"
         inputPlaceholder="First Name"
         inputGroupClass={props.classes[`${props.baseClass}--form--first-name`]}
@@ -21,7 +21,7 @@ export default function BookingForm(props) {
       />
       <InputBar
         label="Last Name"
-        inputType="text"
+        type="text"
         inputName="upcoming--form--last-name"
         inputPlaceholder="Last Name"
         inputGroupClass={props.classes[`${props.baseClass}--form--last-name`]}
@@ -30,7 +30,7 @@ export default function BookingForm(props) {
       />
       <InputBar
         label="Email"
-        inputType="email"
+        type="email"
         inputName="upcoming--form--email"
         inputPlaceholder="Email"
         inputGroupClass={props.classes[`${props.baseClass}--form--email`]}
@@ -39,7 +39,7 @@ export default function BookingForm(props) {
       />
       <InputBar
         label="No. of Retreatees"
-        inputType="number"
+        type="number"
         inputName="upcoming--form--num"
         inputPlaceholder="No. of Retreatees"
         inputGroupClass={props.classes[`${props.baseClass}--form--num`]}
@@ -61,7 +61,7 @@ export default function BookingForm(props) {
           props.classes[`${props.baseClass}--form--retreat-name--label`]
         }
         inputOptions={props.retreatList.map((item) => (
-          <option value={item.retreatId}>{item.retreatName}</option>
+          <option key={item.retreatId} value={item.retreatId}>{item.retreatName}</option>
         ))}
       />
       <button className={props.classes[`${props.baseClass}--form--btn`]}>

@@ -11,7 +11,7 @@ export default function InputSelect(props) {
         >
           {props.inputOptions}
         </select>
-        <label inputType="select" htmlFor={props.inputName} className={props.labelClass}>
+        <label htmlFor={props.inputName} className={props.labelClass}>
           {props.label}
         </label>
       </div>
