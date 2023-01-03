@@ -387,6 +387,7 @@
 
   &--btn {
     @include btn--link($col-gray-tint-1, $col-main-primary, 0.6);
+    align-self: start;
   }
 }
 
@@ -452,7 +453,6 @@
 }
 
 @mixin schedule($num-rows) {
-
   &--layout {
     display: grid;
     grid-template-columns: [time-start full-start] 1fr [time-end logo-start] 5vw [logo-end activity-start] 1fr [activity-end full-end];
@@ -491,25 +491,38 @@
   }
 }
 
-@mixin modal() {  
-  
-  background-color: $col-white-primary;
-  display: grid;
-  width: 80%;
-  height: 80%;
-  grid-template-columns: 50fr 50fr;
+@mixin modal() {
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($col-black-primary, 0.8);
+  z-index: $z-index-modal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: $ani-default;
+  @include make-invisible;
 
-  &--bg {
-    position: absolute;
-    top: 0rem;
-    left: 0rem;
-    width: 100vw;
-    height:100vh;
-    background-color: rgba($col-black-primary, 0.8);
-    z-index: $z-index-modal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &--active {
+    @include make-visible;
   }
 
+  &--box {
+    background-color: $col-white-primary;
+    display: grid;
+    width: 80%;
+    height: 80%;
+    grid-template-columns: 50fr 50fr;
+    position: relative;
+  }
+  &--icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    fill: rgba($col-gray-primary, 0.6);
+  }
 }

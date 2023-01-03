@@ -52,6 +52,21 @@
     font-size: $font-size-text-md;
     padding: 0rem 8rem;
     gap: 2.4rem;
+
+    &--content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1.2rem;
+    }
+
+    &--title {
+      @include section--title($col-gray-tint-1, $letter-spacing-xs);
+      margin-bottom: 1.8rem;
+
+      & span {
+        font-size: $font-size-header-md;
+      }
+    }
   }
 
   &--form {
@@ -59,7 +74,8 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, min-content);
     align-items: start;
-    gap: 2.4rem;
+    column-gap: 2.4rem;
+    row-gap: 3.2rem;
 
     &--first-name {
       @include input--group(
@@ -127,6 +143,7 @@
       grid-row: 4;
       @include btn--link($col-gray-tint-1, $col-main-primary, 0.6, true);
       justify-self: start;
+      margin-top: 1.2rem;
     }
   }
 }
@@ -150,6 +167,13 @@
   &--box {
     margin: 32rem 0rem;
     grid-column: col-start 7 / full-end;
+  }
+
+  &--btn {
+    border-bottom: $border-gray-sm;
+    border-top: $border-gray-sm;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
   }
 }
 
@@ -427,8 +451,10 @@
     @include btn--link($col-gray-tint-1, $col-main-primary, 0.2);
     grid-column: full-start / full-end;
     font-size: $font-size-text-md;
-    border-bottom: $border-accent-sm;
-    border-top: $border-accent-sm;
+    border-bottom: $border-gray-sm;
+    border-top: $border-gray-sm;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
     margin-top: 2rem;
   }
 }

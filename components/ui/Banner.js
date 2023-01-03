@@ -3,7 +3,7 @@ import { Fragment } from "react";
 export default function Banner(props) {
   return (
     <Fragment>
-      <section className={props.classes[props.baseClass]}></section>
+      <section className={props.classes[props.baseClass]} id={props.sectionId}></section>
       <div className={props.classes[`${props.baseClass}--box`]}>
         <h2 className={props.classes[`${props.baseClass}--title`]}>{props.title}</h2>
         <h3 className={props.classes[`${props.baseClass}--caption`]}>{props.caption}</h3>

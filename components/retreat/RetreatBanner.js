@@ -13,18 +13,17 @@ export default function RetreatBanner(props) {
       btnHref={props.btnHref}
       baseClass={props.baseClass}
       classes={props.classes}
+      onClick={"Hi"}
     />
   );
 
   return (
-      <Banner
-        classes={props.classes}
-        baseClass={props.baseClass}
-        title={props.title}
-        caption={props.caption}
-        bannerDetails={bannerDetails}
-      />
+    <Banner
+      classes={props.classes}
+      baseClass={props.baseClass}
+      title={props.title}
+      caption={props.caption}
+      bannerDetails={bannerDetails}
+    />
   );
 }
-
-

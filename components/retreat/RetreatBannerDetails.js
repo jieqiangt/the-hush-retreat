@@ -48,9 +48,10 @@ export default function RetreatBannerDetails(props) {
       ) : (
         " "
       )}
-      {props.btnText && props.btnHref ? (
+      {props.btnText && (props.btnHref || props.onClick) ? (
         <LinkButton
           href={props.btnHref}
+          onClick={props.onClick}
           btnClass={props.classes[`${props.baseClass}--btn`]}
         >
           {props.btnText}

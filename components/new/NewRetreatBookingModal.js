@@ -3,22 +3,13 @@ import Modal from "../ui/Modal";
 
 export default function NewRetreatBookingModal(props) {
   const text = [
-    "Immerse yourself in a full-day retreat to release the stories and veils of the past, through somatic practices, purified with a fire ceremony.",
-    "Start the retreat with a refreshing juice from Mou Gou Juice and nourish your body with a delicious lunch from Tamarind Hill. You will also receive a Welcome Gift from The Hush Retreats that you can take home at the end of the retreat.",
-    "Guided by Stephanie Chaunte Leong, through somatic practices, breathwork, embodied dance-movement, expressive art, conscious dreaming, journaling and a fire ceremony as she leads you back home to yourself.",
+    "Fugiat quis ut voluptate anim proident exercitation reprehenderit tempor non ut dolor. Et qui eu duis proident et veniam irure in  ",
+    "Velit id anim nostrud eu proident. Cupidatat nostrud duis sunt ea excepteur excepteur consequat quis quis cillum eu. Id irure  ",
   ];
 
   const paragraphs = text.map((item, idx) => <p key={idx}>{item}</p>);
   const content = (
-    <article
-      className={
-        props.classes[
-          `${props.baseClass}--as
-    
-    ide--content`
-        ]
-      }
-    >
+    <article className={props.classes[`${props.baseClass}--aside--content`]}>
       {paragraphs}
     </article>
   );
@@ -28,9 +19,12 @@ export default function NewRetreatBookingModal(props) {
   const aside = (
     <section className={props.classes[`${props.baseClass}--aside`]}>
       <h3 className={props.classes[`${props.baseClass}--aside--title`]}>
-        The Title
+        Release & Renew &#8212; <span>2023</span>
       </h3>
       {content}
+      <h4 className={props.classes[`${props.baseClass}--aside--title`]}>
+        Register Your Interest
+      </h4>
       <BookingForm
         baseClass={props.baseClass}
         classes={props.classes}

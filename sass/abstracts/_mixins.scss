@@ -11,7 +11,7 @@
   opacity: 1 !important;
   pointer-events: auto !important;
   visibility: visible !important;
-  z-index: $z-index-top !important;
+  // z-index: $z-index-top !important;
 }
 
 @mixin btn--circle {
