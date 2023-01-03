@@ -9,7 +9,7 @@ const contextStructure = {
 const ModalContext = createContext(contextStructure);
 
 export function ModalContextProvider(props) {
-  const [modalIsActive, setModalIsActive] = useState(true);
+  const [modalIsActive, setModalIsActive] = useState(false);
 
   const closeModal = () => {
     setModalIsActive(null);

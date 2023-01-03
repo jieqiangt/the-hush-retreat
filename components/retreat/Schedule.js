@@ -23,10 +23,12 @@ export default function Schedule(props) {
       </h2>
       {scheduleItems}
       <LinkButton
-          btnClass={props.classes[`${props.baseClass}--btn`]}
-        >
-          {props.btnText}
-        </LinkButton>
+        btnClass={props.classes[`${props.baseClass}--btn`]}
+        href={props.href}
+        onClick={props.onClick}
+      >
+        {props.btnText}
+      </LinkButton>
     </div>
   );
 }

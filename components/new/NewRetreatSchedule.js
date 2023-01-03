@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import ModalContext from "../../store/modalContext";
 import Schedule from "../retreat/Schedule";
 import ZLayout from "../ui/ZLayout";
 
@@ -37,7 +39,8 @@ export default function NewRetreatSchedule(props) {
     },
   ];
 
-  const btnText="Start Your Journey Here"
+  const btnText = "Start Your Journey Here";
+  const { openModal } = useContext(ModalContext);
 
   const content = (
     <Schedule
@@ -45,6 +48,7 @@ export default function NewRetreatSchedule(props) {
       baseClass={props.baseClass}
       classes={props.classes}
       btnText={btnText}
+      onClick={openModal}
     />
   );
 
