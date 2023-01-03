@@ -507,6 +507,7 @@
 
   &--active {
     @include make-visible;
+    z-index: 1000 !important;
   }
 
   &--box {
@@ -517,12 +518,17 @@
     grid-template-columns: 50fr 50fr;
     position: relative;
   }
-  &--icon {
-    height: 2.5rem;
-    width: 2.5rem;
-    position: absolute;
+
+  &--close {
     top: 2rem;
     right: 2rem;
-    fill: rgba($col-gray-primary, 0.6);
+    position: absolute;
+    display: block;
+
+    &--icon {
+      height: 2.5rem;
+      width: 2.5rem;
+      fill: rgba($col-gray-primary, 0.6);
+    }
   }
 }

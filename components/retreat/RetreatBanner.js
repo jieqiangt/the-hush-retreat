@@ -11,9 +11,9 @@ export default function RetreatBanner(props) {
       promotion={props.promotion}
       btnText={props.btnText}
       btnHref={props.btnHref}
+      onClick={props.onClick}
       baseClass={props.baseClass}
       classes={props.classes}
-      onClick={"Hi"}
     />
   );
 

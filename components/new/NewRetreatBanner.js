@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import ModalContext from "../../store/modalContext";
 import RetreatBanner from "../retreat/RetreatBanner";
 
 export default function NewRetreatBanner(props) {
@@ -10,6 +12,8 @@ export default function NewRetreatBanner(props) {
   const promotion = "Sign up by 26 December for 10% off";
   const btnText = "Register Here";
 
+  const { openModal } = useContext(ModalContext);
+
   return (
     <RetreatBanner
       classes={props.classes}
@@ -21,6 +25,7 @@ export default function NewRetreatBanner(props) {
       price={price}
       location={location}
       promotion={promotion}
+      onClick={openModal}
       btnText={btnText}
     />
   );
