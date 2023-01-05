@@ -13,5 +13,5 @@ export default function Gallery(props) {
     />
   ));
 
-  return <div className={props.classes[`${props.baseClass}--gallery`]}></div>;
+  return <div className={props.classes[`${props.baseClass}--gallery`]}>{galleryItems}</div>;
 }

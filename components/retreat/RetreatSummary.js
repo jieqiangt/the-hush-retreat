@@ -12,7 +12,7 @@ export default function RetreatSummary(props) {
         {props.content}
       </article>
       <Gallery
-        baseClass={`${props.baseClass}--${idx}`}
+        baseClass={`${props.baseClass}--${props.idx}`}
         classes={props.classes}
         galleryDetails={props.galleryDetails}
       />

@@ -5,7 +5,63 @@
 
 
 .explore {
-  display: block;
+  display: grid;
+  grid-template-columns:
+    [full-start] 1fr [center-start] repeat(
+      10,
+      [col-start] minmax(17.5rem, min-content) [col-end]
+    )
+    [center-end] 1fr [full-end];
+  grid-template-rows: 6.5vh 100vh 100vh repeat(3, min-content);
+
+  &--nav {
+    grid-column: full-start / full-end;
+    grid-row: 1;
+  }
+}
+
+.banner {
+  @include banner(
+    (
+      linear-gradient(
+        rgba($col-white-primary, 0.2),
+        rgba($col-white-primary, 0.6)
+      ),
+      url("../../public/img/yoga-1-lg.jpg")
+    ),
+    (bottom 60% left 0%)
+  );
+  grid-column: full-start / full-end;
+  grid-row: 2;
+  position: relative;
+
+  &--box {
+    grid-column: full-start / col-start 6;
+    margin: 35rem 0rem;
+    background-color: rgba($col-accent-primary, 0.8);
+    font-size: $font-size-text-lg;
+    gap: 2.4rem;
+    padding-left: 16rem;
+    padding-top: 4.8rem;
+    padding-right: 3.6rem;
+    text-align: left;
+  }
+
+  &--title {
+    @include section--title($col-main-tint-1, $letter-spacing-xs);
+    margin-bottom: 3.6rem;
+  }
+
+  &--desc {
+    color: $col-gray-tint-1;
+    line-height: $font-line-height-md;
+    margin-left: 2.4rem;
+  }
+
+  &--em {
+    color: $col-main-tint-1;
+    font-style: italic;
+  }
 }
 
 .explore--footer {
