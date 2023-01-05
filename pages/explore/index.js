@@ -7,7 +7,6 @@ import classes from "../../sass/pages/explore.module.scss";
 import { getRetreatImgs } from "../../utils/fsUtils";
 
 export default function ExplorePage(props) {
-  console.log(props.imgObj);
   return (
     <Fragment>
       <Head>
@@ -17,7 +16,7 @@ export default function ExplorePage(props) {
       <Layout classes={classes} baseClass="explore">
         <ExploreBanner classes={classes} baseClass="banner" />
         <PastRetreats
-          retreatImgs={props.retreatImgs}
+          retreats={props.retreatsWithImg}
           classes={classes}
           baseClass="past"
         />
@@ -27,14 +26,19 @@ export default function ExplorePage(props) {
 }
 
 export async function getStaticProps() {
-  const retreats = { "aloa-x-hush": ["public", "img", "aloa-x-hush"] };
+  const retreats = [
+    {
+      title: "ALOA x HUSH Retreat",
+      content:
+        "Aliqua ex Lorem et sit sint id do ad velit velit excepteur sint. In excepteur qui amet ullamco elit nisi labore. In magna cupidatat ipsum aliqua exercitation cupidatat laboris ea anim veniam.",
+      pathDir: ["public", "img", "aloa-x-hush"],
+    },
+  ];
 
-  let imgObj = {};
+  const retreatsWithImg = retreats.map((item) => {
+    let galleryDetails = getRetreatImgs(item["pathDir"], 12);
+    return { ...item, galleryDetails };
+  });
 
-  for (const retreatName in retreats) {
-    const retreatImgs = getRetreatImgs(retreats[retreatName], 12);
-    imgObj[retreatName] = retreatImgs;
-  }
-
-  return { props: { imgObj } };
+  return { props: { retreatsWithImg } };
 }
