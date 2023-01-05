@@ -502,12 +502,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: $ani-default;
   @include make-invisible;
+  transition: all 0.3s ease-in;
 
   &--active {
     @include make-visible;
     z-index: 1000 !important;
+
+    & div {
+      transform: scale(1);
+    }
   }
 
   &--box {
@@ -516,6 +520,8 @@
     width: 80%;
     height: 80%;
     grid-template-columns: 50fr 50fr;
+    transform: scale(0.5);
+    transition: transform 0.4s 0.2s;
     position: relative;
   }
 
