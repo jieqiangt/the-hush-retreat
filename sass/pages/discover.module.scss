@@ -11,7 +11,7 @@
       [col-start] minmax(17.5rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 8.5vh 100vh 100vh repeat(3, min-content);
+  grid-template-rows: 8.5vh 100vh max-content repeat(3, min-content);
 
   &--nav {
     grid-column: full-start / full-end;
@@ -34,17 +34,6 @@
   grid-row: 2;
   position: relative;
 
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 0.2rem;
-    width: 97%;
-    bottom: -16rem;
-    left: 1.5%;
-    background-color: rgba($col-accent-tint-2, 0.5);
-    z-index: $z-index-top + 100;
-  }
 
   &--box {
     grid-column: col-start 5 / full-end;
@@ -76,25 +65,24 @@
   grid-column: full-start / full-end;
   grid-row: 3;
 
-
   &::after {
     content: "";
     position: absolute;
     display: block;
     height: 0.2rem;
     width: 97%;
-    bottom: -4rem;
+    bottom: -22rem;
     left: 1.5%;
     background-color: rgba($col-accent-tint-2, 0.5);
-    z-index: $z-index-top;
+    z-index: $z-index-top + $z-index-top;
   }
 
   &--img {
     background-image: url("../../public/img/lotus-1-lg.jpg");
     background-position: bottom;
-    width: 110%;
-    height: 70%;
-    margin: 25rem -10rem 0rem auto;
+    width: 100%;
+    height: 90%;
+    margin: 20rem -10rem 0rem auto;
     grid-column: col-start 1 / col-end 3;
     grid-row: 3;
   }
@@ -108,7 +96,7 @@
     &--box {
       background-color: $col-main-primary;
       padding: 12rem 15rem;
-      margin-top: 14rem;
+      margin-top: 26rem;
     }
 
     &--title {
@@ -137,7 +125,7 @@
   text-align: center;
   background-color: $col-white-primary;
   position: relative;
-  margin-top: 12rem;
+  margin-top: 26rem;
 
   &::after {
     content: "";
@@ -145,7 +133,7 @@
     display: block;
     height: 0.2rem;
     width: 97%;
-    bottom: 4rem;
+    bottom: 0rem;
     background-color: rgba($col-accent-tint-2, 0.5);
   }
 
@@ -217,7 +205,8 @@
     grid-row: 5;
     background-color: $col-main-primary;
     padding: 5rem 14rem 8rem 12rem;
-    margin: 14rem 0rem;
+    margin-top: 20rem;
+    margin-bottom: 10rem;
 
     &--title {
       @include section--title($col-accent-tint-1, $letter-spacing-xs);
@@ -244,6 +233,7 @@
     grid-column: col-start 8 / full-end;
     grid-row: 5;
     box-shadow: none;
+    margin-top: 6rem;
 
     &--composition {
       @include img-composition(
