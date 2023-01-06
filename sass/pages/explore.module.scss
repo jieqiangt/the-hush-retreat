@@ -11,7 +11,7 @@
       [col-start] minmax(17.5rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 6.5vh 100vh min-content min-content;
+  grid-template-rows: 8.5vh 100vh min-content min-content;
 
   &--nav {
     grid-column: full-start / full-end;
@@ -36,7 +36,7 @@
 
   &--box {
     grid-column: full-start / col-start 6;
-    margin: 28rem 0rem;
+    margin: 20rem 0rem;
     background-color: rgba($col-accent-primary, 0.8);
     font-size: $font-size-text-lg;
     gap: 2.4rem;

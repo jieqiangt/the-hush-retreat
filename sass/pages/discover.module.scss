@@ -11,7 +11,7 @@
       [col-start] minmax(17.5rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 6.5vh 100vh 100vh repeat(3, min-content);
+  grid-template-rows: 8.5vh 100vh 100vh repeat(3, min-content);
 
   &--nav {
     grid-column: full-start / full-end;
@@ -28,7 +28,7 @@
       ),
       url("../../public/img/meditation-1-lg.jpg")
     ),
-    (bottom 45% left 0%)
+    (bottom 85% left 0%)
   );
   grid-column: full-start / full-end;
   grid-row: 2;
@@ -48,7 +48,7 @@
 
   &--box {
     grid-column: col-start 5 / full-end;
-    margin: 18rem 0rem;
+    margin: 17rem 0rem;
     background-color: transparent;
     font-size: $font-size-text-lg;
     transition-delay: 0.6s;
@@ -56,13 +56,13 @@
 
   &--title {
     @include section--title($col-main-tint-1, $letter-spacing-xs);
-    margin-bottom: 3.6rem;
+    margin-bottom: 1rem;
   }
 
   &--desc {
     color: $col-gray-tint-1;
     line-height: $font-line-height-md;
-    margin-left: 2.4rem;
+    margin-left: 3.6rem;
   }
 
   &--em {

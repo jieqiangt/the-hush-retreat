@@ -11,7 +11,7 @@
       [col-start] minmax(17.5rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 6.5vh 100vh 75vh 90vh 75vh min-content min-content min-content;
+  grid-template-rows: 8.5vh 100vh 75vh 90vh 75vh min-content min-content min-content;
 
   &--nav {
     grid-column: full-start / full-end;
@@ -165,7 +165,7 @@
   grid-row: 2;
 
   &--box {
-    margin: 26rem 0rem;
+    margin: 16rem 0rem;
     grid-column: col-start 7 / full-end;
     transition-delay: 0.6s;
   }
