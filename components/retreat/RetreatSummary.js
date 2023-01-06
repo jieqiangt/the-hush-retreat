@@ -9,7 +9,9 @@ export default function RetreatSummary(props) {
       <article
         className={props.classes[`${props.baseClass}--${props.idx}--content`]}
       >
-        {props.content}
+        {props.content.map((item, idx) => (
+          <p key={idx}>{item}</p>
+        ))}
       </article>
       <Gallery
         baseClass={`${props.baseClass}--${props.idx}`}
