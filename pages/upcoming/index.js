@@ -18,7 +18,7 @@ export default function UpcomingPage() {
         <title>New Retreats</title>
         <meta name="description" content="New Retreats" />
       </Head>
-      <Layout classes={classes} baseClass="new" modal={modal}>
+      <Layout classes={classes} baseClass="upcoming" modal={modal}>
         <NewRetreatBanner classes={classes} baseClass="retreat--banner" />
         <NewRetreatIntentions classes={classes} baseClass="intentions" />
         <NewRetreatExpect classes={classes} baseClass="expect" />

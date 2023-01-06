@@ -3,7 +3,7 @@
 @import "../base/animations";
 @import "../base/utilities";
 
-.new {
+.upcoming {
   display: grid;
   grid-template-columns:
     [full-start] 1fr [center-start] repeat(
@@ -16,6 +16,12 @@
   &--nav {
     grid-column: full-start / full-end;
     grid-row: 1;
+  }
+
+  &--footer {
+    @include footer(transparent, relative);
+    grid-column: full-start / full-end;
+    grid-row: -1;
   }
 }
 
@@ -529,10 +535,4 @@
     border-bottom: $border-accent-sm;
     border-top: $border-accent-sm;
   }
-}
-
-.new--footer {
-  @include footer(transparent, relative);
-  grid-column: full-start / full-end;
-  grid-row: -1;
 }
