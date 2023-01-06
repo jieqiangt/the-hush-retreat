@@ -11,7 +11,7 @@ export default function NewRetreatExpect(props) {
 
   const paragraphs = text.map((item, idx) => <p key={idx}>{item}</p>);
   const content = (
-    <article className={props.classes[`${props.baseClass}--aside--content`]}>
+    <article className={`${props.classes[`${props.baseClass}--aside--content`]} hidden`}>
       {paragraphs}
     </article>
   );

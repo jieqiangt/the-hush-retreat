@@ -3,7 +3,7 @@ import LinkButton from "./LinkButton";
 export default function ZLayoutArticle(props) {
   return (
     <div className={props.classes[`${props.baseClass}--article`]}>
-      <div className={props.classes[`${props.baseClass}--article--box`]}>
+      <div className={`${props.classes[`${props.baseClass}--article--box`]} hidden`}>
         <h2 className={props.classes[`${props.baseClass}--article--title`]}>
           {props.title}
         </h2>

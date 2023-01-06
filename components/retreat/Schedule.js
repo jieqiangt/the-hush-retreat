@@ -17,7 +17,7 @@ export default function Schedule(props) {
   ));
 
   return (
-    <div className={props.classes[`${props.baseClass}--layout`]}>
+    <div className={`${props.classes[`${props.baseClass}--layout`]} hidden`}>
       <h2 className={props.classes[`${props.baseClass}--title`]}>
         Your Journey
       </h2>

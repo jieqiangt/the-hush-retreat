@@ -20,14 +20,17 @@
 }
 
 .hero {
-  @include banner((
-    linear-gradient(
-      180deg,
-      rgba($col-white-primary, 0),
-      rgba($col-white-primary, 0.2)
+  @include banner(
+    (
+      linear-gradient(
+        180deg,
+        rgba($col-white-primary, 0),
+        rgba($col-white-primary, 0.2)
+      ),
+      url("../../public/img/mountain-1-lg.jpg")
     ),
-    url("../../public/img/mountain-1-lg.jpg")
-  ), (bottom 25% left 90%));
+    (bottom 25% left 90%)
+  );
   position: relative;
   grid-column: full-start / full-end;
   grid-row: 2;
@@ -210,10 +213,34 @@
       font-size: $font-size-text-s;
       font-weight: $font-weight-sm;
       letter-spacing: 0.05rem;
-    }
 
-    &--box > * {
-      margin-bottom: 3.2rem;
+      & > * {
+        margin-bottom: 3.2rem;
+      }
+
+      & *:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+
+      & *:nth-child(3) {
+        transition-delay: 0.2s;
+      }
+
+      & *:nth-child(4) {
+        transition-delay: 0.3s;
+      }
+
+      & *:nth-child(5) {
+        transition-delay: 0.3s;
+      }
+
+      & *:nth-child(6) {
+        transition-delay: 0.4s;
+      }
+
+      & *:nth-child(7) {
+        transition-delay: 0.4s;
+      }
     }
 
     &--title {
@@ -229,9 +256,9 @@
 
       &--icon {
         @include icon-square(
-            $size-icon-square-sm,
-            darken($col-main-primary, 5%)
-          )
+          $size-icon-square-sm,
+          darken($col-main-primary, 5%)
+        );
       }
     }
 
@@ -260,7 +287,7 @@
         padding-right: 0.8rem;
         font-size: $font-size-text-s;
         text-decoration: underline 0.1rem $col-gray-primary;
-        text-underline-offset: 0.9rem;
+        text-underline-offset: 0.8rem;
         flex: 0 1 auto;
         text-align: left;
         transition: $ani-default;

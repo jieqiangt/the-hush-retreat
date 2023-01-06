@@ -4,7 +4,7 @@ export default function InputBar(props) {
   return (
     <Fragment>
       <div className={props.inputGroupClass}>
-        {(props.type === "text") | (props.type === "email") ? (
+        {(props.type === "text") || (props.type === "email") ? (
           <Fragment>
             <input
               type={props.type}

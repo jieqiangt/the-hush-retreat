@@ -9,27 +9,33 @@ export default function ImgComposition(props) {
         alt=""
         width={640 / scaleFactor}
         height={960 / scaleFactor}
-        className={`${props.classes[`${props.baseClass}--img--composition--img`]} ${
+        className={`${
+          props.classes[`${props.baseClass}--img--composition--img`]
+        } ${
           props.classes[`${props.baseClass}--img--composition--img--1`]
-        }`}
+        } hidden`}
       />
       <Image
         src={props.imgUrlList[1]}
         alt=""
         width={640 / scaleFactor}
         height={960 / scaleFactor}
-        className={`${props.classes[`${props.baseClass}--img--composition--img`]} ${
+        className={`${
+          props.classes[`${props.baseClass}--img--composition--img`]
+        } ${
           props.classes[`${props.baseClass}--img--composition--img--2`]
-        }`}
+        } hidden`}
       />
       <Image
         src={props.imgUrlList[2]}
         alt=""
         width={640 / scaleFactor}
         height={960 / scaleFactor}
-        className={`${props.classes[`${props.baseClass}--img--composition--img`]} ${
+        className={`${
+          props.classes[`${props.baseClass}--img--composition--img`]
+        } ${
           props.classes[`${props.baseClass}--img--composition--img--3`]
-        }`}
+        } hidden`}
       />
     </aside>
   );

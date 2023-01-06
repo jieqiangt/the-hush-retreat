@@ -3,11 +3,17 @@ import Gallery from "../ui/Gallery";
 export default function RetreatSummary(props) {
   return (
     <section className={props.classes[`${props.baseClass}--${props.idx}`]}>
-      <h3 className={props.classes[`${props.baseClass}--${props.idx}--title`]}>
+      <h3
+        className={`${
+          props.classes[`${props.baseClass}--${props.idx}--title`]
+        } hidden`}
+      >
         {props.title}
       </h3>
       <article
-        className={props.classes[`${props.baseClass}--${props.idx}--content`]}
+        className={`${
+          props.classes[`${props.baseClass}--${props.idx}--content`]
+        } hidden`}
       >
         {props.content.map((item, idx) => (
           <p key={idx}>{item}</p>

@@ -4,7 +4,7 @@ import ExploreBanner from "../../components/explore/ExploreBanner";
 import PastRetreats from "../../components/explore/PastRetreats";
 import Layout from "../../components/layout/Layout";
 import classes from "../../sass/pages/explore.module.scss";
-import { getGalleryDetails, getRetreatImgs } from "../../utils/fsUtils";
+import { getGalleryDetails } from "../../utils/fsUtils";
 
 export default function ExplorePage(props) {
   return (

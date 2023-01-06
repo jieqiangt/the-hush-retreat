@@ -69,7 +69,7 @@ export default function ContactUs(props) {
     </form>
   );
 
-  const img = <div className={props.classes[`${props.baseClass}--img`]} />;
+  const img = <div className={`${props.classes[`${props.baseClass}--img`]} hidden`} />;
 
   return (
     <DescriptionSection

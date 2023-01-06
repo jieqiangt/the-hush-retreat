@@ -22,7 +22,7 @@ export default function Carousel(props) {
   };
 
   return (
-    <div className={props.carouselClass}>
+    <div className={`${props.carouselClass} hidden`}>
       <div className={props.carouselListClass}>
         {props.carouselItems}
         <CarouselBtn

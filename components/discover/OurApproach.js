@@ -24,20 +24,20 @@ export default function OurApproach(props) {
   return (
     <section className={props.classes[props.baseClass]}>
       <Icon
-        iconClass={props.classes[`${props.baseClass}--icon`]}
+        iconClass={`${props.classes[`${props.baseClass}--icon`]} hidden`}
         iconName="icon-logo-no-words-sm"
       />
-      <h2 className={props.classes[`${props.baseClass}--title`]}>
+      <h2 className={`${props.classes[`${props.baseClass}--title`]} hidden`}>
         Our Approach
       </h2>
       <FeatureBox
         feature-box-items={features}
         featureBoxListClass={props.classes[`${props.baseClass}--feature-box`]}
         featureBoxItemClass={
-          props.classes[`${props.baseClass}--feature-box--item`]
+          `${props.classes[`${props.baseClass}--feature-box--item`]}`
         }
         featureBoxItemOuterClass={
-          props.classes[`${props.baseClass}--feature-box--item--outer`]
+          `${props.classes[`${props.baseClass}--feature-box--item--outer`]} hidden`
         }
         featureBoxItemImgClass={
           props.classes[`${props.baseClass}--feature-box--item--img`]
@@ -49,7 +49,7 @@ export default function OurApproach(props) {
           props.classes[`${props.baseClass}--feature-box--item--desc`]
         }
       />
-      <div className={props.classes[`${props.baseClass}--cta`]}>
+      <div className={`${props.classes[`${props.baseClass}--cta`]} hidden`}>
         <div className={props.classes[`${props.baseClass}--cta--box`]}>
           <div className={props.classes[`${props.baseClass}--cta--outer`]}>
             <LinkButton

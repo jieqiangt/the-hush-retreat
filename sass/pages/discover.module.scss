@@ -51,6 +51,7 @@
     margin: 18rem 0rem;
     background-color: transparent;
     font-size: $font-size-text-lg;
+    transition-delay: 0.6s;
   }
 
   &--title {
@@ -74,6 +75,7 @@
   @include description--section();
   grid-column: full-start / full-end;
   grid-row: 3;
+
 
   &::after {
     content: "";

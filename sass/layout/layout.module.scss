@@ -22,6 +22,11 @@
       justify-content: center;
       width: 25%;
       gap: 4.8rem;
+
+      & li {
+        animation-delay: 0.1s;
+        animation-fill-mode: backwards;
+      }
     }
   }
 
@@ -37,7 +42,7 @@
     position: relative;
     transition: color $ani-time-link ease-out;
     padding-bottom: 0.2rem;
-
+    animation: moveInTop 0.8s ease-in;
 
     &::after {
       content: "";
@@ -56,13 +61,11 @@
     &:hover {
       background-color: transparent;
       font-weight: $font-weight-sm;
-      transform: scaleY(1.05);   
-      
+      transform: scaleY(1.05);
+
       &::after {
         transform: scaleX(1);
-
       }
-
     }
 
     &:active {

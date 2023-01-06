@@ -6,10 +6,10 @@ export default function Footer(props) {
   return (
     <footer className={props.footerClass}>
       <Icon
-        iconClass={props.footerIconClass}
+        iconClass={`${props.footerIconClass} hidden`}
         iconName="icon-logo-words-circular"
       />
-      &copy;{curYear} by The Hust Retreats
+      <span className="hidden">&copy;{curYear} by The Hust Retreats</span>
     </footer>
   );
 }

@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import classes from "../../sass/pages/home.module.scss";
 import LinkButton from "../ui/LinkButton";
 
