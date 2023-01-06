@@ -3,7 +3,6 @@
 @import "../base/animations";
 @import "../base/utilities";
 
-
 .explore {
   display: grid;
   grid-template-columns:
@@ -61,6 +60,35 @@
   &--em {
     color: $col-main-tint-1;
     font-style: italic;
+  }
+}
+
+.past {
+  grid-column: full-start / full-end;
+  grid-row: 3;
+
+  &--0 {
+    &--title {
+      font-size: $font-size-header-md;
+    }
+
+    &--content {
+    }
+
+    &--gallery {
+      @include gallery(10,8);
+
+      &--img {
+      }
+
+      &--item {
+
+        &--0 {
+          grid-column: 1 / 3;
+          grid-row: 1 / 3;
+        }
+      }
+    }
   }
 }
 

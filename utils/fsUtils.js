@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import imageSize from "image-size";
 
 export const formatDir = (pathArr) => path.join(process.cwd(), ...pathArr);
 
@@ -10,13 +11,21 @@ export function getRandomInArr(arr, num) {
   return shuffled.slice(0, num);
 }
 
-export const getRetreatImgs = (folderPath, numImg) => {
+export const getGalleryDetails = (folderPath, scaleFactor) => {
   const dirPath = formatDir(folderPath);
-  const files = getRandomInArr(getFilePathsInDir(dirPath), numImg);
+  const files = getFilePathsInDir(dirPath)
 
-  const retreatImgs = files.map((item, idx) => {
-    return { alt: `retreat-image-${idx}`, src: item, width: 640, height: 960 };
+  const galleryDetails = files.map((item, idx) => {
+    const imgPath = path.join(dirPath, item);
+    const dimensions = imageSize(imgPath);
+    
+    return {
+      alt: `retreat-image-${idx}`,
+      src: `/img/${folderPath[folderPath.length - 1]}/${item}`,
+      width: dimensions.width / scaleFactor,
+      height: dimensions.height / scaleFactor,
+    };
   });
 
-  return retreatImgs;
+  return galleryDetails;
 };

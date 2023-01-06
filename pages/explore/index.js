@@ -4,7 +4,7 @@ import ExploreBanner from "../../components/explore/ExploreBanner";
 import PastRetreats from "../../components/explore/PastRetreats";
 import Layout from "../../components/layout/Layout";
 import classes from "../../sass/pages/explore.module.scss";
-import { getRetreatImgs } from "../../utils/fsUtils";
+import { getGalleryDetails, getRetreatImgs } from "../../utils/fsUtils";
 
 export default function ExplorePage(props) {
   return (
@@ -36,7 +36,7 @@ export async function getStaticProps() {
   ];
 
   const retreatsWithImg = retreats.map((item) => {
-    let galleryDetails = getRetreatImgs(item["pathDir"], 12);
+    let galleryDetails = getGalleryDetails(item["pathDir"], 10);
     return { ...item, galleryDetails };
   });
 

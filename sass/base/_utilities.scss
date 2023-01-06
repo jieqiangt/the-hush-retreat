@@ -517,7 +517,7 @@
   &--box {
     background-color: $col-white-primary;
     display: grid;
-  width: 80%;
+    width: 80%;
     height: 80%;
     grid-template-columns: 50fr 50fr;
     transform: scale(0.5);
@@ -536,5 +536,20 @@
       width: 2.5rem;
       fill: rgba($col-gray-primary, 0.6);
     }
+  }
+}
+
+@mixin gallery($numCols, $numRows) {
+  display: grid;
+  grid-template-columns: repeat($numCols, 1fr);
+  grid-template-rows: repeat($numRows, 5vw);
+  padding-left: 5rem;
+  padding-right: 5rem;
+  grid-gap: 1.2rem;
+
+  &--img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
