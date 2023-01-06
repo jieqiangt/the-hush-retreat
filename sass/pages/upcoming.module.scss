@@ -11,7 +11,7 @@
       [col-start] minmax(17.5rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 8.5vh 100vh 75vh 90vh 75vh min-content min-content min-content;
+  grid-template-rows: 8.5vh 110vh repeat(4, min-content) min-content;
 
   &--nav {
     grid-column: full-start / full-end;
@@ -158,7 +158,7 @@
       ),
       url("../../public/img/meditation-group-1-lg.jpg")
     ),
-    (bottom left),
+    (bottom 100% left),
     true
   );
   grid-column: full-start/full-end;
@@ -189,7 +189,7 @@
     display: block;
     height: 0.2rem;
     width: 97%;
-    bottom: -4rem;
+    bottom: -18rem;
     left: 1.5%;
     background-color: rgba($col-accent-tint-2, 0.5);
     z-index: $z-index-top;
@@ -201,7 +201,7 @@
     background-image: url("../../public/img/intentions-1-lg.jpg");
     background-position: bottom;
     width: 100%;
-    height: 80%;
+    height: 90%;
     margin: 12rem -10rem 0rem auto;
   }
 
@@ -214,7 +214,7 @@
     &--box {
       background-color: $col-main-primary;
       padding: 8rem 18rem 8rem 18rem;
-      margin-top: 7rem;
+      margin-top: 18rem;
     }
 
     &--title {
@@ -252,7 +252,7 @@
     display: block;
     height: 0.2rem;
     width: 97%;
-    bottom: 0rem;
+    bottom: -16rem;
     left: 1.5%;
     background-color: rgba($col-accent-tint-2, 0.5);
     z-index: $z-index-top;
@@ -277,6 +277,7 @@
       position: relative;
       box-shadow: none;
       z-index: $z-index-top;
+      margin-top: 10rem;
 
       &--img {
         width: 75%;
@@ -304,8 +305,8 @@
 
     &--box {
       background-color: $col-main-primary;
-      padding: 6rem 12rem 6rem 6.5rem;
-      margin-top: 7rem;
+      padding: 4rem 12rem 4rem 6.5rem;
+      margin-top: 36rem;
     }
 
     &--title {
@@ -345,7 +346,7 @@
     background-position: bottom 80% left 0%;
     width: 100%;
     height: 80%;
-    margin: 12rem -20rem 0rem auto;
+    margin: 26rem -20rem 0rem auto;
   }
 
   &--aside {
@@ -356,8 +357,8 @@
 
     &--box {
       background-color: $col-main-primary;
-      padding: 8rem 8rem 8rem 26rem;
-      margin-top: 7rem;
+      padding: 4rem 8rem 4rem 26rem;
+      margin-top: 34rem;
     }
 
     &--title {
@@ -390,7 +391,8 @@
   @include z-layout(45fr);
   @include schedule(7);
   position: relative;
-  margin-top: 8rem;
+  margin-top: 20rem;
+  margin-bottom: 20rem;
 
   &::before {
     content: "";
@@ -412,6 +414,7 @@
     grid-column: 2;
     margin-left: -16rem;
     transition-delay: 0.2s;
+    margin-top: 10rem;
   }
 
   &--title {
