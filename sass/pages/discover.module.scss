@@ -17,6 +17,13 @@
     grid-column: full-start / full-end;
     grid-row: 1;
   }
+
+  &--footer {
+    @include footer(transparent, relative);
+    grid-column: full-start / full-end;
+    grid-row: 6;
+    margin-top: 8rem;
+  }
 }
 
 .principle {
@@ -33,7 +40,6 @@
   grid-column: full-start / full-end;
   grid-row: 2;
   position: relative;
-
 
   &--box {
     grid-column: col-start 5 / full-end;
@@ -248,7 +254,6 @@
       );
 
       &--img {
-
         width: 55%;
         &--1 {
           z-index: $z-index-top;
@@ -264,13 +269,4 @@
       }
     }
   }
-}
-
-
-
-.discover--footer {
-  @include footer(transparent, relative);
-  grid-column: full-start / full-end;
-  grid-row: 6;
-  margin-top: 8rem;
 }
