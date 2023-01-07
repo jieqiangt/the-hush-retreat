@@ -11,7 +11,7 @@
       [col-start] minmax(16rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 8.5vh 100vh 25vh repeat(3, max-content) 55vh 60vh min-content;
+  grid-template-rows: 8.5vh 100vh 25vh repeat(3, max-content) 60vh 65vh min-content;
 
   &--nav {
     grid-column: full-start / full-end;
@@ -151,7 +151,7 @@
     flex-direction: column;
     justify-content: center;
     font-size: $font-size-text-lg;
-    width: 60%;
+    width: 75%;
     height: 60%;
     padding: 0rem 10rem;
     border-left: $border-accent-sm;

@@ -398,7 +398,7 @@
   @include schedule(7);
   position: relative;
   margin-top: 20rem;
-  margin-bottom: 3.2rem;
+  margin-bottom: 1.6rem;
 
   &::before {
     content: "";
@@ -454,7 +454,7 @@
 
     &--desc {
       font-size: $font-size-text-md;
-      padding-right: 22rem;
+      padding-right: 20rem;
     }
   }
 

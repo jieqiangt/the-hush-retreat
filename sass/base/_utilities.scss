@@ -196,13 +196,13 @@
     &--right {
       @include carousel--btn($btn-color, $btn-color-hover);
       padding: 0.5rem;
-      right: 15rem;
+      right: 6rem;
     }
 
     &--left {
       @include carousel--btn($btn-color, $btn-color-hover);
       padding: 0.5rem;
-      left: 15rem;
+      left: 6rem;
       transform: translateY(-50%);
     }
   }
