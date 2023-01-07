@@ -211,8 +211,7 @@
     grid-row: 5;
     background-color: $col-main-primary;
     padding: 5rem 14rem 8rem 12rem;
-    margin-top: 20rem;
-    margin-bottom: 10rem;
+    margin: 20rem 0rem;
 
     &--title {
       @include section--title($col-accent-tint-1, $letter-spacing-xs);

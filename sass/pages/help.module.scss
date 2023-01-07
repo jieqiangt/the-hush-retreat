@@ -195,7 +195,7 @@
   align-items: center;
   font-size: $font-size-text-md;
   margin-top: 30rem;
-  margin-bottom: 8rem;
+  margin-bottom: 12rem;
 
   &--icon {
     @include icon-square($size-icon-square-lg, $col-main-primary);
@@ -290,15 +290,4 @@
   grid-row: 4;
   @include footer(transparent, relative);
   padding-top: 5rem;
-
-  &::before {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 0.2rem;
-    width: 97%;
-    bottom: 0rem;
-    left: 1.5%;
-    background-color: rgba($col-accent-tint-2, 0.5);
-  }
 }

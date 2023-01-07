@@ -77,3 +77,11 @@
   width: $size;
   fill: $color;
 }
+
+@mixin media-queries($breakpoint) {
+  @if $breakpoint == xl-screen {
+    @media (max-width: 112.5em) { //1400px
+      @content;
+    }
+  }
+}
