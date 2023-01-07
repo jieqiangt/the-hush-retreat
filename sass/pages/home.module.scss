@@ -11,7 +11,7 @@
       [col-start] minmax(16rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 8.5vh 100vh 25vh repeat(3, min-content) 45vh 45vh min-content;
+  grid-template-rows: 8.5vh 100vh 25vh repeat(3, max-content) 55vh 60vh min-content;
 
   &--nav {
     grid-column: full-start / full-end;
@@ -199,13 +199,13 @@
       display: block;
       width: 14rem;
       fill: $col-main-primary;
-      margin-bottom: 2rem !important;
+      margin-bottom: 3rem !important;
       align-self: center;
     }
 
     &--box {
       position: absolute;
-      bottom: 4rem;
+      bottom: 3rem;
       right: 15rem;
       display: flex;
       flex-direction: column;

@@ -239,7 +239,7 @@
 @mixin z-layout($grid-size-two-col-left, $imgIsRight: false) {
   background-color: $col-white-primary;
   width: 100%;
-  height: 85vh;
+  height: 105vh;
   display: grid;
   grid-template-columns: $grid-size-two-col-left 100-$grid-size-two-col-left;
   grid-template-rows: 1fr;
