@@ -16,6 +16,18 @@
   &--nav {
     grid-column: full-start / full-end;
     grid-row: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 0.2rem;
+      width: 100%;
+      bottom: -0.5rem;
+      background-color: rgba($col-accent-tint-2, 0.5);
+      animation: fadeIn 1.2s ease-in;
+      animation-fill-mode: backwards;
+    }
   }
 }
 
@@ -30,7 +42,7 @@
     display: block;
     height: 0.2rem;
     width: 97%;
-    bottom: -6rem;
+    bottom: -20rem;
     left: 1.5%;
     background-color: rgba($col-accent-tint-2, 0.5);
   }
@@ -41,9 +53,9 @@
     grid-row: 2;
     background-position: top left 60%;
     background-size: cover;
-    width: 130%;
-    height: 85%;
-    margin: 9.5rem -16rem 0rem auto;
+    width: 110%;
+    height: 100%;
+    margin: 6rem -16rem 0rem auto;
     box-shadow: 2px 0px 15px 0px rgba($col-black-primary, 0.8);
   }
 
@@ -53,7 +65,8 @@
 
     &--box {
       background-color: $col-main-primary;
-      padding: 8rem 8rem 8rem 24rem;
+      padding: 4rem 8rem 4rem 24rem;
+      margin-top: 10rem;
     }
 
     &--title {
@@ -181,7 +194,7 @@
   flex-direction: column;
   align-items: center;
   font-size: $font-size-text-md;
-  margin-top: 16rem;
+  margin-top: 30rem;
   margin-bottom: 8rem;
 
   &--icon {
