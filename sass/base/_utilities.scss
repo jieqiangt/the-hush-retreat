@@ -41,7 +41,7 @@
       left: $img-2-left + $left-offset;
       transition-delay: 0.4s;
     }
-
+    outline-offset: 0.3rem;
     &--3 {
       top: $img-3-top + $top-offset;
       left: $img-3-left + $left-offset;
@@ -387,27 +387,27 @@
   & *:nth-child(2) {
     transition-delay: 0.05s;
   }
-  
+
   & *:nth-child(3) {
     transition-delay: 0.1s;
   }
-  
+
   & *:nth-child(4) {
     transition-delay: 0.15s;
   }
-  
+
   & *:nth-child(5) {
     transition-delay: 0.2s;
   }
-  
+
   & *:nth-child(6) {
     transition-delay: 0.25s;
   }
-  
+
   & *:nth-child(7) {
     transition-delay: 0.3s;
   }
-  
+
   & *:nth-child(8) {
     transition-delay: 0.35s;
   }
@@ -599,6 +599,19 @@
   padding-left: 8rem;
   padding-right: 8rem;
   grid-gap: 1.2rem;
+
+  & * {
+
+    outline-offset: 0.3rem;
+    transition: $ani-default;
+
+    &:hover {
+      z-index: $z-index-top + 100;
+      transform: scale(1.10);
+      box-shadow: 0 2.5rem 4rem rgba($col-black-primary, 0.5);
+      outline: 0.5rem solid $col-accent-primary;
+    }
+  }
 
   &--img {
     width: 100%;
