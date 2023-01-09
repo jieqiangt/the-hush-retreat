@@ -571,7 +571,7 @@
     background-color: $col-white-primary;
     display: grid;
     width: 80%;
-    height: 80%;
+    height: 90%;
     grid-template-columns: 50fr 50fr;
     transform: scale(0.5);
     transition: transform 0.4s 0.2s;
@@ -623,7 +623,6 @@
   &--group {
     display: grid;
     grid-template-columns: min-content 1fr;
-    cursor: pointer;
     align-items: center;
     justify-items: start;
 
@@ -632,19 +631,21 @@
       grid-row: 1;
       opacity: 0;
       visibility: 0;
-      z-index: $z-index-modal + $z-index-top;
-
+      z-index: $z-index-modal + $z-index-modal;
+      cursor: pointer;
       
       &:checked + span::after {
-        opacity: 1;
+        opacity: 1; 
       }
+
     }
-  }
+  } 
 
   &--label {
     grid-column: 2;
     grid-row: 1;
     margin-left: 1.2rem;
+    cursor: pointer;
   }
 
   &--btn {
@@ -656,6 +657,7 @@
     border-radius: 50%;
     display: inline-block;
     position: relative;
+
 
     &::after {
       content: "";

@@ -92,7 +92,7 @@
         $pos-input-label-translate-up
       );
       grid-column: 1 / 3;
-      grid-row: 1;
+      grid-row: 2;
     }
 
     &--last-name {
@@ -104,7 +104,7 @@
         $pos-input-label-translate-up
       );
       grid-column: 3 / -1;
-      grid-row: 1;
+      grid-row: 2;
     }
 
     &--email {
@@ -116,7 +116,7 @@
         $pos-input-label-translate-up
       );
       grid-column: 1 / 3;
-      grid-row: 2;
+      grid-row: 3;
     }
 
     &--contact {
@@ -128,7 +128,7 @@
         $pos-input-label-translate-up
       );
       grid-column: 3 / -1;
-      grid-row: 2;
+      grid-row: 3;
     }
 
     &--num {
@@ -140,7 +140,7 @@
         $pos-input-label-translate-up
       );
       grid-column: 1 / 3;
-      grid-row: 3;
+      grid-row: 1;
     }
 
     &--retreat-name {
@@ -153,20 +153,38 @@
         "select"
       );
       grid-column: 3 / -1;
-      grid-row: 3;
+      grid-row: 1;
+    }
+
+    &--message {
+      @include input--group(
+        $size-contact-us-input-width,
+        $col-gray-tint-1,
+        0.8rem,
+        0.4rem,
+        $pos-input-label-translate-up,
+        "textarea"
+      );
+      width: 95%;
+      grid-column: 1 / -1;
+      grid-row: 4;
+
+      & label {
+        top: 0rem;
+      }
     }
 
     &--vaccinate {
       grid-column: 1 / -1;
-      grid-row: 4;
+      grid-row: 5;
 
       @include custom--radio($col-gray-tint-1);
-
     }
+
 
     &--btn {
       grid-column: 1 / -1;
-      grid-row: 5;
+      grid-row: 6;
       @include btn--link($col-gray-tint-1, $col-main-primary, 0.6, true);
       justify-self: start;
       margin-top: 1.2rem;

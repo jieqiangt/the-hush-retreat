@@ -11,6 +11,10 @@ export default function BookingForm(props) {
     },
   ];
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <form action="#" className={props.classes[`${props.baseClass}--form`]}>
       <InputBar
@@ -82,6 +86,16 @@ export default function BookingForm(props) {
           </option>
         ))}
       />
+      <InputBar
+        label="Message"
+        type="textarea"
+        inputName="upcoming--form--message"
+        inputPlaceholder="Message"
+        inputGroupClass={props.classes[`${props.baseClass}--form--message`]}
+        inputClass={props.classes[`${props.baseClass}--form--message--input`]}
+        labelClass={props.classes[`${props.baseClass}--form--message--label`]}
+        rows="3"
+      />
       <InputOptions
         options={radioOptions}
         type="checkbox"
@@ -95,7 +109,10 @@ export default function BookingForm(props) {
         labelClass={props.classes[`${props.baseClass}--form--vaccinate--label`]}
         btnClass={props.classes[`${props.baseClass}--form--vaccinate--btn`]}
       />
-      <button className={props.classes[`${props.baseClass}--form--btn`]}>
+      <button
+        className={props.classes[`${props.baseClass}--form--btn`]}
+        onClick={submitHandler}
+      >
         Register
       </button>
     </form>
