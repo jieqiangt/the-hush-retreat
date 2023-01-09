@@ -135,7 +135,7 @@
 
   &--carousel {
     @include carousel(
-      (3.6rem 20rem),
+      (5rem 20rem),
       rgba($col-main-primary, 0.65),
       $col-accent-tint-1,
       $col-main-primary,
@@ -152,8 +152,8 @@
     justify-content: center;
     font-size: $font-size-text-lg;
     width: 75%;
-    height: 60%;
-    padding: 0rem 10rem;
+    height: 55%;
+    padding: 0rem 8rem;
     border-left: $border-accent-sm;
     border-right: $border-accent-sm;
     background-color: transparent;
