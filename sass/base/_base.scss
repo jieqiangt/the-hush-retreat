@@ -24,6 +24,10 @@ body {
   background-color: $col-white-primary;
 }
 
+main {
+  position: relative;
+}
+
 button,
 a:link,
 a:visited {
@@ -60,8 +64,9 @@ select:focus {
   outline: none;
 }
 
-main {
-  position: relative;
+fieldset {
+  border: none;
+  display: block;
 }
 
 input::-webkit-outer-spin-button,
@@ -74,3 +79,4 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
 }
+

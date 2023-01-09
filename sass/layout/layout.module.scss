@@ -45,9 +45,7 @@
     animation: moveInTop 0.8s ease-in;
 
     &--active {
-      
       border-bottom: $border-accent-sm;
-
     }
 
     &::after {

@@ -601,13 +601,12 @@
   grid-gap: 1.2rem;
 
   & * {
-
     outline-offset: 0.3rem;
     transition: $ani-default;
 
     &:hover {
       z-index: $z-index-top + 100;
-      transform: scale(1.10);
+      transform: scale(1.1);
       box-shadow: 0 2.5rem 4rem rgba($col-black-primary, 0.5);
       outline: 0.5rem solid $col-accent-primary;
     }
@@ -617,6 +616,60 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+@mixin custom--radio($btn-color) {
+  &--group {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    cursor: pointer;
+    align-items: center;
+    justify-items: start;
+
+    & input {
+      grid-column: 1;
+      grid-row: 1;
+      opacity: 0;
+      visibility: 0;
+      z-index: $z-index-modal + $z-index-top;
+
+      
+      &:checked + span::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &--label {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: 1.2rem;
+  }
+
+  &--btn {
+    grid-column: 1;
+    grid-row: 1;
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid $btn-color;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1.5rem;
+      width: 1.5rem;
+      background-color: $btn-color;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
   }
 }
 

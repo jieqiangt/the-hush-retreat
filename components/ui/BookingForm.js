@@ -1,9 +1,16 @@
 import InputBar from "../ui/InputBar";
 import InputSelect from "../ui/InputSelect";
-
-
+import InputOptions from "./InputOptions";
 
 export default function BookingForm(props) {
+  const radioOptions = [
+    {
+      name: "vaccinated",
+      value: true,
+      label: "I certify that I am fully vaccincated.",
+    },
+  ];
+
   return (
     <form action="#" className={props.classes[`${props.baseClass}--form`]}>
       <InputBar
@@ -38,6 +45,15 @@ export default function BookingForm(props) {
         labelClass={props.classes[`${props.baseClass}--form--email--label`]}
       />
       <InputBar
+        label="Contact No."
+        type="text"
+        inputName="upcoming--form--contact"
+        inputPlaceholder="Contact No."
+        inputGroupClass={props.classes[`${props.baseClass}--form--contact`]}
+        inputClass={props.classes[`${props.baseClass}--form--contact--input`]}
+        labelClass={props.classes[`${props.baseClass}--form--contact--label`]}
+      />
+      <InputBar
         label="No. of Retreatees"
         type="number"
         inputName="upcoming--form--num"
@@ -61,8 +77,23 @@ export default function BookingForm(props) {
           props.classes[`${props.baseClass}--form--retreat-name--label`]
         }
         inputOptions={props.retreatList.map((item) => (
-          <option key={item.retreatId} value={item.retreatId}>{item.retreatName}</option>
+          <option key={item.retreatId} value={item.retreatId}>
+            {item.retreatName}
+          </option>
         ))}
+      />
+      <InputOptions
+        options={radioOptions}
+        type="checkbox"
+        radioGroupClass={props.classes[`${props.baseClass}--form--vaccinate`]}
+        radioLegendClass={
+          props.classes[`${props.baseClass}--form--vaccinate--legend`]
+        }
+        optionGroupClass={
+          props.classes[`${props.baseClass}--form--vaccinate--group`]
+        }
+        labelClass={props.classes[`${props.baseClass}--form--vaccinate--label`]}
+        btnClass={props.classes[`${props.baseClass}--form--vaccinate--btn`]}
       />
       <button className={props.classes[`${props.baseClass}--form--btn`]}>
         Register
