@@ -11,7 +11,7 @@ export default function Modal(props) {
     modalIsActive
       ? setActiveClass(props.classes[`${props.baseClass}--modal--active`])
       : setActiveClass(null);
-  }, [modalIsActive]);
+  }, [modalIsActive, props.classes, props.baseClass]);
 
   return (
     <div
