@@ -50,7 +50,7 @@
   }
 
   &--title {
-    @include section--title($col-main-tint-1, $letter-spacing-xs);
+    @include section--title($col-main-primary, $letter-spacing-xs);
     margin-bottom: 1rem;
   }
 
@@ -61,7 +61,7 @@
   }
 
   &--em {
-    color: $col-main-tint-1;
+    color: $col-main-primary;
     font-style: italic;
   }
 }
@@ -106,7 +106,7 @@
     }
 
     &--title {
-      @include section--title($col-accent-tint-1, $letter-spacing-xs);
+      @include section--title($col-accent-primary, $letter-spacing-xs);
       border-bottom: $border-accent-sm;
       margin-bottom: 2.4rem;
     }
@@ -117,7 +117,7 @@
       gap: 3.8rem;
       margin-left: 2.4rem;
       padding-right: 2.4rem;
-      color: $col-gray-tint-2;
+      color: $col-gray-tint-3;
     }
   }
 }
@@ -148,7 +148,7 @@
     margin-top: 4rem;
   }
   &--title {
-    @include section--title($col-main-tint-1, $letter-spacing-xs);
+    @include section--title($col-main-primary, $letter-spacing-xs);
     margin: 2.4rem 0rem 3.6rem 0rem;
   }
 
@@ -160,7 +160,7 @@
       font-size: $font-size-text-md;
 
       &--title {
-        color: $col-main-tint-1;
+        color: $col-main-primary;
       }
 
       &--desc {
@@ -214,7 +214,7 @@
     margin: 20rem 0rem;
 
     &--title {
-      @include section--title($col-accent-tint-1, $letter-spacing-xs);
+      @include section--title($col-accent-primary, $letter-spacing-xs);
       border-bottom: $border-accent-sm;
       margin-bottom: 2.4rem;
     }
@@ -222,7 +222,7 @@
     &--content {
       display: flex;
       flex-direction: column;
-      color: $col-gray-tint-2;
+      color: $col-gray-tint-3;
       font-size: $font-size-text-md;
       line-height: $font-line-height-lg;
       gap: $margin-flex-lg;

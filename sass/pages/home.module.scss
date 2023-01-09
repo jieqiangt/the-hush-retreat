@@ -119,14 +119,14 @@
   position: relative;
 
   &--icon {
-    @include icon-square($size-icon-square-md, $col-accent-tint-2);
+    @include icon-square($size-icon-square-md, $col-accent-primary);
     position: absolute;
     top: $pos-testimonials-top-offset;
     z-index: $z-index-top;
   }
 
   &--title {
-    @include section--title($col-accent-tint-2, $letter-spacing-xs);
+    @include section--title($col-accent-primary, $letter-spacing-xs);
     font-size: $font-size-text-md;
     position: absolute;
     top: $pos-testimonials-top-offset + $pos-testimonials-title-add-offset;
@@ -136,11 +136,11 @@
   &--carousel {
     @include carousel(
       (5rem 20rem),
-      rgba($col-main-primary, 0.65),
-      $col-accent-tint-1,
+      rgba($col-main-primary, 0.80),
+      $col-accent-primary,
       $col-main-primary,
-      $col-accent-tint-1,
-      $col-accent-tint-1,
+      $col-accent-primary,
+      $col-accent-primary,
       $col-accent-shade-1
     );
   }
@@ -166,7 +166,7 @@
 
     &--quote {
       margin-bottom: $margin-flex-lg;
-      color: $col-gray-tint-2;
+      color: $col-gray-tint-3;
       font-size: $font-size-text-lg;
     }
 

@@ -275,7 +275,7 @@
     }
 
     &--title {
-      @include section--title($col-main-tint-1, $letter-spacing-xs);
+      @include section--title($col-main-primary, $letter-spacing-xs);
       font-size: $font-size-text-md;
       margin-bottom: $margin-flex-lg * 1.5;
     }
@@ -450,7 +450,7 @@
   animation-fill-mode: backwards;
 
   &--box {
-    background-color: rgba($col-accent-primary, 0.75);
+    background-color: rgba($col-accent-primary, 0.85);
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
