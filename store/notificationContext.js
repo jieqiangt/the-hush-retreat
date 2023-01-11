@@ -1,6 +1,4 @@
 import { createContext, useState, useEffect } from "react";
-import { notificationTime } from "../lib/constants";
-
 
 const contextStructure = {
   notification: null, //object with title, message, status
@@ -17,7 +15,7 @@ export function NotifcationContextProvider(props) {
     if (activeNotification) {
       const timerId = setTimeout(() => {
         setActiveNotification(null);
-      }, notificationTime);
+      }, 3000);
       return () => {
         clearTimeout(timerId);
       };

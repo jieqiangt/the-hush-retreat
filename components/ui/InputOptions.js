@@ -8,6 +8,7 @@ export default function InputOptions(props) {
       type={props.type}
       value={item.value}
       label={item.label}
+      onChange={item.onChange}
       labelClass={props.labelClass}
       optionGroupClass={props.optionGroupClass}
       btnClass={props.btnClass}
@@ -15,9 +16,9 @@ export default function InputOptions(props) {
   ));
 
   return (
-    <fieldset className={props.radioGroupClass}>
+    <fieldset className={props.optionsGroupClass}>
       {props.legend ? (
-        <legend className={props.radioLegendClass}>{props.legend}</legend>
+        <legend className={props.legendClass}>{props.legend}</legend>
       ) : (
         ""
       )}

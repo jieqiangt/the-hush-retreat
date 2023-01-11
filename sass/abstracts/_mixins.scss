@@ -35,6 +35,13 @@
     background-color: rgba($text-color, $hover-opacity);
     color: $hover-text-color;
   }
+
+  &:disabled {
+    background-color: $col-main-tint-1;
+    color: rgba($col-main-tint-2, 0.3);
+    border-top: solid $size-underline-link $col-main-tint-1;
+    border-bottom: solid $size-underline-link $col-main-tint-1;
+  }
 }
 
 @mixin btn--link(

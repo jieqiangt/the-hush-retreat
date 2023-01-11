@@ -8,6 +8,8 @@ export default function InputSelect(props) {
           name={props.inputName}
           id={props.inputName}
           className={props.inputClass}
+          value={props.value}
+          onChange={props.onChange}
         >
           {props.inputOptions}
         </select>

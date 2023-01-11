@@ -6,6 +6,7 @@ export default function InputOption(props) {
         id={props.name}
         name={props.name}
         value={props.value}
+        onChange={props.onChange}
       />
       <span className={props.btnClass}>&nbsp;</span>
       <label htmlFor={props.name} className={props.labelClass}>
