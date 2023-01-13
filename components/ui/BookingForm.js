@@ -8,6 +8,7 @@ import InputBar from "../ui/InputBar";
 import InputSelect from "../ui/InputSelect";
 import InputOptions from "./InputOptions";
 import NotificationContext from "../../store/notificationContext";
+import ModalContext from "../../store/modalContext";
 import { callApi } from "../../utils/apiUtils";
 
 export default function BookingForm(props) {
@@ -15,11 +16,17 @@ export default function BookingForm(props) {
     bookingReducer,
     bookingInitialState
   );
+  const { closeModal } = useContext(ModalContext);
   const router = useRouter();
   const notificationCtx = useContext(NotificationContext);
 
-  const { firstNameValid, lastNameValid, emailValid, phoneValid, formValid } =
-    bookingState;
+  const {
+    firstNameValid,
+    lastNameValid,
+    emailValid,
+    phoneValid,
+    formValid,
+  } = bookingState;
 
   const fields = {
     retreatName: bookingState.retreatName,
@@ -64,9 +71,18 @@ export default function BookingForm(props) {
   useEffect(valFieldHandlers["lastName"], [dispatchBooking, fields.lastName]);
   useEffect(valFieldHandlers["email"], [dispatchBooking, fields.email]);
   useEffect(valFieldHandlers["phone"], [dispatchBooking, fields.phone]);
-  useEffect(valFieldHandlers["numRetreatees"], [dispatchBooking, fields.numRetreatees]);
-  useEffect(valFieldHandlers["retreatName"], [dispatchBooking, fields.retreatName]);
-  useEffect(valFieldHandlers["vaccinated"], [dispatchBooking, fields.vaccinated]);
+  useEffect(valFieldHandlers["numRetreatees"], [
+    dispatchBooking,
+    fields.numRetreatees,
+  ]);
+  useEffect(valFieldHandlers["retreatName"], [
+    dispatchBooking,
+    fields.retreatName,
+  ]);
+  useEffect(valFieldHandlers["vaccinated"], [
+    dispatchBooking,
+    fields.vaccinated,
+  ]);
 
   async function bookingHandler(event) {
     event.preventDefault();
@@ -94,6 +110,7 @@ export default function BookingForm(props) {
     if (result.ok) {
       const successNotification = await result.json();
       notificationCtx.showNotification(successNotification);
+      closeModal();
       router.replace("/");
     }
   }
@@ -106,9 +123,6 @@ export default function BookingForm(props) {
       onChange: changeHandlers["vaccinated"],
     },
   ];
-
-  console.log(`vaccinated: ${bookingState.vaccinated}`);
-  console.log(`formValid: ${bookingState.formValid}`);
 
   return (
     <form action="#" className={props.classes[`${props.baseClass}--form`]}>
@@ -126,6 +140,8 @@ export default function BookingForm(props) {
         labelClass={
           props.classes[`${props.baseClass}--form--first-name--label`]
         }
+        valid={firstNameValid}
+        invalidText="Your first name is required."
       />
       <InputBar
         label="Last Name"
@@ -137,6 +153,8 @@ export default function BookingForm(props) {
         inputGroupClass={props.classes[`${props.baseClass}--form--last-name`]}
         inputClass={props.classes[`${props.baseClass}--form--last-name--input`]}
         labelClass={props.classes[`${props.baseClass}--form--last-name--label`]}
+        valid={lastNameValid}
+        invalidText="Your last name is required."
       />
       <InputBar
         label="Email"
@@ -148,6 +166,8 @@ export default function BookingForm(props) {
         inputGroupClass={props.classes[`${props.baseClass}--form--email`]}
         inputClass={props.classes[`${props.baseClass}--form--email--input`]}
         labelClass={props.classes[`${props.baseClass}--form--email--label`]}
+        valid={emailValid}
+        invalidText="A valid email is required."
       />
       <InputBar
         label="Contact No."
@@ -156,6 +176,8 @@ export default function BookingForm(props) {
         inputPlaceholder="Contact No."
         value={fields.phone}
         onChange={changeHandlers["phone"]}
+        valid={phoneValid}
+        invalidText="A valid mobile number is required."
         inputGroupClass={props.classes[`${props.baseClass}--form--contact`]}
         inputClass={props.classes[`${props.baseClass}--form--contact--input`]}
         labelClass={props.classes[`${props.baseClass}--form--contact--label`]}
@@ -168,7 +190,7 @@ export default function BookingForm(props) {
         inputGroupClass={props.classes[`${props.baseClass}--form--num`]}
         inputClass={props.classes[`${props.baseClass}--form--num--input`]}
         labelClass={props.classes[`${props.baseClass}--form--num--label`]}
-        inputOptions={[1,2,3,4,5,6,7,8].map((item) => (
+        inputOptions={[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
           <option key={item} value={item}>
             {item}
           </option>

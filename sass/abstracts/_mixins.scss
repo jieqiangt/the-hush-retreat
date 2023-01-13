@@ -37,10 +37,11 @@
   }
 
   &:disabled {
-    background-color: $col-main-tint-1;
-    color: rgba($col-main-tint-2, 0.3);
-    border-top: solid $size-underline-link $col-main-tint-1;
-    border-bottom: solid $size-underline-link $col-main-tint-1;
+    background-color: rgba($col-gray-primary,0.7);
+    color: rgba($col-gray-tint-3, 0.4);
+    border-bottom: solid $size-underline-link $col-gray-primary;
+    border-top: solid $size-underline-link $col-gray-primary;
+    cursor: auto;
   }
 }
 

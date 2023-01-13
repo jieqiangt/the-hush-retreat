@@ -16,7 +16,6 @@ export class AppError extends Error {
       return;
     }
     
-    console.log(err)
     const {
       title = "Unknown Error",
       status = 500,

@@ -18,6 +18,7 @@ export default function InputBar(props) {
             <label htmlFor={props.inputName} className={props.labelClass}>
               {props.label}
             </label>
+            {!props.valid ? <span>{props.invalidText}</span> : ""}
           </Fragment>
         ) : (
           ""

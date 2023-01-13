@@ -335,6 +335,13 @@
     color: rgba($text-color, 0.8);
   }
 
+  &--label ~ span {
+    font-size: $font-size-text-s;
+    color: $col-error;
+    display: inline-block;
+    position: absolute;
+  }
+
   @if $inputType == "select" {
     &--label {
       display: inline-block;
@@ -633,13 +640,12 @@
       visibility: 0;
       z-index: $z-index-modal + $z-index-modal;
       cursor: pointer;
-      
-      &:checked + span::after {
-        opacity: 1; 
-      }
 
+      &:checked + span::after {
+        opacity: 1;
+      }
     }
-  } 
+  }
 
   &--label {
     grid-column: 2;
@@ -657,7 +663,6 @@
     border-radius: 50%;
     display: inline-block;
     position: relative;
-
 
     &::after {
       content: "";
@@ -692,4 +697,25 @@
   opacity: 1;
   filter: blur(0px);
   transform: translateY(0);
+}
+
+@mixin notification() {
+  display: block;
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  z-index: $z-index-modal + $z-index-modal;
+}
+
+.notification {
+
+  &--success {
+    @include notification();
+    background-color: green;
+  }
+
+  &--error {
+    @include notification();
+    background-color: red;
+  }
 }

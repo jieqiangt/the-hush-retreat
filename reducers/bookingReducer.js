@@ -7,11 +7,11 @@ export const bookingInitialState = {
   numRetreatees: 1,
   vaccinated: "",
   message: "",
-  firstNameValid: true,
-  lastNameValid: true,
-  emailValid: true,
-  phoneValid: true,
-  vaccinatedValid: true,
+  firstNameValid: false,
+  lastNameValid: false,
+  emailValid: false,
+  phoneValid: false,
+  vaccinatedValid: false,
   numRetreateesValid: true,
   retreatNameValid: true,
   formValid: false,
@@ -19,7 +19,7 @@ export const bookingInitialState = {
 
 export function validateField(input, field) {
   if (field === "retreatName") {
-    return ['Release & Renew'].includes(input)
+    return ["Release & Renew"].includes(input);
   }
 
   if (field === "firstName") {
@@ -58,7 +58,7 @@ function validateForm(state) {
     state.emailValid &&
     state.phoneValid &&
     state.vaccinatedValid &&
-    state.numRetreateesValid && 
+    state.numRetreateesValid &&
     state.retreatNameValid
   );
 }
@@ -75,7 +75,8 @@ export function bookingReducer(state, action) {
     const newState = { ...state };
     newState[action.field + "Valid"] =
       validateField(action[action.field], action.field) ||
-      action[action.field] === "";
+      (action[action.field] === "" && !newState[action.field + "Valid"]);
+
     newState.formValid =
       validateForm(newState) &&
       newState.retreatName !== "" &&

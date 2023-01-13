@@ -8,7 +8,7 @@ const contextStructure = {
 
 const NotificationContext = createContext(contextStructure);
 
-export function NotifcationContextProvider(props) {
+export function NotificationContextProvider(props) {
   const [activeNotification, setActiveNotification] = useState();
 
   useEffect(() => {
