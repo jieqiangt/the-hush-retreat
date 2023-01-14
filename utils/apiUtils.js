@@ -5,6 +5,5 @@ export async function callApi({ url, method, body, headers, params }) {
     body: !body ? null : JSON.stringify(body),
     headers: !headers ? { "Content-Type": "application/json" } : headers,
   });
-  console.log({ result });
   return result;
 }

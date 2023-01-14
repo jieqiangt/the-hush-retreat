@@ -20,7 +20,7 @@ const handler = catchApiWrapper(async (req, res) => {
     vaccinated,
     message,
   } = data;
-  const now = Date.now()
+  const now = Date.now();
 
   const fieldsValid =
     validateField(retreatName, "retreatName") &&
@@ -53,7 +53,7 @@ const handler = catchApiWrapper(async (req, res) => {
 
   const checkExistPayload = {
     retreatName: retreatName,
-    $or: [{ email: email, phone: phone }],
+    $or: [{ email: email }, { phone: phone }],
   };
   const checkExist = await getOneFromCollection(
     client,
@@ -87,7 +87,7 @@ const handler = catchApiWrapper(async (req, res) => {
       vaccinated,
       message,
       createdOn: now,
-      updatedOn: now
+      updatedOn: now,
     }
   );
 
@@ -109,6 +109,7 @@ const handler = catchApiWrapper(async (req, res) => {
     className: "notification--success",
   });
   client.close();
+
   return result;
 }, allowedMethods);
 
