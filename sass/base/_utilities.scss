@@ -558,7 +558,6 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba($col-black-primary, 0.8);
-  z-index: $z-index-modal;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -567,7 +566,7 @@
 
   &--active {
     @include make-visible;
-    z-index: 1000 !important;
+    z-index: $z-index-modal;
 
     & div {
       transform: scale(1);
@@ -699,23 +698,49 @@
   transform: translateY(0);
 }
 
-@mixin notification() {
+@mixin notification($text-color) {
   display: block;
   position: fixed;
   top: 10%;
-  left: 20%;
+  left: 14%;
+  width: 35%;
   z-index: $z-index-modal + $z-index-modal;
+  font-size: $font-size-text-s;
+  padding: 1.5rem 3rem;
+  border-radius: 2px;
+  color: $text-color;
+  cursor: pointer;
+  box-shadow: 0 2.5rem 4rem rgba($col-black-primary, 0.1);
+
+  & svg {
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: rgba($text-color, 0.6);
+    top: 1rem;
+    right: 1rem;
+  }
+
+  & h2 {
+    @include section--title($text-color, $letter-spacing-default);
+    font-size: $font-size-text-s;
+    margin-bottom: 1rem;
+  }
+
+  & p {
+    line-height: 1.5;
+    padding-right: 2.4rem;
+  }
 }
 
 .notification {
-
   &--success {
-    @include notification();
-    background-color: green;
+    @include notification($col-main-primary);
+    background-color: rgba($col-main-tint-2, 0.8);
   }
 
   &--error {
-    @include notification();
-    background-color: red;
+    @include notification($col-gray-primary);
+    background-color: rgba($col-gray-tint-3, 0.8);
   }
 }

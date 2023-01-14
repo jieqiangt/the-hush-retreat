@@ -20,7 +20,7 @@ const handler = catchApiWrapper(async (req, res) => {
     vaccinated,
     message,
   } = data;
-  const now = Date.now();
+  const now = new Date();
 
   const fieldsValid =
     validateField(retreatName, "retreatName") &&
@@ -104,7 +104,7 @@ const handler = catchApiWrapper(async (req, res) => {
 
   res.status(201).json({
     title: "Registration Completed",
-    clientMessage: `We have received your interest to join our retreat, ${firstName} ${lastName}. Do keep a lookout for a confirmation email at ${email} & personalized follow up text message to confirm your booking & payment details.`,
+    clientMessage: `We have received your interest to join our retreat, ${firstName} ${lastName}. Do keep a lookout for a confirmation email and a personalized follow up whatsapp message for more details.`,
     status: 201,
     className: "notification--success",
   });

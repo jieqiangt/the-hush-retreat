@@ -6,6 +6,7 @@
 .nav {
   background-color: $col-white-primary;
   position: sticky;
+  z-index: 0;
 
   &--list {
     display: flex;

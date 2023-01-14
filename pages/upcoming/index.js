@@ -23,7 +23,7 @@ export default function UpcomingPage() {
         <NewRetreatIntentions classes={classes} baseClass="intentions" />
         <NewRetreatExpect classes={classes} baseClass="expect" />
         <NewRetreatGuide classes={classes} baseClass="guide" />
-        <NewRetreatSchedule classes={classes} baseClass="schedule"/>
+        <NewRetreatSchedule classes={classes} baseClass="schedule" />
       </Layout>
     </Fragment>
   );

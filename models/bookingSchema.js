@@ -22,14 +22,14 @@ module.exports = {
           properties: {
             _id: { bsonType: "objectId" },
             createdOn: {
-              bsonType: "timestamp",
+              bsonType: "date",
               description:
-                "createdOn of timestamp type is required. Defaults to booking date.",
+                "createdOn of iso date type is required. Defaults to booking date.",
             },
             updatedOn: {
-              bsonType: "timestamp",
+              bsonType: "date",
               description:
-                "updatedOn of timestamp type is required. Must be greater than or equals to createdOn.",
+                "updatedOn of iso date type is required. Must be greater than or equals to createdOn.",
             },
             retreatName: {
               bsonType: "string",
