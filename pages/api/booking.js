@@ -20,6 +20,7 @@ const handler = catchApiWrapper(async (req, res) => {
     vaccinated,
     message,
   } = data;
+  const now = Date.now()
 
   const fieldsValid =
     validateField(retreatName, "retreatName") &&
@@ -49,41 +50,24 @@ const handler = catchApiWrapper(async (req, res) => {
   }
 
   const client = await connectClient();
-  const checkEmail = await getOneFromCollection(
+
+  const checkExistPayload = {
+    retreatName: retreatName,
+    $or: [{ email: email, phone: phone }],
+  };
+  const checkExist = await getOneFromCollection(
     client,
     process.env.MONGO_DBNAME,
-    retreatName,
-    {
-      email,
-    },
+    "booking",
+    checkExistPayload,
     false
   );
 
-  if (checkEmail) {
+  if (checkExist) {
     throw new AppError({
       title: "User Input Error",
       clientMessage:
-        "Email exists. Have you booked this retreat with us already?",
-      status: 406,
-      className: "notification--error",
-    });
-  }
-
-  const checkPhone = await getOneFromCollection(
-    client,
-    process.env.MONGO_DBNAME,
-    retreatName,
-    {
-      phone,
-    },
-    false
-  );
-
-  if (checkPhone) {
-    throw new AppError({
-      title: "User Input Error",
-      clientMessage:
-        "Phone number exists. Have you booked this retreat with us already?",
+        "Email or mobile number exists in our database. Have you booked this retreat with us already?",
       status: 406,
       className: "notification--error",
     });
@@ -92,7 +76,7 @@ const handler = catchApiWrapper(async (req, res) => {
   const result = await insertOneToCollection(
     client,
     process.env.MONGO_DBNAME,
-    retreatName,
+    "booking",
     {
       retreatName,
       firstName,
@@ -102,8 +86,21 @@ const handler = catchApiWrapper(async (req, res) => {
       numRetreatees,
       vaccinated,
       message,
+      createdOn: now,
+      updatedOn: now
     }
   );
+
+  if (result.error) {
+    throw new AppError({
+      title: "Database Insertion Error",
+      clientMessage:
+        "Database is currently unavailable. Please try registering again in a short while. Sincere apologies for the inconvenience caused!",
+      status: 406,
+      className: "notification--error",
+      message: result.error,
+    });
+  }
 
   res.status(201).json({
     title: "Registration Completed",

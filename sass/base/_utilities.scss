@@ -443,7 +443,7 @@
   }
 
   &--btn {
-    @include btn--link($col-gray-tint-1, $col-main-primary, 0.6);
+    @include btn--link($col-gray-tint-1, $col-main-primary, 0.6, true);
     align-self: start;
   }
 }

@@ -51,6 +51,24 @@
   $hover-opacity,
   $button: false
 ) {
+
+
+  & a {
+    @include btn--default($text-color, $hover-text-color, $hover-opacity);
+    border-top: solid
+      $size-underline-link
+      darken(rgba($text-color, 0.7), 10%);
+    border-bottom: solid
+      $size-underline-link
+      darken(rgba($text-color, 0.7), 10%);
+    padding: 0.6rem;
+    color: $text-color;
+
+    &:hover {
+      font-weight: $font-weight-sm;
+    }
+  }
+  
   @if $button {
     @include btn--default($text-color, $hover-text-color, $hover-opacity);
     border-top: solid $size-underline-link $text-color;

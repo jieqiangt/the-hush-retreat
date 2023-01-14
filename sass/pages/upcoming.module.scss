@@ -498,7 +498,7 @@
   }
 
   &--btn {
-    @include btn--link($col-gray-tint-1, $col-main-primary, 0.2);
+    @include btn--link($col-gray-tint-1, $col-main-primary, 0.2, true);
     grid-column: full-start / full-end;
     font-size: $font-size-text-md;
     border-bottom: $border-gray-sm;

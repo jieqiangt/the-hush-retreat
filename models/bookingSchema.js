@@ -40,12 +40,17 @@ module.exports = {
               description: "firstName of string datatype is required.",
             },
             lastName: {
-              bsonType: "bool",
+              bsonType: "string",
               description: "lastName of string datatype is required.",
+            },
+            email: {
+              bsonType: "string",
+              maxLength: 50,
+              description: "email of string datatype is required.",
             },
             phone: {
               bsonType: "string",
-              maxLength: 50,
+              maxLength: 15,
               description: "phone of string datatype is required.",
             },
             vaccinated: {
