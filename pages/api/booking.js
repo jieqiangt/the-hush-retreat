@@ -63,6 +63,8 @@ const handler = catchApiWrapper(async (req, res) => {
     false
   );
 
+  console.log({checkExist})
+
   if (checkExist) {
     throw new AppError({
       title: "User Input Error",
@@ -90,17 +92,6 @@ const handler = catchApiWrapper(async (req, res) => {
       updatedOn: now,
     }
   );
-
-  if (result.error) {
-    throw new AppError({
-      title: "Database Insertion Error",
-      clientMessage:
-        "Database is currently unavailable. Please try registering again in a short while. Sincere apologies for the inconvenience caused!",
-      status: 406,
-      className: "notification--error",
-      message: result.error,
-    });
-  }
 
   res.status(201).json({
     title: "Registration Completed",
