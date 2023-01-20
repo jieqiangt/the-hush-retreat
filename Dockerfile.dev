@@ -1,12 +1,22 @@
-FROM node:18.13.0
+FROM node:18.13.0-alpine
 
 WORKDIR /app
 
+COPY next.config.js ./
+COPY next-env.d.ts ./
+COPY tsconfig.json ./
 COPY package.json yarn.lock ./
 
 RUN yarn install
 
-COPY . /app
+COPY components ./components
+COPY models ./models
+COPY pages ./pages
+COPY public ./public
+COPY reducers ./reducers
+COPY sass ./sass
+COPY store ./store
+COPY utils ./utils
 
 EXPOSE 3000
 

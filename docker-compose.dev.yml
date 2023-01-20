@@ -1,12 +1,12 @@
 version: "3.8"
 services:
   hushapp:
-    image: hushapp
+    image: jieqiangtan/hush-retreat-dev
     build:
       context: .
       dockerfile: ./Dockerfile.dev
     ports:
-      - 3000:3000
+      - 80:3000
     env_file:
       - ./.env
     stdin_open: true

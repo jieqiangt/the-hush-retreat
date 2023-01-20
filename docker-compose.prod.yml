@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  hushapp:
+    image: jieqiangtan/testapp
+    ports:
+      - 80:3000
+    env_file:
+      - ./.env
+    stdin_open: true
+    tty: true

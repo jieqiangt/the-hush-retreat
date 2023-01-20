@@ -3,7 +3,6 @@ node_modules
 .gitignore
 notes.md
 README.md
-.next
-docker-compose.yaml
+docker-compose*.yml
 .eslintrc.json
 
