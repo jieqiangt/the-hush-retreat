@@ -1,13 +1,12 @@
 version: "3.8"
 services:
-  hushfrontend:
+  hushapp:
+    image: hushapp
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./Dockerfile.dev
     ports:
       - 3000:3000
-    volumes:
-      - .:/app
     env_file:
       - ./.env
     stdin_open: true
