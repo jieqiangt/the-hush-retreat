@@ -3,7 +3,8 @@ import { AppError } from "./errorUtils";
 
 export async function connectClient() {
   try {
-    const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@jq.yghlifx.mongodb.net/?retryWrites=true&w=majority`;
+    const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@${process.env.MONGO_URI}`;
+    console.log(process.env.MONGO_USER)
     const client = new MongoClient(uri);
     await client.connect();
     console.log("MongoDB Client Connected!");
