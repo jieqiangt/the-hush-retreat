@@ -58,12 +58,10 @@ const handler = catchApiWrapper(async (req, res) => {
   const checkExist = await getOneFromCollection(
     client,
     process.env.MONGO_DBNAME,
-    "booking",
+    "bookings",
     checkExistPayload,
     false
   );
-
-  console.log({checkExist})
 
   if (checkExist) {
     throw new AppError({
@@ -78,7 +76,7 @@ const handler = catchApiWrapper(async (req, res) => {
   const result = await insertOneToCollection(
     client,
     process.env.MONGO_DBNAME,
-    "booking",
+    "bookings",
     {
       retreatName,
       firstName,
