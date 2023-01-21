@@ -31,13 +31,12 @@
     ),
     (bottom 25% left 90%)
   );
-  position: relative;
   grid-column: full-start / full-end;
   grid-row: 2;
 
   &--box {
-    grid-column: col-start 6 / full-end;
-    margin: 25rem 0rem;
+    grid-column: col-start 6 / banner-end;
+    grid-row: row-start 5 / span 6;
   }
 
   &--title {
@@ -136,7 +135,7 @@
   &--carousel {
     @include carousel(
       (5rem 20rem),
-      rgba($col-main-primary, 0.80),
+      rgba($col-main-primary, 0.8),
       $col-accent-primary,
       $col-main-primary,
       $col-accent-primary,

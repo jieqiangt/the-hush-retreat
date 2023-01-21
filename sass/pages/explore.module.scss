@@ -32,17 +32,14 @@
   );
   grid-column: full-start / full-end;
   grid-row: 2;
-  position: relative;
 
   &--box {
-    grid-column: full-start / col-start 6;
-    margin: 26rem 0rem;
+    grid-column: banner-start / col-start 6;
+    grid-row: row-start 5 / span 8;
     background-color: rgba($col-accent-primary, 0.8);
     font-size: $font-size-text-lg;
     gap: 2.4rem;
-    padding-left: 16rem;
-    padding-top: 4.8rem;
-    padding-right: 3.6rem;
+    padding: 6rem 3.6rem 6rem 12.8rem;
     text-align: left;
   }
 
