@@ -7,56 +7,38 @@ export default function Testimonials(props) {
   const [activeItem, setActiveItem] = useState(0);
   const [testimonialItems, setTestimonialItems] = useState([]);
   const [intervalId, setIntervalId] = useState();
-
-  let testimonialsArr = [
-    {
-      quote:
-        "I very much enjoyed the Sunrise Yoga & Meditation session and learnt valuable techniques on how to look inward, reflect and bring forward positive energy.",
-      participantName: "Alex B.",
-      href: "/",
-      retreatName: "Sound of Healing",
-      retreatDate: "Oct 2021",
-      active: true,
-    },
-    {
-      quote:
-        "It was luxurious, personalised and intimate. I learnt so many ways I can practice mindfulness and meditation. It was an experience that truly grounded me.",
-      participantName: "Louisa Y.",
-      href: "/",
-      retreatName: "Sound of Healing",
-      retreatDate: "Jan 2022",
-      active: false,
-    },
-    {
-      quote: "It is definitely a 'must-go' at least once in a lifetime",
-      participantName: "Eugene Y.",
-      href: "/",
-      retreatName: "Sound of Healing",
-      retreatDate: "Nov 2022",
-      active: false,
-    },
-  ];
+  const { baseClass, classes } = props;
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveItem((activeItem) => {
-        return (activeItem + 1) % testimonialsArr.length;
-      });
-      setIntervalId(() => interval);
-    }, 8000);
+    let testimonialsArr = [
+      {
+        quote:
+          "I very much enjoyed the Sunrise Yoga & Meditation session and learnt valuable techniques on how to look inward, reflect and bring forward positive energy.",
+        participantName: "Alex B.",
+        href: "/",
+        retreatName: "Sound of Healing",
+        retreatDate: "Oct 2021",
+        active: true,
+      },
+      {
+        quote:
+          "It was luxurious, personalised and intimate. I learnt so many ways I can practice mindfulness and meditation. It was an experience that truly grounded me.",
+        participantName: "Louisa Y.",
+        href: "/",
+        retreatName: "Sound of Healing",
+        retreatDate: "Jan 2022",
+        active: false,
+      },
+      {
+        quote: "It is definitely a 'must-go' at least once in a lifetime",
+        participantName: "Eugene Y.",
+        href: "/",
+        retreatName: "Sound of Healing",
+        retreatDate: "Nov 2022",
+        active: false,
+      },
+    ];
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [intervalId]);
-
-  const changeActiveItem = (newActiveItem) => {
-    clearInterval(intervalId);
-    setIntervalId(() => 0);
-    setActiveItem(newActiveItem);
-  };
-
-  useEffect(() => {
     const createTestimonialItem = (item) => (
       <TestimonialItem
         key={item.quote}
@@ -66,10 +48,12 @@ export default function Testimonials(props) {
         retreatName={item.retreatName}
         retreatDate={item.retreatDate}
         active={item.active}
-        carouselItemClass={props.classes[`${props.baseClass}--carousel--item`]}
+        carouselItemClass={classes[`${baseClass}--carousel--item`]}
         carouselItemActiveClass={
-          props.classes[`${props.baseClass}--carousel--item--active`]
+          classes[`${baseClass}--carousel--item--active`]
         }
+        classes={classes}
+        baseClass={baseClass}
       />
     );
     const setActiveTestimonial = (testimonials, idx) => {
@@ -87,27 +71,46 @@ export default function Testimonials(props) {
 
     const testimonials = setActiveTestimonial(testimonialsArr, activeItem);
     setTestimonialItems(testimonials.map(createTestimonialItem));
-  }, [activeItem]);
+  }, [activeItem, baseClass, classes]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveItem((activeItem) => {
+        return (activeItem + 1) % testimonialItems.length;
+      });
+      setIntervalId(() => interval);
+    }, 8000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [intervalId, testimonialItems]);
+
+  const changeActiveItem = (newActiveItem) => {
+    clearInterval(intervalId);
+    setIntervalId(() => 0);
+    setActiveItem(newActiveItem);
+  };
 
   return (
-    <section className={props.classes[props.baseClass]}>
+    <section className={classes[baseClass]}>
       <Icon
-        iconClass={props.classes[`${props.baseClass}--icon`]}
+        iconClass={classes[`${baseClass}--icon`]}
         iconName="icon-logo-no-words-sm"
       />
-      <h2 className={props.classes[`${props.baseClass}--title`]}>What Our Guests Say</h2>
+      <h2 className={classes[`${baseClass}--title`]}>What Our Guests Say</h2>
       <Carousel
         carouselItems={testimonialItems}
         activeItem={activeItem}
         changeActiveItem={changeActiveItem}
-        carouselClass={props.classes[`${props.baseClass}--carousel`]}
-        carouselListClass={props.classes[`${props.baseClass}--carousel--list`]}
-        carouselBtnLeftClass={props.classes[`${props.baseClass}--carousel--btn--left`]}
-        carouselBtnRightClass={props.classes[`${props.baseClass}--carousel--btn--right`]}
-        carouselNavClass={props.classes[`${props.baseClass}--carousel--nav`]}
-        carouselNavDotClass={props.classes[`${props.baseClass}--carousel--nav--dot`]}
+        carouselClass={classes[`${baseClass}--carousel`]}
+        carouselListClass={classes[`${baseClass}--carousel--list`]}
+        carouselBtnLeftClass={classes[`${baseClass}--carousel--btn--left`]}
+        carouselBtnRightClass={classes[`${baseClass}--carousel--btn--right`]}
+        carouselNavClass={classes[`${baseClass}--carousel--nav`]}
+        carouselNavDotClass={classes[`${baseClass}--carousel--nav--dot`]}
         carouselNavDotActiveClass={
-          props.classes[`${props.baseClass}--carousel--nav--dot--active`]
+          classes[`${baseClass}--carousel--nav--dot--active`]
         }
       />
     </section>

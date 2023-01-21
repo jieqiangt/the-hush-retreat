@@ -63,20 +63,9 @@ const FAQItemsList = [
 export default function FAQ(props) {
   const [activeItems, setActiveItems] = useState([]);
   const [FAQItems, setFAQItems] = useState([]);
+  const { baseClass, classes } = props;
 
   useEffect(() => {
-    const createFAQItem = (item, idx) => (
-      <FAQItem
-        key={idx}
-        number={String(idx + 1).padStart(2, "0")}
-        question={item.question}
-        answer={item.answer}
-        active={item.active}
-        onClick={setActiveItemHandler}
-        idx={idx}
-      />
-    );
-
     const setActiveItemHandler = (event) => {
       event.preventDefault();
       const clickedIdx = parseInt(event.target.getAttribute("idx"));
@@ -90,6 +79,20 @@ export default function FAQ(props) {
       }
       setActiveItems(() => newActiveItems);
     };
+
+    const createFAQItem = (item, idx) => (
+      <FAQItem
+        key={idx}
+        number={String(idx + 1).padStart(2, "0")}
+        question={item.question}
+        answer={item.answer}
+        active={item.active}
+        onClick={setActiveItemHandler}
+        idx={idx}
+        classes={classes}
+        baseClass={baseClass}
+      />
+    );
 
     const FAQItemsOutput = FAQItemsList.map((item) => ({
       ...item,
@@ -106,16 +109,16 @@ export default function FAQ(props) {
   }, [activeItems]);
 
   return (
-    <div className={props.classes[props.baseClass]} id="faq">
+    <div className={classes[baseClass]} id="faq">
       <Icon
-        iconClass={`${props.classes[`${props.baseClass}--icon`]} hidden`}
+        iconClass={`${classes[`${baseClass}--icon`]} hidden`}
         iconName="icon-logo-no-words-sm"
       />
-      <h2 className={`${props.classes[`${props.baseClass}--title`]} hidden`}>
+      <h2 className={`${classes[`${baseClass}--title`]} hidden`}>
         Frequently Asked Questions
       </h2>
       <Accordion
-        accordionClass={`${props.classes[`${props.baseClass}--accordion`]} hidden`}
+        accordionClass={`${classes[`${baseClass}--accordion`]} hidden`}
         accordionItems={FAQItems}
       />
     </div>

@@ -1,24 +1,34 @@
 import LinkButton from "../ui/LinkButton";
 
 export default function RetreatCta(props) {
+  const {
+    classes,
+    baseClass,
+    title,
+    retreatName,
+    priceText,
+    content,
+    btnText,
+  } = props;
+
   return (
-    <section className={props.classes[`${props.baseClass}`]}>
-      <div className={props.classes[`${props.baseClass}--card`]}>
-        <h2 className={props.classes[`${props.baseClass}--title`]}>
-          {props.title}
+    <section className={classes[`${baseClass}`]}>
+      <div className={classes[`${baseClass}--card`]}>
+        <h2 className={classes[`${baseClass}--title`]}>
+          {title}
         </h2>
-        <h3 className={props.classes[`${props.baseClass}--retreat-name`]}>
-          {props.retreatName}
+        <h3 className={classes[`${baseClass}--retreat-name`]}>
+          {retreatName}
         </h3>
-        <span className={props.classes[`${props.baseClass}--price`]}>
-          {props.priceText}
+        <span className={classes[`${baseClass}--price`]}>
+          {priceText}
         </span>
-        {props.content}
+        {content}
         <LinkButton
           href="#"
-          btnClass={props.classes[`${props.baseClass}--btn`]}
+          btnClass={classes[`${baseClass}--btn`]}
         >
-          {props.btnText}
+          {btnText}
         </LinkButton>
       </div>
     </section>

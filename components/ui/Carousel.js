@@ -2,7 +2,20 @@ import CarouselBtn from "./CarouselBtn";
 import CarouselNav from "./CarouselNav";
 
 export default function Carousel(props) {
-  const numItems = props.carouselItems.length;
+  const {
+    carouselItems,
+    changeActiveItem,
+    carouselClass,
+    carouselListClass,
+    carouselBtnLeftClass,
+    activeItem,
+    carouselBtnRightClass,
+    carouselNavClass,
+    carouselNavDotActiveClass,
+    carouselNavDotClass,
+  } = props;
+
+  const numItems = carouselItems.length;
 
   const changeActiveItemHandler = (event) => {
     event.preventDefault();
@@ -14,21 +27,21 @@ export default function Carousel(props) {
     }
 
     const newActiveItem =
-      (props.activeItem + 1 * direction) % numItems >= 0
-        ? (props.activeItem + 1 * direction) % numItems
+      (activeItem + 1 * direction) % numItems >= 0
+        ? (activeItem + 1 * direction) % numItems
         : numItems - 1;
 
-    props.changeActiveItem(newActiveItem);
+    changeActiveItem(newActiveItem);
   };
 
   return (
-    <div className={`${props.carouselClass} hidden`}>
-      <div className={props.carouselListClass}>
-        {props.carouselItems}
+    <div className={`${carouselClass} hidden`}>
+      <div className={carouselListClass}>
+        {carouselItems}
         <CarouselBtn
-          carouselBtnClass={props.carouselBtnLeftClass}
+          carouselBtnClass={carouselBtnLeftClass}
           slide-direction="left"
-          activeItem={props.activeItem}
+          activeItem={activeItem}
           onClick={changeActiveItemHandler}
         >
           <svg
@@ -48,9 +61,9 @@ export default function Carousel(props) {
           </svg>
         </CarouselBtn>
         <CarouselBtn
-          carouselBtnClass={props.carouselBtnRightClass}
+          carouselBtnClass={carouselBtnRightClass}
           slide-direction="right"
-          activeItem={props.activeItem}
+          activeItem={activeItem}
           onClick={changeActiveItemHandler}
         >
           <svg
@@ -71,12 +84,12 @@ export default function Carousel(props) {
         </CarouselBtn>
       </div>
       <CarouselNav
-        carouselNavClass={props.carouselNavClass}
-        carouselNavDotClass={props.carouselNavDotClass}
-        carouselNavDotActiveClass={props.carouselNavDotActiveClass}
+        carouselNavClass={carouselNavClass}
+        carouselNavDotClass={carouselNavDotClass}
+        carouselNavDotActiveClass={carouselNavDotActiveClass}
         numItems={numItems}
-        activeItem={props.activeItem}
-        changeActiveItem={props.changeActiveItem}
+        activeItem={activeItem}
+        changeActiveItem={changeActiveItem}
       />
     </div>
   );

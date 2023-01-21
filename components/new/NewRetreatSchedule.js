@@ -4,6 +4,7 @@ import Schedule from "../retreat/Schedule";
 import ZLayout from "../ui/ZLayout";
 
 export default function NewRetreatSchedule(props) {
+  const { classes, baseClass } = props;
   const scheduleList = [
     {
       timeRange: "0900 - 0930",
@@ -45,8 +46,8 @@ export default function NewRetreatSchedule(props) {
   const content = (
     <Schedule
       scheduleList={scheduleList}
-      baseClass={props.baseClass}
-      classes={props.classes}
+      baseClass={baseClass}
+      classes={classes}
       btnText={btnText}
       onClick={openModal}
     />
@@ -54,8 +55,8 @@ export default function NewRetreatSchedule(props) {
 
   return (
     <ZLayout
-      classes={props.classes}
-      baseClass={props.baseClass}
+      classes={classes}
+      baseClass={baseClass}
       content={content}
     />
   );

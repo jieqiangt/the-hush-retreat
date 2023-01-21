@@ -11,13 +11,14 @@ export default function NewRetreatBanner(props) {
   const location = "Villa Samadhi & Labrador Nature Reserve";
   const promotion = "Sign up by 26 December for 10% off";
   const btnText = "Register Here";
+  const { classes, baseClass } = props;
 
   const { openModal } = useContext(ModalContext);
 
   return (
     <RetreatBanner
-      classes={props.classes}
-      baseClass={props.baseClass}
+      classes={classes}
+      baseClass={baseClass}
       title={title}
       caption={caption}
       date={date}

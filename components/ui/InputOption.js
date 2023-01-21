@@ -1,16 +1,27 @@
 export default function InputOption(props) {
+  const {
+    type,
+    name,
+    value,
+    onChange,
+    btnClass,
+    labelClass,
+    label,
+    optionGroupClass,
+  } = props;
+
   return (
-    <div className={props.optionGroupClass}>
+    <div className={optionGroupClass}>
       <input
-        type={props.type}
-        id={props.name}
-        name={props.name}
-        value={props.value}
-        onChange={props.onChange}
+        type={type}
+        id={name}
+        name={name}
+        value={value}
+        onChange={onChange}
       />
-      <span className={props.btnClass}>&nbsp;</span>
-      <label htmlFor={props.name} className={props.labelClass}>
-        {props.label}
+      <span className={btnClass}>&nbsp;</span>
+      <label htmlFor={name} className={labelClass}>
+        {label}
       </label>
     </div>
   );

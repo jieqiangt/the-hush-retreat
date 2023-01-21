@@ -1,15 +1,17 @@
 import Link from "next/link";
 
 export default function LinkButton(props) {
-  const renderedBtn = props.href ? (
-    <span className={props.btnClass}>
-      <Link href={props.href}>{props.children}</Link>
+  const { btnClass, onClick, href, children } = props;
+
+  const renderedBtn = href ? (
+    <span className={btnClass}>
+      <Link href={href}>{children}</Link>
     </span>
   ) : (
-    <button className={props.btnClass} onClick={props.onClick}>
-      {props.children}
+    <button className={btnClass} onClick={onClick}>
+      {children}
     </button>
   );
 
-return renderedBtn;
+  return renderedBtn;
 }

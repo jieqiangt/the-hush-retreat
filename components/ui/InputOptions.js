@@ -1,27 +1,34 @@
 import InputOption from "./InputOption";
 
 export default function InputOptions(props) {
-  const options = props.options.map((item) => (
+  const {
+    type,
+    labelClass,
+    optionGroupClass,
+    overallGroupClass,
+    btnClass,
+    legend,
+    legendClass,
+    inputOptions,
+  } = props;
+
+  const options = inputOptions.map((item) => (
     <InputOption
       key={item.name}
       name={item.name}
-      type={props.type}
+      type={type}
       value={item.value}
       label={item.label}
       onChange={item.onChange}
-      labelClass={props.labelClass}
-      optionGroupClass={props.optionGroupClass}
-      btnClass={props.btnClass}
+      labelClass={labelClass}
+      optionGroupClass={optionGroupClass}
+      btnClass={btnClass}
     />
   ));
 
   return (
-    <fieldset className={props.optionsGroupClass}>
-      {props.legend ? (
-        <legend className={props.legendClass}>{props.legend}</legend>
-      ) : (
-        ""
-      )}
+    <fieldset className={overallGroupClass}>
+      {legend ? <legend className={legendClass}>{legend}</legend> : ""}
       {options}
     </fieldset>
   );

@@ -2,6 +2,7 @@ import DescriptionSection from "../ui/DescriptionSection";
 import ImgComposition from "../ui/ImgComposition";
 
 export default function NewRetreatExpect(props) {
+  const { classes, baseClass } = props;
   const title = "What to expect";
   const text = [
     "Immerse yourself in a full-day retreat to release the stories and veils of the past, through somatic practices, purified with a fire ceremony.",
@@ -11,7 +12,7 @@ export default function NewRetreatExpect(props) {
 
   const paragraphs = text.map((item, idx) => <p key={idx}>{item}</p>);
   const content = (
-    <article className={`${props.classes[`${props.baseClass}--aside--content`]} hidden`}>
+    <article className={`${classes[`${baseClass}--aside--content`]} hidden`}>
       {paragraphs}
     </article>
   );
@@ -22,10 +23,10 @@ export default function NewRetreatExpect(props) {
     "/img/meditation-bowl-1-lg.jpg",
   ];
   const img = (
-    <div className={props.classes[`${props.baseClass}--img`]}>
+    <div className={classes[`${baseClass}--img`]}>
       <ImgComposition
-        classes={props.classes}
-        baseClass={props.baseClass}
+        classes={classes}
+        baseClass={baseClass}
         imgUrlList={imgUrlList}
       />
     </div>
@@ -33,8 +34,8 @@ export default function NewRetreatExpect(props) {
 
   return (
     <DescriptionSection
-      classes={props.classes}
-      baseClass={props.baseClass}
+      classes={classes}
+      baseClass={baseClass}
       title={title}
       content={content}
       img={img}

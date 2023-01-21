@@ -2,11 +2,13 @@ import LinkButton from "../ui/LinkButton";
 import ScheduleItem from "./ScheduleItem";
 
 export default function Schedule(props) {
-  const scheduleItems = props.scheduleList.map((item, idx) => (
+  const { classes, baseClass, scheduleList, href, onClick, btnText } = props;
+
+  const scheduleItems = scheduleList.map((item, idx) => (
     <ScheduleItem
       key={idx}
-      classes={props.classes}
-      baseClass={props.baseClass}
+      classes={classes}
+      baseClass={baseClass}
       idx={idx + 1}
       timeRange={item.timeRange}
       iconName={item.iconName}
@@ -17,17 +19,15 @@ export default function Schedule(props) {
   ));
 
   return (
-    <div className={`${props.classes[`${props.baseClass}--layout`]} hidden`}>
-      <h2 className={props.classes[`${props.baseClass}--title`]}>
-        Your Journey
-      </h2>
+    <div className={`${classes[`${baseClass}--layout`]} hidden`}>
+      <h2 className={classes[`${baseClass}--title`]}>Your Journey</h2>
       {scheduleItems}
       <LinkButton
-        btnClass={props.classes[`${props.baseClass}--btn`]}
-        href={props.href}
-        onClick={props.onClick}
+        btnClass={classes[`${baseClass}--btn`]}
+        href={href}
+        onClick={onClick}
       >
-        {props.btnText}
+        {btnText}
       </LinkButton>
     </div>
   );

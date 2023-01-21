@@ -1,8 +1,4 @@
-import classes from "../../sass/pages/home.module.scss";
-
-export default function CorporateCustomers() {
-    return (
-      <section className={classes["corporate"]}>&nbsp;</section>
-    );
-  }
-  
+export default function CorporateCustomers(props) {
+  const { baseClass, classes } = props;
+  return <section className={classes[baseClass]}>&nbsp;</section>;
+}

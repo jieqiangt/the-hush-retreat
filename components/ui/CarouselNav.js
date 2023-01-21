@@ -5,14 +5,20 @@ import CarouselDot from "./CarouselDot";
 export default function CarouselNav(props) {
   const { numItems, activeItem } = props;
   const [carouselDots, setCarouselDots] = useState([]);
-
-  const changeActiveItemHandler = (event) => {
-    event.preventDefault();
-    const newActiveItem = parseInt(event.target.getAttribute("dot-id"));
-    props.changeActiveItem(newActiveItem);
-  };
+  const {
+    carouselNavDotActiveClass,
+    carouselNavDotClass,
+    carouselNavClass,
+    changeActiveItem,
+  } = props;
 
   useEffect(() => {
+    const changeActiveItemHandler = (event) => {
+      event.preventDefault();
+      const newActiveItem = parseInt(event.target.getAttribute("dot-id"));
+      changeActiveItem(newActiveItem);
+    };
+
     const createCarouselDots = (numItems) => {
       const collectorArr = [];
       for (let i = 0; i < numItems; i++) {
@@ -21,7 +27,7 @@ export default function CarouselNav(props) {
           <CarouselDot
             key={i}
             dotId={i}
-            carouselNavDotClass={props.carouselNavDotClass}
+            carouselNavDotClass={carouselNavDotClass}
             onClick={changeActiveItemHandler}
           >
             &nbsp;
@@ -32,8 +38,8 @@ export default function CarouselNav(props) {
             <CarouselDot
               key={i}
               dotId={i}
-              carouselNavDotClass={props.carouselNavDotClass}
-              carouselNavDotActiveClass={props.carouselNavDotActiveClass}
+              carouselNavDotClass={carouselNavDotClass}
+              carouselNavDotActiveClass={carouselNavDotActiveClass}
               onClick={changeActiveItemHandler}
             >
               &nbsp;
@@ -47,7 +53,13 @@ export default function CarouselNav(props) {
 
     const createdDots = createCarouselDots(numItems, activeItem);
     setCarouselDots(createdDots);
-  }, [numItems, activeItem]);
+  }, [
+    numItems,
+    activeItem,
+    carouselNavDotActiveClass,
+    carouselNavDotClass,
+    changeActiveItem,
+  ]);
 
-  return <div className={props.carouselNavClass}>{carouselDots}</div>;
+  return <div className={carouselNavClass}>{carouselDots}</div>;
 }

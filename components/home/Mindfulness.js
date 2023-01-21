@@ -2,6 +2,7 @@ import ZLayout from "../ui/ZLayout";
 import ZLayoutArticle from "../ui/ZLayoutArticle";
 
 export default function Mindfulness(props) {
+  const { baseClass, classes } = props;
   const title = "Mindfulness";
   const caption = "Step away from the chatter & stresses of everyday life";
   const desc =
@@ -11,8 +12,8 @@ export default function Mindfulness(props) {
 
   const content = (
     <ZLayoutArticle
-      classes={props.classes}
-      baseClass={props.baseClass}
+      classes={classes}
+      baseClass={baseClass}
       title={title}
       caption={caption}
       desc={desc}
@@ -23,8 +24,8 @@ export default function Mindfulness(props) {
 
   return (
     <ZLayout
-      classes={props.classes}
-      baseClass={props.baseClass}
+      classes={classes}
+      baseClass={baseClass}
       content={content}
     />
   );

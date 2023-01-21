@@ -1,24 +1,30 @@
 import LinkButton from "./LinkButton";
 
 export default function ZLayoutArticle(props) {
+  const { classes, baseClass, title, caption, desc, btnText, btnHref } = props;
+
   return (
-    <div className={props.classes[`${props.baseClass}--article`]}>
-      <div className={`${props.classes[`${props.baseClass}--article--box`]} hidden`}>
-        <h2 className={props.classes[`${props.baseClass}--article--title`]}>
-          {props.title}
+    <div className={classes[`${baseClass}--article`]}>
+      <div
+        className={`${
+          classes[`${baseClass}--article--box`]
+        } hidden`}
+      >
+        <h2 className={classes[`${baseClass}--article--title`]}>
+          {title}
         </h2>
-        <h3 className={props.classes[`${props.baseClass}--article--caption`]}>
-          {props.caption}
+        <h3 className={classes[`${baseClass}--article--caption`]}>
+          {caption}
         </h3>
-        <p className={props.classes[`${props.baseClass}--article--desc`]}>
-          {props.desc}
+        <p className={classes[`${baseClass}--article--desc`]}>
+          {desc}
         </p>
-        {props.btnText && props.btnHref ? (
+        {btnText && btnHref ? (
           <LinkButton
-            btnClass={props.classes[`${props.baseClass}--article--btn`]}
-            href={props.btnHref}
+            btnClass={classes[`${baseClass}--article--btn`]}
+            href={btnHref}
           >
-            {props.btnText}
+            {btnText}
           </LinkButton>
         ) : (
           ""

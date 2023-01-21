@@ -4,8 +4,8 @@ import { useContext, useEffect } from "react";
 import NotificationContext from "../../store/notificationContext";
 import NotificationModal from "../ui/NotificationModal";
 
-NotificationModal
 export default function Layout(props) {
+  const { baseClass, classes, modal, children } = props;
   const { notification: activeNotification, hideNotification } =
     useContext(NotificationContext);
 
@@ -24,7 +24,7 @@ export default function Layout(props) {
 
   return (
     <main>
-      {props.modal ? props.modal : ""}
+      {modal ? modal : ""}
       {activeNotification && (
         <NotificationModal
           title={activeNotification.title}
@@ -33,12 +33,12 @@ export default function Layout(props) {
           onClick={hideNotification}
         />
       )}
-      <div className={props.classes[props.baseClass]}>
-        <NavBar navClass={props.classes[`${props.baseClass}--nav`]} />
-        {props.children}
+      <div className={classes[baseClass]}>
+        <NavBar navClass={classes[`${baseClass}--nav`]}/>
+        {children}
         <Footer
-          footerClass={props.classes[`${props.baseClass}--footer`]}
-          footerIconClass={props.classes[`${props.baseClass}--footer--icon`]}
+          footerClass={classes[`${baseClass}--footer`]}
+          footerIconClass={classes[`${baseClass}--footer--icon`]}
         />
       </div>
     </main>

@@ -1,24 +1,35 @@
-import classes from "../../sass/pages/home.module.scss";
 import LinkButton from "../ui/LinkButton";
 
 export default function TestimonialItem(props) {
-  const activeItemClass = props.active ? props.carouselItemActiveClass : "";
+  const {
+    baseClass,
+    classes,
+    active,
+    quote,
+    href,
+    carouselItemClass,
+    carouselItemActiveClass,
+    retreatName,
+    participantName,
+    retreatDate
+  } = props;
+  const activeItemClass = active ? carouselItemActiveClass : "";
 
   return (
     <div
-      className={`${classes["testimonials--item"]} ${props.carouselItemClass} ${activeItemClass}`}
+      className={`${classes[`${baseClass}--item`]} ${carouselItemClass} ${activeItemClass}`}
     >
-      <blockquote className={classes["testimonials--item--quote"]}>
-        &#x275D; {props.quote} &#x275E;
+      <blockquote className={classes[`${baseClass}--item--quote`]}>
+        &#x275D; {quote} &#x275E;
       </blockquote>
       <LinkButton
-        btnClass={classes["testimonials--item--retreat"]}
-        href={props.href}
+        btnClass={classes[`${baseClass}--item--retreat`]}
+        href={href}
       >
-        {props.retreatName}
+        {retreatName}
       </LinkButton>
-      <span className={classes["testimonials--item--name"]}>
-        {props.participantName} &#8211; <time>{props.retreatDate}</time>
+      <span className={classes[`${baseClass}--item--name`]}>
+        {participantName} &#8211; <time>{retreatDate}</time>
       </span>
     </div>
   );

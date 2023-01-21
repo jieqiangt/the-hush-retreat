@@ -1,8 +1,9 @@
 export default function ZLayout(props) {
+  const { classes, baseClass, content } = props;
   return (
-    <section className={props.classes[props.baseClass]}>
-      <div className={`${props.classes[`${props.baseClass}--img`]} hidden`} />
-      {props.content}
+    <section className={classes[baseClass]}>
+      <div className={`${classes[`${baseClass}--img`]} hidden`} />
+      {content}
     </section>
   );
 }

@@ -1,6 +1,7 @@
 import DescriptionSection from "../ui/DescriptionSection";
 
 export default function NewRetreatIntentions(props) {
+  const { classes, baseClass } = props;
   const title = "Set your intentions";
   const text = [
     "Immerse yourself in a full-day retreat to release the stories and veils of the past.",
@@ -12,18 +13,18 @@ export default function NewRetreatIntentions(props) {
   const content = (
     <article
       className={`${
-        props.classes[`${props.baseClass}--aside--content`]
+        classes[`${baseClass}--aside--content`]
       } hidden`}
     >
       {paragraphs}
     </article>
   );
-  const img = <div className={`${props.classes[`${props.baseClass}--img`]} hidden`} />;
+  const img = <div className={`${classes[`${baseClass}--img`]} hidden`} />;
 
   return (
     <DescriptionSection
-      classes={props.classes}
-      baseClass={props.baseClass}
+      classes={classes}
+      baseClass={baseClass}
       title={title}
       img={img}
       content={content}

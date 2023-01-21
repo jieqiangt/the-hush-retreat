@@ -1,3 +1,4 @@
 export default function Accordion(props) {
-  return <div className={props.accordionClass}>{props.accordionItems}</div>;
+  const { accordionItems, accordionClass } = props;
+  return <div className={accordionClass}>{accordionItems}</div>;
 }

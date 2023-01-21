@@ -4,31 +4,30 @@ import LinkButton from "./LinkButton";
 import ModalContext from "../../store/modalContext";
 
 export default function Modal(props) {
+  const { classes, baseClass, img, aside } = props;
   const { modalIsActive, closeModal } = useContext(ModalContext);
   const [activeClass, setActiveClass] = useState();
 
   useEffect(() => {
     modalIsActive
-      ? setActiveClass(props.classes[`${props.baseClass}--modal--active`])
+      ? setActiveClass(classes[`${baseClass}--modal--active`])
       : setActiveClass(null);
-  }, [modalIsActive, props.classes, props.baseClass]);
+  }, [modalIsActive, classes, baseClass]);
 
   return (
-    <div
-      className={`${props.classes[`${props.baseClass}--modal`]} ${activeClass}`}
-    >
-      <div className={props.classes[`${props.baseClass}--modal--box`]}>
+    <div className={`${classes[`${baseClass}--modal`]} ${activeClass}`}>
+      <div className={classes[`${baseClass}--modal--box`]}>
         <LinkButton
-          btnClass={props.classes[`${props.baseClass}--modal--close`]}
+          btnClass={classes[`${baseClass}--modal--close`]}
           onClick={closeModal}
         >
           <Icon
-            iconClass={props.classes[`${props.baseClass}--modal--close--icon`]}
+            iconClass={classes[`${baseClass}--modal--close--icon`]}
             iconName="icon-cross"
           ></Icon>
         </LinkButton>
-        {props.img}
-        {props.aside}
+        {img}
+        {aside}
       </div>
     </div>
   );

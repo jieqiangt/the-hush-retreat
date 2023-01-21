@@ -19,12 +19,12 @@ export default function Home() {
       </Head>
       <Layout classes={classes} baseClass="home">
         <Hero classes={classes} baseClass="hero" />
-        <CorporateCustomers />
+        <CorporateCustomers classes={classes} baseClass="corporate" />
         <Bespoke classes={classes} baseClass="bespoke" />
         <Immersive classes={classes} baseClass="immersive" />
         <Mindfulness classes={classes} baseClass="mindfulness" />
         <Testimonials classes={classes} baseClass="testimonials" />
-        <Newsletter classes={classes} baseClass="newsletter"/>
+        <Newsletter classes={classes} baseClass="newsletter" />
       </Layout>
     </Fragment>
   );

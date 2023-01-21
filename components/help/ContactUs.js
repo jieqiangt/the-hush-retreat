@@ -3,9 +3,12 @@ import DescriptionSection from "../ui/DescriptionSection";
 import InputBar from "../ui/InputBar";
 
 export default function ContactUs(props) {
+
+  const { baseClass, classes } = props;
+  
   const content = (
-    <form action="#" className={props.classes[`${props.baseClass}--form`]}>
-      <article className={props.classes[`${props.baseClass}--form--article`]}>
+    <form action="#" className={classes[`${baseClass}--form`]}>
+      <article className={classes[`${baseClass}--form--article`]}>
         Having a burning question for a retreat or looking to collaborate with
         us? <br />
         Do drop us a message using the form below or through email at
@@ -18,12 +21,12 @@ export default function ContactUs(props) {
         type="text"
         inputName="contact-us--form--first-name"
         inputPlaceholder="First Name"
-        inputGroupClass={props.classes[`${props.baseClass}--form--first-name`]}
+        inputGroupClass={classes[`${baseClass}--form--first-name`]}
         inputClass={
-          props.classes[`${props.baseClass}--form--first-name--input`]
+          classes[`${baseClass}--form--first-name--input`]
         }
         labelClass={
-          props.classes[`${props.baseClass}--form--first-name--label`]
+          classes[`${baseClass}--form--first-name--label`]
         }
       />
       <InputBar
@@ -31,50 +34,50 @@ export default function ContactUs(props) {
         type="text"
         inputName="contact-us--form--last-name"
         inputPlaceholder="Last Name"
-        inputGroupClass={props.classes[`${props.baseClass}--form--last-name`]}
-        inputClass={props.classes[`${props.baseClass}--form--last-name--input`]}
-        labelClass={props.classes[`${props.baseClass}--form--last-name--label`]}
+        inputGroupClass={classes[`${baseClass}--form--last-name`]}
+        inputClass={classes[`${baseClass}--form--last-name--input`]}
+        labelClass={classes[`${baseClass}--form--last-name--label`]}
       />
       <InputBar
         label="Email"
         type="email"
         inputName="contact-us--form--email"
         inputPlaceholder="Email"
-        inputGroupClass={props.classes[`${props.baseClass}--form--email`]}
-        inputClass={props.classes[`${props.baseClass}--form--email--input`]}
-        labelClass={props.classes[`${props.baseClass}--form--email--label`]}
+        inputGroupClass={classes[`${baseClass}--form--email`]}
+        inputClass={classes[`${baseClass}--form--email--input`]}
+        labelClass={classes[`${baseClass}--form--email--label`]}
       />
       <InputBar
         label="Subject"
         type="text"
         inputName="contact-us--form--subject"
         inputPlaceholder="Subject"
-        inputGroupClass={props.classes[`${props.baseClass}--form--subject`]}
-        inputClass={props.classes[`${props.baseClass}--form--subject--input`]}
-        labelClass={props.classes[`${props.baseClass}--form--subject--label`]}
+        inputGroupClass={classes[`${baseClass}--form--subject`]}
+        inputClass={classes[`${baseClass}--form--subject--input`]}
+        labelClass={classes[`${baseClass}--form--subject--label`]}
       />
       <InputBar
         label="Message"
         type="textarea"
         inputName="contact-us--form--message"
         inputPlaceholder="Message"
-        inputGroupClass={props.classes[`${props.baseClass}--form--message`]}
-        inputClass={props.classes[`${props.baseClass}--form--message--input`]}
-        labelClass={props.classes[`${props.baseClass}--form--message--label`]}
+        inputGroupClass={classes[`${baseClass}--form--message`]}
+        inputClass={classes[`${baseClass}--form--message--input`]}
+        labelClass={classes[`${baseClass}--form--message--label`]}
         rows="8"
       />
-      <button className={props.classes[`${props.baseClass}--form--btn`]}>
+      <button className={classes[`${baseClass}--form--btn`]}>
         Send Message
       </button>
     </form>
   );
 
-  const img = <div className={`${props.classes[`${props.baseClass}--img`]} hidden`} />;
+  const img = <div className={`${classes[`${baseClass}--img`]} hidden`} />;
 
   return (
     <DescriptionSection
-      classes={props.classes}
-      baseClass={props.baseClass}
+      classes={classes}
+      baseClass={baseClass}
       title="Connect with us"
       content={content}
       img={img}

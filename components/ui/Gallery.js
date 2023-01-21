@@ -1,12 +1,14 @@
 import GalleryItem from "./GalleryItem";
 
 export default function Gallery(props) {
-  const galleryItems = props.galleryDetails.map((item, idx) => (
+  const { classes, baseClass, galleryDetails } = props;
+
+  const galleryItems = galleryDetails.map((item, idx) => (
     <GalleryItem
       key={idx}
       idx={idx}
-      baseClass={props.baseClass}
-      classes={props.classes}
+      baseClass={baseClass}
+      classes={classes}
       alt={item.alt}
       src={item.src}
       width={item.width}
@@ -14,5 +16,9 @@ export default function Gallery(props) {
     />
   ));
 
-  return <div className={`${props.classes[`${props.baseClass}--gallery`]} hidden`}>{galleryItems}</div>;
+  return (
+    <div className={`${classes[`${baseClass}--gallery`]} hidden`}>
+      {galleryItems}
+    </div>
+  );
 }

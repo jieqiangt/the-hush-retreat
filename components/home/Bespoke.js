@@ -8,11 +8,12 @@ export default function Bespoke(props) {
     "That is why, we curate small-group retreats with end-to-end butler-grade service, to provide you with an transformative wellnessexperience. Your role is to show up, sit back and unwind - we take care of the rest.";
   const btnText = "Book Now";
   const btnHref = "/upcoming";
+  const { baseClass, classes } = props;
 
   const content = (
     <ZLayoutArticle
-      classes={props.classes}
-      baseClass={props.baseClass}
+      classes={classes}
+      baseClass={baseClass}
       title={title}
       caption={caption}
       desc={desc}
@@ -23,8 +24,8 @@ export default function Bespoke(props) {
 
   return (
     <ZLayout
-      classes={props.classes}
-      baseClass={props.baseClass}
+      classes={classes}
+      baseClass={baseClass}
       content={content}
     />
   );

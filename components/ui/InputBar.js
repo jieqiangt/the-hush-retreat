@@ -1,65 +1,80 @@
 import { Fragment } from "react";
 
 export default function InputBar(props) {
+  const {
+    type,
+    inputGroupClass,
+    inputName,
+    value,
+    inputClass,
+    onChange,
+    inputPlaceholder,
+    labelClass,
+    label,
+    valid,
+    invalidText,
+    rows,
+    datalistId
+  } = props;
   return (
     <Fragment>
-      <div className={props.inputGroupClass}>
-        {props.type === "text" || props.type === "email" ? (
+      <div className={inputGroupClass}>
+        {type === "text" || type === "email" ? (
           <Fragment>
             <input
-              type={props.type}
-              name={props.inputName}
-              value={props.value}
-              id={props.inputName}
-              className={props.inputClass}
-              onChange={props.onChange}
-              placeholder={props.inputPlaceholder}
+              type={type}
+              name={inputName}
+              value={value}
+              id={inputName}
+              className={inputClass}
+              onChange={onChange}
+              placeholder={inputPlaceholder}
             />
-            <label htmlFor={props.inputName} className={props.labelClass}>
-              {props.label}
+            <label htmlFor={inputName} className={labelClass}>
+              {label}
             </label>
-            {!props.valid ? <span>{props.invalidText}</span> : ""}
+            {!valid ? <span>{invalidText}</span> : ""}
           </Fragment>
         ) : (
           ""
         )}
-        {props.type === "textarea" ? (
+        {type === "textarea" ? (
           <Fragment>
             <textarea
-              name={props.inputName}
-              id={props.inputName}
-              value={props.value}
-              onChange={props.onChange}
-              className={props.inputClass}
-              placeholder={props.inputPlaceholder}
-              rows={props.rows}
+              name={inputName}
+              id={inputName}
+              value={value}
+              onChange={onChange}
+              className={inputClass}
+              placeholder={inputPlaceholder}
+              rows={rows}
             />
-            <label htmlFor={props.inputName} className={props.labelClass}>
-              {props.label}
+            <label htmlFor={inputName} className={labelClass}>
+              {label}
             </label>
           </Fragment>
         ) : (
           ""
         )}
-        {props.type === "number" ? (
+        {type === "number" ? (
           <Fragment>
             <input
               type="text"
               inputMode="numeric"
               pattern="\d*"
-              name={props.inputName}
-              id={props.inputName}
-              value={props.value}
-              onChange={props.onChange}
-              className={props.inputClass}
-              placeholder={props.inputPlaceholder}
-              list={props.datalistId}
+              name={inputName}
+              id={inputName}
+              value={value}
+              onChange={onChange}
+              className={inputClass}
+              placeholder={inputPlaceholder}
+              list={datalistId}
             />
-            <label htmlFor={props.inputName} className={props.labelClass}>
-              {props.label}
+            <label htmlFor={inputName} className={labelClass}>
+              {label}
             </label>
-            <datalist id={props.datalistId}>
-              {props.datalist.map((item) => (
+            <datalist id={datalistId}>
+              {datalist.map((item) => (
                 <option key={item} value={item}>
                   {item}
                 </option>

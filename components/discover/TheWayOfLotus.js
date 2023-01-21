@@ -2,8 +2,11 @@ import { Fragment } from "react";
 import DescriptionSection from "../ui/DescriptionSection";
 
 export default function TheWayOfLotus(props) {
+
+  const { baseClass, classes } = props;
+  
   const content = (
-    <div className={`${props.classes[`${props.baseClass}--aside--content`]} hidden`}>
+    <div className={`${classes[`${baseClass}--aside--content`]} hidden`}>
       <p>
         It started with a lotus. The lotus flower is a symbol of daily
         resurrection. Even with its roots submerged in the dirtiest waters, it
@@ -25,12 +28,12 @@ export default function TheWayOfLotus(props) {
       </p>
     </div>
   );
-  const img = <div className={`${props.classes[`${props.baseClass}--img`]} hidden`} />;
+  const img = <div className={`${classes[`${baseClass}--img`]} hidden`} />;
 
   return (
     <DescriptionSection
-      classes={props.classes}
-      baseClass={props.baseClass}
+      classes={classes}
+      baseClass={baseClass}
       title="The Way of The Lotus"
       content={content}
       img={img}

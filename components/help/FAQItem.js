@@ -1,23 +1,36 @@
-import classes from "../../sass/pages/help.module.scss";
 import Icon from "../ui/Icon";
 
 export default function FAQItem(props) {
-  const activeClass = props.active ? classes["faq--item--active"] : "";
-  const activeArrClass = props.active ? classes["faq--item--icon--active"] : "";
+  const { idx, classes, baseClass, number, question, onClick, active, answer } =
+    props;
+  const activeClass = active ? classes[`${baseClass}--item--active`] : "";
+  const activeArrClass = active
+    ? classes[`${baseClass}--item--icon--active`]
+    : "";
 
   return (
-    <div idx={props.idx} className={classes["faq--item"]}>
+    <div idx={idx} className={classes[`${baseClass}--item`]}>
       <button
-        idx={props.idx}
-        className={classes["faq--item--box"]}
-        onClick={props.onClick}
+        idx={idx}
+        className={classes[`${baseClass}--item--box`]}
+        onClick={onClick}
       >
-        <span idx={props.idx} className={classes["faq--item--number"]}>{props.number}</span>
-        <span idx={props.idx} className={classes["faq--item--question"]}>{props.question}</span>
-        <Icon idx={props.idx} iconClass={`${classes["faq--item--icon"]} ${activeArrClass}`} iconName="icon-rarr-circle" />
+        <span idx={idx} className={classes[`${baseClass}--item--number`]}>
+          {number}
+        </span>
+        <span idx={idx} className={classes[`${baseClass}--item--question`]}>
+          {question}
+        </span>
+        <Icon
+          idx={idx}
+          iconClass={`${classes[`${baseClass}--item--icon`]} ${activeArrClass}`}
+          iconName="icon-rarr-circle"
+        />
       </button>
-      <span className={`${classes["faq--item--answer"]} ${activeClass}`}>
-        {props.answer}
+      <span
+        className={`${classes[`${baseClass}--item--answer`]} ${activeClass}`}
+      >
+        {answer}
       </span>
     </div>
   );

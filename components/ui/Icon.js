@@ -1,7 +1,9 @@
 export default function Icon(props) {
+  const { iconClass, idx, iconName } = props;
+
   return (
-    <svg idx={props.idx} className={props.iconClass}>
-      <use idx={props.idx} href={`icons/sprite.svg#${props.iconName}`}></use>
+    <svg idx={idx} className={iconClass}>
+      <use idx={idx} href={`icons/sprite.svg#${iconName}`}></use>
     </svg>
   );
 }

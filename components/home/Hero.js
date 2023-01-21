@@ -3,18 +3,21 @@ import LinkButton from "../ui/LinkButton";
 import Banner from "../ui/Banner";
 
 export default function Hero(props) {
-
-  const title="Modern Wellness Lifestyle"
+  const { baseClass, classes } = props;
+  const title = "Modern Wellness Lifestyle";
   const bannerDetails = (
     <Fragment>
-      <article className={props.classes[`${props.baseClass}--article`]}>
+      <article className={classes[`${baseClass}--article`]}>
         Luxurious tranquil retreats,
         <br />
         embrace mindfullness,
         <br />
         for your inner soul
       </article>
-      <LinkButton href="upcoming" btnClass={props.classes[`${props.baseClass}--btn`]}>
+      <LinkButton
+        href="upcoming"
+        btnClass={classes[`${baseClass}--btn`]}
+      >
         Start Healing Now
       </LinkButton>
     </Fragment>
@@ -24,8 +27,8 @@ export default function Hero(props) {
     <Fragment>
       <Banner
         title={title}
-        baseClass={props.baseClass}
-        classes={props.classes}
+        baseClass={baseClass}
+        classes={classes}
         bannerDetails={bannerDetails}
       />
     </Fragment>

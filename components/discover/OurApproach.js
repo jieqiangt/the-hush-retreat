@@ -20,49 +20,46 @@ export default function OurApproach(props) {
       desc: "We partner with like-minded vendors and brands to curate bespoke experiences for you. If you share our vision, connect with us!",
     },
   ];
+  const { baseClass, classes } = props;
 
   return (
-    <section className={props.classes[props.baseClass]}>
+    <section className={classes[baseClass]}>
       <Icon
-        iconClass={`${props.classes[`${props.baseClass}--icon`]} hidden`}
+        iconClass={`${classes[`${baseClass}--icon`]} hidden`}
         iconName="icon-logo-no-words-sm"
       />
-      <h2 className={`${props.classes[`${props.baseClass}--title`]} hidden`}>
+      <h2 className={`${classes[`${baseClass}--title`]} hidden`}>
         Our Approach
       </h2>
       <FeatureBox
         feature-box-items={features}
-        featureBoxListClass={props.classes[`${props.baseClass}--feature-box`]}
-        featureBoxItemClass={
-          `${props.classes[`${props.baseClass}--feature-box--item`]}`
-        }
-        featureBoxItemOuterClass={
-          `${props.classes[`${props.baseClass}--feature-box--item--outer`]} hidden`
-        }
-        featureBoxItemImgClass={
-          props.classes[`${props.baseClass}--feature-box--item--img`]
-        }
+        featureBoxListClass={classes[`${baseClass}--feature-box`]}
+        featureBoxItemClass={`${classes[`${baseClass}--feature-box--item`]}`}
+        featureBoxItemOuterClass={`${
+          classes[`${baseClass}--feature-box--item--outer`]
+        } hidden`}
+        featureBoxItemImgClass={classes[`${baseClass}--feature-box--item--img`]}
         featureBoxItemTitleClass={
-          props.classes[`${props.baseClass}--feature-box--item--title`]
+          classes[`${baseClass}--feature-box--item--title`]
         }
         featureBoxItemDescClass={
-          props.classes[`${props.baseClass}--feature-box--item--desc`]
+          classes[`${baseClass}--feature-box--item--desc`]
         }
       />
-      <div className={`${props.classes[`${props.baseClass}--cta`]} hidden`}>
-        <div className={props.classes[`${props.baseClass}--cta--box`]}>
-          <div className={props.classes[`${props.baseClass}--cta--outer`]}>
+      <div className={`${classes[`${baseClass}--cta`]} hidden`}>
+        <div className={classes[`${baseClass}--cta--box`]}>
+          <div className={classes[`${baseClass}--cta--outer`]}>
             <LinkButton
               href="/upcoming"
-              btnClass={props.classes[`${props.baseClass}--cta--btn`]}
+              btnClass={classes[`${baseClass}--cta--btn`]}
             >
               Start Embracing Mindfulness
             </LinkButton>
           </div>
-          <div className={props.classes[`${props.baseClass}--cta--outer`]}>
+          <div className={classes[`${baseClass}--cta--outer`]}>
             <LinkButton
               href="/explore"
-              btnClass={props.classes[`${props.baseClass}--cta--btn`]}
+              btnClass={classes[`${baseClass}--cta--btn`]}
             >
               Explore Previous Retreats
             </LinkButton>

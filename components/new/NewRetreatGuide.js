@@ -1,6 +1,7 @@
 import DescriptionSection from "../ui/DescriptionSection";
 
 export default function NewRetreatGuide(props) {
+  const { classes, baseClass } = props;
   const title = "Stephanie Chaunte Leong";
   const text = [
     "I am here as your guide to lead you back home to yourself through your body.",
@@ -11,16 +12,16 @@ export default function NewRetreatGuide(props) {
 
   const paragraphs = text.map((item, idx) => <p key={idx}>{item}</p>);
   const content = (
-    <article className={`${props.classes[`${props.baseClass}--aside--content`]} hidden`}>
+    <article className={`${classes[`${baseClass}--aside--content`]} hidden`}>
       {paragraphs}
     </article>
   );
-  const img = <div className={`${props.classes[`${props.baseClass}--img`]} hidden`} />;
+  const img = <div className={`${classes[`${baseClass}--img`]} hidden`} />;
 
   return (
     <DescriptionSection
-      classes={props.classes}
-      baseClass={props.baseClass}
+      classes={classes}
+      baseClass={baseClass}
       content={content}
       title={title}
       img={img}

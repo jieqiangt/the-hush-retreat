@@ -19,14 +19,10 @@ export default function BookingForm(props) {
   const { closeModal } = useContext(ModalContext);
   const router = useRouter();
   const notificationCtx = useContext(NotificationContext);
+  const { baseClass, classes, retreatList } = props;
 
-  const {
-    firstNameValid,
-    lastNameValid,
-    emailValid,
-    phoneValid,
-    formValid,
-  } = bookingState;
+  const { firstNameValid, lastNameValid, emailValid, phoneValid, formValid } =
+    bookingState;
 
   const fields = {
     retreatName: bookingState.retreatName,
@@ -125,7 +121,7 @@ export default function BookingForm(props) {
   ];
 
   return (
-    <form action="#" className={props.classes[`${props.baseClass}--form`]}>
+    <form action="#" className={classes[`${baseClass}--form`]}>
       <InputBar
         label="First Name"
         type="text"
@@ -133,13 +129,9 @@ export default function BookingForm(props) {
         inputPlaceholder="First Name"
         value={fields.firstName}
         onChange={changeHandlers["firstName"]}
-        inputGroupClass={props.classes[`${props.baseClass}--form--first-name`]}
-        inputClass={
-          props.classes[`${props.baseClass}--form--first-name--input`]
-        }
-        labelClass={
-          props.classes[`${props.baseClass}--form--first-name--label`]
-        }
+        inputGroupClass={classes[`${baseClass}--form--first-name`]}
+        inputClass={classes[`${baseClass}--form--first-name--input`]}
+        labelClass={classes[`${baseClass}--form--first-name--label`]}
         valid={firstNameValid}
         invalidText="Your first name is required."
       />
@@ -150,9 +142,9 @@ export default function BookingForm(props) {
         inputPlaceholder="Last Name"
         value={fields.lastName}
         onChange={changeHandlers["lastName"]}
-        inputGroupClass={props.classes[`${props.baseClass}--form--last-name`]}
-        inputClass={props.classes[`${props.baseClass}--form--last-name--input`]}
-        labelClass={props.classes[`${props.baseClass}--form--last-name--label`]}
+        inputGroupClass={classes[`${baseClass}--form--last-name`]}
+        inputClass={classes[`${baseClass}--form--last-name--input`]}
+        labelClass={classes[`${baseClass}--form--last-name--label`]}
         valid={lastNameValid}
         invalidText="Your last name is required."
       />
@@ -163,9 +155,9 @@ export default function BookingForm(props) {
         inputPlaceholder="Email"
         value={fields.email}
         onChange={changeHandlers["email"]}
-        inputGroupClass={props.classes[`${props.baseClass}--form--email`]}
-        inputClass={props.classes[`${props.baseClass}--form--email--input`]}
-        labelClass={props.classes[`${props.baseClass}--form--email--label`]}
+        inputGroupClass={classes[`${baseClass}--form--email`]}
+        inputClass={classes[`${baseClass}--form--email--input`]}
+        labelClass={classes[`${baseClass}--form--email--label`]}
         valid={emailValid}
         invalidText="A valid email is required."
       />
@@ -178,18 +170,18 @@ export default function BookingForm(props) {
         onChange={changeHandlers["phone"]}
         valid={phoneValid}
         invalidText="A valid mobile number is required."
-        inputGroupClass={props.classes[`${props.baseClass}--form--contact`]}
-        inputClass={props.classes[`${props.baseClass}--form--contact--input`]}
-        labelClass={props.classes[`${props.baseClass}--form--contact--label`]}
+        inputGroupClass={classes[`${baseClass}--form--contact`]}
+        inputClass={classes[`${baseClass}--form--contact--input`]}
+        labelClass={classes[`${baseClass}--form--contact--label`]}
       />
       <InputSelect
         label="No. of Retreatees"
         inputName="upcoming--form--num"
         value={fields.numRetreatees}
         onChange={changeHandlers["numRetreatees"]}
-        inputGroupClass={props.classes[`${props.baseClass}--form--num`]}
-        inputClass={props.classes[`${props.baseClass}--form--num--input`]}
-        labelClass={props.classes[`${props.baseClass}--form--num--label`]}
+        inputGroupClass={classes[`${baseClass}--form--num`]}
+        inputClass={classes[`${baseClass}--form--num--input`]}
+        labelClass={classes[`${baseClass}--form--num--label`]}
         inputOptions={[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
           <option key={item} value={item}>
             {item}
@@ -201,16 +193,10 @@ export default function BookingForm(props) {
         inputName="upcoming--form--retreat-name"
         value={fields.retreatName}
         onChange={changeHandlers["retreatName"]}
-        inputGroupClass={
-          props.classes[`${props.baseClass}--form--retreat-name`]
-        }
-        inputClass={
-          props.classes[`${props.baseClass}--form--retreat-name--input`]
-        }
-        labelClass={
-          props.classes[`${props.baseClass}--form--retreat-name--label`]
-        }
-        inputOptions={props.retreatList.map((item) => (
+        inputGroupClass={classes[`${baseClass}--form--retreat-name`]}
+        inputClass={classes[`${baseClass}--form--retreat-name--input`]}
+        labelClass={classes[`${baseClass}--form--retreat-name--label`]}
+        inputOptions={retreatList.map((item) => (
           <option key={item.retreatId} value={item.retreatId}>
             {item.retreatName}
           </option>
@@ -223,26 +209,22 @@ export default function BookingForm(props) {
         inputPlaceholder="Message"
         value={fields.message}
         onChange={changeHandlers["message"]}
-        inputGroupClass={props.classes[`${props.baseClass}--form--message`]}
-        inputClass={props.classes[`${props.baseClass}--form--message--input`]}
-        labelClass={props.classes[`${props.baseClass}--form--message--label`]}
+        inputGroupClass={classes[`${baseClass}--form--message`]}
+        inputClass={classes[`${baseClass}--form--message--input`]}
+        labelClass={classes[`${baseClass}--form--message--label`]}
         rows="3"
       />
       <InputOptions
-        options={radioOptions}
+        inputOptions={radioOptions}
         type="checkbox"
-        optionsGroupClass={props.classes[`${props.baseClass}--form--vaccinate`]}
-        legendClass={
-          props.classes[`${props.baseClass}--form--vaccinate--legend`]
-        }
-        optionGroupClass={
-          props.classes[`${props.baseClass}--form--vaccinate--group`]
-        }
-        labelClass={props.classes[`${props.baseClass}--form--vaccinate--label`]}
-        btnClass={props.classes[`${props.baseClass}--form--vaccinate--btn`]}
+        optionsGroupClass={classes[`${baseClass}--form--vaccinate`]}
+        legendClass={classes[`${baseClass}--form--vaccinate--legend`]}
+        optionGroupClass={classes[`${baseClass}--form--vaccinate--group`]}
+        labelClass={classes[`${baseClass}--form--vaccinate--label`]}
+        btnClass={classes[`${baseClass}--form--vaccinate--btn`]}
       />
       <button
-        className={props.classes[`${props.baseClass}--form--btn`]}
+        className={classes[`${baseClass}--form--btn`]}
         onClick={bookingHandler}
         disabled={!formValid}
       >

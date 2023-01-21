@@ -1,6 +1,17 @@
 import { Fragment } from "react";
 
 export default function InputSelect(props) {
+  const {
+    inputGroupClass,
+    inputName,
+    inputClass,
+    value,
+    onChange,
+    inputOptions,
+    labelClass,
+    label,
+  } = props;
+
   return (
     <Fragment>
       <div className={props.inputGroupClass}>

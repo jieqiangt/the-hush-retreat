@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import RetreatCta from "../retreat/RetreatCta";
 
 export default function NewRetreatCta(props) {
+  const { classes, baseClass } = props;
   const text = [
     "A Full-Day Program designed to Release & Renew",
     "Cold-Pressed Juice from MouGou Juice",
@@ -10,17 +11,17 @@ export default function NewRetreatCta(props) {
   ];
 
   const paragraphs = text.map((item, idx) => (
-    <p key={idx} className={props.classes[`${props.baseClass}--content-desc`]}>
+    <p key={idx} className={classes[`${baseClass}--content-desc`]}>
       {item}
     </p>
   ));
 
   const content = (
     <Fragment>
-      <span className={props.classes[`${props.baseClass}--content--title`]}>
+      <span className={classes[`${baseClass}--content--title`]}>
         Inclusions:
       </span>
-      <article className={props.classes[`${props.baseClass}--content`]}>
+      <article className={classes[`${baseClass}--content`]}>
         {paragraphs}
       </article>
     </Fragment>
@@ -28,8 +29,8 @@ export default function NewRetreatCta(props) {
 
   return (
     <RetreatCta
-      baseClass={props.baseClass}
-      classes={props.classes}
+      baseClass={baseClass}
+      classes={classes}
       title="Retreat Details"
       retreatName="Release & Renew"
       priceText="$399/Pax"

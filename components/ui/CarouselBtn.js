@@ -1,11 +1,12 @@
 export default function CarouselBtn(props) {
+  const { carouselBtnClass, onClick, children } = props;
   return (
     <button
-      className={props.carouselBtnClass}
-      onClick={props.onClick}
+      className={carouselBtnClass}
+      onClick={onClick}
       slide-direction={props["slide-direction"]}
     >
-      {props.children}
+      {children}
     </button>
   );
 }
