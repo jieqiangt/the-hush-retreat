@@ -39,6 +39,7 @@ export default function Layout(props) {
         <Footer
           footerClass={classes[`${baseClass}--footer`]}
           footerIconClass={classes[`${baseClass}--footer--icon`]}
+          footerBtnClass={classes[`${baseClass}--footer--btn`]}
         />
       </div>
     </main>

@@ -119,11 +119,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.2rem;
   font-size: $font-size-text-s;
   color: $col-main-tint-1;
   width: 100%;
-  padding-bottom: 1.2rem;
+  padding-bottom: 1.8rem;
   padding-top: 4rem;
   background-color: $bg-color;
   position: $position;
@@ -138,8 +137,24 @@
     background-color: rgba($col-accent-tint-2, 0.5);
   }
 
+  & p span {
+    font-size: $font-size-text-md;
+    line-height: 1;
+  }
+
   &--icon {
     @include icon-square($size-icon-square-lg, $col-main-primary);
+    margin-bottom: 1rem;
+  }
+
+  &--btn {
+    @include btn--link($col-main-primary, $col-main-tint-1, 0.2);
+
+    a {
+      border-top: none;
+      padding: 0rem 0.3rem;
+      font-size: $font-size-text-s;
+    }
   }
 }
 
