@@ -14,18 +14,18 @@ export default function InputSelect(props) {
 
   return (
     <Fragment>
-      <div className={props.inputGroupClass}>
+      <div className={inputGroupClass}>
         <select
-          name={props.inputName}
-          id={props.inputName}
-          className={props.inputClass}
-          value={props.value}
-          onChange={props.onChange}
+          name={inputName}
+          id={inputName}
+          className={inputClass}
+          value={value}
+          onChange={onChange}
         >
-          {props.inputOptions}
+          {inputOptions}
         </select>
-        <label htmlFor={props.inputName} className={props.labelClass}>
-          {props.label}
+        <label htmlFor={inputName} className={labelClass}>
+          {label}
         </label>
       </div>
     </Fragment>

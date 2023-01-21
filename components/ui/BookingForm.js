@@ -217,7 +217,7 @@ export default function BookingForm(props) {
       <InputOptions
         inputOptions={radioOptions}
         type="checkbox"
-        optionsGroupClass={classes[`${baseClass}--form--vaccinate`]}
+        overallGroupClass={classes[`${baseClass}--form--vaccinate`]}
         legendClass={classes[`${baseClass}--form--vaccinate--legend`]}
         optionGroupClass={classes[`${baseClass}--form--vaccinate--group`]}
         labelClass={classes[`${baseClass}--form--vaccinate--label`]}

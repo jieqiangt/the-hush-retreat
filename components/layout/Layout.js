@@ -34,7 +34,7 @@ export default function Layout(props) {
         />
       )}
       <div className={classes[baseClass]}>
-        <NavBar navClass={classes[`${baseClass}--nav`]}/>
+        <NavBar navClass={classes[`${baseClass}--nav`]} />
         {children}
         <Footer
           footerClass={classes[`${baseClass}--footer`]}
