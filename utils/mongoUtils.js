@@ -100,3 +100,31 @@ export async function getOneFromCollection(
     });
   }
 }
+
+export async function updateOneFromCollection(
+  client,
+  dbName,
+  collectionName,
+  filter,
+  update,
+  options = {}
+) {
+  const db = await connectDb(client, dbName);
+
+  try {
+    const result = await db
+      .collection(collectionName)
+      .updateOne(filter, { $set: update }, options);
+    console.log("MongoDB Database Update Completed");
+    return result;
+  } catch (err) {
+    throw new AppError({
+      title: "Database Update Error",
+      clientMessage:
+        "Database is currently unavailable. Please try registering again later. Apologies on the inconvenience caused.",
+      status: 503,
+      className: "notification--error",
+      message: err,
+    });
+  }
+}

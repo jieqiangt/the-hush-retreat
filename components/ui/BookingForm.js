@@ -108,6 +108,25 @@ export default function BookingForm(props) {
       notificationCtx.showNotification(successNotification);
       closeModal();
       router.replace("/");
+
+      // update mongodb to email sent
+      const { insertedId } = successNotification;
+      console.log({ insertedId });
+      // send email to notify hush retreat
+      const snsResult = await callApi({
+        url: "/api/sendSns",
+        method: "POST",
+        body: {
+          retreatName: bookingState.retreatName,
+          firstName: bookingState.firstName,
+          lastName: bookingState.lastName,
+          email: bookingState.email,
+          phone: bookingState.phone,
+          numRetreatees: bookingState.numRetreatees,
+          vaccinated: bookingState.vaccinated,
+          message: bookingState.message,
+        },
+      });
     }
   }
 

@@ -88,6 +88,7 @@ const handler = catchApiWrapper(async (req, res) => {
       message,
       createdOn: now,
       updatedOn: now,
+      bookingStatus: "pendingEmail",
     }
   );
 
@@ -96,6 +97,7 @@ const handler = catchApiWrapper(async (req, res) => {
     clientMessage: `We have received your interest to join our retreat, ${firstName} ${lastName}. Do keep a lookout for a confirmation email and a personalized follow up whatsapp message for more details.`,
     status: 201,
     className: "notification--success",
+    insertedId: result.insertedId,
   });
   client.close();
 

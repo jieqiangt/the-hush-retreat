@@ -64,6 +64,11 @@ module.exports = {
               description:
                 "numRetreatees of int type is required and must be between 1 & 8.",
             },
+            bookingStatus: {
+              bsonType: "string",
+              enum: ["pendingEmail", "emailSent", "emailAcknowledged", "paid"],
+              description: "bookingStatus of string data type is required.",
+            },
             message: {
               bsonType: "string",
               description: "message of string data type is optional.",
