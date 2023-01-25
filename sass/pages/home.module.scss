@@ -11,7 +11,7 @@
       [col-start] minmax(16rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 8.5vh 100vh 25vh repeat(3, max-content) 60vh 65vh min-content;
+  grid-template-rows: 8.5vh 100vh 30vh repeat(3, max-content) 60vh 65vh min-content;
 
   &--nav {
     grid-column: full-start / full-end;
@@ -63,7 +63,46 @@
   grid-column: full-start / full-end;
   grid-row: 3;
   position: relative;
-  background-color: rgba($col-accent-primary, 0.5);
+  background-color: rgba($col-accent-primary, 0.8);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+  &--title {
+    @include section--title($col-main-primary, $letter-spacing-default);
+    margin-bottom: 3rem;
+  }
+
+  &--icons {
+    display: flex;
+    gap: 3.8rem;
+  }
+
+  &--partners {
+    width: 50%;
+  }
+
+  &--icon {
+    fill: $col-main-primary;
+    height: 8rem;
+    width: 8rem;
+    display: inline-block;
+
+    &--accenture {
+      height: 3rem;
+      width:auto;
+    }
+  }
+
+  &--aside {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 .bespoke {
