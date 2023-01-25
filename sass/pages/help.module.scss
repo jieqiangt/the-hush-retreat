@@ -11,7 +11,7 @@
       [col-start] minmax(16rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 8.5vh 100vh repeat(2, min-content);
+  grid-template-rows: 9vh 100vh repeat(2, min-content);
 
   &--nav {
     grid-column: full-start / full-end;

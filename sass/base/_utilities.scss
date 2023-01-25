@@ -543,7 +543,7 @@
     grid-template-columns: [time-start full-start] 1fr [time-end logo-start] 5vw [logo-end activity-start] 1fr [activity-end full-end];
     grid-template-rows: repeat($num-rows, minmax(min-content, 10rem));
     justify-items: center;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     align-content: center;
   }

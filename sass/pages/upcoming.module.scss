@@ -11,7 +11,7 @@
       [col-start] minmax(17.5rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 8.5vh 110vh repeat(4, min-content) min-content;
+  grid-template-rows: 9vh 110vh repeat(4, min-content) min-content;
 
   &--nav {
     grid-column: full-start / full-end;
@@ -438,7 +438,7 @@
   @include z-layout(45fr);
   @include schedule(7);
   position: relative;
-  margin-top: 20rem;
+  margin-top: 18rem;
 
   &::before {
     content: "";
@@ -460,12 +460,10 @@
     grid-column: 2;
     margin-left: -16rem;
     transition-delay: 0.2s;
-    margin-top: 10rem;
   }
 
   &--title {
     @include section--title($col-main-primary, $letter-spacing-s);
-    margin-bottom: 4rem;
   }
 
   &--time {
@@ -506,7 +504,6 @@
     border-top: $border-gray-sm;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
-    margin-top: 2rem;
   }
 }
 
