@@ -22,11 +22,12 @@ export async function snsToHushRetreat(details) {
 // create template with params
 
 export async function createEmailTemplate() {
+  const client = new SESClient({ region: REGION });
   const templateObj = {
     Template: {
       TemplateName: "hushRetreat",
       HtmlPart: `
-      <h1>Hi {{bookingDetails.firstName}} {{bookingDetails.lastName}}.</h1>
+      <h1>Hi {{bookingDetails.firstName}} {{bookingDetails.lastName}}</h1>
 
       <p>Thank you for booking a retreat with us at The Hush Retreat.</p>
       <p>Your booking details are as follows:</p>
@@ -47,7 +48,7 @@ export async function createEmailTemplate() {
         <li>No. of Retreatees: {{bookingDetails.numRetreatees}}</li>
       </ul>
       
-      <p>Click <a>here</a> to acknowledge your booking details are accurate.</p>
+      <p>Click <a>here</a> to input your retreatees details to confirm your booking.</p>
       
       <h2>Payment Details</h2>
       <p>Instructions to pay</p>
@@ -62,67 +63,23 @@ export async function createEmailTemplate() {
         "The Hush Retreat - {{bookingDetails.retreatName}} Booking Acknowledgement",
     },
   };
-  new CreateTemplateCommand();
+  const result = client.send(new CreateTemplateCommand(templateObj));
+  return result;
 }
-
-const run = async () => {
-  const createTemplateCommand = createCreateTemplateCommand();
-
-  try {
-    return await sesClient.send(createTemplateCommand);
-  } catch (err) {
-    console.log("Failed to create template.", err);
-    return err;
-  }
-};
 
 export async function sesToUser(bookingDetails) {
-  const sesClient = new SESClient({ region: REGION });
-}
+  const client = new SESClient({ region: REGION });
+  const verifiedEmail = "hello@thehushretreats.com";
+  const templateName = "hushRetreat";
 
-// Sending templated email
-
-/**
- * Replace this with the name of an existing template.
- */
-const TEMPLATE_NAME = getUniqueName("ReminderTemplate");
-
-/**
- * Replace these with existing verified emails.
- */
-const VERIFIED_EMAIL = postfix(getUniqueName("Bilbo"), "@example.com");
-
-const USER = { firstName: "Bilbo", emailAddress: VERIFIED_EMAIL };
-
-/**
- *
- * @param { { emailAddress: string, firstName: string } } user
- * @param { string } templateName - The name of an existing template in Amazon SES.
- * @returns { SendTemplatedEmailCommand }
- */
-const createReminderEmailCommand = (user, templateName) => {
-  return new SendTemplatedEmailCommand({
-    /**
-     * Here's an example of how a template would be replaced with user data:
-     * Template: <h1>Hello {{contact.firstName}},</h1><p>Don't forget about the party gifts!</p>
-     * Destination: <h1>Hello Bilbo,</h1><p>Don't forget about the party gifts!</p>
-     */
-    Destination: { ToAddresses: [user.emailAddress] },
-    TemplateData: JSON.stringify({ contact: { firstName: user.firstName } }),
-    Source: VERIFIED_EMAIL,
-    Template: templateName,
-  });
-};
-
-const run = async () => {
-  const sendReminderEmailCommand = createReminderEmailCommand(
-    USER,
-    TEMPLATE_NAME
+  const result = await client.send(
+    new SendTemplatedEmailCommand({
+      Destination: { ToAddresses: [bookingDetails.email] },
+      TemplateData: JSON.stringify({ bookingDetails }),
+      Source: verifiedEmail,
+      Template: templateName,
+    })
   );
-  try {
-    return await sesClient.send(sendReminderEmailCommand);
-  } catch (err) {
-    console.log("Failed to send template email", err);
-    return err;
-  }
-};
+
+  return result;
+}

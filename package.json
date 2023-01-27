@@ -10,7 +10,7 @@
     "info": "next info"
   },
   "dependencies": {
-    "@aws-sdk/client-sesv2": "^3.254.0",
+    "@aws-sdk/client-ses": "^3.259.0",
     "@aws-sdk/client-sns": "^3.254.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",

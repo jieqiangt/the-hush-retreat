@@ -4,8 +4,8 @@ import Modal from "../ui/Modal";
 export default function NewRetreatBookingModal(props) {
   const { classes, baseClass } = props;
   const text = [
-    "Fugiat quis ut voluptate anim proident exercitation reprehenderit tempor non ut dolor. Et qui eu duis proident et veniam irure in  ",
-    "Velit id anim nostrud eu proident. Cupidatat nostrud duis sunt ea excepteur excepteur consequat quis quis cillum eu. Id irure  ",
+    "Fugiat quis ut voluptate anim proident exercitation reprehenderit tempor non ut dolor.",
+    "Velit id anim nostrud eu proident. Cupidatat nostrud duis sunt ea excepteur.  ",
   ];
 
   const paragraphs = text.map((item, idx) => <p key={idx}>{item}</p>);
@@ -15,7 +15,14 @@ export default function NewRetreatBookingModal(props) {
     </article>
   );
 
-  const retreatList = [{ retreatId: "0", retreatName: "Release & Renew" }];
+  const retreatList = [
+    {
+      id: "0",
+      name: "Release & Renew",
+      date: "7th January 2023, Saturday",
+      location: "Villa Samadhi Singapore",
+    },
+  ];
 
   const aside = (
     <section className={classes[`${baseClass}--aside`]}>
@@ -54,11 +61,6 @@ export default function NewRetreatBookingModal(props) {
   );
 
   return (
-    <Modal
-      img={img}
-      aside={aside}
-      baseClass={baseClass}
-      classes={classes}
-    />
+    <Modal img={img} aside={aside} baseClass={baseClass} classes={classes} />
   );
 }

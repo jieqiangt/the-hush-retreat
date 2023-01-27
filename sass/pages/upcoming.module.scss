@@ -38,6 +38,7 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(2, 1fr);
+      overflow: hidden;
     }
 
     &--1 {
@@ -180,6 +181,7 @@
     &--vaccinate {
       grid-column: 1 / -1;
       grid-row: 5;
+      margin-top: -1.8rem;
       @include custom--radio($col-gray-tint-1);
     }
 
@@ -189,7 +191,7 @@
       grid-row: 6;
       @include btn--link($col-gray-tint-1, $col-main-primary, 0.6, true);
       justify-self: start;
-      margin-top: 1.2rem;
+      margin-top: -1.2rem;
     }
   }
 }

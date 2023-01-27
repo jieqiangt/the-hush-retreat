@@ -602,7 +602,7 @@
     background-color: $col-white-primary;
     display: grid;
     width: 80%;
-    height: 90%;
+    height: 95%;
     grid-template-columns: 50fr 50fr;
     transform: scale(0.5);
     transition: transform 0.4s 0.2s;
@@ -691,8 +691,8 @@
     &::after {
       content: "";
       display: block;
-      height: 1.5rem;
-      width: 1.5rem;
+      height: 1.2rem;
+      width: 1.2rem;
       background-color: $btn-color;
       border-radius: 50%;
       position: absolute;

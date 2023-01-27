@@ -25,7 +25,7 @@ export default function BookingForm(props) {
     bookingState;
 
   const fields = {
-    retreatName: bookingState.retreatName,
+    retreat: bookingState.retreat,
     firstName: bookingState.firstName,
     lastName: bookingState.lastName,
     email: bookingState.email,
@@ -71,10 +71,7 @@ export default function BookingForm(props) {
     dispatchBooking,
     fields.numRetreatees,
   ]);
-  useEffect(valFieldHandlers["retreatName"], [
-    dispatchBooking,
-    fields.retreatName,
-  ]);
+  useEffect(valFieldHandlers["retreat"], [dispatchBooking, fields.retreat]);
   useEffect(valFieldHandlers["vaccinated"], [
     dispatchBooking,
     fields.vaccinated,
@@ -87,7 +84,7 @@ export default function BookingForm(props) {
       url: "/api/booking",
       method: "POST",
       body: {
-        retreatName: bookingState.retreatName,
+        retreat: bookingState.retreat,
         firstName: bookingState.firstName,
         lastName: bookingState.lastName,
         email: bookingState.email,
@@ -105,19 +102,15 @@ export default function BookingForm(props) {
 
     if (result.ok) {
       const successNotification = await result.json();
-      notificationCtx.showNotification(successNotification);
-      closeModal();
-      router.replace("/");
 
-      // update mongodb to email sent
-      const { insertedId } = successNotification;
-      console.log({ insertedId });
-      // send email to notify hush retreat
-      const snsResult = await callApi({
-        url: "/api/sendSns",
+      const retreat = JSON.parse(bookingState.retreat);
+      const emailResult = await callApi({
+        url: "/api/bookingEmails",
         method: "POST",
         body: {
-          retreatName: bookingState.retreatName,
+          retreatName: retreat.name,
+          date: retreat.date,
+          location: retreat.location,
           firstName: bookingState.firstName,
           lastName: bookingState.lastName,
           email: bookingState.email,
@@ -125,8 +118,13 @@ export default function BookingForm(props) {
           numRetreatees: bookingState.numRetreatees,
           vaccinated: bookingState.vaccinated,
           message: bookingState.message,
+          insertedId: successNotification.insertedId,
         },
       });
+
+      closeModal();
+      router.replace("/");
+      notificationCtx.showNotification(successNotification);
     }
   }
 
@@ -210,14 +208,14 @@ export default function BookingForm(props) {
       <InputSelect
         label="Retreat Name"
         inputName="upcoming--form--retreat-name"
-        value={fields.retreatName}
-        onChange={changeHandlers["retreatName"]}
+        value={fields.retreat}
+        onChange={changeHandlers["retreat"]}
         inputGroupClass={classes[`${baseClass}--form--retreat-name`]}
         inputClass={classes[`${baseClass}--form--retreat-name--input`]}
         labelClass={classes[`${baseClass}--form--retreat-name--label`]}
         inputOptions={retreatList.map((item) => (
-          <option key={item.retreatId} value={item.retreatId}>
-            {item.retreatName}
+          <option key={item.id} value={JSON.stringify(item)}>
+            {item.name}
           </option>
         ))}
       />

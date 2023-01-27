@@ -11,7 +11,7 @@ const allowedMethods = ["POST"];
 const handler = catchApiWrapper(async (req, res) => {
   const data = req.body;
   const {
-    retreatName,
+    retreat: retreatStr,
     firstName,
     lastName,
     email,
@@ -22,8 +22,10 @@ const handler = catchApiWrapper(async (req, res) => {
   } = data;
   const now = new Date();
 
+  const retreat = JSON.parse(retreatStr);
+
   const fieldsValid =
-    validateField(retreatName, "retreatName") &&
+    validateField(retreat, "retreat") &&
     validateField(firstName, "firstName") &&
     validateField(lastName, "lastName") &&
     validateField(email, "email") &&
@@ -52,7 +54,7 @@ const handler = catchApiWrapper(async (req, res) => {
   const client = await connectClient();
 
   const checkExistPayload = {
-    retreatName: retreatName,
+    retreatName: retreat.name,
     $or: [{ email: email }, { phone: phone }],
   };
   const checkExist = await getOneFromCollection(
@@ -78,12 +80,12 @@ const handler = catchApiWrapper(async (req, res) => {
     process.env.MONGO_DBNAME,
     "bookings",
     {
-      retreatName,
+      retreatName: retreat.name,
       firstName,
       lastName,
       email,
       phone,
-      numRetreatees,
+      numRetreatees: parseInt(numRetreatees),
       vaccinated,
       message,
       createdOn: now,

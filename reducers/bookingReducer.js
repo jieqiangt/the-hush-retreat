@@ -1,5 +1,10 @@
 export const bookingInitialState = {
-  retreatName: "Release & Renew",
+  retreat: JSON.stringify({
+    id: "0",
+    name: "Release & Renew",
+    date: "7th January 2023, Saturday",
+    location: "Villa Samadhi Singapore",
+  }),
   firstName: "",
   lastName: "",
   email: "",
@@ -18,8 +23,8 @@ export const bookingInitialState = {
 };
 
 export function validateField(input, field) {
-  if (field === "retreatName") {
-    return ["Release & Renew"].includes(input);
+  if (field === "retreat") {
+    return ["Release & Renew", "test"].includes(input.name);
   }
 
   if (field === "firstName") {
@@ -79,7 +84,7 @@ export function bookingReducer(state, action) {
 
     newState.formValid =
       validateForm(newState) &&
-      newState.retreatName !== "" &&
+      newState.retreat.name !== "" &&
       newState.firstName !== "" &&
       newState.lastName !== "" &&
       newState.email !== "" &&

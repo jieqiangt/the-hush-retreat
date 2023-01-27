@@ -14,9 +14,9 @@ export default function CorporateCustomers(props) {
             iconName="icon-accenture"
           />
         </div>
-      </aside>
+      </aside >
       <aside className={classes[`${baseClass}--partners`]}>
-        <h3 className={classes[`${baseClass}--title`]}>Welleness Partners</h3>
+        <h3 className={classes[`${baseClass}--title`]}>Wellness Partners</h3>
         <div className={classes[`${baseClass}--icons`]}>
           <Icon
             iconClass={`${classes[`${baseClass}--icon`]} hidden`}
