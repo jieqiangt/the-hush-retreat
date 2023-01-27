@@ -104,7 +104,7 @@ export default function BookingForm(props) {
       const successNotification = await result.json();
 
       const retreat = JSON.parse(bookingState.retreat);
-      const emailResult = await callApi({
+      await callApi({
         url: "/api/bookingEmails",
         method: "POST",
         body: {

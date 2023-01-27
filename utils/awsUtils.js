@@ -8,14 +8,14 @@ import {
 const REGION = "ap-southeast-1";
 
 export async function snsToHushRetreat(details) {
-  const smsClient = new SNSClient({ region: REGION });
+  const client = new SNSClient({ region: REGION });
   const message = `Retreat Booking Notification \n ${details}`;
   const params = {
     Message: message,
     TopicArn: "arn:aws:sns:ap-southeast-1:615814254462:hush-bookings",
   };
-  const data = await smsClient.send(new PublishCommand(params));
-  smsClient.destroy();
+  const data = await client.send(new PublishCommand(params));
+  client.destroy();
   return data;
 }
 
@@ -64,6 +64,7 @@ export async function createEmailTemplate() {
     },
   };
   const result = client.send(new CreateTemplateCommand(templateObj));
+  client.destroy();
   return result;
 }
 
@@ -80,6 +81,7 @@ export async function sesToUser(bookingDetails) {
       Template: templateName,
     })
   );
+  client.destroy();
 
   return result;
 }
