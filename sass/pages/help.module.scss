@@ -195,7 +195,7 @@
   align-items: center;
   font-size: $font-size-text-md;
   margin-top: 30rem;
-  margin-bottom: 12rem;
+  margin-bottom: 10rem;
 
   &--icon {
     @include icon-square($size-icon-square-lg, $col-main-primary);
@@ -289,5 +289,5 @@
   grid-column: full-start / full-end;
   grid-row: 4;
   @include footer(transparent, relative);
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
