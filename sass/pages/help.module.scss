@@ -2,6 +2,7 @@
 @import "../abstracts/mixins";
 @import "../base/animations";
 @import "../base/utilities";
+@import "../abstracts/media";
 
 .help {
   display: grid;
@@ -12,6 +13,10 @@
     )
     [center-end] 1fr [full-end];
   grid-template-rows: 9vh 100vh repeat(2, min-content);
+
+  @include media-queries(tab-sm-land) {
+    grid-template-rows: 8vw 100vw repeat(2, min-content);
+  }
 
   &--nav {
     grid-column: full-start / full-end;

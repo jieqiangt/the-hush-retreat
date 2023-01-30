@@ -1,6 +1,31 @@
 @mixin media-queries($breakpoint) {
   @if $breakpoint == xl-screen {
-    @media (max-width: 112.5em) {//1400px
+    @media (max-width: 112.5em) {
+      //1600px
+      @content;
+    }
+  }
+  @if $breakpoint == laptop-lg {
+    @media (max-width: 87.5em) {
+      //1400px
+      @content;
+    }
+  }
+  @if $breakpoint == laptop {
+    @media (max-width: 75em) {
+      //1200px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-sm-land {
+    @media (max-width: 68.75em) and (max-height: 50em) {
+      //1100px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-pot {
+    @media (min-height: 62.5em) {
+      //700px width & minimum 1000px height
       @content;
     }
   }

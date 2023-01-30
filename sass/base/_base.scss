@@ -1,8 +1,13 @@
 @import "../abstracts/variables";
+@import "../abstracts/media";
 
 // SETTING FONT SIZE AS 10px
 html {
   font-size: 62.5%;
+
+  @include media-queries(tab-pot) {
+    font-size: 85%;
+  }
 }
 
 // CSS RESET
@@ -20,7 +25,6 @@ html {
 
 body {
   box-sizing: border-box;
-  overflow-x: hidden;
   background-color: $col-white-primary;
 }
 
@@ -80,4 +84,3 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
 }
-

@@ -2,6 +2,7 @@
 @import "../abstracts/mixins";
 @import "../base/animations";
 @import "../base/utilities";
+@import "../abstracts/media";
 
 .discover {
   display: grid;
@@ -12,6 +13,15 @@
     )
     [center-end] 1fr [full-end];
   grid-template-rows: 9vh 100vh max-content repeat(3, min-content);
+
+
+  @include media-queries(tab-pot) {
+    grid-template-rows: 8vh 100vh max-content repeat(3, min-content);
+  }
+
+  @include media-queries(tab-sm-land) {
+    grid-template-rows: 8vw 100vw max-content repeat(3, min-content);
+  }
 
   &--nav {
     grid-column: full-start / full-end;

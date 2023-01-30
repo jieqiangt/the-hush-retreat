@@ -2,6 +2,7 @@
 @import "../abstracts/mixins";
 @import "../base/animations";
 @import "../base/utilities";
+@import "../abstracts/media";
 
 .upcoming {
   display: grid;
@@ -13,6 +14,14 @@
     [center-end] 1fr [full-end];
   grid-template-rows: 9vh 110vh repeat(4, min-content) min-content;
 
+  @include media-queries(tab-pot) {
+    grid-template-rows: 8vh 110vh repeat(4, min-content) min-content;
+  }
+
+  @include media-queries(tab-sm-land) {
+    grid-template-rows: 8vw 100vw repeat(3, max-content) max-content max-content;
+  }
+
   &--nav {
     grid-column: full-start / full-end;
     grid-row: 1;
@@ -21,7 +30,7 @@
   &--footer {
     @include footer(transparent, relative);
     grid-column: full-start / full-end;
-    grid-row: -1;
+    grid-row: 7;
   }
 }
 
@@ -37,7 +46,7 @@
       grid-column: 1;
       display: grid;
       grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
       overflow: hidden;
     }
 
@@ -184,7 +193,6 @@
       margin-top: -1.8rem;
       @include custom--radio($col-gray-tint-1);
     }
-
 
     &--btn {
       grid-column: 1 / -1;
@@ -442,6 +450,10 @@
   position: relative;
   margin-top: 18rem;
 
+  @include media-queries(tab-sm-land) {
+    margin-bottom: 20rem;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -506,72 +518,5 @@
     border-top: $border-gray-sm;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
-  }
-}
-
-.cta {
-  grid-column: full-start / full-end;
-  grid-row: 7;
-  background-image: linear-gradient(
-      180deg,
-      rgba($col-white-primary, 0.4),
-      rgba($col-white-primary, 0.6)
-    ),
-    url("../../public/img/sand-1-lg.jpg");
-  background-size: cover;
-  background-position: bottom 60% left 0%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-
-  &--card {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background-color: rgba($col-main-primary, 0.75);
-    color: $col-gray-tint-2;
-    font-size: $font-size-text-md;
-    padding: 5rem 10rem;
-    gap: 3.2rem;
-    margin: 0rem 70rem;
-  }
-
-  &--title {
-    @include section--title($col-accent-tint-2, $letter-spacing-xs);
-  }
-
-  &--retreat-name {
-    font-size: $font-size-header-sm;
-  }
-
-  &--price {
-    font-size: $font-size-text-lg;
-    margin-top: -3rem;
-  }
-
-  &--content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    margin-top: -3rem;
-
-    &--title {
-      @include section--title($col-accent-tint-2, $letter-spacing-xs);
-      font-size: $font-size-text-md;
-      text-align: center;
-      margin-bottom: 1.2rem;
-    }
-
-    & p {
-      text-align: left;
-    }
-  }
-  &--btn {
-    @include btn--link($col-accent-tint-2, $col-main-primary, 0.6);
-    align-self: center;
-    border-bottom: $border-accent-sm;
-    border-top: $border-accent-sm;
   }
 }

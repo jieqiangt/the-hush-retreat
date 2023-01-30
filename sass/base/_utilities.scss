@@ -259,6 +259,14 @@
   grid-template-columns: $grid-size-two-col-left 100-$grid-size-two-col-left;
   grid-template-rows: 1fr;
 
+  @include media-queries(tab-pot) {
+    height: 90vh;
+  }
+
+  @include media-queries(tab-sm-land) {
+    height: 80vw;
+  }
+
   &--img {
     background-size: cover;
     grid-column: 1;

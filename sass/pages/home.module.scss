@@ -2,6 +2,7 @@
 @import "../abstracts/mixins";
 @import "../base/animations";
 @import "../base/utilities";
+@import "../abstracts/media";
 
 .home {
   display: grid;
@@ -12,6 +13,14 @@
     )
     [center-end] 1fr [full-end];
   grid-template-rows: 9vh 100vh 30vh repeat(3, max-content) 60vh 65vh min-content;
+
+  @include media-queries(tab-pot) {
+    grid-template-rows: 8vh 100vh 30vh repeat(3, max-content) 60vh 65vh min-content;
+  }
+
+  @include media-queries(tab-sm-land) {
+    grid-template-rows: 8vw 100vw 30vw repeat(3, max-content) 60vw 65vw min-content;
+  }
 
   &--nav {
     grid-column: full-start / full-end;
@@ -94,7 +103,7 @@
 
     &--accenture {
       height: 3rem;
-      width:auto;
+      width: auto;
     }
   }
 
@@ -110,6 +119,8 @@
   grid-row: 4;
   @include z-layout(45fr);
   @include z-layout-article();
+
+
 
   &--img {
     background-image: url("../../public/img/limo-1-lg.jpg");
