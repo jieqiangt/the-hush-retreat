@@ -7,9 +7,15 @@ import {
 
 const REGION = "ap-southeast-1";
 
-export async function snsToHushRetreat(details) {
+export async function snsToHushRetreat(details, subject = "booking") {
   const client = new SNSClient({ region: REGION });
-  const message = `Retreat Booking Notification \n ${details}`;
+
+  let message = `Retreat Booking Notification \n ${details}`;
+
+  if (subject === "contactUs") {
+    message = `Contact Us: \n ${details}`;
+  }
+  
   const params = {
     Message: message,
     TopicArn: "arn:aws:sns:ap-southeast-1:615814254462:hush-bookings",

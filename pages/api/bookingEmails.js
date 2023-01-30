@@ -1,9 +1,8 @@
 import {
-  createEmailTemplate,
   sesToUser,
   snsToHushRetreat,
 } from "../../utils/awsUtils";
-import { AppError, catchApiWrapper } from "../../utils/errorUtils";
+import { catchApiWrapper } from "../../utils/errorUtils";
 import { connectClient, updateOneFromCollection } from "../../utils/mongoUtils";
 import { ObjectId } from "mongodb";
 
