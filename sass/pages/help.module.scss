@@ -79,8 +79,13 @@
     }
 
     @include media-queries(laptop-sm-height) {
-      height: 95%;
-      margin: 7rem -10rem 0rem auto;
+      height: 100%;
+      margin: 6rem -10rem 0rem auto;
+    }
+
+    @include media-queries(tab-sm-land) {
+      height: 85%;
+      margin: 12rem -10rem 0rem auto;
     }
   }
 

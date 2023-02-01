@@ -192,6 +192,30 @@
       $col-accent-primary,
       $col-accent-shade-1
     );
+
+    @include media-queries(laptop-sm-height) {
+      @include carousel(
+        (5rem 16rem),
+        rgba($col-main-primary, 0.8),
+        $col-accent-primary,
+        $col-main-primary,
+        $col-accent-primary,
+        $col-accent-primary,
+        $col-accent-shade-1
+      );
+    }
+    
+    @include media-queries(tab-sm-land) {
+      @include carousel(
+        (5rem 12rem),
+        rgba($col-main-primary, 0.8),
+        $col-accent-primary,
+        $col-main-primary,
+        $col-accent-primary,
+        $col-accent-primary,
+        $col-accent-shade-1
+      );
+    }
   }
 
   &--item {
@@ -206,6 +230,10 @@
     border-left: $border-accent-sm;
     border-right: $border-accent-sm;
     background-color: transparent;
+
+    @include media-queries(laptop-sm-height) {
+      padding: 0rem 10rem;
+    }
 
     & * {
       @include make-invisible;
