@@ -29,6 +29,11 @@
   &--nav {
     grid-column: full-start / full-end;
     grid-row: 1;
+
+    @include media-queries(phone) {
+      grid-column: unset;
+      grid-row: unset;
+    }
   }
 
   &--footer {

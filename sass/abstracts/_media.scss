@@ -53,4 +53,16 @@
       @content;
     }
   }
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      //width: 600px
+      @content;
+    }
+  }
+  @if $breakpoint == phone-sm {
+    @media (max-width: 37.5em) and (max-height: 43.75em) {
+      //width: 600px height: 700px
+      @content;
+    }
+  }
 }

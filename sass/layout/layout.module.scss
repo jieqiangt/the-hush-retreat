@@ -2,11 +2,23 @@
 @import "../base/animations";
 @import "../base/utilities";
 @import "../abstracts/mixins";
+@import "../abstracts/media";
 
 .nav {
   background-color: $col-white-primary;
   position: sticky;
   z-index: 0;
+
+  @include media-queries(phone) {
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 6rem;
+    background-color: rgba($col-white-primary, 0.6);
+    z-index: $z-index-modal;
+  }
 
   &--list {
     display: flex;
@@ -18,11 +30,33 @@
     font-weight: $font-weight-xs;
     font-size: $font-size-text-md;
 
+    @include media-queries(phone) {
+      flex-direction: column;
+      gap: 5rem;
+
+      & :nth-child(1) {
+        order: 2;
+      }
+
+      & :nth-child(2) {
+        order: 1;
+      }
+
+      & :nth-child(3) {
+        order: 3;
+      }
+    }
+
     &--sides {
       display: flex;
       justify-content: center;
       width: 25%;
       gap: 4.8rem;
+
+      @include media-queries(phone) {
+        flex-direction: column-reverse;
+        gap: 5rem;
+      }
 
       & li {
         animation-delay: 0.1s;

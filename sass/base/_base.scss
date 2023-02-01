@@ -4,10 +4,6 @@
 // SETTING FONT SIZE AS 10px
 html {
   font-size: 62.5%;
-
-  @include media-queries(tab-pot) {
-    font-size: 85%;
-  }
 }
 
 // CSS RESET

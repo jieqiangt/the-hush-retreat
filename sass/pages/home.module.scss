@@ -204,10 +204,10 @@
         $col-accent-shade-1
       );
     }
-    
+
     @include media-queries(tab-sm-land) {
       @include carousel(
-        (5rem 12rem),
+        (5rem 14rem),
         rgba($col-main-primary, 0.8),
         $col-accent-primary,
         $col-main-primary,
