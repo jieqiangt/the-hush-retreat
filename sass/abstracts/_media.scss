@@ -1,31 +1,55 @@
 @mixin media-queries($breakpoint) {
+  @if $breakpoint == largest {
+    @media (max-width: 137.5em) {
+      //width: 2200px
+      @content;
+    }
+  }
+  @if $breakpoint == xxl-screen {
+    @media (max-width: 125em) {
+      //width: 2000px
+      @content;
+    }
+  }
   @if $breakpoint == xl-screen {
     @media (max-width: 112.5em) {
-      //1600px
+      //width: 1800px
+      @content;
+    }
+  }
+  @if $breakpoint == lg-screen {
+    @media (max-width: 100em) {
+      //width: 1600px
       @content;
     }
   }
   @if $breakpoint == laptop-lg {
     @media (max-width: 87.5em) {
-      //1400px
+      //width: 1400px
       @content;
     }
   }
   @if $breakpoint == laptop {
     @media (max-width: 75em) {
-      //1200px
+      //width: 1200px
+      @content;
+    }
+  }
+  @if $breakpoint == laptop-sm-height {
+    @media (max-height: 62.5em) {
+      //height: 1000px
       @content;
     }
   }
   @if $breakpoint == tab-sm-land {
     @media (max-width: 68.75em) and (max-height: 50em) {
-      //1100px
+      // width: 1100px height: 800px
       @content;
     }
   }
   @if $breakpoint == tab-pot {
-    @media (min-height: 62.5em) {
-      //700px width & minimum 1000px height
+    @media (max-width: 62.5em) and (min-height: 62.5em) {
+      //width: 1000px  min-height: 1000px;
       @content;
     }
   }

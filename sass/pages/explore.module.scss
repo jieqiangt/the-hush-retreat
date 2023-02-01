@@ -12,7 +12,11 @@
       [col-start] minmax(17.5rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 9vh 100vh min-content min-content;
+  grid-template-rows: 7.5vh 100vh min-content min-content;
+
+  @include media-queries(laptop-sm-height) {
+    grid-template-rows: 9vh 100vh repeat(2, min-content);
+  }
 
   @include media-queries(tab-sm-land) {
     grid-template-rows: 8vw 100vw min-content min-content;
@@ -92,8 +96,6 @@
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
       font-size: $font-size-header-md;
-
-
     }
 
     &--content {

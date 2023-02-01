@@ -12,7 +12,11 @@
       [col-start] minmax(16rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 9vh 100vh repeat(2, min-content);
+  grid-template-rows: 7.5vh 100vh repeat(2, min-content);
+
+  @include media-queries(laptop-sm-height) {
+    grid-template-rows: 9vh 100vh repeat(2, min-content);
+  }
 
   @include media-queries(tab-sm-land) {
     grid-template-rows: 8vw 100vw repeat(2, min-content);
@@ -58,10 +62,26 @@
     grid-row: 2;
     background-position: top left 60%;
     background-size: cover;
-    width: 110%;
-    height: 93%;
-    margin: 8rem -16rem 0rem auto;
+    width: 130%;
+    height: 80%;
+    margin: 16rem 0rem 0rem -5rem;
     box-shadow: 2px 0px 15px 0px rgba($col-black-primary, 0.8);
+
+    @include media-queries(xxl-screen) {
+      width: 120%;
+      margin-left: -1rem;
+    }
+
+    @include media-queries(xl-screen) {
+      width: 105%;
+      height: 80%;
+      margin: 16rem -10rem 0rem auto;
+    }
+
+    @include media-queries(laptop-sm-height) {
+      height: 95%;
+      margin: 7rem -10rem 0rem auto;
+    }
   }
 
   &--aside {
@@ -70,8 +90,12 @@
 
     &--box {
       background-color: $col-main-primary;
-      padding: 4rem 8rem 4rem 24rem;
+      padding: 8rem 18rem 8rem 16rem;
       margin-top: 10rem;
+
+      @include media-queries(xl-screen) {
+        padding: 5rem 18rem 5rem 16rem;
+      }
     }
 
     &--title {
@@ -214,8 +238,21 @@
 
   &--accordion {
     @include accordion;
+    width: 85%;
     padding: 0rem 50rem;
     font-weight: $font-weight-lg;
+
+    @include media-queries(xxl-screen) {
+      width: 95%;
+    }
+
+    @include media-queries(xl-screen) {
+      width: 105%;
+    }
+
+    @include media-queries(lg-screen) {
+      width: 110%;
+    }
   }
 
   &--item {

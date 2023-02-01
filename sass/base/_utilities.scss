@@ -259,6 +259,10 @@
   grid-template-columns: $grid-size-two-col-left 100-$grid-size-two-col-left;
   grid-template-rows: 1fr;
 
+  @include media-queries(xxl-screen) {
+    height: 95vh;
+  }
+
   @include media-queries(tab-pot) {
     height: 90vh;
   }
@@ -638,6 +642,11 @@
   padding-left: 8rem;
   padding-right: 8rem;
   grid-gap: 1.2rem;
+
+  @include media-queries(xl-screen) {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
 
   & * {
     outline-offset: 0.3rem;

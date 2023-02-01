@@ -12,8 +12,11 @@
       [col-start] minmax(17.5rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 9vh 100vh max-content repeat(3, min-content);
+  grid-template-rows: 7.5vh 100vh max-content repeat(3, min-content);
 
+  @include media-queries(laptop-sm-height) {
+    grid-template-rows: 9vh 100vh max-content repeat(3, min-content);
+  }
 
   @include media-queries(tab-pot) {
     grid-template-rows: 8vh 100vh max-content repeat(3, min-content);
@@ -53,10 +56,22 @@
 
   &--box {
     grid-column: col-start 5 / full-end;
-    margin: 17rem 0rem;
+    margin: 26rem -6rem;
     background-color: transparent;
     font-size: $font-size-text-lg;
     transition-delay: 0.6s;
+
+    @include media-queries(largest) {
+      margin: 22rem -4rem;
+    }
+
+    @include media-queries(xxl-screen) {
+      margin: 20rem -2rem;
+    }
+
+    @include media-queries(xl-screen) {
+      margin: 16rem -2rem;
+    }
   }
 
   &--title {
@@ -96,11 +111,30 @@
   &--img {
     background-image: url("../../public/img/lotus-1-lg.jpg");
     background-position: bottom;
-    width: 100%;
-    height: 90%;
-    margin: 20rem -10rem 0rem auto;
+    width: 120%;
+    height: 95%;
+    margin: 16rem -6rem 0rem auto;
     grid-column: col-start 1 / col-end 3;
     grid-row: 3;
+
+    @include media-queries(largest) {
+      width: 110%;
+      margin-right: -8rem;
+    }
+
+    @include media-queries(xxl-screen) {
+      width: 105%;
+      height: 90%;
+      margin-top: 18rem;
+      margin-right: -8rem;
+    }
+
+    @include media-queries(xl-screen) {
+      width: 95%;
+      height: 85%;
+      margin-top: 21rem;
+      margin-right: -10rem;
+    }
   }
 
   &--aside {
@@ -111,7 +145,7 @@
 
     &--box {
       background-color: $col-main-primary;
-      padding: 12rem 15rem;
+      padding: 14rem 16rem;
       margin-top: 26rem;
     }
 
@@ -220,8 +254,12 @@
     grid-column: full-start / col-start 8;
     grid-row: 5;
     background-color: $col-main-primary;
-    padding: 5rem 14rem 8rem 12rem;
+    padding: 10rem 24rem 10rem 18rem;
     margin: 20rem 0rem;
+
+    @include media-queries(laptop-sm-height) {
+      padding: 10rem 20rem 10rem 10rem;
+    }
 
     &--title {
       @include section--title($col-accent-primary, $letter-spacing-xs);
@@ -262,8 +300,59 @@
         $pos-founder-img-left-offset
       );
 
+      @include media-queries(xxl-screen) {
+        @include img-composition(
+          0rem,
+          -8rem,
+          12rem,
+          20rem,
+          38rem,
+          -2rem,
+          $pos-founder-img-top-offset + 2rem,
+          $pos-founder-img-left-offset
+        );
+      }
+
+      @include media-queries(xl-screen) {
+        @include img-composition(
+          0rem,
+          -8rem,
+          12rem,
+          20rem,
+          38rem,
+          -2rem,
+          $pos-founder-img-top-offset + 4rem,
+          $pos-founder-img-left-offset
+        );
+      }
+
+      @include media-queries(laptop-sm-height) {
+        @include img-composition(
+          0rem,
+          -8rem,
+          12rem,
+          20rem,
+          38rem,
+          -2rem,
+          $pos-founder-img-top-offset + 4rem,
+          $pos-founder-img-left-offset
+        );
+      }
+
       &--img {
-        width: 55%;
+        @include media-queries(largest) {
+          width: 55%;
+        }
+
+        @include media-queries(xxl-screen) {
+          width: 60%;
+        }
+
+        @include media-queries(laptop-sm-height) {
+          width: 65%;
+        }
+
+        width: 40%;
         &--1 {
           z-index: $z-index-top;
         }

@@ -12,7 +12,11 @@
       [col-start] minmax(17.5rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 9vh 110vh repeat(4, min-content) min-content;
+  grid-template-rows: 7.5vh 110vh 75vh 90vh repeat(2, min-content) min-content;
+
+  @include media-queries(laptop-sm-height) {
+    grid-template-rows: 9vh 110vh 75vh 90vh repeat(2, min-content) min-content;
+  }
 
   @include media-queries(tab-pot) {
     grid-template-rows: 8vh 110vh repeat(4, min-content) min-content;
@@ -258,8 +262,8 @@
     background-image: url("../../public/img/intentions-1-lg.jpg");
     background-position: bottom;
     width: 100%;
-    height: 90%;
-    margin: 12rem -10rem 0rem auto;
+    height: 80%;
+    margin: 18rem 0rem 0rem auto;
   }
 
   &--aside {
@@ -270,7 +274,7 @@
 
     &--box {
       background-color: $col-main-primary;
-      padding: 8rem 18rem 8rem 18rem;
+      padding: 12rem 32rem 12rem 6rem;
       margin-top: 18rem;
     }
 

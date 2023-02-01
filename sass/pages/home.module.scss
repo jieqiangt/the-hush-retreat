@@ -12,8 +12,11 @@
       [col-start] minmax(16rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 9vh 100vh 30vh repeat(3, max-content) 60vh 65vh min-content;
+  grid-template-rows: 7.5vh 100vh 30vh repeat(3, max-content) 60vh 65vh min-content;
 
+  @include media-queries(laptop-sm-height) {
+    grid-template-rows: 9vh 100vh 30vh repeat(3, max-content) 60vh 65vh min-content;
+  }
   @include media-queries(tab-pot) {
     grid-template-rows: 8vh 100vh 30vh repeat(3, max-content) 60vh 65vh min-content;
   }
@@ -83,7 +86,7 @@
 
   &--title {
     @include section--title($col-main-primary, $letter-spacing-default);
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
   }
 
   &--icons {
@@ -100,8 +103,7 @@
     height: 8rem;
     width: 8rem;
     display: inline-block;
-
-    &--accenture {
+    z-lay &--accenture {
       height: 3rem;
       width: auto;
     }
@@ -119,8 +121,6 @@
   grid-row: 4;
   @include z-layout(45fr);
   @include z-layout-article();
-
-
 
   &--img {
     background-image: url("../../public/img/limo-1-lg.jpg");
@@ -202,7 +202,7 @@
     font-size: $font-size-text-lg;
     width: 75%;
     height: 55%;
-    padding: 0rem 8rem;
+    padding: 0rem 20rem;
     border-left: $border-accent-sm;
     border-right: $border-accent-sm;
     background-color: transparent;
@@ -254,14 +254,18 @@
 
     &--box {
       position: absolute;
-      bottom: 3rem;
-      right: 15rem;
+      bottom: 14rem;
+      right: 16rem;
       display: flex;
       flex-direction: column;
-      width: 40rem;
+      width: 45rem;
       font-size: $font-size-text-s;
       font-weight: $font-weight-sm;
       letter-spacing: 0.05rem;
+
+      @include media-queries(xl-screen) {
+        bottom: 6rem;
+      }
 
       & > * {
         margin-bottom: 3.2rem;
