@@ -2,9 +2,8 @@ import { Fragment } from "react";
 import DescriptionSection from "../ui/DescriptionSection";
 
 export default function TheWayOfLotus(props) {
-
   const { baseClass, classes } = props;
-  
+
   const content = (
     <div className={`${classes[`${baseClass}--aside--content`]} hidden`}>
       <p>
@@ -28,8 +27,9 @@ export default function TheWayOfLotus(props) {
       </p>
     </div>
   );
-  const img = <div className={`${classes[`${baseClass}--img`]} hidden`} />;
 
+  const img = <div className={`${classes[`${baseClass}--img`]} hidden`} />;
+  
   return (
     <DescriptionSection
       classes={classes}

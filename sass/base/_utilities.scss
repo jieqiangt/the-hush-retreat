@@ -490,17 +490,8 @@
   animation: fadeIn 0.8s ease-in;
   animation-delay: 0.2s;
   animation-fill-mode: backwards;
-  display: grid;
-  grid-template-columns:
-    [banner-start] 1fr repeat(
-      10,
-      [col-start] minmax(16rem, min-content) [col-end]
-    )
-    1fr [banner-end];
-  grid-template-rows: repeat(
-    12,
-    [row-start] minmax(5vh, min-content) [row-end]
-  );
+  width: 100vw;
+  height: 100vh;
 
   &--box {
     background-color: rgba($col-accent-primary, 0.85);
@@ -527,14 +518,16 @@
   }
 }
 
-@mixin description--section() {
-  position: relative;
-  z-index: $z-index-btm;
+@mixin description--section($img-size) {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
 
   &--img {
     box-shadow: 2px 0px 15px 0px rgba($col-black-primary, 0.8);
     z-index: $z-index-top;
     background-size: cover;
+    flex: 1 1 $img-size;
   }
 
   &--aside {
@@ -542,6 +535,7 @@
     align-items: center;
     hyphens: auto;
     z-index: $z-index-top - 1;
+    flex: 1 1 (100vw - $img-size);
 
     &--title {
       display: block;
