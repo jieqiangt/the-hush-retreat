@@ -4,8 +4,7 @@ export default function DescriptionSection(props) {
   const { classes, baseClass, img, title, content } = props;
 
   return (
-    <Fragment>
-      <div className={classes[baseClass]} />
+    <section className={classes[baseClass]}>
       {img}
       <div className={`${classes[`${baseClass}--aside`]}`}>
         <div className={`${classes[`${baseClass}--aside--box`]} hidden`}>
@@ -13,6 +12,6 @@ export default function DescriptionSection(props) {
           {content}
         </div>
       </div>
-    </Fragment>
+    </section>
   );
 }

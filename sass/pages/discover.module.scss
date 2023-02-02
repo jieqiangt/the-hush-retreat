@@ -5,41 +5,8 @@
 @import "../abstracts/media";
 
 .discover {
-  display: grid;
-  grid-template-columns:
-    [full-start] 1fr [center-start] repeat(
-      10,
-      [col-start] minmax(16rem, min-content) [col-end]
-    )
-    [center-end] 1fr [full-end];
-
-
-  @include media-queries(laptop-sm-height) {
-    grid-template-rows: 9vh 100vh max-content repeat(3, min-content);
-  }
-
-  @include media-queries(tab-pot) {
-    grid-template-rows: 8vh 100vh max-content repeat(3, min-content);
-  }
-
-  @include media-queries(tab-sm-land) {
-    grid-template-rows: 8vw 100vw max-content repeat(3, min-content);
-  }
-
-  &--nav {
-    grid-column: full-start / full-end;
-    grid-row: 1;
-
-    @include media-queries(phone) {
-      grid-column: unset;
-      grid-row: unset;
-    }
-  }
-
   &--footer {
     @include footer(transparent, relative);
-    grid-column: full-start / full-end;
-    grid-row: 6;
     margin-top: 2rem;
   }
 }
@@ -53,26 +20,17 @@
       ),
       url("../../public/img/meditation-1-lg.jpg")
     ),
-    (bottom 85% left 0%)
+    (bottom 85% left 50%)
   );
-  grid-column: full-start / full-end;
-  grid-row: 2;
-  overflow-x: hidden;
+  position: relative;
 
   &--box {
-    grid-column: col-start 5 / full-end;
-    margin: 26rem -6rem;
+    position: absolute;
     background-color: transparent;
     font-size: $font-size-text-lg;
     transition-delay: 0.6s;
-
-    @include media-queries(xl-screen) {
-      margin: 13rem -1rem;
-    }
-
-    @include media-queries(lg-screen) {
-      margin: 14rem -1rem;
-    }
+    top: 16rem;
+    left: 78rem;
   }
 
   &--title {
@@ -83,7 +41,7 @@
   &--desc {
     color: $col-gray-tint-1;
     line-height: $font-line-height-md;
-    margin-left: 3.6rem;
+    margin-left: 4rem;
   }
 
   &--em {
@@ -93,9 +51,8 @@
 }
 
 .lotus {
-  @include description--section();
-  grid-column: full-start / full-end;
-  grid-row: 3;
+  @include description--section(30vw);
+  position: relative;
 
   &::after {
     content: "";
@@ -103,7 +60,7 @@
     display: block;
     height: 0.2rem;
     width: 97%;
-    bottom: -22rem;
+    bottom: -8rem;
     left: 1.5%;
     background-color: rgba($col-accent-tint-2, 0.5);
     z-index: $z-index-top + $z-index-top;
@@ -112,30 +69,16 @@
   &--img {
     background-image: url("../../public/img/lotus-1-lg.jpg");
     background-position: bottom;
-    width: 120%;
-    height: 95%;
-    margin: 16rem -6rem 0rem auto;
-    grid-column: col-start 1 / col-end 3;
-    grid-row: 3;
-
-    @include media-queries(xl-screen) {
-      width: 95%;
-      height: 85%;
-      margin-top: 21rem;
-      margin-right: -10rem;
-    }
+    margin: 8rem -1rem 8rem 10rem;
   }
 
   &--aside {
     font-size: $font-size-text-md;
     line-height: $font-line-height-lg;
-    grid-column: col-end 3 / full-end;
-    grid-row: 3;
 
     &--box {
       background-color: $col-main-primary;
-      padding: 14rem 16rem;
-      margin-top: 26rem;
+      padding: 10rem 13rem 10rem 5rem;
     }
 
     &--title {
@@ -156,15 +99,13 @@
 }
 
 .approach {
-  grid-column: full-start / full-end;
-  grid-row: 4;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   background-color: $col-white-primary;
   position: relative;
-  margin-top: 26rem;
+  margin-top: 16rem;
 
   &::after {
     content: "";
@@ -172,7 +113,7 @@
     display: block;
     height: 0.2rem;
     width: 97%;
-    bottom: 0rem;
+    bottom: -8rem;
     background-color: rgba($col-accent-tint-2, 0.5);
   }
 
@@ -236,19 +177,17 @@
 }
 
 .founder {
-  grid-column: full-start / full-end;
-  grid-row: 5;
-  @include description--section();
+  @include description--section(30vw);
+  margin-top: 16rem;
+  margin-bottom: 10rem;
 
   &--aside {
-    grid-column: full-start / col-start 8;
-    grid-row: 5;
     background-color: $col-main-primary;
-    padding: 10rem 24rem 10rem 18rem;
-    margin: 20rem 0rem;
+    order: 1;
+    margin: 14rem 0rem;
 
-    @include media-queries(laptop-sm-height) {
-      padding: 10rem 20rem 10rem 10rem;
+    &--box {
+      padding: 0rem 14rem 0rem 4rem;
     }
 
     &--title {
@@ -266,17 +205,15 @@
       gap: $margin-flex-lg;
       hyphens: auto;
       padding-left: 2.4rem;
-      padding-right: 8rem;
+      padding-right: 4rem;
     }
   }
 
   &--img {
+    order: 2;
     position: relative;
-    z-index: $z-index-top;
-    grid-column: col-start 8 / full-end;
-    grid-row: 5;
+    z-index: $z-index-top + 10;
     box-shadow: none;
-    margin-top: 6rem;
 
     &--composition {
       @include img-composition(
@@ -290,24 +227,8 @@
         $pos-founder-img-left-offset
       );
 
-      @include media-queries(xl-screen) {
-        @include img-composition(
-          0rem,
-          -8rem,
-          12rem,
-          14rem,
-          38rem,
-          -2rem,
-          $pos-founder-img-top-offset + 6rem,
-          $pos-founder-img-left-offset
-        );
-      }
-
       &--img {
-        @include media-queries(xl-screen) {
-          width: 65%;
-        }
-        width: 28%;
+        width: 53%;
 
         &--1 {
           z-index: $z-index-top;

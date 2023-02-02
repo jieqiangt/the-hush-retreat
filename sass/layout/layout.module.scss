@@ -8,6 +8,7 @@
   background-color: $col-white-primary;
   position: sticky;
   z-index: 0;
+  font-size: $font-size-header-sm;
 
   @include media-queries(phone) {
     position: fixed;
@@ -28,46 +29,36 @@
     padding: 1.2rem 0rem 1.6rem 0;
     gap: 15rem;
     font-weight: $font-weight-xs;
-    font-size: $font-size-text-md;
 
-    @include media-queries(phone) {
-      flex-direction: column;
-      gap: 5rem;
-
-      & :nth-child(1) {
-        order: 2;
-      }
-
-      & :nth-child(2) {
-        order: 1;
-      }
-
-      & :nth-child(3) {
-        order: 3;
-      }
+    & li:nth-child(1) {
+      animation-delay: 0.4s;
+      animation-fill-mode: backwards;
     }
 
-    &--sides {
-      display: flex;
-      justify-content: center;
-      width: 25%;
-      gap: 4.8rem;
+    & li:nth-child(2) {
+      animation-delay: 0.4s;
+      animation-fill-mode: backwards;
+    }
 
-      @include media-queries(phone) {
-        flex-direction: column-reverse;
-        gap: 5rem;
-      }
+    & li:nth-child(3) {
+      margin: 0rem 4rem;
+    }
 
-      & li {
-        animation-delay: 0.1s;
-        animation-fill-mode: backwards;
-      }
+    & li:nth-child(3) {
+      animation-delay: 0.4s;
+      animation-fill-mode: backwards;
+    }
+
+    & li:nth-child(4) {
+      animation-delay: 0.4s;
+      animation-fill-mode: backwards;
     }
   }
 
   &--icon {
-    height: 4.8rem;
-    width: 9.6rem;
+    height: 6.2rem;
+    width: 12rem;
+    display: inline-block;
     fill: $col-main-primary;
   }
 
