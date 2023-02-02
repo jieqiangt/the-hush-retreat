@@ -9,10 +9,10 @@
   grid-template-columns:
     [full-start] 1fr [center-start] repeat(
       10,
-      [col-start] minmax(17.5rem, min-content) [col-end]
+      [col-start] minmax(16rem, min-content) [col-end]
     )
     [center-end] 1fr [full-end];
-  grid-template-rows: 7.5vh 100vh max-content repeat(3, min-content);
+
 
   @include media-queries(laptop-sm-height) {
     grid-template-rows: 9vh 100vh max-content repeat(3, min-content);
@@ -57,7 +57,7 @@
   );
   grid-column: full-start / full-end;
   grid-row: 2;
-  position: relative;
+  overflow-x: hidden;
 
   &--box {
     grid-column: col-start 5 / full-end;
@@ -66,16 +66,12 @@
     font-size: $font-size-text-lg;
     transition-delay: 0.6s;
 
-    @include media-queries(largest) {
-      margin: 22rem -4rem;
-    }
-
-    @include media-queries(xxl-screen) {
-      margin: 20rem -2rem;
-    }
-
     @include media-queries(xl-screen) {
-      margin: 16rem -2rem;
+      margin: 13rem -1rem;
+    }
+
+    @include media-queries(lg-screen) {
+      margin: 14rem -1rem;
     }
   }
 
@@ -121,18 +117,6 @@
     margin: 16rem -6rem 0rem auto;
     grid-column: col-start 1 / col-end 3;
     grid-row: 3;
-
-    @include media-queries(largest) {
-      width: 110%;
-      margin-right: -8rem;
-    }
-
-    @include media-queries(xxl-screen) {
-      width: 105%;
-      height: 90%;
-      margin-top: 18rem;
-      margin-right: -8rem;
-    }
 
     @include media-queries(xl-screen) {
       width: 95%;
@@ -204,6 +188,7 @@
   &--feature-box {
     @include feature-box(2.4rem, darken(rgba($col-gray-tint-1, 0.7), 10%));
     margin-bottom: 4.8rem;
+    margin-right: 2rem;
 
     &--item {
       font-size: $font-size-text-md;
@@ -305,59 +290,25 @@
         $pos-founder-img-left-offset
       );
 
-      @include media-queries(xxl-screen) {
-        @include img-composition(
-          0rem,
-          -8rem,
-          12rem,
-          20rem,
-          38rem,
-          -2rem,
-          $pos-founder-img-top-offset + 2rem,
-          $pos-founder-img-left-offset
-        );
-      }
-
       @include media-queries(xl-screen) {
         @include img-composition(
           0rem,
           -8rem,
           12rem,
-          20rem,
+          14rem,
           38rem,
           -2rem,
-          $pos-founder-img-top-offset + 4rem,
-          $pos-founder-img-left-offset
-        );
-      }
-
-      @include media-queries(laptop-sm-height) {
-        @include img-composition(
-          0rem,
-          -8rem,
-          12rem,
-          20rem,
-          38rem,
-          -2rem,
-          $pos-founder-img-top-offset + 4rem,
+          $pos-founder-img-top-offset + 6rem,
           $pos-founder-img-left-offset
         );
       }
 
       &--img {
-        @include media-queries(largest) {
-          width: 55%;
-        }
-
-        @include media-queries(xxl-screen) {
-          width: 60%;
-        }
-
-        @include media-queries(laptop-sm-height) {
+        @include media-queries(xl-screen) {
           width: 65%;
         }
+        width: 28%;
 
-        width: 40%;
         &--1 {
           z-index: $z-index-top;
         }

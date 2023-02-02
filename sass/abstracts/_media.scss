@@ -1,16 +1,4 @@
 @mixin media-queries($breakpoint) {
-  @if $breakpoint == largest {
-    @media (max-width: 137.5em) {
-      //width: 2200px
-      @content;
-    }
-  }
-  @if $breakpoint == xxl-screen {
-    @media (max-width: 125em) {
-      //width: 2000px
-      @content;
-    }
-  }
   @if $breakpoint == xl-screen {
     @media (max-width: 112.5em) {
       //width: 1800px
