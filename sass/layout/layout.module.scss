@@ -5,20 +5,109 @@
 @import "../abstracts/media";
 
 .nav {
-  background-color: $col-white-primary;
-  position: sticky;
-  z-index: 0;
-  font-size: $font-size-header-sm;
+  &--checkbox {
+    display: none;
+  }
 
-  @include media-queries(phone) {
-    position: fixed;
-    top: 0rem;
-    left: 0rem;
-    width: 100vw;
-    height: 100vh;
-    padding-top: 6rem;
-    background-color: rgba($col-white-primary, 0.6);
-    z-index: $z-index-modal;
+  @include media-queries(phone-lg) {
+    &--checkbox:checked ~ &--bg {
+      transform: scale(100);
+    }
+
+    &--checkbox:checked ~ &--bar {
+      @include make-visible;
+      position: fixed;
+      top: 0rem;
+      left: 0rem;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba($col-white-primary, 0.9);
+      z-index: $z-index-modal + 10;
+      display: flex;
+      background-color: transparent;
+    }
+
+    &--checkbox:checked + &--btn &--btn--close {
+      transform: translate(-50%, -50%);
+      @include make-visible;
+    }
+
+    &--checkbox:checked + &--btn &--btn--menu {
+      transform: translate(-50%, 0%);
+      @include make-invisible;
+    }
+  }
+
+  &--btn {
+    @include make-invisible;
+    @include remove-dim;
+
+    @include media-queries(phone-lg) {
+      @include make-visible;
+      background-color: rgba($col-accent-primary, 0.8);
+      position: fixed;
+      top: 6rem;
+      right: 6rem;
+      height: 7rem;
+      width: 7rem;
+      border-radius: 50%;
+      z-index: $z-index-modal + 20;
+
+      &--close {
+        @include make-invisible;
+        height: 5rem;
+        width: 5rem;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        fill: $col-main-primary;
+        transition: $ani-default;
+      }
+
+      &--menu {
+        height: 5.5rem;
+        width: 5.5rem;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        fill: $col-main-primary;
+        transition: $ani-default;
+      }
+    }
+  }
+
+  &--bg {
+    @include make-invisible;
+    @include remove-dim;
+
+    @include media-queries(phone-lg) {
+      @include make-visible;
+      background-color: rgba($col-white-primary, 0.9);
+      position: fixed;
+      top: 6.5rem;
+      right: 6.5rem;
+      height: 6rem;
+      width: 6rem;
+      border-radius: 50%;
+      z-index: $z-index-modal;
+      transition: $ani-default;
+    }
+  }
+
+  &--bar {
+    background-color: $col-white-primary;
+    position: sticky;
+    z-index: 0;
+    font-size: $font-size-header-sm;
+
+    @include media-queries(phone-lg) {
+      @include make-invisible();
+      @include remove-dim();
+    }
   }
 
   &--list {
@@ -30,28 +119,49 @@
     gap: 15rem;
     font-weight: $font-weight-xs;
 
+    @include media-queries(phone-lg) {
+      flex-direction: column;
+      gap: 8rem;
+      font-size: $font-size-header-lg;
+    }
+
     & li:nth-child(1) {
       animation-delay: 0.4s;
       animation-fill-mode: backwards;
+      @include media-queries(phone-lg) {
+        order: 2;
+      }
     }
 
     & li:nth-child(2) {
       animation-delay: 0.4s;
       animation-fill-mode: backwards;
+      @include media-queries(phone-lg) {
+        order: 3;
+      }
     }
 
     & li:nth-child(3) {
       margin: 0rem 4rem;
-    }
-
-    & li:nth-child(3) {
-      animation-delay: 0.4s;
-      animation-fill-mode: backwards;
+      @include media-queries(phone-lg) {
+        order: 1;
+      }
     }
 
     & li:nth-child(4) {
       animation-delay: 0.4s;
       animation-fill-mode: backwards;
+      @include media-queries(phone-lg) {
+        order: 4;
+      }
+    }
+
+    & li:nth-child(5) {
+      animation-delay: 0.4s;
+      animation-fill-mode: backwards;
+      @include media-queries(phone-lg) {
+        order: 5;
+      }
     }
   }
 
@@ -60,6 +170,11 @@
     width: 12rem;
     display: inline-block;
     fill: $col-main-primary;
+
+    @include media-queries(phone-lg) {
+      height: 12rem;
+      width: 20rem;
+    }
   }
 
   &--link {

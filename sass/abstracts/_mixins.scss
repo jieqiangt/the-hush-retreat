@@ -12,6 +12,11 @@
   visibility: visible !important;
 }
 
+@mixin remove-dim {
+  height: 0rem;
+  width: 0rem;
+}
+
 @mixin btn--circle {
   width: 4.8rem;
   height: 4.8rem;

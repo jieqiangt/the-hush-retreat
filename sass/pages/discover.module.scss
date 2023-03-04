@@ -31,6 +31,36 @@
     transition-delay: 0.6s;
     top: 16rem;
     left: 78rem;
+
+    @include media-queries(xl-screen) {
+      top: 16rem;
+      left: 70rem;
+    }
+
+    @include media-queries(lg-screen) {
+      top: 16rem;
+      left: 64rem;
+    }
+
+    @include media-queries(laptop-lg) {
+      top: 16rem;
+      left: 70rem;
+    }
+
+    @include media-queries(laptop) {
+      top: 20rem;
+      left: 68rem;
+    }
+
+    @include media-queries(laptop-sm) {
+      top: 24rem;
+      left: 62rem;
+    }
+
+    @include media-queries(phone-lg) {
+      top: 28rem;
+      left: 55rem;
+    }
   }
 
   &--title {
@@ -70,6 +100,22 @@
     background-image: url("../../public/img/lotus-1-lg.jpg");
     background-position: bottom;
     margin: 8rem -1rem 8rem 10rem;
+
+    @include media-queries(xl-screen) {
+      margin: 4rem -1rem 4rem 10rem;
+    }
+
+    @include media-queries(laptop-lg) {
+      margin: 8rem -1rem 8rem 7rem;
+    }
+
+    @include media-queries(laptop) {
+      margin: 10rem -5rem 10rem 2rem;
+    }
+
+    @include media-queries(laptop-sm) {
+      margin: 13rem -8rem 13rem 2rem;
+    }
   }
 
   &--aside {
@@ -79,6 +125,18 @@
     &--box {
       background-color: $col-main-primary;
       padding: 10rem 13rem 10rem 5rem;
+
+      @include media-queries(xl-screen) {
+        padding: 5rem 13rem 5rem 5rem;
+      }
+
+      @include media-queries(laptop) {
+        padding: 5rem 12rem 5rem 8rem;
+      }
+
+      @include media-queries(laptop-sm) {
+        padding: 5rem 8rem 5rem 11rem;
+      }
     }
 
     &--title {

@@ -240,7 +240,7 @@
 }
 
 .intentions {
-  @include description--section();
+  @include description--section(30vw);
   grid-column: full-start/full-end;
   grid-row: 3;
 
@@ -303,7 +303,7 @@
 }
 
 .expect {
-  @include description--section();
+  @include description--section(30vw);
   grid-column: full-start/full-end;
   grid-row: 4;
 
@@ -396,7 +396,7 @@
 }
 
 .guide {
-  @include description--section();
+  @include description--section(30vw);
   grid-column: full-start/full-end;
   grid-row: 5;
 

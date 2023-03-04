@@ -4,6 +4,30 @@
 // SETTING FONT SIZE AS 10px
 html {
   font-size: 62.5%;
+
+  @include media-queries(lg-screen) {
+    font-size: 60%;
+  }
+
+  @include media-queries(laptop-lg) {
+    font-size: 50%;
+  }
+  
+  @include media-queries(laptop) {
+    font-size: 43%;
+  }
+
+  @include media-queries(laptop-sm) {
+    font-size: 38%;
+  }
+
+  @include media-queries(phone-lg) {
+    font-size: 35%;
+  }
+
+  @include media-queries(phone) {
+    font-size: 32%;
+  }
 }
 
 // CSS RESET
@@ -26,6 +50,7 @@ body {
 
 main {
   position: relative;
+  overflow-x: hidden;
 }
 
 button,

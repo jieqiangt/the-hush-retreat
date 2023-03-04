@@ -23,9 +23,9 @@
       @content;
     }
   }
-  @if $breakpoint == laptop-sm-height {
-    @media (max-height: 62.5em) {
-      //height: 1000px
+  @if $breakpoint == laptop-sm {
+    @media (max-width: 62.5em) {
+      //width: 1000px
       @content;
     }
   }
@@ -41,12 +41,22 @@
       @content;
     }
   }
+
+  @if $breakpoint == phone-lg {
+    @media (max-width: 53.125em) {
+      //width: 850px
+      @content;
+    }
+  }
+
+
   @if $breakpoint == phone {
     @media (max-width: 37.5em) {
       //width: 600px
       @content;
     }
   }
+
   @if $breakpoint == phone-sm {
     @media (max-width: 37.5em) and (max-height: 43.75em) {
       //width: 600px height: 700px
