@@ -14,7 +14,7 @@ export default function CorporateCustomers(props) {
             iconName="icon-accenture"
           />
         </div>
-      </aside >
+      </aside>
       <aside className={classes[`${baseClass}--partners`]}>
         <h3 className={classes[`${baseClass}--title`]}>Wellness Partners</h3>
         <div className={classes[`${baseClass}--icons`]}>
@@ -25,6 +25,24 @@ export default function CorporateCustomers(props) {
           <Icon
             iconClass={`${classes[`${baseClass}--icon`]} hidden`}
             iconName="icon-raffles"
+          />
+          <Icon
+            iconClass={`${classes[`${baseClass}--icon`]} ${
+              classes[`${baseClass}--icon--tamarind`]
+            } hidden`}
+            iconName="icon-tamarind-hill"
+          />
+          <Icon
+            iconClass={`${classes[`${baseClass}--icon`]} ${
+              classes[`${baseClass}--icon--samadhi`]
+            } hidden`}
+            iconName="icon-samadhi"
+          />
+          <Icon
+            iconClass={`${classes[`${baseClass}--icon`]} ${
+              classes[`${baseClass}--icon--hummingbird`]
+            } hidden`}
+            iconName="icon-hummingbird"
           />
         </div>
       </aside>
