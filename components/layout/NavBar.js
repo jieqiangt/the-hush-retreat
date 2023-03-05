@@ -2,13 +2,14 @@ import NavLink from "./NavLink";
 import Icon from "../ui/Icon";
 import classes from "../../sass/layout/layout.module.scss";
 import { useRouter } from "next/router";
+import { Fragment } from "react";
 
 export default function NavBar(props) {
   const router = useRouter();
   const curPath = router.pathname;
 
   return (
-    <section className={classes["nav"]}>
+    <Fragment>
       <input
         type="checkbox"
         className={classes["nav--checkbox"]}
@@ -61,6 +62,6 @@ export default function NavBar(props) {
           </NavLink>
         </ul>
       </nav>
-    </section>
+    </Fragment>
   );
 }

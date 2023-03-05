@@ -9,7 +9,7 @@
     display: none;
   }
 
-  @include media-queries(phone-lg) {
+  @include media-queries(tab-pot) {
     &--checkbox:checked ~ &--bg {
       transform: scale(100);
     }
@@ -41,16 +41,18 @@
   &--btn {
     @include make-invisible;
     @include remove-dim;
+    display: block;
 
-    @include media-queries(phone-lg) {
+    @include media-queries(tab-pot) {
       @include make-visible;
-      background-color: rgba($col-accent-primary, 0.8);
+      background-color: $col-white-shade-1;
       position: fixed;
       top: 6rem;
       right: 6rem;
       height: 7rem;
       width: 7rem;
       border-radius: 50%;
+      box-shadow: 2px 2px 2px 1px rgba($col-black-primary, 0.1);
       z-index: $z-index-modal + 20;
 
       &--close {
@@ -84,7 +86,7 @@
     @include make-invisible;
     @include remove-dim;
 
-    @include media-queries(phone-lg) {
+    @include media-queries(tab-pot) {
       @include make-visible;
       background-color: rgba($col-white-primary, 0.9);
       position: fixed;
@@ -104,7 +106,7 @@
     z-index: 0;
     font-size: $font-size-header-sm;
 
-    @include media-queries(phone-lg) {
+    @include media-queries(tab-pot) {
       @include make-invisible();
       @include remove-dim();
     }
@@ -119,7 +121,7 @@
     gap: 15rem;
     font-weight: $font-weight-xs;
 
-    @include media-queries(phone-lg) {
+    @include media-queries(tab-pot) {
       flex-direction: column;
       gap: 8rem;
       font-size: $font-size-header-lg;
@@ -128,7 +130,7 @@
     & li:nth-child(1) {
       animation-delay: 0.4s;
       animation-fill-mode: backwards;
-      @include media-queries(phone-lg) {
+      @include media-queries(tab-pot) {
         order: 2;
       }
     }
@@ -136,14 +138,14 @@
     & li:nth-child(2) {
       animation-delay: 0.4s;
       animation-fill-mode: backwards;
-      @include media-queries(phone-lg) {
+      @include media-queries(tab-pot) {
         order: 3;
       }
     }
 
     & li:nth-child(3) {
       margin: 0rem 4rem;
-      @include media-queries(phone-lg) {
+      @include media-queries(tab-pot) {
         order: 1;
       }
     }
@@ -151,7 +153,7 @@
     & li:nth-child(4) {
       animation-delay: 0.4s;
       animation-fill-mode: backwards;
-      @include media-queries(phone-lg) {
+      @include media-queries(tab-pot) {
         order: 4;
       }
     }
@@ -159,7 +161,7 @@
     & li:nth-child(5) {
       animation-delay: 0.4s;
       animation-fill-mode: backwards;
-      @include media-queries(phone-lg) {
+      @include media-queries(tab-pot) {
         order: 5;
       }
     }
@@ -171,7 +173,7 @@
     display: inline-block;
     fill: $col-main-primary;
 
-    @include media-queries(phone-lg) {
+    @include media-queries(tab-pot) {
       height: 12rem;
       width: 20rem;
     }

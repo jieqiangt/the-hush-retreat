@@ -34,10 +34,10 @@ export default function OurApproach(props) {
       <FeatureBox
         feature-box-items={features}
         featureBoxListClass={classes[`${baseClass}--feature-box`]}
-        featureBoxItemClass={`${classes[`${baseClass}--feature-box--item`]}`}
-        featureBoxItemOuterClass={`${
-          classes[`${baseClass}--feature-box--item--outer`]
+        featureBoxItemClass={`${
+          classes[`${baseClass}--feature-box--item`]
         } hidden`}
+        featureBoxItemImgBoxClass={`${classes[`${baseClass}--feature-box--item--imgbox`]}`}
         featureBoxItemImgClass={classes[`${baseClass}--feature-box--item--img`]}
         featureBoxItemTitleClass={
           classes[`${baseClass}--feature-box--item--title`]

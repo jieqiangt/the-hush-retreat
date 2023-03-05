@@ -62,37 +62,43 @@
 }
 
 @mixin feature-box($margin-item-gap, $border-color) {
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(50rem, min-content));
-  justify-content: center;
-  column-gap: $margin-item-gap;
+  display: flex;
   justify-items: center;
+  padding: 0rem 18rem;
+  gap: 3rem;
+
+  &--item + &--item {
+    border-left: solid $size-underline-link $border-color;
+  }
 
   &--item {
     padding: $margin-item-gap 0rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
+    padding-left: 3rem;
 
-    &--outer {
-      padding-left: $margin-item-gap;
-
-      &:nth-child(1) {
-        transition-delay: 0.2s;
-      }
-
-      &:nth-child(2) {
-        transition-delay: 0.4s;
-      }
-
-      &:nth-child(3) {
-        transition-delay: 0.6s;
-      }
+    &:nth-child(1) {
+      transition-delay: 0.2s;
     }
 
-    &--outer + &--outer {
-      border-left: solid $size-underline-link $border-color;
+    &:nth-child(2) {
+      transition-delay: 0.4s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: 0.6s;
+    }
+
+    &--imgbox {
+      position: relative;
+      overflow: hidden;
+      width: 28vw;
+      height: 18vw;
+    }
+
+    &--img {
+      object-fit: cover;
     }
 
     &--title {
@@ -110,6 +116,8 @@
       text-align: left;
       font-size: inherit;
     }
+
+
   }
 }
 

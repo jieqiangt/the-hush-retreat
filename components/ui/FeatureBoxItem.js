@@ -1,12 +1,11 @@
 import Image from "next/image";
 
 export default function FeatureBoxItem(props) {
-  const scaleFactor = 12.5;
   const {
     featureBoxItemClass,
     featureBoxItemDescClass,
     featureBoxItemImgClass,
-    featureBoxItemOuterClass,
+    featureBoxItemImgBoxClass,
     featureBoxItemTitleClass,
     imgSrc,
     title,
@@ -14,18 +13,19 @@ export default function FeatureBoxItem(props) {
   } = props;
 
   return (
-    <li key={title} className={featureBoxItemOuterClass}>
-      <div className={featureBoxItemClass}>
+    <li key={title} className={featureBoxItemClass}>
+      <div className={featureBoxItemImgBoxClass}>
         <Image
           className={featureBoxItemImgClass}
           src={imgSrc}
           alt={title}
-          width={6000 / scaleFactor}
-          height={4000 / scaleFactor}
+          fill={true}
+          sizes="(max-width: 46.875em) 100vw,
+          28vw"
         />
-        <h3 className={featureBoxItemTitleClass}>{title}</h3>
-        <p className={featureBoxItemDescClass}>{desc}</p>
       </div>
+      <h3 className={featureBoxItemTitleClass}>{title}</h3>
+      <p className={featureBoxItemDescClass}>{desc}</p>
     </li>
   );
 }

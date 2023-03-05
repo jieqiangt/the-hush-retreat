@@ -4,7 +4,7 @@ export default function FeatureBox(props) {
   const {
     featureBoxListClass,
     featureBoxItemClass,
-    featureBoxItemOuterClass,
+    featureBoxItemImgBoxClass,
     featureBoxItemImgClass,
     featureBoxItemTitleClass,
     featureBoxItemDescClass,
@@ -19,7 +19,7 @@ export default function FeatureBox(props) {
           title={item.title}
           desc={item.desc}
           featureBoxItemClass={featureBoxItemClass}
-          featureBoxItemOuterClass={featureBoxItemOuterClass}
+          featureBoxItemImgBoxClass={featureBoxItemImgBoxClass}
           featureBoxItemImgClass={featureBoxItemImgClass}
           featureBoxItemTitleClass={featureBoxItemTitleClass}
           featureBoxItemDescClass={featureBoxItemDescClass}

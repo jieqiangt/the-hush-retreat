@@ -20,46 +20,26 @@
       ),
       url("../../public/img/meditation-1-lg.jpg")
     ),
-    (bottom 85% left 50%)
+    (bottom 80% right 54%)
   );
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &--box {
-    position: absolute;
     background-color: transparent;
     font-size: $font-size-text-lg;
     transition-delay: 0.6s;
-    top: 16rem;
-    left: 78rem;
+    margin-left: 20rem;
 
     @include media-queries(xl-screen) {
-      top: 16rem;
-      left: 70rem;
-    }
-
-    @include media-queries(lg-screen) {
-      top: 16rem;
-      left: 64rem;
-    }
-
-    @include media-queries(laptop-lg) {
-      top: 16rem;
-      left: 70rem;
+      margin-left: 24rem;
+      margin-bottom: 30rem;
     }
 
     @include media-queries(laptop) {
-      top: 20rem;
-      left: 68rem;
-    }
-
-    @include media-queries(laptop-sm) {
-      top: 24rem;
-      left: 62rem;
-    }
-
-    @include media-queries(phone-lg) {
-      top: 28rem;
-      left: 55rem;
+      margin-bottom: 48rem;
     }
   }
 
@@ -81,8 +61,19 @@
 }
 
 .lotus {
-  @include description--section(30vw);
+  @include description--section(35vw);
   position: relative;
+
+  @include media-queries(laptop-sm) {
+    @include description--section(35vw);
+  }
+
+  @include media-queries(tab-pot) {
+    display: flex;
+    flex-direction: column;
+    @include description--section(90vw);
+    height: auto;
+  }
 
   &::after {
     content: "";
@@ -106,15 +97,26 @@
     }
 
     @include media-queries(laptop-lg) {
-      margin: 8rem -1rem 8rem 7rem;
+      margin: 10rem -1rem 10rem 7rem;
     }
 
     @include media-queries(laptop) {
-      margin: 10rem -5rem 10rem 2rem;
+      margin: 14rem -1rem 14rem 7rem;
     }
 
     @include media-queries(laptop-sm) {
-      margin: 13rem -8rem 13rem 2rem;
+      margin: 22rem -8rem 22rem 4rem;
+    }
+
+    @include media-queries(tab-xl-pot) {
+      margin: 20rem -10rem 20rem 4rem;
+    }
+
+    @include media-queries(tab-pot) {
+      margin: 0rem;
+      background-position: bottom 20% left 0%;
+      order: 2;
+      margin-bottom: 6rem;
     }
   }
 
@@ -130,12 +132,33 @@
         padding: 5rem 13rem 5rem 5rem;
       }
 
-      @include media-queries(laptop) {
-        padding: 5rem 12rem 5rem 8rem;
+      @include media-queries(laptop-lg) {
+        padding: 8rem 12rem 8rem 8rem;
       }
 
       @include media-queries(laptop-sm) {
-        padding: 5rem 8rem 5rem 11rem;
+        padding: 10rem 7rem 10rem 12rem;
+      }
+
+      @include media-queries(tab-xl-pot) {
+        padding: 14rem 5rem 14rem 14rem;
+      }
+
+      @include media-queries(tab-pot) {
+        padding: 10rem 14rem;
+        align-self: stretch;
+      }
+
+      @include media-queries(phone-lg) {
+        padding: 10rem 7rem;
+      }
+
+      @include media-queries(phone) {
+        padding: 10rem 5rem;
+      }
+
+      @include media-queries(phone-sm) {
+        padding: 8rem 4rem;
       }
     }
 
@@ -173,6 +196,10 @@
     width: 97%;
     bottom: -8rem;
     background-color: rgba($col-accent-tint-2, 0.5);
+
+    @include media-queries(tab-lg-pot) {
+      bottom: 0rem;
+    }
   }
 
   &--icon {
@@ -189,8 +216,21 @@
     margin-bottom: 4.8rem;
     margin-right: 2rem;
 
+    @include media-queries(tab-pot) {
+      flex-direction: column;
+      padding: 0rem;
+      margin: 0rem;
+    }
+
     &--item {
       font-size: $font-size-text-md;
+      @include media-queries(tab-pot) {
+        flex-direction: column;
+        padding: 0rem;
+        margin: 0rem;
+        gap: 4rem;
+        margin-bottom: 8rem;
+      }
 
       &--title {
         color: $col-main-primary;
@@ -199,14 +239,39 @@
       &--desc {
         color: $col-gray-tint-1;
         line-height: $font-line-height-md;
+
+        @include media-queries(tab-pot) {
+          padding: 0rem 24rem;
+        }
+
+
+        @include media-queries(phone-lg) {
+          padding: 0rem 18rem;
+        }
+
+        @include media-queries(phone) {
+          padding: 0rem 14rem;
+        }
+      }
+
+      &--imgbox {
+        @include media-queries(tab-pot) {
+          width: 100vw;
+          height: 60vw;
+        }
       }
     }
   }
 
   &--cta {
     width: 100%;
-    height: 20vh;
+    height: 15vh;
     position: relative;
+
+    @include media-queries(tab-pot) {
+      margin-top: 2rem;
+      height: 10vh;
+    }
 
     &--box {
       display: flex;
