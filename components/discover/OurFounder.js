@@ -18,9 +18,9 @@ export default function OurFounder(props) {
   );
 
   const imgUrlList = [
-    "/img/mandi-2-lg.jpg",
-    "/img/mandi-1-lg.jpg",
-    "/img/mandi-3-lg.jpg",
+    { src: "/img/mandi-2-lg.jpg", alt: "Photo of founder, Mandi" },
+    { src: "/img/mandi-1-lg.jpg", alt: "Photo of founder, Mandi" },
+    { src: "/img/mandi-3-lg.jpg", alt: "Photo of founder, Mandi" },
   ];
 
   const img = (
