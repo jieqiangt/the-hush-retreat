@@ -82,6 +82,13 @@
     height: auto;
   }
 
+  @include media-queries(device-sm-short) {
+    display: flex;
+    flex-direction: column;
+    @include description--section(80vw);
+    height: auto;
+  }
+
   @include media-queries(tab-xl-pot) {
     height: 68vh;
   }
@@ -137,6 +144,11 @@
     @include media-queries(tab-short-land) {
       margin: 12rem -10rem 12rem 4rem;
     }
+
+    @include media-queries(device-sm-short) {
+      flex: 100 1 70vh;
+    }
+
   }
 
   &--aside {
@@ -382,16 +394,12 @@
       margin: 34rem 0rem;
     }
 
-    // @include media-queries(tab-lg-land) {
-    //   margin: 34rem 0rem;
-    // }
-
     @include media-queries(tab-land) {
       margin: 0rem;
       order: 2;
       flex: 10 1 100vh;
     }
-
+    
     &--box {
       padding: 0rem 14rem 0rem 4rem;
 

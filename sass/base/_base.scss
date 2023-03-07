@@ -28,6 +28,10 @@ html {
   @include media-queries(phone-xl) {
     font-size: 32%;
   }
+
+  @include media-queries(phone-xl) {
+    font-size: 30%;
+  }
 }
 
 // CSS RESET
