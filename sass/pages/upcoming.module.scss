@@ -325,17 +325,17 @@
     box-shadow: none;
 
     &--composition {
-      @include img-composition(
-        -10rem,
-        -2rem,
-        24rem,
-        4rem,
-        0rem,
-        24rem,
-        $pos-expect-img-top-offset,
-        $pos-expect-img-left-offset
-      );
-      position: relative;
+      // @include img-composition(
+      //   -10rem,
+      //   -2rem,
+      //   24rem,
+      //   4rem,
+      //   0rem,
+      //   24rem,
+      //   $pos-expect-img-top-offset,
+      //   $pos-expect-img-left-offset
+      // );
+      // position: relative;
       box-shadow: none;
       z-index: $z-index-top;
       margin-top: 13rem;

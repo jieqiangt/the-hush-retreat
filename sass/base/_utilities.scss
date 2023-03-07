@@ -572,6 +572,7 @@
     }
 
     &--box {
+      background-color: $col-main-primary;
       text-align: left;
       display: flex;
       flex-direction: column;

@@ -141,14 +141,13 @@
       margin-bottom: 6rem;
     }
 
-    @include media-queries(tab-short-land) {
-      margin: 12rem -10rem 12rem 4rem;
+    @include media-queries(tab-land-short) {
+      margin: 11rem -10rem 11rem 4rem;
     }
 
     @include media-queries(device-sm-short) {
       flex: 100 1 70vh;
     }
-
   }
 
   &--aside {
@@ -156,7 +155,6 @@
     line-height: $font-line-height-lg;
 
     &--box {
-      background-color: $col-main-primary;
       padding: 10rem 13rem 10rem 5rem;
 
       @include media-queries(xl-screen) {
@@ -184,7 +182,7 @@
         align-self: stretch;
       }
 
-      @include media-queries(tab-short-land) {
+      @include media-queries(tab-land-short) {
         padding: 5rem 5rem 5rem 14rem;
       }
 
@@ -377,43 +375,32 @@
     height: 90vh;
   }
 
+  @include media-queries(device-sm-short) {
+    height: 100vh;
+  }
 
+  @include media-queries(tab-land-short) {
+    height: 105vh;
+  }
+  
   &--aside {
-    background-color: $col-main-primary;
-    order: 1;
-    margin: 14rem 0rem;
-
-    @include media-queries(lg-screen) {
-      margin: 10rem 0rem;
-    }
-
-    @include media-queries(laptop-lg) {
-      margin: 22rem 0rem;
-    }
-
-    @include media-queries(laptop) {
-      margin: 26rem 0rem;
-    }
-
-    @include media-queries(laptop-sm) {
-      margin: 34rem 0rem;
-    }
 
     @include media-queries(tab-land) {
-      margin: 0rem;
       order: 2;
       flex: 10 1 100vh;
+      align-items: stretch;
     }
-    
-    &--box {
-      padding: 0rem 14rem 0rem 4rem;
 
-      @include media-queries(tab-land) {
-        padding: 0rem 8rem;
-      }
+    &--box {
+      padding: 4rem 14rem 4rem 4rem;
+    
 
       @include media-queries(tab-lg-land) {
-        padding: 0rem 10rem 0rem 4rem;
+        padding: 4rem 10rem 4rem 4rem;
+      }
+
+      @include media-queries(tab-land) {
+        padding: 10rem 8rem;
       }
     }
 
