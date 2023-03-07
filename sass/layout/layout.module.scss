@@ -9,7 +9,7 @@
     display: none;
   }
 
-  @include media-queries(tab-pot) {
+  @include media-queries(tab-land) {
     &--checkbox:checked ~ &--bg {
       transform: scale(100);
     }
@@ -43,7 +43,7 @@
     @include remove-dim;
     display: block;
 
-    @include media-queries(tab-pot) {
+    @include media-queries(tab-land) {
       @include make-visible;
       background-color: $col-white-shade-1;
       position: fixed;
@@ -86,7 +86,7 @@
     @include make-invisible;
     @include remove-dim;
 
-    @include media-queries(tab-pot) {
+    @include media-queries(tab-land) {
       @include make-visible;
       background-color: rgba($col-white-primary, 0.9);
       position: fixed;
@@ -106,7 +106,7 @@
     z-index: 0;
     font-size: $font-size-header-sm;
 
-    @include media-queries(tab-pot) {
+    @include media-queries(tab-land) {
       @include make-invisible();
       @include remove-dim();
     }
@@ -121,7 +121,7 @@
     gap: 15rem;
     font-weight: $font-weight-xs;
 
-    @include media-queries(tab-pot) {
+    @include media-queries(tab-land) {
       flex-direction: column;
       gap: 8rem;
       font-size: $font-size-header-lg;
@@ -130,7 +130,7 @@
     & li:nth-child(1) {
       animation-delay: 0.4s;
       animation-fill-mode: backwards;
-      @include media-queries(tab-pot) {
+      @include media-queries(tab-land) {
         order: 2;
       }
     }
@@ -138,14 +138,14 @@
     & li:nth-child(2) {
       animation-delay: 0.4s;
       animation-fill-mode: backwards;
-      @include media-queries(tab-pot) {
+      @include media-queries(tab-land) {
         order: 3;
       }
     }
 
     & li:nth-child(3) {
       margin: 0rem 4rem;
-      @include media-queries(tab-pot) {
+      @include media-queries(tab-land) {
         order: 1;
       }
     }
@@ -153,7 +153,7 @@
     & li:nth-child(4) {
       animation-delay: 0.4s;
       animation-fill-mode: backwards;
-      @include media-queries(tab-pot) {
+      @include media-queries(tab-land) {
         order: 4;
       }
     }
@@ -161,7 +161,7 @@
     & li:nth-child(5) {
       animation-delay: 0.4s;
       animation-fill-mode: backwards;
-      @include media-queries(tab-pot) {
+      @include media-queries(tab-land) {
         order: 5;
       }
     }
@@ -173,7 +173,7 @@
     display: inline-block;
     fill: $col-main-primary;
 
-    @include media-queries(tab-pot) {
+    @include media-queries(tab-land) {
       height: 12rem;
       width: 20rem;
     }

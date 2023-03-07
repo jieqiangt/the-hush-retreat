@@ -9,7 +9,7 @@
     @include footer(transparent, relative);
     margin-top: 2rem;
 
-    @include media-queries(tab-pot) {
+    @include media-queries(tab-land) {
       &::before {
         content: "";
         height: 0rem;
@@ -75,11 +75,15 @@
     @include description--section(35vw);
   }
 
-  @include media-queries(tab-pot) {
+  @include media-queries(tab-land) {
     display: flex;
     flex-direction: column;
     @include description--section(90vw);
     height: auto;
+  }
+
+  @include media-queries(tab-xl-pot) {
+    height: 68vh;
   }
 
   &::after {
@@ -115,11 +119,15 @@
       margin: 22rem -8rem 22rem 4rem;
     }
 
-    @include media-queries(tab-xl-pot) {
+    @include media-queries(tab-xl-land) {
       margin: 20rem -10rem 20rem 4rem;
     }
 
-    @include media-queries(tab-pot) {
+    @include media-queries(tab-xl-pot) {
+      margin: 16rem -10rem 16rem 4rem;
+    }
+
+    @include media-queries(tab-land) {
       margin: 0rem;
       background-position: bottom 20% left 0%;
       order: 2;
@@ -147,11 +155,15 @@
         padding: 10rem 7rem 10rem 12rem;
       }
 
-      @include media-queries(tab-xl-pot) {
-        padding: 14rem 5rem 14rem 14rem;
+      @include media-queries(tab-xl-land) {
+        padding: 10rem 5rem 10rem 14rem;
       }
 
-      @include media-queries(tab-pot) {
+      @include media-queries(tab-xl-pot) {
+        padding: 5rem 5rem 5rem 14rem;
+      }
+
+      @include media-queries(tab-land) {
         padding: 10rem 14rem;
         align-self: stretch;
       }
@@ -204,7 +216,7 @@
     bottom: -8rem;
     background-color: rgba($col-accent-tint-2, 0.5);
 
-    @include media-queries(tab-lg-pot) {
+    @include media-queries(tab-lg-land) {
       bottom: 0rem;
     }
   }
@@ -223,7 +235,7 @@
     margin-bottom: 4.8rem;
     margin-right: 2rem;
 
-    @include media-queries(tab-pot) {
+    @include media-queries(tab-land) {
       flex-direction: column;
       padding: 0rem;
       margin: 0rem;
@@ -231,7 +243,7 @@
 
     &--item {
       font-size: $font-size-text-md;
-      @include media-queries(tab-pot) {
+      @include media-queries(tab-land) {
         flex-direction: column;
         padding: 0rem;
         margin: 0rem;
@@ -247,7 +259,7 @@
         color: $col-gray-tint-1;
         line-height: $font-line-height-md;
 
-        @include media-queries(tab-pot) {
+        @include media-queries(tab-land) {
           padding: 0rem 24rem;
         }
 
@@ -261,7 +273,7 @@
       }
 
       &--imgbox {
-        @include media-queries(tab-pot) {
+        @include media-queries(tab-land) {
           width: 100vw;
           height: 60vw;
         }
@@ -274,7 +286,7 @@
     height: 15vh;
     position: relative;
 
-    @include media-queries(tab-pot) {
+    @include media-queries(tab-land) {
       margin-top: 2rem;
       height: 10vh;
     }
@@ -325,12 +337,12 @@
     margin-bottom: -16rem;
   }
 
-  @include media-queries(tab-lg-pot) {
+  @include media-queries(tab-lg-land) {
     margin-top: -12rem;
     margin-bottom: -20rem;
   }
 
-  @include media-queries(tab-pot) {
+  @include media-queries(tab-land) {
     flex-direction: column;
     margin-top: 0rem;
     margin-bottom: 0rem;
@@ -362,11 +374,11 @@
       margin: 34rem 0rem;
     }
 
-    @include media-queries(tab-lg-pot) {
-      margin: 40rem 0rem;
-    }
+    // @include media-queries(tab-lg-land) {
+    //   margin: 34rem 0rem;
+    // }
 
-    @include media-queries(tab-pot) {
+    @include media-queries(tab-land) {
       margin: 0rem;
       order: 2;
       flex: 10 1 100vh;
@@ -375,8 +387,12 @@
     &--box {
       padding: 0rem 14rem 0rem 4rem;
 
-      @include media-queries(tab-pot) {
+      @include media-queries(tab-land) {
         padding: 0rem 8rem;
+      }
+
+      @include media-queries(tab-lg-land) {
+        padding: 0rem 10rem 0rem 4rem;
       }
     }
 
@@ -475,21 +491,21 @@
         );
       }
 
-      @include media-queries(tab-lg-pot) {
+      @include media-queries(tab-lg-land) {
         @include img-composition(
-          20vw,
+          21vw,
           -4rem,
-          64rem,
+          61rem,
           4rem,
-          -16rem,
+          -15rem,
           20rem,
-          -44rem,
+          -43rem,
           -6rem,
           -2rem
         );
       }
 
-      @include media-queries(tab-pot) {
+      @include media-queries(tab-land) {
         @include img-composition(
           34vw,
           0rem,
@@ -504,7 +520,7 @@
         flex-direction: row;
       }
 
-      @include media-queries(tab-sm-pot) {
+      @include media-queries(tab-sm-land) {
         @include img-composition(
           36vw,
           0rem,

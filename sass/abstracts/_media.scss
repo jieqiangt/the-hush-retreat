@@ -29,34 +29,43 @@
       @content;
     }
   }
+
   @if $breakpoint == tab-xl-land {
-    @media (max-width: 68.75em) and (max-height: 50em) {
-      // width: 1100px height: 800px
-      @content;
-    }
-  }
-  @if $breakpoint == tab-xl-pot {
-    @media (max-width: 62.5em) {
-      //width: 1000px  min-height: 1000px;
+    @media (max-width: 68.75em) {
+      // width: 1100px 
       @content;
     }
   }
 
-  @if $breakpoint == tab-lg-pot {
+  @if $breakpoint == tab-xl-pot {
+    @media ((min-height: 56.25em) and (min-width: 46.875em)) {
+      // > height: 1000px  > width: 750px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-short-land {
+    @media (max-height: 50em) and (max-width: 68.75em) {
+      // < height: 800px > width: 1000px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-lg-land {
     @media (max-width: 53.125em) {
       //width: 850px
       @content;
     }
   }
 
-  @if $breakpoint == tab-pot {
+  @if $breakpoint == tab-land {
     @media (max-width: 46.875em) {
       //width: 750px
       @content;
     }
   }
 
-  @if $breakpoint == tab-sm-pot {
+  @if $breakpoint == tab-sm-land {
     @media (max-width: 40.625em) {
       //width: 650px
       @content;
@@ -91,4 +100,10 @@
     }
   }
 
+  @if $breakpoint == device-sm-short {
+    @media (max-width: 46.875em) and (max-height: 46.875em) {
+      // < width: 750px  < height: 750px
+      @content;
+    }
+  }
 }
