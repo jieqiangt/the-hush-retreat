@@ -32,7 +32,7 @@
 
   @if $breakpoint == tab-xl-land {
     @media (max-width: 68.75em) {
-      // width: 1100px 
+      // width: 1100px
       @content;
     }
   }
@@ -40,13 +40,6 @@
   @if $breakpoint == tab-xl-pot {
     @media ((min-height: 56.25em) and (min-width: 46.875em)) {
       // > height: 1000px  > width: 750px
-      @content;
-    }
-  }
-
-  @if $breakpoint == tab-short-land {
-    @media (max-height: 50em) and (max-width: 68.75em) {
-      // < height: 800px > width: 1000px
       @content;
     }
   }
@@ -61,6 +54,13 @@
   @if $breakpoint == tab-land {
     @media (max-width: 46.875em) {
       //width: 750px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-short-land {
+    @media (max-height: 50em) and (min-width: 46.876em) {
+      // < height: 800px > width: 1000px
       @content;
     }
   }
