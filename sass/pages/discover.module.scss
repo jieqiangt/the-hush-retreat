@@ -369,9 +369,14 @@
     height: 95vh;
   }
 
-  @include media-queries(phone) {
-    height: 100vh;
+  @include media-queries(phone-xl) {
+    height: 85vh;
   }
+
+  @include media-queries(phone) {
+    height: 90vh;
+  }
+
 
   &--aside {
     background-color: $col-main-primary;
