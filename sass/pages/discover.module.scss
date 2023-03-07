@@ -8,6 +8,13 @@
   &--footer {
     @include footer(transparent, relative);
     margin-top: 2rem;
+
+    @include media-queries(tab-pot) {
+      &::before {
+        content: "";
+        height: 0rem;
+      }
+    }
   }
 }
 
@@ -323,6 +330,17 @@
     margin-bottom: -20rem;
   }
 
+  @include media-queries(tab-pot) {
+    flex-direction: column;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    height: 95vh;
+  }
+
+  @include media-queries(phone) {
+    height: 100vh;
+  }
+
   &--aside {
     background-color: $col-main-primary;
     order: 1;
@@ -348,8 +366,18 @@
       margin: 40rem 0rem;
     }
 
+    @include media-queries(tab-pot) {
+      margin: 0rem;
+      order: 2;
+      flex: 10 1 100vh;
+    }
+
     &--box {
       padding: 0rem 14rem 0rem 4rem;
+
+      @include media-queries(tab-pot) {
+        padding: 0rem 8rem;
+      }
     }
 
     &--title {
@@ -377,10 +405,6 @@
     box-shadow: none;
     display: flex;
     align-items: center;
-
-    @include media-queries(tab-pot) {
-      flex-direction: column;
-    }
 
     &--composition {
       @include img-composition(
@@ -467,7 +491,7 @@
 
       @include media-queries(tab-pot) {
         @include img-composition(
-          33vw,
+          34vw,
           0rem,
           0rem,
           0rem,
@@ -480,6 +504,70 @@
         flex-direction: row;
       }
 
+      @include media-queries(tab-sm-pot) {
+        @include img-composition(
+          36vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-1vw);
+      }
+
+      @include media-queries(phone-xl) {
+        @include img-composition(
+          48vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-22vw);
+      }
+
+      @include media-queries(phone-lg) {
+        @include img-composition(
+          50vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-26vw);
+      }
+
+      @include media-queries(phone) {
+        @include img-composition(
+          60vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-40vw);
+      }
+
       &--imgbox {
         &--0 {
           z-index: $z-index-top;
@@ -487,6 +575,9 @@
 
         &--1 {
           z-index: $z-index-top - 2;
+          @include media-queries(phone) {
+            box-shadow: 0px 0px 20px 3px rgba($col-black-primary, 0.2);
+          }
         }
 
         &--2 {
