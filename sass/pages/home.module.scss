@@ -506,8 +506,30 @@
   position: relative;
   height: 35vw;
 
+  @include media-queries(laptop-sm) {
+    height: 40vw;
+  }
+
+  @include media-queries(tab-land) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0fr 1fr;
+    height: 35vh;
+  }
+
+  
+  @include media-queries(phone-xl) {
+    height: 30vh;
+  }
+
   &--signup {
     position: relative;
+
+    @include media-queries(tab-land) {
+      grid-row: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     &--icon {
       height: $size-icon-square-lg;
@@ -516,6 +538,12 @@
       fill: $col-main-primary;
       margin-bottom: 3rem !important;
       align-self: center;
+
+      @include media-queries(tab-land) {
+        margin-bottom: 4rem !important;
+        width: 16rem;
+      }
+
     }
 
     &--box {
@@ -531,6 +559,19 @@
 
       @include media-queries(xl-screen) {
         bottom: 6rem;
+      }
+
+      @include media-queries(laptop-sm) {
+        right: 10rem;
+      }
+
+      @include media-queries(tab-lg-land) {
+        bottom: 4rem;
+      }
+
+      @include media-queries(tab-land) {
+        position: static;
+        width: 80%;
       }
 
       & > * {
@@ -628,6 +669,10 @@
     background-image: url("../../public/img/meditation-4-lg.jpg");
     background-size: cover;
     background-position: bottom 30% left 0%;
+
+    @include media-queries(tab-land) {
+      display: none;
+    }
   }
 }
 
