@@ -514,6 +514,9 @@
 }
 
 @mixin banner($img, $background-pos, $isRetreat: false) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   background-image: $img;
   background-size: cover;
   background-position: $background-pos;
@@ -531,6 +534,7 @@
     font-size: $font-size-text-md;
     color: $col-gray-primary;
     padding: 3.6rem;
+    padding-right: 50rem;
     z-index: $z-index-top;
   }
 

@@ -5,30 +5,6 @@
 @import "../abstracts/media";
 
 .home {
-  display: grid;
-  grid-template-columns:
-    [full-start] 1fr [center-start] repeat(
-      10,
-      [col-start] minmax(16rem, min-content) [col-end]
-    )
-    [center-end] 1fr [full-end];
-  grid-template-rows: 7.5vh 100vh 35vh repeat(3, max-content) 60vh 65vh min-content;
-
-  @include media-queries(laptop-sm-height) {
-    grid-template-rows: 9vh 100vh 35vh repeat(3, max-content) 60vh 65vh min-content;
-  }
-  @include media-queries(tab-pot) {
-    grid-template-rows: 8vh 100vh 35vh repeat(3, max-content) 60vh 65vh min-content;
-  }
-
-  @include media-queries(tab-sm-land) {
-    grid-template-rows: 8vw 100vw 35vw repeat(3, max-content) 60vw 65vw min-content;
-  }
-
-  &--nav {
-    grid-column: full-start / full-end;
-    grid-row: 1;
-  }
 }
 
 .hero {
@@ -43,12 +19,10 @@
     ),
     (bottom 25% left 90%)
   );
-  grid-column: full-start / full-end;
-  grid-row: 2;
+  
+
 
   &--box {
-    grid-column: col-start 6 / banner-end;
-    grid-row: row-start 5 / span 6;
   }
 
   &--title {
@@ -72,25 +46,23 @@
 }
 
 .corporate {
-  grid-column: full-start / full-end;
-  grid-row: 3;
-  position: relative;
   background-color: rgba($col-accent-primary, 0.8);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   justify-items: center;
-  justify-content: space-between;
-  text-align: center;
+  height: 22vw;
+
+  & aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &--title {
     @include section--title($col-main-primary, $letter-spacing-default);
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-  }
-
-  &--clients div {
-    justify-content: center;
+    margin-top: 5vw;
+    margin-bottom: 2rem;
   }
 
   &--icons {
@@ -98,8 +70,8 @@
     gap: 4rem;
   }
 
-  &--partners {
-    width: 60%;
+  &--partners &--icons {
+    width: 80%;
   }
 
   &--icon {
@@ -122,17 +94,9 @@
       width: 14rem;
     }
   }
-
-  &--aside {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
 }
 
 .bespoke {
-  grid-column: full-start / full-end;
-  grid-row: 4;
   @include z-layout(45fr);
   @include z-layout-article();
 
@@ -143,8 +107,6 @@
 }
 
 .immersive {
-  grid-column: full-start / full-end;
-  grid-row: 5;
   @include z-layout(45fr, true);
   @include z-layout-article(true);
 
@@ -155,8 +117,6 @@
 }
 
 .mindfulness {
-  grid-column: full-start / full-end;
-  grid-row: 6;
   @include z-layout(45fr);
   @include z-layout-article();
 
@@ -167,8 +127,6 @@
 }
 
 .testimonials {
-  grid-column: full-start / full-end;
-  grid-row: 7;
   color: $col-accent-tint-1;
   background-image: linear-gradient(
       rgba($col-white-primary, 0.4),
@@ -180,6 +138,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  height: 35vw;
 
   &--icon {
     @include icon-square($size-icon-square-md, $col-accent-primary);
@@ -276,11 +235,10 @@
 
 .newsletter {
   background-color: $col-white-primary;
-  grid-column: full-start / full-end;
-  grid-row: 8;
   display: grid;
   grid-template-columns: 65fr 55fr;
   position: relative;
+  height: 35vw;
 
   &--signup {
     position: relative;
