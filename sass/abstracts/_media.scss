@@ -23,16 +23,17 @@
       @content;
     }
   }
-  @if $breakpoint == laptop-sm {
-    @media (max-width: 62.5em) {
-      //width: 1000px
-      @content;
-    }
-  }
 
   @if $breakpoint == tab-xl-land {
     @media (max-width: 68.75em) {
       // width: 1100px
+      @content;
+    }
+  }
+
+  @if $breakpoint == laptop-sm {
+    @media (max-width: 62.5em) {
+      //width: 1000px
       @content;
     }
   }
