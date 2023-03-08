@@ -357,7 +357,23 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  height: 35vw;
+  height: 42vw;
+
+  @include media-queries(tab-land) {
+    height: 50vw;
+  }
+
+  @include media-queries(phone-xl) {
+    height: 60vw;
+  }
+
+  @include media-queries(phone-lg) {
+    height: 68vw;
+  }
+
+  @include media-queries(phone) {
+    height: 80vw;
+  }
 
   &--icon {
     @include icon-square($size-icon-square-md, $col-accent-primary);
@@ -385,28 +401,46 @@
       $col-accent-shade-1
     );
 
-    @include media-queries(laptop-sm-height) {
-      @include carousel(
-        (5rem 16rem),
-        rgba($col-main-primary, 0.8),
-        $col-accent-primary,
-        $col-main-primary,
-        $col-accent-primary,
-        $col-accent-primary,
-        $col-accent-shade-1
-      );
+    @include media-queries(laptop-sm) {
+      padding: 5rem 8rem;
+    }
+
+    @include media-queries(tab-land) {
+      padding: 5rem 5rem;
     }
 
     @include media-queries(tab-sm-land) {
-      @include carousel(
-        (5rem 14rem),
-        rgba($col-main-primary, 0.8),
-        $col-accent-primary,
-        $col-main-primary,
-        $col-accent-primary,
-        $col-accent-primary,
-        $col-accent-shade-1
-      );
+      padding: 5rem 3rem;
+    }
+
+    &--btn {
+      @include media-queries(tab-sm-land) {
+        &--left {
+          left: 2rem;
+          width: 3.6rem;
+          height: 3.6rem;
+        }
+
+        &--right {
+          right: 2rem;
+          width: 3.6rem;
+          height: 3.6rem;
+        }
+      }
+
+      @include media-queries(phone) {
+        &--left {
+          left: 1rem;
+          width: 3rem;
+          height: 3rem;
+        }
+
+        &--right {
+          right: 1rem;
+          width: 3rem;
+          height: 3rem;
+        }
+      }
     }
   }
 
@@ -418,13 +452,22 @@
     font-size: $font-size-text-lg;
     width: 75%;
     height: 55%;
-    padding: 0rem 20rem;
+    padding: 0rem 10rem;
     border-left: $border-accent-sm;
     border-right: $border-accent-sm;
     background-color: transparent;
 
-    @include media-queries(laptop-sm-height) {
-      padding: 0rem 10rem;
+    @include media-queries(laptop-sm) {
+      padding: 0rem 8rem;
+    }
+
+    @include media-queries(tab-land) {
+      padding: 0rem 6rem;
+    }
+
+    @include media-queries(tab-sm-land) {
+      width: 80%;
+      padding: 0rem 4rem;
     }
 
     & * {
@@ -437,6 +480,10 @@
       margin-bottom: $margin-flex-lg;
       color: $col-gray-tint-3;
       font-size: $font-size-text-lg;
+
+      @include media-queries(phone-lg) {
+        font-size: $font-size-text-md;
+      }
     }
 
     &--name {
