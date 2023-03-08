@@ -289,26 +289,6 @@
   grid-template-columns: $grid-size-two-col-left 100-$grid-size-two-col-left;
   grid-template-rows: 1fr;
 
-  @include media-queries(lg-screen) {
-    height: 105vh;
-  }
-
-  @include media-queries(laptop-lg) {
-    height: 110vh;
-  }
-
-  @include media-queries(laptop) {
-    height: 115vh;
-  }
-
-  @include media-queries(tab-pot) {
-    height: 90vh;
-  }
-
-  @include media-queries(tab-sm-land) {
-    height: 80vw;
-  }
-
   &--img {
     background-size: cover;
     grid-column: 1;

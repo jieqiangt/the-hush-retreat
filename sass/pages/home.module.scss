@@ -46,6 +46,7 @@
   }
 
   &--box {
+    transition-delay: 0.6s;
     @include media-queries(tab-lg-land) {
       padding-right: 40rem;
     }
@@ -97,7 +98,27 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   justify-items: center;
-  height: 35vh;
+  justify-content: center;
+  height: 19vw;
+
+  @include media-queries(lg-screen) {
+    height: 22vw;
+  }
+
+  @include media-queries(laptop-sm) {
+    height: 24vw;
+  }
+
+  @include media-queries(tab-lg-land) {
+    height: 26vw;
+  }
+
+  @include media-queries(tab-land) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: auto;
+    padding: 4rem 0rem;
+  }
 
   & aside {
     display: flex;
@@ -107,17 +128,35 @@
 
   &--title {
     @include section--title($col-main-primary, $letter-spacing-default);
-    margin-top: 7vh;
+    margin-top: calc(3.5vh + 2.5vw);
     margin-bottom: 2rem;
+
+    @include media-queries(tab-land) {
+      margin-top: 0rem;
+      margin-bottom: 4rem;
+      font-size: $font-size-header-md;
+    }
+
+    @include media-queries(phone-lg) {
+      font-size: $font-size-header-sm;
+      margin-bottom: 2rem;
+    }
   }
 
   &--icons {
     display: flex;
     gap: 4rem;
+    justify-content: space-around;
+    padding: 0rem 4rem;
+    align-items: center;
   }
 
   &--partners &--icons {
     width: 80%;
+
+    @include media-queries(tab-land) {
+      width: 85vw;
+    }
   }
 
   &--icon {
@@ -128,6 +167,10 @@
       margin-top: 3rem;
       height: 4rem;
       width: auto;
+
+      @include media-queries(tab-land) {
+        margin-top: 1rem;
+      }
     }
 
     &--tamarind {
@@ -146,9 +189,51 @@
   @include z-layout(45fr);
   @include z-layout-article();
 
+  @include media-queries(laptop-lg) {
+    height: 90vh;
+  }
+
+  @include media-queries(laptop) {
+    height: 68vw;
+  }
+
+  @include media-queries(tab-land) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 55fr 45fr;
+    height: 100vh;
+  }
+
+  @include media-queries(phone-xl) {
+    height: 90vh;
+  }
+
+  @include media-queries(phone) {
+    height: 80vh;
+  }
+
   &--img {
     background-image: url("../../public/img/limo-1-lg.jpg");
     background-position: bottom 50% left 0%;
+  }
+
+  &--article {
+    @include media-queries(tab-land) {
+      display: flex;
+      position: static;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--box {
+      @include media-queries(tab-lg-land) {
+        left: 8rem;
+      }
+
+      @include media-queries(tab-land) {
+        width: 70%;
+        position: static;
+      }
+    }
   }
 }
 
@@ -156,9 +241,55 @@
   @include z-layout(45fr, true);
   @include z-layout-article(true);
 
+  @include media-queries(laptop-lg) {
+    height: 90vh;
+  }
+
+  @include media-queries(laptop) {
+    height: 68vw;
+  }
+
+  @include media-queries(tab-land) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 55fr 45fr;
+    height: 100vh;
+  }
+
+  @include media-queries(phone-xl) {
+    height: 90vh;
+  }
+
+  @include media-queries(phone) {
+    height: 80vh;
+  }
+
   &--img {
     background-image: url("../../public/img/flower-2-lg.jpg");
     background-position: bottom 60% left 0%;
+
+    @include media-queries(tab-land) {
+      grid-column: 1;
+    }
+  }
+
+  &--article {
+    @include media-queries(tab-land) {
+      display: flex;
+      position: static;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--box {
+      @include media-queries(tab-lg-land) {
+        right: 0rem;
+      }
+
+      @include media-queries(tab-land) {
+        width: 70%;
+        position: static;
+      }
+    }
   }
 }
 
@@ -166,9 +297,51 @@
   @include z-layout(45fr);
   @include z-layout-article();
 
+  @include media-queries(laptop-lg) {
+    height: 90vh;
+  }
+
+  @include media-queries(laptop) {
+    height: 68vw;
+  }
+
+  @include media-queries(tab-land) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 55fr 45fr;
+    height: 100vh;
+  }
+
+  @include media-queries(phone-xl) {
+    height: 90vh;
+  }
+
+  @include media-queries(phone) {
+    height: 80vh;
+  }
+
   &--img {
     background-image: url("../../public/img/meditation-group-3-lg.jpg");
     background-position: bottom 20% left 0%;
+  }
+
+  &--article {
+    @include media-queries(tab-land) {
+      display: flex;
+      position: static;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--box {
+      @include media-queries(tab-lg-land) {
+        left: 8rem;
+      }
+
+      @include media-queries(tab-land) {
+        width: 70%;
+        position: static;
+      }
+    }
   }
 }
 
