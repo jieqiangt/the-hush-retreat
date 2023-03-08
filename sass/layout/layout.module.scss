@@ -121,6 +121,10 @@
     gap: 15rem;
     font-weight: $font-weight-xs;
 
+    @include media-queries(tab-lg-land) {
+      gap: 12rem;
+    }
+
     @include media-queries(tab-land) {
       flex-direction: column;
       gap: 8rem;

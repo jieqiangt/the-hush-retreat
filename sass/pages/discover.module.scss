@@ -29,24 +29,48 @@
     ),
     (bottom 80% right 54%)
   );
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  @include media-queries(tab-land) {
+    height: 75vh;
+  }
+
+  @include media-queries(phone-xl) {
+    height: 65vh;
+  }
+
+  @include media-queries(phone) {
+    height: 60vh;
+  }
 
   &--box {
-    background-color: transparent;
     font-size: $font-size-text-lg;
     transition-delay: 0.6s;
-    margin-left: 20rem;
+    padding: 8rem 25rem 8rem 4rem;
 
-    @include media-queries(xl-screen) {
-      margin-left: 24rem;
-      margin-bottom: 30rem;
+
+
+    @include media-queries(laptop-sm) {
+      font-size: $font-size-header-md;
+      padding: 10rem 15rem 10rem 4rem;
     }
 
-    @include media-queries(laptop) {
-      margin-bottom: 48rem;
+    @include media-queries(tab-lg-land) {
+      font-size: $font-size-text-lg;
+      padding: 8rem 12rem 8rem 4rem;
+    }
+
+    @include media-queries(tab-land) {
+      font-size: $font-size-text-lg;
+      padding: 8rem 8rem 8rem 4rem;
+    }
+
+    @include media-queries(phone-lg) {
+      font-size: $font-size-text-lg;
+      padding: 8rem 4rem 8rem 4rem;
+    }
+
+    @include media-queries(phone) {
+      padding: 6rem 4rem 6rem 4rem;
     }
   }
 
