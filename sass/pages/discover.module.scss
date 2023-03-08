@@ -93,6 +93,10 @@
     height: 68vh;
   }
 
+  @include media-queries(device-tall) {
+    height: 55vh;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -355,6 +359,10 @@
     margin-bottom: -16rem;
   }
 
+  @include media-queries(tab-xl-pot) {
+    height: 75vh;
+  }
+
   @include media-queries(tab-lg-land) {
     margin-top: -12rem;
     margin-bottom: -20rem;
@@ -382,9 +390,12 @@
   @include media-queries(tab-land-short) {
     height: 105vh;
   }
-  
-  &--aside {
 
+  @include media-queries(device-tall) {
+    height: 65vh;
+  }
+
+  &--aside {
     @include media-queries(tab-land) {
       order: 2;
       flex: 10 1 100vh;
@@ -393,7 +404,6 @@
 
     &--box {
       padding: 4rem 14rem 4rem 4rem;
-    
 
       @include media-queries(tab-lg-land) {
         padding: 4rem 10rem 4rem 4rem;

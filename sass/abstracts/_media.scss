@@ -38,8 +38,8 @@
   }
 
   @if $breakpoint == tab-xl-pot {
-    @media ((min-height: 56.25em) and (min-width: 46.875em)) {
-      // > height: 1000px  > width: 750px
+    @media ((min-height: 59.375em) and (min-width: 46.875em)) {
+      // > height: 950px  > width: 750px
       @content;
     }
   }
@@ -103,6 +103,13 @@
   @if $breakpoint == device-sm-short {
     @media (max-width: 46.875em) and (max-height: 46.875em) {
       // < width: 750px  < height: 750px
+      @content;
+    }
+  }
+
+  @if $breakpoint == device-tall {
+    @media (min-height: 75em) and (max-width: 62.5em) {
+      // < width: 1000px > height: 1200px 
       @content;
     }
   }
