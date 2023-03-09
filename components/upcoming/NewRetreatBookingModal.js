@@ -2,11 +2,7 @@ import BookingForm from "./BookingForm";
 import Modal from "../ui/Modal";
 
 export default function NewRetreatBookingModal(props) {
-  const { classes, baseClass } = props;
-  const text = [
-    "Fugiat quis ut voluptate anim proident exercitation reprehenderit tempor non ut dolor.",
-    "Velit id anim nostrud eu proident. Cupidatat nostrud duis sunt ea excepteur.  ",
-  ];
+  const { classes, baseClass, text, retreatDetails } = props;
 
   const paragraphs = text.map((item, idx) => <p key={idx}>{item}</p>);
   const content = (
@@ -15,19 +11,10 @@ export default function NewRetreatBookingModal(props) {
     </article>
   );
 
-  const retreatList = [
-    {
-      id: "0",
-      name: "Release & Renew",
-      date: "7th January 2023, Saturday",
-      location: "Villa Samadhi Singapore",
-    },
-  ];
-
   const aside = (
     <section className={classes[`${baseClass}--aside`]}>
       <h3 className={classes[`${baseClass}--aside--title`]}>
-        Release & Renew &#8212; <span>2023</span>
+        {retreatDetails.name}
       </h3>
       {content}
       <h4 className={classes[`${baseClass}--aside--title`]}>
@@ -36,7 +23,7 @@ export default function NewRetreatBookingModal(props) {
       <BookingForm
         baseClass={baseClass}
         classes={classes}
-        retreatList={retreatList}
+        retreatDetails={retreatDetails}
       />
     </section>
   );

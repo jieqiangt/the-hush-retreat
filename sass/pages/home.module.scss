@@ -15,7 +15,7 @@
         rgba($col-white-primary, 0),
         rgba($col-white-primary, 0.2)
       ),
-      url("../../public/img/mountain-1-lg.jpg")
+      url("../../public/img/home-pg/mountain-1-lg.jpg")
     ),
     (bottom 25% left 90%)
   );
@@ -212,7 +212,7 @@
   }
 
   &--img {
-    background-image: url("../../public/img/limo-1-lg.jpg");
+    background-image: url("../../public/img/home-pg/limo-1-lg.jpg");
     background-position: bottom 50% left 0%;
   }
 
@@ -264,7 +264,7 @@
   }
 
   &--img {
-    background-image: url("../../public/img/flower-2-lg.jpg");
+    background-image: url("../../public/img/home-pg/flower-2-lg.jpg");
     background-position: bottom 60% left 0%;
 
     @include media-queries(tab-land) {
@@ -320,7 +320,7 @@
   }
 
   &--img {
-    background-image: url("../../public/img/meditation-group-3-lg.jpg");
+    background-image: url("../../public/img/home-pg/meditation-group-3-lg.jpg");
     background-position: bottom 20% left 0%;
   }
 
@@ -351,7 +351,7 @@
       rgba($col-white-primary, 0.4),
       rgba($col-white-primary, 0.4)
     ),
-    url("../../public/img/sand-1-lg.jpg");
+    url("../../public/img/home-pg/sand-1-lg.jpg");
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -666,7 +666,7 @@
   }
 
   &--img {
-    background-image: url("../../public/img/meditation-4-lg.jpg");
+    background-image: url("../../public/img/home-pg/meditation-4-lg.jpg");
     background-size: cover;
     background-position: bottom 30% left 0%;
 

@@ -15,7 +15,7 @@ export default function NavBar(props) {
         className={classes["nav--checkbox"]}
         id="nav--toggle"
       ></input>
-      <label for="nav--toggle" className={classes["nav--btn"]}>
+      <label htmlFor="nav--toggle" className={classes["nav--btn"]}>
         <Icon iconClass={classes["nav--btn--close"]} iconName="icon-cross" />
         <Icon
           iconClass={classes["nav--btn--menu"]}

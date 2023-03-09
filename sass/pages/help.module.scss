@@ -39,7 +39,7 @@
   @include media-queries(tab-land) {
     display: flex;
     flex-direction: column;
-    @include description--section(55vw);
+    @include description--section(45vw);
     height: auto;
   }
 
@@ -74,7 +74,7 @@
   }
 
   &--img {
-    background-image: url("../../public/img/lotus-2-lg.jpg");
+    background-image: url("../../public/img/help-pg/lotus-2-lg.jpg");
     background-position: top left 60%;
     background-size: cover;
     margin: 10rem -2rem 10rem 14rem;

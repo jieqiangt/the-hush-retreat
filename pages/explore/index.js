@@ -41,7 +41,7 @@ export async function getStaticProps() {
         "Immerse yourself in a full-day retreat to release the stories and veils of the past, through somatic practices of stillness and movement, purified with a fire ceremony. As we let go of the old year and versions of ourselves, we step through the portal into new beginnings, getting clear on what truly matters, ",
         "on who we want to be, and how we serve. We birth ourselves to ourselves, through a powerful embodied intention-setting ritual. Somatic practices include breathwork, embodied dance-movement, expressive art, conscious dreaming, journaling and conscious conversations.",
       ],
-      pathDir: ["public", "img", "here-and-now"],
+      pathDir: ["public", "img", "release-and-renew"],
     },
   ];
 

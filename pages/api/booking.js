@@ -10,8 +10,10 @@ const allowedMethods = ["POST"];
 
 const handler = catchApiWrapper(async (req, res) => {
   const data = req.body;
+
+
   const {
-    retreat: retreatStr,
+    retreat,
     firstName,
     lastName,
     email,
@@ -21,8 +23,6 @@ const handler = catchApiWrapper(async (req, res) => {
     message,
   } = data;
   const now = new Date();
-
-  const retreat = JSON.parse(retreatStr);
 
   const fieldsValid =
     validateField(retreat, "retreat") &&

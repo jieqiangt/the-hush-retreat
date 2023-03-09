@@ -19,13 +19,12 @@ export default function BookingForm(props) {
   const { closeModal } = useContext(ModalContext);
   const router = useRouter();
   const notificationCtx = useContext(NotificationContext);
-  const { baseClass, classes, retreatList } = props;
+  const { baseClass, classes, retreatDetails } = props;
 
   const { firstNameValid, lastNameValid, emailValid, phoneValid, formValid } =
     bookingState;
 
   const fields = {
-    retreat: bookingState.retreat,
     firstName: bookingState.firstName,
     lastName: bookingState.lastName,
     email: bookingState.email,
@@ -71,7 +70,6 @@ export default function BookingForm(props) {
     dispatchBooking,
     fields.numRetreatees,
   ]);
-  useEffect(valFieldHandlers["retreat"], [dispatchBooking, fields.retreat]);
   useEffect(valFieldHandlers["vaccinated"], [
     dispatchBooking,
     fields.vaccinated,
@@ -84,7 +82,7 @@ export default function BookingForm(props) {
       url: "/api/booking",
       method: "POST",
       body: {
-        retreat: bookingState.retreat,
+        retreat: retreatDetails,
         firstName: bookingState.firstName,
         lastName: bookingState.lastName,
         email: bookingState.email,
@@ -103,14 +101,13 @@ export default function BookingForm(props) {
     if (result.ok) {
       const successNotification = await result.json();
 
-      const retreat = JSON.parse(bookingState.retreat);
       await callApi({
         url: "/api/bookingEmails",
         method: "POST",
         body: {
-          retreatName: retreat.name,
-          date: retreat.date,
-          location: retreat.location,
+          retreatName: retreatDetails.name,
+          date: retreatDetails.date,
+          location: retreatDetails.location,
           firstName: bookingState.firstName,
           lastName: bookingState.lastName,
           email: bookingState.email,
@@ -131,7 +128,7 @@ export default function BookingForm(props) {
   const radioOptions = [
     {
       name: "vaccinated",
-      value: null,
+      value: "",
       label: "I certify that I am fully vaccincated.",
       onChange: changeHandlers["vaccinated"],
     },
@@ -202,20 +199,6 @@ export default function BookingForm(props) {
         inputOptions={[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
           <option key={item} value={item}>
             {item}
-          </option>
-        ))}
-      />
-      <InputSelect
-        label="Retreat Name"
-        inputName="upcoming--form--retreat-name"
-        value={fields.retreat}
-        onChange={changeHandlers["retreat"]}
-        inputGroupClass={classes[`${baseClass}--form--retreat-name`]}
-        inputClass={classes[`${baseClass}--form--retreat-name--input`]}
-        labelClass={classes[`${baseClass}--form--retreat-name--label`]}
-        inputOptions={retreatList.map((item) => (
-          <option key={item.id} value={JSON.stringify(item)}>
-            {item.name}
           </option>
         ))}
       />

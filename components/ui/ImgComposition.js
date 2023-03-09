@@ -1,4 +1,4 @@
-import ResponsiveImage from "./ResposiveImage";
+import ResponsiveImage from "./ResponsiveImage";
 
 export default function ImgComposition(props) {
   const { classes, baseClass, imgUrlList } = props;
