@@ -530,6 +530,11 @@
   @if $isRetreat {
     @include retreat-details();
   }
+
+  &--details {
+    line-height: $font-line-height-md;
+    font-size: $font-size-header-sm;
+  }
 }
 
 @mixin description--section($img-size) {
