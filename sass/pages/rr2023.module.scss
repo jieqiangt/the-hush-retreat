@@ -4,7 +4,7 @@
 @import "../base/utilities";
 @import "../abstracts/media";
 
-.upcoming {
+.rr2023 {
   &--footer {
     @include footer(transparent, relative);
   }
@@ -19,7 +19,6 @@
     background-size: cover;
 
     &--outer {
-      grid-column: 1;
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(2, 1fr);
@@ -209,6 +208,7 @@
 
 .intentions {
   @include description--section(30vw);
+  position: relative;
 
   &::after {
     content: "";
@@ -233,8 +233,6 @@
   &--aside {
     font-size: $font-size-text-md;
     line-height: $font-line-height-lg;
-    grid-column: col-end 3 / full-end;
-    grid-row: 3;
 
     &--box {
       background-color: $col-main-primary;
@@ -268,12 +266,8 @@
 
 .guide {
   @include description--section(30vw);
-  grid-column: full-start/full-end;
-  grid-row: 5;
 
   &--img {
-    grid-column: col-start 1 / col-end 3;
-    grid-row: 5;
     background-image: url("../../public/img/groot-1-sm.jpg");
     background-position: bottom 80% left 0%;
     width: 100%;
@@ -284,8 +278,6 @@
   &--aside {
     font-size: $font-size-text-md;
     line-height: $font-line-height-lg;
-    grid-column: col-end 3 / full-end;
-    grid-row: 5;
 
     &--box {
       background-color: $col-main-primary;
@@ -318,8 +310,6 @@
 }
 
 .schedule {
-  grid-column: full-start / full-end;
-  grid-row: 6;
   @include z-layout(45fr);
   @include schedule(7);
   position: relative;
@@ -346,7 +336,6 @@
   }
 
   &--layout {
-    grid-column: 2;
     margin-left: -16rem;
     transition-delay: 0.2s;
   }
