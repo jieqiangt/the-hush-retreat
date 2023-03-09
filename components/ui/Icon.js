@@ -3,7 +3,7 @@ export default function Icon(props) {
 
   return (
     <svg idx={idx} className={iconClass}>
-      <use idx={idx} href={`icons/sprite.svg#${iconName}`}></use>
+      <use idx={idx} href={`/icons/sprite.svg#${iconName}`}></use>
     </svg>
   );
 }
