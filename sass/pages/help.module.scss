@@ -5,45 +5,56 @@
 @import "../abstracts/media";
 
 .help {
-  display: grid;
-  grid-template-columns:
-    [full-start] 1fr [center-start] repeat(
-      10,
-      [col-start] minmax(16rem, min-content) [col-end]
-    )
-    [center-end] 1fr [full-end];
-  grid-template-rows: 7.5vh 100vh repeat(2, min-content);
-
-  @include media-queries(laptop-sm-height) {
-    grid-template-rows: 9vh 100vh repeat(2, min-content);
-  }
-
-  @include media-queries(tab-sm-land) {
-    grid-template-rows: 8vw 100vw repeat(2, min-content);
-  }
-
-  &--nav {
-    grid-column: full-start / full-end;
-    grid-row: 1;
-
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 0.2rem;
-      width: 100%;
-      bottom: -0.5rem;
-      background-color: rgba($col-accent-tint-2, 0.5);
-      animation: fadeIn 1.2s ease-in;
-      animation-fill-mode: backwards;
-    }
+  &--footer {
+    @include footer(transparent, relative);
+    padding-top: 3rem;
   }
 }
 
 .contact-us {
-  @include description--section;
-  grid-column: full-start / full-end;
-  grid-row: 2;
+  @include description--section(35vw);
+  position: relative;
+  height: 120vh;
+
+  @include media-queries(laptop-lg) {
+    height: 100vh;
+  }
+
+  @include media-queries(laptop) {
+    height: 90vh;
+  }
+
+  @include media-queries(laptop-sm) {
+    height: 80vh;
+  }
+
+  @include media-queries(tab-land-short) {
+    height: 125vh;
+  }
+
+  @include media-queries(tab-xl-pot) {
+    height: 65vh;
+  }   
+
+  @include media-queries(tab-land) {
+    display: flex;
+    flex-direction: column;
+    @include description--section(55vw);
+    height: auto;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    left: 1.5%;
+    top: 0rem;
+    background-color: rgba($col-accent-tint-2, 0.5);
+    animation: fadeIn 1.2s ease-in;
+    animation-fill-mode: backwards;
+  }
 
   &::after {
     content: "";
@@ -51,55 +62,49 @@
     display: block;
     height: 0.2rem;
     width: 97%;
-    bottom: -20rem;
+    bottom: -6rem;
     left: 1.5%;
     background-color: rgba($col-accent-tint-2, 0.5);
   }
 
+  @include media-queries(tab-land) {
+    &::after {
+      bottom: -6rem;
+    }
+  }
+
   &--img {
     background-image: url("../../public/img/lotus-2-lg.jpg");
-    grid-column: col-start 1 / col-end 3;
-    grid-row: 2;
     background-position: top left 60%;
     background-size: cover;
-    width: 130%;
-    height: 80%;
-    margin: 16rem 0rem 0rem -5rem;
+    margin: 10rem -2rem 10rem 14rem;
     box-shadow: 2px 0px 15px 0px rgba($col-black-primary, 0.8);
 
-    @include media-queries(xxl-screen) {
-      width: 120%;
-      margin-left: -1rem;
+    @include media-queries(laptop-sm) {
+      margin: 10rem -2rem 10rem 8rem;
     }
 
-    @include media-queries(xl-screen) {
-      width: 105%;
-      height: 80%;
-      margin: 16rem -10rem 0rem auto;
+    @include media-queries(tab-lg-land) {
+      margin: 12rem -2rem 12rem 6rem;
     }
 
-    @include media-queries(laptop-sm-height) {
-      height: 100%;
-      margin: 6rem -10rem 0rem auto;
-    }
-
-    @include media-queries(tab-sm-land) {
-      height: 85%;
-      margin: 12rem -10rem 0rem auto;
+    @include media-queries(tab-land) {
+      margin: 0rem;
+      background-position: bottom 25% left 60%;
     }
   }
 
   &--aside {
-    grid-column: col-end 3 / full-end;
-    grid-row: 2;
-
     &--box {
       background-color: $col-main-primary;
-      padding: 8rem 18rem 8rem 16rem;
-      margin-top: 10rem;
+      padding: 5rem 13rem 5rem 8rem;
 
-      @include media-queries(xl-screen) {
-        padding: 5rem 18rem 5rem 16rem;
+      @include media-queries(tab-lg-land) {
+        padding: 4rem 8rem;
+      }
+
+      @include media-queries(tab-land) {
+        padding: 10rem 8rem;
       }
     }
 
@@ -222,13 +227,11 @@
 }
 
 .faq {
-  grid-column: full-start / full-end;
-  grid-row: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: $font-size-text-md;
-  margin-top: 30rem;
+  margin-top: 16rem;
   margin-bottom: 10rem;
 
   &--icon {
@@ -257,6 +260,23 @@
 
     @include media-queries(lg-screen) {
       width: 110%;
+    }
+
+    @include media-queries(tab-lg-land) {
+      width: 130%;
+    }
+
+    @include media-queries(tab-land) {
+      width: 100%;
+      padding: 0rem 20rem;
+    }
+
+    @include media-queries(phone-lg) {
+      padding: 0rem 10rem;
+    }
+
+    @include media-queries(phone) {
+      padding: 0rem 8rem;
     }
   }
 
@@ -287,6 +307,9 @@
 
     &--number {
       font-size: $font-size-text-lg;
+      @include media-queries(phone) {
+        font-size: $font-size-text-md;
+        }
       margin-bottom: 0.8rem;
       margin-left: 0.4rem;
     }
@@ -294,6 +317,10 @@
     &--question {
       margin-left: 1rem;
       margin-right: auto;
+
+      @include media-queries(phone) {
+      font-size: $font-size-text-s;
+      }
     }
 
     &--icon {
@@ -320,6 +347,10 @@
       margin: 0.8rem 0rem;
       transform: translateY(-1rem);
       transition: all 0.4s ease-out;
+
+      @include media-queries(phone) {
+        font-size: $font-size-text-s;
+        }
     }
 
     &--active {
@@ -330,11 +361,4 @@
       @include make-visible;
     }
   }
-}
-
-.help--footer {
-  grid-column: full-start / full-end;
-  grid-row: 4;
-  @include footer(transparent, relative);
-  padding-top: 3rem;
 }
