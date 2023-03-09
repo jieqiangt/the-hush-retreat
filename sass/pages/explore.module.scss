@@ -82,6 +82,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 8rem;
+    position: relative;
 
     &::before {
       content: "";
@@ -96,8 +97,9 @@
 
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-header-md;
+      font-size: $font-size-header-lg;
       margin-bottom: 3rem;
+      text-transform: none;
     }
 
     &--content {
@@ -111,6 +113,225 @@
     }
 
     &--gallery {
+      @include gallery(10, 10);
+      margin-bottom: 18rem;
+
+      &--item {
+        &--0 {
+          grid-column: 2 / 3;
+          grid-row: 9 / 11;
+        }
+
+        &--1 {
+          grid-column: 2 / 4;
+          grid-row: 4 / 5;
+        }
+
+        &--2 {
+          grid-column: 9 /11;
+          grid-row: 1 / 4;
+        }
+
+        &--3 {
+          grid-column: 6 / 8;
+          grid-row: 5 / 7;
+        }
+
+        &--4 {
+          grid-column: 8 / 9;
+          grid-row: 1 / 4;
+        }
+
+        &--5 {
+          grid-column: 9 / 11;
+          grid-row: 4 / 6;
+        }
+
+        &--6 {
+          grid-column: 7 / 8;
+          grid-row: 10 / 11;
+        }
+
+        &--7 {
+          grid-column: 5 / 6;
+          grid-row: 9 /11;
+        }
+
+        &--8 {
+          grid-column: 6 / 7;
+          grid-row: 10 / 11;
+        }
+
+        &--9 {
+          grid-column: 4 / 5;
+          grid-row: 3 / 5;
+        }
+
+        &--10 {
+          grid-column: 4 /6;
+          grid-row: 7 / 9;
+        }
+
+        &--11 {
+          grid-column: 3 /5;
+          grid-row: 9 / 11;
+        }
+
+        &--12 {
+          grid-column: 1 / 3;
+          grid-row: 5 / 7;
+        }
+
+        &--13 {
+          grid-column: 10 /11;
+          grid-row: 6 / 8;
+        }
+
+        &--14 {
+          grid-column: 3 / 4;
+          grid-row: 7 / 9;
+        }
+
+        &--15 {
+          grid-column: 1 / 3;
+          grid-row: 7 / 9;
+        }
+
+        &--16 {
+          grid-column: 3 / 5;
+          grid-row: 5 / 7;
+        }
+
+        &--17 {
+          grid-column: 6 / 8;
+          grid-row: 8 / 10;
+        }
+
+        &--18 {
+          grid-column: 6 / 7;
+          grid-row: 7 / 8;
+        }
+
+        &--19 {
+          grid-column: 7 / 8;
+          grid-row: 7 / 8;
+        }
+
+        &--20 {
+          grid-column: 1 / 2;
+          grid-row: 4 / 5;
+        }
+
+        &--21 {
+          grid-column: 6 / 7;
+          grid-row: 3 / 5;
+        }
+
+        &--22 {
+          grid-column: 8 / 9;
+          grid-row: 5 / 6;
+        }
+
+        &--23 {
+          grid-column: 6 / 8;
+          grid-row: 1 / 3;
+        }
+
+        &--24 {
+          grid-column: 8 / 11;
+          grid-row: 8 / 11;
+        }
+
+        &--25 {
+          grid-column: 5 / 6;
+          grid-row: 1 / 4;
+        }
+
+        &--26 {
+          grid-column: 4 / 5;
+          grid-row: 1 / 3;
+        }
+
+        &--27 {
+          grid-column: 1 / 4;
+          grid-row: 1 / 4;
+        }
+
+        &--28 {
+          grid-column: 8 / 9;
+          grid-row: 4 / 5;
+        }
+
+        &--29 {
+          grid-column: 5 /6;
+          grid-row: 4 / 7;
+        }
+
+        &--30 {
+          grid-column: 1 / 2;
+          grid-row: 9 / 11;
+        }
+
+        &--31 {
+          grid-column: 8 / 10;
+          grid-row: 6 / 8;
+        }
+
+        &--32 {
+          grid-column: 7 / 8;
+          grid-row: 3 / 5;
+        }
+
+        &--33 {
+          grid-column: 4 / 5;
+          grid-row: 1 / 3;
+        }
+
+        &--34 {
+          grid-column: 8 / 9;
+          grid-row: 4 / 6;
+        }
+      }
+    }
+  }
+
+  &--1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 0.2rem;
+      width: 98%;
+      top: -10rem;
+      background-color: rgba($col-accent-tint-2, 0.5);
+      z-index: $z-index-modal;
+    }
+
+    &--title {
+      @include section--title($col-main-primary, $letter-spacing-xs);
+      font-size: $font-size-header-lg;
+      margin-bottom: 3rem;
+      text-transform: none;
+    }
+
+    &--content {
+      font-size: $font-size-text-lg;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.2rem;
+      padding: 0rem 30rem;
+      margin-top: 6rem;
+      margin-bottom: 10rem;
+    }
+
+    &--gallery {
+      margin-bottom: 6rem;
       @include gallery(10, 10);
 
       &--item {
