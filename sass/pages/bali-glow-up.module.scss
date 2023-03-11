@@ -4,13 +4,13 @@
 @import "../base/utilities";
 @import "../abstracts/media";
 
-.rr2023 {
+.bali--glow-up {
   &--footer {
     @include footer(transparent, relative);
   }
 }
 
-.book {
+.book--bali {
   &--modal {
     @include modal;
   }
@@ -102,8 +102,8 @@
         $pos-input-label-y,
         $pos-input-label-translate-up
       );
-      grid-column: 1 / 3;
-      grid-row: 3;
+      grid-column: 1 / -1;
+      grid-row: 1;
     }
 
     &--contact {
@@ -127,7 +127,7 @@
         $pos-input-label-translate-up
       );
       grid-column: 1 / 3;
-      grid-row: 1;
+      grid-row: 3;
     }
 
     &--retreat-name {

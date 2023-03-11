@@ -62,7 +62,7 @@ export default function BaliGlowUpPage() {
   const modal = (
     <NewRetreatBookingModal
       classes={classes}
-      baseClass="book"
+      baseClass="book--bali"
       text={bookingModalText}
       retreatDetails={retreatDetails}
     />
@@ -74,7 +74,7 @@ export default function BaliGlowUpPage() {
         <title>New Retreats</title>
         <meta name="description" content="New Retreats" />
       </Head>
-      <Layout classes={classes} baseClass="rr2023" modal={modal}>
+      <Layout classes={classes} baseClass="bali--glow-up" modal={modal}>
         <NewRetreatBanner classes={classes} baseClass="retreat--banner" />
         <NewRetreatSection
           classes={classes}
