@@ -2,7 +2,7 @@ import Icon from "../ui/Icon";
 import LinkButton from "../ui/LinkButton";
 import ResponsiveImage from "../ui/ResponsiveImage";
 
-export default function RetreatSummary(props) {
+export default function NewRetreatSummary(props) {
   const { classes, baseClass, summary } = props;
 
   return (

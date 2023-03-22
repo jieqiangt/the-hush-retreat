@@ -1,9 +1,10 @@
 import Head from "next/head";
 import { Fragment } from "react";
 import Layout from "../../components/layout/Layout";
-import RetreatSummary from "../../components/upcoming/RetreatSummary";
+import NewRetreatSummary from "../../components/upcoming/NewRetreatSummary";
 import UpcomingBanner from "../../components/upcoming/UpcomingBanner";
 import classes from "../../sass/pages/upcoming.module.scss";
+
 
 export default function UpcomingPage() {
   const retreats = [
@@ -19,8 +20,8 @@ export default function UpcomingPage() {
       location: "Bali",
       price: "$ 989 per pax",
       imgSrc: [
-        "/img/upcoming-pg/test-1-lg.jpg",
-        "/img/upcoming-pg/test-2-lg.jpg",
+        "/img/upcoming-pg/accom-1.jpg",
+        "/img/upcoming-pg/host-1.jpg",
       ],
     },
   ];
@@ -33,7 +34,7 @@ export default function UpcomingPage() {
       <Layout classes={classes} baseClass="upcoming">
         <UpcomingBanner classes={classes} baseClass="banner" />
         {retreats.map((item, idx) => (
-          <RetreatSummary
+          <NewRetreatSummary
             classes={classes}
             baseClass={`new--${idx}`}
             summary={item}
