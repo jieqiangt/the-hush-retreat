@@ -4,7 +4,7 @@ function ResponsiveImage(props) {
   const { imgBoxClassName, imgClassName, alt, src, sizes } = props;
 
   return (
-    <div className={`${imgBoxClassName} hidden`}>
+    <figure className={`${imgBoxClassName} hidden`}>
       <Image
         src={src}
         alt={alt}
@@ -12,7 +12,7 @@ function ResponsiveImage(props) {
         className={`${imgClassName} hidden`}
         sizes={sizes}
       />
-    </div>
+    </figure>
   );
 }
 

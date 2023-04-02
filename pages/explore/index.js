@@ -46,7 +46,7 @@ export async function getStaticProps() {
   ];
 
   const retreatsWithImg = retreats.map((item) => {
-    let galleryDetails = getGalleryDetails(item["pathDir"], 10);
+    let galleryDetails = getGalleryDetails(item["pathDir"], 15);
     return { ...item, galleryDetails };
   });
 
