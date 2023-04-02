@@ -666,8 +666,7 @@
   grid-gap: 1.2rem;
 
   @include media-queries(xl-screen) {
-    padding-left: 12rem;
-    padding-right: 12rem;
+    padding: 0 14rem;
   }
 
   & * {
