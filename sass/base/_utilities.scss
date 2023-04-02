@@ -660,7 +660,7 @@
 @mixin gallery($numCols, $numRows) {
   display: grid;
   grid-template-columns: repeat($numCols, 1fr);
-  grid-template-rows: repeat($numRows, 5vw);
+  grid-template-rows: repeat($numRows, 4vw);
   padding-left: 8rem;
   padding-right: 8rem;
   grid-gap: 1.2rem;
