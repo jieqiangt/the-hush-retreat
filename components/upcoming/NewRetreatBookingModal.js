@@ -29,7 +29,6 @@ export default function NewRetreatBookingModal(props) {
   );
 
   const img = (
-    <div className={classes[`${baseClass}--img--outer`]}>
       <div
         className={`${classes[`${baseClass}--img`]} ${
           classes[`${baseClass}--img--1`]
@@ -37,14 +36,6 @@ export default function NewRetreatBookingModal(props) {
       >
         &nbsp;
       </div>
-      <div
-        className={`${classes[`${baseClass}--img`]} ${
-          classes[`${baseClass}--img--2`]
-        }`}
-      >
-        &nbsp;
-      </div>
-    </div>
   );
 
   return (

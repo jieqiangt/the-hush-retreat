@@ -1,13 +1,15 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import { useContext, useEffect } from "react";
+import { Fragment, useContext, useEffect } from "react";
 import NotificationContext from "../../store/notificationContext";
 import NotificationModal from "../ui/NotificationModal";
+import ModalContext from "../../store/modalContext";
 
 export default function Layout(props) {
   const { baseClass, classes, modal, children } = props;
   const { notification: activeNotification, hideNotification } =
     useContext(NotificationContext);
+  const { modalIsActive } = useContext(ModalContext);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -23,8 +25,8 @@ export default function Layout(props) {
   });
 
   return (
-    <main>
-      {modal ? modal : ""}
+    <Fragment>
+      {modalIsActive ? modal : ""}
       {activeNotification && (
         <NotificationModal
           title={activeNotification.title}
@@ -33,7 +35,8 @@ export default function Layout(props) {
           onClick={hideNotification}
         />
       )}
-      <div className={classes[baseClass]}>
+
+      <main className={modalIsActive ? "modal--open" : ""}>
         <NavBar />
         {children}
         <Footer
@@ -41,7 +44,7 @@ export default function Layout(props) {
           footerIconClass={classes[`${baseClass}--footer--icon`]}
           footerBtnClass={classes[`${baseClass}--footer--btn`]}
         />
-      </div>
-    </main>
+      </main>
+    </Fragment>
   );
 }

@@ -12,7 +12,7 @@ html {
   @include media-queries(laptop-lg) {
     font-size: 50%;
   }
-  
+
   @include media-queries(laptop) {
     font-size: 43%;
   }
@@ -108,4 +108,8 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
+}
+
+body:has(main.modal--open) {
+  overflow: hidden;
 }

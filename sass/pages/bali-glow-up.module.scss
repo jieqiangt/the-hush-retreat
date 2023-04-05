@@ -17,23 +17,8 @@
 
   &--img {
     background-size: cover;
-
-    &--outer {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(2, 1fr);
-      overflow: hidden;
-    }
-
-    &--1 {
-      background-image: url("../../public/img/surf-2.jpg");
-      grid-row: 1;
-    }
-
-    &--2 {
-      background-image: url("../../public/img/yoga.jpg");
-      grid-row: 2;
-    }
+    background-image: url("../../public/img/surf-2.jpg");
+    background-position: right;
   }
 
   &--aside {
