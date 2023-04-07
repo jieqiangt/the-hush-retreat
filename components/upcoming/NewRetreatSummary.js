@@ -7,8 +7,11 @@ export default function NewRetreatSummary(props) {
 
   return (
     <section className={classes[`${baseClass}`]}>
-      <div className={classes[`${baseClass}--title--grid`]}>
-        <h2 className={classes[`${baseClass}--title`]}>{summary.title}</h2>
+      <div className={classes[`${baseClass}--header--grid`]}>
+        <h2 className={classes[`${baseClass}--header`]}>{summary.header}</h2>
+        <h2 className={classes[`${baseClass}--title`]}>
+          {summary.title}
+        </h2>
         <h3 className={classes[`${baseClass}--caption`]}>{summary.caption}</h3>
       </div>
       <div className={classes[`${baseClass}--img--grid`]}>

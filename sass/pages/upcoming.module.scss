@@ -88,10 +88,10 @@
       z-index: $z-index-top;
     }
 
-    &--title {
+    &--header {
       @include section--title($col-main-primary, $letter-spacing-xs);
       font-size: $font-size-header-lg;
-      margin-bottom: 5rem;
+      margin-bottom: 2rem;
 
       &--grid {
         display: flex;
@@ -103,7 +103,14 @@
       }
     }
 
+    &--title {
+      @include section--title($col-main-primary, $letter-spacing-xs);
+      font-size: $font-size-header-lg;
+      margin-bottom: 5rem;
+    }
+
     &--caption {
+      @include font-text;
       font-size: $font-size-text-lg;
       color: $col-gray-tint-1;
       padding: 0rem 35rem;
@@ -129,7 +136,8 @@
 
     &--desc {
       font-size: $font-size-header-sm;
-      padding: 4rem 18rem;
+      @include font-text;
+      padding: 4rem 24rem;
 
       &--grid {
         display: flex;
@@ -146,7 +154,7 @@
         display: flex;
         gap: 2rem;
         align-self: start;
-        margin-left: 20rem;
+        margin-left: 24rem;
       }
 
       &--outer {

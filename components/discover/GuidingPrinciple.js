@@ -5,7 +5,7 @@ export default function GuidingPrinciple(props) {
   const { baseClass, classes } = props;
 
   const bannerDetails = (
-    <p className={classes[`${baseClass}--desc`]}>
+    <p className={classes[`${baseClass}--caption`]}>
       Living life with unwavering faith and joy, <br />
       as the <span className={classes[`${baseClass}--em`]}> lotus </span>
       does, <br />

@@ -126,6 +126,7 @@
     margin-top: 1.2rem;
 
     &--article {
+      @include font-text;
       font-size: $font-size-text-md;
       grid-column: 1 / -1;
       grid-row: 1;
@@ -248,7 +249,6 @@
     @include accordion;
     width: 85%;
     padding: 0rem 50rem;
-    font-weight: $font-weight-lg;
 
     @include media-queries(xxl-screen) {
       width: 95%;
@@ -286,6 +286,7 @@
         (100fr - $grid-faq-item-fr) / 2
       );
     color: $col-main-tint-1;
+    
 
     &--box {
       border-bottom: solid 0.2rem $col-accent-tint-1;
@@ -306,17 +307,18 @@
     }
 
     &--number {
-      font-size: $font-size-text-lg;
+      font-size: $font-size-text-md;
+
       @include media-queries(phone) {
         font-size: $font-size-text-md;
         }
-      margin-bottom: 0.8rem;
-      margin-left: 0.4rem;
+      margin: 0.8rem 0rem 0.8rem 0.2rem;
     }
 
     &--question {
       margin-left: 1rem;
       margin-right: auto;
+      @include font-text;
 
       @include media-queries(phone) {
       font-size: $font-size-text-s;
@@ -339,8 +341,8 @@
     &--answer {
       grid-column: 2;
       grid-row: 2;
-      font-weight: $font-weight-md;
       color: $col-gray-primary;
+      @include font-text;
       line-height: $font-line-height-default;
       @include make-invisible;
       height: 0rem;

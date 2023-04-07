@@ -17,6 +17,16 @@
   width: 0rem;
 }
 
+@mixin font-header() {
+  font-family: $font-family-header;
+  font-weight: $font-weight-md;
+}
+
+@mixin font-text() {
+  font-family: $font-family-text;
+  font-weight: $font-weight-xs;
+}
+
 @mixin btn--circle {
   width: 4.8rem;
   height: 4.8rem;
@@ -30,6 +40,8 @@
   cursor: pointer;
   transition: background-color $ani-time-link ease-out color $ani-time-link
     ease-out;
+  @include font-header;
+  font-size: $font-size-text-md;
 
   &:hover,
   &:focus,
@@ -62,7 +74,7 @@
     color: $text-color;
 
     &:hover {
-      font-weight: $font-weight-sm;
+      font-weight: $font-weight-lg;
     }
   } @else {
     & a {
@@ -77,7 +89,7 @@
       color: $text-color;
 
       &:hover {
-        font-weight: $font-weight-sm;
+        font-weight: $font-weight-lg;
       }
     }
   }

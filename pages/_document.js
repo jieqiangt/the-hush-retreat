@@ -15,6 +15,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+          ></link>
           <meta charSet="UTF-8" />
         </Head>
         <body>

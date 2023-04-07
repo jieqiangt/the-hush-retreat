@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import {
   Fragment,
-  cloneElement,
+cloneElement,
   useCallback,
   useContext,
   useEffect,

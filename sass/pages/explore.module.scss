@@ -43,13 +43,14 @@
   &--box {
     background-color: rgba($col-accent-primary, 0.8);
     font-size: $font-size-text-lg;
+    width: 45%;
     padding: 8rem 10rem 8rem 10rem;
     text-align: left;
   }
 
   &--title {
     @include section--title($col-main-primary, $letter-spacing-xs);
-    margin-bottom: 1rem;
+    margin-bottom: 3.2rem;
 
     @include media-queries(phone-xl) {
       font-size: $font-size-text-lg;
@@ -58,7 +59,8 @@
 
   &--caption {
     color: $col-gray-tint-1;
-    line-height: $font-line-height-md;
+    line-height: 1.2;
+    margin-bottom: 1.8rem;
 
     @include media-queries(phone-xl) {
       font-size: $font-size-header-md;

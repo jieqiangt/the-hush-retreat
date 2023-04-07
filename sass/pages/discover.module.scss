@@ -45,8 +45,7 @@
   &--box {
     font-size: $font-size-text-lg;
     transition-delay: 0.6s;
-    padding: 8rem 25rem 8rem 4rem;
-
+    padding: 8rem 40rem 8rem 8rem;
 
     @include media-queries(laptop-sm) {
       font-size: $font-size-header-md;
@@ -73,15 +72,8 @@
     }
   }
 
-  &--title {
-    @include section--title($col-main-primary, $letter-spacing-xs);
-    margin-bottom: 1rem;
-  }
-
-  &--desc {
-    color: $col-gray-tint-1;
+  &--caption {
     line-height: $font-line-height-md;
-    margin-left: 4rem;
   }
 
   &--em {
@@ -227,12 +219,12 @@
     }
 
     &--title {
-      @include section--title($col-accent-primary, $letter-spacing-xs);
       border-bottom: $border-accent-sm;
       margin-bottom: 2.4rem;
     }
 
     &--content {
+      @include font-text;
       display: flex;
       flex-direction: column;
       gap: 3.8rem;
@@ -357,7 +349,7 @@
     &--btn {
       display: inline-block;
       @include btn--link($col-gray-tint-1, $col-main-tint-1, 0.2);
-      width: 25rem;
+      width: 30rem;
     }
   }
 }

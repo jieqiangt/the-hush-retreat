@@ -104,7 +104,6 @@
     background-color: $col-white-primary;
     position: sticky;
     z-index: 0;
-    font-size: $font-size-header-sm;
 
     @include media-queries(tab-land) {
       @include make-invisible();
@@ -119,7 +118,7 @@
     width: 100%;
     padding: 1.2rem 0rem 1.6rem 0;
     gap: 15rem;
-    font-weight: $font-weight-xs;
+    @include font-header;
 
     @include media-queries(tab-lg-land) {
       gap: 12rem;
@@ -185,6 +184,7 @@
 
   &--link {
     @include btn--default($col-main-tint-1, $col-main-primary, 0);
+    font-size: $font-size-header-sm;
     display: inline-block;
     position: relative;
     transition: color $ani-time-link ease-out;
@@ -211,7 +211,7 @@
 
     &:hover {
       background-color: transparent;
-      font-weight: $font-weight-sm;
+      font-weight: $font-weight-lg;
       transform: scaleY(1.05);
 
       &::after {

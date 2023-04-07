@@ -5,22 +5,19 @@ import Banner from "../ui/Banner";
 export default function Hero(props) {
   const { baseClass, classes } = props;
   const title = "Modern Wellness Lifestyle";
-  const bannerDetails = (
+  const bannerCaption = (
     <Fragment>
-      <article className={classes[`${baseClass}--article`]}>
-        Luxurious tranquil retreats,
-        <br />
-        embrace mindfullness,
-        <br />
-        for your inner soul
-      </article>
-      <LinkButton
-        href="upcoming"
-        btnClass={classes[`${baseClass}--btn`]}
-      >
-        Start Healing Now
-      </LinkButton>
+      Luxurious tranquil retreats,
+      <br />
+      embrace mindfullness,
+      <br />
+      for your inner soul
     </Fragment>
+  );
+  const bannerDetails = (
+    <LinkButton href="upcoming" btnClass={classes[`${baseClass}--btn`]}>
+      Start Healing Now
+    </LinkButton>
   );
 
   return (
@@ -29,6 +26,7 @@ export default function Hero(props) {
         title={title}
         baseClass={baseClass}
         classes={classes}
+        caption={bannerCaption}
         bannerDetails={bannerDetails}
       />
     </Fragment>

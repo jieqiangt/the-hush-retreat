@@ -6,8 +6,8 @@
   font-size: $font-size-text-lg;
   color: $text-color;
   text-transform: uppercase;
-  font-weight: $font-weight-xs;
   letter-spacing: $letter-spacing;
+  @include font-header;
 }
 
 @mixin img-composition(
@@ -127,10 +127,8 @@
 
     &--title {
       display: inline-block;
-      font-weight: $font-weight-sm;
-      text-transform: uppercase;
-      letter-spacing: 0.05rem;
-      font-size: inherit;
+      @include section--title($col-main-primary, $letter-spacing-xs);
+      font-size: $font-size-text-md;
       margin: 2.4rem 0rem 0.8rem 0rem;
     }
 
@@ -138,7 +136,8 @@
       padding: 0rem 1.8rem;
       hyphens: auto;
       text-align: left;
-      font-size: inherit;
+      @include font-text;
+      font-size: $font-size-text-md;
     }
   }
 }
@@ -149,7 +148,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: $font-size-text-s;
+  @include font-text;
+  font-size: $font-size-text-xs;
   color: $col-main-tint-1;
   width: 100%;
   padding-bottom: 1.8rem;
@@ -183,7 +183,7 @@
     a {
       border-top: none;
       padding: 0rem 0.3rem;
-      font-size: $font-size-text-s;
+      font-size: $font-size-text-xs;
     }
   }
 }
@@ -321,28 +321,28 @@
 
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-text-md;
+      font-size: $font-size-text-lg;
       margin-bottom: $margin-flex-lg * 1.5;
     }
 
     &--caption {
       display: block;
       color: $col-gray-tint-1;
-      font-size: $font-size-text-s;
+      @include font-header;
+      font-size: $font-size-text-lg;
       margin-bottom: $margin-flex-lg * 2.5;
-      font-size: $font-size-header-md;
     }
 
     &--desc {
       display: block;
       margin-bottom: $margin-flex-lg * 1.5;
+      @include font-text;
       color: $col-gray-primary;
       font-size: $font-size-text-md;
       line-height: $font-line-height-md;
     }
 
     &--btn {
-      font-size: $font-size-text-md;
       @include btn--link($col-gray-tint-1, $col-main-tint-1, 0.2);
     }
   }
@@ -362,9 +362,8 @@
   &--input {
     display: block;
     padding: $pos-input-y $pos-input-x;
+    @include font-text;
     font-size: inherit;
-    font-family: inherit;
-    font-weight: inherit;
     color: $text-color;
     border-bottom: solid $size-underline-link $text-color;
     width: 100%;
@@ -378,9 +377,11 @@
 
   &--input::placeholder {
     color: rgba($text-color, 0.8);
+    @include font-header;
   }
 
   &--label ~ span {
+    @include font-header;
     font-size: $font-size-text-s;
     color: $col-error;
     display: inline-block;
@@ -396,6 +397,7 @@
       color: $text-color;
       transform: translateY($pos-translate-y);
       font-size: $font-size-text-s;
+      @include font-header;
     }
   } @else {
     &--label {
@@ -405,6 +407,7 @@
       left: $pos-input-x;
       transition: $ani-default;
       color: $text-color;
+      @include font-header;
       @include make-invisible;
     }
   }
@@ -523,6 +526,7 @@
   }
 
   &--caption {
+    @include font-header;
     font-size: $font-size-header-md;
     color: $col-gray-tint-1;
   }
@@ -532,7 +536,7 @@
   }
 
   &--details {
-    line-height: $font-line-height-md;
+    @include font-text;
     font-size: $font-size-header-sm;
   }
 }
@@ -557,7 +561,7 @@
     flex: 1 1 (100vw - $img-size);
 
     &--title {
-      display: block;
+      @include section--title($col-accent-primary, $letter-spacing-xs);
     }
 
     &--box {
@@ -572,6 +576,7 @@
 }
 
 @mixin schedule($num-rows) {
+  @include font-header;
   &--layout {
     display: grid;
     grid-template-columns: [time-start full-start] 1fr [time-end logo-start] 5vw [logo-end activity-start] 1fr [activity-end full-end];
@@ -750,16 +755,16 @@
   transition: all 1s;
 }
 
-@media (prefers-reduced-motion) {
-  .hidden {
-    transition: none;
-  }
-}
-
 .show {
   opacity: 1;
   filter: blur(0px);
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
 }
 
 @mixin notification($text-color) {

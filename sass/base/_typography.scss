@@ -1,7 +1,7 @@
 @import "../abstracts/variables";
 
 body {
-  font-family: "Cormorant Garamond", serif;
+  font-family: $font-family-text;
   line-height: $font-line-height-default;
   font-weight: 400;
   color: $col-gray-primary;
