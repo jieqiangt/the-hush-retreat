@@ -13,11 +13,6 @@ export default function BaliGlowUpPage() {
   const guideTitle = "GUIDE NAME";
   const guideText = ["CAPTION", "DESCRIPTION PARAGRAPH"];
 
-  const bookingModalText = [
-    "PLACE IMPORTANT DETAILS REGARDING BOOKING HERE?",
-    "PLACE IMPORTANT DETAILS REGARDING BOOKING HERE?",
-  ];
-
   const scheduleList = [
     {
       timeRange: "0900 - 0930",
@@ -54,6 +49,7 @@ export default function BaliGlowUpPage() {
   ];
 
   const retreatDetails = {
+    retreatId: "61dc2d31bbe643fc32022a5f",
     name: "The Glow Up: Bali Edition",
     date: "13th May 2023, Saturday",
     location: "Bali",
@@ -63,7 +59,6 @@ export default function BaliGlowUpPage() {
     <NewRetreatBookingModal
       classes={classes}
       baseClass="book--bali"
-      text={bookingModalText}
       retreatDetails={retreatDetails}
     />
   );
