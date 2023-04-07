@@ -19,39 +19,66 @@
     background-size: cover;
     background-image: url("../../public/img/surf-2.jpg");
     background-position: right;
+    overflow: hidden;
   }
 
   &--aside {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     font-size: $font-size-text-md;
-    padding: 0rem 8rem;
-
-    &--content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 1.2rem;
-      margin-bottom: 4rem;
-    }
+    padding: 8rem 14rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    gap: 1.2rem;
 
     &--title {
       @include section--title($col-main-tint-1, $letter-spacing-xs);
+      font-size: $font-size-header-md;
       margin-bottom: 2.4rem;
+    }
 
-      & span {
-        font-size: $font-size-header-md;
-      }
+    &--cta {
+      font-size: $font-size-text-lg;
     }
   }
 
-  &--form {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, min-content);
-    align-items: start;
-    column-gap: 2.4rem;
-    row-gap: 3.4rem;
+  &--retreatee {
+
+    &--header {
+      display: flex;
+      align-items: center;
+      border-bottom: $border-main-sm;
+      margin-bottom: 1.6rem;
+    }
+
+    &--title {
+      color: $col-main-tint-1;
+      font-size: $font-size-text-md;
+      margin-top: 1.2rem;
+      margin-left: 0.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    &--btn {
+      @include icon-square(2.8rem, rgba($col-gray-primary, 0.8));
+      margin-left: auto;
+      margin-top: 0.6rem;
+    }
+
+    &--icon {
+      @include icon-square(2.8rem, rgba($col-gray-primary, 0.8));
+    }
+
+    &--fields {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, min-content);
+      align-items: start;
+      column-gap: 2.4rem;
+      row-gap: 1.6rem;
+      position: relative;
+      padding-bottom: 2rem;
+    }
 
     &--first-name {
       @include input--group(
@@ -62,8 +89,7 @@
         $pos-input-label-translate-up
       );
       grid-column: 1 / 3;
-      grid-row: 2;
-      margin-top: -1rem;
+      grid-row: 1;
     }
 
     &--last-name {
@@ -75,8 +101,7 @@
         $pos-input-label-translate-up
       );
       grid-column: 3 / -1;
-      grid-row: 2;
-      margin-top: -1rem;
+      grid-row: 1;
     }
 
     &--email {
@@ -87,8 +112,8 @@
         $pos-input-label-y,
         $pos-input-label-translate-up
       );
-      grid-column: 1 / -1;
-      grid-row: 1;
+      grid-column: 1 / 3;
+      grid-row: 2;
     }
 
     &--contact {
@@ -100,33 +125,20 @@
         $pos-input-label-translate-up
       );
       grid-column: 3 / -1;
-      grid-row: 3;
+      grid-row: 2;
     }
 
-    &--num {
-      @include input--group(
-        $size-contact-us-input-width,
-        $col-gray-tint-1,
-        $pos-input-label-x,
-        $pos-input-label-y,
-        $pos-input-label-translate-up
-      );
-      grid-column: 1 / 3;
-      grid-row: 3;
+    &--vaccinate {
+      grid-column: 1 / -1;
+      grid-row: 4;
+      @include custom--radio($col-gray-tint-1);
     }
+  }
 
-    &--retreat-name {
-      @include input--group(
-        $size-contact-us-input-width,
-        $col-gray-tint-1,
-        $pos-input-label-x,
-        $pos-input-label-y,
-        $pos-input-label-translate-up,
-        "select"
-      );
-      grid-column: 3 / -1;
-      grid-row: 1;
-    }
+  &--form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
 
     &--message {
       @include input--group(
@@ -137,29 +149,52 @@
         $pos-input-label-translate-up,
         "textarea"
       );
-      width: 95%;
-      margin-top: 1.8rem;
-      grid-column: 1 / -1;
-      grid-row: 4;
+      width: 100%;
+      margin: 2.8rem 0rem;
+
 
       & label {
         top: 0rem;
       }
     }
 
-    &--vaccinate {
-      grid-column: 1 / -1;
-      grid-row: 5;
-      margin-top: -1.8rem;
-      @include custom--radio($col-gray-tint-1);
+    &--title {
+      @include section--title($col-main-tint-1, $letter-spacing-s);
+      font-size: $font-size-text-md;
+
+      &--box {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-top: 2.4rem;
+
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 0.1rem;
+          width: 110%;
+          top: -2rem;
+          background-color: $col-main-primary;
+          transform: translateX(-5%);
+        }
+
+
+      }
     }
 
     &--btn {
-      grid-column: 1 / -1;
-      grid-row: 6;
       @include btn--link($col-gray-tint-1, $col-main-primary, 0.6, true);
-      justify-self: start;
-      margin-top: -1.2rem;
+      align-self: start;
+    }
+
+    &--icon {
+      @include icon-square(2.8rem, $col-main-primary);
+      box-shadow: 0rem 0rem 8rem 0.8rem rgba($col-black-primary, 0.1);
+
+      &--btn {
+        padding-top: 0.4rem;
+      }
     }
   }
 }

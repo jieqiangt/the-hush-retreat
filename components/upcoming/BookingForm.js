@@ -1,95 +1,111 @@
 import { useRouter } from "next/router";
-import { useContext, useEffect, useReducer } from "react";
 import {
-  bookingInitialState,
-  bookingReducer,
-} from "../../reducers/bookingReducer";
+  Fragment,
+  cloneElement,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import InputBar from "../ui/InputBar";
-import InputSelect from "../ui/InputSelect";
-import InputOptions from "../ui/InputOptions";
 import NotificationContext from "../../store/notificationContext";
 import ModalContext from "../../store/modalContext";
 import { callApi } from "../../utils/apiUtils";
+import NewRetreateeFields from "./NewRetreateeFields";
+import Icon from "../ui/Icon";
+import LinkButton from "../ui/LinkButton";
+import { v4 as uuidv4 } from "uuid";
 
 export default function BookingForm(props) {
-  const [bookingState, dispatchBooking] = useReducer(
-    bookingReducer,
-    bookingInitialState
-  );
   const { closeModal } = useContext(ModalContext);
   const router = useRouter();
   const notificationCtx = useContext(NotificationContext);
   const { baseClass, classes, retreatDetails } = props;
+  const [allRetreateeDetails, setAllRetreateeDetails] = useState({});
+  const [formValid, setFormValid] = useState(false);
+  const [retreateeFields, setRetreateeFields] = useState([]);
+  const [refresh, setRefresh] = useState();
+  const msgInputRef = useRef();
 
-  const { firstNameValid, lastNameValid, emailValid, phoneValid, formValid } =
-    bookingState;
-
-  const fields = {
-    firstName: bookingState.firstName,
-    lastName: bookingState.lastName,
-    email: bookingState.email,
-    phone: bookingState.phone,
-    numRetreatees: bookingState.numRetreatees,
-    vaccinated: bookingState.vaccinated,
-    message: bookingState.message,
+  const getRetreateeDetailsHandler = (retreateeDetails) => {
+    setAllRetreateeDetails((oldAllRetreateeDetails) => {
+      return { ...oldAllRetreateeDetails, ...retreateeDetails };
+    });
   };
 
-  const changeHandlers = {};
+  const onAddRetreatee = (event) => {
+    event.preventDefault();
+    setRetreateeFields((oldRetreateeFields) => {
+      const newRetreateeFields = [...oldRetreateeFields];
+      newRetreateeFields.push(
+        <NewRetreateeFields
+          classes={classes}
+          baseClass={baseClass}
+          onValidated={getRetreateeDetailsHandler}
+          retreateeIdx={uuidv4()}
+          key={uuidv4()}
+        />
+      );
+      return newRetreateeFields;
+    });
+    setRefresh((oldRefresh) => !oldRefresh);
+  };
 
-  for (let field in fields) {
-    changeHandlers[field] = function (event) {
-      let inputParams = { type: "INPUT", field: field };
-      inputParams[field] = event.target.checked
-        ? event.target.checked
-        : event.target.value;
+  const deleteRetreateeHandler = useCallback(
+    (event) => {
+      event.preventDefault();
+      const idxToDelete = event.target.getAttribute("idx");
 
-      dispatchBooking(inputParams);
-    };
-  }
-  const valFieldHandlers = {};
+      setRetreateeFields((oldRetreateeFields) => {
+        const filteredRetreateeFields = oldRetreateeFields.filter(
+          (jsxRetreatee) => jsxRetreatee.props.retreateeIdx !== idxToDelete
+        );
+        return filteredRetreateeFields;
+      });
+      setAllRetreateeDetails((oldAllRetreateeDetails) => {
+        const filteredRetreateeDetails = { ...oldAllRetreateeDetails };
+        delete filteredRetreateeDetails[idxToDelete];
+        console.log({ filteredRetreateeDetails });
+        return filteredRetreateeDetails;
+      });
+      setRefresh((oldRefresh) => !oldRefresh);
+    },
+    [retreateeFields]
+  );
 
-  for (let field in fields) {
-    valFieldHandlers[field] = function () {
-      const timerId = setTimeout(() => {
-        let inputParams = { type: "FIELD_VAL", field: field };
-        inputParams[field] = fields[field];
-        dispatchBooking(inputParams);
-      }, 500);
+  useEffect(() => {
+    setRetreateeFields((oldRetreateeFields) => {
+      const newRetreateeFields = oldRetreateeFields.map((jsxRetreatee, idx) =>
+        cloneElement(jsxRetreatee, {
+          onDeleteRetreatee: deleteRetreateeHandler,
+          num: idx + 1,
+        })
+      );
+      return newRetreateeFields;
+    });
+  }, [refresh]);
 
-      return () => {
-        clearTimeout(timerId);
-      };
-    };
-  }
-
-  useEffect(valFieldHandlers["firstName"], [dispatchBooking, fields.firstName]);
-  useEffect(valFieldHandlers["lastName"], [dispatchBooking, fields.lastName]);
-  useEffect(valFieldHandlers["email"], [dispatchBooking, fields.email]);
-  useEffect(valFieldHandlers["phone"], [dispatchBooking, fields.phone]);
-  useEffect(valFieldHandlers["numRetreatees"], [
-    dispatchBooking,
-    fields.numRetreatees,
-  ]);
-  useEffect(valFieldHandlers["vaccinated"], [
-    dispatchBooking,
-    fields.vaccinated,
-  ]);
+  useEffect(() => {
+    for (const idx in allRetreateeDetails) {
+      if (!allRetreateeDetails[idx].retreateeValid) {
+        setFormValid(() => false);
+        break;
+      }
+      setFormValid(() => true);
+    }
+  }, [setFormValid, allRetreateeDetails]);
 
   async function bookingHandler(event) {
     event.preventDefault();
 
     const result = await callApi({
-      url: "/api/booking",
+      url: "/api/registerBooking",
       method: "POST",
       body: {
-        retreat: retreatDetails,
-        firstName: bookingState.firstName,
-        lastName: bookingState.lastName,
-        email: bookingState.email,
-        phone: bookingState.phone,
-        numRetreatees: bookingState.numRetreatees,
-        vaccinated: bookingState.vaccinated,
-        message: bookingState.message,
+        retreatIdStr: retreatDetails.retreatId,
+        allRetreateeDetails,
+        message: msgInputRef.current.value,
       },
     });
 
@@ -102,19 +118,11 @@ export default function BookingForm(props) {
       const successNotification = await result.json();
 
       await callApi({
-        url: "/api/bookingEmails",
+        url: "/api/sendBookingConfirmation",
         method: "POST",
         body: {
-          retreatName: retreatDetails.name,
-          date: retreatDetails.date,
-          location: retreatDetails.location,
-          firstName: bookingState.firstName,
-          lastName: bookingState.lastName,
-          email: bookingState.email,
-          phone: bookingState.phone,
-          numRetreatees: bookingState.numRetreatees,
-          vaccinated: bookingState.vaccinated,
-          message: bookingState.message,
+          retreatIdStr: retreatDetails.retreatId,
+          allRetreateeDetails,
           insertedId: successNotification.insertedId,
         },
       });
@@ -125,111 +133,54 @@ export default function BookingForm(props) {
     }
   }
 
-  const radioOptions = [
-    {
-      name: "vaccinated",
-      value: "",
-      label: "I certify that I am fully vaccincated.",
-      onChange: changeHandlers["vaccinated"],
-    },
-  ];
-
   return (
-    <form action="#" className={classes[`${baseClass}--form`]}>
-      <InputBar
-        label="First Name"
-        type="text"
-        inputName="upcoming--form--first-name"
-        inputPlaceholder="First Name"
-        value={fields.firstName}
-        onChange={changeHandlers["firstName"]}
-        inputGroupClass={classes[`${baseClass}--form--first-name`]}
-        inputClass={classes[`${baseClass}--form--first-name--input`]}
-        labelClass={classes[`${baseClass}--form--first-name--label`]}
-        valid={firstNameValid}
-        invalidText="Your first name is required."
-      />
-      <InputBar
-        label="Last Name"
-        type="text"
-        inputName="upcoming--form--last-name"
-        inputPlaceholder="Last Name"
-        value={fields.lastName}
-        onChange={changeHandlers["lastName"]}
-        inputGroupClass={classes[`${baseClass}--form--last-name`]}
-        inputClass={classes[`${baseClass}--form--last-name--input`]}
-        labelClass={classes[`${baseClass}--form--last-name--label`]}
-        valid={lastNameValid}
-        invalidText="Your last name is required."
-      />
-      <InputBar
-        label="Email"
-        type="email"
-        inputName="upcoming--form--email"
-        inputPlaceholder="Email"
-        value={fields.email}
-        onChange={changeHandlers["email"]}
-        inputGroupClass={classes[`${baseClass}--form--email`]}
-        inputClass={classes[`${baseClass}--form--email--input`]}
-        labelClass={classes[`${baseClass}--form--email--label`]}
-        valid={emailValid}
-        invalidText="A valid email is required."
-      />
-      <InputBar
-        label="Contact No."
-        type="text"
-        inputName="upcoming--form--contact"
-        inputPlaceholder="Contact No."
-        value={fields.phone}
-        onChange={changeHandlers["phone"]}
-        valid={phoneValid}
-        invalidText="A valid mobile number is required."
-        inputGroupClass={classes[`${baseClass}--form--contact`]}
-        inputClass={classes[`${baseClass}--form--contact--input`]}
-        labelClass={classes[`${baseClass}--form--contact--label`]}
-      />
-      <InputSelect
-        label="No. of Retreatees"
-        inputName="upcoming--form--num"
-        value={fields.numRetreatees}
-        onChange={changeHandlers["numRetreatees"]}
-        inputGroupClass={classes[`${baseClass}--form--num`]}
-        inputClass={classes[`${baseClass}--form--num--input`]}
-        labelClass={classes[`${baseClass}--form--num--label`]}
-        inputOptions={[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-          <option key={item} value={item}>
-            {item}
-          </option>
-        ))}
-      />
-      <InputBar
-        label="Message"
-        type="textarea"
-        inputName="upcoming--form--message"
-        inputPlaceholder="Message"
-        value={fields.message}
-        onChange={changeHandlers["message"]}
-        inputGroupClass={classes[`${baseClass}--form--message`]}
-        inputClass={classes[`${baseClass}--form--message--input`]}
-        labelClass={classes[`${baseClass}--form--message--label`]}
-        rows="3"
-      />
-      <InputOptions
-        inputOptions={radioOptions}
-        type="checkbox"
-        overallGroupClass={classes[`${baseClass}--form--vaccinate`]}
-        legendClass={classes[`${baseClass}--form--vaccinate--legend`]}
-        optionGroupClass={classes[`${baseClass}--form--vaccinate--group`]}
-        labelClass={classes[`${baseClass}--form--vaccinate--label`]}
-        btnClass={classes[`${baseClass}--form--vaccinate--btn`]}
-      />
-      <button
-        className={classes[`${baseClass}--form--btn`]}
-        onClick={bookingHandler}
-        disabled={!formValid}
-      >
-        Register
-      </button>
-    </form>
+    <Fragment>
+      <form action="#" className={classes[`${baseClass}--form`]}>
+        <NewRetreateeFields
+          classes={classes}
+          baseClass={baseClass}
+          onValidated={getRetreateeDetailsHandler}
+          retreateeIdx={"main"}
+        />
+        <div className={classes[`${baseClass}--form--title--box`]}>
+          <span className={classes[`${baseClass}--form--title`]}>
+            Additional Retreatees
+          </span>
+          <LinkButton
+            onClick={onAddRetreatee}
+            btnClass={classes[`${baseClass}--form--icon--btn`]}
+          >
+            <Icon
+              iconClass={classes[`${baseClass}--form--icon`]}
+              iconName={"icon-plus"}
+            />
+          </LinkButton>
+        </div>
+        {retreateeFields}
+        <div className={classes[`${baseClass}--form--title--box`]}>
+          <span className={classes[`${baseClass}--form--title`]}>
+            Any other queries?
+          </span>
+        </div>
+        <InputBar
+          label="Message"
+          type="textarea"
+          inputName="upcoming--form--message"
+          inputPlaceholder="Message"
+          inputRef={msgInputRef}
+          inputGroupClass={classes[`${baseClass}--form--message`]}
+          inputClass={classes[`${baseClass}--form--message--input`]}
+          labelClass={classes[`${baseClass}--form--message--label`]}
+          rows="3"
+        />
+        <button
+          className={classes[`${baseClass}--form--btn`]}
+          onClick={bookingHandler}
+          disabled={!formValid}
+        >
+          Register
+        </button>
+      </form>
+    </Fragment>
   );
 }
