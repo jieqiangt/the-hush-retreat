@@ -14,7 +14,8 @@ export default function InputBar(props) {
     valid,
     invalidText,
     rows,
-    datalistId
+    datalistId,
+    inputRef,
   } = props;
   return (
     <Fragment>
@@ -29,6 +30,7 @@ export default function InputBar(props) {
               className={inputClass}
               onChange={onChange}
               placeholder={inputPlaceholder}
+              ref={inputRef}
             />
             <label htmlFor={inputName} className={labelClass}>
               {label}
@@ -48,6 +50,7 @@ export default function InputBar(props) {
               className={inputClass}
               placeholder={inputPlaceholder}
               rows={rows}
+              ref={inputRef}
             />
             <label htmlFor={inputName} className={labelClass}>
               {label}
@@ -69,6 +72,7 @@ export default function InputBar(props) {
               className={inputClass}
               placeholder={inputPlaceholder}
               list={datalistId}
+              ref={inputRef}
             />
             <label htmlFor={inputName} className={labelClass}>
               {label}
