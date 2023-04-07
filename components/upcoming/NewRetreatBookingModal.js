@@ -2,23 +2,15 @@ import BookingForm from "./BookingForm";
 import Modal from "../ui/Modal";
 
 export default function NewRetreatBookingModal(props) {
-  const { classes, baseClass, text, retreatDetails } = props;
-
-  const paragraphs = text.map((item, idx) => <p key={idx}>{item}</p>);
-  const content = (
-    <article className={classes[`${baseClass}--aside--content`]}>
-      {paragraphs}
-    </article>
-  );
+  const { classes, baseClass, retreatDetails } = props;
 
   const aside = (
     <section className={classes[`${baseClass}--aside`]}>
       <h3 className={classes[`${baseClass}--aside--title`]}>
         {retreatDetails.name}
       </h3>
-      {content}
-      <h4 className={classes[`${baseClass}--aside--title`]}>
-        Register Your Interest
+      <h4 className={classes[`${baseClass}--aside--cta`]}>
+        Enter your booking details Do ea ad qui nostrud id commodo dolore laboris tempor elit dolore non elit. Exercitation voluptate exercitation.
       </h4>
       <BookingForm
         baseClass={baseClass}
@@ -28,15 +20,7 @@ export default function NewRetreatBookingModal(props) {
     </section>
   );
 
-  const img = (
-      <div
-        className={`${classes[`${baseClass}--img`]} ${
-          classes[`${baseClass}--img--1`]
-        }`}
-      >
-        &nbsp;
-      </div>
-  );
+  const img = <div className={classes[`${baseClass}--img`]}>&nbsp;</div>;
 
   return (
     <Modal img={img} aside={aside} baseClass={baseClass} classes={classes} />
