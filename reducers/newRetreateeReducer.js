@@ -1,32 +1,18 @@
-export const bookingInitialState = {
-  retreat: JSON.stringify({
-    id: "0",
-    name: "Release & Renew",
-    date: "7th January 2023, Saturday",
-    location: "Villa Samadhi Singapore",
-  }),
+export const newRetreateeInitialState = {
   firstName: "",
   lastName: "",
   email: "",
   phone: "",
-  numRetreatees: 1,
   vaccinated: "",
-  message: "",
   firstNameValid: false,
   lastNameValid: false,
   emailValid: false,
   phoneValid: false,
   vaccinatedValid: false,
-  numRetreateesValid: true,
-  retreatNameValid: true,
-  formValid: false,
+  retreateeValid: false,
 };
 
 export function validateField(input, field) {
-  if (field === "retreat") {
-    return ["Release & Renew", "test"].includes(input.name);
-  }
-
   if (field === "firstName") {
     return input.length > 0 && !/[^a-zA-Z\s]+/.test(input);
   }
@@ -50,25 +36,19 @@ export function validateField(input, field) {
   if (field === "vaccinated") {
     return input ? input : false;
   }
-
-  if (field === "numRetreatees") {
-    return input > 0 && input <= 8;
-  }
 }
 
-function validateForm(state) {
+function validateRetreatee(state) {
   return (
     state.firstNameValid &&
     state.lastNameValid &&
     state.emailValid &&
     state.phoneValid &&
-    state.vaccinatedValid &&
-    state.numRetreateesValid &&
-    state.retreatNameValid
+    state.vaccinatedValid
   );
 }
 
-export function bookingReducer(state, action) {
+export function newRetreateeReducer(state, action) {
   if (action.type === "INPUT") {
     const newState = { ...state };
     newState[action.field] = action[action.field];
@@ -81,18 +61,15 @@ export function bookingReducer(state, action) {
     newState[action.field + "Valid"] =
       validateField(action[action.field], action.field) ||
       (action[action.field] === "" && !newState[action.field + "Valid"]);
-
-    newState.formValid =
-      validateForm(newState) &&
-      newState.retreat.name !== "" &&
+    newState.retreateeValid =
+      validateRetreatee(newState) &&
       newState.firstName !== "" &&
       newState.lastName !== "" &&
       newState.email !== "" &&
       newState.phone !== "" &&
-      newState.numRetreatees !== "" &&
       newState.vaccinated !== "";
 
     return newState;
   }
-  return bookingInitialState;
+  return newRetreateeInitialState;
 }
