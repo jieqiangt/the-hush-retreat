@@ -7,7 +7,7 @@ dotenv.config({ path: path.join(__dirname, "..", ".env") });
 
 const connectMongo = () => {
   dotenv.config();
-  const uri = `mongodb+srv://${process.env.MONGO_ADMIN}:${process.env.MONGO_ADMIN_PW}@${process.env.MONGO_URI}`;
+  const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@${process.env.MONGO_URI}`;
   const client = new MongoClient(uri);
   const db = client.db(process.env.MONGO_DBNAME);
   return { client, db };
