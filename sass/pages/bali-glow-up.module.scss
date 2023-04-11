@@ -13,6 +13,13 @@
 .book--bali {
   &--modal {
     @include modal;
+
+    &--box {
+      @include media-queries(tab-land) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40fr 60fr;
+      }
+    }
   }
 
   &--img {

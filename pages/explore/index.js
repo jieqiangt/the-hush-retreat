@@ -41,6 +41,13 @@ export async function getStaticProps() {
       ],
       pathDir: ["public", "img", "here-and-now"],
     },
+    {
+      title: "Beach Surf HIIT - March 2023",
+      content: [
+        "In celebration of International Women's Day, SUURV & The Hush Retreats collaborated on an event, for the first time on 26 March 2023 (Sunday)! The founders of SUURV - Seraphina & Hush Retreat - Mandi, led a group of strong willed & like-minded women in an hour of Surf-HIIT workout! Not only did everyone had a productive & fun morning exercise, they managed to do so looking good in Shakaila Swimwear! ",
+      ],
+      pathDir: ["public", "img", "beach-pop-up-20230326"],
+    },
   ];
 
   const retreatsWithImg = retreats.map((item) => {
