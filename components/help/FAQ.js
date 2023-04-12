@@ -106,7 +106,7 @@ export default function FAQ(props) {
     }
 
     setFAQItems(FAQItemsOutput.map(createFAQItem));
-  }, [activeItems]);
+  }, [activeItems, baseClass, classes]);
 
   return (
     <div className={classes[baseClass]} id="faq">
