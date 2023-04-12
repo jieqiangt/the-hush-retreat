@@ -14,7 +14,6 @@ module.exports = {
             "updatedOn",
             "retreatName",
             "startDt",
-            "endDt",
             "price",
             "location",
           ],
@@ -43,7 +42,7 @@ module.exports = {
             endDt: {
               bsonType: "string",
               description:
-                "startDt of string datatype is required. This is in the human readable format to be shown in website.",
+                "startDt of string datatype is optional. This is in the human readable format to be shown in website.",
             },
             price: {
               bsonType: "string",
@@ -53,6 +52,10 @@ module.exports = {
               bsonType: "string",
               description: "location of string datatype is required.",
             },
+            active: {
+              bsonType: "bool",
+              description: "active of boolean datatype is required.",
+            }
           },
         },
       },

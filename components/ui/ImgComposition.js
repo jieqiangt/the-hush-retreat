@@ -5,6 +5,7 @@ export default function ImgComposition(props) {
 
   const images = imgUrlList.map((item, idx) => (
     <ResponsiveImage
+      key={item.src}
       src={item.src}
       alt={item.alt}
       imgBoxClassName={`${classes[`${baseClass}--img--composition--imgbox`]} ${

@@ -4,9 +4,7 @@ import Schedule from "../retreat/Schedule";
 import ZLayout from "../ui/ZLayout";
 
 export default function NewRetreatSchedule(props) {
-  const { classes, baseClass, scheduleList } = props;
-
-  const btnText = "Start Your Journey Here";
+  const { classes, baseClass, scheduleList, btnText } = props;
   const { openModal } = useContext(ModalContext);
 
   const content = (
@@ -19,11 +17,5 @@ export default function NewRetreatSchedule(props) {
     />
   );
 
-  return (
-    <ZLayout
-      classes={classes}
-      baseClass={baseClass}
-      content={content}
-    />
-  );
+  return <ZLayout classes={classes} baseClass={baseClass} content={content} />;
 }

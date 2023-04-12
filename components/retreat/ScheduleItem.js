@@ -15,14 +15,14 @@ export default function ScheduleItem(props) {
     <Fragment>
       <time
         className={`${classes[`${baseClass}--time`]} ${
-          classes[`${baseClass}--${idx}`]
+          classes[`${baseClass}--time--${idx}`]
         }`}
       >
         {timeRange}
       </time>
       <div
         className={`${classes[`${baseClass}--icon--outer`]} ${
-          classes[`${baseClass}--${idx}`]
+          classes[`${baseClass}--icon--outer--${idx}`]
         }`}
       >
         <Icon iconClass={classes[`${baseClass}--icon`]} iconName={iconName} />
@@ -30,7 +30,7 @@ export default function ScheduleItem(props) {
       </div>
       <div
         className={`${classes[`${baseClass}--activity`]} ${
-          classes[`${baseClass}--${idx}`]
+          classes[`${baseClass}--activity--${idx}`]
         }`}
       >
         <h4 className={classes[`${baseClass}--activity--title`]}>{title}</h4>

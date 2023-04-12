@@ -1,5 +1,6 @@
 const { MongoClient } = require("mongodb");
 const bookingSchema = require("../models/bookingSchema");
+const retreatSchema = require("../models/retreatSchema");
 const path = require("path");
 const dotenv = require("dotenv")
 
@@ -32,6 +33,7 @@ const intializeMongo = async () => {
   const { client, db } = connectMongo();
   const collections = {
     bookings: bookingSchema,
+    retreats: retreatSchema,
   };
 
   for (const collectionName in collections) {
