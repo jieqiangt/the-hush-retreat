@@ -21,6 +21,23 @@ export default function UpcomingPage() {
       price: "$ 989 per pax",
       imgSrc: ["/img/upcoming-pg/accom-1.jpg", "/img/upcoming-pg/host-1.jpg"],
     },
+    {
+      header: "~ SWEAT Beach Pop Up : April Edition ~",
+      title: "Surf HIIT Workout",
+      caption:
+        "Let us take you out and spice up your morning exercise! Choose your set of Shakaila Swimwear and join us for an hour of Surf-HIIT workout!",
+      desc: "Back due to the overwhelming positive response, SUURV and The Hush Retreats collaborating again on not 1 but 2 Beach Pop-Ups this month on the XX Apr 2023 - XXXday & XX Apr 2023 - XXXday!",
+      btnText: "Book Now",
+      btnHref: "/upcoming/sweat-apr2023",
+      date: "XX Apr 2023 / XX Apr 2023",
+      time: " 9am - 11.30am",
+      location: "Sentosa",
+      price: "$ 59 per pax",
+      imgSrc: [
+        "/img/upcoming-pg/sweat-group-1.jpg",
+        "/img/upcoming-pg/lunges-1.jpg",
+      ],
+    },
   ];
   return (
     <Fragment>
@@ -32,6 +49,7 @@ export default function UpcomingPage() {
         <UpcomingBanner classes={classes} baseClass="banner" />
         {retreats.map((item, idx) => (
           <NewRetreatSummary
+            key={idx}
             classes={classes}
             baseClass={`new--${idx}`}
             summary={item}
