@@ -1,0 +1,694 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../base/animations";
+@import "../base/utilities";
+@import "../abstracts/media";
+
+.sweat-apr2023 {
+  &--footer {
+    @include footer(transparent, relative);
+  }
+}
+
+.book-sweat {
+  &--modal {
+    @include modal;
+
+    &--box {
+      @include media-queries(tab-land) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40fr 60fr;
+      }
+    }
+  }
+
+  &--img {
+    background-size: cover;
+    background-image: url("../../public/img/upcoming-pg/sweat-apr2023/group-1.jpg");
+    background-position: right;
+    overflow: hidden;
+  }
+
+  &--aside {
+    display: flex;
+    flex-direction: column;
+    font-size: $font-size-text-md;
+    padding: 8rem 14rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    gap: 1.2rem;
+
+    &--title {
+      @include section--title($col-main-tint-1, $letter-spacing-xs);
+      font-size: $font-size-header-md;
+      margin-bottom: 1.2rem;
+    }
+
+    &--info {
+      @include retreat-details();
+
+      &--caption {
+        margin-bottom: 1.2rem;
+      }
+
+      &--grid {
+        font-size: $font-size-text-md;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 1.2rem;
+      }
+    }
+  }
+
+  &--retreatee {
+    &--header {
+      display: flex;
+      align-items: center;
+      border-bottom: $border-main-sm;
+      margin-bottom: 1.6rem;
+    }
+
+    &--title {
+      color: $col-main-tint-1;
+      font-size: $font-size-text-md;
+      margin-top: 1.2rem;
+      margin-left: 0.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    &--btn {
+      @include icon-square(2.8rem, rgba($col-gray-primary, 0.8));
+      margin-left: auto;
+      margin-top: 0.6rem;
+    }
+
+    &--icon {
+      @include icon-square(2.8rem, rgba($col-gray-primary, 0.8));
+    }
+
+    &--fields {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, min-content);
+      align-items: start;
+      column-gap: 2.4rem;
+      row-gap: 1.6rem;
+      position: relative;
+      padding-bottom: 2rem;
+    }
+
+    &--first-name {
+      @include input--group(
+        $size-contact-us-input-width,
+        $col-gray-tint-1,
+        $pos-input-label-x,
+        $pos-input-label-y,
+        $pos-input-label-translate-up
+      );
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+
+    &--last-name {
+      @include input--group(
+        $size-contact-us-input-width,
+        $col-gray-tint-1,
+        $pos-input-label-x,
+        $pos-input-label-y,
+        $pos-input-label-translate-up
+      );
+      grid-column: 3 / -1;
+      grid-row: 1;
+    }
+
+    &--email {
+      @include input--group(
+        $size-contact-us-input-width,
+        $col-gray-tint-1,
+        $pos-input-label-x,
+        $pos-input-label-y,
+        $pos-input-label-translate-up
+      );
+      grid-column: 1 / 3;
+      grid-row: 2;
+    }
+
+    &--contact {
+      @include input--group(
+        $size-contact-us-input-width,
+        $col-gray-tint-1,
+        $pos-input-label-x,
+        $pos-input-label-y,
+        $pos-input-label-translate-up
+      );
+      grid-column: 3 / -1;
+      grid-row: 2;
+    }
+
+    &--vaccinate {
+      grid-column: 1 / -1;
+      grid-row: 4;
+      @include custom--radio($col-gray-tint-1);
+    }
+  }
+
+  &--form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    &--message {
+      @include input--group(
+        $size-contact-us-input-width,
+        $col-gray-tint-1,
+        0.8rem,
+        0.4rem,
+        $pos-input-label-translate-up,
+        "textarea"
+      );
+      width: 100%;
+      margin: 2.8rem 0rem;
+
+      & label {
+        top: 0rem;
+      }
+    }
+
+    &--title {
+      @include section--title($col-main-tint-1, $letter-spacing-s);
+      font-size: $font-size-text-md;
+
+      &--box {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-top: 2.4rem;
+
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 0.1rem;
+          width: 110%;
+          top: -2rem;
+          background-color: $col-main-primary;
+          transform: translateX(-5%);
+        }
+      }
+    }
+
+    &--btn {
+      @include btn--link($col-gray-tint-1, $col-main-primary, 0.6, true);
+      align-self: start;
+    }
+
+    &--icon {
+      @include icon-square(2.8rem, $col-main-primary);
+      box-shadow: 0rem 0rem 8rem 0.8rem rgba($col-black-primary, 0.1);
+
+      &--btn {
+        padding-top: 0.4rem;
+      }
+    }
+  }
+}
+
+.banner {
+  @include banner(
+    (
+      linear-gradient(
+        180deg,
+        rgba($col-white-primary, 0.2),
+        rgba($col-white-primary, 0.3)
+      ),
+      url("../../public/img/upcoming-pg/sweat-apr2023/banner-1.jpg")
+    ),
+    (top 100% left),
+    true
+  );
+
+  &--box {
+    padding: 4.8rem;
+    width: 45%;
+    transition-delay: 0.6s;
+  }
+
+  &--btn {
+    border-bottom: $border-gray-sm;
+    border-top: $border-gray-sm;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+}
+
+.expect {
+  @include description--section(35vw);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    bottom: -8rem;
+    left: 1.5%;
+    background-color: rgba($col-accent-tint-2, 0.5);
+    z-index: $z-index-top + $z-index-top;
+  }
+
+  @include media-queries(laptop-lg) {
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+  }
+
+  @include media-queries(laptop) {
+    margin-top: 4rem;
+    margin-bottom: 0rem;
+  }
+
+  @include media-queries(laptop-sm) {
+    margin-top: 0rem;
+    margin-bottom: -16rem;
+  }
+
+  @include media-queries(tab-xl-pot) {
+    height: 75vh;
+  }
+
+  @include media-queries(tab-lg-land) {
+    margin-top: -12rem;
+    margin-bottom: -20rem;
+  }
+
+  @include media-queries(tab-land) {
+    flex-direction: column;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    height: 95vh;
+  }
+
+  @include media-queries(phone-xl) {
+    height: 85vh;
+  }
+
+  @include media-queries(phone) {
+    height: 90vh;
+  }
+
+  @include media-queries(device-sm-short) {
+    height: 100vh;
+  }
+
+  @include media-queries(tab-land-short) {
+    height: 105vh;
+  }
+
+  @include media-queries(device-tall) {
+    height: 65vh;
+  }
+
+  &--aside {
+    @include media-queries(tab-land) {
+      order: 2;
+      flex: 10 1 100vh;
+      align-items: stretch;
+    }
+    font-size: $font-size-text-md;
+    line-height: $font-line-height-lg;
+
+    &--box {
+      background-color: $col-main-primary;
+      padding: 12rem 32rem 12rem 6rem;
+      margin-top: 18rem;
+    }
+
+    &--title {
+      @include section--title($col-accent-primary, $letter-spacing-xs);
+      border-bottom: $border-accent-sm;
+      margin-bottom: 2.4rem;
+    }
+
+    &--content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      color: $col-accent-tint-1;
+      padding-right: 10rem;
+      margin-left: 2.4rem;
+
+      & p:first-child {
+        font-size: $font-size-header-sm;
+        padding-right: 30rem;
+        margin-bottom: 0.8rem;
+        color: $col-gray-tint-3;
+      }
+    }
+  }
+
+  &--img {
+    order: 2;
+    z-index: $z-index-top + 10;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+
+    &--composition {
+      @include img-composition(
+        15vw,
+        -4rem,
+        72rem,
+        4rem,
+        -13rem,
+        21rem,
+        -30rem,
+        -6rem,
+        0rem
+      );
+
+      @include media-queries(xl-screen) {
+        @include img-composition(
+          16vw,
+          -4rem,
+          56rem,
+          4rem,
+          -16rem,
+          18rem,
+          -38rem,
+          -6rem,
+          0rem
+        );
+      }
+
+      @include media-queries(lg-screen) {
+        @include img-composition(
+          17vw,
+          -4rem,
+          56rem,
+          4rem,
+          -16rem,
+          18rem,
+          -38rem,
+          -6rem,
+          0rem
+        );
+      }
+
+      @include media-queries(laptop-lg) {
+        @include img-composition(
+          18vw,
+          -4rem,
+          64rem,
+          4rem,
+          -16rem,
+          20rem,
+          -40rem,
+          -6rem,
+          -2rem
+        );
+      }
+
+      @include media-queries(laptop) {
+        @include img-composition(
+          19vw,
+          -4rem,
+          64rem,
+          4rem,
+          -16rem,
+          20rem,
+          -44rem,
+          -6rem,
+          -2rem
+        );
+      }
+
+      @include media-queries(tab-lg-land) {
+        @include img-composition(
+          21vw,
+          -4rem,
+          61rem,
+          4rem,
+          -15rem,
+          20rem,
+          -43rem,
+          -6rem,
+          -2rem
+        );
+      }
+
+      @include media-queries(tab-land) {
+        @include img-composition(
+          34vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+      }
+
+      @include media-queries(tab-sm-land) {
+        @include img-composition(
+          36vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-1vw);
+      }
+
+      @include media-queries(phone-xl) {
+        @include img-composition(
+          48vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-22vw);
+      }
+
+      @include media-queries(phone-lg) {
+        @include img-composition(
+          50vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-26vw);
+      }
+
+      @include media-queries(phone) {
+        @include img-composition(
+          60vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-40vw);
+      }
+
+      &--imgbox {
+        &--0 {
+          z-index: $z-index-top;
+        }
+
+        &--1 {
+          z-index: $z-index-top - 2;
+          @include media-queries(phone) {
+            box-shadow: 0px 0px 20px 3px rgba($col-black-primary, 0.2);
+          }
+        }
+
+        &--2 {
+          z-index: $z-index-top - 1;
+        }
+      }
+    }
+  }
+}
+
+.guide {
+  @include description--section(30vw);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    bottom: -18rem;
+    left: 1.5%;
+    background-color: rgba($col-accent-tint-2, 0.5);
+    z-index: $z-index-top;
+  }
+
+  &--img {
+    background-image: url("../../public/img/upcoming-pg/sweat-apr2023/host-1.jpg");
+    background-position: bottom;
+    width: 100%;
+    height: 80%;
+    margin: 18rem 0rem 0rem auto;
+  }
+
+  &--aside {
+    font-size: $font-size-text-md;
+    line-height: $font-line-height-lg;
+
+    &--box {
+      background-color: $col-main-primary;
+      padding: 12rem 32rem 12rem 6rem;
+      margin-top: 18rem;
+    }
+
+    &--title {
+      @include section--title($col-accent-primary, $letter-spacing-xs);
+      border-bottom: $border-accent-sm;
+      margin-bottom: 2.4rem;
+    }
+
+    &--content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      color: $col-accent-tint-1;
+      padding-right: 10rem;
+      margin-left: 2.4rem;
+
+      & p:first-child {
+        font-size: $font-size-header-sm;
+        padding-right: 30rem;
+        margin-bottom: 0.8rem;
+        color: $col-gray-tint-3;
+      }
+    }
+  }
+}
+
+.schedule {
+  @include z-layout(45fr);
+  @include schedule(7);
+  position: relative;
+  margin-top: 18rem;
+
+  @include media-queries(tab-sm-land) {
+    margin-bottom: 20rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 100%;
+    top: 0rem;
+    background-color: rgba($col-accent-tint-2, 0.5);
+    z-index: $z-index-top;
+  }
+
+  &--img {
+    background-image: url("../../public/img/upcoming-pg/sweat-apr2023/plan-1.jpg");
+    background-position: bottom 70% left 0%;
+  }
+
+  &--layout {
+    margin-left: -16rem;
+    transition-delay: 0.2s;
+  }
+
+  &--title {
+    @include section--title($col-main-primary, $letter-spacing-s);
+  }
+
+  &--time {
+    font-size: $font-size-header-md;
+    margin-bottom: 3.8rem;
+  }
+
+  &--icon {
+    @include icon-square($size-icon-square-lg, $col-main-primary);
+
+    &--outer {
+      margin-top: 0.4rem;
+      align-items: center;
+      font-size: $font-size-text-s;
+      line-height: 0.5;
+      color: $col-main-primary;
+
+      &--5 {
+        margin-top: 0rem;
+        margin-bottom: 2.8rem;
+      }
+    }
+  }
+
+  &--activity {
+    &--1 {
+      margin-bottom: 1.8rem;
+    }
+
+    &--2 {
+      margin-top: 1.2rem;
+    }
+
+    &--3 {
+      margin-top: 1.2rem;
+    }
+
+    &--4 {
+      margin-top: 1.2rem;
+    }
+
+    &--5 {
+      margin-bottom: 1.2rem;
+    }
+
+    &--title {
+      @include section--title($col-main-primary, $letter-spacing-xs);
+    }
+
+    &--desc {
+      font-size: $font-size-text-md;
+      padding-right: 20rem;
+    }
+  }
+
+  &--btn {
+    @include btn--link($col-gray-tint-1, $col-main-primary, 0.2, true);
+    grid-column: full-start / full-end;
+    font-size: $font-size-text-md;
+    border-bottom: $border-gray-sm;
+    border-top: $border-gray-sm;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+}
