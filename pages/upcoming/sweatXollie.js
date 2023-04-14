@@ -5,20 +5,20 @@ import NewRetreatBanner from "../../components/upcoming/NewRetreatBanner";
 import NewRetreatBookingModal from "../../components/upcoming/NewRetreatBookingModal";
 import NewRetreatSection from "../../components/upcoming/NewRetreatSection";
 import NewRetreatSchedule from "../../components/upcoming/NewRetreatSchedule";
-import classes from "../../sass/pages/sweat-apr2023.module.scss";
-import Icon from "../../components/ui/Icon";
+import classes from "../../sass/pages/sweatXollie.module.scss";
 
 export default function BaliGlowUpPage() {
-  const pageBaseClass = "sweat-apr2023";
+  const pageBaseClass = "sweat-ollie";
   const modalBaseClass = "book-sweat";
   const retreatDetails = {
     title: "OUR LATEST EVENT TITLE",
-    caption: "SWEAT Beach Surf HIIT: Spice your morning up!",
-    date: "XX Apr 2023, XXXday",
-    time: "9am - 11.30am",
+    caption: "SWEAT x Ollie: Spice your morning up!",
+    date: "29 Apr 2023, Saturday",
+    time: "8am - 10am",
     price: "$59 per pax",
     location: "Sentosa",
-    promotion: " ",
+    promotion:
+      "Ticket includes 1 sparkling hard seltzer from Ollie! You deserve a low calorie treat after all the burns!",
     btnText: "Register Here",
   };
 
@@ -29,39 +29,39 @@ export default function BaliGlowUpPage() {
 
   const scheduleList = [
     {
-      timeRange: "0900 - 0915",
+      timeRange: "0800 - 0815",
       iconName: "icon-logo-words-circular",
       numDots: 3,
       title: "Meet Up & Intro",
       desc: "Briefing for the day!",
     },
     {
-      timeRange: "0915 - 0930",
+      timeRange: "0815 - 0830",
       iconName: "icon-logo-words-circular",
       numDots: 5,
       title: "Gear Up & Warm up",
-      desc: "Get ready in your exclusive Shakaila Swimwear!",
+      desc: "Get ready for the grind!",
     },
     {
-      timeRange: "0930 - 1030",
+      timeRange: "0830 - 0930",
       iconName: "icon-logo-words-circular",
-      numDots: 5,
+      numDots: 6,
       title: "Surf HIIT",
       desc: "Time to spice up your morning exercise!",
     },
     {
-      timeRange: "1030 - 1045",
+      timeRange: "0930 - 0945",
       iconName: "icon-logo-words-circular",
-      numDots: 5,
+      numDots: 6,
       title: "Revitalize",
-      desc: "Cool down with a refreshing Mou Gou Juice!",
+      desc: "Cool down with a refreshing Ollie sparkling hard seltzer!",
     },
     {
-      timeRange: "1045 - 1130",
+      timeRange: "0945 - 1130",
       iconName: "icon-logo-words-circular",
       numDots: 0,
       title: "Closing Circle",
-      desc: "Mingle around & make some memories!",
+      desc: "Feel free to mingle around & make some memories after a workout!",
     },
   ];
 
@@ -77,25 +77,18 @@ export default function BaliGlowUpPage() {
     },
   ];
 
-  const modalTitle = "SWEAT Beach Pop Up - April Edition";
-  const retreatsArr = [
-    {
-      _id: "64361076b18c10ff91fcaf2c",
-      retreatName: "SWEAT BEACH POP UP : XX APR 2023, XXXday",
-    },
-    {
-      _id: "6436118db18c10ff91fcaf2e",
-      retreatName: "SWEAT BEACH POP UP : YY APR 2023, YYYday",
-    },
-  ];
+  const modalTitle = "SWEAT Beach Pop Up x Ollie";
+  const modalCaption = "Event Details";
+  const retreatId = "64361076b18c10ff91fcaf2c";
 
   const modal = (
     <NewRetreatBookingModal
       classes={classes}
       baseClass={modalBaseClass}
       modalTitle={modalTitle}
+      modalCaption={modalCaption}
       retreatDetails={retreatDetails}
-      retreatsArr={retreatsArr}
+      retreatsId={retreatId}
     />
   );
 

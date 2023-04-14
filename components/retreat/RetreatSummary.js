@@ -1,10 +1,10 @@
 import Gallery from "../ui/Gallery";
 
 export default function RetreatSummary(props) {
-  const { classes, baseClass, idx, title, content, galleryDetails } = props;
+  const { classes, baseClass, idx, title, content, galleryDetails, retreatId } = props;
 
   return (
-    <section className={classes[`${baseClass}--${idx}`]}>
+    <section id={`${retreatId}`} className={classes[`${baseClass}--${idx}`]}>
       <h3 className={`${classes[`${baseClass}--${idx}--title`]} hidden`}>
         {title}
       </h3>

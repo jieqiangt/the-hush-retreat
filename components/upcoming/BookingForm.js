@@ -1,14 +1,14 @@
 import { useRouter } from "next/router";
 import {
   Fragment,
-cloneElement,
+  cloneElement,
   useCallback,
   useContext,
   useEffect,
   useRef,
   useState,
 } from "react";
-import InputBar from "../ui/InputBar";
+import InputText from "../ui/InputText";
 import NotificationContext from "../../store/notificationContext";
 import ModalContext from "../../store/modalContext";
 import { callApi } from "../../utils/apiUtils";
@@ -17,11 +17,12 @@ import Icon from "../ui/Icon";
 import LinkButton from "../ui/LinkButton";
 import { v4 as uuidv4 } from "uuid";
 
+
 export default function BookingForm(props) {
   const { closeModal } = useContext(ModalContext);
   const router = useRouter();
   const notificationCtx = useContext(NotificationContext);
-  const { baseClass, classes, retreatDetails } = props;
+  const { baseClass, classes, retreatId } = props;
   const [allRetreateeDetails, setAllRetreateeDetails] = useState({});
   const [formValid, setFormValid] = useState(false);
   const [retreateeFields, setRetreateeFields] = useState([]);
@@ -103,7 +104,7 @@ export default function BookingForm(props) {
       url: "/api/registerBooking",
       method: "POST",
       body: {
-        retreatIdStr: retreatDetails.retreatId,
+        retreatIdStr: retreatId,
         allRetreateeDetails,
         message: msgInputRef.current.value,
       },
@@ -121,7 +122,7 @@ export default function BookingForm(props) {
         url: "/api/sendBookingConfirmation",
         method: "POST",
         body: {
-          retreatIdStr: retreatDetails.retreatId,
+          retreatIdStr: retreatId,
           allRetreateeDetails,
           insertedId: successNotification.insertedId,
         },
@@ -162,7 +163,7 @@ export default function BookingForm(props) {
             Any other queries?
           </span>
         </div>
-        <InputBar
+        <InputText
           label="Message"
           type="textarea"
           inputName="upcoming--form--message"

@@ -1,5 +1,5 @@
 import LinkButton from "../ui/LinkButton";
-import InputBar from "../ui/InputBar";
+import InputText from "../ui/InputText";
 import Icon from "../ui/Icon";
 import Link from "next/link";
 
@@ -20,7 +20,7 @@ export default function NewsLetter(props) {
             action="#"
             className={`${classes[`${baseClass}--signup--form`]} hidden`}
           >
-            <InputBar
+            <InputText
               label="Email"
               type="email"
               inputName="newsletter--form--signup--email"

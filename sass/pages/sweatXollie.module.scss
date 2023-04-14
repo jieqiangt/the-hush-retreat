@@ -4,7 +4,7 @@
 @import "../base/utilities";
 @import "../abstracts/media";
 
-.sweat-apr2023 {
+.sweat-ollie {
   &--footer {
     @include footer(transparent, relative);
   }
@@ -48,7 +48,10 @@
       @include retreat-details();
 
       &--caption {
-        margin-bottom: 1.2rem;
+        @include section--title($col-gray-tint-1, $letter-spacing-xs);
+        font-size: $font-size-header-sm;
+        margin-bottom: 0.8rem;
+        border-bottom: $border-gray-tint-sm;
       }
 
       &--grid {
@@ -57,6 +60,13 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         row-gap: 1.2rem;
+        margin-bottom: 0.8rem;
+      }
+
+      &--promo {
+        grid-column: 1 / -1;
+        margin-top: 0rem;
+        font-size: $font-size-text-s;
       }
     }
   }
@@ -101,7 +111,7 @@
     &--first-name {
       @include input--group(
         $size-contact-us-input-width,
-        $col-gray-tint-1,
+        $col-gray-primary,
         $pos-input-label-x,
         $pos-input-label-y,
         $pos-input-label-translate-up
@@ -113,7 +123,7 @@
     &--last-name {
       @include input--group(
         $size-contact-us-input-width,
-        $col-gray-tint-1,
+        $col-gray-primary,
         $pos-input-label-x,
         $pos-input-label-y,
         $pos-input-label-translate-up
@@ -125,7 +135,7 @@
     &--email {
       @include input--group(
         $size-contact-us-input-width,
-        $col-gray-tint-1,
+        $col-gray-primary,
         $pos-input-label-x,
         $pos-input-label-y,
         $pos-input-label-translate-up
@@ -137,7 +147,7 @@
     &--contact {
       @include input--group(
         $size-contact-us-input-width,
-        $col-gray-tint-1,
+        $col-gray-primary,
         $pos-input-label-x,
         $pos-input-label-y,
         $pos-input-label-translate-up
@@ -149,7 +159,10 @@
     &--vaccinate {
       grid-column: 1 / -1;
       grid-row: 4;
-      @include custom--radio($col-gray-tint-1);
+      @include custom--radio($col-gray-primary);
+      &--label {
+        font-size: $font-size-text-s;
+      }
     }
   }
 
@@ -161,7 +174,7 @@
     &--message {
       @include input--group(
         $size-contact-us-input-width,
-        $col-gray-tint-1,
+        $col-gray-primary,
         0.8rem,
         0.4rem,
         $pos-input-label-translate-up,
@@ -632,6 +645,10 @@
   &--time {
     font-size: $font-size-header-md;
     margin-bottom: 3.8rem;
+
+    &--5 {
+      margin-bottom: 4.5rem;
+    }
   }
 
   &--icon {
@@ -646,7 +663,7 @@
 
       &--5 {
         margin-top: 0rem;
-        margin-bottom: 2.8rem;
+        margin-bottom: 4rem;
       }
     }
   }
@@ -657,7 +674,7 @@
     }
 
     &--2 {
-      margin-top: 1.2rem;
+      margin-bottom: 1.2rem;
     }
 
     &--3 {
@@ -669,7 +686,7 @@
     }
 
     &--5 {
-      margin-bottom: 1.2rem;
+      margin-top: 1.8rem;
     }
 
     &--title {

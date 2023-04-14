@@ -12,6 +12,7 @@ export default function PastRetreats(props) {
       galleryDetails={item.galleryDetails}
       classes={classes}
       baseClass={baseClass}
+      retreatId={item.retreatId}
     />
   ));
 

@@ -1,21 +1,41 @@
 import BookingForm from "./BookingForm";
 import Modal from "../ui/Modal";
+import { Fragment } from "react";
+import NewRetreatInfo from "./NewRetreatInfo";
 
 export default function NewRetreatBookingModal(props) {
-  const { classes, baseClass, retreatDetails } = props;
+  const {
+    classes,
+    baseClass,
+    retreatDetails,
+    modalTitle,
+    modalCaption,
+    retreatId,
+  } = props;
+
+  const modalInfo = (
+    <Fragment>
+      <span className={classes[`${baseClass}--aside--info--caption`]}>
+        {modalCaption}
+      </span>
+      <div className={classes[`${baseClass}--aside--info--grid`]}>
+        <NewRetreatInfo
+          classes={classes}
+          baseClass={`${baseClass}--aside--info`}
+          retreatDetails={retreatDetails}
+        />
+      </div>
+    </Fragment>
+  );
 
   const aside = (
     <section className={classes[`${baseClass}--aside`]}>
-      <h3 className={classes[`${baseClass}--aside--title`]}>
-        {retreatDetails.name}
-      </h3>
-      <h4 className={classes[`${baseClass}--aside--cta`]}>
-        Enter your booking details Do ea ad qui nostrud id commodo dolore laboris tempor elit dolore non elit. Exercitation voluptate exercitation.
-      </h4>
+      <h3 className={classes[`${baseClass}--aside--title`]}>{modalTitle}</h3>
+      {modalInfo}
       <BookingForm
         baseClass={baseClass}
         classes={classes}
-        retreatDetails={retreatDetails}
+        retreatsId={retreatId}
       />
     </section>
   );

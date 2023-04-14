@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from "react";
-import InputBar from "../ui/InputBar";
-import InputOptions from "../ui/InputOptions";
+import InputText from "../ui/InputText";
+import InputCheckBox from "../ui/InputCheckBox";
 import {
   newRetreateeInitialState,
   newRetreateeReducer,
@@ -15,14 +15,6 @@ export default function NewRetreateeFields(props) {
   );
 
   const {
-    firstNameValid,
-    lastNameValid,
-    emailValid,
-    phoneValid,
-    retreateeValid,
-  } = newRetreateeState;
-
-  const {
     classes,
     baseClass,
     onValidated,
@@ -30,6 +22,14 @@ export default function NewRetreateeFields(props) {
     retreateeIdx,
     num,
   } = props;
+
+  const {
+    firstNameValid,
+    lastNameValid,
+    emailValid,
+    phoneValid,
+    retreateeValid,
+  } = newRetreateeState;
 
   const fields = {
     firstName: newRetreateeState.firstName,
@@ -92,7 +92,7 @@ export default function NewRetreateeFields(props) {
     {
       name: `vaccinated--${retreateeIdx}`,
       value: "",
-      label: "I acknowledge that I am fully vaccinated.",
+      label: "I acknowledge that I am fully vaccinated from Covid-19.",
       onChange: changeHandlers["vaccinated"],
     },
   ];
@@ -123,8 +123,8 @@ export default function NewRetreateeFields(props) {
           </span>
         </div>
       )}
-      <div className={classes[`${baseClass}--retreatee--fields`]}>
-        <InputBar
+      <fieldset className={classes[`${baseClass}--retreatee--fields`]}>
+        <InputText
           label="First Name"
           type="text"
           inputName={`upcoming--retreatee--first-name--${retreateeIdx}`}
@@ -137,7 +137,7 @@ export default function NewRetreateeFields(props) {
           valid={firstNameValid}
           invalidText="Your first name is required."
         />
-        <InputBar
+        <InputText
           label="Last Name"
           type="text"
           inputName={`upcoming--retreatee--last-name----${retreateeIdx}`}
@@ -150,7 +150,7 @@ export default function NewRetreateeFields(props) {
           valid={lastNameValid}
           invalidText="Your last name is required."
         />
-        <InputBar
+        <InputText
           label="Email"
           type="email"
           inputName={`upcoming--retreatee--email--${retreateeIdx}`}
@@ -163,7 +163,7 @@ export default function NewRetreateeFields(props) {
           valid={emailValid}
           invalidText="A valid email is required."
         />
-        <InputBar
+        <InputText
           label="Contact No."
           type="text"
           inputName={`upcoming--retreatee--contact--${retreateeIdx}`}
@@ -176,7 +176,7 @@ export default function NewRetreateeFields(props) {
           inputClass={classes[`${baseClass}--retreatee--contact--input`]}
           labelClass={classes[`${baseClass}--retreatee--contact--label`]}
         />
-        <InputOptions
+        <InputCheckBox
           inputOptions={radioOptions}
           type="checkbox"
           overallGroupClass={classes[`${baseClass}--retreatee--vaccinate`]}
@@ -187,7 +187,7 @@ export default function NewRetreateeFields(props) {
           labelClass={classes[`${baseClass}--retreatee--vaccinate--label`]}
           btnClass={classes[`${baseClass}--retreatee--vaccinate--btn`]}
         />
-      </div>
+      </fieldset>
     </div>
   );
 }

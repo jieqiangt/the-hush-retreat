@@ -1,32 +1,43 @@
 import { Fragment } from "react";
+import InputOption from "./InputOption";
 
 export default function InputSelect(props) {
   const {
     inputGroupClass,
     inputName,
     inputClass,
-    value,
     onChange,
     inputOptions,
     labelClass,
     label,
+    optionClass,
   } = props;
+
+  const options = inputOptions.map((item) => (
+    <InputOption
+      key={item.name}
+      name={item.name}
+      type="select"
+      value={item.value}
+      optionClass={optionClass}
+    />
+  ));
+
 
   return (
     <Fragment>
       <div className={inputGroupClass}>
+        <label htmlFor={inputName} className={labelClass}>
+          {label}
+        </label>
         <select
           name={inputName}
           id={inputName}
           className={inputClass}
-          value={value}
           onChange={onChange}
         >
-          {inputOptions}
+          {options}
         </select>
-        <label htmlFor={inputName} className={labelClass}>
-          {label}
-        </label>
       </div>
     </Fragment>
   );

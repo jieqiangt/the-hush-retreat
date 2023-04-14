@@ -49,7 +49,7 @@ export default function BaliGlowUpPage() {
   ];
 
   const retreatDetails = {
-    retreatId: "61dc2d31bbe643fc32022a5f",
+    retreatId: "64360f8eb18c10ff91fcaf2a",
     name: "The Glow Up: Bali Edition",
     date: "13th May 2023, Saturday",
     location: "Bali",
