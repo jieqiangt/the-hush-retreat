@@ -8,10 +8,23 @@ import NewRetreatSchedule from "../../components/upcoming/NewRetreatSchedule";
 import classes from "../../sass/pages/bali-glow-up.module.scss";
 
 export default function BaliGlowUpPage() {
+  const pageBaseClass = "bali--glow-up";
+  const modalBaseClass = "book-bali";
+
   const sectionTitle = "WHAT TO EXPECT";
   const sectionText = ["CAPTION", "DESCRIPTION PARAGRAPH"];
   const guideTitle = "GUIDE NAME";
   const guideText = ["CAPTION", "DESCRIPTION PARAGRAPH"];
+
+  const retreatDetails = {
+    title: "OUR LATEST EVENT TITLE",
+    caption: "The Glow Up: Bali Edition",
+    date: "13 May 2023, Saturday",
+    time: "8am - 10am",
+    price: "$599 per pax",
+    location: "Bali",
+    btnText: "Register Here",
+  };
 
   const scheduleList = [
     {
@@ -48,18 +61,18 @@ export default function BaliGlowUpPage() {
     },
   ];
 
-  const retreatDetails = {
-    retreatId: "64360f8eb18c10ff91fcaf2a",
-    name: "The Glow Up: Bali Edition",
-    date: "13th May 2023, Saturday",
-    location: "Bali",
-  };
+  const modalTitle = "The Glow Up: Bali Edition";
+  const modalCaption = "Event Details";
+  const retreatId = "64360f8eb18c10ff91fcaf2a";
 
   const modal = (
     <NewRetreatBookingModal
       classes={classes}
-      baseClass="book--bali"
+      baseClass={modalBaseClass}
+      modalTitle={modalTitle}
+      modalCaption={modalCaption}
       retreatDetails={retreatDetails}
+      retreatsId={retreatId}
     />
   );
 
@@ -69,8 +82,12 @@ export default function BaliGlowUpPage() {
         <title>New Retreats</title>
         <meta name="description" content="New Retreats" />
       </Head>
-      <Layout classes={classes} baseClass="bali--glow-up" modal={modal}>
-        <NewRetreatBanner classes={classes} baseClass="retreat--banner" />
+      <Layout classes={classes} baseClass={pageBaseClass} modal={modal}>
+        <NewRetreatBanner
+          classes={classes}
+          baseClass="retreat--banner"
+          retreatDetails={retreatDetails}
+        />
         <NewRetreatSection
           classes={classes}
           baseClass="intentions"
