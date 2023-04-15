@@ -4,7 +4,7 @@
 @import "../base/utilities";
 @import "../abstracts/media";
 
-.sweat-ollie {
+.sweat-shakaila {
   &--footer {
     @include footer(transparent, relative);
   }
@@ -24,7 +24,7 @@
 
   &--img {
     background-size: cover;
-    background-image: url("../../public/img/upcoming-pg/sweat-apr2023/group-1.jpg");
+    background-image: url("../../public/img/upcoming-pg/sweatXshakaila/banner-1.jpg");
     background-position: right;
     overflow: hidden;
   }
@@ -57,7 +57,7 @@
         font-size: $font-size-text-md;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: auto;
         row-gap: 1.2rem;
         margin-bottom: 0.8rem;
       }
@@ -102,7 +102,7 @@
       grid-template-rows: repeat(3, min-content);
       align-items: start;
       column-gap: 2.4rem;
-      row-gap: 1.6rem;
+      row-gap: 2.6rem;
       position: relative;
       padding-bottom: 2rem;
     }
@@ -153,6 +153,50 @@
       );
       grid-column: 3 / -1;
       grid-row: 2;
+    }
+
+    &--size {
+      font-size: $font-size-text-s;
+      @include font-header;
+      background-color: rgba($col-accent-tint-2, 0.7);
+      padding: 0.2rem;
+
+      &--group {
+        grid-column: 1 / 3;
+        grid-row: 3;
+        display: flex;
+        gap: 0.8rem;
+      }
+
+      &--label {
+        text-transform: capitalize;
+        @include font-header;
+      }
+
+      &--option {
+      }
+    }
+
+    &--bikini-style {
+      font-size: $font-size-text-s;
+      @include font-header;
+      background-color: rgba($col-accent-tint-2, 0.7);
+      padding: 0.2rem;
+
+      &--group {
+        grid-column: 3 / -1;
+        grid-row: 3;
+        display: flex;
+        gap: 0.8rem;
+      }
+
+      &--label {
+        text-transform: capitalize;
+        @include font-header;
+      }
+
+      &--option {
+      }
     }
 
     &--vaccinate {
@@ -234,7 +278,7 @@
         rgba($col-white-primary, 0.2),
         rgba($col-white-primary, 0.3)
       ),
-      url("../../public/img/upcoming-pg/sweat-apr2023/banner-1.jpg")
+      url("../../public/img/upcoming-pg/sweatXshakaila/banner-1.jpg")
     ),
     (top 100% left),
     true
@@ -570,7 +614,7 @@
   }
 
   &--img {
-    background-image: url("../../public/img/upcoming-pg/sweat-apr2023/host-1.jpg");
+    background-image: url("../../public/img/upcoming-pg/sweatXshakaila/host-1.jpg");
     background-position: bottom;
     width: 100%;
     height: 80%;
@@ -633,7 +677,7 @@
   }
 
   &--img {
-    background-image: url("../../public/img/upcoming-pg/sweat-apr2023/plan-1.jpg");
+    background-image: url("../../public/img/upcoming-pg/sweatXshakaila/plan-1.jpg");
     background-position: bottom 70% left 0%;
   }
 

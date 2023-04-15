@@ -8,18 +8,33 @@ import NewRetreatSchedule from "../../components/upcoming/NewRetreatSchedule";
 import classes from "../../sass/pages/sweatXshakaila.module.scss";
 
 export default function BaliGlowUpPage() {
-  const pageBaseClass = "sweat-ollie";
+  const pageBaseClass = "sweat-shakaila";
   const modalBaseClass = "book-sweat";
   const retreatDetails = {
-    title: "OUR LATEST EVENT TITLE",
-    caption: "SWEAT x Shakaila: SOME CATCHPHRASE!",
+    title: "SWEAT BEACH SUURV HIIT SERIES",
+    caption: "SWEAT x Shakaila: Spice your morning up!",
     date: "07 May 2023, Sunday",
     time: "8am - 10am",
-    price: "$59 per pax",
+    price: "$88 per pax",
     location: "Sentosa",
     promotion:
       "**Ticket includes 1 set of Shalaika Swim swimwear of your preferred design! These are workout appropriate designs for maximum comfort and mobility.",
     btnText: "Register Here",
+    selectOptions: {
+      size: [
+        { value: "xs", name: "XS" },
+        { value: "s", name: "S" },
+        { value: "m", name: "M" },
+        { value: "l", name: "L" },
+        { value: "xl", name: "XL" },
+      ],
+      "bikini-style": [
+        { value: "a", name: "A" },
+        { value: "b", name: "B" },
+        { value: "c", name: "C" },
+        { value: "d", name: "D" },
+      ],
+    },
   };
 
   const sectionTitle = "WHAT TO EXPECT";
@@ -67,17 +82,20 @@ export default function BaliGlowUpPage() {
 
   const expectImgUrlList = [
     {
-      src: "/img/upcoming-pg/sweat-apr2023/swimwear-1.jpg",
+      src: "/img/upcoming-pg/sweatXshakaila/swimwear-1.jpg",
       alt: "Shakaila Swimwear",
     },
-    { src: "/img/upcoming-pg/sweat-apr2023/juice-1.jpg", alt: "Mou Gou Juice" },
     {
-      src: "/img/upcoming-pg/sweat-apr2023/workout-1.jpg",
+      src: "/img/upcoming-pg/sweatXshakaila/juice-1.jpg",
+      alt: "Mou Gou Juice",
+    },
+    {
+      src: "/img/upcoming-pg/sweatXshakaila/workout-1.jpg",
       alt: "Surf HIIT exercise",
     },
   ];
 
-  const modalTitle = "SWEAT Beach Pop Up - April Edition";
+  const modalTitle = "SWEAT x Shakaila";
   const modalCaption = "Event Details";
   const retreatId = "64361076b18c10ff91fcaf2c";
 

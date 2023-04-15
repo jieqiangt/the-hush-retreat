@@ -21,6 +21,7 @@
     ),
     (bottom 65% left 0%)
   );
+  height: 90vh;
 
   @include media-queries(tab-land) {
     height: 80vh;
@@ -42,6 +43,9 @@
     background-color: rgba($col-accent-primary, 0.8);
     font-size: $font-size-text-lg;
     text-align: left;
+    padding: 4.8rem;
+    width: 45%;
+    transition-delay: 0.6s;
   }
 
   &--title {
@@ -56,6 +60,7 @@
   &--caption {
     color: $col-gray-tint-1;
     line-height: $font-line-height-md;
+    margin-bottom: 0.8rem;
 
     @include media-queries(phone-xl) {
       font-size: $font-size-header-md;

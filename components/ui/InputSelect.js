@@ -20,9 +20,9 @@ export default function InputSelect(props) {
       type="select"
       value={item.value}
       optionClass={optionClass}
+      onChange={onChange}
     />
   ));
-
 
   return (
     <Fragment>
@@ -34,7 +34,7 @@ export default function InputSelect(props) {
           name={inputName}
           id={inputName}
           className={inputClass}
-          onChange={onChange}
+          // onChange={onChange}
         >
           {options}
         </select>

@@ -36,6 +36,7 @@ export default function NewRetreatBookingModal(props) {
         baseClass={baseClass}
         classes={classes}
         retreatsId={retreatId}
+        selectOptions={retreatDetails.selectOptions}
       />
     </section>
   );

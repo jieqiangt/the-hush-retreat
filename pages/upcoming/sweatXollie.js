@@ -11,11 +11,11 @@ export default function BaliGlowUpPage() {
   const pageBaseClass = "sweat-ollie";
   const modalBaseClass = "book-sweat";
   const retreatDetails = {
-    title: "OUR LATEST EVENT TITLE",
-    caption: "SWEAT x Ollie: Spice your morning up!",
+    title: "SWEAT BEACH SUURV HIIT SERIES",
+    caption: "SWEAT x Ollie: Time to rise & grind!",
     date: "29 Apr 2023, Saturday",
-    time: "8am - 10am",
-    price: "$59 per pax",
+    time: "8.30am - 10am",
+    price: "$35 per pax",
     location: "Sentosa",
     promotion:
       "Ticket includes 1 sparkling hard seltzer from Ollie! You deserve a low calorie treat after all the burns!",
@@ -65,15 +65,29 @@ export default function BaliGlowUpPage() {
     },
   ];
 
+  const guideImgUrlList = [
+    {
+      src: "/img/upcoming-pg/sweatXollie/mandi-1.jpg",
+      alt: "Mandi - Founder of The Hush Retreat",
+    },
+    {
+      src: "/img/upcoming-pg/sweatXollie/host-1.jpg",
+      alt: "Trainers for the event",
+    },
+    {
+      src: "/img/upcoming-pg/sweatXollie/seraphina-1.jpg",
+      alt: "Seraphina - Founder of SUURV",
+    },
+  ];
+
   const expectImgUrlList = [
     {
-      src: "/img/upcoming-pg/sweat-apr2023/swimwear-1.jpg",
-      alt: "Shakaila Swimwear",
+      src: "/img/upcoming-pg/sweatXollie/ollie-2.jpg",
+      alt: "Mandi - Founder of The Hush Retreat",
     },
-    { src: "/img/upcoming-pg/sweat-apr2023/juice-1.jpg", alt: "Mou Gou Juice" },
     {
-      src: "/img/upcoming-pg/sweat-apr2023/workout-1.jpg",
-      alt: "Surf HIIT exercise",
+      src: "/img/upcoming-pg/sweatXollie/workout-1.jpg",
+      alt: "Beach HIIT Workout",
     },
   ];
 
@@ -118,6 +132,7 @@ export default function BaliGlowUpPage() {
           baseClass="guide"
           title={guideTitle}
           text={guideText}
+          imgUrlList={guideImgUrlList}
         />
         <NewRetreatSchedule
           classes={classes}

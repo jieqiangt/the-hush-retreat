@@ -17,12 +17,11 @@ import Icon from "../ui/Icon";
 import LinkButton from "../ui/LinkButton";
 import { v4 as uuidv4 } from "uuid";
 
-
 export default function BookingForm(props) {
   const { closeModal } = useContext(ModalContext);
   const router = useRouter();
   const notificationCtx = useContext(NotificationContext);
-  const { baseClass, classes, retreatId } = props;
+  const { baseClass, classes, retreatId, selectOptions } = props;
   const [allRetreateeDetails, setAllRetreateeDetails] = useState({});
   const [formValid, setFormValid] = useState(false);
   const [retreateeFields, setRetreateeFields] = useState([]);
@@ -43,6 +42,7 @@ export default function BookingForm(props) {
         <NewRetreateeFields
           classes={classes}
           baseClass={baseClass}
+          selectOptions={selectOptions}
           onValidated={getRetreateeDetailsHandler}
           retreateeIdx={uuidv4()}
           key={uuidv4()}
@@ -80,7 +80,7 @@ export default function BookingForm(props) {
       const newRetreateeFields = oldRetreateeFields.map((jsxRetreatee, idx) =>
         cloneElement(jsxRetreatee, {
           onDeleteRetreatee: deleteRetreateeHandler,
-          num: idx + 1,
+          retreateeCounter: idx + 1,
         })
       );
       return newRetreateeFields;
@@ -99,6 +99,8 @@ export default function BookingForm(props) {
 
   async function bookingHandler(event) {
     event.preventDefault();
+
+    console.log({ allRetreateeDetails });
 
     const result = await callApi({
       url: "/api/registerBooking",
@@ -142,6 +144,7 @@ export default function BookingForm(props) {
           baseClass={baseClass}
           onValidated={getRetreateeDetailsHandler}
           retreateeIdx={"main"}
+          selectOptions={selectOptions}
         />
         <div className={classes[`${baseClass}--form--title--box`]}>
           <span className={classes[`${baseClass}--form--title`]}>

@@ -24,7 +24,7 @@
 
   &--img {
     background-size: cover;
-    background-image: url("../../public/img/upcoming-pg/sweat-apr2023/group-1.jpg");
+    background-image: url("../../public/img/upcoming-pg/sweatXollie/banner-1.jpg");
     background-position: right;
     overflow: hidden;
   }
@@ -235,7 +235,7 @@
         rgba($col-white-primary, 0.2),
         rgba($col-white-primary, 0.3)
       ),
-      url("../../public/img/upcoming-pg/sweat-apr2023/banner-1.jpg")
+      url("../../public/img/upcoming-pg/sweatXollie/banner-1.jpg")
     ),
     (top 100% left),
     true
@@ -255,21 +255,9 @@
   }
 }
 
-.expect {
+.guide {
   @include description--section(35vw);
   position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 0.2rem;
-    width: 97%;
-    bottom: -8rem;
-    left: 1.5%;
-    background-color: rgba($col-accent-tint-2, 0.5);
-    z-index: $z-index-top + $z-index-top;
-  }
 
   @include media-queries(laptop-lg) {
     margin-top: 8rem;
@@ -549,8 +537,8 @@
   }
 }
 
-.guide {
-  @include description--section(30vw);
+.expect {
+  @include description--section(18vw);
   position: relative;
 
   &::after {
@@ -559,27 +547,76 @@
     display: block;
     height: 0.2rem;
     width: 97%;
-    bottom: -18rem;
+    bottom: -8rem;
     left: 1.5%;
     background-color: rgba($col-accent-tint-2, 0.5);
-    z-index: $z-index-top;
+    z-index: $z-index-top + $z-index-top;
   }
 
-  &--img {
-    background-image: url("../../public/img/upcoming-pg/sweat-apr2023/host-1.jpg");
-    background-position: bottom;
-    width: 100%;
-    height: 80%;
-    margin: 18rem 0rem 0rem auto;
+  @include media-queries(laptop-lg) {
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+  }
+
+  @include media-queries(laptop) {
+    margin-top: 4rem;
+    margin-bottom: 0rem;
+  }
+
+  @include media-queries(laptop-sm) {
+    margin-top: 0rem;
+    margin-bottom: -16rem;
+  }
+
+  @include media-queries(tab-xl-pot) {
+    height: 75vh;
+  }
+
+  @include media-queries(tab-lg-land) {
+    margin-top: -12rem;
+    margin-bottom: -20rem;
+  }
+
+  @include media-queries(tab-land) {
+    flex-direction: column;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    height: 95vh;
+  }
+
+  @include media-queries(phone-xl) {
+    height: 85vh;
+  }
+
+  @include media-queries(phone) {
+    height: 90vh;
+  }
+
+  @include media-queries(device-sm-short) {
+    height: 100vh;
+  }
+
+  @include media-queries(tab-land-short) {
+    height: 105vh;
+  }
+
+  @include media-queries(device-tall) {
+    height: 65vh;
   }
 
   &--aside {
+
+    @include media-queries(tab-land) {
+      order: 2;
+      flex: 10 1 100vh;
+      align-items: stretch;
+    }
     font-size: $font-size-text-md;
     line-height: $font-line-height-lg;
 
     &--box {
       background-color: $col-main-primary;
-      padding: 12rem 32rem 12rem 6rem;
+      padding: 15rem 12rem 15rem 34rem;
       margin-top: 18rem;
     }
 
@@ -605,7 +642,103 @@
       }
     }
   }
+
+  &--img {
+    z-index: $z-index-top + 10;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+
+    &--composition {
+      @include img-composition(
+        16vw,
+        32rem,
+        16rem,
+        24rem,
+        0rem,
+        0rem,
+        0rem,
+        0rem,
+        0rem
+      );
+
+      &--imgbox {
+        &--0 {
+          z-index: $z-index-top;
+        }
+
+        &--1 {
+          z-index: $z-index-top - 2;
+          @include media-queries(phone) {
+            box-shadow: 0px 0px 20px 3px rgba($col-black-primary, 0.2);
+          }
+        }
+
+        &--2 {
+          z-index: $z-index-top - 1;
+        }
+      }
+    }
+  }
 }
+
+// .expect {
+//   @include description--section(30vw);
+//   position: relative;
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     display: block;
+//     height: 0.2rem;
+//     width: 97%;
+//     bottom: -18rem;
+//     left: 1.5%;
+//     background-color: rgba($col-accent-tint-2, 0.5);
+//     z-index: $z-index-top;
+//   }
+
+//   &--img {
+//     background-image: url("../../public/img/upcoming-pg/sweatXollie/ollie-2.jpg");
+//     background-position: bottom;
+//     width: 100%;
+//     height: 80%;
+//     margin: 18rem 0rem 0rem auto;
+//   }
+
+//   &--aside {
+//     font-size: $font-size-text-md;
+//     line-height: $font-line-height-lg;
+
+//     &--box {
+//       background-color: $col-main-primary;
+//       padding: 12rem 32rem 12rem 6rem;
+//       margin-top: 18rem;
+//     }
+
+//     &--title {
+//       @include section--title($col-accent-primary, $letter-spacing-xs);
+//       border-bottom: $border-accent-sm;
+//       margin-bottom: 2.4rem;
+//     }
+
+//     &--content {
+//       display: flex;
+//       flex-direction: column;
+//       gap: 1.2rem;
+//       color: $col-accent-tint-1;
+//       padding-right: 10rem;
+//       margin-left: 2.4rem;
+
+//       & p:first-child {
+//         font-size: $font-size-header-sm;
+//         padding-right: 30rem;
+//         margin-bottom: 0.8rem;
+//         color: $col-gray-tint-3;
+//       }
+//     }
+//   }
+// }
 
 .schedule {
   @include z-layout(45fr);
@@ -629,8 +762,8 @@
   }
 
   &--img {
-    background-image: url("../../public/img/upcoming-pg/sweat-apr2023/plan-1.jpg");
-    background-position: bottom 70% left 0%;
+    background-image: url("../../public/img/upcoming-pg/sweatXollie/plan-1.jpg");
+    background-position: bottom 70% left 70%;
   }
 
   &--layout {

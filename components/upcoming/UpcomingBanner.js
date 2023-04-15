@@ -2,10 +2,10 @@ import Banner from "../ui/Banner";
 
 export default function UpcomingBanner(props) {
   const { baseClass, classes } = props;
-  const title = "BANNER TITLE";
-  const caption = "BANNER CAPTION";
+  const title = "Our Upcoming Retreats";
+  const caption = "Start your wellness journey with us today";
   const bannerDetails = (
-    <div className={classes[`${baseClass}--details`]}>BANNER DETAILS</div>
+    <div className={classes[`${baseClass}--details`]}>Find a retreat that suits your needs below</div>
   );
 
   return (

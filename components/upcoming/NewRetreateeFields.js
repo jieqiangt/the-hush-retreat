@@ -7,6 +7,7 @@ import {
 } from "../../reducers/newRetreateeReducer";
 import Icon from "../ui/Icon";
 import LinkButton from "../ui/LinkButton";
+import InputSelect from "../ui/InputSelect";
 
 export default function NewRetreateeFields(props) {
   const [newRetreateeState, dispatchNewRetreatee] = useReducer(
@@ -20,7 +21,8 @@ export default function NewRetreateeFields(props) {
     onValidated,
     onDeleteRetreatee,
     retreateeIdx,
-    num,
+    retreateeCounter,
+    selectOptions,
   } = props;
 
   const {
@@ -37,6 +39,8 @@ export default function NewRetreateeFields(props) {
     email: newRetreateeState.email,
     phone: newRetreateeState.phone,
     vaccinated: newRetreateeState.vaccinated,
+    size: newRetreateeState.size,
+    bikiniStyle: newRetreateeState.bikiniStyle,
   };
 
   const changeHandlers = {};
@@ -97,12 +101,32 @@ export default function NewRetreateeFields(props) {
     },
   ];
 
+  let inputSelects = [];
+
+  for (let key in selectOptions) {
+    let options = selectOptions[key];
+
+    inputSelects.push(
+      <InputSelect
+        key={key}
+        inputGroupClass={classes[`${baseClass}--retreatee--${key}--group`]}
+        inputClass={classes[`${baseClass}--retreatee--${key}`]}
+        inputName={key}
+        onChange={""}
+        inputOptions={options}
+        labelClass={classes[`${baseClass}--retreatee--${key}--label`]}
+        label={key}
+        optionClass={classes[`${baseClass}--retreatee--${key}--option`]}
+      />
+    );
+  }
+
   return (
     <div className={classes[`${baseClass}--retreatee`]}>
       {retreateeIdx !== "main" ? (
         <div className={classes[`${baseClass}--retreatee--header`]}>
           <span className={classes[`${baseClass}--retreatee--title`]}>
-            {"Retreatee"} &#8212; {`${num}`}
+            {"Retreatee"} &#8212; {`${retreateeCounter}`}
           </span>
           <LinkButton
             idx={retreateeIdx}
@@ -176,6 +200,7 @@ export default function NewRetreateeFields(props) {
           inputClass={classes[`${baseClass}--retreatee--contact--input`]}
           labelClass={classes[`${baseClass}--retreatee--contact--label`]}
         />
+        {inputSelects}
         <InputCheckBox
           inputOptions={radioOptions}
           type="checkbox"

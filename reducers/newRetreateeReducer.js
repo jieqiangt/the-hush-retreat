@@ -4,6 +4,8 @@ export const newRetreateeInitialState = {
   email: "",
   phone: "",
   vaccinated: "",
+  size: "",
+  bikiniStyle: "",
   firstNameValid: false,
   lastNameValid: false,
   emailValid: false,

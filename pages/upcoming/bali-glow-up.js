@@ -28,36 +28,32 @@ export default function BaliGlowUpPage() {
 
   const scheduleList = [
     {
-      timeRange: "0900 - 0930",
+      timeRange: "Day 1",
       iconName: "icon-logo-words-circular",
-      numDots: 4,
-      title: "Opening Circle",
+      numDots: 8,
+      title: "Shaka!",
+      desc: "Arrival & Check-In, Opening Circle & Briefing, Intro to Surfing: Theory + Your Coaches",
     },
     {
-      timeRange: "0945 - 1215",
+      timeRange: "Day 2",
       iconName: "icon-logo-words-circular",
-      numDots: 10,
-      title: "Release",
-      desc: "Breathwork, Embodied Dance Movement, Journalling, Fire Ceremony, Meditation",
+      numDots: 8,
+      title: "Surf’s Up",
+      desc: "SUURV Sessions 1 & 2, Midday Yoga Stretch, Evening Zen Yoga + Journaling",
     },
     {
-      timeRange: "1230 - 1330",
+      timeRange: "Day 3",
       iconName: "icon-logo-words-circular",
-      numDots: 6,
-      title: "Lunch @ Tamarind Hill",
-      desc: "Vegeterian & non-vegeterain options available.",
+      numDots: 16,
+      title: "Catching Waves & Zs",
+      desc: "SUURV Sessions 3 & 4, Midday Yoga Stretch, Evening Zen Yoga & Journaling, BBQ Dinner Party",
     },
     {
-      timeRange: "1400 - 1600",
+      timeRange: "Day 4",
       iconName: "icon-logo-words-circular",
-      numDots: 10,
-      title: "Renew",
-      desc: "Breathwork, Expressive Art, Write A Letter To Yourself, Somatic Movement, Conscious Dreaming",
-    },
-    {
-      timeRange: "1615 - 1645",
-      iconName: "icon-logo-words-circular",
-      title: "Closing Circle",
+      numDots: 0,
+      title: "Sampai Jumpa!",
+      desc: "SUURV Session 5, Journaling & Reflection, Closing Circle, Check-Out & Goodbye",
     },
   ];
 
@@ -104,6 +100,7 @@ export default function BaliGlowUpPage() {
           classes={classes}
           baseClass="schedule"
           scheduleList={scheduleList}
+          btnText={"Register Here"}
         />
       </Layout>
     </Fragment>
