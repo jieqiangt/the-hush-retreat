@@ -126,4 +126,5 @@ module.exports = {
       },
     ],
   },
+  validationAction: "warn",
 };
