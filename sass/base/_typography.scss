@@ -3,6 +3,7 @@
 body {
   font-family: $font-family-text;
   line-height: $font-line-height-default;
-  font-weight: 400;
-  color: $col-gray-primary;
+  font-weight: $font-weight-md;
+  font-size: $font-size-text-lg;
+  color: $col-gray-tint-1;
 }

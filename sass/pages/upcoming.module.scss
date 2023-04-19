@@ -41,7 +41,6 @@
 
   &--box {
     background-color: rgba($col-accent-primary, 0.8);
-    font-size: $font-size-text-lg;
     text-align: left;
     padding: 4.8rem;
     width: 45%;
@@ -51,10 +50,6 @@
   &--title {
     @include section--title($col-main-primary, $letter-spacing-xs);
     margin-bottom: 1rem;
-
-    @include media-queries(phone-xl) {
-      font-size: $font-size-text-lg;
-    }
   }
 
   &--caption {
@@ -95,7 +90,6 @@
 
     &--header {
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-header-lg;
       margin-bottom: 2rem;
 
       &--grid {
@@ -110,15 +104,7 @@
 
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-header-lg;
       margin-bottom: 5rem;
-    }
-
-    &--caption {
-      @include font-text;
-      font-size: $font-size-text-lg;
-      color: $col-gray-tint-1;
-      padding: 0rem 35rem;
     }
 
     &--img {
@@ -140,8 +126,6 @@
     }
 
     &--desc {
-      font-size: $font-size-header-sm;
-      @include font-text;
       padding: 4rem 24rem;
 
       &--grid {
@@ -165,7 +149,6 @@
       &--outer {
         display: flex;
         align-items: center;
-        font-size: $font-size-text-md;
         margin-left: 1.2rem;
       }
     }
@@ -177,7 +160,6 @@
 
     &--btn {
       @include btn--link($col-gray-tint-1, $col-main-primary, 0.6, true);
-      font-size: $font-size-header-sm;
       margin-right: 4rem;
     }
   }
@@ -201,7 +183,6 @@
 
     &--header {
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-header-lg;
       margin-bottom: 2rem;
 
       &--grid {
@@ -216,15 +197,7 @@
 
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-header-lg;
       margin-bottom: 5rem;
-    }
-
-    &--caption {
-      @include font-text;
-      font-size: $font-size-text-lg;
-      color: $col-gray-tint-1;
-      padding: 0rem 35rem;
     }
 
     &--img {
@@ -246,8 +219,6 @@
     }
 
     &--desc {
-      font-size: $font-size-header-sm;
-      @include font-text;
       padding: 4rem 24rem;
 
       &--grid {
@@ -271,7 +242,6 @@
       &--outer {
         display: flex;
         align-items: center;
-        font-size: $font-size-text-md;
         margin-left: 1.2rem;
       }
     }
@@ -283,7 +253,6 @@
 
     &--btn {
       @include btn--link($col-gray-tint-1, $col-main-primary, 0.6, true);
-      font-size: $font-size-header-sm;
       margin-right: 4rem;
     }
   }
@@ -307,7 +276,6 @@
 
     &--header {
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-header-lg;
       margin-bottom: 2rem;
 
       &--grid {
@@ -322,15 +290,7 @@
 
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-header-lg;
       margin-bottom: 5rem;
-    }
-
-    &--caption {
-      @include font-text;
-      font-size: $font-size-text-lg;
-      color: $col-gray-tint-1;
-      padding: 0rem 35rem;
     }
 
     &--img {
@@ -352,8 +312,6 @@
     }
 
     &--desc {
-      font-size: $font-size-header-sm;
-      @include font-text;
       padding: 4rem 24rem;
 
       &--grid {
@@ -377,7 +335,6 @@
       &--outer {
         display: flex;
         align-items: center;
-        font-size: $font-size-text-md;
         margin-left: 1.2rem;
       }
     }
@@ -389,7 +346,6 @@
 
     &--btn {
       @include btn--link($col-gray-tint-1, $col-main-primary, 0.6, true);
-      font-size: $font-size-header-sm;
       margin-right: 4rem;
     }
   }

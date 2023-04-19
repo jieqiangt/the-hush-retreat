@@ -739,10 +739,12 @@
 
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
+      font-size: $font-size-text-lg;
     }
 
     &--desc {
       font-size: $font-size-text-md;
+      padding-top: 0.2rem;
       padding-right: 20rem;
     }
   }

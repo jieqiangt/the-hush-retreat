@@ -118,7 +118,6 @@
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(6, min-content);
     align-items: start;
-    font-size: $font-size-text-s;
     justify-content: center;
     align-content: center;
     grid-gap: 2.4rem;
@@ -126,8 +125,6 @@
     margin-top: 1.2rem;
 
     &--article {
-      @include font-text;
-      font-size: $font-size-text-md;
       grid-column: 1 / -1;
       grid-row: 1;
       color: $col-gray-tint-3;
@@ -231,7 +228,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: $font-size-text-md;
   margin-top: 16rem;
   margin-bottom: 10rem;
 
@@ -307,22 +303,13 @@
     }
 
     &--number {
-      font-size: $font-size-text-md;
-
-      @include media-queries(phone) {
-        font-size: $font-size-text-md;
-        }
       margin: 0.8rem 0rem 0.8rem 0.2rem;
     }
 
     &--question {
       margin-left: 1rem;
       margin-right: auto;
-      @include font-text;
-
-      @include media-queries(phone) {
-      font-size: $font-size-text-s;
-      }
+      @include font-header;
     }
 
     &--icon {
@@ -342,7 +329,6 @@
       grid-column: 2;
       grid-row: 2;
       color: $col-gray-primary;
-      @include font-text;
       line-height: $font-line-height-default;
       @include make-invisible;
       height: 0rem;
@@ -350,9 +336,6 @@
       transform: translateY(-1rem);
       transition: all 0.4s ease-out;
 
-      @include media-queries(phone) {
-        font-size: $font-size-text-s;
-        }
     }
 
     &--active {

@@ -27,20 +27,22 @@ $letter-spacing-xs: 0.05rem;
 $letter-spacing-s: 0.1rem;
 
 //Font Sizes
-$font-size-header-lg: 4.8rem;
-$font-size-header-md: 3.4rem;
-$font-size-header-sm: 2.4rem;
+$font-size-header-lg: 3.4rem;
+$font-size-header-md: 3.0rem;
+$font-size-header-sm: 2.6rem;
 
-$font-size-text-lg: 2.6rem;
-$font-size-text-md: 2rem;
-$font-size-text-s: 1.6rem;
+$font-size-text-lg: 2.2rem;
+$font-size-text-md: 1.8rem;
+$font-size-text-s: 1.4rem;
 $font-size-text-xs: 1rem;
 
 //Font weights
-$font-weight-lg: 700;
-$font-weight-md: 600;
-$font-weight-sm: 500;
-$font-weight-xs: 400;
+$font-weight-xxl: 600;
+$font-weight-xl: 500;
+$font-weight-lg: 400;
+$font-weight-md: 300;
+$font-weight-sm: 200;
+$font-weight-xs: 100;
 
 //Line Height
 $font-line-height-lg: 1.8;
@@ -55,8 +57,8 @@ $padding-btn-lg: 0.6rem;
 $margin-flex-lg: 2.4rem;
 
 // Positions
-$pos-testimonials-top-offset: 15%;
-$pos-testimonials-title-add-offset: 10%;
+$pos-testimonials-top-offset: 13%;
+$pos-testimonials-title-add-offset: 8%;
 
 $pos-expect-img-top-offset: 32rem;
 $pos-expect-img-left-offset: -14rem;
@@ -98,5 +100,5 @@ $border-gray-tint-lg: solid 0.3rem $col-gray-tint-2;
 $border-main-sm: solid $size-underline-link $col-main-primary;
 
 // font-family:
-$font-family-header: "Cormorant Garamond", serif;
-$font-family-text: "Proza Libre", sans-serif;
+$font-family-header: "Playfair Display", serif;
+$font-family-text: "Poppins", sans-serifserif;

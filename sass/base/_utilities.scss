@@ -3,7 +3,8 @@
 
 @mixin section--title($text-color, $letter-spacing) {
   display: inline-block;
-  font-size: $font-size-text-lg;
+  font-size: $font-size-header-lg;
+  font-weight: $font-weight-xl;
   color: $text-color;
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
@@ -128,7 +129,7 @@
     &--title {
       display: inline-block;
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-text-md;
+      font-size: $font-size-header-sm;
       margin: 2.4rem 0rem 0.8rem 0rem;
     }
 
@@ -136,8 +137,6 @@
       padding: 0rem 1.8rem;
       hyphens: auto;
       text-align: left;
-      @include font-text;
-      font-size: $font-size-text-md;
     }
   }
 }
@@ -148,7 +147,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @include font-text;
   font-size: $font-size-text-xs;
   color: $col-main-tint-1;
   width: 100%;
@@ -321,7 +319,6 @@
 
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-text-lg;
       margin-bottom: $margin-flex-lg * 1.5;
     }
 
@@ -329,17 +326,14 @@
       display: block;
       color: $col-gray-tint-1;
       @include font-header;
-      font-size: $font-size-text-lg;
-      margin-bottom: $margin-flex-lg * 2.5;
+      font-size: $font-size-header-md;
+      margin-bottom: $margin-flex-lg * 1.5;
     }
 
     &--desc {
       display: block;
-      margin-bottom: $margin-flex-lg * 1.5;
-      @include font-text;
+      margin-bottom: $margin-flex-lg * 2;
       color: $col-gray-primary;
-      font-size: $font-size-text-md;
-      line-height: $font-line-height-md;
     }
 
     &--btn {
@@ -534,8 +528,7 @@
   }
 
   &--details {
-    @include font-text;
-    font-size: $font-size-header-sm;
+    font-size: $font-size-text-lg;
   }
 }
 
@@ -569,6 +562,10 @@
       flex-direction: column;
       gap: 1.2rem;
       width: 100%;
+    }
+
+    &--content {
+      color: $col-gray-tint-3;
     }
   }
 }

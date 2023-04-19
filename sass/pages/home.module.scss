@@ -47,6 +47,10 @@
 
   &--box {
     transition-delay: 0.6s;
+    width: 45%;
+    padding: 4rem;
+
+
     @include media-queries(tab-lg-land) {
       padding-right: 40rem;
     }
@@ -73,20 +77,17 @@
   }
 
   &--title {
-    @include section--title($col-main-tint-1, none);
-    font-size: $font-size-text-lg;
+    @include section--title($col-main-primary, none);
     margin-bottom: 2.4rem;
   }
 
   &--caption {
     display: block;
-    color: $col-gray-tint-1;
     margin-bottom: 1.8rem;
   }
 
   &--btn {
     @include btn--link($col-gray-tint-1, $col-main-tint-1, 0.2);
-    font-size: $font-size-text-md;
   }
 }
 
@@ -382,7 +383,6 @@
 
   &--title {
     @include section--title($col-accent-primary, $letter-spacing-xs);
-    font-size: $font-size-header-sm;
     position: absolute;
     top: $pos-testimonials-top-offset + $pos-testimonials-title-add-offset;
     z-index: $z-index-top;
@@ -476,8 +476,6 @@
     &--quote {
       margin-bottom: 3.2rem;
       color: $col-gray-tint-3;
-      @include font-text;
-      font-size: $font-size-text-lg;
 
       @include media-queries(phone-lg) {
         font-size: $font-size-text-md;
@@ -485,14 +483,11 @@
     }
 
     &--name {
-      @include font-text;
       color: $col-accent-primary;
-      font-size: $font-size-text-md;
     }
 
     &--retreat {
       @include font-header;
-      font-size: $font-size-text-md;
       @include btn--link($col-accent-tint-2, $col-main-primary, 0.6);
       margin-bottom: 1.4rem;
     }
@@ -551,7 +546,6 @@
       display: flex;
       flex-direction: column;
       width: 45rem;
-      font-size: $font-size-text-s;
       font-weight: $font-weight-sm;
       letter-spacing: 0.05rem;
 
@@ -659,7 +653,10 @@
 
     &--btn--link {
       @include btn--link($col-gray-primary, $col-main-tint-1, 0.2);
-      font-size: $font-size-text-s;
+      
+      & a {
+        font-size: $font-size-text-md;
+      }
     }
   }
 

@@ -42,7 +42,6 @@
 
   &--box {
     background-color: rgba($col-accent-primary, 0.8);
-    font-size: $font-size-text-lg;
     width: 45%;
     padding: 8rem 10rem 8rem 10rem;
     text-align: left;
@@ -99,13 +98,11 @@
 
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-header-lg;
       margin-bottom: 3rem;
       text-transform: none;
     }
 
     &--content {
-      font-size: $font-size-text-lg;
       padding: 0rem 20rem;
       margin-top: 4rem;
       margin-bottom: 8rem;
@@ -249,13 +246,11 @@
 
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-header-lg;
       margin-bottom: 3rem;
       text-transform: none;
     }
 
     &--content {
-      font-size: $font-size-text-lg;
       padding: 0rem 20rem;
       margin-top: 4rem;
       margin-bottom: 8rem;
@@ -399,13 +394,11 @@
 
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
-      font-size: $font-size-header-lg;
       margin-bottom: 3rem;
       text-transform: none;
     }
 
     &--content {
-      font-size: $font-size-text-lg;
       padding: 0rem 20rem;
       margin-top: 4rem;
       margin-bottom: 8rem;

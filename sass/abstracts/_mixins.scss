@@ -19,12 +19,6 @@
 
 @mixin font-header() {
   font-family: $font-family-header;
-  font-weight: $font-weight-md;
-}
-
-@mixin font-text() {
-  font-family: $font-family-text;
-  font-weight: $font-weight-xs;
 }
 
 @mixin btn--circle {
@@ -73,6 +67,10 @@
     padding: 0.6rem;
     color: $text-color;
 
+    & a {
+      font-size: inherit;
+    }
+
     &:hover {
       font-weight: $font-weight-lg;
     }
@@ -87,6 +85,7 @@
         darken(rgba($text-color, 0.7), 10%);
       padding: 0.6rem;
       color: $text-color;
+      font-size: $font-size-text-lg;
 
       &:hover {
         font-weight: $font-weight-lg;

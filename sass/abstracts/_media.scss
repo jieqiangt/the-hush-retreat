@@ -39,7 +39,7 @@
   }
 
   @if $breakpoint == tab-xl-pot {
-    @media ((min-height: 62.5em) and (min-width: 46.875em)) {
+    @media ((min-height: 68.75em) and (min-width: 46.875em)) {
       // > height: 1000px  > width: 750px
       @content;
     }

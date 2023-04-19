@@ -43,9 +43,9 @@
   }
 
   &--box {
-    font-size: $font-size-text-lg;
     transition-delay: 0.6s;
-    padding: 8rem 40rem 8rem 8rem;
+    width: 50%;
+    padding: 6rem 4rem;
 
     @include media-queries(laptop-sm) {
       font-size: $font-size-header-md;
@@ -170,7 +170,6 @@
   }
 
   &--aside {
-    font-size: $font-size-text-md;
     line-height: $font-line-height-lg;
 
     &--box {
@@ -224,13 +223,11 @@
     }
 
     &--content {
-      @include font-text;
       display: flex;
       flex-direction: column;
       gap: 3.8rem;
       margin-left: 2.4rem;
       padding-right: 2.4rem;
-      color: $col-gray-tint-3;
     }
   }
 }
@@ -279,7 +276,6 @@
     }
 
     &--item {
-      font-size: $font-size-text-md;
       @include media-queries(tab-land) {
         flex-direction: column;
         padding: 0rem;
@@ -293,7 +289,6 @@
       }
 
       &--desc {
-        color: $col-gray-tint-1;
         line-height: $font-line-height-md;
 
         @include media-queries(tab-land) {
@@ -331,7 +326,6 @@
     &--box {
       display: flex;
       position: absolute;
-      font-size: $font-size-text-md;
       top: 0rem;
       left: 50%;
       transform: translateX(-50%);
@@ -418,7 +412,7 @@
     }
 
     &--box {
-      padding: 4rem 14rem 4rem 4rem;
+      padding: 6rem 14rem 6rem 4rem;
 
       @include media-queries(tab-lg-land) {
         padding: 4rem 10rem 4rem 4rem;
@@ -438,8 +432,6 @@
     &--content {
       display: flex;
       flex-direction: column;
-      color: $col-gray-tint-3;
-      font-size: $font-size-text-md;
       line-height: $font-line-height-lg;
       gap: $margin-flex-lg;
       hyphens: auto;
@@ -459,7 +451,7 @@
       @include img-composition(
         15vw,
         -4rem,
-        58rem,
+        62rem,
         4rem,
         -16rem,
         20rem,
