@@ -53,7 +53,7 @@ export default function NewsLetter(props) {
             </Link>
           </div>
           <h3 className={`${classes[`${baseClass}--signup--title`]} hidden`}>
-            Burning questions?
+            FOR ANY QUERIES
           </h3>
           <LinkButton
             href="/contact"

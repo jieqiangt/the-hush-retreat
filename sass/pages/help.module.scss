@@ -281,8 +281,7 @@
     grid-template-columns: calc((100fr - $grid-faq-item-fr) / 2) $grid-faq-item-fr calc(
         (100fr - $grid-faq-item-fr) / 2
       );
-    color: $col-main-tint-1;
-    
+
 
     &--box {
       border-bottom: solid 0.2rem $col-accent-tint-1;
@@ -290,11 +289,11 @@
       grid-column: 1 / -1;
       align-items: center;
       justify-content: center;
-      font-weight: $font-weight-sm;
       gap: 1rem;
       padding-bottom: 0.2rem;
       line-height: 1;
       cursor: pointer;
+      transition: $ani-default;
 
       &:hover {
         background-color: $col-accent-tint-2;
@@ -304,11 +303,15 @@
 
     &--number {
       margin: 0.8rem 0rem 0.8rem 0.2rem;
+      color: $col-main-primary;
+      font-weight: $font-weight-xl;
     }
 
     &--question {
       margin-left: 1rem;
       margin-right: auto;
+      font-weight: $font-weight-xl;
+      color: $col-main-primary;
       @include font-header;
     }
 
@@ -330,6 +333,8 @@
       grid-row: 2;
       color: $col-gray-primary;
       line-height: $font-line-height-default;
+      font-size: $font-size-text-md;
+      line-height: $font-line-height-md;
       @include make-invisible;
       height: 0rem;
       margin: 0.8rem 0rem;

@@ -48,7 +48,11 @@
   }
 
   &--title {
-    @include section--title($col-main-primary, $letter-spacing-xs);
+    @include section--title(
+      $col-main-primary,
+      $letter-spacing-xs,
+      $font-size-header-lg
+    );
     margin-bottom: 1rem;
   }
 

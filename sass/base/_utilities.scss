@@ -1,9 +1,13 @@
 @import "../abstracts/variables";
 @import "../abstracts/mixins";
 
-@mixin section--title($text-color, $letter-spacing) {
+@mixin section--title(
+  $text-color,
+  $letter-spacing,
+  $font-size: $font-size-header-xl
+) {
   display: inline-block;
-  font-size: $font-size-header-lg;
+  font-size: $font-size;
   font-weight: $font-weight-xl;
   color: $text-color;
   text-transform: uppercase;
@@ -318,7 +322,11 @@
     }
 
     &--title {
-      @include section--title($col-main-primary, $letter-spacing-xs);
+      @include section--title(
+        $col-main-primary,
+        $letter-spacing-xs,
+        $font-size-header-lg
+      );
       margin-bottom: $margin-flex-lg * 1.5;
     }
 
@@ -515,6 +523,7 @@
 
   &--title {
     @include section--title($col-main-primary, $letter-spacing-xs);
+    font-size: $font-size-header-lg;
   }
 
   &--caption {
@@ -552,7 +561,11 @@
     flex: 1 1 (100vw - $img-size);
 
     &--title {
-      @include section--title($col-accent-primary, $letter-spacing-xs);
+      @include section--title(
+        $col-accent-primary,
+        $letter-spacing-xs,
+        $font-size-header-lg
+      );
     }
 
     &--box {

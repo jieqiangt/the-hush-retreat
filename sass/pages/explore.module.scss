@@ -48,8 +48,12 @@
   }
 
   &--title {
-    @include section--title($col-main-primary, $letter-spacing-xs);
-    margin-bottom: 3.2rem;
+    @include section--title(
+      $col-main-primary,
+      $letter-spacing-xs,
+      $font-size-header-lg
+    );
+    margin-bottom: 2.4rem;
 
     @include media-queries(phone-xl) {
       font-size: $font-size-text-lg;
