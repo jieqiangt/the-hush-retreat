@@ -1,8 +1,10 @@
 const { MongoClient } = require("mongodb");
 const bookingSchema = require("../models/bookingSchema");
 const retreatSchema = require("../models/retreatSchema");
+const newsletterSchema = require("../models/newsletterSchema");
+const contactUsSchema = require("../models/contactUsSchema");
 const path = require("path");
-const dotenv = require("dotenv")
+const dotenv = require("dotenv");
 
 dotenv.config({ path: path.join(__dirname, "..", ".env") });
 
@@ -34,6 +36,8 @@ const intializeMongo = async () => {
   const collections = {
     bookings: bookingSchema,
     retreats: retreatSchema,
+    newsletterSubscriptions: newsletterSchema,
+    feedback: contactUsSchema,
   };
 
   for (const collectionName in collections) {
