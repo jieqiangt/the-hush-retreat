@@ -67,7 +67,6 @@ export default function BookingForm(props) {
       setAllRetreateeDetails((oldAllRetreateeDetails) => {
         const filteredRetreateeDetails = { ...oldAllRetreateeDetails };
         delete filteredRetreateeDetails[idxToDelete];
-        console.log({ filteredRetreateeDetails });
         return filteredRetreateeDetails;
       });
       setRefresh((oldRefresh) => !oldRefresh);
@@ -99,9 +98,6 @@ export default function BookingForm(props) {
 
   async function bookingHandler(event) {
     event.preventDefault();
-
-    console.log({ allRetreateeDetails });
-
     const result = await callApi({
       url: "/api/registerBooking",
       method: "POST",
