@@ -102,7 +102,7 @@ export default function BaliGlowUpPage() {
       modalTitle={modalTitle}
       modalCaption={modalCaption}
       retreatDetails={retreatDetails}
-      retreatsId={retreatId}
+      retreatId={retreatId}
     />
   );
 

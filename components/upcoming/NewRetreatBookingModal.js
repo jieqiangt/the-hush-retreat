@@ -35,7 +35,7 @@ export default function NewRetreatBookingModal(props) {
       <BookingForm
         baseClass={baseClass}
         classes={classes}
-        retreatsId={retreatId}
+        retreatId={retreatId}
         selectOptions={retreatDetails.selectOptions}
       />
     </section>
