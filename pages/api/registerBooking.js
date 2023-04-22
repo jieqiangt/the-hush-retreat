@@ -93,7 +93,6 @@ const handler = catchApiWrapper(async (req, res) => {
     false
   );
 
-
   if (checkExist) {
     throw new AppError({
       title: "User Input Error",
@@ -115,7 +114,7 @@ const handler = catchApiWrapper(async (req, res) => {
       mainRetreatee,
       additionalRetreatees,
       message,
-      status: "bookingRegistered",
+      status: "Registered",
     }
   );
 
