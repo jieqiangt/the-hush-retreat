@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 
 export default function RetreatConfirmationTemplate(props) {
-  const { mainRetreatee, retreat, bookingId } = props;
+  const { mainRetreatee, retreat, referenceId } = props;
 
   return (
     <Fragment>
@@ -14,7 +14,7 @@ export default function RetreatConfirmationTemplate(props) {
         <li>{`Main Retreatee: ${mainRetreatee.firstName} ${mainRetreatee.lastName}`}</li>
         <li>{`Contact No: ${mainRetreatee.phone}`}</li>
         <li>{`Email: ${mainRetreatee.email}`}</li>
-        <li>{`Booking Reference: ${bookingId}`}</li>
+        <li>{`Booking Reference: ${referenceId}`}</li>
       </ul>
       <h2>Retreat Details</h2>
       <ul>
