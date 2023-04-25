@@ -1,31 +1,39 @@
-import { ObjectId } from "mongodb";
-import { snsToHushRetreat } from "../../utils/awsUtils";
+import { sesToUser, snsToHushRetreat } from "../../utils/awsUtils";
 import { catchApiWrapper } from "../../utils/errorUtils";
 import { connectClient, updateOneFromCollection } from "../../utils/mongoUtils";
+import createEmailTemplate from "../../utils/createEmailTemplate";
 
 const allowedMethods = ["POST"];
 
 const handler = catchApiWrapper(async (req, res) => {
   const params = req.body;
 
-  const { email, firstName, lastName, message, insertedId } = params;
+  const {
+    email,
+    firstName,
+    lastName,
+    subject,
+    message,
+    insertedId,
+    referenceId,
+  } = params;
   await snsToHushRetreat(JSON.stringify(params), "receiveFeedback");
 
   const mainSection = createEmailTemplate("contactUsConfirmation", {
     firstName,
     lastName,
     message,
-    messageId: insertedId,
+    referenceId,
   });
   const signatureSection = createEmailTemplate("signature");
 
-  const subject = `Subscription Acknowledgement - The Hush Retreat Newsletter`;
+  const modifiedSubject = `The Hush Retreat Feedback Acknowledgement - ${subject}`;
   const htmlBody = `${mainSection}${signatureSection}`;
 
-  await sesToUser(email, htmlBody, subject);
+  await sesToUser(email, htmlBody, modifiedSubject);
 
   const client = await connectClient();
-  const filter = { _id: ObjectId(insertedId) };
+  const filter = { _id: insertedId };
   const update = { status: "ConfirmationSent" };
 
   const updateResult = await updateOneFromCollection(
