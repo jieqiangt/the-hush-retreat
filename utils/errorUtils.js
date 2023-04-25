@@ -11,6 +11,9 @@ export class AppError extends Error {
 
 export function errorHandler(err, res) {
   // for errors thrown by us
+
+  console.log(err)
+
   if (err.clientMessage && err.status) {
     res.status(err.status).json(err);
     return;
