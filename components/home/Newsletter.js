@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useContext, useRef, useState } from "react";
 import { callApi } from "../../utils/apiUtils";
 import NotificationContext from "../../store/notificationContext";
+import { validateField } from "../../reducers/newRetreateeReducer";
 
 export default function NewsLetter(props) {
   const { baseClass, classes } = props;
@@ -16,18 +17,13 @@ export default function NewsLetter(props) {
   async function subscribeHandler(event) {
     event.preventDefault();
 
-    if (
-      !(
-        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-          emailRef.current.value
-        ) && !/[\s\t\0\n\v\r]+/.test(emailRef.current.value)
-      )
-    ) {
+    if (!validateField(emailRef.current.value, "email")) {
       setEmailValid(() => false);
       return;
+    } else {
+      setEmailValid(() => true);
     }
 
-    setEmailValid(() => true);
     const result = await callApi({
       url: "/api/registerNewsletter",
       method: "POST",
@@ -78,7 +74,6 @@ export default function NewsLetter(props) {
               inputRef={emailRef}
               inputName="newsletter--form--signup--email"
               inputPlaceholder="Email"
-              // onChange={changeHandlers["firstName"]}
               inputGroupClass={classes[`${baseClass}--signup--input-group`]}
               inputClass={classes[`${baseClass}--signup--input-group--input`]}
               labelClass={classes[`${baseClass}--signup--input-group--label`]}
@@ -113,7 +108,7 @@ export default function NewsLetter(props) {
             FOR ANY QUERIES
           </h3>
           <LinkButton
-            href="/contact"
+            href="/help"
             btnClass={`${classes[`${baseClass}--signup--btn--link`]} hidden`}
           >
             Contact Us
