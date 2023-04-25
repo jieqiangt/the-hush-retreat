@@ -1,5 +1,6 @@
 import { MongoClient } from "mongodb";
 import { AppError } from "./errorUtils";
+import { v4 as uuidv4 } from "uuid";
 
 export async function connectClient() {
   try {
@@ -127,4 +128,13 @@ export async function updateOneFromCollection(
       message: err,
     });
   }
+}
+
+export function createReferenceId(concatString) {
+  let baseId = uuidv4();
+  const referenceId = `${concatString.slice(1, 2)}${baseId.slice(
+    0,
+    6
+  )}${concatString.slice(0, 1)}${concatString.slice(2, 3)}`.toUpperCase();
+  return { baseId, referenceId };
 }
