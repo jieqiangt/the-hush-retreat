@@ -1,5 +1,6 @@
 import {
   connectClient,
+  createReferenceId,
   getOneFromCollection,
   insertOneToCollection,
 } from "../../utils/mongoUtils";
@@ -34,15 +35,18 @@ const handler = catchApiWrapper(async (req, res) => {
     });
   }
 
+  const { baseId, referenceId } = createReferenceId(email);
+
   const result = await insertOneToCollection(
     client,
     process.env.MONGO_DBNAME,
     "newsletterSubscriptions",
     {
+      _id: baseId,
       createdOn: now,
       updatedOn: now,
       email,
-      isActive: true,
+      active: true,
       status: "Registered",
     }
   );
@@ -52,7 +56,7 @@ const handler = catchApiWrapper(async (req, res) => {
     clientMessage: `You have successfully subscribed to our newsletter. Do look out for our upcoming wellness retreats!`,
     status: 201,
     className: "notification--success",
-    insertedId: result.insertedId,
+    insertedId: baseId,
   });
   client.close();
 
