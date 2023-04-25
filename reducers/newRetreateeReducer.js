@@ -23,6 +23,10 @@ export function validateField(input, field) {
     return input.length > 0 && !/[^a-zA-Z\s]+/.test(input);
   }
 
+  if (field === "standardString") {
+    return input.length > 0;
+  }
+
   if (field === "email") {
     return (
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
