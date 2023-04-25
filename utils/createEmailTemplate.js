@@ -17,7 +17,7 @@ export default function createEmailTemplate(section, params = {}) {
     firstName,
     lastName,
     message,
-    messageId,
+    referenceId,
   } = params;
 
   const additionalRetreateesReturn = additionalRetreatees
@@ -40,7 +40,7 @@ export default function createEmailTemplate(section, params = {}) {
         <RetreatConfirmationTemplate
           mainRetreatee={mainRetreatee}
           retreat={retreat}
-          bookingId={bookingId}
+          referenceId={referenceId}
         />
       );
       break;
@@ -51,9 +51,9 @@ export default function createEmailTemplate(section, params = {}) {
       jsxOutput = (
         <ContactUsConfirmationTemplate
           firstName={firstName}
-          lastname={lastName}
+          lastName={lastName}
           message={message}
-          messageId={messageId}
+          referenceId={referenceId}
         />
       );
       break;
