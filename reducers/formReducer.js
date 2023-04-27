@@ -64,6 +64,8 @@ function validateForm(state) {
     state.lastNameValid &&
     state.emailValid &&
     state.phoneValid &&
+    (state.sizeValid ? state.sizeValid : true) &&
+    (state.bikiniStyleValid ? state.bikiniStyleValid : true) &&
     state.vaccinatedValid
   );
 }

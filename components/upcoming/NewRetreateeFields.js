@@ -1,18 +1,15 @@
 import { useEffect, useReducer } from "react";
 import InputText from "../ui/InputText";
 import InputCheckBox from "../ui/InputCheckBox";
-import {
-  newRetreateeInitialState,
-  newRetreateeReducer,
-} from "../../reducers/newRetreateeReducer";
+import { formInitialState, formReducer } from "../../reducers/formReducer";
 import Icon from "../ui/Icon";
 import LinkButton from "../ui/LinkButton";
 import InputSelect from "../ui/InputSelect";
 
 export default function NewRetreateeFields(props) {
   const [newRetreateeState, dispatchNewRetreatee] = useReducer(
-    newRetreateeReducer,
-    newRetreateeInitialState
+    formReducer,
+    formInitialState
   );
 
   const {
