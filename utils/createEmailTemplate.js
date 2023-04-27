@@ -20,6 +20,34 @@ export default function createEmailTemplate(section, params = {}) {
     referenceId,
   } = params;
 
+  const textColor = "#8d2517";
+  const textFontSize = "1.2em";
+  const headerColor = "#204d2e";
+  const headerFontSize = "2em";
+
+  const textStyle = {
+    display: "block",
+    "margin-block-start": "0",
+    "margin-block-end": "0",
+    color: textColor,
+    "font-size": textFontSize,
+    "line-height": "1.2",
+  };
+
+  const containerStyle = {
+    display: "block",
+  };
+
+  const h2Style = { color: headerColor, "font-size": headerFontSize };
+  const iconStyle = {
+    height: "2em",
+    width: "2em",
+    "margin-left": "0.2em",
+    "margin-right": "0.2em",
+  };
+  const ulStyle = { "list-style": "none", margin: "0", padding: "0" };
+  const liStyle = { "list-style": "none", margin: "0", padding: "0" };
+
   const additionalRetreateesReturn = additionalRetreatees
     ? additionalRetreatees.map((item, idx) => (
         <AdditionalRetreateeTemplate
@@ -66,7 +94,13 @@ export default function createEmailTemplate(section, params = {}) {
       );
       break;
     case "signature":
-      jsxOutput = <SignatureTemplate />;
+      jsxOutput = (
+        <SignatureTemplate
+          textStyle={textStyle}
+          containerStyle={containerStyle}
+          iconStyle={iconStyle}
+        />
+      );
       break;
   }
 

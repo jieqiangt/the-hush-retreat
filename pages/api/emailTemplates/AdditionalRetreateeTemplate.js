@@ -9,7 +9,7 @@ export default function AdditionalRetreateeTemplate(props) {
         <h2>Additional Retreatees</h2>
         <ul>
           <li>
-            {`Retreatee #${idx}`}
+            <h3>{`Retreatee #${idx}`}</h3>
             <ul>
               <li>{`Name: ${firstName} ${lastName}`}</li>
               <li>{`Email: ${email}`}</li>

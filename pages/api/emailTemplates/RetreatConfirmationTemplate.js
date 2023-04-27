@@ -5,7 +5,7 @@ export default function RetreatConfirmationTemplate(props) {
 
   return (
     <Fragment>
-      <h1>{`Hi ${mainRetreatee.firstName} ${mainRetreatee.lastName}`}</h1>
+      <p>{`Hi ${mainRetreatee.firstName} ${mainRetreatee.lastName}`}</p>
       <p>Thank you for booking a retreat with us at The Hush Retreat.</p>
       <p>Your booking details are as follows:</p>
 
