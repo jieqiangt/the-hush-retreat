@@ -39,3 +39,7 @@ next-env.d.ts
 #misc
 notes.md
 
+# testing page
+emailTest.html
+*/test.js
+pages/api/generateHtml.js
