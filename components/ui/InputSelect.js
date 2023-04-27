@@ -34,7 +34,7 @@ export default function InputSelect(props) {
           name={inputName}
           id={inputName}
           className={inputClass}
-          // onChange={onChange}
+          onChange={onChange}
         >
           {options}
         </select>
