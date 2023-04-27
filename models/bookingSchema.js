@@ -38,8 +38,8 @@ module.exports = {
                 "updatedOn of iso date type is required. Must be greater than or equals to createdOn.",
             },
             retreatId: {
-              bsonType: "objectId",
-              description: "references objectId of restaurants in the list.",
+              bsonType: "string",
+              description: "references _id of retreat collection.",
             },
             mainRetreatee: {
               bsonType: "object",
