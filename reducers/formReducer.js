@@ -1,4 +1,4 @@
-export const newRetreateeInitialState = {
+export const formInitialState = {
   firstName: "",
   lastName: "",
   email: "",
@@ -6,25 +6,27 @@ export const newRetreateeInitialState = {
   vaccinated: "",
   size: "",
   bikiniStyle: "",
-  firstNameValid: false,
-  lastNameValid: false,
-  emailValid: false,
-  phoneValid: false,
+  firstNameValid: true,
+  lastNameValid: true,
+  emailValid: true,
+  phoneValid: true,
   vaccinatedValid: false,
+  sizeValid: true,
+  bikiniStyle: true,
   retreateeValid: false,
 };
 
 export function validateField(input, field) {
+  if (field === "retreatId") {
+    return input.length > 0;
+  }
+
   if (field === "firstName") {
     return input.length > 0 && !/[^a-zA-Z\s]+/.test(input);
   }
 
   if (field === "lastName") {
     return input.length > 0 && !/[^a-zA-Z\s]+/.test(input);
-  }
-
-  if (field === "standardString") {
-    return input.length > 0;
   }
 
   if (field === "email") {
@@ -36,15 +38,27 @@ export function validateField(input, field) {
   }
 
   if (field === "phone") {
-    return input.length >= 8 && !/[^a-zA-Z0-9+]+/.test(input);
+    return input.length >= 8 && !/[^0-9+]+/.test(input);
   }
 
   if (field === "vaccinated") {
     return input ? input : false;
   }
+
+  if (field === "size") {
+    return ["xs", "s", "m", "l", "xl"].includes(input);
+  }
+
+  if (field === "bikiniStyle") {
+    return ["a", "b", "c", "d"].includes(input);
+  }
+
+  if (field === "standardString") {
+    return input.length > 0;
+  }
 }
 
-function validateRetreatee(state) {
+function validateForm(state) {
   return (
     state.firstNameValid &&
     state.lastNameValid &&
@@ -54,11 +68,10 @@ function validateRetreatee(state) {
   );
 }
 
-export function newRetreateeReducer(state, action) {
+export function formReducer(state, action) {
   if (action.type === "INPUT") {
     const newState = { ...state };
     newState[action.field] = action[action.field];
-
     return newState;
   }
 
@@ -66,9 +79,9 @@ export function newRetreateeReducer(state, action) {
     const newState = { ...state };
     newState[action.field + "Valid"] =
       validateField(action[action.field], action.field) ||
-      (action[action.field] === "" && !newState[action.field + "Valid"]);
+      action[action.field] === "";
     newState.retreateeValid =
-      validateRetreatee(newState) &&
+      validateForm(newState) &&
       newState.firstName !== "" &&
       newState.lastName !== "" &&
       newState.email !== "" &&

@@ -4,7 +4,7 @@ import InputText from "../ui/InputText";
 import { useContext, useRef, useState } from "react";
 import { callApi } from "../../utils/apiUtils";
 import NotificationContext from "../../store/notificationContext";
-import { validateField } from "../../reducers/newRetreateeReducer";
+import { validateField } from "../../reducers/formReducer";
 import LinkButton from "../ui/LinkButton";
 
 export default function ContactUs(props) {
@@ -57,7 +57,6 @@ export default function ContactUs(props) {
     }
 
     if (!validateField(messageRef.current.value, "standardString")) {
-      console.log("validation failed");
       setMessageValid(() => false);
       escape = escape + 1;
     } else {

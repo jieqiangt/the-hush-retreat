@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useContext, useRef, useState } from "react";
 import { callApi } from "../../utils/apiUtils";
 import NotificationContext from "../../store/notificationContext";
-import { validateField } from "../../reducers/newRetreateeReducer";
+import { validateField } from "../../reducers/formReducer";
 
 export default function NewsLetter(props) {
   const { baseClass, classes } = props;
