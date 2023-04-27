@@ -4,15 +4,15 @@ export const formInitialState = {
   email: "",
   phone: "",
   vaccinated: "",
-  size: "",
-  bikiniStyle: "",
+  size: "xs",
+  bikiniStyle: "a",
   firstNameValid: true,
   lastNameValid: true,
   emailValid: true,
   phoneValid: true,
   vaccinatedValid: false,
   sizeValid: true,
-  bikiniStyle: true,
+  bikiniStyleValid: true,
   retreateeValid: false,
 };
 
@@ -71,26 +71,37 @@ function validateForm(state) {
 }
 
 export function formReducer(state, action) {
+  const oldState = Object.fromEntries(
+    action.fields.map((col) => [col, state[col]])
+  );
   if (action.type === "INPUT") {
-    const newState = { ...state };
-    newState[action.field] = action[action.field];
-    return newState;
+    if (action.fields.includes(action.field)) {
+      const newState = { ...oldState };
+      newState[action.field] = action[action.field];
+      return newState;
+    }
+    return state;
   }
 
   if (action.type === "FIELD_VAL") {
-    const newState = { ...state };
-    newState[action.field + "Valid"] =
-      validateField(action[action.field], action.field) ||
-      action[action.field] === "";
-    newState.retreateeValid =
-      validateForm(newState) &&
-      newState.firstName !== "" &&
-      newState.lastName !== "" &&
-      newState.email !== "" &&
-      newState.phone !== "" &&
-      newState.vaccinated !== "";
+    const oldState = Object.fromEntries(
+      action.fields.map((col) => [col, state[col]])
+    );
+    if (action.fields.includes(action.field)) {
+      const newState = { ...oldState };
+      newState[action.field + "Valid"] =
+        validateField(action[action.field], action.field) ||
+        action[action.field] === "";
+      newState.retreateeValid =
+        validateForm(newState) &&
+        newState.firstName !== "" &&
+        newState.lastName !== "" &&
+        newState.email !== "" &&
+        newState.vaccinated !== "";
 
-    return newState;
+      return newState;
+    }
+    return state;
   }
   return newRetreateeInitialState;
 }

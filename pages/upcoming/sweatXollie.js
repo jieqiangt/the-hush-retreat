@@ -7,7 +7,7 @@ import NewRetreatSection from "../../components/upcoming/NewRetreatSection";
 import NewRetreatSchedule from "../../components/upcoming/NewRetreatSchedule";
 import classes from "../../sass/pages/sweatXollie.module.scss";
 
-export default function BaliGlowUpPage() {
+export default function SweatXOlliePage() {
   const pageBaseClass = "sweat-ollie";
   const modalBaseClass = "book-sweat";
   const retreatDetails = {

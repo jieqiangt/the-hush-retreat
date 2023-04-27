@@ -40,11 +40,40 @@ export default function NewRetreateeFields(props) {
     bikiniStyle: newRetreateeState.bikiniStyle,
   };
 
+  const formatFieldName = (name) => {
+    const nameArr = name.split("-");
+    const nameStart = nameArr.shift();
+
+    const fieldName = [
+      nameStart,
+      nameArr.map((word) => word.charAt(0).toUpperCase() + word.slice(1)),
+    ].join("");
+
+    return fieldName;
+  };
+
+  const allStateNames = [...Object.keys(fields)];
+
+  for (let key in selectOptions) {
+    const fieldName = !key.includes("-") ? key : formatFieldName(key);
+    delete allStateNames[fieldName];
+  }
+
+  const stateNames = [
+    ...allStateNames,
+    ...allStateNames.map((name) => `${name}Valid`),
+    "retreateeValid",
+  ];
+
   const changeHandlers = {};
 
   for (let field in fields) {
     changeHandlers[field] = function (event) {
-      let inputParams = { type: "INPUT", field: field };
+      let inputParams = {
+        type: "INPUT",
+        field: field,
+        fields: stateNames,
+      };
       inputParams[field] = event.target.checked
         ? event.target.checked
         : event.target.value;
@@ -57,7 +86,11 @@ export default function NewRetreateeFields(props) {
   for (let field in fields) {
     valFieldHandlers[field] = function () {
       const timerId = setTimeout(() => {
-        let inputParams = { type: "FIELD_VAL", field: field };
+        let inputParams = {
+          type: "FIELD_VAL",
+          field: field,
+          fields: stateNames,
+        };
         inputParams[field] = fields[field];
         dispatchNewRetreatee(inputParams);
       }, 500);
@@ -82,6 +115,11 @@ export default function NewRetreateeFields(props) {
     dispatchNewRetreatee,
     fields.vaccinated,
   ]);
+  useEffect(valFieldHandlers["size"], [dispatchNewRetreatee, fields.size]);
+  useEffect(valFieldHandlers["bikiniStyle"], [
+    dispatchNewRetreatee,
+    fields.bikiniStyle,
+  ]);
 
   useEffect(() => {
     const newRetreateeOutput = {};
@@ -102,18 +140,23 @@ export default function NewRetreateeFields(props) {
 
   for (let key in selectOptions) {
     let options = selectOptions[key];
+    const className = !key.includes("-") ? key : key;
+    const labelName = !key.includes("-") ? key : key.replace("-", " ");
+    const fieldName = !key.includes("-") ? key : formatFieldName(key);
 
     inputSelects.push(
       <InputSelect
         key={key}
-        inputGroupClass={classes[`${baseClass}--retreatee--${key}--group`]}
-        inputClass={classes[`${baseClass}--retreatee--${key}`]}
+        inputGroupClass={
+          classes[`${baseClass}--retreatee--${className}--group`]
+        }
+        inputClass={classes[`${baseClass}--retreatee--${className}`]}
         inputName={key}
-        onChange={""}
+        onChange={changeHandlers[fieldName]}
         inputOptions={options}
-        labelClass={classes[`${baseClass}--retreatee--${key}--label`]}
-        label={key}
-        optionClass={classes[`${baseClass}--retreatee--${key}--option`]}
+        labelClass={classes[`${baseClass}--retreatee--${className}--label`]}
+        label={labelName}
+        optionClass={classes[`${baseClass}--retreatee--${className}--option`]}
       />
     );
   }
