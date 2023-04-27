@@ -7,7 +7,7 @@ import NewRetreatSection from "../../components/upcoming/NewRetreatSection";
 import NewRetreatSchedule from "../../components/upcoming/NewRetreatSchedule";
 import classes from "../../sass/pages/sweatXshakaila.module.scss";
 
-export default function BaliGlowUpPage() {
+export default function SweatXShakailaPage() {
   const pageBaseClass = "sweat-shakaila";
   const modalBaseClass = "book-sweat";
   const retreatDetails = {
