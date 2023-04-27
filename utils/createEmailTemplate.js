@@ -42,8 +42,6 @@ export default function createEmailTemplate(section, params = {}) {
   const iconStyle = {
     height: "2em",
     width: "2em",
-    "margin-left": "0.2em",
-    "margin-right": "0.2em",
   };
   const ulStyle = { "list-style": "none", margin: "0", padding: "0" };
   const liStyle = { "list-style": "none", margin: "0", padding: "0" };
