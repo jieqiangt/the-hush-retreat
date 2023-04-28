@@ -20,21 +20,6 @@ export default function SweatXShakailaPage() {
     promotion:
       "**Ticket includes 1 set of Shalaika Swim swimwear of your preferred design! These are workout appropriate designs for maximum comfort and mobility.",
     btnText: "Register Here",
-    selectOptions: {
-      size: [
-        { value: "xs", name: "XS" },
-        { value: "s", name: "S" },
-        { value: "m", name: "M" },
-        { value: "l", name: "L" },
-        { value: "xl", name: "XL" },
-      ],
-      "bikini-style": [
-        { value: "a", name: "A" },
-        { value: "b", name: "B" },
-        { value: "c", name: "C" },
-        { value: "d", name: "D" },
-      ],
-    },
   };
 
   const sectionTitle = "WHAT TO EXPECT";
@@ -97,7 +82,29 @@ export default function SweatXShakailaPage() {
 
   const modalTitle = "SWEAT x Shakaila";
   const modalCaption = "Event Details";
-  const retreatId = "64361076b18c10ff91fcaf2c";
+  const retreat = {
+    _id: "64361076b18c10ff91fcaf2c",
+    name: "Sweat x Shakaila",
+    date: "7th May 2023",
+    location: "Sentosa",
+    price: "88",
+    desc: "Some Description",
+    selectOptions: {
+      size: [
+        { value: "xs", name: "XS" },
+        { value: "s", name: "S" },
+        { value: "m", name: "M" },
+        { value: "l", name: "L" },
+        { value: "xl", name: "XL" },
+      ],
+      "bikini-style": [
+        { value: "a", name: "A" },
+        { value: "b", name: "B" },
+        { value: "c", name: "C" },
+        { value: "d", name: "D" },
+      ],
+    },
+  };
 
   const modal = (
     <NewRetreatBookingModal
@@ -106,7 +113,7 @@ export default function SweatXShakailaPage() {
       modalTitle={modalTitle}
       modalCaption={modalCaption}
       retreatDetails={retreatDetails}
-      retreatsId={retreatId}
+      retreat={retreat}
     />
   );
 
