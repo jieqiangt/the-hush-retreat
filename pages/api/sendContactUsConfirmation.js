@@ -23,11 +23,12 @@ const handler = catchApiWrapper(async (req, res) => {
     firstName,
     lastName,
     message,
+    subject,
     referenceId,
   });
   const signatureSection = createEmailTemplate("signature");
 
-  const modifiedSubject = `The Hush Retreat Feedback Acknowledgement - ${subject}`;
+  const modifiedSubject = `You query has been received! - ${referenceId} `;
   const htmlBody = `${mainSection}${signatureSection}`;
 
   await sesToUser(email, htmlBody, modifiedSubject);

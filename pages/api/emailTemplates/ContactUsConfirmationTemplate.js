@@ -1,14 +1,22 @@
 import { Fragment } from "react";
 
 export default function ContactUsConfirmationTemplate(props) {
-  const { firstName, lastName, message, textStyle, divStyle, ulStyle } = props;
+  const {
+    firstName,
+    lastName,
+    subject,
+    message,
+    textStyle,
+    divStyle,
+    ulStyle,
+  } = props;
 
   const liStyle = { "list-style": "none", margin: "0", padding: "0" };
 
   return (
     <Fragment>
       <div style={divStyle}>
-        <p style={textStyle}>{`Dearest ${firstName} ${lastName}`}</p>
+        <p style={textStyle}>{`Dearest ${firstName} ${lastName}`},</p>
       </div>
       <div style={divStyle}>
         <p style={textStyle}>
@@ -18,6 +26,7 @@ export default function ContactUsConfirmationTemplate(props) {
       </div>
       <div style={divStyle}>
         <p style={textStyle}>Your Query:</p>
+        <p style={textStyle}>{subject}</p>
         <p style={textStyle}>{message}</p>
       </div>
       <div style={divStyle}>

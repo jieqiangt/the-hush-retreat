@@ -4,9 +4,6 @@ export default function NewsletterConfirmationTemplate(props) {
   const { textStyle, divStyle } = props;
   return (
     <Fragment>
-      {/* <div style={divStyle}>
-        <p style={textStyle}>{`Dearest`}</p>
-      </div> */}
       <div style={divStyle}>
         <p style={textStyle}>Thank you for subscribing to our mailing list!</p>
       </div>

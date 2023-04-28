@@ -9,7 +9,7 @@ const handler = catchApiWrapper(async (req, res) => {
   const data = req.body;
   const {
     retreat,
-    bookingId,
+    referenceId,
     insertedId,
     mainRetreatee,
     additionalRetreatees,
@@ -20,7 +20,6 @@ const handler = catchApiWrapper(async (req, res) => {
   const mainSection = createEmailTemplate("retreatConfirmation", {
     mainRetreatee,
     retreat,
-    bookingId,
   });
   const additionalRetreateesSection = createEmailTemplate(
     "additionalRetreatees",
@@ -28,18 +27,17 @@ const handler = catchApiWrapper(async (req, res) => {
   );
   const paymentDetails = createEmailTemplate("paymentDetails", {
     price: retreat.price,
-    bookingId,
   });
   const signatureSection = createEmailTemplate("signature");
 
-  const subject = `Booking Acknowledgement - ${retreat.name }`;
+  const subject = `We have received your booking! - ${referenceId}`;
   const htmlBody = `${mainSection}${additionalRetreateesSection}${paymentDetails}${signatureSection}`;
 
   await sesToUser(mainRetreatee.email, htmlBody, subject);
 
   const client = await connectClient();
   const filter = { _id: insertedId };
-  const update = { status: "bookingConfirmationSent" };
+  const update = { status: "ConfirmationSent" };
 
   const updateResult = await updateOneFromCollection(
     client,

@@ -14,7 +14,7 @@ const handler = catchApiWrapper(async (req, res) => {
   const mainSection = createEmailTemplate("newsletterConfirmation");
   const signatureSection = createEmailTemplate("signature");
 
-  const subject = `Subscription Acknowledgement - The Hush Retreat Newsletter`;
+  const subject = `Thank you for subscribing to The Hush Retreat Mailing List!`;
   const htmlBody = `${mainSection}${signatureSection}`;
 
   await sesToUser(email, htmlBody, subject);

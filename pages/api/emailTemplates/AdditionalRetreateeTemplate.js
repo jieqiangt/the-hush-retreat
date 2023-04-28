@@ -16,7 +16,8 @@ export default function AdditionalRetreateeTemplate(props) {
 
   const liOuterStyle = {
     "list-style": "none",
-    ...divStyle,
+    padding: "0em",
+    margin: "0.3em 0em",
   };
 
   return (
