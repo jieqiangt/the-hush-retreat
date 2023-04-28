@@ -21,7 +21,7 @@ export default function BookingForm(props) {
   const { closeModal } = useContext(ModalContext);
   const router = useRouter();
   const notificationCtx = useContext(NotificationContext);
-  const { baseClass, classes, retreatId, selectOptions } = props;
+  const { baseClass, classes, retreat } = props;
   const [allRetreateeDetails, setAllRetreateeDetails] = useState({});
   const [formValid, setFormValid] = useState(false);
   const [retreateeFields, setRetreateeFields] = useState([]);
@@ -42,7 +42,7 @@ export default function BookingForm(props) {
         <NewRetreateeFields
           classes={classes}
           baseClass={baseClass}
-          selectOptions={selectOptions}
+          selectOptions={retreat.selectOptions}
           onValidated={getRetreateeDetailsHandler}
           retreateeIdx={uuidv4()}
           key={uuidv4()}
@@ -102,7 +102,7 @@ export default function BookingForm(props) {
       url: "/api/registerBooking",
       method: "POST",
       body: {
-        retreatIdStr: retreatId,
+        retreatId: retreat._id,
         allRetreateeDetails,
         message: msgInputRef.current.value,
       },
@@ -120,9 +120,11 @@ export default function BookingForm(props) {
         url: "/api/sendBookingConfirmation",
         method: "POST",
         body: {
-          retreatIdStr: retreatId,
-          allRetreateeDetails,
+          retreat,
+          bookingId: successNotification.referenceId,
           insertedId: successNotification.insertedId,
+          mainRetreatee: successNotification.mainRetreatee,
+          additionalRetreatees: successNotification.additionalRetreatees,
         },
       });
 
@@ -140,7 +142,7 @@ export default function BookingForm(props) {
           baseClass={baseClass}
           onValidated={getRetreateeDetailsHandler}
           retreateeIdx={"main"}
-          selectOptions={selectOptions}
+          selectOptions={retreat.selectOptions}
         />
         <div className={classes[`${baseClass}--form--title--box`]}>
           <span className={classes[`${baseClass}--form--title`]}>
