@@ -10,12 +10,18 @@ module.exports = {
         $jsonSchema: {
           bsonType: "object",
           required: [
+            "_id",
             "createdOn",
             "updatedOn",
-            "retreatName",
-            "startDt",
+            "name",
+            "retreatIsoDate",
+            "date",
             "price",
             "location",
+            "title",
+            "caption",
+            "emailDesc",
+            "active",
           ],
           additionalProperties: false,
           properties: {
@@ -33,27 +39,46 @@ module.exports = {
               description:
                 "updatedOn of iso date type is required. Must be greater than or equals to createdOn.",
             },
-            retreatName: {
+            name: {
               bsonType: "string",
               description: "retreatName of string datatype is required.",
             },
-            startDt: {
-              bsonType: "string",
-              description:
-                "startDt of string datatype is required. This is in the human readable format to be shown in website.",
+            retreatIsoDate: {
+              bsonType: "date",
+              description: "retreatIsoDate of iso date datatype is required.",
             },
-            endDt: {
+            date: {
               bsonType: "string",
               description:
-                "startDt of string datatype is optional. This is in the human readable format to be shown in website.",
+                "date of string datatype is required. This is in the human readable format to be shown in website.",
             },
             price: {
-              bsonType: "string",
-              description: "price of string datatype without $ is required.",
+              bsonType: "double",
+              description: "price of double datatype without $ is required.",
             },
             location: {
               bsonType: "string",
               description: "location of string datatype is required.",
+            },
+            promotion: {
+              bsonType: "string",
+              description: "promotion of string datatype is optional.",
+            },
+            title: {
+              bsonType: "string",
+              description: "title of string datatype is required.",
+            },
+            caption: {
+              bsonType: "string",
+              description: "caption of string datatype is required.",
+            },
+            emailDesc: {
+              bsonType: "string",
+              description: "emailDesc of string datatype is required.",
+            },
+            emailOtherInfo: {
+              bsonType: "string",
+              description: "emailOtherInfo of string datatype is optional.",
             },
             active: {
               bsonType: "bool",

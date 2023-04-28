@@ -22,7 +22,7 @@ export default function RetreatConfirmationTemplate(props) {
         <p style={textStyle}>This is Mandi from The Hush Retreats! </p>
         <p
           style={textStyle}
-        >{`Thank you for expressing interest to spend a lovely time with us at ${retreat.name} on ${retreat.date}. This will be ${retreat.desc}.`}</p>
+        >{`Thank you for expressing interest to spend a lovely time with us at ${retreat.name} on ${retreat.date}. This will be ${retreat.emailDesc}.`}</p>
       </div>
       <div style={divStyle}>
         <h3 style={headerStyle}>Main Retreatee</h3>
@@ -48,10 +48,10 @@ export default function RetreatConfirmationTemplate(props) {
           )}
         </ul>
       </div>
-      {retreat.otherInfo ? (
+      {retreat.emailOtherInfo ? (
         <div style={divStyle}>
           <p style={textStyle}>Here are your booking details:</p>
-          <p style={textStyle}>{retreat.otherInfo}</p>
+          <p style={textStyle}>{retreat.emailOtherInfo}</p>
         </div>
       ) : (
         ""
