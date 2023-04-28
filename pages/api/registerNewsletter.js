@@ -29,7 +29,7 @@ const handler = catchApiWrapper(async (req, res) => {
     throw new AppError({
       title: "User Input Error",
       clientMessage:
-        "Email or mobile number exists in our database. Have you booked this retreat with us already?",
+        "Your email is already in our mailing list! Have you subscribed to our mailing list before?",
       status: 406,
       className: "notification--error",
     });
