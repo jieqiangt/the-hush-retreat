@@ -10,7 +10,7 @@ export default function NewRetreatBookingModal(props) {
     retreatDetails,
     modalTitle,
     modalCaption,
-    retreatId,
+    retreat,
   } = props;
 
   const modalInfo = (
@@ -35,8 +35,8 @@ export default function NewRetreatBookingModal(props) {
       <BookingForm
         baseClass={baseClass}
         classes={classes}
-        retreatId={retreatId}
-        selectOptions={retreatDetails.selectOptions}
+        retreat={retreat}
+        selectOptions={retreat.selectOptions}
       />
     </section>
   );
