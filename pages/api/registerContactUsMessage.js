@@ -4,7 +4,6 @@ import {
   insertOneToCollection,
 } from "../../utils/mongoUtils";
 import { catchApiWrapper } from "../../utils/errorUtils";
-import { ObjectId } from "mongodb";
 
 const allowedMethods = ["POST"];
 
