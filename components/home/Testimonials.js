@@ -17,7 +17,7 @@ export default function Testimonials(props) {
         participantName: "Lawrence A.",
         href: "/explore#here-and-now",
         retreatName: "Here & Now",
-        retreatDate: "Oct 2021",
+        retreatDate: "Oct 2022",
         active: true,
       },
       {
@@ -26,7 +26,7 @@ export default function Testimonials(props) {
         participantName: "Louisa Y.",
         href: "/explore#here-and-now",
         retreatName: "Here & Now",
-        retreatDate: "Jan 2022",
+        retreatDate: "Oct 2022",
         active: false,
       },
       {
