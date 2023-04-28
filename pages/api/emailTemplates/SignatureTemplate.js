@@ -1,26 +1,25 @@
 import { Fragment } from "react";
 
 export default function SignatureTemplate(props) {
-  const { textStyle, containerStyle, iconStyle } = props;
+  const { textStyle, divStyle, iconStyle } = props;
 
   const signBoxStyle = {
-    ...containerStyle,
-    padding: "0.4em 0em",
-    margin: "0.8em 0em",
-    width: "10em",
-    "border-top": "solid 1px #d6bf8a",
-    "border-bottom": "solid 1px #d6bf8a",
+    ...divStyle,
+    width: "9em",
+    "border-top": "solid 1px #204d2e",
+    "border-bottom": "solid 1px #204d2e",
   };
 
   const iconBoxStle = {
     display: "flex",
-    gap: "0.2em",
+    gap: "0.6em",
     "margin-top": "0.4em",
   };
+
   return (
     <Fragment>
       <div style={signBoxStyle}>
-        <p style={textStyle}>The Hush Retreat</p>
+        <p style={textStyle}>Love & Light,</p>
         <p style={textStyle}>Mandi</p>
       </div>
       <div style={iconBoxStle}>
