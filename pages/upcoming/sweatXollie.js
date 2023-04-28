@@ -10,18 +10,6 @@ import classes from "../../sass/pages/sweatXollie.module.scss";
 export default function SweatXOlliePage() {
   const pageBaseClass = "sweat-ollie";
   const modalBaseClass = "book-sweat";
-  const retreatDetails = {
-    title: "SWEAT BEACH SUURV HIIT SERIES",
-    caption: "SWEAT x Ollie: Time to rise & grind!",
-    date: "29 Apr 2023, Saturday",
-    time: "8.30am - 10am",
-    price: "$35 per pax",
-    location: "Sentosa",
-    promotion:
-      "Ticket includes 1 sparkling hard seltzer from Ollie! You deserve a low calorie treat after all the burns!",
-    btnText: "Register Here",
-  };
-
   const sectionTitle = "WHAT TO EXPECT";
   const sectionText = ["CAPTION", "DESCRIPTION PARAGRAPH"];
   const guideTitle = "GUIDE NAME";
@@ -96,10 +84,16 @@ export default function SweatXOlliePage() {
   const retreat = {
     _id: "64361076b18c10ff91fcaf2c",
     name: "Sweat x Ollie",
-    date: "29th Apr 2023",
+    date: "29 Apr 2023, Saturday",
+    time: "8.30am - 10am",
     location: "Sentosa",
     price: "35",
-    desc: "Some Description",
+    promotion:
+      "Ticket includes 1 sparkling hard seltzer from Ollie! You deserve a low calorie treat after all the burns!",
+    title: "SWEAT BEACH SUURV HIIT SERIES",
+    caption: "SWEAT x Ollie: Time to rise & grind!",
+    emailDesc: "Some Description",
+    btnText: "Register Here",
   };
 
   const modal = (
@@ -108,7 +102,6 @@ export default function SweatXOlliePage() {
       baseClass={modalBaseClass}
       modalTitle={modalTitle}
       modalCaption={modalCaption}
-      retreatDetails={retreatDetails}
       retreat={retreat}
     />
   );
@@ -125,7 +118,7 @@ export default function SweatXOlliePage() {
         <NewRetreatBanner
           classes={classes}
           baseClass="banner"
-          retreatDetails={retreatDetails}
+          retreat={retreat}
         />
         <NewRetreatSection
           classes={classes}

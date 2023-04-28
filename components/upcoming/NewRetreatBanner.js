@@ -4,12 +4,12 @@ import Banner from "../ui/Banner";
 import NewRetreatInfo from "./NewRetreatInfo";
 
 export default function NewRetreatBanner(props) {
-  const { retreatDetails, classes, baseClass } = props;
+  const { retreat, classes, baseClass } = props;
   const { openModal } = useContext(ModalContext);
 
   const bannerDetails = (
     <NewRetreatInfo
-      retreatDetails={retreatDetails}
+      retreat={retreat}
       onClick={openModal}
       baseClass={baseClass}
       classes={classes}
@@ -20,8 +20,8 @@ export default function NewRetreatBanner(props) {
     <Banner
       classes={classes}
       baseClass={baseClass}
-      title={retreatDetails.title}
-      caption={retreatDetails.caption}
+      title={retreat.title}
+      caption={retreat.caption}
       bannerDetails={bannerDetails}
     />
   );

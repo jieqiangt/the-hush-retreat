@@ -3,8 +3,7 @@ import Icon from "../ui/Icon";
 import LinkButton from "../ui/LinkButton";
 
 export default function NewRetreatInfo(props) {
-  const { classes, baseClass, btnText, onClick, btnHref, retreatDetails } =
-    props;
+  const { classes, baseClass, onClick, btnHref, retreat } = props;
 
   return (
     <Fragment>
@@ -13,15 +12,11 @@ export default function NewRetreatInfo(props) {
           iconClass={classes[`${baseClass}--icon`]}
           iconName="icon-calendar"
         />
-        <time className={classes[`${baseClass}--date`]}>
-          {retreatDetails.date}
-        </time>
+        <time className={classes[`${baseClass}--date`]}>{retreat.date}</time>
       </div>
       <div className={classes[`${baseClass}--icon--outer`]}>
         <Icon iconClass={classes[`${baseClass}--icon`]} iconName="icon-clock" />
-        <time className={classes[`${baseClass}--time`]}>
-          {retreatDetails.time}
-        </time>
+        <time className={classes[`${baseClass}--time`]}>{retreat.time}</time>
       </div>
       <div className={classes[`${baseClass}--icon--outer`]}>
         <Icon
@@ -29,7 +24,7 @@ export default function NewRetreatInfo(props) {
           iconName="icon-location-pin"
         />
         <span className={classes[`${baseClass}--location`]}>
-          {retreatDetails.location}
+          {retreat.location}
         </span>
       </div>
       <div className={classes[`${baseClass}--icon--outer`]}>
@@ -37,24 +32,22 @@ export default function NewRetreatInfo(props) {
           iconClass={classes[`${baseClass}--icon`]}
           iconName="icon-coin-dollar"
         />
-        <span className={classes[`${baseClass}--price`]}>
-          {retreatDetails.price}
-        </span>
+        <span
+          className={classes[`${baseClass}--price`]}
+        >{`$${retreat.price} SGD per pax`}</span>
       </div>
-      {retreatDetails.promotion ? (
-        <p className={classes[`${baseClass}--promo`]}>
-          {retreatDetails.promotion}
-        </p>
+      {retreat.promotion ? (
+        <p className={classes[`${baseClass}--promo`]}>{retreat.promotion}</p>
       ) : (
         " "
       )}
-      {retreatDetails.btnText && (btnHref || onClick) ? (
+      {retreat.btnText && (btnHref || onClick) ? (
         <LinkButton
           href={btnHref}
           onClick={onClick}
           btnClass={classes[`${baseClass}--btn`]}
         >
-          {retreatDetails.btnText}
+          {retreat.btnText}
         </LinkButton>
       ) : (
         ""

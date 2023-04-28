@@ -10,17 +10,6 @@ import classes from "../../sass/pages/sweatXshakaila.module.scss";
 export default function SweatXShakailaPage() {
   const pageBaseClass = "sweat-shakaila";
   const modalBaseClass = "book-sweat";
-  const retreatDetails = {
-    title: "SWEAT BEACH SUURV HIIT SERIES",
-    caption: "SWEAT x Shakaila: Spice your morning up!",
-    date: "07 May 2023, Sunday",
-    time: "8am - 10am",
-    price: "$88 per pax",
-    location: "Sentosa",
-    promotion:
-      "**Ticket includes 1 set of Shalaika Swim swimwear of your preferred design! These are workout appropriate designs for maximum comfort and mobility.",
-    btnText: "Register Here",
-  };
 
   const sectionTitle = "WHAT TO EXPECT";
   const sectionText = ["CAPTION", "DESCRIPTION PARAGRAPH"];
@@ -85,9 +74,15 @@ export default function SweatXShakailaPage() {
   const retreat = {
     _id: "64361076b18c10ff91fcaf2c",
     name: "Sweat x Shakaila",
-    date: "7th May 2023",
-    location: "Sentosa",
+    title: "SWEAT BEACH SUURV HIIT SERIES",
+    caption: "SWEAT x Shakaila: Spice your morning up!",
+    btnText: "Register Here",
+    time: "8am - 10am",
+    date: "07 May 2023, Sunday",
     price: "88",
+    location: "Sentosa",
+    promotion:
+      "**Ticket includes 1 set of Shalaika Swim swimwear of your preferred design! These are workout appropriate designs for maximum comfort and mobility.",
     desc: "Some Description",
     selectOptions: {
       size: [
@@ -112,7 +107,6 @@ export default function SweatXShakailaPage() {
       baseClass={modalBaseClass}
       modalTitle={modalTitle}
       modalCaption={modalCaption}
-      retreatDetails={retreatDetails}
       retreat={retreat}
     />
   );
@@ -129,7 +123,7 @@ export default function SweatXShakailaPage() {
         <NewRetreatBanner
           classes={classes}
           baseClass="banner"
-          retreatDetails={retreatDetails}
+          retreat={retreat}
         />
         <NewRetreatSection
           classes={classes}

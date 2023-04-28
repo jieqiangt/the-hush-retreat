@@ -4,14 +4,7 @@ import { Fragment } from "react";
 import NewRetreatInfo from "./NewRetreatInfo";
 
 export default function NewRetreatBookingModal(props) {
-  const {
-    classes,
-    baseClass,
-    retreatDetails,
-    modalTitle,
-    modalCaption,
-    retreat,
-  } = props;
+  const { classes, baseClass, retreat, modalTitle, modalCaption } = props;
 
   const modalInfo = (
     <Fragment>
@@ -22,7 +15,7 @@ export default function NewRetreatBookingModal(props) {
         <NewRetreatInfo
           classes={classes}
           baseClass={`${baseClass}--aside--info`}
-          retreatDetails={retreatDetails}
+          retreat={retreat}
         />
       </div>
     </Fragment>
