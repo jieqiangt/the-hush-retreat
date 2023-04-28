@@ -40,6 +40,5 @@ next-env.d.ts
 notes.md
 
 # testing page
-emailTest.html
-*/test.js
+emailTest/*
 pages/api/generateHtml.js
