@@ -1,20 +1,18 @@
 import {
   connectClient,
+  createReferenceId,
   getOneFromCollection,
   insertOneToCollection,
 } from "../../utils/mongoUtils";
 import { AppError, catchApiWrapper } from "../../utils/errorUtils";
-import { validateField } from "../../reducers/newRetreateeReducer";
-import { ObjectId } from "mongodb";
+import { validateField } from "../../reducers/formReducer";
 
 const allowedMethods = ["POST"];
 
 const handler = catchApiWrapper(async (req, res) => {
   const data = req.body;
+  const { retreatId, allRetreateeDetails, message } = data;
 
-  const { retreatIdStr, allRetreateeDetails, message } = data;
-
-  const retreatId = new ObjectId(retreatIdStr);
   const now = new Date();
 
   const formatRetreatee = (retreateeDetailsInput) => {
@@ -26,7 +24,8 @@ const handler = catchApiWrapper(async (req, res) => {
         validateField(retreatee.firstName, "firstName") &&
         validateField(retreatee.lastName, "lastName") &&
         validateField(retreatee.email, "email") &&
-        validateField(retreatee.phone, "phone");
+        validateField(retreatee.size, "size") &&
+        validateField(retreatee.bikiniStyle, "bikiniStyle");
 
       if (!validateField(retreatee.vaccinated, "vaccinated")) {
         throw new AppError({
@@ -76,7 +75,7 @@ const handler = catchApiWrapper(async (req, res) => {
   const client = await connectClient();
 
   const checkExistPayload = {
-    retreatId: retreatId,
+    retreatId,
     $or: [
       { "mainRetreatee.email": mainRetreatee.email },
       { "mainRetreatee.phone": mainRetreatee.phone },
@@ -103,11 +102,13 @@ const handler = catchApiWrapper(async (req, res) => {
     });
   }
 
+  const { baseId, referenceId } = createReferenceId(mainRetreatee.email);
   const result = await insertOneToCollection(
     client,
     process.env.MONGO_DBNAME,
     "bookings",
     {
+      _id: baseId,
       createdOn: now,
       updatedOn: now,
       retreatId,
@@ -115,6 +116,7 @@ const handler = catchApiWrapper(async (req, res) => {
       additionalRetreatees,
       message,
       status: "Registered",
+      referenceId,
     }
   );
 
@@ -123,7 +125,10 @@ const handler = catchApiWrapper(async (req, res) => {
     clientMessage: `We have received your interest to join our retreat, ${mainRetreatee.firstName} ${mainRetreatee.lastName}. Do keep a lookout for a confirmation email and a personalized follow up whatsapp message for more details.`,
     status: 201,
     className: "notification--success",
-    insertedId: result.insertedId,
+    insertedId: baseId,
+    referenceId,
+    mainRetreatee,
+    additionalRetreatees,
   });
   client.close();
 
