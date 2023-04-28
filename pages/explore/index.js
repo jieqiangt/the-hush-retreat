@@ -36,6 +36,12 @@ export async function getStaticProps() {
       retreatId: "sweat-suurv",
     },
     {
+      title: "Accenture All Access Day x R1OT ~ Mar 2023",
+      content: ["SOME DESCRIPTION!"],
+      pathDir: ["public", "img", "all-access-day"],
+      retreatId: "accenture-all-access",
+    },
+    {
       title: "Release & Renew ~ Jan 2023",
       content: [
         "Immerse yourself in a full-day retreat to release the stories and veils of the past, through somatic practices of stillness and movement, purified with a fire ceremony. As we let go of the old year and versions of ourselves, we step through the portal into new beginnings, getting clear on what truly matters, on who we want to be, and how we serve. We birth ourselves to ourselves, through a powerful embodied intention-setting ritual. Somatic practices include breathwork, embodied dance-movement, expressive art, conscious dreaming, journaling and conscious conversations.",
@@ -50,7 +56,7 @@ export async function getStaticProps() {
       ],
       pathDir: ["public", "img", "here-and-now"],
       retreatId: "here-and-now",
-    }
+    },
   ];
 
   const retreatsWithImg = retreats.map((item) => {
