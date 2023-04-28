@@ -17,6 +17,7 @@ export default function createEmailTemplate(section, params = {}) {
     firstName,
     lastName,
     message,
+    subject,
   } = params;
 
   const textColor = "#8d2517";
@@ -26,23 +27,26 @@ export default function createEmailTemplate(section, params = {}) {
 
   const headerStyle = {
     display: "block",
-    "margin-block-start": "0",
-    "margin-block-end": "0",
+    "margin-block-start": "0em",
+    "margin-block-end": "0em",
     color: headerColor,
     "font-size": headerFontSize,
     "line-height": "1.2",
     "text-decoration": "underline",
-    "font-weight": "400",
+    "font-weight": "500",
+    margin: "0em",
     "margin-bottom": "0.2em",
   };
 
   const textStyle = {
     display: "block",
-    "margin-block-start": "0",
-    "margin-block-end": "0",
+    "margin-block-start": "0em",
+    "margin-block-end": "0em",
     color: textColor,
     "font-size": textFontSize,
     "line-height": "1.2",
+    margin: "0em",
+    padding: "0em",
   };
 
   const divStyle = {
@@ -119,6 +123,7 @@ export default function createEmailTemplate(section, params = {}) {
           firstName={firstName}
           lastName={lastName}
           message={message}
+          subject={subject}
           textStyle={textStyle}
           divStyle={divStyle}
           ulStyle={ulStyle}

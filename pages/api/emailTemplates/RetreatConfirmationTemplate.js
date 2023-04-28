@@ -33,14 +33,16 @@ export default function RetreatConfirmationTemplate(props) {
           <li style={liStyle}>{`Email: ${mainRetreatee.email}`}</li>
           <li style={liStyle}>{`Phone: ${mainRetreatee.phone}`}</li>
           {mainRetreatee.size ? (
-            <li style={liStyle}>{`Size: ${mainRetreatee.size}`}</li>
+            <li
+              style={liStyle}
+            >{`Size: ${mainRetreatee.size.toUpperCase()}`}</li>
           ) : (
             ""
           )}
           {mainRetreatee.bikiniStyle ? (
             <li
               style={liStyle}
-            >{`Bikini Style: ${mainRetreatee.bikiniStyle}`}</li>
+            >{`Bikini Style: ${mainRetreatee.bikiniStyle.toUpperCase()}`}</li>
           ) : (
             ""
           )}
