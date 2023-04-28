@@ -93,7 +93,14 @@ export default function SweatXOlliePage() {
 
   const modalTitle = "SWEAT Beach Pop Up x Ollie";
   const modalCaption = "Event Details";
-  const retreatId = "64361076b18c10ff91fcaf2c";
+  const retreat = {
+    _id: "64361076b18c10ff91fcaf2c",
+    name: "Sweat x Ollie",
+    date: "29th Apr 2023",
+    location: "Sentosa",
+    price: "35",
+    desc: "Some Description",
+  };
 
   const modal = (
     <NewRetreatBookingModal
@@ -102,7 +109,7 @@ export default function SweatXOlliePage() {
       modalTitle={modalTitle}
       modalCaption={modalCaption}
       retreatDetails={retreatDetails}
-      retreatId={retreatId}
+      retreat={retreat}
     />
   );
 

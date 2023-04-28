@@ -22,6 +22,7 @@ export default function BookingForm(props) {
   const router = useRouter();
   const notificationCtx = useContext(NotificationContext);
   const { baseClass, classes, retreat } = props;
+  const { selectOptions } = retreat;
   const [allRetreateeDetails, setAllRetreateeDetails] = useState({});
   const [formValid, setFormValid] = useState(false);
   const [retreateeFields, setRetreateeFields] = useState([]);
@@ -42,7 +43,7 @@ export default function BookingForm(props) {
         <NewRetreateeFields
           classes={classes}
           baseClass={baseClass}
-          selectOptions={retreat.selectOptions}
+          selectOptions={selectOptions}
           onValidated={getRetreateeDetailsHandler}
           retreateeIdx={uuidv4()}
           key={uuidv4()}
@@ -121,7 +122,7 @@ export default function BookingForm(props) {
         method: "POST",
         body: {
           retreat,
-          bookingId: successNotification.referenceId,
+          referenceId: successNotification.referenceId,
           insertedId: successNotification.insertedId,
           mainRetreatee: successNotification.mainRetreatee,
           additionalRetreatees: successNotification.additionalRetreatees,
@@ -142,7 +143,7 @@ export default function BookingForm(props) {
           baseClass={baseClass}
           onValidated={getRetreateeDetailsHandler}
           retreateeIdx={"main"}
-          selectOptions={retreat.selectOptions}
+          selectOptions={selectOptions}
         />
         <div className={classes[`${baseClass}--form--title--box`]}>
           <span className={classes[`${baseClass}--form--title`]}>

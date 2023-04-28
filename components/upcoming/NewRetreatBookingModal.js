@@ -32,12 +32,7 @@ export default function NewRetreatBookingModal(props) {
     <section className={classes[`${baseClass}--aside`]}>
       <h3 className={classes[`${baseClass}--aside--title`]}>{modalTitle}</h3>
       {modalInfo}
-      <BookingForm
-        baseClass={baseClass}
-        classes={classes}
-        retreat={retreat}
-        selectOptions={retreat.selectOptions}
-      />
+      <BookingForm baseClass={baseClass} classes={classes} retreat={retreat} />
     </section>
   );
 
