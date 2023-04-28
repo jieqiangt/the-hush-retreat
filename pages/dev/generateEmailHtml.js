@@ -1,9 +1,9 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import LinkButton from "../../components/ui/LinkButton";
 import { callApi } from "../../utils/apiUtils";
 import createEmailTemplate from "../../utils/createEmailTemplate";
 
-export default function TestPage() {
+export default function generateEmailHtmlPage() {
   const generateHtml = async () => {
     const referenceId = "referenceId";
 
