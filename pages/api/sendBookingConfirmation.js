@@ -1,17 +1,44 @@
 import { sesToUser, snsToHushRetreat } from "../../utils/awsUtils";
+import createEmailTemplate from "../../utils/createEmailTemplate";
 import { catchApiWrapper } from "../../utils/errorUtils";
 import { connectClient, updateOneFromCollection } from "../../utils/mongoUtils";
-import { ObjectId } from "mongodb";
 
 const allowedMethods = ["POST"];
 
 const handler = catchApiWrapper(async (req, res) => {
-  const params = req.body;
-  await snsToHushRetreat(JSON.stringify(params));
-  await sesToUser(params);
+  const data = req.body;
+  const {
+    retreat,
+    bookingId,
+    insertedId,
+    mainRetreatee,
+    additionalRetreatees,
+  } = data;
+
+  await snsToHushRetreat(JSON.stringify(data), "receiveBooking");
+
+  const mainSection = createEmailTemplate("retreatConfirmation", {
+    mainRetreatee,
+    retreat,
+    bookingId,
+  });
+  const additionalRetreateesSection = createEmailTemplate(
+    "additionalRetreatees",
+    { additionalRetreatees }
+  );
+  const paymentDetails = createEmailTemplate("paymentDetails", {
+    price: retreat.price,
+    bookingId,
+  });
+  const signatureSection = createEmailTemplate("signature");
+
+  const subject = `Booking Acknowledgement - ${retreat.name }`;
+  const htmlBody = `${mainSection}${additionalRetreateesSection}${paymentDetails}${signatureSection}`;
+
+  await sesToUser(mainRetreatee.email, htmlBody, subject);
 
   const client = await connectClient();
-  const filter = { _id: ObjectId(req.body.insertedId) };
+  const filter = { _id: insertedId };
   const update = { status: "bookingConfirmationSent" };
 
   const updateResult = await updateOneFromCollection(
@@ -26,7 +53,7 @@ const handler = catchApiWrapper(async (req, res) => {
     //send to logs that modification failed. Not related to user.
   }
 
-  res.status(201).json({});
+  res.status(201).json();
 }, allowedMethods);
 
 export default handler;
