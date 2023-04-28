@@ -13,8 +13,8 @@ export default function Testimonials(props) {
     let testimonialsArr = [
       {
         quote:
-          "I very much enjoyed the Sunrise Yoga & Meditation session and learnt valuable techniques on how to look inward, reflect and bring forward positive energy.",
-        participantName: "Alex B.",
+          "What an amazing and relaxing experience with Hush Retreats! It was my first time to attend a meditation retreat & the Hush team exceeded my expectations. The organizers were on point at every aspect of the retreat from the moment you leave your home (with a free limo ride), attention to every small detail (personalized letters and gifts) to the choice of yoga & meditation teachers making your stay truly a weekend to fully disconnect & reflect. Overall, Hush Retreats is highly recommended for an all-inclusive retreat.",
+        participantName: "Lawrence A.",
         href: "/explore#here-and-now",
         retreatName: "Here & Now",
         retreatDate: "Oct 2021",
@@ -22,7 +22,7 @@ export default function Testimonials(props) {
       },
       {
         quote:
-          "It was luxurious, personalised and intimate. I learnt so many ways I can practice mindfulness and meditation. It was an experience that truly grounded me.",
+          "I attended my first ever retreat with Hush Retreats and I think it's gonna be hard to ever beat this experience. It was luxurious, very well thought out, personalized & intimate. The hosts were so amazing in making us feel comfortable & so many new friends unfolded. Thankful and grateful for this experience.",
         participantName: "Louisa Y.",
         href: "/explore#here-and-now",
         retreatName: "Here & Now",
@@ -30,12 +30,21 @@ export default function Testimonials(props) {
         active: false,
       },
       {
-        quote: "It is definitely a 'must-go' at least once in a lifetime",
-        participantName: "Eugene Y.",
-        href: "/explore",
-        href: "/explore#here-and-now",
-        retreatName: "Here & Now",
-        retreatDate: "Nov 2022",
+        quote:
+          "The surf-HIIT event was well orgnaized. There was ample time for us to get ready and get changed before the workout started. Mandi's workout was intense but it was a good session! There were juices proivded by mougou & it was very refreshing, especially after an intense workout! Overall, I enjoyed myself!",
+        participantName: "Angelica",
+        href: "/explore#sweat-suurv",
+        retreatName: "SWEAT x Suurv",
+        retreatDate: "Mar 2023",
+        active: false,
+      },
+      {
+        quote:
+          "I love that it is an outdoor workout so you get in touch with nature, because most of the time we work out in the gym and don’t get in touch with the sunlight. Especially with a group of females, it is all feminine energy and REALLY EMPOWERING!!!",
+        participantName: "Joyce T.",
+        href: "/explore#sweat-suurv",
+        retreatName: "SWEAT x Suurv",
+        retreatDate: "Mar 2023",
         active: false,
       },
     ];
@@ -80,7 +89,7 @@ export default function Testimonials(props) {
         return (activeItem + 1) % testimonialItems.length;
       });
       setIntervalId(() => interval);
-    }, 8000);
+    }, 18000);
 
     return () => {
       clearInterval(interval);
