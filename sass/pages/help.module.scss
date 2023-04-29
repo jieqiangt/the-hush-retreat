@@ -14,27 +14,31 @@
 .contact-us {
   @include description--section(35vw);
   position: relative;
-  height: 120vh;
+  height: 80vw;
+
+  @include media-queries(xl-screen) {
+    height: 85vw;
+  }
+
+  @include media-queries(lg-screen) {
+    height: 90vw;
+  }
 
   @include media-queries(laptop-lg) {
-    height: 100vh;
+    height: 88vw;
   }
 
-  @include media-queries(laptop) {
-    height: 90vh;
+  @include media-queries(tab-lg-land) {
+    height: 100vw;
   }
 
-  @include media-queries(laptop-sm) {
-    height: 80vh;
-  }
+  // @include media-queries(tab-land-short) {
+  //   height: 125vh;
+  // }
 
-  @include media-queries(tab-land-short) {
-    height: 125vh;
-  }
-
-  @include media-queries(tab-xl-pot) {
-    height: 65vh;
-  }   
+  // @include media-queries(tab-xl-pot) {
+  //   height: 65vh;
+  // }
 
   @include media-queries(tab-land) {
     display: flex;
@@ -80,12 +84,16 @@
     margin: 10rem -2rem 10rem 14rem;
     box-shadow: 2px 0px 15px 0px rgba($col-black-primary, 0.8);
 
-    @include media-queries(laptop-sm) {
+    @include media-queries(laptop-lg) {
       margin: 10rem -2rem 10rem 8rem;
     }
 
-    @include media-queries(tab-lg-land) {
-      margin: 12rem -2rem 12rem 6rem;
+    @include media-queries(laptop) {
+      margin: 10rem -2rem 10rem 6rem;
+    }
+
+    @include media-queries(laptop-sm) {
+      margin: 4rem -2rem 4rem 4rem;
     }
 
     @include media-queries(tab-land) {
@@ -97,11 +105,7 @@
   &--aside {
     &--box {
       background-color: $col-main-primary;
-      padding: 5rem 13rem 5rem 8rem;
-
-      @include media-queries(tab-lg-land) {
-        padding: 4rem 8rem;
-      }
+      padding: 5rem 5rem 5rem 8rem;
 
       @include media-queries(tab-land) {
         padding: 10rem 8rem;
@@ -239,27 +243,31 @@
   &--title {
     @include section--title($col-main-primary, $letter-spacing-xs);
     margin-bottom: 4.8rem;
+
+    @include media-queries(tab-sm-land) {
+      font-size: $font-size-header-lg;
+    }
   }
 
   &--accordion {
     @include accordion;
-    width: 85%;
+    width: 105%;
     padding: 0rem 50rem;
 
-    @include media-queries(xxl-screen) {
-      width: 95%;
-    }
-
     @include media-queries(xl-screen) {
-      width: 105%;
-    }
-
-    @include media-queries(lg-screen) {
       width: 110%;
     }
 
-    @include media-queries(tab-lg-land) {
+    @include media-queries(lg-screen) {
+      width: 120%;
+    }
+
+    @include media-queries(laptop-sm) {
       width: 130%;
+    }
+
+    @include media-queries(tab-lg-land) {
+      width: 145%;
     }
 
     @include media-queries(tab-land) {
@@ -267,12 +275,12 @@
       padding: 0rem 20rem;
     }
 
-    @include media-queries(phone-lg) {
-      padding: 0rem 10rem;
+    @include media-queries(phone-xl) {
+      padding: 0rem 12rem;
     }
 
-    @include media-queries(phone) {
-      padding: 0rem 8rem;
+    @include media-queries(phone-lg) {
+      padding: 0rem 4rem;
     }
   }
 
@@ -281,7 +289,6 @@
     grid-template-columns: calc((100fr - $grid-faq-item-fr) / 2) $grid-faq-item-fr calc(
         (100fr - $grid-faq-item-fr) / 2
       );
-
 
     &--box {
       border-bottom: solid 0.2rem $col-accent-tint-1;
@@ -313,6 +320,11 @@
       font-weight: $font-weight-xl;
       color: $col-main-primary;
       @include font-header;
+
+      @include media-queries(phone-lg) {
+        font-weight: $font-weight-lg;
+        font-size: calc($font-size-header-sm - 0.2rem);
+      }
     }
 
     &--icon {
@@ -340,7 +352,6 @@
       margin: 0.8rem 0rem;
       transform: translateY(-1rem);
       transition: all 0.4s ease-out;
-
     }
 
     &--active {
