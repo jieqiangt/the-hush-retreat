@@ -12,6 +12,8 @@ export default function ImgComposition(props) {
         classes[`${baseClass}--img--composition--imgbox--${idx}`]
       }`}
       imgClassName={`${classes[`${baseClass}--img--composition--img`]}`}
+      sizes="(max-width: 46.875em) 40vw,
+      30vw"
     />
   ));
 
