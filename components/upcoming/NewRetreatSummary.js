@@ -9,9 +9,7 @@ export default function NewRetreatSummary(props) {
     <section className={classes[`${baseClass}`]}>
       <div className={classes[`${baseClass}--header--grid`]}>
         <h2 className={classes[`${baseClass}--header`]}>{summary.header}</h2>
-        <h2 className={classes[`${baseClass}--title`]}>
-          {summary.title}
-        </h2>
+        <h2 className={classes[`${baseClass}--title`]}>{summary.title}</h2>
         <h3 className={classes[`${baseClass}--caption`]}>{summary.caption}</h3>
       </div>
       <div className={classes[`${baseClass}--img--grid`]}>
@@ -35,47 +33,57 @@ export default function NewRetreatSummary(props) {
       <div className={`${classes[`${baseClass}--desc--grid`]} hidden`}>
         <p className={classes[`${baseClass}--desc`]}>{summary.desc}</p>
         <div className={classes[`${baseClass}--icon--group`]}>
-          <LinkButton
-            btnClass={classes[`${baseClass}--btn`]}
-            href={summary.btnHref}
+          <div className={classes[`${baseClass}--btn--outer`]}>
+            <LinkButton
+              btnClass={classes[`${baseClass}--btn`]}
+              href={summary.btnHref}
+            >
+              {summary.btnText}
+            </LinkButton>
+          </div>
+          <div
+            className={`${classes[`${baseClass}--icon--outer`]} ${
+              classes[`${baseClass}--icon--date`]
+            }`}
           >
-            {summary.btnText}
-          </LinkButton>
-          <div className={classes[`${baseClass}--icon--outer`]}>
             <Icon
               iconClass={classes[`${baseClass}--icon`]}
               iconName="icon-calendar"
             />
-            <time className={classes[`${baseClass}--date`]}>
-              {summary.date}
-            </time>
+            <time>{summary.date}</time>
           </div>
-          <div className={classes[`${baseClass}--icon--outer`]}>
+          <div
+            className={`${classes[`${baseClass}--icon--outer`]} ${
+              classes[`${baseClass}--icon--time`]
+            }`}
+          >
             <Icon
               iconClass={classes[`${baseClass}--icon`]}
               iconName="icon-clock"
             />
-            <time className={classes[`${baseClass}--time`]}>
-              {summary.time}
-            </time>
+            <time>{summary.time}</time>
           </div>
-          <div className={classes[`${baseClass}--icon--outer`]}>
+          <div
+            className={`${classes[`${baseClass}--icon--outer`]} ${
+              classes[`${baseClass}--icon--location`]
+            }`}
+          >
             <Icon
               iconClass={classes[`${baseClass}--icon`]}
               iconName="icon-location-pin"
             />
-            <span className={classes[`${baseClass}--location`]}>
-              {summary.location}
-            </span>
+            <span>{summary.location}</span>
           </div>
-          <div className={classes[`${baseClass}--icon--outer`]}>
+          <div
+            className={`${classes[`${baseClass}--icon--outer`]} ${
+              classes[`${baseClass}--icon--price`]
+            }`}
+          >
             <Icon
               iconClass={classes[`${baseClass}--icon`]}
               iconName="icon-coin-dollar"
             />
-            <span className={classes[`${baseClass}--price`]}>
-              {summary.price}
-            </span>
+            <span>{`$${summary.price} per pax`}</span>
           </div>
         </div>
       </div>
