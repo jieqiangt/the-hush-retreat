@@ -16,16 +16,6 @@ export default function BaliGlowUpPage() {
   const guideTitle = "GUIDE NAME";
   const guideText = ["CAPTION", "DESCRIPTION PARAGRAPH"];
 
-  const retreatDetails = {
-    title: "OUR LATEST EVENT TITLE",
-    caption: "The Glow Up: Bali Edition",
-    date: "13 May 2023, Saturday",
-    time: "8am - 10am",
-    price: "$599 per pax",
-    location: "Bali",
-    btnText: "Register Here",
-  };
-
   const scheduleList = [
     {
       timeRange: "Day 1",
@@ -59,7 +49,34 @@ export default function BaliGlowUpPage() {
 
   const modalTitle = "The Glow Up: Bali Edition";
   const modalCaption = "Event Details";
-  const retreatId = "64360f8eb18c10ff91fcaf2a";
+  const retreat = {
+    _id: "64360f8eb18c10ff91fcaf2a",
+    name: "The Glow Up: Bali Edition",
+    title: "The Glow Up: Bali Edition",
+    caption: "Some event caption",
+    btnText: "Register Here",
+    date: "13 May 2023, Saturday",
+    time: "8am - 10am",
+    price: "599",
+    location: "Bali",
+    promotion: "",
+    desc: "Some Description",
+    selectOptions: {
+      size: [
+        { value: "xs", name: "XS" },
+        { value: "s", name: "S" },
+        { value: "m", name: "M" },
+        { value: "l", name: "L" },
+        { value: "xl", name: "XL" },
+      ],
+      "bikini-style": [
+        { value: "a", name: "A" },
+        { value: "b", name: "B" },
+        { value: "c", name: "C" },
+        { value: "d", name: "D" },
+      ],
+    },
+  };
 
   const modal = (
     <NewRetreatBookingModal
@@ -67,8 +84,7 @@ export default function BaliGlowUpPage() {
       baseClass={modalBaseClass}
       modalTitle={modalTitle}
       modalCaption={modalCaption}
-      retreatDetails={retreatDetails}
-      retreatsId={retreatId}
+      retreat={retreat}
     />
   );
 
@@ -82,7 +98,7 @@ export default function BaliGlowUpPage() {
         <NewRetreatBanner
           classes={classes}
           baseClass="retreat--banner"
-          retreatDetails={retreatDetails}
+          retreat={retreat}
         />
         <NewRetreatSection
           classes={classes}
