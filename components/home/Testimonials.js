@@ -13,7 +13,7 @@ export default function Testimonials(props) {
     let testimonialsArr = [
       {
         quote:
-          "What an amazing and relaxing experience with Hush Retreats! It was my first time to attend a meditation retreat & the Hush team exceeded my expectations. The organizers were on point at every aspect of the retreat from the moment you leave your home (with a free limo ride), attention to every small detail (personalized letters and gifts) to the choice of yoga & meditation teachers making your stay truly a weekend to fully disconnect & reflect. Overall, Hush Retreats is highly recommended for an all-inclusive retreat.",
+          "What an amazing and relaxing experience with Hush Retreats! It was my first time to attend a meditation retreat & the Hush team exceeded my expectations. The organizers were on point at every aspect of the retreat from the moment you leave your home (with a free limo ride), attention to every small detail (personalized letters and gifts) to the choice of yoga & meditation teachers making your stay truly a weekend to fully disconnect & reflect.",
         participantName: "Lawrence A.",
         href: "/explore#here-and-now",
         retreatName: "Here & Now",

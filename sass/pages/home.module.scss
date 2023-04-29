@@ -20,58 +20,59 @@
     (bottom 25% left 90%)
   );
 
-  @include media-queries(laptop-sm) {
-    background-position: bottom 25% left 50%;
-  }
+  // @include media-queries(laptop-sm) {
+  //   background-position: bottom 25% left 50%;
+  // }
 
-  @include media-queries(tab-lg-land) {
-    background-position: bottom 25% left 40%;
-  }
+  // @include media-queries(tab-lg-land) {
+  //   background-position: bottom 25% left 40%;
+  // }
 
-  @include media-queries(tab-land) {
-    background-position: bottom 25% left 30%;
-    height: 85vh;
-  }
+  // @include media-queries(tab-land) {
+  //   background-position: bottom 25% left 30%;
+  //   height: 85vh;
+  // }
 
-  @include media-queries(phone-xl) {
-    height: 75vh;
-  }
+  // @include media-queries(phone-xl) {
+  //   height: 75vh;
+  // }
 
-  @include media-queries(phone-lg) {
-    height: 70vh;
-  }
+  // @include media-queries(phone-lg) {
+  //   height: 70vh;
+  // }
 
-  @include media-queries(phone-lg) {
-    height: 65vh;
-  }
+  // @include media-queries(phone-lg) {
+  //   height: 65vh;
+  // }
 
   &--box {
     transition-delay: 0.6s;
     width: 45%;
     padding: 4rem;
 
-    @include media-queries(tab-lg-land) {
-      padding-right: 40rem;
+    @include media-queries(lg-screen) {
+      width: 50%;
     }
 
-    @include media-queries(tab-land) {
-      padding-right: 30rem;
+    @include media-queries(laptop-lg) {
+      width: 55%;
+    }
+
+    @include media-queries(laptop) {
+      width: 60%;
     }
 
     @include media-queries(tab-sm-land) {
-      padding-right: 25rem;
-    }
-
-    @include media-queries(phone-xl) {
-      padding-right: 20rem;
+      width: 70%;
     }
 
     @include media-queries(phone-lg) {
-      padding-right: 12rem;
+      width: 88%;
     }
 
     @include media-queries(phone) {
-      padding-right: 5rem;
+      width: 100%;
+      padding: 6rem;
     }
   }
 
@@ -359,23 +360,39 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  height: 42vw;
+  height: 60vw;
 
-  @include media-queries(tab-land) {
-    height: 50vw;
+  @include media-queries(tab-lg-land) {
+    height: 65vw;
+  }
+
+  @include media-queries(tab-sm-land) {
+    height: 75vw;
   }
 
   @include media-queries(phone-xl) {
-    height: 60vw;
+    height: 85vw;
   }
 
   @include media-queries(phone-lg) {
-    height: 68vw;
+    height: 100vw;
   }
 
   @include media-queries(phone) {
-    height: 80vw;
+    height: 110vw;
   }
+
+  // @include media-queries(phone-xl) {
+  //   height: 60vw;
+  // }
+
+  // @include media-queries(phone-lg) {
+  //   height: 68vw;
+  // }
+
+  // @include media-queries(phone) {
+  //   height: 80vw;
+  // }
 
   &--icon {
     @include icon-square($size-icon-square-md, $col-accent-primary);
@@ -393,11 +410,15 @@
     position: absolute;
     top: $pos-testimonials-top-offset + $pos-testimonials-title-add-offset;
     z-index: $z-index-top;
+
+    @include media-queries(tab-land) {
+      font-size: $font-size-header-md;
+    }
   }
 
   &--carousel {
     @include carousel(
-      (5rem 20rem),
+      (5rem 6rem),
       rgba($col-main-primary, 0.8),
       $col-accent-primary,
       $col-main-primary,
@@ -406,42 +427,40 @@
       $col-accent-shade-1
     );
 
-    @include media-queries(laptop-sm) {
-      padding: 5rem 8rem;
-    }
-
     @include media-queries(tab-land) {
-      padding: 5rem 5rem;
+      padding: 5rem 0rem;
     }
 
-    @include media-queries(tab-sm-land) {
-      padding: 5rem 3rem;
+    &--nav {
+      @include media-queries(tab-land) {
+        @include make-invisible;
+      }
     }
 
     &--btn {
-      @include media-queries(tab-sm-land) {
+      @include media-queries(tab-land) {
         &--left {
-          left: 2rem;
+          left: 4rem;
           width: 3.6rem;
           height: 3.6rem;
         }
 
         &--right {
-          right: 2rem;
+          right: 4rem;
           width: 3.6rem;
           height: 3.6rem;
         }
       }
 
-      @include media-queries(phone) {
+      @include media-queries(phone-lg) {
         &--left {
-          left: 1rem;
+          left: 3rem;
           width: 3rem;
           height: 3rem;
         }
 
         &--right {
-          right: 1rem;
+          right: 3rem;
           width: 3rem;
           height: 3rem;
         }
@@ -455,22 +474,26 @@
     flex-direction: column;
     justify-content: center;
     width: 75%;
-    height: 55%;
-    padding: 0rem 10rem;
+    height: 68%;
+    padding: 0rem 8rem;
     border-left: $border-accent-sm;
     border-right: $border-accent-sm;
     background-color: transparent;
 
-    @include media-queries(laptop-sm) {
-      padding: 0rem 8rem;
-    }
-
     @include media-queries(tab-land) {
-      padding: 0rem 6rem;
+      width: 78%;
+      height: 70%;
     }
 
-    @include media-queries(tab-sm-land) {
+    @include media-queries(phone-lg) {
       width: 80%;
+      height: 68%;
+      padding: 0rem 4rem;
+    }
+
+    @include media-queries(phone) {
+      width: 80%;
+      height: 75%;
       padding: 0rem 4rem;
     }
 
