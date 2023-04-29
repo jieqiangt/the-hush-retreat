@@ -13,12 +13,12 @@ export default function TheWayOfLotus(props) {
         withstand thousands of years without water, and is a symbol of the
         fascinating will to live. The lotus becomes a guiding compass.
       </p>
-      <p>
+      {/* <p>
         Living in a fast-paced society, sometimes we get swept away by the daily
         happenings in life and neglect our physical and mental wellbeing.
         Mindfulness practices helps us slow down while navigating a journey
         inwards to a deeper understanding of our self and purpose.
-      </p>
+      </p> */}
       <p>
         Experience the power of mindfulness. Be empowered to step away from the
         hustle of everyday life and practice to be Here. Whether you are seeking
@@ -29,7 +29,7 @@ export default function TheWayOfLotus(props) {
   );
 
   const img = <div className={`${classes[`${baseClass}--img`]} hidden`} />;
-  
+
   return (
     <DescriptionSection
       classes={classes}
