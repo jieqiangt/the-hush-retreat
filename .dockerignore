@@ -4,5 +4,9 @@ node_modules
 notes.md
 README.md
 docker-compose*.yml
+Dockerfile*
 .eslintrc.json
-
+./page/dev
+.dockerignore
+emailTest
+.next
