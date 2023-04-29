@@ -24,8 +24,11 @@ const handler = catchApiWrapper(async (req, res) => {
         validateField(retreatee.firstName, "firstName") &&
         validateField(retreatee.lastName, "lastName") &&
         validateField(retreatee.email, "email") &&
-        validateField(retreatee.size, "size") &&
-        validateField(retreatee.bikiniStyle, "bikiniStyle");
+        retreatee.size
+          ? validateField(retreatee.size, "size")
+          : true && retreatee.bikiniStyle
+          ? validateField(retreatee.bikiniStyle, "bikiniStyle")
+          : true;
 
       if (!validateField(retreatee.vaccinated, "vaccinated")) {
         throw new AppError({
