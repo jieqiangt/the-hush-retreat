@@ -77,7 +77,6 @@ export default function NewRetreateeFields(props) {
       inputParams[field] = event.target.checked
         ? event.target.checked
         : event.target.value;
-
       dispatchNewRetreatee(inputParams);
     };
   }

@@ -30,9 +30,15 @@ export default function AdditionalRetreateeTemplate(props) {
             <ul style={ulStyle}>
               <li style={liStyle}>{`Name: ${firstName} ${lastName}`}</li>
               <li style={liStyle}>{`Email: ${email}`}</li>
-              {size ? <li style={liStyle}>{`Size: ${size}`}</li> : ""}
+              {size ? (
+                <li style={liStyle}>{`Size: ${size.toUpperCase()}`}</li>
+              ) : (
+                ""
+              )}
               {bikiniStyle ? (
-                <li style={liStyle}>{`Bikini Style: ${bikiniStyle}`}</li>
+                <li
+                  style={liStyle}
+                >{`Bikini Style: ${bikiniStyle.toUpperCase()}`}</li>
               ) : (
                 ""
               )}
