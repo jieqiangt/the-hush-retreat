@@ -104,34 +104,9 @@
   margin-bottom: 10rem;
 
   &--0 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 8rem;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 0.2rem;
-      width: 98%;
-      top: -10rem;
-      background-color: rgba($col-accent-tint-2, 0.5);
-      z-index: $z-index-modal;
-    }
-
-    &--title {
-      @include section--title($col-main-primary, $letter-spacing-xs);
-      margin-bottom: 3rem;
-      text-transform: none;
-    }
+    @include past-retreat;
 
     &--content {
-      padding: 0rem 20rem;
-      margin-top: 4rem;
-      margin-bottom: 8rem;
-
       @include media-queries(tab-lg-land) {
         padding: 0rem 24rem;
       }
@@ -157,9 +132,6 @@
     }
 
     &--gallery {
-      @include gallery(10, 10);
-      margin-bottom: 18rem;
-
       @include media-queries(tab-lg-land) {
         padding-left: 4rem;
         padding-right: 4rem;
@@ -252,34 +224,9 @@
   }
 
   &--1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 8rem;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 0.2rem;
-      width: 98%;
-      top: -10rem;
-      background-color: rgba($col-accent-tint-2, 0.5);
-      z-index: $z-index-modal;
-    }
-
-    &--title {
-      @include section--title($col-main-primary, $letter-spacing-xs);
-      margin-bottom: 3rem;
-      text-transform: none;
-    }
+    @include past-retreat;
 
     &--content {
-      padding: 0rem 20rem;
-      margin-top: 4rem;
-      margin-bottom: 8rem;
-
       @include media-queries(tab-lg-land) {
         padding: 0rem 24rem;
       }
@@ -300,14 +247,11 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         margin-top: 0rem;
-        margin-bottom: 6rem;
+        margin-bottom: 2rem;
       }
     }
 
     &--gallery {
-      margin-bottom: 6rem;
-      @include gallery(10, 10);
-
       @include media-queries(tab-lg-land) {
         padding-left: 4rem;
         padding-right: 4rem;
@@ -400,34 +344,9 @@
   }
 
   &--2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 8rem;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 0.2rem;
-      width: 98%;
-      top: -10rem;
-      background-color: rgba($col-accent-tint-2, 0.5);
-      z-index: $z-index-modal;
-    }
-
-    &--title {
-      @include section--title($col-main-primary, $letter-spacing-xs);
-      margin-bottom: 3rem;
-      text-transform: none;
-    }
+    @include past-retreat;
 
     &--content {
-      padding: 0rem 20rem;
-      margin-top: 4rem;
-      margin-bottom: 8rem;
-
       @include media-queries(tab-lg-land) {
         padding: 0rem 24rem;
       }
@@ -448,14 +367,11 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         margin-top: 0rem;
-        margin-bottom: 6rem;
+        margin-bottom: 2rem;
       }
     }
 
     &--gallery {
-      margin-bottom: 6rem;
-      @include gallery(10, 10);
-
       @include media-queries(tab-lg-land) {
         padding-left: 4rem;
         padding-right: 4rem;
@@ -546,36 +462,11 @@
       }
     }
   }
-
+  
   &--3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 8rem;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 0.2rem;
-      width: 98%;
-      top: -10rem;
-      background-color: rgba($col-accent-tint-2, 0.5);
-      z-index: $z-index-modal;
-    }
-
-    &--title {
-      @include section--title($col-main-primary, $letter-spacing-xs);
-      margin-bottom: 3rem;
-      text-transform: none;
-    }
+    @include past-retreat;
 
     &--content {
-      padding: 0rem 20rem;
-      margin-top: 4rem;
-      margin-bottom: 8rem;
-
       @include media-queries(tab-lg-land) {
         padding: 0rem 24rem;
       }
@@ -601,9 +492,6 @@
     }
 
     &--gallery {
-      @include gallery(10, 10);
-      margin-bottom: 18rem;
-
       @include media-queries(tab-lg-land) {
         padding-left: 4rem;
         padding-right: 4rem;
