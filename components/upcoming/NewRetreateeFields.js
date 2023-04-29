@@ -40,6 +40,8 @@ export default function NewRetreateeFields(props) {
     bikiniStyle: newRetreateeState.bikiniStyle,
   };
 
+  const allStateNames = [...Object.keys(fields)];
+
   const formatFieldName = (name) => {
     const nameArr = name.split("-");
     const nameStart = nameArr.shift();
@@ -52,11 +54,20 @@ export default function NewRetreateeFields(props) {
     return fieldName;
   };
 
-  const allStateNames = [...Object.keys(fields)];
+  const allOptionalFields = ["size", "bikiniStyle"];
 
-  for (let key in selectOptions) {
-    const fieldName = !key.includes("-") ? key : formatFieldName(key);
-    delete allStateNames[fieldName];
+  const fieldsToRemove = selectOptions
+    ? allOptionalFields.filter(
+        (value) =>
+          !Object.keys(selectOptions)
+            .map((key) => (!key.includes("-") ? key : formatFieldName(key)))
+            .includes(value)
+      )
+    : allOptionalFields;
+
+  for (const fieldName in fieldsToRemove) {
+    const idx = allStateNames.indexOf(fieldName);
+    allStateNames.splice(idx, 1);
   }
 
   const stateNames = [
