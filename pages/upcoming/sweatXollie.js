@@ -93,6 +93,7 @@ export default function SweatXOlliePage() {
     title: "SWEAT BEACH SUURV HIIT SERIES",
     caption: "SWEAT x Ollie: Time to rise & grind!",
     emailDesc: "Some Description",
+    emailOtherInfo: "Some Other Info",
     btnText: "Register Here",
   };
 

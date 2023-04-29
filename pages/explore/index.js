@@ -37,7 +37,9 @@ export async function getStaticProps() {
     },
     {
       title: "Accenture All Access Day x R1OT ~ Mar 2023",
-      content: ["SOME DESCRIPTION!"],
+      content: [
+        "In March 2023, The Hush Retreat and R10T came together to create a truly thrilling teambuilding event for Accenture's staff! R10T's incredible trainers led an invigorating workout session that incorporated headsets and an immersive audio experience, taking things to the next level! The participants were beyond thrilled with this unconventional approach, feeling energized and ready to conquer the world. The event also included a refreshing meditation session and guided stretching exercises, giving everyone a chance to bond over their shared passion for wellness. This collaboration was a massive hit, emphasizing the importance of investing in employee wellness and creating a positive team culture.",
+      ],
       pathDir: ["public", "img", "all-access-day"],
       retreatId: "accenture-all-access",
     },

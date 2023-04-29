@@ -37,7 +37,7 @@ module.exports = {
             updatedOn: {
               bsonType: "date",
               description:
-                "updatedOn of iso date type is required. Must be greater than or equals to createdOn.",
+                "updatedOn of iso date type is required. Must be greater than or equwals to createdOn.",
             },
             name: {
               bsonType: "string",
