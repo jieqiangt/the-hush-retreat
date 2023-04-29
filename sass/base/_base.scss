@@ -21,16 +21,28 @@ html {
     font-size: 38%;
   }
 
-  @include media-queries(tab-lg-pot) {
+  @include media-queries(tab-land) {
     font-size: 35%;
   }
 
-  @include media-queries(phone-xl) {
+  @include media-queries(tab-sm-land) {
     font-size: 32%;
   }
 
   @include media-queries(phone-xl) {
     font-size: 30%;
+  }
+
+  @include media-queries(phone-xl) {
+    font-size: 30%;
+  }
+
+  @include media-queries(phone) {
+    font-size: 28%;
+  }
+
+  @include media-queries(phone) {
+    font-size: 25%;
   }
 }
 
