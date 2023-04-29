@@ -120,14 +120,17 @@
     gap: 15rem;
     @include font-header;
 
-    @include media-queries(tab-lg-land) {
+    @include media-queries(laptop-sm) {
       gap: 12rem;
+    }
+
+    @include media-queries(tab-lg-land) {
+      gap: 8rem;
     }
 
     @include media-queries(tab-land) {
       flex-direction: column;
       gap: 8rem;
-      font-size: $font-size-header-lg;
     }
 
     & li:nth-child(1) {
@@ -177,9 +180,11 @@
     fill: $col-main-primary;
 
     @include media-queries(tab-land) {
-      height: 12rem;
-      width: 20rem;
+      height: 18rem;
+      width: 28rem;
     }
+
+    
   }
 
   &--link {
@@ -191,6 +196,10 @@
     transition: color $ani-time-link ease-out;
     padding-bottom: 0.2rem;
     animation: moveInTop 0.8s ease-in;
+
+    @include media-queries(tab-land) {
+      font-size: $font-size-header-xl;
+    }
 
     &--active {
       border-bottom: $border-accent-sm;
