@@ -1,10 +1,10 @@
-import RetreatSummary from "../retreat/RetreatSummary";
+import PastRetreatSummary from "./PastRetreatSummary";
 
 export default function PastRetreats(props) {
   const { baseClass, classes, retreats } = props;
 
   const retreatItems = retreats.map((item, idx) => (
-    <RetreatSummary
+    <PastRetreatSummary
       key={idx}
       idx={idx}
       title={item.title}
@@ -12,7 +12,7 @@ export default function PastRetreats(props) {
       galleryDetails={item.galleryDetails}
       classes={classes}
       baseClass={baseClass}
-      retreatId={item.retreatId}
+      urlPath={item.urlPath}
     />
   ));
 

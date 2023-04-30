@@ -1,4 +1,4 @@
-import LinkButton from "../ui/LinkButton";
+import LinkButton from "./LinkButton";
 import ScheduleItem from "./ScheduleItem";
 
 export default function Schedule(props) {

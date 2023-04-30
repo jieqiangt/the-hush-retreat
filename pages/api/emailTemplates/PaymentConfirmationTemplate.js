@@ -22,7 +22,7 @@ export default function PaymentConfirmationTemplate(props) {
       <div style={divStyle}>
         <p
           style={textStyle}
-        >{`We look forward to hosting you, see you really soon! `}</p>
+        >{`We look forward to hosting you, see you really soon!`}</p>
         <p style={textStyle}>{`Have a great day ahead :)`}</p>
       </div>
     </Fragment>

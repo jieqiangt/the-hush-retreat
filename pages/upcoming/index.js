@@ -2,8 +2,8 @@ import Head from "next/head";
 import { Fragment } from "react";
 import Layout from "../../components/layout/Layout";
 import NewRetreatSummary from "../../components/upcoming/NewRetreatSummary";
-import UpcomingBanner from "../../components/upcoming/UpcomingBanner";
 import classes from "../../sass/pages/upcoming.module.scss";
+import Banner from "../../components/ui/Banner";
 
 export default function UpcomingPage() {
   const retreats = [
@@ -48,6 +48,15 @@ export default function UpcomingPage() {
       imgSrc: ["/img/upcoming-pg/accom-1.jpg", "/img/upcoming-pg/host-1.jpg"],
     },
   ];
+
+  const title = "Our Upcoming Retreats";
+  const caption = "Start your wellness journey with us today";
+  const bannerDetails = (
+    <div className={classes["banner--details"]}>
+      Find a retreat that suits your needs below
+    </div>
+  );
+
   return (
     <Fragment>
       <Head>
@@ -55,7 +64,13 @@ export default function UpcomingPage() {
         <meta name="description" content="New Retreats" />
       </Head>
       <Layout classes={classes} baseClass="upcoming">
-        <UpcomingBanner classes={classes} baseClass="banner" />
+        <Banner
+          classes={classes}
+          baseClass="banner"
+          title={title}
+          caption={caption}
+          bannerDetails={bannerDetails}
+        />
         {retreats.map((item, idx) => (
           <NewRetreatSummary
             key={idx}

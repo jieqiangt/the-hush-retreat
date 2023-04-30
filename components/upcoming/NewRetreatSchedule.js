@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import ModalContext from "../../store/modalContext";
-import Schedule from "../retreat/Schedule";
 import ZLayout from "../ui/ZLayout";
+import Schedule from "../ui/Schedule";
+
 
 export default function NewRetreatSchedule(props) {
   const { classes, baseClass, scheduleList, btnText } = props;

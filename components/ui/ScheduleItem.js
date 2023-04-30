@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Icon from "../ui/Icon";
+import Icon from "./Icon";
 
 export default function ScheduleItem(props) {
   const { classes, baseClass, numDots, idx, timeRange, iconName, title, desc } =

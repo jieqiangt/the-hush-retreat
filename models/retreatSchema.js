@@ -18,9 +18,11 @@ module.exports = {
             "date",
             "price",
             "location",
-            "title",
-            "caption",
-            "emailDesc",
+            "upcomingTitle",
+            "upcomingDesc",
+            "upcomingImgPath",
+            "upcomingUrlPath",
+            "exploreShown",
             "active",
           ],
           additionalProperties: false,
@@ -64,25 +66,56 @@ module.exports = {
               bsonType: "string",
               description: "promotion of string datatype is optional.",
             },
-            title: {
+            upcomingTitle: {
               bsonType: "string",
-              description: "title of string datatype is required.",
+              description: "upcomingTitle of string datatype is required.",
             },
-            caption: {
+            upcomingDesc: {
               bsonType: "string",
-              description: "caption of string datatype is required.",
+              description: "upcomingDesc of string datatype is required.",
+            },
+            upcomingImgPath: {
+              bsonType: "string",
+              description: "upcomingImgPath of string datatype is required.",
+            },
+            upcomingUrlPath: {
+              bsonType: "string",
+              description: "upcomingUrlPath of string datatype is required.",
             },
             emailDesc: {
               bsonType: "string",
-              description: "emailDesc of string datatype is required.",
+              description:
+                "emailDesc of string datatype is optional. Information about retreat after the words 'This will be'",
             },
-            emailOtherInfo: {
+            exploreTitle: {
               bsonType: "string",
-              description: "emailOtherInfo of string datatype is optional.",
+              description:
+                "exploreTitle of string datatype is optional. To be added after retreat is completed.",
+            },
+            exploreDesc: {
+              bsonType: "string",
+              description:
+                "exploreDesc of string datatype is optional. To be added after retreat is completed.",
+            },
+            exploreUrlPath: {
+              bsonType: "string",
+              description:
+                "exploreUrlPath of string datatype is optional. To be added after retreat is completed.",
+            },
+            exploreImgPath: {
+              bsonType: "string",
+              description:
+                "exploreImgPath of string datatype is optional. To be added after retreat is completed.",
+            },
+            exploreShown: {
+              bsonType: "bool",
+              description:
+                "exploreShown of boolean datatype is required. Indicates whether retreat is shown on explore page.",
             },
             active: {
               bsonType: "bool",
-              description: "active of boolean datatype is required.",
+              description:
+                "active of boolean datatype is required. Indicates whether it allows booking & shown on upcoming page.",
             },
           },
         },
