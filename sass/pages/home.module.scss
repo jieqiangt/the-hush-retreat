@@ -20,30 +20,30 @@
     (bottom 25% left 90%)
   );
 
-  // @include media-queries(laptop-sm) {
-  //   background-position: bottom 25% left 50%;
-  // }
+  @include media-queries(laptop-sm) {
+    background-position: bottom 25% left 50%;
+  }
 
-  // @include media-queries(tab-lg-land) {
-  //   background-position: bottom 25% left 40%;
-  // }
+  @include media-queries(tab-lg-land) {
+    background-position: bottom 25% left 40%;
+  }
 
-  // @include media-queries(tab-land) {
-  //   background-position: bottom 25% left 30%;
-  //   height: 85vh;
-  // }
+  @include media-queries(tab-land) {
+    background-position: bottom 25% left 30%;
+    height: 85vh;
+  }
 
-  // @include media-queries(phone-xl) {
-  //   height: 75vh;
-  // }
+  @include media-queries(phone-xl) {
+    height: 75vh;
+  }
 
-  // @include media-queries(phone-lg) {
-  //   height: 70vh;
-  // }
+  @include media-queries(phone-lg) {
+    height: 70vh;
+  }
 
-  // @include media-queries(phone-lg) {
-  //   height: 65vh;
-  // }
+  @include media-queries(phone-lg) {
+    height: 65vh;
+  }
 
   &--box {
     transition-delay: 0.6s;
@@ -360,7 +360,11 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  height: 60vw;
+  height: 50vw;
+
+  @include media-queries(tab-xl-land) {
+    height: 55vw;
+  }
 
   @include media-queries(tab-lg-land) {
     height: 65vw;
