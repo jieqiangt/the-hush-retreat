@@ -428,7 +428,7 @@
 
     &--composition {
       @include img-composition(
-        16.8vw,
+        16vw,
         -4rem,
         74rem,
         4rem,
@@ -441,7 +441,7 @@
 
       @include media-queries(xl-screen) {
         @include img-composition(
-          16.8vw,
+          16vw,
           -4rem,
           64rem,
           4rem,
@@ -455,7 +455,7 @@
 
       @include media-queries(lg-screen) {
         @include img-composition(
-          16.8vw,
+          16vw,
           -4rem,
           66rem,
           4rem,
@@ -469,7 +469,7 @@
 
       @include media-queries(tab-xl-land) {
         @include img-composition(
-          16.8vw,
+          16vw,
           -4rem,
           66rem,
           4rem,
