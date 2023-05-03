@@ -1,19 +1,29 @@
 import Image from "next/image";
 
 function ResponsiveImage(props) {
-  const { imgBoxClassName, imgClassName, alt, src, sizes } = props;
+  const { imgBoxClassName, imgClassName, alt, src, width, height, sizes } =
+    props;
 
-  return (
-    <figure className={`${imgBoxClassName} hidden`}>
-      <Image
-        src={src}
+  const image = sizes ? (
+    <Image
+      src={src}
+      alt={alt}
+      fill={true}
+      className={`${imgClassName} hidden`}
+      sizes={sizes}
+    />
+  ) : (
+    <picture>
+      <img
         alt={alt}
-        fill={true}
+        src={src}
+        width={width}
+        height={height}
         className={`${imgClassName} hidden`}
-        sizes={sizes}
       />
-    </figure>
+    </picture>
   );
+  return <figure className={`${imgBoxClassName} hidden`}>{image}</figure>;
 }
 
 export default ResponsiveImage;

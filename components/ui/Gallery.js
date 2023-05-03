@@ -1,14 +1,13 @@
-import GalleryItem from "./GalleryItem";
+import ResponsiveImage from "./ResponsiveImage";
 
 export default function Gallery(props) {
   const { classes, baseClass, galleryDetails } = props;
 
   const galleryItems = galleryDetails.map((item, idx) => (
-    <GalleryItem
+    <ResponsiveImage
       key={idx}
-      idx={idx}
-      baseClass={baseClass}
-      classes={classes}
+      imgBoxClassName={classes[`${baseClass}--gallery--item--${idx}`]}
+      imgClassName={classes[`${baseClass}--gallery--img`]}
       alt={item.alt}
       src={item.src}
       width={item.width}
