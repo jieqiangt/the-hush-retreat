@@ -1,11 +1,11 @@
 FROM node:18.13.0-alpine AS deps
 
 ENV NODE_ENV=production
-RUN apk add --no-cache libc6-compat autoconf automake libtool make tiff jpeg zlib zlib-dev pkgconf nasm file gcc musl-dev
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+RUN yarn install --production --frozen-lockfile
 
 FROM node:18.13.0-alpine AS builder
 
@@ -27,7 +27,7 @@ COPY sass ./sass
 COPY store ./store
 COPY utils ./utils
 
-RUN yarn build
+RUN yarn build:production
 
 FROM node:18.13.0-alpine AS runner
 
