@@ -27,7 +27,7 @@ COPY sass ./sass
 COPY store ./store
 COPY utils ./utils
 
-RUN yarn build:production
+RUN yarn build
 
 FROM node:18.13.0-alpine AS runner
 
