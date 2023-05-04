@@ -10,3 +10,5 @@ Dockerfile*
 .dockerignore
 emailTest
 .next
+*.pem
+*.sh
