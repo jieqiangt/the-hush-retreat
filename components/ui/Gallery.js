@@ -12,6 +12,7 @@ export default function Gallery(props) {
       src={item.src}
       width={item.width}
       height={item.height}
+      galleryFlag={true}
     />
   ));
 

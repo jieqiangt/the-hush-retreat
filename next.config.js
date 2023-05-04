@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  output: "standalone"
+  output: "standalone",
+  images: {
+    minimumCacheTTL: 60,
+  },
 };
 
 module.exports = nextConfig;
