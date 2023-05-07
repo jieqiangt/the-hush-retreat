@@ -10,8 +10,7 @@
     "info": "next info"
   },
   "dependencies": {
-    "@aws-sdk/client-ses": "^3.259.0",
-    "@aws-sdk/client-sns": "^3.254.0",
+    "@aws-sdk/client-lambda": "^3.328.0",
     "dotenv": "^16.0.3",
     "image-size": "^1.0.2",
     "mongodb": "4.13",
