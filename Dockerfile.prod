@@ -44,6 +44,11 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
+ENV MONGO_USER=
+ENV MONGO_PW=
+ENV MONGO_DBNAME=
+ENV MONGO_URI=
+
 EXPOSE 3000
 
 CMD ["node", "server.js"]
