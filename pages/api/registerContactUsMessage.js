@@ -2,8 +2,8 @@ import {
   connectClient,
   createReferenceId,
   insertOneToCollection,
-} from "../../utils/mongoUtils";
-import { catchApiWrapper } from "../../utils/errorUtils";
+} from "./utils/mongoUtils";
+import { catchApiWrapper } from "./utils/errorUtils";
 
 const allowedMethods = ["POST"];
 

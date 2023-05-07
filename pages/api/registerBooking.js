@@ -4,7 +4,7 @@ import {
   getOneFromCollection,
   insertOneToCollection,
 } from "../../utils/mongoUtils";
-import { AppError, catchApiWrapper } from "../../utils/errorUtils";
+import { AppError, catchApiWrapper } from "./utils/errorUtils";
 import { validateField } from "../../reducers/formReducer";
 
 const allowedMethods = ["POST"];
