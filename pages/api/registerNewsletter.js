@@ -3,7 +3,7 @@ import {
   createReferenceId,
   getOneFromCollection,
   insertOneToCollection,
-} from "../../utils/mongoUtils";
+} from "./utils/mongoUtils";
 import { AppError, catchApiWrapper } from "./utils/errorUtils";
 
 const allowedMethods = ["POST"];
@@ -35,7 +35,7 @@ const handler = catchApiWrapper(async (req, res) => {
     });
   }
 
-  const { baseId, referenceId } = createReferenceId(email);
+  const { baseId, _ } = createReferenceId();
 
   const result = await insertOneToCollection(
     client,

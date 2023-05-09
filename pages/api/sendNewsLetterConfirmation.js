@@ -1,15 +1,16 @@
-import { sesToUser, snsToHushRetreat } from "../../utils/awsUtils";
-import { catchApiWrapper } from "../../utils/errorUtils";
-import { connectClient, updateOneFromCollection } from "../../utils/mongoUtils";
-import createEmailTemplate from "../../utils/createEmailTemplate";
+import { catchApiWrapper } from "./utils/errorUtils";
+import createEmailTemplate from "./utils/createEmailTemplate";
+import { invokeAsyncLambda } from "./utils/awsUtils";
 
 const allowedMethods = ["POST"];
 
 const handler = catchApiWrapper(async (req, res) => {
   const params = req.body;
 
-  const { email, insertedId } = params;
-  await snsToHushRetreat(JSON.stringify(params), "receiveNewsletter");
+  const { email, idToUpdate } = params;
+
+  const fnArn =
+    "arn:aws:lambda:ap-southeast-1:615814254462:function:receive-sqs-send-sns-ses";
 
   const mainSection = createEmailTemplate("newsletterConfirmation");
   const signatureSection = createEmailTemplate("signature");
@@ -17,23 +18,17 @@ const handler = catchApiWrapper(async (req, res) => {
   const subject = `Thank you for subscribing to The Hush Retreat Mailing List!`;
   const htmlBody = `${mainSection}${signatureSection}`;
 
-  await sesToUser(email, htmlBody, subject);
+  const payload = {
+    htmlBody,
+    email,
+    subject,
+    idToUpdate,
+    status: "ConfirmationSent",
+    collection: "newsletterSubscriptions",
+  };
 
-  const client = await connectClient();
-  const filter = { _id: insertedId };
-  const update = { status: "ConfirmationSent" };
-
-  const updateResult = await updateOneFromCollection(
-    client,
-    process.env.MONGO_DBNAME,
-    "newsletterSubscriptions",
-    filter,
-    update
-  );
-
-  if (!(updateResult.modifiedCount === "1")) {
-    //send to logs that modification failed. Not related to user.
-  }
+  const result = await invokeAsyncLambda(fnArn, payload);
+  console.log({ result });
 
   res.status(201).json();
 }, allowedMethods);

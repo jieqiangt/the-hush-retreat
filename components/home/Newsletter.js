@@ -39,17 +39,17 @@ export default function NewsLetter(props) {
 
     if (result.ok) {
       const successNotification = await result.json();
+      notificationCtx.showNotification(successNotification);
+      emailRef.current.value = "";
 
       await callApi({
         url: "/api/sendNewsLetterConfirmation",
         method: "POST",
         body: {
           email: emailRef.current.value,
-          insertedId: successNotification.insertedId,
+          idToUpdate: successNotification.insertedId,
         },
       });
-
-      notificationCtx.showNotification(successNotification);
     }
   }
 
