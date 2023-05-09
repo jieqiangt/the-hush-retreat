@@ -11,7 +11,7 @@ export async function invokeAsyncLambda(fnArn, payload) {
     Payload: JSON.stringify(payload),
   };
 
-  const result = await client.send(new InvokeCommand(params));
+  const result = await client.send(new InvokeCommand(input));
   client.destroy();
   return result;
 }
