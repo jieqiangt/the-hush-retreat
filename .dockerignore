@@ -12,3 +12,4 @@ emailTest
 .next
 *.pem
 *.sh
+outsideFunc
