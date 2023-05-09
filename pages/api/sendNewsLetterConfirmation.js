@@ -28,9 +28,8 @@ const handler = catchApiWrapper(async (req, res) => {
   };
 
   const result = await invokeAsyncLambda(fnArn, payload);
-  console.log({ result });
 
-  res.status(201).json();
+  res.status(result.$metadata.httpStatusCode).json();
 }, allowedMethods);
 
 export default handler;
