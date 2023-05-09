@@ -130,7 +130,7 @@ export async function updateOneFromCollection(
   }
 }
 
-export function createReferenceId(concatString) {
+export function createReferenceId(concatString = "randomString") {
   let baseId = uuidv4();
   const referenceId = `${concatString.slice(1, 2)}${baseId.slice(
     0,
