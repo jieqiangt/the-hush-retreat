@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import {
   Fragment,
   cloneElement,
@@ -19,9 +18,8 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function BookingForm(props) {
   const { closeModal } = useContext(ModalContext);
-  const router = useRouter();
   const notificationCtx = useContext(NotificationContext);
-  const { baseClass, classes, retreat } = props;
+  const { baseClass, classes, retreat, queryMsg } = props;
   const { selectOptions } = retreat;
   const [allRetreateeDetails, setAllRetreateeDetails] = useState({});
   const [formValid, setFormValid] = useState(false);
@@ -99,6 +97,7 @@ export default function BookingForm(props) {
 
   async function bookingHandler(event) {
     event.preventDefault();
+
     const result = await callApi({
       url: "/api/registerBooking",
       method: "POST",
@@ -116,6 +115,8 @@ export default function BookingForm(props) {
 
     if (result.ok) {
       const successNotification = await result.json();
+      closeModal();
+      notificationCtx.showNotification(successNotification);
 
       await callApi({
         url: "/api/sendBookingConfirmation",
@@ -123,15 +124,11 @@ export default function BookingForm(props) {
         body: {
           retreat,
           referenceId: successNotification.referenceId,
-          insertedId: successNotification.insertedId,
+          idToUpdate: successNotification.insertedId,
           mainRetreatee: successNotification.mainRetreatee,
           additionalRetreatees: successNotification.additionalRetreatees,
         },
       });
-
-      closeModal();
-      router.replace("/");
-      notificationCtx.showNotification(successNotification);
     }
   }
 
@@ -165,6 +162,13 @@ export default function BookingForm(props) {
             Any other queries?
           </span>
         </div>
+        {queryMsg ? (
+          <span className={classes[`${baseClass}--form--query-msg`]}>
+            {queryMsg}
+          </span>
+        ) : (
+          ""
+        )}
         <InputText
           label="Message"
           type="textarea"
