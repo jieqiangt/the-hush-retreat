@@ -10,7 +10,6 @@ COPY package.json yarn.lock ./
 RUN yarn install
 
 COPY components ./components
-COPY models ./models
 COPY pages ./pages
 COPY public ./public
 COPY reducers ./reducers

@@ -8,7 +8,6 @@ Dockerfile*
 .eslintrc.json
 ./page/dev
 .dockerignore
-emailTest
 .next
 *.pem
 *.sh

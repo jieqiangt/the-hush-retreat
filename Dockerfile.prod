@@ -19,7 +19,6 @@ COPY package.json yarn.lock ./
 COPY --from=deps /app/node_modules ./node_modules
 
 COPY components ./components
-COPY models ./models
 COPY pages ./pages
 COPY public ./public
 COPY reducers ./reducers
