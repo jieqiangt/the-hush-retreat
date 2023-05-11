@@ -11,7 +11,13 @@ export default function ContactUsConfirmationTemplate(props) {
     ulStyle,
   } = props;
 
-  const liStyle = { "list-style": "none", margin: "0", padding: "0" };
+  const liStyle = {
+    "list-style": "none",
+    margin: "0",
+    padding: "0",
+  };
+
+  const liTextStyle = { ...textStyle, display: "inline-block" };
 
   return (
     <Fragment>
@@ -44,18 +50,21 @@ export default function ContactUsConfirmationTemplate(props) {
         </p>
         <ul style={ulStyle}>
           <li style={liStyle}>
-            <a style={textStyle} href="#">
-              - Frequently Asked Questions
+            <span style={liTextStyle}> - </span>
+            <a style={liTextStyle} href="https://thehushretreats.com/help">
+              Frequently Asked Questions
             </a>
           </li>
           <li style={liStyle}>
-            <a style={textStyle} href="#">
-              - Upcoming Events
+            <span style={liTextStyle}> - </span>
+            <a style={liTextStyle} href="https://thehushretreats.com/upcoming">
+              Upcoming Events
             </a>
           </li>
           <li style={liStyle}>
-            <a style={textStyle} href="#">
-              - Recent and Past Events
+            <span style={liTextStyle}> - </span>
+            <a style={liTextStyle} href="https://thehushretreats.com/explore">
+              Recent and Past Events
             </a>
           </li>
         </ul>
