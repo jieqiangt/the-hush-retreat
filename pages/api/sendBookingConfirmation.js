@@ -1,7 +1,6 @@
-import { sesToUser, snsToHushRetreat } from "../../utils/awsUtils";
-import createEmailTemplate from "../../utils/createEmailTemplate";
-import { catchApiWrapper } from "../../utils/errorUtils";
-import { connectClient, updateOneFromCollection } from "../../utils/mongoUtils";
+import { invokeAsyncLambda } from "./utils/awsUtils";
+import createEmailTemplate from "./utils/createEmailTemplate";
+import { catchApiWrapper } from "./utils/errorUtils";
 
 const allowedMethods = ["POST"];
 
@@ -10,12 +9,12 @@ const handler = catchApiWrapper(async (req, res) => {
   const {
     retreat,
     referenceId,
-    insertedId,
+    idToUpdate,
     mainRetreatee,
     additionalRetreatees,
   } = data;
 
-  await snsToHushRetreat(JSON.stringify(data), "receiveBooking");
+  const numPax = additionalRetreatees.length + 1;
 
   const mainSection = createEmailTemplate("retreatConfirmation", {
     mainRetreatee,
@@ -27,31 +26,26 @@ const handler = catchApiWrapper(async (req, res) => {
   );
   const paymentDetails = createEmailTemplate("paymentDetails", {
     price: retreat.price,
+    numPax,
+    referenceId,
   });
   const signatureSection = createEmailTemplate("signature");
 
   const subject = `We have received your booking! - ${referenceId}`;
   const htmlBody = `${mainSection}${additionalRetreateesSection}${paymentDetails}${signatureSection}`;
 
-  await sesToUser(mainRetreatee.email, htmlBody, subject);
+  const fnArn = process.env.LAMBDA_ARN;
+  const payload = {
+    htmlBody,
+    email: mainRetreatee.email,
+    subject,
+    idToUpdate,
+    status: "ConfirmationSent",
+    collection: "bookings",
+  };
 
-  const client = await connectClient();
-  const filter = { _id: insertedId };
-  const update = { status: "ConfirmationSent" };
-
-  const updateResult = await updateOneFromCollection(
-    client,
-    process.env.MONGO_DBNAME,
-    "bookings",
-    filter,
-    update
-  );
-
-  if (!(updateResult.modifiedCount === "1")) {
-    //send to logs that modification failed. Not related to user.
-  }
-
-  res.status(201).json();
+  const result = await invokeAsyncLambda(fnArn, payload);
+  res.status(result.$metadata.httpStatusCode).json();
 }, allowedMethods);
 
 export default handler;

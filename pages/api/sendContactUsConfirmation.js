@@ -1,12 +1,11 @@
-import { sesToUser, snsToHushRetreat } from "../../utils/awsUtils";
-import { catchApiWrapper } from "../../utils/errorUtils";
-import { connectClient, updateOneFromCollection } from "../../utils/mongoUtils";
-import createEmailTemplate from "../../utils/createEmailTemplate";
+import { catchApiWrapper } from "./utils/errorUtils";
+import createEmailTemplate from "./utils/createEmailTemplate";
+import { invokeAsyncLambda } from "./utils/awsUtils";
 
 const allowedMethods = ["POST"];
 
 const handler = catchApiWrapper(async (req, res) => {
-  const params = req.body;
+  const data = req.body;
 
   const {
     email,
@@ -14,10 +13,9 @@ const handler = catchApiWrapper(async (req, res) => {
     lastName,
     subject,
     message,
-    insertedId,
+    idToUpdate,
     referenceId,
-  } = params;
-  await snsToHushRetreat(JSON.stringify(params), "receiveFeedback");
+  } = data;
 
   const mainSection = createEmailTemplate("contactUsConfirmation", {
     firstName,
@@ -26,30 +24,25 @@ const handler = catchApiWrapper(async (req, res) => {
     subject,
     referenceId,
   });
+
   const signatureSection = createEmailTemplate("signature");
 
   const modifiedSubject = `You query has been received! - ${referenceId} `;
   const htmlBody = `${mainSection}${signatureSection}`;
 
-  await sesToUser(email, htmlBody, modifiedSubject);
+  const payload = {
+    htmlBody,
+    email,
+    subject: modifiedSubject,
+    idToUpdate,
+    status: "ConfirmationSent",
+    collection: "feedback",
+  };
 
-  const client = await connectClient();
-  const filter = { _id: insertedId };
-  const update = { status: "ConfirmationSent" };
+  const fnArn = process.env.LAMBDA_ARN;
 
-  const updateResult = await updateOneFromCollection(
-    client,
-    process.env.MONGO_DBNAME,
-    "feedback",
-    filter,
-    update
-  );
-
-  if (!(updateResult.modifiedCount === "1")) {
-    //send to logs that modification failed. Not related to user.
-  }
-
-  res.status(201).json();
+  const result = await invokeAsyncLambda(fnArn, payload);
+  res.status(result.$metadata.httpStatusCode).json();
 }, allowedMethods);
 
 export default handler;
