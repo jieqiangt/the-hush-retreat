@@ -5,7 +5,7 @@ export default function Bespoke(props) {
   const title = "Bespoke";
   const caption = "All of us deserve the best";
   const desc =
-    "That is why, we curate small-group retreats with end-to-end butler-grade service, to provide you with an transformative wellnessexperience. Your role is to show up, sit back and unwind - we take care of the rest.";
+    "That is why, we curate small-group retreats with end-to-end butler-grade service, to provide you with an transformative wellness experience. Your role is to show up, sit back and unwind - we take care of the rest.";
   const btnText = "Book Now";
   const btnHref = "/upcoming";
   const { baseClass, classes } = props;
