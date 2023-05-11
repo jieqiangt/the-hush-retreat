@@ -2,12 +2,35 @@ import DescriptionSection from "../ui/DescriptionSection";
 import ImgComposition from "../ui/ImgComposition";
 
 export default function NewRetreatSection(props) {
-  const { classes, baseClass, title, text, imgUrlList } = props;
+  const { classes, baseClass, title, text, caption, imgUrlList } = props;
 
-  const paragraphs = text.map((item, idx) => <p key={idx}>{item}</p>);
+  const paragraphs = text.map((item, idx) => (
+    <p
+      className={`${classes[`${baseClass}--aside--desc--text`]} hidden`}
+      key={idx}
+    >
+      {item}
+    </p>
+  ));
+
+  const captions = caption
+    ? caption.map((item, idx) => (
+        <p
+          className={`${classes[`${baseClass}--aside--caption--text`]} hidden`}
+          key={idx}
+        >
+          {item}
+        </p>
+      ))
+    : "";
   const content = (
     <article className={`${classes[`${baseClass}--aside--content`]} hidden`}>
-      {paragraphs}
+      <div className={`${classes[`${baseClass}--aside--caption`]}`}>
+        {captions}
+      </div>
+      <div className={`${classes[`${baseClass}--aside--desc`]}`}>
+        {paragraphs}
+      </div>
     </article>
   );
 
@@ -22,7 +45,6 @@ export default function NewRetreatSection(props) {
   ) : (
     <div className={`${classes[`${baseClass}--img`]} hidden`} />
   );
-
 
   return (
     <DescriptionSection
