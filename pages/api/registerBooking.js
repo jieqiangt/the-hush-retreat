@@ -3,7 +3,7 @@ import {
   createReferenceId,
   getOneFromCollection,
   insertOneToCollection,
-} from "../../utils/mongoUtils";
+} from "./utils/mongoUtils";
 import { AppError, catchApiWrapper } from "./utils/errorUtils";
 import { validateField } from "../../reducers/formReducer";
 
@@ -24,11 +24,16 @@ const handler = catchApiWrapper(async (req, res) => {
         validateField(retreatee.firstName, "firstName") &&
         validateField(retreatee.lastName, "lastName") &&
         validateField(retreatee.email, "email") &&
-        retreatee.size
-          ? validateField(retreatee.size, "size")
-          : true && retreatee.bikiniStyle
+        (retreatee.size ? validateField(retreatee.size, "size") : true) &&
+        (retreatee.bikiniStyle
           ? validateField(retreatee.bikiniStyle, "bikiniStyle")
-          : true;
+          : true) &&
+        (retreatee.accomodation
+          ? validateField(retreatee.accomodation, "accomodation")
+          : true) &&
+        (retreatee.dietary
+          ? validateField(retreatee.dietary, "dietary")
+          : true);
 
       if (!validateField(retreatee.vaccinated, "vaccinated")) {
         throw new AppError({
