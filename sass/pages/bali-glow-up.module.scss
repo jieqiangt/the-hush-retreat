@@ -4,13 +4,13 @@
 @import "../base/utilities";
 @import "../abstracts/media";
 
-.bali--glow-up {
+.bali-glow-up {
   &--footer {
     @include footer(transparent, relative);
   }
 }
 
-.book--bali {
+.book-bali {
   &--modal {
     @include modal;
 
@@ -20,12 +20,19 @@
         grid-template-rows: 40fr 60fr;
       }
     }
+
+    &--close {
+      @include media-queries(tab-land) {
+        bottom: 26rem;
+        right: 4rem;
+      }
+    }
   }
 
   &--img {
     background-size: cover;
     background-image: url("../../public/img/upcoming-pg/bali-glowup/surf-2.jpg");
-    background-position: right;
+    background-position: bottom 10% right 40%;
     overflow: hidden;
   }
 
@@ -41,11 +48,32 @@
     &--title {
       @include section--title($col-main-tint-1, $letter-spacing-xs);
       font-size: $font-size-header-md;
-      margin-bottom: 2.4rem;
+      margin-bottom: 1.2rem;
     }
 
-    &--cta {
-      font-size: $font-size-text-lg;
+    &--info {
+      @include retreat-details();
+
+      &--caption {
+        @include section--title($col-gray-tint-1, $letter-spacing-xs);
+        margin-bottom: 0.8rem;
+        border-bottom: $border-gray-tint-sm;
+      }
+
+      &--grid {
+        font-size: $font-size-text-md;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        row-gap: 1.2rem;
+        margin-bottom: 0.8rem;
+      }
+
+      &--promo {
+        font-size: $font-size-text-s;
+        grid-column: 1 / -1;
+        margin-top: 0;
+      }
     }
   }
 
@@ -81,7 +109,7 @@
       grid-template-rows: repeat(3, min-content);
       align-items: start;
       column-gap: 2.4rem;
-      row-gap: 1.6rem;
+      row-gap: 2.6rem;
       position: relative;
       padding-bottom: 2rem;
     }
@@ -89,7 +117,7 @@
     &--first-name {
       @include input--group(
         $size-contact-us-input-width,
-        $col-gray-tint-1,
+        $col-gray-primary,
         $pos-input-label-x,
         $pos-input-label-y,
         $pos-input-label-translate-up
@@ -101,7 +129,7 @@
     &--last-name {
       @include input--group(
         $size-contact-us-input-width,
-        $col-gray-tint-1,
+        $col-gray-primary,
         $pos-input-label-x,
         $pos-input-label-y,
         $pos-input-label-translate-up
@@ -113,7 +141,7 @@
     &--email {
       @include input--group(
         $size-contact-us-input-width,
-        $col-gray-tint-1,
+        $col-gray-primary,
         $pos-input-label-x,
         $pos-input-label-y,
         $pos-input-label-translate-up
@@ -125,7 +153,7 @@
     &--contact {
       @include input--group(
         $size-contact-us-input-width,
-        $col-gray-tint-1,
+        $col-gray-primary,
         $pos-input-label-x,
         $pos-input-label-y,
         $pos-input-label-translate-up
@@ -134,10 +162,51 @@
       grid-row: 2;
     }
 
+    &--dietary {
+      font-size: $font-size-text-s;
+      @include font-header;
+      background-color: rgba($col-accent-tint-2, 0.7);
+      padding: 0.2rem;
+
+      &--group {
+        grid-column: 1 / 3;
+        grid-row: 3;
+        display: flex;
+        gap: 0.8rem;
+      }
+
+      &--label {
+        text-transform: capitalize;
+        @include font-header;
+      }
+    }
+
+    &--accomodation {
+      font-size: $font-size-text-s;
+      @include font-header;
+      background-color: rgba($col-accent-tint-2, 0.7);
+      padding: 0.2rem;
+
+      &--group {
+        grid-column: 3 / -1;
+        grid-row: 3;
+        display: flex;
+        gap: 0.8rem;
+      }
+
+      &--label {
+        text-transform: capitalize;
+        @include font-header;
+      }
+    }
+
     &--vaccinate {
       grid-column: 1 / -1;
       grid-row: 4;
-      @include custom--radio($col-gray-tint-1);
+      @include custom--radio($col-gray-primary);
+      &--label {
+        font-size: $font-size-text-s;
+      }
     }
   }
 
@@ -149,7 +218,7 @@
     &--message {
       @include input--group(
         $size-contact-us-input-width,
-        $col-gray-tint-1,
+        $col-gray-primary,
         0.8rem,
         0.4rem,
         $pos-input-label-translate-up,
@@ -161,6 +230,10 @@
       & label {
         top: 0rem;
       }
+    }
+
+    &--query-msg {
+      font-size: $font-size-text-s;
     }
 
     &--title {
@@ -219,6 +292,28 @@
   &--box {
     padding: 4.8rem;
     transition-delay: 0.6s;
+    width: 50%;
+
+    @include media-queries(laptop-lg) {
+      width: 55%;
+    }
+
+    @include media-queries(tab-lg-land) {
+      width: 60%;
+    }
+
+    @include media-queries(tab-sm-land) {
+      width: 70%;
+    }
+
+    @include media-queries(phone-xl) {
+      width: 80%;
+    }
+
+    @include media-queries(phone-lg) {
+      width: 100%;
+      padding: 6rem;
+    }
   }
 
   &--btn {
@@ -229,9 +324,10 @@
   }
 }
 
-.intentions {
+.hosts {
   @include description--section(30vw);
   position: relative;
+  margin-bottom: 15rem;
 
   &::after {
     content: "";
@@ -245,22 +341,186 @@
     z-index: $z-index-top;
   }
 
+  @include media-queries(tab-land) {
+    display: flex;
+    flex-direction: column;
+    @include description--section(90vw);
+    height: auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 0.2rem;
+      width: 97%;
+      bottom: -8rem;
+      left: 1.5%;
+      background-color: rgba($col-accent-tint-2, 0.5);
+      z-index: $z-index-top + 100;
+    }
+  }
+
   &--img {
-    background-image: url("../../public/img/upcoming-pg/bali-glowup/surf-1.jpg");
+    background-image: url("../../public/img/upcoming-pg/bali-glowup/host-1.jpg");
     background-position: bottom;
     width: 100%;
     height: 80%;
-    margin: 18rem 0rem 0rem auto;
+    margin: 18rem -2rem 0rem 8rem;
+
+    @include media-queries(laptop-lg) {
+      margin: 26rem -2rem 0rem 8rem;
+      height: 70%;
+    }
+
+    @include media-queries(laptop) {
+      margin: 32rem -2rem 0rem 8rem;
+      height: 65%;
+    }
+
+    @include media-queries(tab-xl-land) {
+      margin: 34rem -2rem 0rem 8rem;
+      height: 62%;
+    }
+
+    @include media-queries(laptop-sm) {
+      margin: 40rem -2rem 0rem 6rem;
+      height: 60%;
+    }
+
+    @include media-queries(tab-land) {
+      margin: 0rem;
+      margin-top: 8rem;
+      background-position: top 40% left 0%;
+      justify-self: end;
+    }
   }
 
   &--aside {
     font-size: $font-size-text-md;
     line-height: $font-line-height-lg;
+    align-self: stretch;
 
     &--box {
       background-color: $col-main-primary;
-      padding: 12rem 32rem 12rem 6rem;
+      padding: 12rem 12rem 12rem 6rem;
       margin-top: 18rem;
+
+      @include media-queries(tab-land) {
+        padding: 14rem 10rem;
+        margin-top: 0rem;
+      }
+    }
+
+    &--content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      color: $col-accent-tint-1;
+      margin-left: 2.4rem;
+    }
+
+    &--title {
+      @include section--title($col-accent-primary, $letter-spacing-xs);
+      border-bottom: $border-accent-sm;
+      margin-bottom: 2.4rem;
+    }
+
+    &--caption {
+      margin-bottom: 1.2rem;
+
+      &--text {
+        font-size: $font-size-header-sm;
+        color: $col-gray-tint-3;
+        font-size: $font-size-header-md;
+        line-height: $font-line-height-md;
+      }
+    }
+
+    &--desc {
+      &--text {
+        font-size: $font-size-text-lg;
+      }
+    }
+  }
+}
+
+.accomodation {
+  @include description--section(35vw);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    bottom: -8rem;
+    left: 1.5%;
+    background-color: rgba($col-accent-tint-2, 0.5);
+    z-index: $z-index-top + $z-index-top;
+  }
+
+  @include media-queries(laptop-lg) {
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+  }
+
+  @include media-queries(laptop) {
+    margin-top: 4rem;
+    margin-bottom: 0rem;
+  }
+
+  @include media-queries(laptop-sm) {
+    margin-top: 0rem;
+    margin-bottom: -16rem;
+  }
+
+  @include media-queries(tab-xl-pot) {
+    height: 75vh;
+  }
+
+  @include media-queries(tab-lg-land) {
+    margin-top: -12rem;
+    margin-bottom: -20rem;
+  }
+
+  @include media-queries(tab-land) {
+    flex-direction: column;
+    height: auto;
+    margin-top: 0rem;
+    margin-bottom: 16rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 0.2rem;
+      width: 97%;
+      bottom: -8rem;
+      left: 1.5%;
+      background-color: rgba($col-accent-tint-2, 0.5);
+      z-index: $z-index-top + 100;
+    }
+  }
+
+  &--aside {
+    @include media-queries(tab-land) {
+      order: 2;
+      flex: 1 1 auto;
+      align-items: start;
+    }
+
+    font-size: $font-size-text-md;
+    line-height: $font-line-height-lg;
+
+    &--box {
+      background-color: $col-main-primary;
+      padding: 12rem 18rem 12rem 6rem;
+
+      @include media-queries(tab-land) {
+        padding: 14rem 10rem;
+        margin-top: 0rem;
+      }
     }
 
     &--title {
@@ -274,14 +534,663 @@
       flex-direction: column;
       gap: 1.2rem;
       color: $col-accent-tint-1;
-      padding-right: 10rem;
       margin-left: 2.4rem;
+    }
 
-      & p:first-child {
+    &--title {
+      @include section--title($col-accent-primary, $letter-spacing-xs);
+      border-bottom: $border-accent-sm;
+      margin-bottom: 2.4rem;
+    }
+
+    &--caption {
+      margin-bottom: 1.2rem;
+
+      &--text {
         font-size: $font-size-header-sm;
-        padding-right: 30rem;
-        margin-bottom: 0.8rem;
         color: $col-gray-tint-3;
+        font-size: $font-size-header-md;
+        line-height: $font-line-height-md;
+      }
+    }
+
+    &--desc {
+      &--text {
+        font-size: $font-size-text-lg;
+      }
+    }
+  }
+
+  &--img {
+    order: 2;
+    z-index: $z-index-top + 10;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+
+    @include media-queries(tab-land) {
+      align-self: stretch;
+      align-items: stretch;
+      flex: 100 1 auto;
+    }
+
+    &--composition {
+      @include img-composition(
+        15vw,
+        -4rem,
+        72rem,
+        4rem,
+        -14rem,
+        24rem,
+        -40rem,
+        -6rem,
+        0rem
+      );
+
+      @include media-queries(xl-screen) {
+        @include img-composition(
+          16vw,
+          -4rem,
+          56rem,
+          4rem,
+          -16rem,
+          18rem,
+          -38rem,
+          -6rem,
+          0rem
+        );
+      }
+
+      @include media-queries(lg-screen) {
+        @include img-composition(
+          17vw,
+          -4rem,
+          56rem,
+          4rem,
+          -16rem,
+          18rem,
+          -38rem,
+          -6rem,
+          0rem
+        );
+      }
+
+      @include media-queries(laptop-lg) {
+        @include img-composition(
+          18vw,
+          -4rem,
+          64rem,
+          4rem,
+          -16rem,
+          20rem,
+          -40rem,
+          -6rem,
+          -2rem
+        );
+      }
+
+      @include media-queries(laptop) {
+        @include img-composition(
+          19vw,
+          -4rem,
+          64rem,
+          4rem,
+          -16rem,
+          20rem,
+          -44rem,
+          -6rem,
+          -2rem
+        );
+      }
+
+      @include media-queries(tab-lg-land) {
+        @include img-composition(
+          21vw,
+          -4rem,
+          61rem,
+          4rem,
+          -15rem,
+          20rem,
+          -43rem,
+          -6rem,
+          -2rem
+        );
+      }
+
+      @include media-queries(tab-land) {
+        @include img-composition(
+          34vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+      }
+
+      @include media-queries(tab-sm-land) {
+        @include img-composition(
+          36vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-1vw);
+      }
+
+      @include media-queries(phone-xl) {
+        @include img-composition(
+          48vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-22vw);
+      }
+
+      @include media-queries(phone-lg) {
+        @include img-composition(
+          50vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-26vw);
+      }
+
+      @include media-queries(phone) {
+        @include img-composition(
+          60vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-40vw);
+      }
+
+      &--imgbox {
+        &--0 {
+          z-index: $z-index-top;
+        }
+
+        &--1 {
+          z-index: $z-index-top - 2;
+          @include media-queries(phone) {
+            box-shadow: 0px 0px 20px 3px rgba($col-black-primary, 0.2);
+          }
+        }
+
+        &--2 {
+          z-index: $z-index-top - 1;
+        }
+      }
+    }
+  }
+}
+
+.surf {
+  @include description--section(35vw);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    bottom: -8rem;
+    left: 1.5%;
+    background-color: rgba($col-accent-tint-2, 0.5);
+    z-index: $z-index-top + $z-index-top;
+  }
+
+  height: 100vh;
+
+  @include media-queries(laptop-lg) {
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+  }
+
+  @include media-queries(laptop) {
+    margin-top: 4rem;
+    margin-bottom: 0rem;
+  }
+
+  @include media-queries(laptop-sm) {
+    margin-top: 0rem;
+    margin-bottom: -16rem;
+  }
+
+  @include media-queries(tab-xl-pot) {
+    height: 75vh;
+  }
+
+  @include media-queries(tab-lg-land) {
+    margin-top: -12rem;
+    margin-bottom: -20rem;
+  }
+
+  @include media-queries(tab-land) {
+    flex-direction: column;
+    height: auto;
+    margin-top: 0rem;
+    margin-bottom: 16rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 0.2rem;
+      width: 97%;
+      bottom: -8rem;
+      left: 1.5%;
+      background-color: rgba($col-accent-tint-2, 0.5);
+      z-index: $z-index-top + 100;
+    }
+  }
+
+
+  @include media-queries(phone-xl) {
+    height: 85vh;
+  }
+
+  @include media-queries(phone) {
+    height: 90vh;
+  }
+
+  @include media-queries(device-sm-short) {
+    height: 100vh;
+  }
+
+  @include media-queries(tab-land-short) {
+    height: 105vh;
+  }
+
+  @include media-queries(device-tall) {
+    height: 65vh;
+  }
+
+  &--aside {
+    @include media-queries(tab-land) {
+      order: 2;
+      flex: 1 1 auto;
+      align-items: start;
+    }
+
+    font-size: $font-size-text-md;
+    line-height: $font-line-height-lg;
+
+    &--box {
+      background-color: $col-main-primary;
+      padding: 8rem 8rem 8rem 16rem;
+
+      @include media-queries(tab-land) {
+        padding: 14rem 10rem;
+        margin-top: 0rem;
+      }
+    }
+
+    &--title {
+      @include section--title($col-accent-primary, $letter-spacing-xs);
+      border-bottom: $border-accent-sm;
+      margin-bottom: 2.4rem;
+    }
+
+    &--content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      color: $col-accent-tint-1;
+      margin-left: 2.4rem;
+    }
+
+    &--title {
+      @include section--title($col-accent-primary, $letter-spacing-xs);
+      border-bottom: $border-accent-sm;
+      margin-bottom: 2.4rem;
+    }
+
+    &--caption {
+      margin-bottom: 1.2rem;
+
+      &--text {
+        font-size: $font-size-header-sm;
+        color: $col-gray-tint-3;
+        font-size: $font-size-header-md;
+        line-height: $font-line-height-md;
+      }
+    }
+
+    &--desc {
+      &--text {
+        font-size: $font-size-text-lg;
+      }
+    }
+  }
+
+  &--img {
+    z-index: $z-index-top + 10;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+
+    @include media-queries(tab-land) {
+      align-self: stretch;
+      align-items: stretch;
+      flex: 100 1 auto;
+    }
+
+    &--composition {
+      @include img-composition(
+        15vw,
+        12rem,
+        29rem,
+        -12rem,
+        0rem,
+        6rem,
+        -26rem,
+        38rem,
+        4rem
+      );
+
+      @include media-queries(xl-screen) {
+        @include img-composition(
+          16vw,
+          12rem,
+          30rem,
+          -12rem,
+          0rem,
+          6rem,
+          -24rem,
+          32rem,
+          -4rem
+        );
+      }
+
+      @include media-queries(lg-screen) {
+        @include img-composition(
+          18vw,
+          12rem,
+          30rem,
+          -12rem,
+          0rem,
+          6rem,
+          -24rem,
+          28rem,
+          -4rem
+        );
+      }
+
+      @include media-queries(laptop-lg) {
+        @include img-composition(
+          18vw,
+          12rem,
+          30rem,
+          -12rem,
+          0rem,
+          6rem,
+          -24rem,
+          27rem,
+          -4rem
+        );
+      }
+
+      @include media-queries(laptop) {
+        @include img-composition(
+          19vw,
+          12rem,
+          30rem,
+          -12rem,
+          0rem,
+          6rem,
+          -24rem,
+          25rem,
+          -4rem
+        );
+      }
+
+      @include media-queries(tab-lg-land) {
+        @include img-composition(
+          21vw,
+          12rem,
+          28rem,
+          -12rem,
+          0rem,
+          6rem,
+          -18rem,
+          20rem,
+          -4rem
+        );
+      }
+
+      @include media-queries(tab-land) {
+        @include img-composition(
+          34vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+      }
+
+      @include media-queries(tab-sm-land) {
+        @include img-composition(
+          36vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-1vw);
+      }
+
+      @include media-queries(phone-xl) {
+        @include img-composition(
+          48vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-22vw);
+      }
+
+      @include media-queries(phone-lg) {
+        @include img-composition(
+          50vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-26vw);
+      }
+
+      @include media-queries(phone) {
+        @include img-composition(
+          60vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-40vw);
+      }
+
+      &--imgbox {
+        &--0 {
+          z-index: $z-index-top - 2;
+        }
+
+        &--1 {
+          z-index: $z-index-top;
+          @include media-queries(phone) {
+            box-shadow: 0px 0px 20px 3px rgba($col-black-primary, 0.2);
+          }
+        }
+
+        &--2 {
+          z-index: $z-index-top - 1;
+        }
+      }
+    }
+  }
+}
+
+.yoga {
+  @include description--section(30vw);
+  position: relative;
+  margin-bottom: 15rem;
+
+  @include media-queries(tab-land) {
+    display: flex;
+    flex-direction: column;
+    @include description--section(90vw);
+    height: auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 0.2rem;
+      width: 97%;
+      bottom: -8rem;
+      left: 1.5%;
+      background-color: rgba($col-accent-tint-2, 0.5);
+      z-index: $z-index-top + 100;
+    }
+  }
+
+  &--img {
+    background-image: url("../../public/img/upcoming-pg/bali-glowup/yoga-1.jpg");
+    background-position: bottom;
+    width: 100%;
+    height: 80%;
+    margin: 18rem -2rem 0rem 8rem;
+
+    @include media-queries(laptop-lg) {
+      margin: 26rem -2rem 0rem 8rem;
+      height: 70%;
+    }
+
+    @include media-queries(laptop) {
+      margin: 32rem -2rem 0rem 8rem;
+      height: 65%;
+    }
+
+    @include media-queries(tab-xl-land) {
+      margin: 34rem -2rem 0rem 8rem;
+      height: 62%;
+    }
+
+    @include media-queries(laptop-sm) {
+      margin: 40rem -2rem 0rem 6rem;
+      height: 60%;
+    }
+
+    @include media-queries(tab-land) {
+      margin: 0rem;
+      background-position: top 40% left 0%;
+      justify-self: end;
+    }
+  }
+
+  &--aside {
+    font-size: $font-size-text-md;
+    line-height: $font-line-height-lg;
+
+    &--box {
+      background-color: $col-main-primary;
+      padding: 12rem 12rem 12rem 6rem;
+      margin-top: 18rem;
+
+      @include media-queries(tab-land) {
+        padding: 14rem 10rem;
+        margin-top: 0rem;
+      }
+    }
+
+    &--content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      color: $col-accent-tint-1;
+      margin-left: 2.4rem;
+    }
+
+    &--title {
+      @include section--title($col-accent-primary, $letter-spacing-xs);
+      border-bottom: $border-accent-sm;
+      margin-bottom: 2.4rem;
+    }
+
+    &--caption {
+      margin-bottom: 1.2rem;
+
+      &--text {
+        font-size: $font-size-header-sm;
+        color: $col-gray-tint-3;
+        font-size: $font-size-header-md;
+        line-height: $font-line-height-md;
+      }
+    }
+
+    &--desc {
+      &--text {
+        font-size: $font-size-text-lg;
       }
     }
   }
@@ -289,12 +1198,30 @@
 
 .schedule {
   @include z-layout(45fr);
-  @include schedule(7);
+  @include schedule(4);
   position: relative;
-  margin-top: 18rem;
+  height: 75vw;
+
+  @include media-queries(laptop-sm) {
+    height: 80vh;
+  }
+
+  @include media-queries(tab-lg-land) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 55fr 45fr;
+    height: 130vh;
+  }
 
   @include media-queries(tab-sm-land) {
-    margin-bottom: 20rem;
+    height: 110vh;
+  }
+
+  @include media-queries(phone-xl) {
+    height: 100vh;
+  }
+
+  @include media-queries(phone) {
+    height: 90vh;
   }
 
   &::before {
@@ -311,10 +1238,27 @@
   &--img {
     background-image: url("../../public/img/upcoming-pg/bali-glowup/journey-1.jpg");
     background-position: bottom 80% left 0%;
+
+    @include media-queries(tab-lg-land) {
+      grid-column: 1;
+    }
+  }
+
+  &--aside {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
+    padding-right: 8rem;
+    margin-left: -6rem;
+
+    @include media-queries(tab-lg-land) {
+      margin: 10rem 0rem;
+    }
   }
 
   &--layout {
-    margin-left: -16rem;
     transition-delay: 0.2s;
   }
 
@@ -324,14 +1268,17 @@
 
   &--time {
     font-size: $font-size-header-md;
-    margin-bottom: 1.2rem;
+    @include media-queries(tab-lg-land) {
+      margin-right: 8rem;
+    }
   }
 
   &--icon {
-    @include icon-square($size-icon-square-lg, $col-main-primary);
+    @include media-queries(tab-lg-land) {
+      @include icon-square($size-icon-square-xl, $col-main-primary);
+    }
 
     &--outer {
-      margin-top: 0.4rem;
       align-items: center;
       font-size: $font-size-text-s;
       line-height: 0.5;
@@ -340,21 +1287,22 @@
   }
 
   &--activity {
-    margin-top: 1.2rem;
+    @include media-queries(tab-lg-land) {
+      margin-left: 8rem;
+    }
 
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
+      font-size: $font-size-header-md;
     }
 
     &--desc {
       font-size: $font-size-text-md;
-      padding-right: 20rem;
     }
   }
 
   &--btn {
     @include btn--link($col-gray-tint-1, $col-main-primary, 0.2, true);
-    grid-column: full-start / full-end;
     font-size: $font-size-text-md;
     border-bottom: $border-gray-sm;
     border-top: $border-gray-sm;
