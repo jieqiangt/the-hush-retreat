@@ -1,8 +1,8 @@
-import LinkButton from "./LinkButton";
+import { Fragment } from "react";
 import ScheduleItem from "./ScheduleItem";
 
 export default function Schedule(props) {
-  const { classes, baseClass, scheduleList, href, onClick, btnText } = props;
+  const { classes, baseClass, scheduleList } = props;
 
   const scheduleItems = scheduleList.map((item, idx) => (
     <ScheduleItem
@@ -19,16 +19,10 @@ export default function Schedule(props) {
   ));
 
   return (
-    <div className={`${classes[`${baseClass}--layout`]} hidden`}>
-      <h2 className={classes[`${baseClass}--title`]}>Your Journey</h2>
-      {scheduleItems}
-      <LinkButton
-        btnClass={classes[`${baseClass}--btn`]}
-        href={href}
-        onClick={onClick}
-      >
-        {btnText}
-      </LinkButton>
-    </div>
+    <Fragment>
+      <div className={`${classes[`${baseClass}--layout`]} hidden`}>
+        {scheduleItems}
+      </div>
+    </Fragment>
   );
 }
