@@ -6,6 +6,8 @@ export const formInitialState = {
   vaccinated: "",
   size: "xs",
   bikiniStyle: "a",
+  dietary: "none",
+  accomodation: "a",
   firstNameValid: true,
   lastNameValid: true,
   emailValid: true,
@@ -13,6 +15,8 @@ export const formInitialState = {
   vaccinatedValid: false,
   sizeValid: true,
   bikiniStyleValid: true,
+  dietaryValid: true,
+  accomodationValid: true,
   retreateeValid: false,
 };
 
@@ -53,6 +57,22 @@ export function validateField(input, field) {
     return ["a", "b", "c", "d"].includes(input);
   }
 
+  if (field === "accomodation") {
+    return ["a", "b", "c", "d"].includes(input);
+  }
+
+  if (field === "dietary") {
+    return [
+      "none",
+      "vegetarian",
+      "vegan",
+      "pescatarian",
+      "noBeef",
+      "noPork",
+      "others",
+    ].includes(input);
+  }
+
   if (field === "standardString") {
     return input.length > 0;
   }
@@ -66,6 +86,8 @@ function validateForm(state) {
     state.phoneValid &&
     (state.sizeValid ? state.sizeValid : true) &&
     (state.bikiniStyleValid ? state.bikiniStyleValid : true) &&
+    (state.accomodationValid ? state.accomodationValid : true) &&
+    (state.dietaryValid ? state.dietaryValid : true) &&
     state.vaccinatedValid
   );
 }

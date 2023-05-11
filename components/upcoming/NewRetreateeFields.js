@@ -38,9 +38,11 @@ export default function NewRetreateeFields(props) {
     vaccinated: newRetreateeState.vaccinated,
     size: newRetreateeState.size,
     bikiniStyle: newRetreateeState.bikiniStyle,
+    accomodation: newRetreateeState.accomodation,
+    dietary: newRetreateeState.dietary,
   };
 
-  const allStateNames = [...Object.keys(fields)];
+  const allStateNames = Object.keys(fields);
 
   const formatFieldName = (name) => {
     const nameArr = name.split("-");
@@ -54,7 +56,7 @@ export default function NewRetreateeFields(props) {
     return fieldName;
   };
 
-  const allOptionalFields = ["size", "bikiniStyle"];
+  const allOptionalFields = ["size", "bikiniStyle", "accomodation", "dietary"];
 
   const fieldsToRemove = selectOptions
     ? allOptionalFields.filter(
@@ -65,14 +67,14 @@ export default function NewRetreateeFields(props) {
       )
     : allOptionalFields;
 
-  for (const fieldName in fieldsToRemove) {
+  for (const fieldName of fieldsToRemove) {
     const idx = allStateNames.indexOf(fieldName);
     allStateNames.splice(idx, 1);
   }
 
   const stateNames = [
-    ...allStateNames,
-    ...allStateNames.map((name) => `${name}Valid`),
+    ...Object.keys(fields),
+    ...Object.keys(fields).map((name) => `${name}Valid`),
     "retreateeValid",
   ];
 
@@ -130,10 +132,24 @@ export default function NewRetreateeFields(props) {
     dispatchNewRetreatee,
     fields.bikiniStyle,
   ]);
+  useEffect(valFieldHandlers["accomodation"], [
+    dispatchNewRetreatee,
+    fields.accomodation,
+  ]);
+  useEffect(valFieldHandlers["dietary"], [
+    dispatchNewRetreatee,
+    fields.dietary,
+  ]);
 
   useEffect(() => {
     const newRetreateeOutput = {};
-    newRetreateeOutput[retreateeIdx] = newRetreateeState;
+    const updatedRetreateeState = { ...newRetreateeState };
+
+    for (const key of fieldsToRemove) {
+      delete updatedRetreateeState[key];
+      delete updatedRetreateeState[`${key}Valid`];
+    }
+    newRetreateeOutput[retreateeIdx] = updatedRetreateeState;
     onValidated(newRetreateeOutput);
   }, [retreateeValid, newRetreateeState]);
 
