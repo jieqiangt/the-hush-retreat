@@ -595,15 +595,11 @@
     align-content: center;
   }
 
-  &--title {
-    grid-column: time-start / activity-end;
-    grid-row: 1;
-  }
-
   &--time {
     grid-column: time-start / time-end;
     justify-self: end;
-    margin-right: 4rem;
+    margin-right: 5rem;
+    align-self: start;
   }
 
   &--icon {
@@ -613,13 +609,15 @@
       grid-column: logo-start / logo-end;
       display: flex;
       flex-direction: column;
+      align-self: start;
     }
   }
 
   &--activity {
     grid-column: activity-start / activity-end;
     justify-self: start;
-    margin-left: 4rem;
+    margin-left: 5rem;
+    align-self: start;
   }
 }
 
