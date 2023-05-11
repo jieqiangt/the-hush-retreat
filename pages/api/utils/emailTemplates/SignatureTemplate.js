@@ -12,7 +12,7 @@ export default function SignatureTemplate(props) {
 
   const iconBoxStle = {
     display: "flex",
-    gap: "0.6em",
+    gap: "1.2em",
     "margin-top": "0.4em",
   };
 
@@ -23,7 +23,7 @@ export default function SignatureTemplate(props) {
         <p style={textStyle}>Mandi</p>
       </div>
       <div style={iconBoxStle}>
-        <a href="#">
+        <a href="https://thehushretreats.com/">
           <img
             style={iconStyle}
             src="https://hush-retreat.s3.ap-southeast-1.amazonaws.com/main-logo-green.png"
