@@ -8,6 +8,8 @@ export default function AdditionalRetreateeTemplate(props) {
     email,
     size,
     bikiniStyle,
+    dietary,
+    accomodation,
     divStyle,
     headerStyle,
     ulStyle,
@@ -39,6 +41,20 @@ export default function AdditionalRetreateeTemplate(props) {
                 <li
                   style={liStyle}
                 >{`Bikini Style: ${bikiniStyle.toUpperCase()}`}</li>
+              ) : (
+                ""
+              )}
+              {accomodation ? (
+                <li
+                  style={liStyle}
+                >{`Accomodation Option: ${accomodation.toUpperCase()}`}</li>
+              ) : (
+                ""
+              )}
+              {dietary ? (
+                <li style={liStyle}>{`Dietary Restriction: ${dietary
+                  .charAt(0)
+                  .toUpperCase()}${dietary.slice(1)}`}</li>
               ) : (
                 ""
               )}
