@@ -86,6 +86,7 @@ export default function ContactUs(props) {
 
     if (result.ok) {
       const successNotification = await result.json();
+      notificationCtx.showNotification(successNotification);
 
       await callApi({
         url: "/api/sendContactUsConfirmation",
@@ -97,11 +98,9 @@ export default function ContactUs(props) {
           subject: subjectRef.current.value,
           message: messageRef.current.value,
           referenceId: successNotification.referenceId,
-          insertedId: successNotification.insertedId,
+          idToUpdate: successNotification.insertedId,
         },
       });
-
-      notificationCtx.showNotification(successNotification);
 
       emailRef.current.value = "";
       firstNameRef.current.value = "";
