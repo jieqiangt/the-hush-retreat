@@ -23,7 +23,6 @@ export default function RetreatConfirmationTemplate(props) {
         <p
           style={textStyle}
         >{`Thank you for expressing interest to spend a lovely time with us at ${retreat.name} on ${retreat.date}.`}</p>
-        <p>{`This will be ${retreat.emailDesc}.`}</p>
       </div>
       <div style={divStyle}>
         <h3 style={headerStyle}>Main Retreatee</h3>
@@ -44,6 +43,20 @@ export default function RetreatConfirmationTemplate(props) {
             <li
               style={liStyle}
             >{`Bikini Style: ${mainRetreatee.bikiniStyle.toUpperCase()}`}</li>
+          ) : (
+            ""
+          )}
+          {mainRetreatee.accomodation ? (
+            <li
+              style={liStyle}
+            >{`Accomodation Option: ${mainRetreatee.accomodation.toUpperCase()}`}</li>
+          ) : (
+            ""
+          )}
+          {mainRetreatee.dietary ? (
+            <li style={liStyle}>{`Dietary Restriction: ${mainRetreatee.dietary
+              .charAt(0)
+              .toUpperCase()}${mainRetreatee.dietary.slice(1)}`}</li>
           ) : (
             ""
           )}
