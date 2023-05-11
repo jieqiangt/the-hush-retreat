@@ -817,27 +817,6 @@
     }
   }
 
-
-  @include media-queries(phone-xl) {
-    height: 85vh;
-  }
-
-  @include media-queries(phone) {
-    height: 90vh;
-  }
-
-  @include media-queries(device-sm-short) {
-    height: 100vh;
-  }
-
-  @include media-queries(tab-land-short) {
-    height: 105vh;
-  }
-
-  @include media-queries(device-tall) {
-    height: 65vh;
-  }
-
   &--aside {
     @include media-queries(tab-land) {
       order: 2;
