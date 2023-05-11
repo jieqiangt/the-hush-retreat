@@ -16,43 +16,47 @@ export default function SweatXShakailaPage() {
   const guideTitle = "GUIDE NAME";
   const guideText = ["CAPTION", "DESCRIPTION PARAGRAPH"];
 
+  const scheduleTitle = "Your Journey";
   const scheduleList = [
     {
       timeRange: "0800 - 0815",
       iconName: "icon-logo-words-circular",
       numDots: 3,
       title: "Meet Up & Intro",
-      desc: "Briefing for the day!",
+      desc: ["Briefing for the day!"],
     },
     {
       timeRange: "0815 - 0830",
       iconName: "icon-logo-words-circular",
       numDots: 5,
       title: "Gear Up & Warm up",
-      desc: "Get ready for the grind!",
+      desc: ["Get ready for the grind!"],
     },
     {
       timeRange: "0830 - 0930",
       iconName: "icon-logo-words-circular",
       numDots: 6,
       title: "Surf HIIT",
-      desc: "Time to spice up your morning exercise!",
+      desc: ["Time to spice up your morning exercise!"],
     },
     {
       timeRange: "0930 - 0945",
       iconName: "icon-logo-words-circular",
       numDots: 6,
       title: "Revitalize",
-      desc: "Cool down with a refreshing Ollie sparkling hard seltzer!",
+      desc: ["Cool down with a refreshing Ollie sparkling hard seltzer!"],
     },
     {
       timeRange: "0945 - 1130",
       iconName: "icon-logo-words-circular",
       numDots: 0,
       title: "Closing Circle",
-      desc: "Feel free to mingle around & make some memories after a workout!",
+      desc: [
+        "Feel free to mingle around & make some memories after a workout!",
+      ],
     },
   ];
+  const scheduleBtnText = "Register Here";
 
   const expectImgUrlList = [
     {
@@ -111,8 +115,6 @@ export default function SweatXShakailaPage() {
     />
   );
 
-  const scheduleBtnText = "Register Here";
-
   return (
     <Fragment>
       <Head>
@@ -141,6 +143,7 @@ export default function SweatXShakailaPage() {
         <NewRetreatSchedule
           classes={classes}
           baseClass="schedule"
+          title={scheduleTitle}
           scheduleList={scheduleList}
           btnText={scheduleBtnText}
         />
