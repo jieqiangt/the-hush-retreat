@@ -18,6 +18,8 @@ export default function createEmailTemplate(section, params = {}) {
     lastName,
     message,
     subject,
+    numPax,
+    referenceId,
   } = params;
 
   const textColor = "#8d2517";
@@ -84,6 +86,8 @@ export default function createEmailTemplate(section, params = {}) {
           email={item.email}
           bikiniStyle={item.bikiniStyle}
           size={item.size}
+          accomodation={item.accomodation}
+          dietary={item.dietary}
           textStyle={textStyle}
           divStyle={divStyle}
           ulStyle={ulStyle}
@@ -151,6 +155,8 @@ export default function createEmailTemplate(section, params = {}) {
       jsxOutput = (
         <PaymentDetailsTemplate
           price={price}
+          numPax={numPax}
+          referenceId={referenceId}
           textStyle={textStyle}
           divStyle={divStyle}
           ulStyle={ulStyle}
