@@ -1,19 +1,22 @@
 import { Fragment } from "react";
 
 export default function PaymentDetailsTemplate(props) {
-  const { price, textStyle, divStyle, ulStyle, liStyle } = props;
+  const { price, numPax, referenceId, textStyle, divStyle, ulStyle, liStyle } =
+    props;
 
   const imgStyle = {
     "padding-left": "1em",
     height: "10em",
     width: "10em",
   };
+
   return (
     <Fragment>
       <div style={divStyle}>
         <p style={textStyle}>
-          {`To secure your spot, please make a payment of SGD ${price} to The Hush
-          Retreats Pte Ltd via:`}
+          {`To secure your spot(s), please make a payment of SGD ${
+            price * numPax
+          } (SGD ${price} per pax) to The Hush Retreats Pte Ltd via:`}
         </p>
         <ul style={ulStyle}>
           <li style={liStyle}>
@@ -28,6 +31,9 @@ export default function PaymentDetailsTemplate(props) {
             <p style={textStyle}> - Paynow UEN: 202144732M</p>
           </li>
         </ul>
+        <p style={textStyle}>
+          {`** Please include your reference ID: ${referenceId} during payment for our easy verification.`}
+        </p>
         <p style={textStyle}>
           Once complete, reply to this email with a screenshot of your
           successful transaction AND the signed Participant Form.
@@ -48,14 +54,6 @@ export default function PaymentDetailsTemplate(props) {
         >{`We look forward to hosting you, see you really soon! `}</p>
         <p style={textStyle}>{`Have a great day ahead :)`}</p>
       </div>
-
-      {/* <p style={textStyle}>
-          It is recommended that your payment is made with the same phone number
-          & name used for your booking.
-        </p>
-        <p style={textStyle}>
-          {`** Please indicate your booking reference ${bookingId} in the reference for us to identify your payment automatically.`}
-        </p> */}
     </Fragment>
   );
 }
