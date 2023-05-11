@@ -11,6 +11,14 @@ export default function ScheduleItem(props) {
     </span>
   ));
 
+  const descItems = desc
+    ? desc.map((item, idx) => (
+        <p key={idx} className={classes[`${baseClass}--activity--desc--item`]}>
+          {item}
+        </p>
+      ))
+    : "";
+
   return (
     <Fragment>
       <time
@@ -35,7 +43,9 @@ export default function ScheduleItem(props) {
       >
         <h4 className={classes[`${baseClass}--activity--title`]}>{title}</h4>
         {desc ? (
-          <p className={classes[`${baseClass}--activity--desc`]}>{desc}</p>
+          <div className={classes[`${baseClass}--activity--desc`]}>
+            {descItems}
+          </div>
         ) : (
           ""
         )}
