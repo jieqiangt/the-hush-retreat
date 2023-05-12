@@ -1203,6 +1203,10 @@
     height: 90vh;
   }
 
+  @include media-queries(device-sm-short) {
+    height: 140vh;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -1250,11 +1254,19 @@
     @include media-queries(tab-lg-land) {
       margin-right: 8rem;
     }
+
+    @include media-queries(phone) {
+      font-size: $font-size-header-sm;
+    }
   }
 
   &--icon {
     @include media-queries(tab-lg-land) {
       @include icon-square($size-icon-square-xl, $col-main-primary);
+    }
+
+    @include media-queries(phone) {
+      @include icon-square($size-icon-square-lg, $col-main-primary);
     }
 
     &--outer {
@@ -1273,10 +1285,17 @@
     &--title {
       @include section--title($col-main-primary, $letter-spacing-xs);
       font-size: $font-size-header-md;
+
+      @include media-queries(phone) {
+        font-size: $font-size-header-sm;
+      }
     }
 
     &--desc {
       font-size: $font-size-text-md;
+      @include media-queries(phone) {
+        font-size: $font-size-text-s;
+      }
     }
   }
 
