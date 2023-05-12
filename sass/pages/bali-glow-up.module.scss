@@ -26,6 +26,11 @@
         bottom: 26rem;
         right: 4rem;
       }
+
+      @include media-queries(device-sm-short) {
+        bottom: 18rem;
+        right: 4rem;
+      }
     }
   }
 
