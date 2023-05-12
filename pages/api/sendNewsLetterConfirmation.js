@@ -1,7 +1,7 @@
 import { catchApiWrapper } from "./utils/errorUtils";
 import createEmailTemplate from "./utils/createEmailTemplate";
 import { invokeAsyncLambda } from "./utils/awsUtils";
-f;
+
 const allowedMethods = ["POST"];
 
 const handler = catchApiWrapper(async (req, res) => {
