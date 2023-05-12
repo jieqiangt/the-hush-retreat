@@ -905,13 +905,19 @@
   &--title {
     @include section--title($col-main-primary, $letter-spacing-xs);
     margin-bottom: 3rem;
+    text-align: center;
     text-transform: none;
+    padding: 0rem 8rem;
   }
 
   &--content {
     padding: 0rem 20rem;
     margin-top: 4rem;
     margin-bottom: 8rem;
+
+    & p {
+      font-size: inherit;
+    }
   }
 
   &--gallery {
