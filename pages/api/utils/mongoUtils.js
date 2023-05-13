@@ -1,6 +1,9 @@
 import { MongoClient } from "mongodb";
 import { AppError } from "./errorUtils";
 import { v4 as uuidv4 } from "uuid";
+import { createWriterLogger, getCurrentDateTimeStr } from "./loggerUtils";
+
+const Logger = createWriterLogger();
 
 export async function connectClient() {
   try {
@@ -10,12 +13,15 @@ export async function connectClient() {
     console.log("MongoDB Client Connected!");
     return client;
   } catch (err) {
+    const title = "Database Client Error";
+    Logger.error(`::::::::::::::: ${getCurrentDateTimeStr()} :::::::::::: `);
+    Logger.error(title);
+    Logger.error(err);
     throw new AppError({
-      title: "Database Client Error",
-      clientMessage: `Database connection is currently unavailable. Please try registering again later. Apologies on the inconvenience caused.`,
+      title,
+      clientMessage: `Database connection is currently unavailable. Please try again later. Apologies on the inconvenience caused.`,
       status: 503,
       className: "notification--error",
-      message: err,
     });
   }
 }
@@ -26,13 +32,15 @@ export async function connectDb(client, dbName) {
     console.log(`MongoDB Database ${dbName} connected!`);
     return db;
   } catch (err) {
+    const title = "Database Connection Error";
+    Logger.error(`::::::::::::::: ${getCurrentDateTimeStr()} :::::::::::: `);
+    Logger.error(title);
+    Logger.error(err);
     throw new AppError({
-      title: "Database Connection Error",
-      clientMessage:
-        "Database connection is currently unavailable. Please try registering again later. Apologies on the inconvenience caused.",
+      title,
+      clientMessage: `Database connection is currently unavailable. Please try again later. Apologies on the inconvenience caused.`,
       status: 503,
       className: "notification--error",
-      message: err,
     });
   }
 }
@@ -50,6 +58,10 @@ export async function insertOneToCollection(
     console.log("MongoDB Insertion Success");
     return result;
   } catch (err) {
+    const title = "Database Insertion Error";
+    Logger.error(`::::::::::::::: ${getCurrentDateTimeStr()} :::::::::::: `);
+    Logger.error(title);
+    Logger.error(err);
     if (err.code === 11000) {
       return {
         error: {
@@ -58,12 +70,10 @@ export async function insertOneToCollection(
       };
     }
     throw new AppError({
-      title: "Database Insertion Error",
-      clientMessage:
-        "Database is currently unavailable. Please try registering again later. Apologies on the inconvenience caused.",
+      title,
+      clientMessage: `Database is currently unavailable. Please try again later. Apologies on the inconvenience caused.`,
       status: 503,
       className: "notification--error",
-      message: err,
     });
   }
 }
@@ -82,7 +92,7 @@ export async function getOneFromCollection(
       throw new AppError({
         title: "Database Query Error",
         clientMessage:
-          "Database is currently unavailable. Please try registering again later. Apologies on the inconvenience caused.",
+          "Database is currently unavailable. Please try again later. Apologies on the inconvenience caused.",
         status: 503,
         className: "notification--error",
       });
@@ -90,13 +100,15 @@ export async function getOneFromCollection(
     console.log("MongoDB Database Query Completed");
     return result;
   } catch (err) {
+    const title = "Database Query Error";
+    Logger.error(`::::::::::::::: ${getCurrentDateTimeStr()} :::::::::::: `);
+    Logger.error(title);
+    Logger.error(err);
     throw new AppError({
-      title: "Database Query Error",
-      clientMessage:
-        "Database is currently unavailable. Please try registering again later. Apologies on the inconvenience caused.",
+      title,
+      clientMessage: `Database is currently unavailable. Please try again later. Apologies on the inconvenience caused.`,
       status: 503,
       className: "notification--error",
-      message: err,
     });
   }
 }
@@ -118,10 +130,13 @@ export async function updateOneFromCollection(
     console.log("MongoDB Database Update Completed");
     return result;
   } catch (err) {
+    const title = "Database Update Error";
+    Logger.error(`::::::::::::::: ${getCurrentDateTimeStr()} :::::::::::: `);
+    Logger.error(title);
+    Logger.error(err);
     throw new AppError({
-      title: "Database Update Error",
-      clientMessage:
-        "Database is currently unavailable. Please try registering again later. Apologies on the inconvenience caused.",
+      title,
+      clientMessage: `Database is currently unavailable. Please try registering again later. Apologies on the inconvenience caused.`,
       status: 503,
       className: "notification--error",
       message: err,
