@@ -124,7 +124,7 @@ export default function BaliGlowUpPage() {
     btnText: "Register Here",
     date: "13 May 2023, Saturday",
     time: "8am - 10am",
-    price: "599",
+    price: "TBC",
     location: "Bali",
     promotion: "",
     desc: "Some Description",
