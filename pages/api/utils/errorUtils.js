@@ -33,7 +33,7 @@ export function catchApiWrapper(handler, allowedMethods = []) {
 
 export function errorHandler(err, res) {
   // for errors thrown by us
-  console.log(err.Error);
+  console.log(err);
 
   if (err.clientMessage && err.status) {
     res.status(err.status).json(err);
