@@ -12,8 +12,7 @@ export async function connectClient() {
   } catch (err) {
     throw new AppError({
       title: "Database Client Error",
-      clientMessage:
-        "Database connection is currently unavailable. Please try registering again later. Apologies on the inconvenience caused.",
+      clientMessage: `Database connection is currently unavailable. Please try registering again later. Apologies on the inconvenience caused.`,
       status: 503,
       className: "notification--error",
       message: err,
