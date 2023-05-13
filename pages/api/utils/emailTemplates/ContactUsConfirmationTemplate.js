@@ -50,19 +50,19 @@ export default function ContactUsConfirmationTemplate(props) {
         </p>
         <ul style={ulStyle}>
           <li style={liStyle}>
-            <span style={liTextStyle}> - </span>
+            <span style={liTextStyle}> - &nbsp;</span>
             <a style={liTextStyle} href="https://thehushretreats.com/help">
               Frequently Asked Questions
             </a>
           </li>
           <li style={liStyle}>
-            <span style={liTextStyle}> - </span>
+            <span style={liTextStyle}> - &nbsp;</span>
             <a style={liTextStyle} href="https://thehushretreats.com/upcoming">
               Upcoming Events
             </a>
           </li>
           <li style={liStyle}>
-            <span style={liTextStyle}> - </span>
+            <span style={liTextStyle}> - &nbsp;</span>
             <a style={liTextStyle} href="https://thehushretreats.com/explore">
               Recent and Past Events
             </a>
