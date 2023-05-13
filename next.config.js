@@ -5,7 +5,7 @@ const nextConfig = {
   swcMinify: true,
   output: "standalone",
   images: {
-    minimumCacheTTL: 0,
+    minimumCacheTTL: 180,
   },
   async headers() {
     return [
@@ -15,7 +15,7 @@ const nextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=0, must-revalidate",
+            value: "public, max-age=180, must-revalidate",
           },
         ],
       },
