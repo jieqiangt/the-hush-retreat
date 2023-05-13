@@ -40,7 +40,6 @@ export default function NewsLetter(props) {
     if (result.ok) {
       const successNotification = await result.json();
       notificationCtx.showNotification(successNotification);
-      emailRef.current.value = "";
 
       await callApi({
         url: "/api/sendNewsLetterConfirmation",
@@ -51,6 +50,8 @@ export default function NewsLetter(props) {
         },
       });
     }
+
+    emailRef.current.value = "";
   }
 
   return (
