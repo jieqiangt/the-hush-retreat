@@ -27,22 +27,24 @@ aws ec2 modify-instance-metadata-options --instance-id $INSTANCE_ID --http-put-r
 
 service docker start
 docker pull jieqiangtan/hush-retreat-prod:latest
-docker run -d --rm -p 80:3000 --name hush-retreat-server \
+docker run -d -p 80:3000 --name hush-retreat-server --restart always \
 -e MONGO_URI=$(aws ssm get-parameter --name MONGO_URI --region ap-southeast-1 | jq -r '.Parameter' | jq -r '.Value') \
 -e MONGO_USER=$(aws ssm get-parameter --name MONGO_USER --region ap-southeast-1 | jq -r '.Parameter' | jq -r '.Value') \
 -e MONGO_DBNAME=$(aws ssm get-parameter --name MONGO_DBNAME --region ap-southeast-1 | jq -r '.Parameter' | jq -r '.Value') \
 -e MONGO_PW=$(aws ssm get-parameter --name MONGO_PW --with-decryption --region ap-southeast-1 | jq -r '.Parameter' | jq -r '.Value') \
+-e LAMBDA_ARN=arn:aws:lambda:ap-southeast-1:615814254462:function:receive-sqs-send-sns-ses \
 jieqiangtan/hush-retreat-prod:latest
 
 # for redeployment
 sudo docker stop hush-retreat-server
 sudo docker rmi jieqiangtan/hush-retreat-prod:latest
 sudo docker pull jieqiangtan/hush-retreat-prod:latest
-sudo docker run -d --rm -p 80:3000 --name hush-retreat-server \
+sudo docker run -d -p 80:3000 --name hush-retreat-server --restart always \
 -e MONGO_URI=$(aws ssm get-parameter --name MONGO_URI --region ap-southeast-1 | jq -r '.Parameter' | jq -r '.Value') \
 -e MONGO_USER=$(aws ssm get-parameter --name MONGO_USER --region ap-southeast-1 | jq -r '.Parameter' | jq -r '.Value') \
 -e MONGO_DBNAME=$(aws ssm get-parameter --name MONGO_DBNAME --region ap-southeast-1 | jq -r '.Parameter' | jq -r '.Value') \
 -e MONGO_PW=$(aws ssm get-parameter --name MONGO_PW --with-decryption --region ap-southeast-1 | jq -r '.Parameter' | jq -r '.Value') \
+-e LAMBDA_ARN=arn:aws:lambda:ap-southeast-1:615814254462:function:receive-sqs-send-sns-ses \
 jieqiangtan/hush-retreat-prod:latest
 
 
