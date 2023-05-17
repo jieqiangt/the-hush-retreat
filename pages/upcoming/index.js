@@ -10,14 +10,14 @@ export default function UpcomingPage() {
     {
       header: "~ 4D3N The Glow Up: Bali Edition ~",
       title: "Surf & Yoga Retreat",
-      desc: "DESCRIPTION",
       btnText: "Learn More",
       btnHref: "/upcoming/bali-glow-up",
       desc: "Are you ready for our FIRST ever overseas retreat? We are taking you to the beautiful West Coast of Bali to catch waves and savasana to those glorious sunsets. Whether you are a beginner or seasoned in surfing and yoga, this retreat is made for you! Let us relax, have fun and enjoy as you let your hair down with us on this 4D3N: The Glow Up Retreat!",
-      date: "13 July 2023 - 16 July 2013",
+      date: "13th Jul - 16th Jul / 10th Aug - 13th Aug",
       time: " ~ 7am Flight",
       location: "Bali",
-      price: "TBC",
+      price: "888",
+      promotion: "** Register as a Duo & it will be $777 per pax!",
       imgSrc: ["/img/upcoming-pg/accom-1.jpg", "/img/upcoming-pg/host-1.jpg"],
     },
   ];
