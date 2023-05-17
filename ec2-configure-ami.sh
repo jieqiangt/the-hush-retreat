@@ -37,6 +37,7 @@ jieqiangtan/hush-retreat-prod:latest
 
 # for redeployment
 sudo docker stop hush-retreat-server
+sudo docker rm jieqiangtan/hush-retreat-prod:latest
 sudo docker rmi jieqiangtan/hush-retreat-prod:latest
 sudo docker pull jieqiangtan/hush-retreat-prod:latest
 sudo docker run -d -p 80:3000 --name hush-retreat-server --restart always \
