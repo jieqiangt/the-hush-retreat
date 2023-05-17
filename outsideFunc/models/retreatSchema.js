@@ -14,14 +14,11 @@ module.exports = {
             "createdOn",
             "updatedOn",
             "name",
-            "retreatIsoDate",
-            "date",
+            "startDate",
+            "endDate",
+            "strDate",
             "price",
             "location",
-            "upcomingTitle",
-            "upcomingDesc",
-            "upcomingImgPath",
-            "upcomingUrlPath",
             "exploreShown",
             "active",
           ],
@@ -45,11 +42,15 @@ module.exports = {
               bsonType: "string",
               description: "retreatName of string datatype is required.",
             },
-            retreatIsoDate: {
+            startDate: {
               bsonType: "date",
-              description: "retreatIsoDate of iso date datatype is required.",
+              description: "startDate of iso date datatype is required.",
             },
-            date: {
+            endDate: {
+              bsonType: "date",
+              description: "startDate of iso date datatype is required.",
+            },
+            strDate: {
               bsonType: "string",
               description:
                 "date of string datatype is required. This is in the human readable format to be shown in website.",
@@ -68,24 +69,19 @@ module.exports = {
             },
             upcomingTitle: {
               bsonType: "string",
-              description: "upcomingTitle of string datatype is required.",
+              description: "upcomingTitle of string datatype is optional.",
             },
             upcomingDesc: {
               bsonType: "string",
-              description: "upcomingDesc of string datatype is required.",
+              description: "upcomingDesc of string datatype is optional.",
             },
             upcomingImgPath: {
               bsonType: "string",
-              description: "upcomingImgPath of string datatype is required.",
+              description: "upcomingImgPath of string datatype is optional.",
             },
             upcomingUrlPath: {
               bsonType: "string",
-              description: "upcomingUrlPath of string datatype is required.",
-            },
-            emailDesc: {
-              bsonType: "string",
-              description:
-                "emailDesc of string datatype is optional. Information about retreat after the words 'This will be'",
+              description: "upcomingUrlPath of string datatype is optional.",
             },
             exploreTitle: {
               bsonType: "string",
