@@ -14,7 +14,7 @@ export default function BaliGlowUpPage() {
   const hostTitle = "Your Wellness Hosts";
   const hostCaption = ["SUURV x The Hush Retreats", "Founders Collaboration"];
   const hostText = [
-    "Start your wellness journey with Seraphina - SUURV & Mandi - The Hush Retreats. Let us bring you through a transformative wellness experience in Bali. Your role is to show up, sit back and unwind - we take care of the rest for you.",
+    "From the ocean to the mat, this retreat is the ultimate balance of adventure and relaxation. Join the dynamic duo - Mandi (Founder of The Hush Retreats) and Seraphina (Founder of SUURV) to ride the waves and find your zen! ",
   ];
 
   const accomodationTitle = "Your Home In Bali";
@@ -41,7 +41,7 @@ export default function BaliGlowUpPage() {
   const surfTitle = "SUURV & IMMERSE";
   const surfCaption = ["SUURV ~ Learn to Surf in Style in Bali"];
   const surfText = [
-    "Unleash your inner adventurer with SUURV and embark on a transformative journey at our local surf camp, nestled in the captivating beauty of Bali. Elevate your wellness retreat with the invigorating thrill of mastering the waves, all while indulging in the luxurious comforts that await you.",
+    "Unleash your inner adventurer with SUURV and embark on a transformative journey at our local surf camp, nestled in the captivating beauty of Bali! Elevate your wellness retreat with the invigorating thrill of mastering the waves, all while indulging in the luxurious comforts that await you!",
   ];
   const surfImgUrlList = [
     {
@@ -61,7 +61,7 @@ export default function BaliGlowUpPage() {
   const yogaTitle = "Hush & Zen";
   const yogaCaption = ["The Hush Retreats ~ Wind Down with Zen Yoga"];
   const yogaText = [
-    "Experience the harmonious rhythm of Bali's waves as you embark on a transformative journey. Immerse yourself in meditative yoga and soulful journaling, awakening inner peace and cultivating mindfulness beneath the island's serene sky.",
+    "Together with fellow like-minded and supportive individuals, you get to start and end your day with a mindful yoga practice, and learn how to surf in a fun and safe environment! Suitable for all levels, even first-timers. Get ready for all that Sun, Surf and Savasana!",
   ];
 
   const scheduleTitle = "Your Journey";
@@ -69,7 +69,7 @@ export default function BaliGlowUpPage() {
     {
       timeRange: "Day 1",
       iconName: "icon-logo-words-circular",
-      numDots: 14,
+      numDots: 16,
       title: "Shaka!",
       desc: [
         "Arrival & Check-In",
@@ -80,22 +80,24 @@ export default function BaliGlowUpPage() {
     {
       timeRange: "Day 2",
       iconName: "icon-logo-words-circular",
-      numDots: 14,
+      numDots: 16,
       title: "Surf’s Up",
       desc: [
+        "Morning Yoga Stretch",
         "SUURV Sessions 1 & 2",
-        "Midday Yoga Stretch",
+        "Midday Massage",
         "Evening Zen Yoga + Journaling",
       ],
     },
     {
       timeRange: "Day 3",
       iconName: "icon-logo-words-circular",
-      numDots: 20,
+      numDots: 22,
       title: "Catching Waves & Zs",
       desc: [
+        "Morning Yoga Stretch",
         "SUURV Sessions 3 & 4",
-        "Midday Yoga Stretch",
+        "Midday Massage",
         "Evening Zen Yoga & Journaling",
         "BBQ Dinner Party",
       ],
@@ -106,6 +108,7 @@ export default function BaliGlowUpPage() {
       numDots: 0,
       title: "Sampai Jumpa!",
       desc: [
+        "Morning Yoga Stretch",
         "SUURV Session 5",
         "Journaling & Reflection",
         "Closing Circle",
@@ -121,34 +124,31 @@ export default function BaliGlowUpPage() {
     name: "The Glow Up: Bali Edition",
     title: "The Glow Up: Bali Edition",
     caption: "Glow Up x SUURV - Surf & Zen at Bali",
+    date: "13th Jul - 16th Jul / 10th Aug - 13th Aug",
     btnText: "Register Here",
-    date: "13 May 2023, Saturday",
-    time: "8am - 10am",
-    price: "TBC",
+    price: "888",
     location: "Bali",
-    promotion: "",
-    desc: "Some Description",
-    selectOptions: {
-      dietary: [
-        { value: "none", name: "No Restriction" },
-        { value: "vegetarian", name: "Vegetarian" },
-        { value: "vegan", name: "Vegan" },
-        { value: "pescatarian", name: "Pescatarian" },
-        { value: "noBeef", name: "No Beef" },
-        { value: "noPork", name: "No Pork" },
-        { value: "others", name: "Others" },
-      ],
-      accomodation: [
-        { value: "a", name: "A" },
-        { value: "b", name: "B" },
-        { value: "c", name: "C" },
-        { value: "d", name: "D" },
+    promotion: "** Register as a Duo & it will be $777 per pax!",
+    retreatOptions: {
+      "retreat-date": [
+        {
+          value: [
+            "62a19ce1-0cf3-413f-bc0e-d415a1a9ee8c",
+            "13th July - 16th July",
+          ],
+          name: "13th July - 16th July",
+        },
+        {
+          value: [
+            "8a420420-8e02-4857-829c-c981bc9d4b51",
+            "10th Aug - 13th Aug",
+          ],
+          name: "10th Aug - 13th Aug",
+        },
       ],
     },
+    selectOptions: "",
   };
-
-  const queryMsg =
-    "** Do indicate your dietary preference below if you have chosen others";
 
   const modal = (
     <NewRetreatBookingModal
@@ -156,8 +156,8 @@ export default function BaliGlowUpPage() {
       baseClass={modalBaseClass}
       modalTitle={modalTitle}
       modalCaption={modalCaption}
-      queryMsg={queryMsg}
       retreat={retreat}
+      isModal={true}
     />
   );
 
@@ -180,14 +180,14 @@ export default function BaliGlowUpPage() {
           caption={hostCaption}
           text={hostText}
         />
-        <NewRetreatSection
+        {/* <NewRetreatSection
           classes={classes}
           baseClass="accomodation"
           title={accomodationTitle}
           caption={accomodationCaption}
           text={accomodationText}
           imgUrlList={accomodationImgUrlList}
-        />
+        /> */}
         <NewRetreatSection
           classes={classes}
           baseClass="surf"
