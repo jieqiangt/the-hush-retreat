@@ -15,17 +15,28 @@ import NewRetreateeFields from "./NewRetreateeFields";
 import Icon from "../ui/Icon";
 import LinkButton from "../ui/LinkButton";
 import { v4 as uuidv4 } from "uuid";
+import InputSelect from "../ui/InputSelect";
+import NewRetreatInfo from "./NewRetreatInfo";
 
 export default function BookingForm(props) {
   const { closeModal } = useContext(ModalContext);
   const notificationCtx = useContext(NotificationContext);
-  const { baseClass, classes, retreat, queryMsg } = props;
-  const { selectOptions } = retreat;
+  const {
+    baseClass,
+    classes,
+    retreat,
+    queryMsg,
+    isModal,
+    modalCaption,
+    modalTitle,
+  } = props;
+  const { selectOptions, retreatOptions } = retreat;
   const [allRetreateeDetails, setAllRetreateeDetails] = useState({});
   const [formValid, setFormValid] = useState(false);
   const [retreateeFields, setRetreateeFields] = useState([]);
   const [refresh, setRefresh] = useState();
   const msgInputRef = useRef();
+  const retreatRef = useRef();
 
   const getRetreateeDetailsHandler = (retreateeDetails) => {
     setAllRetreateeDetails((oldAllRetreateeDetails) => {
@@ -42,7 +53,9 @@ export default function BookingForm(props) {
           classes={classes}
           baseClass={baseClass}
           selectOptions={selectOptions}
+          retreatOptions=""
           onValidated={getRetreateeDetailsHandler}
+          hasNationality={true}
           retreateeIdx={uuidv4()}
           key={uuidv4()}
         />
@@ -95,14 +108,40 @@ export default function BookingForm(props) {
     }
   }, [setFormValid, allRetreateeDetails]);
 
+  let inputRetreatOptions = [];
+
+  for (let key in retreatOptions) {
+    let options = retreatOptions[key];
+    const className = !key.includes("-") ? key : key;
+    const labelName = !key.includes("-") ? key : key.replace("-", " ");
+
+    inputRetreatOptions.push(
+      <InputSelect
+        key={key}
+        inputGroupClass={
+          classes[`${baseClass}--retreatee--${className}--group`]
+        }
+        inputClass={classes[`${baseClass}--retreatee--${className}`]}
+        inputName={key}
+        inputOptions={options}
+        labelClass={classes[`${baseClass}--retreatee--${className}--label`]}
+        label={labelName}
+        optionClass={classes[`${baseClass}--retreatee--${className}--option`]}
+        selectRef={retreatRef}
+      />
+    );
+  }
+
   async function bookingHandler(event) {
     event.preventDefault();
+
+    const [retreatId, retreatStrDate] = retreatRef.current.value.split(",");
 
     const result = await callApi({
       url: "/api/registerBooking",
       method: "POST",
       body: {
-        retreatId: retreat._id,
+        retreatId,
         allRetreateeDetails,
         message: msgInputRef.current.value,
       },
@@ -123,6 +162,7 @@ export default function BookingForm(props) {
         method: "POST",
         body: {
           retreat,
+          retreatStrDate,
           referenceId: successNotification.referenceId,
           idToUpdate: successNotification.insertedId,
           mainRetreatee: successNotification.mainRetreatee,
@@ -133,14 +173,28 @@ export default function BookingForm(props) {
   }
 
   return (
-    <Fragment>
+    <section className={classes[`${baseClass}--aside`]}>
+      <h3 className={classes[`${baseClass}--aside--title`]}>{modalTitle}</h3>
+      <span className={classes[`${baseClass}--aside--info--caption`]}>
+        {modalCaption}
+      </span>
       <form action="#" className={classes[`${baseClass}--form`]}>
+        {inputRetreatOptions}
+        <div className={classes[`${baseClass}--aside--info--grid`]}>
+          <NewRetreatInfo
+            classes={classes}
+            baseClass={`${baseClass}--aside--info`}
+            retreat={retreat}
+            isModal={isModal}
+          />
+        </div>
         <NewRetreateeFields
           classes={classes}
           baseClass={baseClass}
           onValidated={getRetreateeDetailsHandler}
           retreateeIdx={"main"}
           selectOptions={selectOptions}
+          hasNationality={true}
         />
         <div className={classes[`${baseClass}--form--title--box`]}>
           <span className={classes[`${baseClass}--form--title`]}>
@@ -188,6 +242,6 @@ export default function BookingForm(props) {
           Register
         </button>
       </form>
-    </Fragment>
+    </section>
   );
 }
