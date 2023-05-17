@@ -5,6 +5,7 @@ import { formInitialState, formReducer } from "../../reducers/formReducer";
 import Icon from "../ui/Icon";
 import LinkButton from "../ui/LinkButton";
 import InputSelect from "../ui/InputSelect";
+import { formatFieldName } from "../../utils/dataUtils";
 
 export default function NewRetreateeFields(props) {
   const [newRetreateeState, dispatchNewRetreatee] = useReducer(
@@ -20,6 +21,7 @@ export default function NewRetreateeFields(props) {
     retreateeIdx,
     retreateeCounter,
     selectOptions,
+    hasNationality,
   } = props;
 
   const {
@@ -27,6 +29,7 @@ export default function NewRetreateeFields(props) {
     lastNameValid,
     emailValid,
     phoneValid,
+    nationalityValid,
     retreateeValid,
   } = newRetreateeState;
 
@@ -36,6 +39,7 @@ export default function NewRetreateeFields(props) {
     email: newRetreateeState.email,
     phone: newRetreateeState.phone,
     vaccinated: newRetreateeState.vaccinated,
+    nationality: newRetreateeState.nationality,
     size: newRetreateeState.size,
     bikiniStyle: newRetreateeState.bikiniStyle,
     accomodation: newRetreateeState.accomodation,
@@ -44,31 +48,23 @@ export default function NewRetreateeFields(props) {
 
   const allStateNames = Object.keys(fields);
 
-  const formatFieldName = (name) => {
-    const nameArr = name.split("-");
-    const nameStart = nameArr.shift();
-
-    const fieldName = [
-      nameStart,
-      nameArr.map((word) => word.charAt(0).toUpperCase() + word.slice(1)),
-    ].join("");
-
-    return fieldName;
-  };
-
   const allOptionalFields = ["size", "bikiniStyle", "accomodation", "dietary"];
 
-  const fieldsToRemove = selectOptions
-    ? allOptionalFields.filter(
-        (value) =>
-          !Object.keys(selectOptions)
-            .map((key) => (!key.includes("-") ? key : formatFieldName(key)))
-            .includes(value)
-      )
-    : allOptionalFields;
+  const fieldsToRetain = [...Object.keys(selectOptions)].map((fieldName) =>
+    !fieldName.includes("-") ? fieldName : formatFieldName(fieldName)
+  );
+
+  const fieldsToRemove = allOptionalFields.filter(
+    (value) => !fieldsToRetain.includes(value)
+  );
 
   for (const fieldName of fieldsToRemove) {
     const idx = allStateNames.indexOf(fieldName);
+    allStateNames.splice(idx, 1);
+  }
+
+  if (!hasNationality) {
+    const idx = allStateNames.indexOf("nationality");
     allStateNames.splice(idx, 1);
   }
 
@@ -123,6 +119,10 @@ export default function NewRetreateeFields(props) {
   ]);
   useEffect(valFieldHandlers["email"], [dispatchNewRetreatee, fields.email]);
   useEffect(valFieldHandlers["phone"], [dispatchNewRetreatee, fields.phone]);
+  useEffect(valFieldHandlers["nationality"], [
+    dispatchNewRetreatee,
+    fields.nationality,
+  ]);
   useEffect(valFieldHandlers["vaccinated"], [
     dispatchNewRetreatee,
     fields.vaccinated,
@@ -266,6 +266,23 @@ export default function NewRetreateeFields(props) {
           inputClass={classes[`${baseClass}--retreatee--contact--input`]}
           labelClass={classes[`${baseClass}--retreatee--contact--label`]}
         />
+        {hasNationality ? (
+          <InputText
+            label="Nationality"
+            type="text"
+            inputName={`upcoming--retreatee--nationality--${retreateeIdx}`}
+            inputPlaceholder="Nationality"
+            value={fields.nationality}
+            onChange={changeHandlers["nationality"]}
+            valid={nationalityValid}
+            invalidText="A valid nationality is required."
+            inputGroupClass={classes[`${baseClass}--retreatee--nationality`]}
+            inputClass={classes[`${baseClass}--retreatee--nationality--input`]}
+            labelClass={classes[`${baseClass}--retreatee--nationality--label`]}
+          />
+        ) : (
+          ""
+        )}
         {inputSelects}
         <InputCheckBox
           inputOptions={radioOptions}
