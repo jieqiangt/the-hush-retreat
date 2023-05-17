@@ -7,6 +7,7 @@ export default function InputSelect(props) {
     inputName,
     inputClass,
     onChange,
+    selectRef,
     inputOptions,
     labelClass,
     label,
@@ -35,6 +36,7 @@ export default function InputSelect(props) {
           id={inputName}
           className={inputClass}
           onChange={onChange}
+          ref={selectRef}
         >
           {options}
         </select>
