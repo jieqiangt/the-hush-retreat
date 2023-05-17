@@ -4,6 +4,7 @@ export const formInitialState = {
   email: "",
   phone: "",
   vaccinated: "",
+  nationality: "",
   size: "xs",
   bikiniStyle: "a",
   dietary: "none",
@@ -12,6 +13,7 @@ export const formInitialState = {
   lastNameValid: true,
   emailValid: true,
   phoneValid: true,
+  nationalityValid: true,
   vaccinatedValid: false,
   sizeValid: true,
   bikiniStyleValid: true,
@@ -43,6 +45,10 @@ export function validateField(input, field) {
 
   if (field === "phone") {
     return input.length >= 8 && !/[^0-9+]+/.test(input);
+  }
+
+  if (field === "nationality") {
+    return input.length > 0;
   }
 
   if (field === "vaccinated") {
@@ -84,6 +90,7 @@ function validateForm(state) {
     state.lastNameValid &&
     state.emailValid &&
     state.phoneValid &&
+    (state.nationalityValid ? state.nationalityValid : true) &&
     (state.sizeValid ? state.sizeValid : true) &&
     (state.bikiniStyleValid ? state.bikiniStyleValid : true) &&
     (state.accomodationValid ? state.accomodationValid : true) &&
@@ -119,6 +126,7 @@ export function formReducer(state, action) {
         newState.firstName !== "" &&
         newState.lastName !== "" &&
         newState.email !== "" &&
+        newState.phone !== "" &&
         newState.vaccinated !== "";
 
       return newState;
