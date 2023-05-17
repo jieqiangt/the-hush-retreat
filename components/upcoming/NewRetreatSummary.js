@@ -5,6 +5,13 @@ import ResponsiveImage from "../ui/ResponsiveImage";
 export default function NewRetreatSummary(props) {
   const { classes, baseClass, summary } = props;
 
+  let dateStr = summary.date;
+
+  if (summary.date.includes("/")) {
+    const dateStrList = summary.date.split("/");
+    dateStr = dateStrList.map((item) => <time key={item}>{item}</time>);
+  }
+
   return (
     <section className={classes[`${baseClass}`]}>
       <div className={classes[`${baseClass}--header--grid`]}>
@@ -50,7 +57,9 @@ export default function NewRetreatSummary(props) {
               iconClass={classes[`${baseClass}--icon`]}
               iconName="icon-calendar"
             />
-            <time>{summary.date}</time>
+            <div className={classes[`${baseClass}--icon--date--box`]}>
+              {dateStr}
+            </div>
           </div>
           <div
             className={`${classes[`${baseClass}--icon--outer`]} ${
