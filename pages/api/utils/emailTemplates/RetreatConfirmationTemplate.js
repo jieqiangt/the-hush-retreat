@@ -4,6 +4,7 @@ export default function RetreatConfirmationTemplate(props) {
   const {
     mainRetreatee,
     retreat,
+    retreatStrDate,
     textStyle,
     divStyle,
     ulStyle,
@@ -20,9 +21,15 @@ export default function RetreatConfirmationTemplate(props) {
       </div>
       <div style={divStyle}>
         <p style={textStyle}>This is Mandi from The Hush Retreats! </p>
-        <p
-          style={textStyle}
-        >{`Thank you for expressing interest to spend a lovely time with us at ${retreat.name} on ${retreat.date}.`}</p>
+        {retreatStrDate ? (
+          <p
+            style={textStyle}
+          >{`Thank you for expressing interest to spend a lovely time with us at ${retreat.name} on ${retreatStrDate}.`}</p>
+        ) : (
+          <p
+            style={textStyle}
+          >{`Thank you for expressing interest to spend a lovely time with us at ${retreat.name} on ${retreat.date}.`}</p>
+        )}
       </div>
       <div style={divStyle}>
         <h3 style={headerStyle}>Main Retreatee</h3>

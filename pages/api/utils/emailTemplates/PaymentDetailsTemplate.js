@@ -4,6 +4,9 @@ export default function PaymentDetailsTemplate(props) {
   const { price, numPax, referenceId, textStyle, divStyle, ulStyle, liStyle } =
     props;
 
+  const totalDiscount = Math.floor(numPax / 2) * 100;
+  const totalPrice = numPax * price - totalDiscount;
+
   const imgStyle = {
     "padding-left": "1em",
     height: "10em",
@@ -14,9 +17,7 @@ export default function PaymentDetailsTemplate(props) {
     <Fragment>
       <div style={divStyle}>
         <p style={textStyle}>
-          {`To secure your spot(s), please make a payment of SGD ${
-            price * numPax
-          } (SGD ${price} per pax) to The Hush Retreats Pte Ltd via:`}
+          {`To secure your spot(s), please make a payment of SGD $${totalPrice} (SGD $${price} per pax) to The Hush Retreats Pte Ltd via:`}
         </p>
         <ul style={ulStyle}>
           <li style={liStyle}>
@@ -31,6 +32,13 @@ export default function PaymentDetailsTemplate(props) {
             <p style={textStyle}> - Paynow UEN: 202144732M</p>
           </li>
         </ul>
+        {totalDiscount > 0 ? (
+          <p style={textStyle}>
+            {`* Total price is calculated with SGD $${totalDiscount} Duo promotion discount.`}
+          </p>
+        ) : (
+          ""
+        )}
         <p style={textStyle}>
           {`** Please include your reference ID: ${referenceId} during payment for our easy verification.`}
         </p>

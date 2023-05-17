@@ -12,6 +12,7 @@ export default function createEmailTemplate(section, params = {}) {
   const {
     mainRetreatee,
     retreat,
+    retreatStrDate,
     additionalRetreatees,
     price,
     firstName,
@@ -105,6 +106,7 @@ export default function createEmailTemplate(section, params = {}) {
         <RetreatConfirmationTemplate
           mainRetreatee={mainRetreatee}
           retreat={retreat}
+          retreatStrDate={retreatStrDate}
           textStyle={textStyle}
           divStyle={divStyle}
           ulStyle={ulStyle}
