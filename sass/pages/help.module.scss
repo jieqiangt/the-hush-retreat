@@ -267,11 +267,19 @@
       padding: 0rem 20rem;
     }
 
+    @include media-queries(tab-sm-land) {
+      padding: 0rem 14rem;
+    }
+
     @include media-queries(phone-xl) {
-      padding: 0rem 12rem;
+      padding: 0rem 8rem;
     }
 
     @include media-queries(phone-lg) {
+      padding: 0rem 6rem;
+    }
+
+    @include media-queries(phone-sm) {
       padding: 0rem 4rem;
     }
   }
@@ -325,6 +333,8 @@
       font-weight: $font-weight-xl;
       color: $col-main-primary;
       @include font-header;
+      text-align: left;
+      margin-bottom: 0.8rem;
 
       @include media-queries(phone-lg) {
         font-weight: $font-weight-lg;
