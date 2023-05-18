@@ -64,6 +64,28 @@ export default function BaliGlowUpPage() {
     "Together with fellow like-minded and supportive individuals, you get to start and end your day with a mindful yoga practice, and learn how to surf in a fun and safe environment! Suitable for all levels, even first-timers. Get ready for all that Sun, Surf and Savasana!",
   ];
 
+  const expectTitle = "What To Expect";
+  const expectCaption = ["Retreat Inclusions"];
+  const expectText = [
+    "For the 4D3N retreat, you will get to stay in a villa with daily breakfast, surfboard rental & transfer from beach to villa provided! There will be 5 yoga classes by Mandi & 5 private 1-1 surf lessons with surf photos & video analysis as well as a BBQ party night! You will also receive a wellness goodie bag as a souvenir for the retreat, kindly provided by our wellness partners!",
+    "** Price of retreat excludes: Flights, Travel insurance, Daily Lunch & Dinner (except BBQ Party Dinner) & Massages",
+  ];
+
+  const expectImgUrlList = [
+    {
+      src: "/img/upcoming-pg/bali-glowup/breakfast-1.jpg",
+      alt: "Front Image of Resort",
+    },
+    {
+      src: "/img/upcoming-pg/bali-glowup/bbq-1.jpg",
+      alt: "Dining area of Resort",
+    },
+    {
+      src: "/img/upcoming-pg/bali-glowup/surf-1.jpg",
+      alt: "Bedroom Image of Resort",
+    },
+  ];
+
   const scheduleTitle = "Your Journey";
   const scheduleList = [
     {
@@ -92,7 +114,7 @@ export default function BaliGlowUpPage() {
     {
       timeRange: "Day 3",
       iconName: "icon-logo-words-circular",
-      numDots: 22,
+      numDots: 24,
       title: "Catching Waves & Zs",
       desc: [
         "Morning Yoga Stretch",
@@ -117,33 +139,38 @@ export default function BaliGlowUpPage() {
     },
   ];
 
-  const modalTitle = "The Glow Up: Bali Edition";
+  const modalTitle = "4D3N Bali: Ride The Waves, Find Your Zen";
   const modalCaption = "Event Details";
   const retreat = {
     _id: "_123",
-    name: "The Glow Up: Bali Edition",
-    title: "The Glow Up: Bali Edition",
-    caption: "Glow Up x SUURV - Surf & Zen at Bali",
+    name: "4D3N Bali: Ride The Waves, Find Your Zen",
+    title: "4D3N Bali: Ride The Waves, Find Your Zen",
+    caption: "Hush x SUURV - Surf & Yoga Retreat",
     date: "13th Jul - 16th Jul / 10th Aug - 13th Aug",
     btnText: "Register Here",
     price: "888",
     location: "Bali",
+    additionalInfo: [
+      "* Includes 4D3N villa stay, 3 breakfasts, 1 BBQ dinner night, 5 yoga classes by Mandi, 5 private 1-1 surf lessons, surfboard rental, transfer from beach to villa, surf photos & video analysis & wellness goodie bag!",
+      "** Excludes flights, travel insurance, lunch & dinner & massages.",
+      "*** Register as a Duo & it will be $777 per pax!",
+    ],
     promotion: "** Register as a Duo & it will be $777 per pax!",
     retreatOptions: {
       "retreat-date": [
         {
           value: [
             "62a19ce1-0cf3-413f-bc0e-d415a1a9ee8c",
-            "13th July - 16th July",
+            "13th Jul 2023 - 16th Jul 2023",
           ],
-          name: "13th July - 16th July",
+          name: "13th Jul 2023 - 16th Jul 2023",
         },
         {
           value: [
             "8a420420-8e02-4857-829c-c981bc9d4b51",
-            "10th Aug - 13th Aug",
+            "10th Aug 2023 - 13th Aug 2023",
           ],
-          name: "10th Aug - 13th Aug",
+          name: "10th Aug 2023 - 13th Aug 2023",
         },
       ],
     },
@@ -203,7 +230,14 @@ export default function BaliGlowUpPage() {
           caption={yogaCaption}
           text={yogaText}
         />
-
+        <NewRetreatSection
+          classes={classes}
+          baseClass="expect"
+          title={expectTitle}
+          caption={expectCaption}
+          text={expectText}
+          imgUrlList={expectImgUrlList}
+        />
         <NewRetreatSchedule
           classes={classes}
           baseClass="schedule"
