@@ -5,6 +5,14 @@ import LinkButton from "../ui/LinkButton";
 export default function NewRetreatInfo(props) {
   const { classes, baseClass, onClick, btnHref, retreat, isModal } = props;
 
+  const additionalInfoInput = retreat.additionalInfo
+    ? retreat.additionalInfo.map((item, idx) => (
+        <p className={classes[`${baseClass}--additional-info`]} key={idx}>
+          {item}
+        </p>
+      ))
+    : "";
+
   return (
     <Fragment>
       {retreat.date | !isModal ? (
@@ -55,7 +63,8 @@ export default function NewRetreatInfo(props) {
       ) : (
         ""
       )}
-      {retreat.promotion ? (
+      {additionalInfoInput && isModal ? additionalInfoInput : " "}
+      {retreat.promotion && !isModal ? (
         <p className={classes[`${baseClass}--promo`]}>{retreat.promotion}</p>
       ) : (
         " "

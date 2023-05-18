@@ -38,7 +38,17 @@ export default function NewRetreatSummary(props) {
         />
       </div>
       <div className={`${classes[`${baseClass}--desc--grid`]} hidden`}>
-        <p className={classes[`${baseClass}--desc`]}>{summary.desc}</p>
+        <div className={classes[`${baseClass}--desc`]}>
+          <p className={classes[`${baseClass}--desc--text`]}>{summary.desc}</p>
+          {summary.promotion ? (
+            <p className={classes[`${baseClass}--promotion`]}>
+              {summary.promotion}
+            </p>
+          ) : (
+            ""
+          )}
+        </div>
+
         <div className={classes[`${baseClass}--icon--group`]}>
           <div className={classes[`${baseClass}--btn--outer`]}>
             <LinkButton
