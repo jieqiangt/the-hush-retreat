@@ -17,9 +17,6 @@ const handler = catchApiWrapper(async (req, res) => {
 
   const numPax = additionalRetreatees.length + 1;
 
-  const totalDiscount = Math.floor(numPax / 2) * 100;
-  const totalPrice = numPax * retreat.price - totalDiscount;
-
   const mainSection = createEmailTemplate("retreatConfirmation", {
     mainRetreatee,
     retreat,
