@@ -230,14 +230,14 @@ export default function BaliGlowUpPage() {
           caption={yogaCaption}
           text={yogaText}
         />
-        <NewRetreatSection
+        {/* <NewRetreatSection
           classes={classes}
           baseClass="expect"
           title={expectTitle}
           caption={expectCaption}
           text={expectText}
           imgUrlList={expectImgUrlList}
-        />
+        /> */}
         <NewRetreatSchedule
           classes={classes}
           baseClass="schedule"

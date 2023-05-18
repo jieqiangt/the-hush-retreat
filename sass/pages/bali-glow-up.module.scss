@@ -1194,6 +1194,7 @@
 .expect {
   @include description--section(35vw);
   position: relative;
+  height: 110vh;
 
   @include media-queries(laptop-lg) {
     margin-top: 8rem;
@@ -1238,7 +1239,7 @@
 
     &--box {
       background-color: $col-main-primary;
-      padding: 12rem 18rem 12rem 6rem;
+      padding: 10rem 18rem 10rem 6rem;
 
       @include media-queries(tab-land) {
         padding: 14rem 10rem;
@@ -1315,7 +1316,7 @@
         24rem,
         -40rem,
         -6rem,
-        0rem
+        -6rem
       );
 
       @include media-queries(xl-screen) {
@@ -1328,7 +1329,7 @@
           18rem,
           -38rem,
           -6rem,
-          0rem
+          -6rem
         );
       }
 
@@ -1342,7 +1343,7 @@
           18rem,
           -38rem,
           -6rem,
-          0rem
+          -6rem
         );
       }
 
@@ -1356,7 +1357,7 @@
           20rem,
           -40rem,
           -6rem,
-          -2rem
+          -8rem
         );
       }
 
@@ -1370,7 +1371,7 @@
           20rem,
           -44rem,
           -6rem,
-          -2rem
+          -8rem
         );
       }
 
@@ -1384,7 +1385,7 @@
           20rem,
           -43rem,
           -6rem,
-          -2rem
+          -8rem
         );
       }
 
