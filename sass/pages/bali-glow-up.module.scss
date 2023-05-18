@@ -79,6 +79,12 @@
         grid-column: 1 / -1;
         margin-top: 0;
       }
+
+      &--additional-info {
+        font-size: $font-size-text-s;
+        grid-column: 1 / -1;
+        margin-top: 0;
+      }
     }
   }
 
@@ -314,12 +320,17 @@
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
   }
+
+  &--promo {
+    margin-bottom: 1.2rem;
+  }
 }
 
 .hosts {
   @include description--section(30vw);
   position: relative;
   margin-bottom: 15rem;
+  flex-direction: row-reverse;
 
   &::after {
     content: "";
@@ -334,9 +345,9 @@
   }
 
   @include media-queries(tab-land) {
+    @include description--section(90vw);
     display: flex;
     flex-direction: column;
-    @include description--section(90vw);
     height: auto;
 
     &::after {
@@ -357,25 +368,25 @@
     background-position: bottom;
     width: 100%;
     height: 80%;
-    margin: 18rem -2rem 0rem 8rem;
+    margin: 18rem 8rem 0rem -4rem;
 
     @include media-queries(laptop-lg) {
-      margin: 26rem -2rem 0rem 8rem;
+      margin: 26rem 6rem 0rem -4rem;
       height: 70%;
     }
 
     @include media-queries(laptop) {
-      margin: 32rem -2rem 0rem 8rem;
+      margin: 32rem 4rem 0rem -4rem;
       height: 65%;
     }
 
     @include media-queries(tab-xl-land) {
-      margin: 34rem -2rem 0rem 8rem;
+      margin: 34rem 4rem 0rem -4rem;
       height: 62%;
     }
 
     @include media-queries(laptop-sm) {
-      margin: 40rem -2rem 0rem 6rem;
+      margin: 40rem 4rem 0rem -4rem;
       height: 60%;
     }
 
@@ -436,317 +447,317 @@
   }
 }
 
-.accomodation {
-  @include description--section(35vw);
-  position: relative;
+// .accomodation {
+//   @include description--section(35vw);
+//   position: relative;
 
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 0.2rem;
-    width: 97%;
-    bottom: -8rem;
-    left: 1.5%;
-    background-color: rgba($col-accent-tint-2, 0.5);
-    z-index: $z-index-top + $z-index-top;
-  }
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     display: block;
+//     height: 0.2rem;
+//     width: 97%;
+//     bottom: -8rem;
+//     left: 1.5%;
+//     background-color: rgba($col-accent-tint-2, 0.5);
+//     z-index: $z-index-top + $z-index-top;
+//   }
 
-  @include media-queries(laptop-lg) {
-    margin-top: 8rem;
-    margin-bottom: 4rem;
-  }
+//   @include media-queries(laptop-lg) {
+//     margin-top: 8rem;
+//     margin-bottom: 4rem;
+//   }
 
-  @include media-queries(laptop) {
-    margin-top: 4rem;
-    margin-bottom: 0rem;
-  }
+//   @include media-queries(laptop) {
+//     margin-top: 4rem;
+//     margin-bottom: 0rem;
+//   }
 
-  @include media-queries(laptop-sm) {
-    margin-top: 0rem;
-    margin-bottom: -16rem;
-  }
+//   @include media-queries(laptop-sm) {
+//     margin-top: 0rem;
+//     margin-bottom: -16rem;
+//   }
 
-  @include media-queries(tab-xl-pot) {
-    height: 75vh;
-  }
+//   @include media-queries(tab-xl-pot) {
+//     height: 75vh;
+//   }
 
-  @include media-queries(tab-lg-land) {
-    margin-top: -12rem;
-    margin-bottom: -20rem;
-  }
+//   @include media-queries(tab-lg-land) {
+//     margin-top: -12rem;
+//     margin-bottom: -20rem;
+//   }
 
-  @include media-queries(tab-land) {
-    flex-direction: column;
-    height: auto;
-    margin-top: 0rem;
-    margin-bottom: 16rem;
+//   @include media-queries(tab-land) {
+//     flex-direction: column;
+//     height: auto;
+//     margin-top: 0rem;
+//     margin-bottom: 16rem;
 
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 0.2rem;
-      width: 97%;
-      bottom: -8rem;
-      left: 1.5%;
-      background-color: rgba($col-accent-tint-2, 0.5);
-      z-index: $z-index-top + 100;
-    }
-  }
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       display: block;
+//       height: 0.2rem;
+//       width: 97%;
+//       bottom: -8rem;
+//       left: 1.5%;
+//       background-color: rgba($col-accent-tint-2, 0.5);
+//       z-index: $z-index-top + 100;
+//     }
+//   }
 
-  &--aside {
-    @include media-queries(tab-land) {
-      order: 2;
-      flex: 1 1 auto;
-      align-items: start;
-    }
+//   &--aside {
+//     @include media-queries(tab-land) {
+//       order: 2;
+//       flex: 1 1 auto;
+//       align-items: start;
+//     }
 
-    font-size: $font-size-text-md;
-    line-height: $font-line-height-lg;
+//     font-size: $font-size-text-md;
+//     line-height: $font-line-height-lg;
 
-    &--box {
-      background-color: $col-main-primary;
-      padding: 12rem 18rem 12rem 6rem;
+//     &--box {
+//       background-color: $col-main-primary;
+//       padding: 12rem 18rem 12rem 6rem;
 
-      @include media-queries(tab-land) {
-        padding: 14rem 10rem;
-        margin-top: 0rem;
-      }
-    }
+//       @include media-queries(tab-land) {
+//         padding: 14rem 10rem;
+//         margin-top: 0rem;
+//       }
+//     }
 
-    &--title {
-      @include section--title($col-accent-primary, $letter-spacing-xs);
-      border-bottom: $border-accent-sm;
-      margin-bottom: 2.4rem;
-    }
+//     &--title {
+//       @include section--title($col-accent-primary, $letter-spacing-xs);
+//       border-bottom: $border-accent-sm;
+//       margin-bottom: 2.4rem;
+//     }
 
-    &--content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      color: $col-accent-tint-1;
-      margin-left: 2.4rem;
-    }
+//     &--content {
+//       display: flex;
+//       flex-direction: column;
+//       gap: 1.2rem;
+//       color: $col-accent-tint-1;
+//       margin-left: 2.4rem;
+//     }
 
-    &--title {
-      @include section--title($col-accent-primary, $letter-spacing-xs);
-      border-bottom: $border-accent-sm;
-      margin-bottom: 2.4rem;
-    }
+//     &--title {
+//       @include section--title($col-accent-primary, $letter-spacing-xs);
+//       border-bottom: $border-accent-sm;
+//       margin-bottom: 2.4rem;
+//     }
 
-    &--caption {
-      margin-bottom: 1.2rem;
+//     &--caption {
+//       margin-bottom: 1.2rem;
 
-      &--text {
-        font-size: $font-size-header-sm;
-        color: $col-gray-tint-3;
-        font-size: $font-size-header-md;
-        line-height: $font-line-height-md;
-      }
-    }
+//       &--text {
+//         font-size: $font-size-header-sm;
+//         color: $col-gray-tint-3;
+//         font-size: $font-size-header-md;
+//         line-height: $font-line-height-md;
+//       }
+//     }
 
-    &--desc {
-      &--text {
-        font-size: $font-size-text-lg;
-      }
-    }
-  }
+//     &--desc {
+//       &--text {
+//         font-size: $font-size-text-lg;
+//       }
+//     }
+//   }
 
-  &--img {
-    order: 2;
-    z-index: $z-index-top + 10;
-    box-shadow: none;
-    display: flex;
-    align-items: center;
+//   &--img {
+//     order: 2;
+//     z-index: $z-index-top + 10;
+//     box-shadow: none;
+//     display: flex;
+//     align-items: center;
 
-    @include media-queries(tab-land) {
-      align-self: stretch;
-      align-items: stretch;
-      flex: 100 1 auto;
-    }
+//     @include media-queries(tab-land) {
+//       align-self: stretch;
+//       align-items: stretch;
+//       flex: 100 1 auto;
+//     }
 
-    &--composition {
-      @include img-composition(
-        15vw,
-        -4rem,
-        72rem,
-        4rem,
-        -14rem,
-        24rem,
-        -40rem,
-        -6rem,
-        0rem
-      );
+//     &--composition {
+//       @include img-composition(
+//         15vw,
+//         -4rem,
+//         72rem,
+//         4rem,
+//         -14rem,
+//         24rem,
+//         -40rem,
+//         -6rem,
+//         0rem
+//       );
 
-      @include media-queries(xl-screen) {
-        @include img-composition(
-          16vw,
-          -4rem,
-          56rem,
-          4rem,
-          -16rem,
-          18rem,
-          -38rem,
-          -6rem,
-          0rem
-        );
-      }
+//       @include media-queries(xl-screen) {
+//         @include img-composition(
+//           16vw,
+//           -4rem,
+//           56rem,
+//           4rem,
+//           -16rem,
+//           18rem,
+//           -38rem,
+//           -6rem,
+//           0rem
+//         );
+//       }
 
-      @include media-queries(lg-screen) {
-        @include img-composition(
-          17vw,
-          -4rem,
-          56rem,
-          4rem,
-          -16rem,
-          18rem,
-          -38rem,
-          -6rem,
-          0rem
-        );
-      }
+//       @include media-queries(lg-screen) {
+//         @include img-composition(
+//           17vw,
+//           -4rem,
+//           56rem,
+//           4rem,
+//           -16rem,
+//           18rem,
+//           -38rem,
+//           -6rem,
+//           0rem
+//         );
+//       }
 
-      @include media-queries(laptop-lg) {
-        @include img-composition(
-          18vw,
-          -4rem,
-          64rem,
-          4rem,
-          -16rem,
-          20rem,
-          -40rem,
-          -6rem,
-          -2rem
-        );
-      }
+//       @include media-queries(laptop-lg) {
+//         @include img-composition(
+//           18vw,
+//           -4rem,
+//           64rem,
+//           4rem,
+//           -16rem,
+//           20rem,
+//           -40rem,
+//           -6rem,
+//           -2rem
+//         );
+//       }
 
-      @include media-queries(laptop) {
-        @include img-composition(
-          19vw,
-          -4rem,
-          64rem,
-          4rem,
-          -16rem,
-          20rem,
-          -44rem,
-          -6rem,
-          -2rem
-        );
-      }
+//       @include media-queries(laptop) {
+//         @include img-composition(
+//           19vw,
+//           -4rem,
+//           64rem,
+//           4rem,
+//           -16rem,
+//           20rem,
+//           -44rem,
+//           -6rem,
+//           -2rem
+//         );
+//       }
 
-      @include media-queries(tab-lg-land) {
-        @include img-composition(
-          21vw,
-          -4rem,
-          61rem,
-          4rem,
-          -15rem,
-          20rem,
-          -43rem,
-          -6rem,
-          -2rem
-        );
-      }
+//       @include media-queries(tab-lg-land) {
+//         @include img-composition(
+//           21vw,
+//           -4rem,
+//           61rem,
+//           4rem,
+//           -15rem,
+//           20rem,
+//           -43rem,
+//           -6rem,
+//           -2rem
+//         );
+//       }
 
-      @include media-queries(tab-land) {
-        @include img-composition(
-          34vw,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem
-        );
-        flex-direction: row;
-      }
+//       @include media-queries(tab-land) {
+//         @include img-composition(
+//           34vw,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem
+//         );
+//         flex-direction: row;
+//       }
 
-      @include media-queries(tab-sm-land) {
-        @include img-composition(
-          36vw,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem
-        );
-        flex-direction: row;
-        transform: translateX(-1vw);
-      }
+//       @include media-queries(tab-sm-land) {
+//         @include img-composition(
+//           36vw,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem
+//         );
+//         flex-direction: row;
+//         transform: translateX(-1vw);
+//       }
 
-      @include media-queries(phone-xl) {
-        @include img-composition(
-          48vw,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem
-        );
-        flex-direction: row;
-        transform: translateX(-22vw);
-      }
+//       @include media-queries(phone-xl) {
+//         @include img-composition(
+//           48vw,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem
+//         );
+//         flex-direction: row;
+//         transform: translateX(-22vw);
+//       }
 
-      @include media-queries(phone-lg) {
-        @include img-composition(
-          50vw,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem
-        );
-        flex-direction: row;
-        transform: translateX(-26vw);
-      }
+//       @include media-queries(phone-lg) {
+//         @include img-composition(
+//           50vw,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem
+//         );
+//         flex-direction: row;
+//         transform: translateX(-26vw);
+//       }
 
-      @include media-queries(phone) {
-        @include img-composition(
-          60vw,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem,
-          0rem
-        );
-        flex-direction: row;
-        transform: translateX(-40vw);
-      }
+//       @include media-queries(phone) {
+//         @include img-composition(
+//           60vw,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem,
+//           0rem
+//         );
+//         flex-direction: row;
+//         transform: translateX(-40vw);
+//       }
 
-      &--imgbox {
-        &--0 {
-          z-index: $z-index-top;
-        }
+//       &--imgbox {
+//         &--0 {
+//           z-index: $z-index-top;
+//         }
 
-        &--1 {
-          z-index: $z-index-top - 2;
-          @include media-queries(phone) {
-            box-shadow: 0px 0px 20px 3px rgba($col-black-primary, 0.2);
-          }
-        }
+//         &--1 {
+//           z-index: $z-index-top - 2;
+//           @include media-queries(phone) {
+//             box-shadow: 0px 0px 20px 3px rgba($col-black-primary, 0.2);
+//           }
+//         }
 
-        &--2 {
-          z-index: $z-index-top - 1;
-        }
-      }
-    }
-  }
-}
+//         &--2 {
+//           z-index: $z-index-top - 1;
+//         }
+//       }
+//     }
+//   }
+// }
 
 .surf {
   @include description--section(35vw);
@@ -1065,11 +1076,24 @@
   @include description--section(30vw);
   position: relative;
   margin-bottom: 15rem;
+  flex-direction: row-reverse;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.2rem;
+    width: 97%;
+    bottom: -18rem;
+    left: 1.5%;
+    background-color: rgba($col-accent-tint-2, 0.5);
+    z-index: $z-index-top;
+  }
 
   @include media-queries(tab-land) {
+    @include description--section(90vw);
     display: flex;
     flex-direction: column;
-    @include description--section(90vw);
     height: auto;
 
     &::after {
@@ -1090,25 +1114,25 @@
     background-position: bottom;
     width: 100%;
     height: 80%;
-    margin: 18rem -2rem 0rem 8rem;
+    margin: 18rem 8rem 0rem -4rem;
 
     @include media-queries(laptop-lg) {
-      margin: 26rem -2rem 0rem 8rem;
+      margin: 26rem 6rem 0rem -4rem;
       height: 70%;
     }
 
     @include media-queries(laptop) {
-      margin: 32rem -2rem 0rem 8rem;
+      margin: 32rem 4rem 0rem -4rem;
       height: 65%;
     }
 
     @include media-queries(tab-xl-land) {
-      margin: 34rem -2rem 0rem 8rem;
+      margin: 34rem 4rem 0rem -4rem;
       height: 62%;
     }
 
     @include media-queries(laptop-sm) {
-      margin: 40rem -2rem 0rem 6rem;
+      margin: 40rem 4rem 0rem -4rem;
       height: 60%;
     }
 
@@ -1162,6 +1186,302 @@
     &--desc {
       &--text {
         font-size: $font-size-text-lg;
+      }
+    }
+  }
+}
+
+.expect {
+  @include description--section(35vw);
+  position: relative;
+
+  @include media-queries(laptop-lg) {
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+  }
+
+  @include media-queries(laptop) {
+    margin-top: 4rem;
+    margin-bottom: 0rem;
+  }
+
+  @include media-queries(laptop-sm) {
+    margin-top: 0rem;
+    margin-bottom: -16rem;
+  }
+
+  @include media-queries(tab-xl-pot) {
+    height: 75vh;
+  }
+
+  @include media-queries(tab-lg-land) {
+    margin-top: -12rem;
+    margin-bottom: -20rem;
+  }
+
+  @include media-queries(tab-land) {
+    flex-direction: column;
+    height: auto;
+    margin-top: 0rem;
+    margin-bottom: 16rem;
+  }
+
+  &--aside {
+    @include media-queries(tab-land) {
+      order: 2;
+      flex: 1 1 auto;
+      align-items: start;
+    }
+
+    font-size: $font-size-text-md;
+    line-height: $font-line-height-lg;
+
+    &--box {
+      background-color: $col-main-primary;
+      padding: 12rem 18rem 12rem 6rem;
+
+      @include media-queries(tab-land) {
+        padding: 14rem 10rem;
+        margin-top: 0rem;
+      }
+    }
+
+    &--title {
+      @include section--title($col-accent-primary, $letter-spacing-xs);
+      border-bottom: $border-accent-sm;
+      margin-bottom: 2.4rem;
+    }
+
+    &--content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      color: $col-accent-tint-1;
+      margin-left: 2.4rem;
+    }
+
+    &--title {
+      @include section--title($col-accent-primary, $letter-spacing-xs);
+      border-bottom: $border-accent-sm;
+      margin-bottom: 2.4rem;
+    }
+
+    &--caption {
+      margin-bottom: 1.2rem;
+
+      &--text {
+        font-size: $font-size-header-sm;
+        color: $col-gray-tint-3;
+        font-size: $font-size-header-md;
+        line-height: $font-line-height-md;
+      }
+    }
+
+    &--desc {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+
+      &--text {
+        font-size: $font-size-text-lg;
+      }
+
+      & p:last-child {
+        font-size: $font-size-text-s;
+      }
+    }
+  }
+
+  &--img {
+    order: 2;
+    z-index: $z-index-top + 10;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+
+    @include media-queries(tab-land) {
+      align-self: stretch;
+      align-items: stretch;
+      flex: 100 1 auto;
+    }
+
+    &--composition {
+      @include img-composition(
+        15vw,
+        -4rem,
+        72rem,
+        4rem,
+        -14rem,
+        24rem,
+        -40rem,
+        -6rem,
+        0rem
+      );
+
+      @include media-queries(xl-screen) {
+        @include img-composition(
+          16vw,
+          -4rem,
+          56rem,
+          4rem,
+          -16rem,
+          18rem,
+          -38rem,
+          -6rem,
+          0rem
+        );
+      }
+
+      @include media-queries(lg-screen) {
+        @include img-composition(
+          17vw,
+          -4rem,
+          56rem,
+          4rem,
+          -16rem,
+          18rem,
+          -38rem,
+          -6rem,
+          0rem
+        );
+      }
+
+      @include media-queries(laptop-lg) {
+        @include img-composition(
+          18vw,
+          -4rem,
+          64rem,
+          4rem,
+          -16rem,
+          20rem,
+          -40rem,
+          -6rem,
+          -2rem
+        );
+      }
+
+      @include media-queries(laptop) {
+        @include img-composition(
+          19vw,
+          -4rem,
+          64rem,
+          4rem,
+          -16rem,
+          20rem,
+          -44rem,
+          -6rem,
+          -2rem
+        );
+      }
+
+      @include media-queries(tab-lg-land) {
+        @include img-composition(
+          21vw,
+          -4rem,
+          61rem,
+          4rem,
+          -15rem,
+          20rem,
+          -43rem,
+          -6rem,
+          -2rem
+        );
+      }
+
+      @include media-queries(tab-land) {
+        @include img-composition(
+          34vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+      }
+
+      @include media-queries(tab-sm-land) {
+        @include img-composition(
+          36vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-1vw);
+      }
+
+      @include media-queries(phone-xl) {
+        @include img-composition(
+          48vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-22vw);
+      }
+
+      @include media-queries(phone-lg) {
+        @include img-composition(
+          50vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-26vw);
+      }
+
+      @include media-queries(phone) {
+        @include img-composition(
+          60vw,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem,
+          0rem
+        );
+        flex-direction: row;
+        transform: translateX(-40vw);
+      }
+
+      &--imgbox {
+        &--0 {
+          z-index: $z-index-top;
+        }
+
+        &--1 {
+          z-index: $z-index-top - 2;
+          @include media-queries(phone) {
+            box-shadow: 0px 0px 20px 3px rgba($col-black-primary, 0.2);
+          }
+        }
+
+        &--2 {
+          z-index: $z-index-top - 1;
+        }
       }
     }
   }

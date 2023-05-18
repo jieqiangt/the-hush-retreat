@@ -8,8 +8,8 @@ import Banner from "../../components/ui/Banner";
 export default function UpcomingPage() {
   const retreats = [
     {
-      header: "~ 4D3N The Glow Up: Bali Edition ~",
-      title: "Surf & Yoga Retreat",
+      header: "4D3N Bali: Ride The Waves, Find Your Zen",
+      title: "~ Surf & Yoga Retreat  ~",
       btnText: "Learn More",
       btnHref: "/upcoming/bali-glow-up",
       desc: "Are you ready for our FIRST ever overseas retreat? We are taking you to the beautiful West Coast of Bali to catch waves and savasana to those glorious sunsets. Whether you are a beginner or seasoned in surfing and yoga, this retreat is made for you! Let us relax, have fun and enjoy as you let your hair down with us on this 4D3N: The Glow Up Retreat!",
